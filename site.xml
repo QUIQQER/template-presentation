@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+    <!-- global attributes -->
+    <attributes>
+        <attribute>templatePresentation.showEmotion</attribute>
+        <attribute>templatePresentation.showTitle</attribute>
+        <attribute>templatePresentation.showShort</attribute>
+    </attributes>
+
+    <settings>
+        <category name="templatePresentation.siteSettings">
+            <settings>
+                <title>
+                    <locale group="quiqqer/template-presentation"
+                            var="templatePresentation.siteSettings"/>
+                </title>
+
+                <input conf="templatePresentation.showEmotion" type="checkbox">
+                    <text>
+                        <locale group="quiqqer/template-presentation"
+                                var="templatePresentation.siteSettings.showEmotion"/>
+                    </text>
+                </input>
+                <input conf="templatePresentation.showTitle" type="checkbox">
+                    <text>
+                        <locale group="quiqqer/template-presentation" var="siteSettings.showTitle"/>
+                    </text>
+                </input>
+                <input conf="templatePresentation.showShort" type="checkbox">
+                    <text>
+                        <locale group="quiqqer/template-presentation" var="siteSettings.showShort"/>
+                    </text>
+                </input>
+            </settings>
+        </category>
+    </settings>
+
+
+    <!-- layouts -->
+    <layouts>
+        <layout type="layout/startPage">
+            <title>
+                <locale group="quiqqer/template-presentation" var="admin.layout.startpage" />
+            </title>
+            <description>
+                <locale group="quiqqer/template-presentation" var="admin.layout.startpage.desc" />
+            </description>
+        </layout>
+
+        <layout type="layout/noSidebar">
+            <title>
+                <locale group="quiqqer/template-presentation" var="admin.layout.noSidebar" />
+            </title>
+            <description>
+                <locale group="quiqqer/template-presentation" var="admin.layout.noSidebar.desc" />
+            </description>
+        </layout>
+
+        <layout type="layout/leftSidebar">
+            <title>
+                <locale group="quiqqer/template-presentation" var="admin.layout.leftSidebar" />
+            </title>
+            <description>
+                <locale group="quiqqer/template-presentation" var="admin.layout.leftSidebar.desc" />
+            </description>
+        </layout>
+
+        <layout type="layout/rightSidebar">
+            <title>
+                <locale group="quiqqer/template-presentation" var="admin.layout.rightSidebar" />
+            </title>
+            <description>
+                <locale group="quiqqer/template-presentation" var="admin.layout.rightSidebar.desc" />
+            </description>
+        </layout>
+    </layouts>
+
+</site>

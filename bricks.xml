@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <bricks>
+
+        <!-- for all bricks -->
+        <brick control="*">
+            <settings>
+                <setting name="brickFullWidth" type="checkbox">
+                    <locale group="quiqqer/template-presentation"
+                            var="brickFullWidth"/>
+                </setting>
+            </settings>
+        </brick>
+
+        <!-- promo slider wallpaper 2 content -->
+        <brick control="\QUI\Bricks\Controls\Slider\PromosliderWallpaper2Content">
+            <settings>
+                <setting name="promosliderBackground" type="color">
+                    <locale group="quiqqer/template-presentation"
+                            var="promosliderBackground"/>
+                </setting>
+            </settings>
+        </brick>
+
+        <!-- defined areas in the template -->
+        <templateAreas>
+            <!-- global areas -->
+
+            <areas>
+                <area name="headerSuffix" inheritance="1">
+                    <title>
+                        <locale group="quiqqer/template-presentation"
+                                var="area.headerSuffix.title"
+                                />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="area.headerSuffix.description"
+                                />
+                    </description>
+                </area>
+
+                <area name="footerPrefix" inheritance="1">
+                    <title>
+                        <locale group="quiqqer/template-presentation"
+                                var="area.footerPrefix.title"
+                                />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="area.footerPrefix.description"
+                                />
+                    </description>
+                </area>
+
+                <area name="footer" inheritance="1">
+                    <title>
+                        <locale group="quiqqer/template-presentation"
+                                var="area.footer.title"
+                                />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="area.footer.description"
+                                />
+                    </description>
+                </area>
+            </areas>
+
+            <!-- specific type areas -->
+            <layouts>
+
+                <layout layout="layout/startPage">
+                    <area name="prefixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.description"
+                                    />
+                        </description>
+                    </area>
+
+                    <area name="suffixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.description"
+                                    />
+                        </description>
+                    </area>
+                </layout>
+
+                <layout layout="layout/noSidebar">
+                    <area name="noSidebar">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.noSidebar.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.noSidebar.description"
+                                    />
+                        </description>
+                    </area>
+
+                    <area name="prefixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.description"
+                                    />
+                        </description>
+                    </area>
+
+                    <area name="suffixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.description"
+                                    />
+                        </description>
+                    </area>
+                </layout>
+
+                <layout layout="layout/leftSidebar">
+                    <area name="leftSidebar" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.left.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.left.description"
+                                    />
+                        </description>
+                    </area>
+
+                    <area name="prefixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.description"
+                                    />
+                        </description>
+                    </area>
+
+                    <area name="suffixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.description"
+                                    />
+                        </description>
+                    </area>
+                </layout>
+
+                <layout layout="layout/rightSidebar">
+                    <area name="rightSidebar" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.right.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.right.description"
+                                    />
+                        </description>
+                    </area>
+
+                    <area name="prefixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.description"
+                                    />
+                        </description>
+                    </area>
+
+                    <area name="suffixContentBricks" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.title"
+                                    />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.description"
+                                    />
+                        </description>
+                    </area>
+                </layout>
+            </layouts>
+        </templateAreas>
+    </bricks>
+
+</quiqqer>

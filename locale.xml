@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <groups name="quiqqer/template-presentation" datatype="php,js">
+
+        <!-- template bricks -->
+        <locale name="navbar.search.text">
+            <de><![CDATA[Suchen]]></de>
+            <en><![CDATA[Search]]></en>
+            <pl><![CDATA[Szukaj]]></pl>
+        </locale>
+
+        <locale name="promosliderBackground">
+            <de><![CDATA[Hintergrundfarbe auswählen (nur bei voller Breite)]]></de>
+            <en><![CDATA[Set the background color (only by full width)]]></en>
+            <pl><![CDATA[Wybierz kolor tła (tylko przy pełnej szerokości)]]></pl>
+        </locale>
+
+        <locale name="showBrickTitle">
+            <de><![CDATA[Baustein Titel]]></de>
+            <en><![CDATA[Brick title]]></en>
+            <pl><![CDATA[Tytuł]]></pl>
+        </locale>
+
+        <locale name="brickFullWidth">
+            <de><![CDATA[Volle Breite]]></de>
+            <en><![CDATA[Full width]]></en>
+            <pl><![CDATA[Pełna szerokość]]></pl>
+        </locale>
+
+        <!-- areas -->
+        <locale name="area.footer.title">
+            <de><![CDATA[Footer Bausteinzone]]></de>
+            <en><![CDATA[Footer brickarea]]></en>
+            <pl><![CDATA[Stopka]]></pl>
+        </locale>
+        <locale name="area.footer.description">
+            <de><![CDATA[Bausteinzone des Footer]]></de>
+            <en><![CDATA[Brick area of the footer]]></en>
+            <pl><![CDATA[Miejsce na umieszczenie pluginów w stopce.]]></pl>
+        </locale>
+
+        <locale name="area.startpageContent.title">
+            <de><![CDATA[Inhalts-Zone (Landingpage)]]></de>
+            <en><![CDATA[Content area (Landingpage)]]></en>
+            <pl><![CDATA[Główna zawartość strony (układ bez kolumn - strona główna)]]></pl>
+        </locale>
+        <locale name="area.startpageContent.description">
+            <de><![CDATA[Bausteinzone eines Landingpage Layouts]]></de>
+            <en><![CDATA[Brick area of a landingpage layout]]></en>
+            <pl><![CDATA[Dodatkowe miejsce na pluginy w głównej części strony w przypadku układu bez kolumn.]]></pl>
+        </locale>
+
+        <locale name="area.sidebar.left.title">
+            <de><![CDATA[Linke Bausteinzone]]></de>
+            <en><![CDATA[Left brickarea]]></en>
+            <pl><![CDATA[Układ z lewą kolumną]]></pl>
+        </locale>
+        <locale name="area.sidebar.left.description">
+            <de><![CDATA[Bausteinzone links neben dem Inhalt]]></de>
+            <en><![CDATA[Brick area to the left of the content]]></en>
+            <pl><![CDATA[Układ strony z kolumną po lewej stronie.]]></pl>
+        </locale>
+
+        <locale name="area.sidebar.right.title">
+            <de><![CDATA[Rechte Bausteinzone]]></de>
+            <en><![CDATA[Right brickarea]]></en>
+            <pl><![CDATA[Układ z prawą kolumną]]></pl>
+        </locale>
+        <locale name="area.sidebar.right.description">
+            <de><![CDATA[Bausteinzone rechts neben dem Inhalt]]></de>
+            <en><![CDATA[Brickarea to the right of the content]]></en>
+            <en><![CDATA[Układ strony z kolumną po prawej stronie.]]></en>
+        </locale>
+
+        <locale name="area.noSidebar.title">
+            <de><![CDATA[Inhalts-Zone (Keine Sidebar)]]></de>
+            <en><![CDATA[Content area (No Sidebar)]]></en>
+        </locale>
+        <locale name="area.noSidebar.description">
+            <de><![CDATA[Inhaltszone eines Keine-Sidebar-Layouts]]></de>
+            <en><![CDATA[Content area of no sidebar layout]]></en>
+            <en><![CDATA[Układ bez kolumn]]></en>
+        </locale>
+
+        <locale name="area.sidebar.prefix.content.title">
+            <de><![CDATA[Prefix Zone]]></de>
+            <en><![CDATA[Prefix area]]></en>
+        </locale>
+        <locale name="area.sidebar.prefix.content.description">
+            <de><![CDATA[Bausteinzone vor dem Inhalt]]></de>
+            <en><![CDATA[Brickarea before the content]]></en>
+        </locale>
+
+        <locale name="area.sidebar.suffix.content.title">
+            <de><![CDATA[Suffix Zone]]></de>
+            <en><![CDATA[Suffix area]]></en>
+        </locale>
+        <locale name="area.sidebar.suffix.content.description">
+            <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
+            <en><![CDATA[Brickarea after the content]]></en>
+        </locale>
+
+        <locale name="area.headerSuffix.title">
+            <de><![CDATA[Header Suffix]]></de>
+            <en><![CDATA[Header suffix]]></en>
+        </locale>
+        <locale name="area.headerSuffix.description">
+            <de><![CDATA[Bausteinzone nach dem Header]]></de>
+            <en><![CDATA[Brickarea after the header]]></en>
+        </locale>
+
+        <locale name="area.footerPrefix.title">
+            <de><![CDATA[Footer Prefix]]></de>
+            <en><![CDATA[Footer Prefix]]></en>
+        </locale>
+        <locale name="area.footerPrefix.description">
+            <de><![CDATA[Bausteinzone vor dem Footer]]></de>
+            <en><![CDATA[Brickarea before the footer]]></en>
+        </locale>
+
+        <!-- template site settings -->
+        <locale name="templatePresentation.siteSettings">
+            <de><![CDATA[Template Presentation: Einstellungen]]></de>
+            <en><![CDATA[Template Presentation: settings]]></en>
+            <pl><![CDATA[Template Presentation: ustawienia]]></pl>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showEmotion">
+            <de><![CDATA[Header Bild anzeigen]]></de>
+            <en><![CDATA[Show header picture]]></en>
+            <pl><![CDATA[Pokaż obrazek nagłówka]]></pl>
+        </locale>
+            <!-- Title & short -->
+        <locale name="templatePresentation.siteSettings.showTitle">
+            <de><![CDATA[Überschrift anzeigen]]></de>
+            <en><![CDATA[Show title]]></en>
+            <pl><![CDATA[Wyświetlić tytuł]]></pl>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showShort">
+            <de><![CDATA[Kurzbeschreibung anzeigen]]></de>
+            <en><![CDATA[Show short descriptions]]></en>
+            <pl><![CDATA[Wyświetlić opis strony]]></pl>
+        </locale>
+
+
+        <locale name="package.title">
+            <de><![CDATA[QUIQQER - Template: Presentation]]></de>
+            <en><![CDATA[QUIQQER - Template: Presentation]]></en>
+            <pl><![CDATA[QUIQQER - Template: Presentation]]></pl>
+        </locale>
+        <locale name="package.description">
+            <de><![CDATA[Template für aussagekräftige Internetseiten mit
+            vielen Einstellungsmöglichkeiten.]]></de>
+            <en><![CDATA[Advanced template with a great design and a lot of settings.]]></en>
+            <pl><![CDATA[Zaawansowany template z dopracowanym designem, który wyróżni Twoją stronę
+            internetową na tle innych. Duże pole do popisu dają rozmaite ustawienia,
+            dzięki czemu możesz dopasować wygląd Twojego serwisu do własnych potrzeb.]]></pl>
+        </locale>
+
+        <locale name="admin.layout.leftSidebar">
+            <de><![CDATA[Linke Sidebar]]></de>
+            <en><![CDATA[Left sidebar]]></en>
+        </locale>
+        <locale name="admin.layout.startpage">
+            <de><![CDATA[Landingpage (Startpage)]]></de>
+            <en><![CDATA[Landingpage]]></en>
+        </locale>
+        <locale name="admin.layout.rightSidebar">
+            <de><![CDATA[Rechte Sidebar]]></de>
+            <en><![CDATA[Right sidebar]]></en>
+        </locale>
+        <locale name="admin.layout.noSidebar">
+            <de><![CDATA[Keine Sidebar]]></de>
+            <en><![CDATA[No sidebar]]></en>
+        </locale>
+        <locale name="admin.layout.leftSidebar.description">
+            <de><![CDATA[Standardmäßig Sidebar auf der linken Seite]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+        <locale name="bricks.Startpage3Box.title">
+            <de><![CDATA[Baustein: 3er Baustein auf der Startseite]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+        <locale name="admin.layout.startpage.description">
+            <de><![CDATA[Standardmäßig Layout der Startseite ]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+        
+        <locale name="continue.reading">
+            <de><![CDATA[weiterlesen]]></de>
+            <en><![CDATA[Continue Reading]]></en>
+        </locale>
+        <locale name="copyright.text" html="true">
+            <de><![CDATA[&copy; 2006 - [year] - PCSG. Alle Rechte vorbehalten.]]></de>
+            <en><![CDATA[Copyright [year]]]></en>
+        </locale>
+        <locale name="copyright.link" html="true">
+            <de><![CDATA[Startseite]]></de>
+            <en><![CDATA[Home]]></en>
+        </locale>
+        <locale name="nav.button.close" html="true">
+            <de><![CDATA[Menü schließen]]></de>
+            <en><![CDATA[Close menu]]></en>
+            <pl><![CDATA[Schowaj menu]]></pl>
+        </locale>
+        
+        <!-- settings -->
+        <locale name="templatePresentation.settings.menu.title">
+            <de><![CDATA[Template Einstellungen: Presentation]]></de>
+            <en><![CDATA[Template settings: Presentation]]></en>
+            <pl><![CDATA[Ustawienia szablonu: Presentation]]></pl>
+        </locale>
+
+        <!-- Background Color Switcher-->
+        <locale name="templatePresentation.settings.bgColorSwitcher.title">
+            <de><![CDATA[Prefix / Suffix Hintegrundfarbe wechseln]]></de>
+            <en><![CDATA[Change prefix / suffix background]]></en>
+            <pl><![CDATA[Naprzemienne tło przestrzeni prefix / suffix ]]></pl>
+        </locale>
+        <locale name="templatePresentation.settings.bgColorSwitcher.display">
+            <de><![CDATA[Aktivieren]]></de>
+            <en><![CDATA[On]]></en>
+            <pl><![CDATA[Włącz]]></pl>
+        </locale>
+        <locale name="templatePresentation.settings.bgColorSwitcher.hide">
+            <de><![CDATA[Deaktivieren]]></de>
+            <en><![CDATA[Off]]></en>
+            <pl><![CDATA[Wyłącz]]></pl>
+        </locale>
+
+        <!-- Menu shadow -->
+        <!--<locale name="templatePresentation.settings.navBarShadow.text">
+            <de><![CDATA[Menüschatten]]></de>
+            <en><![CDATA[Menu shadow]]></en>
+            <pl><![CDATA[Cień pod paskiem nawigacyjnym]]></pl>
+        </locale>
+        <locale name="templatePresentation.settings.navBarShadow.displaz">
+            <de><![CDATA[Schatten anzeigen]]></de>
+            <en><![CDATA[Display the shadow]]></en>
+            <pl><![CDATA[Pokaż]]></pl>
+        </locale>
+        <locale name="templatePresentation.settings.navBarShadow.hide">
+            <de><![CDATA[Schatten verbergen]]></de>
+            <en><![CDATA[Hide the shadow]]></en>
+            <pl><![CDATA[Ukryj]]></pl>
+        </locale>-->
+
+
+        <!-- Background Color Switcher Prefix -->
+        <locale name="templatePresentation.settings.bgColorSwitcherPrefix.text">
+            <de><![CDATA[Prefix Hintergrundfarbe wechseln]]></de>
+            <en><![CDATA[Swich background color]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.bgColorSwitcherPrefix.description">
+            <de><![CDATA[(...)]]></de>
+            <en><![CDATA[(...)]]></en>
+        </locale>
+        <!-- Background Color Switcher Suffix -->
+        <locale name="templatePresentation.settings.bgColorSwitcherSuffix.text">
+            <de><![CDATA[Suffix Hintergrundfarbe wechseln]]></de>
+            <en><![CDATA[Swich background color]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.bgColorSwitcherSuffix.description">
+            <de><![CDATA[(...)]]></de>
+            <en><![CDATA[(...)]]></en>
+        </locale>
+
+        <!-- header settings -->
+        <locale name="templatePresentation.header.settings.title">
+            <de><![CDATA[Header Einstellungen]]></de>
+            <en><![CDATA[Header settings]]></en>
+            <pl><![CDATA[Ustawienia nagłówka]]></pl>
+        </locale>
+
+        <!-- show header? -->
+        <locale name="showHeader.text">
+            <de><![CDATA[Header anzeigen?]]></de>
+            <en><![CDATA[Display header?]]></en>
+            <pl><![CDATA[Pokazać nagłówek (header wraz z obrazkiem)?]]></pl>
+        </locale>
+
+        <locale name="showHeaderStartPage.text">
+            <de><![CDATA[Startpage]]></de>
+            <en><![CDATA[Start page]]></en>
+            <pl><![CDATA[Układ bez kolumn (strona startowa)]]></pl>
+        </locale>
+
+        <locale name="showHeaderNoSidebar.text">
+            <de><![CDATA[Kein Sidebar]]></de>
+            <en><![CDATA[No sidebar]]></en>
+            <pl><![CDATA[Układ bez kolumn]]></pl>
+        </locale>
+
+        <locale name="showHeaderLeftSidebar.text">
+            <de><![CDATA[Linke Sidebar]]></de>
+            <en><![CDATA[Left sidebar]]></en>
+            <pl><![CDATA[Układ z lewą kolumną]]></pl>
+        </locale>
+
+        <locale name="showHeaderRightSidebar.text">
+            <de><![CDATA[Rechte Sidebar]]></de>
+            <en><![CDATA[Rright sidebar]]></en>
+            <pl><![CDATA[Układ z prawą kolumną]]></pl>
+        </locale>
+
+
+        <!-- breadcrumb settings -->
+        <locale name="templatePresentation.breadcrumb.settings.title">
+            <de><![CDATA[Brotkrumennavigation Einstellungen (breadcrumb)]]></de>
+            <en><![CDATA[Breadcrumb settings]]></en>
+            <pl><![CDATA[Pokazać breadcrumb ("nawigacja okruszkowa")?]]></pl>
+        </locale>
+        <!-- show breadcrumb? -->
+        <locale name="showBreadcrumb.text">
+            <de><![CDATA[Brotkrumennavigation anzeigen?]]></de>
+            <en><![CDATA[Display breadcrumb?]]></en>
+            <pl><![CDATA[Pokazać breadcrumb?]]></pl>
+        </locale>
+
+        <locale name="showBreadcrumbStartPage.text">
+            <de><![CDATA[Startpage]]></de>
+            <en><![CDATA[Start page]]></en>
+            <pl><![CDATA[Układ bez kolumn (strona startowa)]]></pl>
+        </locale>
+
+        <locale name="showBreadcrumbNoSidebar.text">
+            <de><![CDATA[Kein Sidebar]]></de>
+            <en><![CDATA[No sidebar]]></en>
+            <pl><![CDATA[Układ bez kolumn]]></pl>
+        </locale>
+
+        <locale name="showBreadcrumbLeftSidebar.text">
+            <de><![CDATA[Linke Sidebar]]></de>
+            <en><![CDATA[Left sidebar]]></en>
+            <pl><![CDATA[Układ z lewą kolumną]]></pl>
+        </locale>
+
+        <locale name="showBreadcrumbRightSidebar.text">
+            <de><![CDATA[Rechte Sidebar]]></de>
+            <en><![CDATA[Rright sidebar]]></en>
+            <pl><![CDATA[Układ z prawą kolumną]]></pl>
+        </locale>
+        
+
+        <!-- Header Größe-->
+        <locale name="templatePresentation.header.settings.height.text">
+            <de><![CDATA[Höhe des Headerbildes einstellen]]></de>
+            <en><![CDATA[Header image size settings]]></en>
+            <pl><![CDATA[Ustawienia wysokość obrazka nagłówka]]></pl>
+        </locale>
+
+        <locale name="templatePresentation.header.settings.height.enable.text">
+            <de><![CDATA[Feste Höhe des Headers]]></de>
+            <en><![CDATA[Fixed size of the header]]></en>
+            <pl><![CDATA[Stała wysokość nagłówka (header)]]></pl>
+        </locale>
+        <locale name="templatePresentation.header.settings.height.value.text">
+            <de><![CDATA[Höhe (in Pixel)]]></de>
+            <en><![CDATA[Height (in pixel)]]></en>
+            <pl><![CDATA[Wysokość (w pikselach)]]></pl>
+        </locale>
+
+        <!-- Position des Bildes im Header-->
+        <locale name="templatePresentation.settings.headerImagePosition.text">
+            <de><![CDATA[Position des Bildes wählen:]]></de>
+            <en><![CDATA[Choose position of the image:]]></en>
+        </locale>
+
+        <locale name="templatePresentation.settings.headerImagePosition.start">
+            <de><![CDATA[Oben]]></de>
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.headerImagePosition.center">
+            <de><![CDATA[Mitte]]></de>
+            <en><![CDATA[Middle]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.headerImagePosition.end">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+
+
+        <!-- Navbar settings -->
+        <locale name="templatePresentation.settings.navBar.title">
+            <de><![CDATA[Navigationsbar Einstellungen]]></de>
+            <en><![CDATA[Nav bar settings]]></en>
+            <pl><![CDATA[Ustawienia paska nawigacyjnego]]></pl>
+        </locale>
+
+        <locale name="templatePresentation.settings.navBar.Height.text">
+            <de><![CDATA[Navigationsbar Höhe (in Pixel)]]></de>
+            <en><![CDATA[Nav bar Height (in pixel)]]></en>
+            <pl><![CDATA[Wysokość (w pikselach)]]></pl>
+        </locale>
+        <locale name="templatePresentation.settings.navBar.Height.text">
+            <de><![CDATA[Navigationsbar Höhe (in Pixel)]]></de>
+            <en><![CDATA[Nav bar Height (in pixel)]]></en>
+            <pl><![CDATA[Wysokość (w pikselach)]]></pl>
+        </locale>
+        <!-- Menüposition -->
+        <locale name="templatePresentation.settings.navPos.text">
+            <de><![CDATA[Menüposition]]></de>
+            <en><![CDATA[Menu position]]></en>
+            <pl><![CDATA[Pasek nawigacyjny]]></pl>
+        </locale>
+        <locale name="templatePresentation.settings.navPos.description">
+            <de><![CDATA[Wählen Sie, ob die Navigation mitgescrollt werden, oder sich immer
+                             an gleicher Stelle auf der Seite befinden soll.]]></de>
+            <en><![CDATA[Set the menu position]]></en>
+            <pl><![CDATA[Ustawienie pozwala określić, czy pasek z menu będzie "przylepiony" na górze,
+                czy przewijany wraz ze stroną]]></pl>
+        </locale>
+        <locale name="templatePresentation.settings.navPos.fix">
+            <de><![CDATA[fix]]></de>
+            <en><![CDATA[fixed]]></en>
+            <pl><![CDATA[przylepiony]]></pl>
+        </locale>
+        <locale name="templatePresentation.settings.navPos.scroll">
+            <de><![CDATA[scrollbar]]></de>
+            <en><![CDATA[scroll]]></en>
+            <pl><![CDATA[przewijany]]></pl>
+        </locale>
+
+        <!-- Navbar colors -->
+        <locale name="templatePresentation.settings.navBarMainColor.text">
+            <de><![CDATA[Menü Hintergrundfarbe]]></de>
+            <en><![CDATA[Nav background color]]></en>
+            <pl><![CDATA[Kolor tła nawigacji]]></pl>
+        </locale>
+        <locale name="templatePresentation.settings.navBarFontColor.text">
+            <de><![CDATA[Menü Schriftfarbe]]></de>
+            <en><![CDATA[Nav font color]]></en>
+            <pl><![CDATA[Kolor czcionki]]></pl>
+        </locale>
+
+        <locale name="templatePresentation.settings.mobileFontColor">
+            <de><![CDATA[Mobile Menü Fontfarbe]]></de>
+            <en><![CDATA[Mobile Nav font color]]></en>
+            <pl><![CDATA[Kolor czcionki nawigacji (mobile)]]></pl>
+        </locale>
+        <locale name="templatePresentation.settings.mobileMenuBackground">
+            <de><![CDATA[Mobile Menü Hintergrundfarbe]]></de>
+            <en><![CDATA[Mobile nav background color]]></en>
+            <pl><![CDATA[Kolor tła nawigacji (mobile)]]]></pl>
+        </locale>
+
+
+
+        <!-- Share -->
+        <locale name="templatePresentation.settings.search.title">
+            <de><![CDATA[Suchen-Button]]></de>
+            <en><![CDATA[Search button]]></en>
+            <pl><![CDATA[Wyszukiwanie]]></pl>
+        </locale>
+        <locale name="templatePresentation.settings.searchShow.text">
+            <de><![CDATA[Suche in Navigationsmenü anzeigen]]></de>
+            <en><![CDATA[Show search button in nav bar]]></en>
+            <pl><![CDATA[Pokarz przycisk wyszukiwania]]></pl>
+        </locale>
+        <locale name="templatePresentation.settings.searchLink.text">
+            <de><![CDATA[Suchseite]]></de>
+            <en><![CDATA[Search page]]></en>
+            <pl><![CDATA[Strona z wyszukiwarką]]></pl>
+        </locale>
+
+
+        <!-- Colors -->
+        <locale name="templatePresentation.settings.color.title">
+            <de><![CDATA[Farbverwaltung]]></de>
+            <en><![CDATA[Color management]]></en>
+            <pl><![CDATA[Kolory]]></pl>
+        </locale>
+
+        <locale name="template.settings.mobileMenuBackground">
+            <de><![CDATA[Mobile Menü Hintergrundfarbe]]></de>
+            <en><![CDATA[Mobile nav background color]]></en>
+            <pl><![CDATA[Kolor tła nawigacji (mobile)]]]></pl>
+        </locale>
+        <locale name="template.settings.mobileMenuBackground.desc">
+            <de><![CDATA[Die Einstellung ist nur in mobiler Ansicht sichtbar. So kann man die unterschiedlichen
+                Ebenen farblich unterscheiden.]]></de>
+            <en><![CDATA[This setting works only for mobile.]]></en>
+            <pl><![CDATA[Efekt tego ustawienia jest widoczny przy przeglądaniu strony na urządzeniach przenośnych.
+                W ten sposób można odróżnić menu mobilne od nagłówka strony.]]></pl>
+        </locale>
+
+        <locale name="templatePresentation.settings.footerColor.text">
+            <de><![CDATA[Footer]]></de>
+            <en><![CDATA[Footer]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.contentColor.text">
+            <de><![CDATA[Inhalt]]></de>
+            <en><![CDATA[Content]]></en>
+        </locale>
+
+        <locale name="template.settings.colorFooterBackground.text" html="true">
+            <de><![CDATA[Footer Hintegrundfarbe]]></de>
+            <en><![CDATA[Footer background color]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterFont.text">
+            <de><![CDATA[Footer Schriftfarbe]]></de>
+            <en><![CDATA[Footer font color]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterLinks.text">
+            <de><![CDATA[Footer Link-Farbe]]></de>
+            <en><![CDATA[Footer link color]]></en>
+        </locale>
+        <locale name="template.settings.colorMain.text">
+            <de><![CDATA[Hauptfarbe]]></de>
+            <en><![CDATA[Main color]]></en>
+        </locale>
+        <locale name="template.settings.buttonFontColor.text">
+            <de><![CDATA[Schriftfarbe von Buttons]]></de>
+            <en><![CDATA[Font color of buttons]]></en>
+        </locale>
+        <locale name="template.settings.colorMain.description">
+            <de><![CDATA[Farbeinstellung für Links, Linksefekte, anklickbaren Schaltflächen, usw.]]></de>
+            <en><![CDATA[Set the color of links, buttons, etc.]]></en>
+        </locale>
+        <locale name="template.settings.colorMainContentBackground.text">
+            <de><![CDATA[Hintergrundfarbe des Seiteninhaltes]]></de>
+            <en><![CDATA[Background color of the page content]]></en>
+        </locale>
+        <locale name="template.settings.colorMainContentFont.text">
+            <de><![CDATA[Seiteninhalt Fontfarbe]]></de>
+            <en><![CDATA[Font color of the content]]></en>
+        </locale>
+
+        <locale name="brick.control.setting.order">
+            <de><![CDATA[Sortierung]]></de>
+            <en><![CDATA[Sort]]></en>
+        </locale>
+
+        <!-- extra buttons -->
+        <locale name="linkSimpleGrey">
+            <de><![CDATA[Link: simple (grau)]]></de>
+            <en><![CDATA[Link: simple (grey)]]></en>
+        </locale>
+        <locale name="linkSimpleColor">
+            <de><![CDATA[Link: simple (color)]]></de>
+            <en><![CDATA[Link: simple (color)]]></en>
+        </locale>
+        <locale name="LinkSlideUpGrey">
+            <de><![CDATA[Link: slide up (grau)]]></de>
+            <en><![CDATA[Link: slide up (grey)]]></en>
+        </locale>
+        <locale name="LinkSlideUpColor">
+            <de><![CDATA[Link: slide up (color)]]></de>
+            <en><![CDATA[Link: slide up (color)]]></en>
+        </locale>
+        <locale name="LinkSlideRightGrey">
+            <de><![CDATA[Link: slide right (grey)]]></de>
+            <en><![CDATA[Link: slide right (grey)]]></en>
+        </locale>
+
+        <!-- site settings -->
+
+        <locale name="siteSettings">
+            <de><![CDATA[Template Basic Company: Einstellungen]]></de>
+            <en><![CDATA[Template Basic Company: settings]]></en>
+        </locale>
+
+        <locale name="siteSettings.showEmotion">
+            <de><![CDATA[Header Bild anzeigen]]></de>
+            <en><![CDATA[Show header picture]]></en>
+            <pl><![CDATA[Pokaż obrazek nagłówka]]></pl>
+        </locale>
+        <locale name="siteSettings.showTitle">
+            <de><![CDATA[Titel anzeigen]]></de>
+            <en><![CDATA[Show title]]></en>
+        </locale>
+        <locale name="siteSettings.showShort">
+            <de><![CDATA[Kurzbeschreibung anzeigen]]></de>
+            <en><![CDATA[Show short text]]></en>
+        </locale>
+
+    </groups>
+</locales>

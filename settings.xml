@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <project>
+
+        <settings>
+            <config>
+                <section name="templatePresentation.settings">
+
+                    <conf name="bgColorSwitcherPrefix">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>hide</defaultvalue>
+                    </conf>
+                    <conf name="bgColorSwitcherSuffix">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>hide</defaultvalue>
+                    </conf>
+
+                    <!-- nav bar -->
+                    <conf name="navBarHeight">
+                        <type><![CDATA[integer]]></type>
+                        <defaultvalue>80</defaultvalue>
+                    </conf>
+                    <conf name="navPos">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>scroll</defaultvalue>
+                    </conf>
+                    <conf name="navBarMainColor">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#2d4d88</defaultvalue>
+                    </conf>
+                    <conf name="navBarFontColor">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#ffffff</defaultvalue>
+                    </conf>
+
+                    <conf name="mobileFontColor">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#ffffff</defaultvalue>
+                    </conf>
+                    <conf name="mobileMenuBackground">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#252122</defaultvalue>
+                    </conf>
+
+                    <!-- show header -->
+                    <conf name="showHeaderStartPage">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="showHeaderNoSidebar">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="showHeaderLeftSidebar">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="showHeaderRightSidebar">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+
+                    <!-- show breadcrumb -->
+                    <conf name="showBreadcrumbStartPage">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="showBreadcrumbNoSidebar">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="showBreadcrumbLeftSidebar">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="showBreadcrumbRightSidebar">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+
+                    <!-- header img height and value  -->
+                    <conf name="headerHeight">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>false</defaultvalue>
+                    </conf>
+                    <conf name="headerHeightValue">
+                        <type><![CDATA[integer]]></type>
+                        <defaultvalue>300</defaultvalue>
+                    </conf>
+                    <conf name="headerImagePosition">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>center</defaultvalue>
+                    </conf>
+
+                    <!-- colors -->
+                    <conf name="colorMain">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#2D4D88</defaultvalue>
+                    </conf>
+                    <conf name="buttonFontColor">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#ffffff</defaultvalue>
+                    </conf>
+                    <conf name="colorFooterBackground">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#eeeeee</defaultvalue>
+                    </conf>
+                    <conf name="colorFooterFont">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#333333</defaultvalue>
+                    </conf>
+                    <conf name="colorFooterLinks">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#333333</defaultvalue>
+                    </conf>
+                    <conf name="colorMainContentBg">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#ffffff</defaultvalue>
+                    </conf>
+                    <conf name="colorMainContentFont">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#333333</defaultvalue>
+                    </conf>
+                </section>
+            </config>
+
+            <window>
+                <categories>
+                    <category name="templatePresentation">
+                        <text>
+                            <locale group="quiqqer/template-presentation"
+                                    var="templatePresentation.settings.menu.title"
+                                    />
+                        </text>
+                        <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
+
+
+                        <!-- Background Color Switcher Prefix / Suffix -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.bgColorSwitcher">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.settings.bgColorSwitcher.title"
+                                        />
+                            </title>
+
+                            <!-- Background Color Switcher Prefix -->
+                            <select conf="templatePresentation.settings.bgColorSwitcherPrefix">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.bgColorSwitcherPrefix.text"
+                                            />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.bgColorSwitcherPrefix.description"
+                                            />
+                                </description>
+
+                                <option value="hide">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.bgColorSwitcher.hide"
+                                            />
+                                </option>
+                                <option value="display">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.bgColorSwitcher.display"
+                                            />
+                                </option>
+                            </select>
+
+                            <!-- Background Color Switcher Suffix-->
+                            <select conf="templatePresentation.settings.bgColorSwitcherSuffix">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.bgColorSwitcherSuffix.text"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.bgColorSwitcherSuffix.description"
+                                    />
+                                </description>
+
+                                <option value="hide">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.bgColorSwitcher.hide"
+                                    />
+                                </option>
+                                <option value="display">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.bgColorSwitcher.display"
+                                    />
+                                </option>
+                            </select>
+
+                        </settings>
+
+
+                        <!-- header settings -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.header.settings">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.header.settings.title"
+                                        />
+                            </title>
+
+                            <!-- no header? -->
+                            <text>
+                                <locale group="quiqqer/template-presentation"
+                                        var="showHeader.text" />
+                            </text>
+                            <input conf="templatePresentation.settings.showHeaderStartPage"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="showHeaderStartPage.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.showHeaderNoSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="showHeaderNoSidebar.text"
+                                            />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.showHeaderLeftSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="showHeaderLeftSidebar.text"
+                                            />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.showHeaderRightSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="showHeaderRightSidebar.text"
+                                            />
+                                </text>
+                            </input>
+
+                            <!-- header height and value -->
+                            <text>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.header.settings.height.text"
+                                />
+                            </text>
+
+                            <input conf="templatePresentation.settings.headerHeight" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.header.settings.height.enable.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.headerHeightValue" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.header.settings.height.value.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <select conf="templatePresentation.settings.headerImagePosition">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.headerImagePosition.text"
+                                    />
+                                </text>
+
+                                <option value="flex-start">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.headerImagePosition.start"
+                                    />
+                                </option>
+                                <option value="center">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.headerImagePosition.center"
+                                    />
+                                </option>
+                                <option value="flex-end">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.headerImagePosition.end"
+                                    />
+                                </option>
+                            </select>
+                        </settings>
+
+
+                        <!-- breadrcumb -->
+                        <settings title="templatePresentation.settings"
+                                      name="templatePresentation.breadcrumb.settings">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.breadcrumb.settings.title"
+                                />
+                            </title>
+
+                            <!-- no breadcrumb? -->
+                            <text>
+                                <locale group="quiqqer/template-presentation"
+                                        var="showBreadcrumb.text" />
+                            </text>
+                            <input conf="templatePresentation.settings.showBreadcrumbStartPage"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="showBreadcrumbStartPage.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.showBreadcrumbNoSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="showBreadcrumbNoSidebar.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.showBreadcrumbLeftSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="showBreadcrumbLeftSidebar.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.showBreadcrumbRightSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="showBreadcrumbRightSidebar.text"
+                                    />
+                                </text>
+                            </input>
+                        </settings>
+
+
+                        <!-- nav bar -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.navBar">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.settings.navBar.title"
+                                />
+                            </title>
+
+                            <!-- nav bar height -->
+                            <input conf="templatePresentation.settings.navBarHeight" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBar.Height.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- Menüposition -->
+
+                            <select conf="templatePresentation.settings.navPos">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navPos.text"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navPos.description"
+                                    />
+                                </description>
+
+                                <option value="fix">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navPos.fix"
+                                    />
+                                </option>
+                                <option value="scroll">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navPos.scroll"
+                                    />
+                                </option>
+
+
+                            </select>
+
+                            <!-- nav bar / menu colors -->
+                            <input conf="templatePresentation.settings.navBarMainColor"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarMainColor.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.navBarFontColor"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarFontColor.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- mobile menu (mega menu) -->
+                            <input conf="templatePresentation.settings.mobileFontColor"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.mobileFontColor"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.mobileMenuBackground"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.mobileMenuBackground"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.mobileMenuBackground.desc"
+                                    />
+                                </description>
+                            </input>
+
+                        </settings>
+
+                        <!-- Colors -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.color">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.settings.color.title"
+                                        />
+                            </title>
+
+                            <input conf="templatePresentation.settings.colorMain"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorMain.text"
+                                            />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorMain.description"
+                                            />
+                                </description>
+                            </input>
+
+                            <input conf="templatePresentation.settings.buttonFontColor"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.buttonFontColor.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <text>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.settings.footerColor.text"
+                                />
+                            </text>
+                            <input conf="templatePresentation.settings.colorFooterBackground"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorFooterBackground.text"
+                                            />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.colorFooterFont"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorFooterFont.text"
+                                            />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.colorFooterLinks"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorFooterLinks.text"
+                                            />
+                                </text>
+                            </input>
+
+                            <text>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.settings.contentColor.text"
+                                />
+                            </text>
+
+                            <input conf="templatePresentation.settings.colorMainContentBg"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorMainContentBackground.text"
+                                            />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.colorMainContentFont"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorMainContentFont.text"
+                                            />
+                                </text>
+                            </input>
+
+                        </settings>
+
+                    </category>
+                </categories>
+
+            </window>
+        </settings>
+
+        <wysiwyg class="page-content">
+            <css src="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic"/>
+            <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/style.css"/>
+
+            <styles>
+                <!-- link effect 1: simple (grey) -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="linkSimpleGrey" />
+                    <attributes>
+                        <attribute name="class">link-simple-grey</attribute>
+                    </attributes>
+                </style>
+
+                <!-- link effect 2: simple (color) -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="linkSimpleColor" />
+                    <attributes>
+                        <attribute name="class">link-simple-color</attribute>
+                    </attributes>
+                </style>
+
+
+                <!-- link effect 3: slide up (grey) -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="LinkSlideUpGrey" />
+                    <attributes>
+                        <attribute name="class">link-slide-up-grey</attribute>
+                    </attributes>
+                </style>
+
+                <!-- link effect 4: slide up (color) -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="LinkSlideUpColor" />
+                    <attributes>
+                        <attribute name="class">link-slide-up-color</attribute>
+                    </attributes>
+                </style>
+
+                <!-- link effect 5: slide right (grey) -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="LinkSlideRightGrey" />
+                    <attributes>
+                        <attribute name="class">link-slide-right-grey</attribute>
+                    </attributes>
+                </style>
+
+                <!-- Template Button Small -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="templateButton.small" />
+                    <attributes>
+                        <attribute name="class">template-button template-button-small</attribute>
+                    </attributes>
+                </style>
+                <!-- Template Button medium -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="templateButton.medium" />
+                    <attributes>
+                        <attribute name="class">template-button template-button-medium</attribute>
+                    </attributes>
+                </style>
+                <!-- Template Button Big -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="templateButton.big" />
+                    <attributes>
+                        <attribute name="class">template-button template-button-big</attribute>
+                    </attributes>
+                </style>
+
+            </styles>
+        </wysiwyg>
+
+    </project>
+</quiqqer>
