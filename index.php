@@ -79,7 +79,6 @@ try {
     QUI\System\Log::addNotice($Exception->getMessage());
 }
 
-
 /**
  * Breadcrumb
  */

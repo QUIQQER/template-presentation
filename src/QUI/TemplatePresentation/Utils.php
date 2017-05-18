@@ -75,16 +75,29 @@ class Utils
                 break;
         }
 
+        $startpageFirstHeaderBrick = false;
+
+        if ($Template->getLayoutType() == 'layout/startPage' &&
+            $Project->getConfig('templatePresentation.settings.startpageFirstHeaderBrick')
+        ) {
+            $startpageFirstHeaderBrick = true;
+        }
+
         $settingsCSS = include 'settings.css.php';
 
+
         $config += array(
-            'quiTplType'     => $Project->getConfig('templatePresentation.settings.standardType'),
-            'showHeader'     => $showHeader,
-            'showBreadcrumb' => $showBreadcrumb,
-            'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
-            'typeClass'      => 'type-' . str_replace(array('/', ':'), '-', $params['Site']->getAttribute('type')),
-            'bodyClass'      => $bodyClass
+            'quiTplType'                => $Project->getConfig('templatePresentation.settings.standardType'),
+            'showHeader'                => $showHeader,
+            'showBreadcrumb'            => $showBreadcrumb,
+            'settingsCSS'               => '<style>' . $settingsCSS . '</style>',
+            'typeClass'                 => 'type-' . str_replace(array('/', ':'), '-',
+                    $params['Site']->getAttribute('type')),
+            'bodyClass'                 => $bodyClass,
+            'navPos'                    => $Project->getConfig('templatePresentation.settings.navPos'),
+            'startpageFirstHeaderBrick' => $startpageFirstHeaderBrick
         );
+
 
         // set cache
         QUI\Cache\Manager::set(

@@ -41,6 +41,22 @@
     {/if}
     <!-- [end] css combine -->
 
+
+    {assign var=headerDisplayed value=false}
+    {if $showHeader && $Site->getAttribute('templatePresentation.showEmotion')}
+        {assign var=headerDisplayed value='header-displayed'}
+    {/if}
+
+    {assign var=layout value=false}
+
+    <!-- js effekt nur wenn nav fest und SETTING -->
+    {if $navPos == 'fix'}
+    <script>
+        var showEffect = true;
+    </script>
+    {/if}
+
+
     <style>
 
         .prefix-suffix-nofull-width .quiqqer-bricks-promoslider-wallpaper .grid-container {
@@ -48,15 +64,56 @@
             padding-right: 0;
         }
 
+        /**
+         * navigation absolut positionieren
+         * wenn Emotionbild  / header angezeigt
+         */
+        .header-displayed .header-bar {
+            position: absolute;
+        }
+
+        /**
+         * kein bg und box shadow, wenn Emotionbild / header
+         */
+        .header-displayed .header-bar,
+        .header-displayed .header-bar-inner-nav {
+            background: none;
+            box-shadow: none;
+        }
+
+        {if $startpageFirstHeaderBrick}
+            .startpage .body-container {
+                top: 0 !important;
+            }
+        {/if}
+
+
+/* das muss als einstellung
+nav erlauben über dem content oder nicht? */
+        .startpage .header-bar {
+            position: absolute;
+        }
+
+        /**
+         * wenn Emotion / header angezeigt aber nav scrollbar
+         * dann trotzdem
+         */
+        {if $headerDisplayed}
+        .header-displayed .body-container {
+            top: 0;
+        }
+        {/if}
     </style>
 
     {$settingsCSS}
 
+
 </head>
-<body class="{$bodyClass} page-{$Site->getId()} {$typeClass}" id="body-top">
+
+<body class="{$bodyClass} page-{$Site->getId()} {$typeClass} {$headerDisplayed}" id="body-top">
 
 <!-- menu -->
-<div class="header-bar">
+<div class="header-bar header-bar-scroll">
     <div class="grid-container header-bar-inner">
         <div class="header-bar-inner-nav" id="navigation">
 
@@ -79,7 +136,12 @@
         <div class="page-header-container grid-container">
             {if $Site->getAttribute('templatePresentation.showTitle')}
             <h1 class="page-header-text-title">
-                {$Site->getAttribute('title')}
+                {if $Site->getAttribute('templatePresentation.altTitle') &&
+                $Site->getAttribute('templatePresentation.altTitle') != ''}
+                    {$Site->getAttribute('templatePresentation.altTitle')}
+                {else}
+                    {$Site->getAttribute('templatePresentation.title')}
+                {/if}
             </h1>
             {/if}
 
@@ -87,7 +149,12 @@
                 $Site->getAttribute('short')}
             <div class="page-header-text-wrapper">
                 <div class="page-header-text-wrapper-short">
-                    {$Site->getAttribute('short')}
+                    {if $Site->getAttribute('templatePresentation.altShort') &&
+                    $Site->getAttribute('templatePresentation.altShort') != ''}
+                        {$Site->getAttribute('templatePresentation.altShort')|nl2br}
+                    {else}
+                        {$Site->getAttribute('short')|nl2br}
+                    {/if}
                 </div>
             </div>
             {/if}
@@ -96,7 +163,7 @@
     {/strip}
     {/if}
 
-    <!-- header suffix -->
+
     <!-- breadcrumb -->
     {if $showBreadcrumb}
     <div class="template-breadcrumb">
@@ -109,11 +176,12 @@
     <div class="headerSuffix">
         <!-- header suffix  -->
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+        {assign var=counter value=1}
         {foreach $headerSuffix as $Brick}
 
         {assign var=noPadding value=''}
         {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
-        {assign var=noPadding value='-noPadding'}
+            {assign var=noPadding value='-noPadding'}
         {/if}
         {if $Brick->getSetting( 'brickFullWidth' )}
         <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding}
@@ -127,8 +195,9 @@
         {else}
         <div class="prefix-suffix-nofull-width tpl-presentation-row
                                 headerSuffix-container
-                                {cycle values='brick-even-suffix,brick-odd-suffix'}">
-            <div class="grid-container">
+                                {cycle values='brick-even-suffix,brick-odd-suffix'}
+                                {if $counter == 1 && $startpageFirstHeaderBrick}start-page-header{/if}">
+            <div {if !$startpageFirstHeaderBrick}class="grid-container"{/if}>
                 <section>
                     {if $Brick->getAttribute('frontendTitle')}
                     <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
@@ -139,6 +208,7 @@
             </div>
         </div>
         {/if}
+        {assign var=counter value=$counter + 1}
         {/foreach}
     </div>
 

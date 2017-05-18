@@ -442,6 +442,7 @@ thead {
     border-bottom: 1px solid #eee;
     position: relative;
     overflow: hidden;
+    align-items: center;
 }
 
 .header-img {
@@ -455,15 +456,14 @@ thead {
     position: absolute;
     left: 0;
     right: 0;
-    top: 10%;
 }
 
 .page-header-text-title,
 .page-header-text-wrapper-short {
     color: #fff;
     display: inline-block;
-    padding: 14px 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+    /*padding: 14px 20px;*/
+    /*background-color: rgba(0, 0, 0, 0.5);*/
     letter-spacing: 1px;
 }
 
@@ -526,10 +526,17 @@ h1.page-header-text-title {
 
 .header-bar {
     background: rgba(255, 255, 255, 1);
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);
     position: relative;
     z-index: 10;
     width: 100%;
+    transition: 0.3s all ease-in-out;
+    /* fix jumping nav in chrome */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .header-bar-inner {
@@ -537,6 +544,12 @@ h1.page-header-text-title {
     display: flex;
     height: 100%;
 }
+
+/*.startpage .header-bar,
+.startpage .header-bar-inner-nav {
+    background: none;
+    box-shadow: none;
+}*/
 
 .header-bar-inner-logo {
     margin-right: 20px;
@@ -546,6 +559,15 @@ h1.page-header-text-title {
 
 .page-header-logo-mobile {
     display: none;
+}
+
+
+
+
+.start-page-header {
+    padding: 0 !important;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* mega menu
@@ -627,6 +649,12 @@ div.slideout-menu {
 /** promo slider dots
  * ========================================================== */
 
+.body-container .quiqqer-bricks-promoslider-wallpaper-text,
+.body-container .quiqqer-bricks-promoslider-wallpaper-text__right {
+    margin-top: 100px;
+}
+
+/* dots */
 span.quiqqer-bricks-promoslider-wallpaper-dot {
     box-shadow: none;
     background: none;

@@ -74,6 +74,7 @@ $headerImagePosition = $Project->getConfig('templatePresentation.settings.header
 $navPos = $Project->getConfig('templatePresentation.settings.navPos');
 $colorMainButton = $Convert->colorBrightness($colorMain, 0.7);
 
+
 ob_start();
 
 ?>
@@ -85,6 +86,29 @@ ob_start();
 .header-bar,
 .header-bar-inner-nav {
     background: <?php echo $navBarMainColor; ?>;
+}
+
+
+.header-bar,
+.header-bar-inner a,
+.header-bar-inner a:link,
+.header-bar-inner a:active,
+.header-bar-inner a:visited,
+.header-bar-inner a:hover {
+    color: <?php echo $navBarFontColor; ?>;
+}
+
+<?php if($startpageFirstHeaderBrick) {?>
+.startpage .header-bar,
+.startpage .header-bar-inner-nav {
+    background: none;
+    box-shadow: none;
+    /*color: <?php echo $navBarMainColor; ?>;*/
+}
+<?php } ?>
+
+.nav-bar-scrolled {
+    background: <?php echo $navBarMainColor; ?> !important;
 }
 
 /* mobile nav background */
@@ -107,16 +131,6 @@ ob_start();
     background: <?php echo $navBarMainColorLighter; ?>;
 }
 
-
-.header-bar,
-.header-bar-inner a,
-.header-bar-inner a:link,
-.header-bar-inner a:active,
-.header-bar-inner a:visited,
-.header-bar-inner a:hover {
-    color: <?php echo $navBarFontColor; ?>;
-}
-
 .color-main {
     color: <?php echo $colorMain; ?>;
 }
@@ -130,7 +144,6 @@ ob_start();
 }
 
 .header-bar,
-.header-bar-2,
 .header-bar-inner-nav,
 .page-header-navigation-entry,
 .header-bar-search,

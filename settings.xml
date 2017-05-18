@@ -6,6 +6,11 @@
             <config>
                 <section name="templatePresentation.settings">
 
+                    <conf name="startpageFirstHeaderBrick">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+
                     <conf name="bgColorSwitcherPrefix">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>hide</defaultvalue>
@@ -130,9 +135,29 @@
                         <text>
                             <locale group="quiqqer/template-presentation"
                                     var="templatePresentation.settings.menu.title"
-                                    />
+                            />
                         </text>
                         <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
+
+                        <!-- general Settings -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.general">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.settings.general"
+                                />
+                            </title>
+
+                            <!-- extra first brick on start page -->
+                            <input conf="templatePresentation.settings.startpageFirstHeaderBrick"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="general.startpageFirstHeaderBrick.text"
+                                    />
+                                </text>
+                            </input>
+                        </settings>
 
 
                         <!-- Background Color Switcher Prefix / Suffix -->
@@ -141,7 +166,7 @@
                             <title>
                                 <locale group="quiqqer/template-presentation"
                                         var="templatePresentation.settings.bgColorSwitcher.title"
-                                        />
+                                />
                             </title>
 
                             <!-- Background Color Switcher Prefix -->
@@ -149,24 +174,24 @@
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.bgColorSwitcherPrefix.text"
-                                            />
+                                    />
                                 </text>
 
                                 <description>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.bgColorSwitcherPrefix.description"
-                                            />
+                                    />
                                 </description>
 
                                 <option value="hide">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.bgColorSwitcher.hide"
-                                            />
+                                    />
                                 </option>
                                 <option value="display">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.bgColorSwitcher.display"
-                                            />
+                                    />
                                 </option>
                             </select>
 
@@ -205,13 +230,13 @@
                             <title>
                                 <locale group="quiqqer/template-presentation"
                                         var="templatePresentation.header.settings.title"
-                                        />
+                                />
                             </title>
 
                             <!-- no header? -->
                             <text>
                                 <locale group="quiqqer/template-presentation"
-                                        var="showHeader.text" />
+                                        var="showHeader.text"/>
                             </text>
                             <input conf="templatePresentation.settings.showHeaderStartPage"
                                    type="checkbox">
@@ -226,7 +251,7 @@
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="showHeaderNoSidebar.text"
-                                            />
+                                    />
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.showHeaderLeftSidebar"
@@ -234,7 +259,7 @@
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="showHeaderLeftSidebar.text"
-                                            />
+                                    />
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.showHeaderRightSidebar"
@@ -242,7 +267,7 @@
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="showHeaderRightSidebar.text"
-                                            />
+                                    />
                                 </text>
                             </input>
 
@@ -296,7 +321,7 @@
 
                         <!-- breadrcumb -->
                         <settings title="templatePresentation.settings"
-                                      name="templatePresentation.breadcrumb.settings">
+                                  name="templatePresentation.breadcrumb.settings">
                             <title>
                                 <locale group="quiqqer/template-presentation"
                                         var="templatePresentation.breadcrumb.settings.title"
@@ -306,7 +331,7 @@
                             <!-- no breadcrumb? -->
                             <text>
                                 <locale group="quiqqer/template-presentation"
-                                        var="showBreadcrumb.text" />
+                                        var="showBreadcrumb.text"/>
                             </text>
                             <input conf="templatePresentation.settings.showBreadcrumbStartPage"
                                    type="checkbox">
@@ -439,7 +464,7 @@
                             <title>
                                 <locale group="quiqqer/template-presentation"
                                         var="templatePresentation.settings.color.title"
-                                        />
+                                />
                             </title>
 
                             <input conf="templatePresentation.settings.colorMain"
@@ -447,12 +472,12 @@
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorMain.text"
-                                            />
+                                    />
                                 </text>
                                 <description>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorMain.description"
-                                            />
+                                    />
                                 </description>
                             </input>
 
@@ -475,7 +500,7 @@
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorFooterBackground.text"
-                                            />
+                                    />
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.colorFooterFont"
@@ -483,7 +508,7 @@
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorFooterFont.text"
-                                            />
+                                    />
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.colorFooterLinks"
@@ -491,7 +516,7 @@
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorFooterLinks.text"
-                                            />
+                                    />
                                 </text>
                             </input>
 
@@ -506,7 +531,7 @@
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorMainContentBackground.text"
-                                            />
+                                    />
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.colorMainContentFont"
@@ -514,7 +539,7 @@
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorMainContentFont.text"
-                                            />
+                                    />
                                 </text>
                             </input>
 
@@ -534,7 +559,7 @@
                 <!-- link effect 1: simple (grey) -->
                 <style element="a">
                     <locale group="quiqqer/template-presentation"
-                            var="linkSimpleGrey" />
+                            var="linkSimpleGrey"/>
                     <attributes>
                         <attribute name="class">link-simple-grey</attribute>
                     </attributes>
@@ -543,7 +568,7 @@
                 <!-- link effect 2: simple (color) -->
                 <style element="a">
                     <locale group="quiqqer/template-presentation"
-                            var="linkSimpleColor" />
+                            var="linkSimpleColor"/>
                     <attributes>
                         <attribute name="class">link-simple-color</attribute>
                     </attributes>
@@ -553,7 +578,7 @@
                 <!-- link effect 3: slide up (grey) -->
                 <style element="a">
                     <locale group="quiqqer/template-presentation"
-                            var="LinkSlideUpGrey" />
+                            var="LinkSlideUpGrey"/>
                     <attributes>
                         <attribute name="class">link-slide-up-grey</attribute>
                     </attributes>
@@ -562,7 +587,7 @@
                 <!-- link effect 4: slide up (color) -->
                 <style element="a">
                     <locale group="quiqqer/template-presentation"
-                            var="LinkSlideUpColor" />
+                            var="LinkSlideUpColor"/>
                     <attributes>
                         <attribute name="class">link-slide-up-color</attribute>
                     </attributes>
@@ -571,7 +596,7 @@
                 <!-- link effect 5: slide right (grey) -->
                 <style element="a">
                     <locale group="quiqqer/template-presentation"
-                            var="LinkSlideRightGrey" />
+                            var="LinkSlideRightGrey"/>
                     <attributes>
                         <attribute name="class">link-slide-right-grey</attribute>
                     </attributes>
@@ -580,7 +605,7 @@
                 <!-- Template Button Small -->
                 <style element="a">
                     <locale group="quiqqer/template-presentation"
-                            var="templateButton.small" />
+                            var="templateButton.small"/>
                     <attributes>
                         <attribute name="class">template-button template-button-small</attribute>
                     </attributes>
@@ -588,7 +613,7 @@
                 <!-- Template Button medium -->
                 <style element="a">
                     <locale group="quiqqer/template-presentation"
-                            var="templateButton.medium" />
+                            var="templateButton.medium"/>
                     <attributes>
                         <attribute name="class">template-button template-button-medium</attribute>
                     </attributes>
@@ -596,7 +621,7 @@
                 <!-- Template Button Big -->
                 <style element="a">
                     <locale group="quiqqer/template-presentation"
-                            var="templateButton.big" />
+                            var="templateButton.big"/>
                     <attributes>
                         <attribute name="class">template-button template-button-big</attribute>
                     </attributes>
