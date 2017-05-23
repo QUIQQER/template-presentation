@@ -2,7 +2,7 @@
 <site>
     <!-- global attributes -->
     <attributes>
-        <attribute>templatePresentation.showEmotion</attribute>
+        <attribute>templatePresentation.showHeader</attribute>
         <attribute>templatePresentation.showTitle</attribute>
         <attribute>templatePresentation.showShort</attribute>
         <attribute>templatePresentation.altTitle</attribute>
@@ -17,12 +17,26 @@
                             var="templatePresentation.siteSettings"/>
                 </title>
 
-                <input conf="templatePresentation.showEmotion" type="checkbox">
+                <!-- show header -->
+                <select conf="templatePresentation.showHeader">
                     <text>
                         <locale group="quiqqer/template-presentation"
-                                var="templatePresentation.siteSettings.showEmotion"/>
+                                var="templatePresentation.siteSettings.showHeader"/>
                     </text>
-                </input>
+                    <option value="default">
+                        <locale group="quiqqer/template-presentation"
+                                var="templatePresentation.siteSettings.showHeader.default"/>
+                    </option>
+                    <option value="show">
+                        <locale group="quiqqer/template-presentation"
+                                var="templatePresentation.siteSettings.showHeader.show"/>
+                    </option>
+                    <option value="hide">
+                        <locale group="quiqqer/template-presentation"
+                                var="templatePresentation.siteSettings.showHeader.hide"/>
+                    </option>
+                </select>
+
                 <input conf="templatePresentation.showTitle" type="checkbox">
                     <text>
                         <locale group="quiqqer/template-presentation" var="siteSettings.showTitle"/>
@@ -52,37 +66,37 @@
     <layouts>
         <layout type="layout/startPage">
             <title>
-                <locale group="quiqqer/template-presentation" var="admin.layout.startpage" />
+                <locale group="quiqqer/template-presentation" var="admin.layout.startpage"/>
             </title>
             <description>
-                <locale group="quiqqer/template-presentation" var="admin.layout.startpage.desc" />
+                <locale group="quiqqer/template-presentation" var="admin.layout.startpage.desc"/>
             </description>
         </layout>
 
         <layout type="layout/noSidebar">
             <title>
-                <locale group="quiqqer/template-presentation" var="admin.layout.noSidebar" />
+                <locale group="quiqqer/template-presentation" var="admin.layout.noSidebar"/>
             </title>
             <description>
-                <locale group="quiqqer/template-presentation" var="admin.layout.noSidebar.desc" />
+                <locale group="quiqqer/template-presentation" var="admin.layout.noSidebar.desc"/>
             </description>
         </layout>
 
         <layout type="layout/leftSidebar">
             <title>
-                <locale group="quiqqer/template-presentation" var="admin.layout.leftSidebar" />
+                <locale group="quiqqer/template-presentation" var="admin.layout.leftSidebar"/>
             </title>
             <description>
-                <locale group="quiqqer/template-presentation" var="admin.layout.leftSidebar.desc" />
+                <locale group="quiqqer/template-presentation" var="admin.layout.leftSidebar.desc"/>
             </description>
         </layout>
 
         <layout type="layout/rightSidebar">
             <title>
-                <locale group="quiqqer/template-presentation" var="admin.layout.rightSidebar" />
+                <locale group="quiqqer/template-presentation" var="admin.layout.rightSidebar"/>
             </title>
             <description>
-                <locale group="quiqqer/template-presentation" var="admin.layout.rightSidebar.desc" />
+                <locale group="quiqqer/template-presentation" var="admin.layout.rightSidebar.desc"/>
             </description>
         </layout>
     </layouts>

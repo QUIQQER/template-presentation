@@ -29,12 +29,12 @@
 
         <!-- areas -->
         <locale name="area.footer.title">
-            <de><![CDATA[Footer Bausteinzone]]></de>
-            <en><![CDATA[Footer brickarea]]></en>
+            <de><![CDATA[Fußzeile der Seite (Footer)]]></de>
+            <en><![CDATA[Footer brick area]]></en>
             <pl><![CDATA[Stopka]]></pl>
         </locale>
         <locale name="area.footer.description">
-            <de><![CDATA[Bausteinzone des Footer]]></de>
+            <de><![CDATA[Platz für Inhalte in der Fußzeile]]></de>
             <en><![CDATA[Brick area of the footer]]></en>
             <pl><![CDATA[Miejsce na umieszczenie pluginów w stopce.]]></pl>
         </locale>
@@ -47,7 +47,7 @@
         <locale name="area.startpageContent.description">
             <de><![CDATA[Bausteinzone eines Landingpage Layouts]]></de>
             <en><![CDATA[Brick area of a landingpage layout]]></en>
-            <pl><![CDATA[Dodatkowe miejsce na pluginy w głównej części strony w przypadku układu bez kolumn.]]></pl>
+            <pl><![CDATA[Dodatkowe miejsce na pluginy w głównej części strony.]]></pl>
         </locale>
 
         <locale name="area.sidebar.left.title">
@@ -83,7 +83,7 @@
         </locale>
 
         <locale name="area.sidebar.prefix.content.title">
-            <de><![CDATA[Prefix Zone]]></de>
+            <de><![CDATA[Oberhalb vom Inhalt (Content Prefix)]]></de>
             <en><![CDATA[Prefix area]]></en>
         </locale>
         <locale name="area.sidebar.prefix.content.description">
@@ -92,7 +92,7 @@
         </locale>
 
         <locale name="area.sidebar.suffix.content.title">
-            <de><![CDATA[Suffix Zone]]></de>
+            <de><![CDATA[Unterhalb des Inhaltes (Content Suffix)]]></de>
             <en><![CDATA[Suffix area]]></en>
         </locale>
         <locale name="area.sidebar.suffix.content.description">
@@ -101,7 +101,7 @@
         </locale>
 
         <locale name="area.headerSuffix.title">
-            <de><![CDATA[Header Suffix]]></de>
+            <de><![CDATA[Unterhalb des Kopfbereiches (Header Suffix )]]></de>
             <en><![CDATA[Header suffix]]></en>
         </locale>
         <locale name="area.headerSuffix.description">
@@ -110,7 +110,7 @@
         </locale>
 
         <locale name="area.footerPrefix.title">
-            <de><![CDATA[Footer Prefix]]></de>
+            <de><![CDATA[Oberhalb der Fußzeile (Footer Prefix)]]></de>
             <en><![CDATA[Footer Prefix]]></en>
         </locale>
         <locale name="area.footerPrefix.description">

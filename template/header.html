@@ -1,0 +1,42 @@
+{strip}
+{assign var=useShort value=false}
+{assign var=useAltShort value=false}
+
+{if $Site->getAttribute('templatePresentation.showShort') &&
+    $Site->getAttribute('short')}
+    {assign var=useShort value=true}
+{/if}
+
+{if $Site->getAttribute('templatePresentation.altShort') &&
+    $Site->getAttribute('templatePresentation.altShort') != ''}
+    {assign var=useAltShort value=true}
+{/if}
+
+<header class="page-header">
+    {if $Site->getAttribute('image_emotion')}
+        {image src=$Site->getAttribute('image_emotion')
+               class="header-img"
+               title=$Site->getAttribute('title')
+        }
+    {/if}
+    <div class="page-header-container grid-container">
+        {if $siteTitle}
+        <h1 class="page-header-text-title">
+            {$siteTitle}
+        </h1>
+        {/if}
+
+        {if $useShort}
+        <div class="page-header-text-wrapper">
+            <div class="page-header-text-wrapper-short">
+                {if $useAltShort}
+                    {$Site->getAttribute('templatePresentation.altShort')|nl2br}
+                {else}
+                    {$Site->getAttribute('short')|nl2br}
+                {/if}
+            </div>
+        </div>
+        {/if}
+    </div>
+</header>
+{/strip}

@@ -5,6 +5,9 @@
  */
 QUI\Utils\Site::setRecursivAttribute($Site, 'image_emotion');
 
+/*header setting erben*/
+QUI\Utils\Site::setRecursivAttribute($Site, 'templatePresentation.showHeader');
+
 // Inhalts Verhalten
 if ($Site->getAttribute('templatePresentation.showTitle') ||
     $Site->getAttribute('templatePresentation.showShort')
@@ -96,6 +99,23 @@ $templateSettings = QUI\TemplatePresentation\Utils::getConfig(array(
 $templateSettings['BricksManager'] = \QUI\Bricks\Manager::init();
 $templateSettings['Breadcrumb']    = $Breadcrumb;
 $templateSettings['MegaMenu']      = $MegaMenu;
+
+/**
+ * header: title
+ */
+$siteTitle = false;
+
+if ($Site->getAttribute('templatePresentation.showTitle')) {
+    $siteTitle = $Site->getAttribute('title');
+
+    if ($Site->getAttribute('templatePresentation.showTitle') != '') {
+        $siteTitle = $Site->getAttribute('templatePresentation.altTitle');
+    }
+}
+
+$Engine->assign(array(
+    'siteTitle' => $siteTitle
+));
 
 
 $Engine->assign($templateSettings);

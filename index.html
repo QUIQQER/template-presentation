@@ -32,19 +32,12 @@
     {unsemantic}
     <link href="{$URL_TPL_DIR}bin/css/style.css" rel="stylesheet" type="text/css"/>
 
-    {if $quiTplType && $quiTplType == 'rightSidebar'}
-    <link href="{$URL_TPL_DIR}bin/types/rightSidebar.css" rel="stylesheet" type="text/css"/>
-    {/if}
-
-    {if $quiTplType && $quiTplType == 'leftSidebar'}
-    <link href="{$URL_TPL_DIR}bin/types/leftSidebar.css" rel="stylesheet" type="text/css"/>
-    {/if}
     <!-- [end] css combine -->
 
 
     {assign var=headerDisplayed value=false}
-    {if $showHeader && $Site->getAttribute('templatePresentation.showEmotion')}
-        {assign var=headerDisplayed value='header-displayed'}
+    {if $showHeader}
+    {assign var=headerDisplayed value='header-displayed'}
     {/if}
 
     {assign var=layout value=false}
@@ -87,9 +80,8 @@
             }
         {/if}
 
-
-/* das muss als einstellung
-nav erlauben über dem content oder nicht? */
+        /* das muss als einstellung
+        nav erlauben über dem content oder nicht? */
         .startpage .header-bar {
             position: absolute;
         }
@@ -99,9 +91,9 @@ nav erlauben über dem content oder nicht? */
          * dann trotzdem
          */
         {if $headerDisplayed}
-        .header-displayed .body-container {
-            top: 0;
-        }
+            .header-displayed .body-container {
+                top: 0;
+            }
         {/if}
     </style>
 
@@ -126,44 +118,9 @@ nav erlauben über dem content oder nicht? */
 <!-- page -->
 <div class="body-container">
     <!-- header -->
-    {if $showHeader && $Site->getAttribute('templatePresentation.showEmotion')}
-    {strip}
-    <header class="page-header">
-        {if $Site->getAttribute('image_emotion')}
-            {image src=$Site->getAttribute('image_emotion') class="header-img"
-            title=$Site->getAttribute('title')}
-        {/if}
-        <div class="page-header-container grid-container">
-            {if $Site->getAttribute('templatePresentation.showTitle')}
-            <h1 class="page-header-text-title">
-                {if $Site->getAttribute('templatePresentation.altTitle') &&
-                $Site->getAttribute('templatePresentation.altTitle') != ''}
-                    {$Site->getAttribute('templatePresentation.altTitle')}
-                {else}
-                    {$Site->getAttribute('templatePresentation.title')}
-                {/if}
-            </h1>
-            {/if}
-
-            {if $Site->getAttribute('templatePresentation.showShort') &&
-                $Site->getAttribute('short')}
-            <div class="page-header-text-wrapper">
-                <div class="page-header-text-wrapper-short">
-                    {if $Site->getAttribute('templatePresentation.altShort') &&
-                    $Site->getAttribute('templatePresentation.altShort') != ''}
-                        {$Site->getAttribute('templatePresentation.altShort')|nl2br}
-                    {else}
-                        {$Site->getAttribute('short')|nl2br}
-                    {/if}
-                </div>
-            </div>
-            {/if}
-        </div>
-    </header>
-    {/strip}
+    {if $showHeader}
+        {fetch template="template/header.html" siteTitle=$siteTitle Site=$Site}
     {/if}
-
-
     <!-- breadcrumb -->
     {if $showBreadcrumb}
     <div class="template-breadcrumb">
@@ -181,7 +138,7 @@ nav erlauben über dem content oder nicht? */
 
         {assign var=noPadding value=''}
         {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
-            {assign var=noPadding value='-noPadding'}
+        {assign var=noPadding value='-noPadding'}
         {/if}
         {if $Brick->getSetting( 'brickFullWidth' )}
         <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding}
@@ -197,7 +154,7 @@ nav erlauben über dem content oder nicht? */
                                 headerSuffix-container
                                 {cycle values='brick-even-suffix,brick-odd-suffix'}
                                 {if $counter == 1 && $startpageFirstHeaderBrick}start-page-header{/if}">
-            <div {if !$startpageFirstHeaderBrick}class="grid-container"{/if}>
+            <div {if !$startpageFirstHeaderBrick || $counter> 1}class="grid-container"{/if}>
                 <section>
                     {if $Brick->getAttribute('frontendTitle')}
                     <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
@@ -211,6 +168,7 @@ nav erlauben über dem content oder nicht? */
         {assign var=counter value=$counter + 1}
         {/foreach}
     </div>
+
 
     <!-- content -->
     <div class="main-content-color-bg  {cycle values='' reset=true}">
@@ -291,7 +249,6 @@ nav erlauben über dem content oder nicht? */
         </div>
     </footer>
 </div>
-
 
 <!-- [begin] js combine -->
 <script src="{$URL_OPT_DIR}bin/require.js"></script>

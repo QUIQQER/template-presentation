@@ -75,6 +75,15 @@ class Utils
                 break;
         }
 
+        /* site own show header */
+        switch ($params['Site']->getAttribute('templatePresentation.showHeader')) {
+            case 'show':
+                $showHeader = true;
+                break;
+            case 'hide':
+                $showHeader = false;
+        }
+
         $startpageFirstHeaderBrick = false;
 
         if ($Template->getLayoutType() == 'layout/startPage' &&
@@ -87,7 +96,7 @@ class Utils
 
 
         $config += array(
-            'quiTplType'                => $Project->getConfig('templatePresentation.settings.standardType'),
+//            'quiTplType'                => $Project->getConfig('templatePresentation.settings.standardType'),
             'showHeader'                => $showHeader,
             'showBreadcrumb'            => $showBreadcrumb,
             'settingsCSS'               => '<style>' . $settingsCSS . '</style>',
