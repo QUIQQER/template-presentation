@@ -386,9 +386,9 @@ ul.alt {
     line-height: 1em;
 }
 
-/*.prefix-suffix-full-width.tpl-presentation-row {
+.prefix-suffix-full-width.tpl-presentation-row {
     padding: 0;
-}*/
+}
 
 /* brick even prefix suffix */
 
@@ -481,6 +481,7 @@ h1.page-header-text-title {
     float: none;
     clear: both;
     text-align: left;
+    font-size: 1.2em;
 }
 
 .page-header-logo {
@@ -526,7 +527,7 @@ h1.page-header-text-title {
 
 .header-bar {
     background: rgba(255, 255, 255, 1);
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);
+    /*box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);*/
     position: relative;
     z-index: 10;
     width: 100%;
@@ -543,6 +544,22 @@ h1.page-header-text-title {
     align-items: center;
     display: flex;
     height: 100%;
+}
+
+/**
+ * navigation absolut positionieren
+ * wenn Emotionbild  / header angezeigt
+ */
+.header-displayed .header-bar {
+    position: absolute;
+}
+
+/**
+ * kein bg und wenn Emotionbild / header angezeigt wird
+ */
+.header-displayed .header-bar,
+.header-displayed .header-bar-inner-nav {
+    background: none;
 }
 
 /*.startpage .header-bar,
@@ -570,6 +587,8 @@ h1.page-header-text-title {
     overflow: hidden;
 }
 
+
+
 /* mega menu
  * ========================================================== */
 
@@ -582,10 +601,11 @@ h1.page-header-text-title {
 }
 
 .quiqqer-menu-megaMenu-list-item {
-    font-weight: bold;
+    font-weight: normal;
     padding: 0 10px !important;
-    text-transform: uppercase;
-    font-size: 0.9em;
+    /*text-transform: uppercase;*/
+    /*font-size: 0.9em;*/
+    letter-spacing: 1px;
 }
 
 .quiqqer-menu-megaMenu .fa-angle-down {
@@ -607,6 +627,19 @@ h1.page-header-text-title {
 
 .quiqqer-menu-megaMenu-children-image-entry-title {
     text-align: center;
+}
+
+/* menu arrow */
+.quiqqer-menu-megaMenu-children-simple:after {
+    content: '';
+    position: absolute;
+    top: -28px;
+    left: 20%;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    width: 0;
+    height: 0;
+    border-top: 14px solid transparent;
 }
 
 /* mobile menu */
@@ -652,6 +685,17 @@ div.slideout-menu {
 .body-container .quiqqer-bricks-promoslider-wallpaper-text,
 .body-container .quiqqer-bricks-promoslider-wallpaper-text__right {
     margin-top: 100px;
+}
+
+.quiqqer-bricks-promoslider-wallpaper-text-description,
+.quiqqer-bricks-promoslider-wallpaper-text header {
+    background: none !important;
+    color: #fff !important;
+    font-size: 2em !important;
+}
+
+.header-brick-area .quiqqer-bricks-promoslider-wallpaper {
+    height: 100vh !important;
 }
 
 /* dots */
@@ -1025,7 +1069,8 @@ header.control-header {
 h1, h2, h3, h4, h5 {
     color: #444;
     line-height: 1.15em;
-    font-weight: 500;
+    /*font-weight: 500;*/
+    font-weight: 400;
     padding-bottom: 1em;
 }
 
@@ -1956,38 +2001,30 @@ a.link-slide-right-grey:focus::before {
 
 /* Template Button */
 
-a.template-button {
-    padding: 1em 2em;
+.button {
+    padding: 0.9em 1.8em;
     font-weight: 600;
     position: relative;
     margin: 16px 16px 16px 0;
     letter-spacing: 1px;
     transition: all 0.2s;
-}
-
-a.template-button:last-of-type {
-    margin-right: 0;
-}
-
-a.template-button.template-button-small {
-    font-size: 1em;
-}
-
-a.template-button.template-button-medium {
     font-size: 1.3em;
 }
 
-a.template-button.template-button-big {
+.button:last-of-type {
+    margin-right: 0;
+}
+
+.button__small {
+    padding: 0.7em 1.3em;
+    font-size: 1em;
+}
+
+.button__big {
+    padding: 1.1em 1.8em;
     font-size: 1.8em;
 }
 
-a.template-button.template-button-custom {
-
-}
-
-a.template-button:hover {
-    opacity: 0.9;
-}
 
 /* extra grid class  */
 .grid-children-container {

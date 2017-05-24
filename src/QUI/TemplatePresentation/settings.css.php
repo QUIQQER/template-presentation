@@ -34,7 +34,6 @@ $colorFooterFont       = '#D1D1D1';
 $colorMain             = '#dd151b';
 $buttonFontColor       = '#ffffff';
 $colorFooterLinks      = '#E6E6E6';
-$colorMainContentBg    = '#ffffff';
 $colorMainContentFont  = '#5d5d5d';
 
 if ($Project->getConfig('templatePresentation.settings.colorFooterBackground')) {
@@ -55,10 +54,6 @@ if ($Project->getConfig('templatePresentation.settings.buttonFontColor')) {
 
 if ($Project->getConfig('templatePresentation.settings.colorFooterLinks')) {
     $colorFooterLinks = $Project->getConfig('templatePresentation.settings.colorFooterLinks');
-}
-
-if ($Project->getConfig('templatePresentation.settings.colorMainContentBg')) {
-    $colorMainContentBg = $Project->getConfig('templatePresentation.settings.colorMainContentBg');
 }
 
 if ($Project->getConfig('templatePresentation.settings.colorMainContentFont')) {
@@ -88,28 +83,48 @@ ob_start();
     background: <?php echo $navBarMainColor; ?>;
 }
 
-
 .header-bar,
 .header-bar-inner a,
 .header-bar-inner a:link,
 .header-bar-inner a:active,
 .header-bar-inner a:visited,
-.header-bar-inner a:hover {
+.header-bar-inner a:hover,
+.quiqqer-menu-megaMenu-list-item-menu.control-background {
     color: <?php echo $navBarFontColor; ?>;
 }
 
-<?php if($startpageFirstHeaderBrick) {?>
+<?php if($headerArea) {?>
 .startpage .header-bar,
 .startpage .header-bar-inner-nav {
     background: none;
     box-shadow: none;
-    /*color: <?php echo $navBarMainColor; ?>;*/
 }
+
+<?php } ?>
+
+<?php if($headerArea && $navPos == 'scroll') {?>
+.startpage .header-bar,
+.startpage .header-bar-inner-nav {
+    position: absolute;
+}
+
 <?php } ?>
 
 .nav-bar-scrolled {
     background: <?php echo $navBarMainColor; ?> !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);
 }
+
+/**
+ * wenn Emotion / header angezeigt wird aber nav nicht fix ist,
+ * dann trotzdem kein Abstnad der Seite von oben
+ */
+<?php if($showHeader) {?>
+.header-displayed .body-container {
+    top: 0;
+}
+<?php }; ?>
+
 
 /* mobile nav background */
 .slideout-menu .page-menu {
@@ -125,10 +140,17 @@ ob_start();
 .page-header-navigation-sub-list,
 .page-header-navigation li:hover,
 .header-bar-search:hover,
-.quiqqer-menu-megaMenu-list-item-menu.control-background,
-.quiqqer-menu-megaMenu-list-item:hover,
-.page-27 {
+.quiqqer-menu-megaMenu-list-item-menu.control-background
+/*.quiqqer-menu-megaMenu-list-item:hover*/ {
     background: <?php echo $navBarMainColorLighter; ?>;
+}
+
+.quiqqer-menu-megaMenu-children-simple:after {
+    border-bottom: 14px solid <?php echo $navBarMainColorLighter; ?>;
+}
+
+.quiqqer-menu-megaMenu-list-item:hover {
+    background: rgba(255,255,255,0.15);
 }
 
 .color-main {
@@ -201,7 +223,7 @@ button:disabled:hover,
 a.template-button,
 button.qui-button-active,
 button.qui-button:active,
-button.qui-button:hover{
+button.qui-button:hover {
     background-color: <?php echo $colorMain; ?>;
     color: <?php echo $buttonFontColor; ?>;
     border: 2px solid <?php echo $colorMain; ?>;
@@ -231,12 +253,9 @@ input:hover,
 input:focus,
 select:hover,
 select:focus {
-/*    box-shadow: 0 0 0 2px */<?php //echo $colorMain; ?>/*;*/
+    /*    box-shadow: 0 0 0 2px */
+<?php //echo $colorMain; ?> /*;*/
     border-color: <?php echo $colorMain; ?>;
-}
-
-.main-content-color-bg {
-    background-color: <?php echo $colorMainContentBg; ?>;
 }
 
 a,
@@ -335,6 +354,7 @@ footer a:hover {
 .brick-odd-suffix {
     background: #e5e5e5;
 }
+
 <?php }; ?>
 
 <?php if ($headerHeight) { ?>
@@ -348,8 +368,7 @@ footer a:hover {
     align-self: <?php echo $headerImagePosition; ?>;
 }
 
-<?php };
-?>
+<?php }; ?>
 
 /**
  * Menüposition
@@ -359,8 +378,15 @@ footer a:hover {
     position: fixed !important;
 }
 
+<?php }; ?>
+
 .body-container {
     top: <?php echo $navBarHeight; ?>px;
+}
+
+<?php if ($headerArea) { ?>
+.startpage .body-container {
+    top: 0 !important;
 }
 
 <?php }; ?>

@@ -26,7 +26,15 @@
         </h1>
         {/if}
 
-        {if $useShort}
+        {if $siteShort}
+        <div class="page-header-text-wrapper">
+            <div class="page-header-text-wrapper-short">
+                {$siteShort}
+            </div>
+        </div>
+        {/if}
+
+        {*if $useShort}
         <div class="page-header-text-wrapper">
             <div class="page-header-text-wrapper-short">
                 {if $useAltShort}
@@ -36,7 +44,7 @@
                 {/if}
             </div>
         </div>
-        {/if}
+        {/if*}
     </div>
 </header>
 {/strip}

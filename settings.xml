@@ -6,11 +6,6 @@
             <config>
                 <section name="templatePresentation.settings">
 
-                    <conf name="startpageFirstHeaderBrick">
-                        <type><![CDATA[bool]]></type>
-                        <defaultvalue>1</defaultvalue>
-                    </conf>
-
                     <conf name="bgColorSwitcherPrefix">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>hide</defaultvalue>
@@ -118,10 +113,6 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#333333</defaultvalue>
                     </conf>
-                    <conf name="colorMainContentBg">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>#ffffff</defaultvalue>
-                    </conf>
                     <conf name="colorMainContentFont">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#333333</defaultvalue>
@@ -138,26 +129,6 @@
                             />
                         </text>
                         <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
-
-                        <!-- general Settings -->
-                        <settings title="templatePresentation.settings"
-                                  name="templatePresentation.settings.general">
-                            <title>
-                                <locale group="quiqqer/template-presentation"
-                                        var="templatePresentation.settings.general"
-                                />
-                            </title>
-
-                            <!-- extra first brick on start page -->
-                            <input conf="templatePresentation.settings.startpageFirstHeaderBrick"
-                                   type="checkbox">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="general.startpageFirstHeaderBrick.text"
-                                    />
-                                </text>
-                            </input>
-                        </settings>
 
 
                         <!-- Background Color Switcher Prefix / Suffix -->
@@ -224,20 +195,16 @@
                         </settings>
 
 
-                        <!-- header settings -->
+                        <!-- show header -->
                         <settings title="templatePresentation.settings"
-                                  name="templatePresentation.header.settings">
+                                  name="templatePresentation.settings.showHeader">
                             <title>
                                 <locale group="quiqqer/template-presentation"
-                                        var="templatePresentation.header.settings.title"
+                                        var="templatePresentation.settings.showHeader.title"
                                 />
                             </title>
 
-                            <!-- no header? -->
-                            <text>
-                                <locale group="quiqqer/template-presentation"
-                                        var="showHeader.text"/>
-                            </text>
+                            <!-- start page -->
                             <input conf="templatePresentation.settings.showHeaderStartPage"
                                    type="checkbox">
                                 <text>
@@ -246,6 +213,7 @@
                                     />
                                 </text>
                             </input>
+                            <!-- no sidebar -->
                             <input conf="templatePresentation.settings.showHeaderNoSidebar"
                                    type="checkbox">
                                 <text>
@@ -254,6 +222,7 @@
                                     />
                                 </text>
                             </input>
+                            <!-- left sidebar -->
                             <input conf="templatePresentation.settings.showHeaderLeftSidebar"
                                    type="checkbox">
                                 <text>
@@ -262,6 +231,7 @@
                                     />
                                 </text>
                             </input>
+                            <!-- right sidebar -->
                             <input conf="templatePresentation.settings.showHeaderRightSidebar"
                                    type="checkbox">
                                 <text>
@@ -270,25 +240,29 @@
                                     />
                                 </text>
                             </input>
+                        </settings>
+
+                        <!-- header settings -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.header">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.settings.header.title"
+                                />
+                            </title>
 
                             <!-- header height and value -->
-                            <text>
-                                <locale group="quiqqer/template-presentation"
-                                        var="templatePresentation.header.settings.height.text"
-                                />
-                            </text>
-
                             <input conf="templatePresentation.settings.headerHeight" type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.header.settings.height.enable.text"
+                                            var="templatePresentation.settings.headerHeight.text"
                                     />
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.headerHeightValue" type="number">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.header.settings.height.value.text"
+                                            var="templatePresentation.settings.headerHeightValue.text"
                                     />
                                 </text>
                             </input>
@@ -526,14 +500,6 @@
                                 />
                             </text>
 
-                            <input conf="templatePresentation.settings.colorMainContentBg"
-                                   type="color">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="template.settings.colorMainContentBackground.text"
-                                    />
-                                </text>
-                            </input>
                             <input conf="templatePresentation.settings.colorMainContentFont"
                                    type="color">
                                 <text>

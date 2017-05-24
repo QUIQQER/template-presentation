@@ -118,6 +118,12 @@
             <en><![CDATA[Brickarea before the footer]]></en>
         </locale>
 
+        <locale name="area.header.title">
+            <de><![CDATA[Extra Startseite Bausteinzone (Header)]]></de>
+            <en><![CDATA[Extra start page brick zone (header)]]></en>
+            <pl><![CDATA[Nagłówek strony startowej]]></pl>
+        </locale>
+
         <!-- template site settings -->
         <locale name="templatePresentation.siteSettings">
             <de><![CDATA[Template Presentation: Einstellungen]]></de>
@@ -265,18 +271,18 @@
         </locale>
 
         <!-- header settings -->
-        <locale name="templatePresentation.header.settings.title">
+        <locale name="templatePresentation.settings.showHeader.title">
             <de><![CDATA[Header Einstellungen]]></de>
             <en><![CDATA[Header settings]]></en>
             <pl><![CDATA[Ustawienia nagłówka]]></pl>
         </locale>
 
         <!-- show header? -->
-        <locale name="showHeader.text">
+        <!--<locale name="showHeader.text">
             <de><![CDATA[Header anzeigen?]]></de>
             <en><![CDATA[Display header?]]></en>
             <pl><![CDATA[Pokazać nagłówek (header wraz z obrazkiem)?]]></pl>
-        </locale>
+        </locale>-->
 
         <locale name="showHeaderStartPage.text">
             <de><![CDATA[Startpage]]></de>
@@ -342,18 +348,18 @@
         
 
         <!-- Header Größe-->
-        <locale name="templatePresentation.header.settings.height.text">
+        <locale name="templatePresentation.settings.header.title">
             <de><![CDATA[Höhe des Headerbildes einstellen]]></de>
             <en><![CDATA[Header image size settings]]></en>
             <pl><![CDATA[Ustawienia wysokość obrazka nagłówka]]></pl>
         </locale>
 
-        <locale name="templatePresentation.header.settings.height.enable.text">
+        <locale name="templatePresentation.settings.headerHeight.text">
             <de><![CDATA[Feste Höhe des Headers]]></de>
             <en><![CDATA[Fixed size of the header]]></en>
             <pl><![CDATA[Stała wysokość nagłówka (header)]]></pl>
         </locale>
-        <locale name="templatePresentation.header.settings.height.value.text">
+        <locale name="templatePresentation.settings.headerHeightValue.text">
             <de><![CDATA[Höhe (in Pixel)]]></de>
             <en><![CDATA[Height (in pixel)]]></en>
             <pl><![CDATA[Wysokość (w pikselach)]]></pl>

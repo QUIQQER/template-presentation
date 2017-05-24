@@ -71,6 +71,19 @@
             <layouts>
 
                 <layout layout="layout/startPage">
+                    <area name="header" inheritance="1">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.header.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.header.description"
+                            />
+                        </description>
+                    </area>
+
                     <area name="prefixContentBricks" inheritance="1">
                         <title>
                             <locale group="quiqqer/template-presentation"

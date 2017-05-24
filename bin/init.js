@@ -15,25 +15,30 @@ window.addEvent("domready", function () {
         });
     });
 
-    if (typeof showEffect !== 'undefined') {
+    // show nav background after scroll
+    // only, if nav is position fixed
+    if (typeof navIsFixed !== 'undefined') {
         require(['qui/utils/Functions'], function (QUIFunctionUtils) {
-            var navBar   = document.getElement('.header-bar-scroll');
+            var navBar   = document.getElement('.header-bar-scroll'),
+                hasClass = false;
+
             var onScroll = function () {
-                navBar.addEvent('click', function () {
-                    navBar.addClass('nav-bar-scrolled');
-                });
 
                 if (window.getScroll().y > 100) {
-                    navBar.addClass('nav-bar-scrolled');
+                    if (!hasClass) {
+                        navBar.addClass('nav-bar-scrolled');
+                        hasClass = true;
+                    }
                 } else {
                     navBar.removeClass('nav-bar-scrolled');
+                    hasClass = false;
                 }
             };
 
-            window.addEvent(
-                'scroll',
-                QUIFunctionUtils.debounce(onScroll, 20)
-            );
+            window.addEvents({
+                    'scroll' : QUIFunctionUtils.debounce(onScroll, 30),
+                    'load' : QUIFunctionUtils.debounce(onScroll, 30)
+            });
         });
     }
 });

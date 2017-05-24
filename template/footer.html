@@ -1,0 +1,32 @@
+<footer class="page-footer clear-fix">
+    <div class="page-footer-container grid-container">
+        {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
+        {if !empty($footer)}
+        <div class="grid-children">
+            <div class="grid-children-container">
+                {foreach from=$footer item=Brick}
+                {if !$Brick->hasCSSClass('grid-*')}
+                {$Brick->addCSSClass('grid-100')}
+                {/if}
+                {$Brick->addCSSClass('page-footer-brick clear-fix')}
+                {$Brick->create()}
+                {/foreach}
+            </div>
+        </div>
+        {/if}
+    </div>
+
+    <div class="page-footer-copyright">
+        <div class="grid-container">
+            <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
+                {locale group="quiqqer/template-businesspro" var="copyright.text" year=$smarty.now|date_format:'%Y'}
+            </div>
+
+            <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
+                <a href="#top" style="outline: none;">
+                    <i class="fa fa-arrow-up toTop"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>

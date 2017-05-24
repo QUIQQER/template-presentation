@@ -20,6 +20,7 @@
           type='text/css'>
 
     {assign var=layoutType value=$Template->getLayoutType()}
+    {assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
     {assign var=headerSuffixBricks value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
     {assign var=footerPrefixBricks value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
 
@@ -31,78 +32,24 @@
     {fontawesome}
     {unsemantic}
     <link href="{$URL_TPL_DIR}bin/css/style.css" rel="stylesheet" type="text/css"/>
-
     <!-- [end] css combine -->
 
+    {*assign var=layout value=false*}
 
-    {assign var=headerDisplayed value=false}
-    {if $showHeader}
-    {assign var=headerDisplayed value='header-displayed'}
-    {/if}
-
-    {assign var=layout value=false}
-
-    <!-- js effekt nur wenn nav fest und SETTING -->
+    <!-- js effekt nur wenn nav position fixed -->
     {if $navPos == 'fix'}
     <script>
-        var showEffect = true;
+        var navIsFixed = true;
     </script>
     {/if}
-
-
-    <style>
-
-        .prefix-suffix-nofull-width .quiqqer-bricks-promoslider-wallpaper .grid-container {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        /**
-         * navigation absolut positionieren
-         * wenn Emotionbild  / header angezeigt
-         */
-        .header-displayed .header-bar {
-            position: absolute;
-        }
-
-        /**
-         * kein bg und box shadow, wenn Emotionbild / header
-         */
-        .header-displayed .header-bar,
-        .header-displayed .header-bar-inner-nav {
-            background: none;
-            box-shadow: none;
-        }
-
-        {if $startpageFirstHeaderBrick}
-            .startpage .body-container {
-                top: 0 !important;
-            }
-        {/if}
-
-        /* das muss als einstellung
-        nav erlauben über dem content oder nicht? */
-        .startpage .header-bar {
-            position: absolute;
-        }
-
-        /**
-         * wenn Emotion / header angezeigt aber nav scrollbar
-         * dann trotzdem
-         */
-        {if $headerDisplayed}
-            .header-displayed .body-container {
-                top: 0;
-            }
-        {/if}
-    </style>
 
     {$settingsCSS}
 
 
 </head>
 
-<body class="{$bodyClass} page-{$Site->getId()} {$typeClass} {$headerDisplayed}" id="body-top">
+<body class="{$bodyClass} page-{$Site->getId()} {$typeClass}
+            {if $showHeader} header-displayed {/if}" id="body-top">
 
 <!-- menu -->
 <div class="header-bar header-bar-scroll">
@@ -119,21 +66,30 @@
 <div class="body-container">
     <!-- header -->
     {if $showHeader}
-        {fetch template="template/header.html" siteTitle=$siteTitle Site=$Site}
+        {fetch template="template/header.html" siteTitle=$siteTitle siteShort=$siteShort Site=$Site}
     {/if}
+
+    <!-- header brick area (only for start page) -->
+    {if $startPage}
+    {foreach from=$headerBricks item=Brick}
+    <div class="header-brick-area start-page-header brick-id-{$Brick->getAttribute('id')}">
+        {if $Brick->getAttribute('frontendTitle')}
+        <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+        {/if}
+        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+        {$Brick->create()}
+    </div>
+    {/foreach}
+    {/if}
+
     <!-- breadcrumb -->
     {if $showBreadcrumb}
-    <div class="template-breadcrumb">
-        <div class="grid-container">
-            {$Breadcrumb->create()}
-        </div>
-    </div>
+    {fetch template="template/breadcrumb.html" Breadcrumb=$Breadcrumb}
     {/if}
 
     <div class="headerSuffix">
         <!-- header suffix  -->
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
-        {assign var=counter value=1}
         {foreach $headerSuffix as $Brick}
 
         {assign var=noPadding value=''}
@@ -150,11 +106,10 @@
             {$Brick->create()}
         </section>
         {else}
-        <div class="prefix-suffix-nofull-width tpl-presentation-row
+        <div class="tpl-presentation-row
                                 headerSuffix-container
-                                {cycle values='brick-even-suffix,brick-odd-suffix'}
-                                {if $counter == 1 && $startpageFirstHeaderBrick}start-page-header{/if}">
-            <div {if !$startpageFirstHeaderBrick || $counter> 1}class="grid-container"{/if}>
+                                {cycle values='brick-even-suffix,brick-odd-suffix'}">
+            <div class="grid-container">
                 <section>
                     {if $Brick->getAttribute('frontendTitle')}
                     <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
@@ -165,13 +120,12 @@
             </div>
         </div>
         {/if}
-        {assign var=counter value=$counter + 1}
         {/foreach}
     </div>
 
 
     <!-- content -->
-    <div class="main-content-color-bg  {cycle values='' reset=true}">
+    <div class="main-content-wrapper  {cycle values='' reset=true}">
         <div class="grid-container main-content">
             {$Template->getLayout()}
         </div>
@@ -215,39 +169,10 @@
         {/if}
         {/foreach}
     </div>
+
     <!-- footer -->
-    <footer class="page-footer clear-fix">
-        <div class="page-footer-container grid-container">
-            {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
-            {if !empty($footer)}
-            <div class="grid-children">
-                <div class="grid-children-container">
-                    {foreach from=$footer item=Brick}
-                    {if !$Brick->hasCSSClass('grid-*')}
-                    {$Brick->addCSSClass('grid-100')}
-                    {/if}
-                    {$Brick->addCSSClass('page-footer-brick clear-fix')}
-                    {$Brick->create()}
-                    {/foreach}
-                </div>
-            </div>
-            {/if}
-        </div>
+    {fetch template="template/footer.html" BricksManager=$BricksManager Site=$Site}
 
-        <div class="page-footer-copyright">
-            <div class="grid-container">
-                <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
-                    {locale group="quiqqer/template-businesspro" var="copyright.text" year=$smarty.now|date_format:'%Y'}
-                </div>
-
-                <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
-                    <a href="#top" style="outline: none;">
-                        <i class="fa fa-arrow-up toTop"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
 </div>
 
 <!-- [begin] js combine -->

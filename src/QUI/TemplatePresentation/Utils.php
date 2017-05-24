@@ -48,12 +48,14 @@ class Utils
         $showHeader     = false;
         $showBreadcrumb = false;
         $bodyClass      = '';
+        $startPage      = false;
 
         switch ($Template->getLayoutType()) {
             case 'layout/startPage':
                 $showHeader     = $Project->getConfig('templatePresentation.settings.showHeaderStartPage');
                 $showBreadcrumb = $Project->getConfig('templatePresentation.settings.showBreadcrumbStartPage');
                 $bodyClass      = 'startpage';
+                $startPage      = true;
                 break;
 
             case 'layout/noSidebar':
@@ -83,28 +85,21 @@ class Utils
             case 'hide':
                 $showHeader = false;
         }
-
-        $startpageFirstHeaderBrick = false;
-
-        if ($Template->getLayoutType() == 'layout/startPage' &&
-            $Project->getConfig('templatePresentation.settings.startpageFirstHeaderBrick')
-        ) {
-            $startpageFirstHeaderBrick = true;
-        }
-
+        $headerArea  = $params['headerArea'];
         $settingsCSS = include 'settings.css.php';
 
 
         $config += array(
 //            'quiTplType'                => $Project->getConfig('templatePresentation.settings.standardType'),
-            'showHeader'                => $showHeader,
-            'showBreadcrumb'            => $showBreadcrumb,
-            'settingsCSS'               => '<style>' . $settingsCSS . '</style>',
-            'typeClass'                 => 'type-' . str_replace(array('/', ':'), '-',
+            'showHeader'     => $showHeader,
+            'showBreadcrumb' => $showBreadcrumb,
+            'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
+            'typeClass'      => 'type-' . str_replace(array('/', ':'), '-',
                     $params['Site']->getAttribute('type')),
-            'bodyClass'                 => $bodyClass,
-            'navPos'                    => $Project->getConfig('templatePresentation.settings.navPos'),
-            'startpageFirstHeaderBrick' => $startpageFirstHeaderBrick
+            'bodyClass'      => $bodyClass,
+            'navPos'         => $Project->getConfig('templatePresentation.settings.navPos'),
+            'headerArea'     => $headerArea,
+            'startPage'      => $startPage
         );
 
 

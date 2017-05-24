@@ -5,9 +5,6 @@
  */
 QUI\Utils\Site::setRecursivAttribute($Site, 'image_emotion');
 
-/*header setting erben*/
-QUI\Utils\Site::setRecursivAttribute($Site, 'templatePresentation.showHeader');
-
 // Inhalts Verhalten
 if ($Site->getAttribute('templatePresentation.showTitle') ||
     $Site->getAttribute('templatePresentation.showShort')
@@ -88,15 +85,25 @@ try {
 $Breadcrumb = new QUI\Controls\Breadcrumb();
 
 /**
+ * header area on start page?
+ */
+$headerArea    = false;
+$BricksManager = \QUI\Bricks\Manager::init();
+if (count($BricksManager->getBricksByArea('header', $Site)) > 0) {
+    $headerArea = true;
+}
+
+/**
  * Template config
  */
 $templateSettings = QUI\TemplatePresentation\Utils::getConfig(array(
-    'Project'  => $Project,
-    'Site'     => $Site,
-    'Template' => $Template
+    'headerArea' => $headerArea,
+    'Project'    => $Project,
+    'Site'       => $Site,
+    'Template'   => $Template
 ));
 
-$templateSettings['BricksManager'] = \QUI\Bricks\Manager::init();
+$templateSettings['BricksManager'] = $BricksManager;
 $templateSettings['Breadcrumb']    = $Breadcrumb;
 $templateSettings['MegaMenu']      = $MegaMenu;
 
@@ -108,13 +115,29 @@ $siteTitle = false;
 if ($Site->getAttribute('templatePresentation.showTitle')) {
     $siteTitle = $Site->getAttribute('title');
 
-    if ($Site->getAttribute('templatePresentation.showTitle') != '') {
+    if ($Site->getAttribute('templatePresentation.altTitle') != '') {
         $siteTitle = $Site->getAttribute('templatePresentation.altTitle');
     }
 }
 
+/**
+ * header short
+ */
+$siteShort = false;
+
+if ($Site->getAttribute('templatePresentation.showShort')) {
+    $siteShort = $Site->getAttribute('short');
+
+    if ($Site->getAttribute('templatePresentation.altShort') != '') {
+        $siteShort = $Site->getAttribute('templatePresentation.altShort');
+    }
+}
+
+
+
 $Engine->assign(array(
-    'siteTitle' => $siteTitle
+    'siteTitle' => $siteTitle,
+    'siteShort' => $siteShort
 ));
 
 
