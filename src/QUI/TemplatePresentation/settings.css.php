@@ -103,17 +103,12 @@ ob_start();
 <?php } ?>
 
 <?php if($headerArea && $navPos == 'scroll') {?>
-.startpage .header-bar,
-.startpage .header-bar-inner-nav {
+.startpage .header-bar {
+/*.startpage .header-bar-inner-nav {*/
     position: absolute;
 }
 
 <?php } ?>
-
-.nav-bar-scrolled {
-    background: <?php echo $navBarMainColor; ?> !important;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);
-}
 
 /**
  * wenn Emotion / header angezeigt wird aber nav nicht fix ist,
@@ -123,7 +118,15 @@ ob_start();
 .header-displayed .body-container {
     top: 0;
 }
+.header-bar {
+    box-shadow: none;
+}
 <?php }; ?>
+
+.nav-bar-scrolled {
+    background: <?php echo $navBarMainColor; ?> !important;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.35);
+}
 
 
 /* mobile nav background */
@@ -141,7 +144,7 @@ ob_start();
 .page-header-navigation li:hover,
 .header-bar-search:hover,
 .quiqqer-menu-megaMenu-list-item-menu.control-background
-/*.quiqqer-menu-megaMenu-list-item:hover*/ {
+    /*.quiqqer-menu-megaMenu-list-item:hover*/ {
     background: <?php echo $navBarMainColorLighter; ?>;
 }
 
@@ -378,11 +381,12 @@ footer a:hover {
     position: fixed !important;
 }
 
-<?php }; ?>
-
+/* if nav pos fix, then put the content down */
 .body-container {
     top: <?php echo $navBarHeight; ?>px;
 }
+
+<?php }; ?>
 
 <?php if ($headerArea) { ?>
 .startpage .body-container {
