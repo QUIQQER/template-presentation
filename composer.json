@@ -28,7 +28,7 @@
         "quiqqer\/page-transition": "dev-master",
         "quiqqer\/pace": ">=1.2.0|dev-master|dev-dev",
         "quiqqer\/buttons": ">=1.0.0|dev-master|dev-dev",
-        "quiqqer\/bricks-presentation": ">=1.0.0|dev-master"
+        "quiqqer\/bricks-presentation": "dev-master"
       },
 
     "autoload": {
