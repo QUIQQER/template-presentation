@@ -107,6 +107,7 @@ $templateSettings['BricksManager'] = $BricksManager;
 $templateSettings['Breadcrumb']    = $Breadcrumb;
 $templateSettings['MegaMenu']      = $MegaMenu;
 
+
 /**
  * header: title
  */

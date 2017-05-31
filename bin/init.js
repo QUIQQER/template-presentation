@@ -19,18 +19,17 @@ window.addEvent("domready", function () {
     // only, if nav is position fixed
     if (typeof navIsFixed !== 'undefined') {
         require(['qui/utils/Functions'], function (QUIFunctionUtils) {
-            var navBar   = document.getElement('.header-bar-scroll'),
+            var headerBar   = document.getElement('.header-bar'),
                 hasClass = false;
 
             var onScroll = function () {
-
                 if (window.getScroll().y > 100) {
                     if (!hasClass) {
-                        navBar.addClass('nav-bar-scrolled');
+                        headerBar.addClass('header-bar-scrolled');
                         hasClass = true;
                     }
                 } else {
-                    navBar.removeClass('nav-bar-scrolled');
+                    headerBar.removeClass('header-bar-scrolled');
                     hasClass = false;
                 }
             };

@@ -16,8 +16,8 @@
     {pace}
     {$Template->getHeader()}
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800,300italic' rel='stylesheet'
-          type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Source+Sans+Pro:300,400,600,700"
+          rel="stylesheet">
 
     {assign var=layoutType value=$Template->getLayoutType()}
     {assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
@@ -36,7 +36,7 @@
 
     {*assign var=layout value=false*}
 
-    <!-- js effekt nur wenn nav position fixed -->
+    {*<!-- js effekt nur wenn nav position fixed -->*}
     {if $navPos == 'fix'}
     <script>
         var navIsFixed = true;
@@ -49,10 +49,11 @@
 </head>
 
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass}
-            {if $showHeader} header-displayed {/if}" id="body-top">
+            {if !$showHeader} header-hidden {/if}
+            {if $showHeader} header-displayed{/if}" id="body-top">
 
 <!-- menu -->
-<div class="header-bar header-bar-scroll">
+<div class="header-bar header-bar-position-{$navPos}">
     <div class="grid-container header-bar-inner">
         <div class="header-bar-inner-nav" id="navigation">
 

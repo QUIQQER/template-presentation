@@ -59,7 +59,7 @@ input:focus {
 }
 
 textarea {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     min-height: 10em;
 }
 
@@ -141,7 +141,7 @@ a,
 }
 
 a:hover {
-    border-radius: 0;
+    /*border-radius: 0;*/
     text-decoration: none;
     z-index: 1;
 }
@@ -195,6 +195,7 @@ button:hover,
 .button-pink:hover,
 .content-button:hover {
     box-shadow: none;
+    border-radius: 100px;
 }
 
 input[type='submit'],
@@ -203,6 +204,7 @@ input[type='button'],
 button,
 .button,
 .tpl-presentation-row .button {
+    border-radius: 100px;
     box-shadow: none;
     cursor: pointer;
     outline: none;
@@ -526,8 +528,8 @@ h1.page-header-text-title {
 }
 
 .header-bar {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.35);
+    /*background: rgba(255, 255, 255, 1);*/
+    /*box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.35);*/
     position: relative;
     z-index: 10;
     width: 100%;
@@ -546,6 +548,12 @@ h1.page-header-text-title {
     height: 100%;
 }
 
+.header-bar-scrolled {
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.35);
+    transition: 0.3s all ease-in-out;
+
+}
+
 /**
  * navigation absolut positionieren
  * wenn Emotionbild  / header angezeigt
@@ -557,16 +565,14 @@ h1.page-header-text-title {
 /**
  * kein bg und wenn Emotionbild / header angezeigt wird
  */
-.header-displayed .header-bar,
+/*.header-displayed .header-bar,
 .header-displayed .header-bar-inner-nav {
     background: none;
-}
-
-/*.startpage .header-bar,
-.startpage .header-bar-inner-nav {
-    background: none;
-    box-shadow: none;
 }*/
+
+.header-displayed .header-bar-position-scroll {
+    background: none;
+}
 
 .header-bar-inner-logo {
     margin-right: 20px;
@@ -1067,11 +1073,13 @@ header.control-header {
 }
 
 h1, h2, h3, h4, h5 {
-    color: #444;
+    font-family: 'Source Sans Pro', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
+    color: #747675;
     line-height: 1.15em;
     /*font-weight: 500;*/
     font-weight: 400;
-    padding-bottom: 1em;
+    padding-bottom: 0.8em;
 }
 
 header > h1,
@@ -1083,7 +1091,8 @@ header > h4 {
 }
 
 h1 {
-    font-size: 44px;
+    /*font-size: 44px;*/
+    font-size: 54px;
 }
 
 h1.brick-title {
@@ -1824,6 +1833,13 @@ a.quiqqer-tags-search-result-entry-link:hover h4,
 }
 
 /*********************************************************************************/
+/* children list 3er
+/*********************************************************************************/
+.qui-control-childrenlist-3er-entry-image span.quiqqer-icon {
+    font-size: 130px;
+}
+
+/*********************************************************************************/
 /* template extra link effects
 /*********************************************************************************/
 
@@ -2024,6 +2040,19 @@ a.link-slide-right-grey:focus::before {
     padding: 1.1em 1.8em;
     font-size: 1.8em;
 }
+
+.button-arrow:after {
+    content: "\f178";
+    font-family: FontAwesome;
+    margin-left: 20px;
+}
+
+.button-download:after {
+    content: "\f019";
+    font-family: FontAwesome;
+    margin-left: 20px;
+}
+
 
 
 /* extra grid class  */

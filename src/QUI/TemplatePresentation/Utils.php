@@ -88,7 +88,6 @@ class Utils
         $headerArea  = $params['headerArea'];
         $settingsCSS = include 'settings.css.php';
 
-
         $config += array(
 //            'quiTplType'                => $Project->getConfig('templatePresentation.settings.standardType'),
             'showHeader'     => $showHeader,

@@ -77,12 +77,6 @@ ob_start();
  * Farbeinstellungen
  */
 
-/* nav bar */
-.header-bar,
-.header-bar-inner-nav {
-    background: <?php echo $navBarMainColor; ?>;
-}
-
 .header-bar,
 .header-bar-inner a,
 .header-bar-inner a:link,
@@ -93,21 +87,18 @@ ob_start();
     color: <?php echo $navBarFontColor; ?>;
 }
 
-<?php if($headerArea) {?>
-.startpage .header-bar,
-.startpage .header-bar-inner-nav {
-    background: none;
-    box-shadow: none;
-}
-
-<?php } ?>
-
 <?php if($headerArea && $navPos == 'scroll') {?>
 .startpage .header-bar {
 /*.startpage .header-bar-inner-nav {*/
     position: absolute;
 }
+<?php } ?>
 
+<?php if(!$showHeader && !$headerArea) {?>
+.header-hidden .header-bar {
+    background: <?php echo $navBarMainColor; ?>;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.35);
+}
 <?php } ?>
 
 /**
@@ -123,9 +114,9 @@ ob_start();
 }
 <?php }; ?>
 
-.nav-bar-scrolled {
-    background: <?php echo $navBarMainColor; ?> !important;
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.35);
+.header-bar-scrolled,
+.header-bar-scrolled {
+    background: <?php echo $navBarMainColor; ?>;
 }
 
 
