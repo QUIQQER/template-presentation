@@ -211,7 +211,7 @@ input[type='reset'],
 input[type='button'],
 button,
 .button,
-.tpl-presentation-row .button,
+/*.tpl-presentation-row .button,*/
 button:disabled,
 button:disabled:hover,
 a.template-button,

@@ -15,12 +15,14 @@ window.addEvent("domready", function () {
         });
     });
 
-    // show nav background after scroll
-    // only, if nav is position fixed
+    /**
+     * show nav background after scroll
+     * works only if nav is position fixed
+     */
     if (typeof navIsFixed !== 'undefined') {
         require(['qui/utils/Functions'], function (QUIFunctionUtils) {
-            var headerBar   = document.getElement('.header-bar'),
-                hasClass = false;
+            var headerBar = document.getElement('.header-bar'),
+                hasClass  = false;
 
             var onScroll = function () {
                 if (window.getScroll().y > 100) {
@@ -34,10 +36,49 @@ window.addEvent("domready", function () {
                 }
             };
 
+
             window.addEvents({
-                    'scroll' : QUIFunctionUtils.debounce(onScroll, 30),
-                    'load' : QUIFunctionUtils.debounce(onScroll, 30)
+                'scroll': QUIFunctionUtils.debounce(onScroll, 30),
+                'load'  : QUIFunctionUtils.debounce(onScroll, 30)
             });
         });
     }
+
+    /**
+     * show the search input after clicking on the icon
+     */
+    if (document.getElement('.header-bar-suggestSearch')) {
+
+        var searchBar   = document.getElement('.header-bar-suggestSearch'),
+            searchIcon  = searchBar.getElement('.fa-search'),
+            searchInput = searchBar.getElement('input[type="search"]'),
+            open        = false;
+
+        searchIcon.addEvent('click', function (event) {
+            event.stopPropagation();
+
+            /* open */
+            if (!open) {
+                searchInput.addEvent('click', function (e) {
+                    e.stopPropagation();
+                });
+                window.addEvent('click', function () {
+                    searchBar.removeClass('test');
+                    open = false;
+                    window.removeEvents('click');
+                });
+
+                searchBar.addClass('test');
+                searchInput.focus();
+                open = true;
+                return;
+            }
+
+            /* close */
+            searchBar.removeClass('test');
+            open = false;
+            window.removeEvents('click');
+        })
+    }
+
 });
