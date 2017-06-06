@@ -232,6 +232,7 @@ button,
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
+    min-width: 150px;
 }
 
 /*input[type='submit']:hover,
@@ -2103,13 +2104,14 @@ a.link-slide-right-grey:focus::before {
 /* Template Button */
 
 .button {
-    padding: 0.9em 1.8em;
+    padding: 1em 1.8em;
     font-weight: 600;
     position: relative;
-    margin: 16px 16px 16px 0;
+    /*margin: 16px 16px 16px 0;*/
     letter-spacing: 1px;
     transition: all 0.2s;
-    font-size: 1.3em;
+    font-size: 1.1em;
+    background: #333;
 }
 
 .button:last-of-type {
@@ -2117,13 +2119,13 @@ a.link-slide-right-grey:focus::before {
 }
 
 .button__small {
-    padding: 0.7em 1.3em;
-    font-size: 1em;
+    padding: 0.5em 1.2em;
+    font-size: 0.9em;
 }
 
 .button__big {
-    padding: 1.1em 1.8em;
-    font-size: 1.8em;
+    padding: 1em 1.6em;
+    font-size: 1.6em;
 }
 
 .button-arrow:after {

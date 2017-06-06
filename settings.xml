@@ -573,7 +573,7 @@
                     <locale group="quiqqer/template-presentation"
                             var="templateButton.small"/>
                     <attributes>
-                        <attribute name="class">template-button template-button-small</attribute>
+                        <attribute name="class">button button__small</attribute>
                     </attributes>
                 </style>
                 <!-- Template Button medium -->
@@ -581,7 +581,7 @@
                     <locale group="quiqqer/template-presentation"
                             var="templateButton.medium"/>
                     <attributes>
-                        <attribute name="class">template-button template-button-medium</attribute>
+                        <attribute name="class">button</attribute>
                     </attributes>
                 </style>
                 <!-- Template Button Big -->
@@ -589,7 +589,7 @@
                     <locale group="quiqqer/template-presentation"
                             var="templateButton.big"/>
                     <attributes>
-                        <attribute name="class">template-button template-button-big</attribute>
+                        <attribute name="class">button button__big</attribute>
                     </attributes>
                 </style>
 
