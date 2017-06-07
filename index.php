@@ -69,27 +69,38 @@ try {
 //    $Locale = QUI::getLocale();
 
     // social
-    $link = '#';
-    if (true) {
+    $socialHTML = '';
+    if ($Project->getConfig('templatePresentation.settings.social.show')) {
         $socialHTML = '<div class="header-bar-social">';
-        if (true) {
-            $socialHTML .= '<a href="'. $link .'"><span class="fa fa-facebook"></span></a>';
+        if ($Project->getConfig('templatePresentation.settings.social.facebook')) {
+            $socialHTML .= '<a href="http://'.
+                           $Project->getConfig('templatePresentation.settings.social.facebook')
+                           .'"><span class="fa fa-facebook"></span></a>';
         }
-        if (true) {
-            $socialHTML .= '<a href="'. $link .'"><span class="fa fa-twitter"></span></a>';
+        if ($Project->getConfig('templatePresentation.settings.social.twitter')) {
+            $socialHTML .= '<a href="'.
+                           $Project->getConfig('templatePresentation.settings.social.twitter')
+                           .'"><span class="fa fa-twitter"></span></a>';
         }
-        if (true) {
-            $socialHTML .= '<a href="'. $link .'"><span class="fa fa-github"></span></a>';
+        if ($Project->getConfig('templatePresentation.settings.social.google')) {
+            $socialHTML .= '<a href="'.
+                           $Project->getConfig('templatePresentation.settings.social.google')
+                           .'"><span class="fa fa-google-plus"></span></a>';
+        }
+        if ($Project->getConfig('templatePresentation.settings.social.youtube')) {
+            $socialHTML .= '<a href="'.
+                           $Project->getConfig('templatePresentation.settings.social.youtube')
+                           .'"><span class="fa fa-youtube-play"></span></a>';
+        }
+        if ($Project->getConfig('templatePresentation.settings.social.github')) {
+            $socialHTML .= '<a href="'.
+                           $Project->getConfig('templatePresentation.settings.social.github')
+                           .'"><span class="fa fa-github"></span></a>';
         }
         $socialHTML .='</div>';
     }
 
     $MegaMenu->appendHTML(
-        /*'<div class="header-bar-social">
-            <span class="fa fa-facebook"></span>
-            <span class="fa fa-twitter"></span>
-            <span class="fa fa-github"></span>
-        </div>' .*/
         $socialHTML .
         '<div class="header-bar-suggestSearch hide-on-mobile">
                     <input type="search" data-qui="package/quiqqer/search/bin/controls/Suggest" 

@@ -536,6 +536,43 @@
             <en><![CDATA[Sort]]></en>
         </locale>
 
+        <!-- social icons -->
+        <locale name="social.settings.title">
+            <de><![CDATA[Social Icons]]></de>
+            <en><![CDATA[Social icons]]></en>
+            <pl><![CDATA[Media spolecznosciowe (social icons)]]></pl>
+        </locale>
+        <locale name="social.show">
+            <de><![CDATA[Anzeigen]]></de>
+            <en><![CDATA[Show]]></en>
+            <pl><![CDATA[Wlacz]]></pl>
+        </locale>
+        <locale name="social.facebook">
+            <de><![CDATA[Facebook]]></de>
+            <en><![CDATA[Facebook]]></en>
+            <pl><![CDATA[Facebook]]></pl>
+        </locale>
+        <locale name="social.twitter">
+            <de><![CDATA[Twitter]]></de>
+            <en><![CDATA[Twitter]]></en>
+            <pl><![CDATA[Twitter]]></pl>
+        </locale>
+        <locale name="social.google">
+            <de><![CDATA[Google Plus]]></de>
+            <en><![CDATA[Google Plus]]></en>
+            <pl><![CDATA[Google Plus]]></pl>
+        </locale>
+        <locale name="social.youtube">
+            <de><![CDATA[YouTube]]></de>
+            <en><![CDATA[YouTube]]></en>
+            <pl><![CDATA[YouTube]]></pl>
+        </locale>
+        <locale name="social.github">
+            <de><![CDATA[GitHub / GitLab]]></de>
+            <en><![CDATA[GitHub / GitLab]]></en>
+            <pl><![CDATA[GitHub / GitLab]]></pl>
+        </locale>
+
         <!-- extra buttons -->
         <locale name="linkSimpleGrey">
             <de><![CDATA[Link: simple (grau)]]></de>

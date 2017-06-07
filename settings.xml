@@ -117,6 +117,27 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#333333</defaultvalue>
                     </conf>
+
+                    <!-- social -->
+                    <conf name="social.show">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="social.facebook">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.twitter">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.google">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.youtube">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.github">
+                        <type><![CDATA[string]]></type>
+                    </conf>
                 </section>
             </config>
 
@@ -291,7 +312,6 @@
                                 </option>
                             </select>
                         </settings>
-
 
                         <!-- breadrcumb -->
                         <settings title="templatePresentation.settings"
@@ -509,6 +529,72 @@
                                 </text>
                             </input>
 
+                        </settings>
+
+                        <!-- social icons -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.social.settings">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="social.settings.title"
+                                />
+                            </title>
+
+                            <!-- show social? -->
+                            <input conf="templatePresentation.settings.social.show"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.show"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- facebook -->
+                            <input conf="templatePresentation.settings.social.facebook"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.facebook"
+                                    />
+                                </text>
+                            </input>
+                            <!-- twitter -->
+                            <input conf="templatePresentation.settings.social.twitter"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.twitter"
+                                    />
+                                </text>
+                            </input>
+                            <!-- google -->
+                            <input conf="templatePresentation.settings.social.google"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.google"
+                                    />
+                                </text>
+                            </input>
+                            <!-- youtube -->
+                            <input conf="templatePresentation.settings.social.youtube"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.youtube"
+                                    />
+                                </text>
+                            </input>
+                            <!-- github -->
+                            <input conf="templatePresentation.settings.social.github"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.github"
+                                    />
+                                </text>
+                            </input>
                         </settings>
 
                     </category>

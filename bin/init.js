@@ -1,9 +1,41 @@
 window.addEvent("domready", function () {
     "use strict";
 
-    document.getElements('[href=#top]').addEvent('click', function (event) {
-        event.stop();
-        new Fx.Scroll(window).toTop();
+    require(['qui/utils/Functions'], function (QUIFunctionUtils) {
+        if (document.getElements('[href=#top]')) {
+            var toTop = document.getElements('[href=#top]'),
+                hasClass = false;
+
+            // scroll to top
+            toTop.addEvent('click', function (event) {
+                event.stop();
+                new Fx.Scroll(window).toTop();
+            });
+
+            /**
+             * show button toTop after scrolling down
+             */
+            var scroll = function () {
+                console.log(1);
+                if (window.getScroll().y > 300) {
+                    console.log(2)
+                    if (!hasClass) {
+                        console.log(3)
+                        toTop.addClass('toTop__show');
+                    }
+                    return;
+                }
+                console.log(4)
+                toTop.removeClass('toTop__show');
+                hasClass = false;
+            };
+
+            window.addEvents({
+                'load'  : QUIFunctionUtils.debounce(scroll, 200),
+                'scroll': QUIFunctionUtils.debounce(scroll, 200)
+            })
+
+        }
     });
 
 // load QUI
@@ -80,5 +112,4 @@ window.addEvent("domready", function () {
             window.removeEvents('click');
         })
     }
-
 });
