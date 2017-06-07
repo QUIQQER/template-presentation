@@ -568,7 +568,7 @@
                     </attributes>
                 </style>
 
-                <!-- Template Button Small -->
+                <!-- Template Button small -->
                 <style element="a">
                     <locale group="quiqqer/template-presentation"
                             var="templateButton.small"/>
@@ -576,23 +576,41 @@
                         <attribute name="class">button button__small</attribute>
                     </attributes>
                 </style>
-                <!-- Template Button medium -->
+                <!-- Template Button default -->
                 <style element="a">
                     <locale group="quiqqer/template-presentation"
-                            var="templateButton.medium"/>
+                            var="templateButton.default"/>
                     <attributes>
                         <attribute name="class">button</attribute>
                     </attributes>
                 </style>
-                <!-- Template Button Big -->
+
+                <!-- Template Button large -->
                 <style element="a">
                     <locale group="quiqqer/template-presentation"
-                            var="templateButton.big"/>
+                            var="templateButton.large"/>
                     <attributes>
-                        <attribute name="class">button button__big</attribute>
+                        <attribute name="class">button button__large</attribute>
                     </attributes>
                 </style>
 
+                <!-- Template Button icon: download -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="templateButton.download"/>
+                    <attributes>
+                        <attribute name="class">button button-download</attribute>
+                    </attributes>
+                </style>
+
+                <!-- Template Button icon: arrow -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="templateButton.arrow"/>
+                    <attributes>
+                        <attribute name="class">button button-arrow</attribute>
+                    </attributes>
+                </style>
             </styles>
         </wysiwyg>
 

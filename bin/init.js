@@ -63,19 +63,19 @@ window.addEvent("domready", function () {
                     e.stopPropagation();
                 });
                 window.addEvent('click', function () {
-                    searchBar.removeClass('test');
+                    searchBar.removeClass('showSearch');
                     open = false;
                     window.removeEvents('click');
                 });
 
-                searchBar.addClass('test');
+                searchBar.addClass('showSearch');
                 searchInput.focus();
                 open = true;
                 return;
             }
 
             /* close */
-            searchBar.removeClass('test');
+            searchBar.removeClass('showSearch');
             open = false;
             window.removeEvents('click');
         })

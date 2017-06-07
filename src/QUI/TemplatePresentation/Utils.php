@@ -101,7 +101,6 @@ class Utils
             'startPage'      => $startPage
         );
 
-
         // set cache
         QUI\Cache\Manager::set(
             'quiqqer/templatePresentation/' . $params['Site']->getId(),

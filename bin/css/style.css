@@ -217,8 +217,7 @@ input[type='submit'],
 input[type='reset'],
 input[type='button'],
 button,
-.button
-/*.tpl-presentation-row .button */{
+.button {
     display: inline-block;
     border-radius: 100px;
     box-shadow: none;
@@ -232,7 +231,8 @@ button,
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
-    min-width: 150px;
+    min-width: 120px;
+    text-align: center;
 }
 
 /*input[type='submit']:hover,
@@ -920,12 +920,8 @@ li.page-header-navigation-sub-entry:hover {
 * ========================================================== */
 
 .header-bar-suggestSearch {
-    float: right;
     position: absolute;
     right: 0;
-    display: flex;
-    height: 100%;
-    align-items: center;
 }
 
 .header-bar-suggestSearch .fa {
@@ -955,13 +951,19 @@ li.page-header-navigation-sub-entry:hover {
     padding: 0 10px;
     visibility: hidden;
     opacity: 0;
-    right: -30px;
+    right: -100%;
     z-index: 1;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
-.header-bar-suggestSearch.test input[type="search"] {
-    right: 0px;
+.header-bar-suggestSearch.showSearch input[type="search"] {
+    right: 100%;
     opacity: 1;
     visibility: visible;
 }
@@ -974,7 +976,7 @@ li.page-header-navigation-sub-entry:hover {
 .header-bar-social {
     line-height: 80px;
     float: right;
-    margin-right:50px;
+    margin-right: 80px;
 }
 
 .header-bar-social .fa {
@@ -2111,7 +2113,7 @@ a.link-slide-right-grey:focus::before {
     letter-spacing: 1px;
     transition: all 0.2s;
     font-size: 1.1em;
-    background: #333;
+    background: #aaa;
 }
 
 .button:last-of-type {
@@ -2123,7 +2125,7 @@ a.link-slide-right-grey:focus::before {
     font-size: 0.9em;
 }
 
-.button__big {
+.button__large {
     padding: 1em 1.6em;
     font-size: 1.6em;
 }

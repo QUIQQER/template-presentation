@@ -68,12 +68,29 @@ try {
     QUI::getPackage('quiqqer/search');
 //    $Locale = QUI::getLocale();
 
+    // social
+    $link = '#';
+    if (true) {
+        $socialHTML = '<div class="header-bar-social">';
+        if (true) {
+            $socialHTML .= '<a href="'. $link .'"><span class="fa fa-facebook"></span></a>';
+        }
+        if (true) {
+            $socialHTML .= '<a href="'. $link .'"><span class="fa fa-twitter"></span></a>';
+        }
+        if (true) {
+            $socialHTML .= '<a href="'. $link .'"><span class="fa fa-github"></span></a>';
+        }
+        $socialHTML .='</div>';
+    }
+
     $MegaMenu->appendHTML(
         /*'<div class="header-bar-social">
             <span class="fa fa-facebook"></span>
             <span class="fa fa-twitter"></span>
             <span class="fa fa-github"></span>
         </div>' .*/
+        $socialHTML .
         '<div class="header-bar-suggestSearch hide-on-mobile">
                     <input type="search" data-qui="package/quiqqer/search/bin/controls/Suggest" 
                     placeholder="' . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') . '"/>

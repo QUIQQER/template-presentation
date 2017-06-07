@@ -540,22 +540,54 @@
         <locale name="linkSimpleGrey">
             <de><![CDATA[Link: simple (grau)]]></de>
             <en><![CDATA[Link: simple (grey)]]></en>
+            <pl><![CDATA[Link: simple (grey)]]></pl>
         </locale>
         <locale name="linkSimpleColor">
             <de><![CDATA[Link: simple (color)]]></de>
             <en><![CDATA[Link: simple (color)]]></en>
+            <pl><![CDATA[Link: simple (color)]]></pl>
         </locale>
         <locale name="LinkSlideUpGrey">
             <de><![CDATA[Link: slide up (grau)]]></de>
             <en><![CDATA[Link: slide up (grey)]]></en>
+            <pl><![CDATA[Link: slide up (grey)]]></pl>
         </locale>
         <locale name="LinkSlideUpColor">
             <de><![CDATA[Link: slide up (color)]]></de>
             <en><![CDATA[Link: slide up (color)]]></en>
+            <pl><![CDATA[Link: slide up (color)]]></pl>
         </locale>
         <locale name="LinkSlideRightGrey">
             <de><![CDATA[Link: slide right (grey)]]></de>
             <en><![CDATA[Link: slide right (grey)]]></en>
+            <pl><![CDATA[Link: slide right (grey)]]></pl>
+        </locale>
+
+        <!--template buttons -->
+        <locale name="templateButton.small">
+            <de><![CDATA[Button (klein)]]></de>
+            <en><![CDATA[Button (small)]]></en>
+            <pl><![CDATA[Button (maly)]]></pl>
+        </locale>
+        <locale name="templateButton.default">
+            <de><![CDATA[Button (normal)]]></de>
+            <en><![CDATA[Button (default)]]></en>
+            <pl><![CDATA[Button (standardowy)]]></pl>
+        </locale>
+        <locale name="templateButton.large">
+            <de><![CDATA[Button (groß)]]></de>
+            <en><![CDATA[Button (large)]]></en>
+            <pl><![CDATA[Button (duzy)]]></pl>
+        </locale>
+        <locale name="templateButton.download">
+            <de><![CDATA[Button: Download]]></de>
+            <en><![CDATA[Button: download]]></en>
+            <pl><![CDATA[Button: download]]></pl>
+        </locale>
+        <locale name="templateButton.arrow">
+            <de><![CDATA[Button: Pfeil]]></de>
+            <en><![CDATA[Button: arrow]]></en>
+            <pl><![CDATA[Button: strzalka]]></pl>
         </locale>
 
         <!-- site settings -->
