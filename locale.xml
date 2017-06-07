@@ -542,10 +542,15 @@
             <en><![CDATA[Social icons]]></en>
             <pl><![CDATA[Media spolecznosciowe (social icons)]]></pl>
         </locale>
-        <locale name="social.show">
-            <de><![CDATA[Anzeigen]]></de>
-            <en><![CDATA[Show]]></en>
-            <pl><![CDATA[Wlacz]]></pl>
+        <locale name="social.show.nav">
+            <de><![CDATA[Anzeigen im Menü]]></de>
+            <en><![CDATA[Show in nav]]></en>
+            <pl><![CDATA[Wlacz w nawigacji]]></pl>
+        </locale>
+        <locale name="social.show.footer">
+            <de><![CDATA[Anzeigen im Footer]]></de>
+            <en><![CDATA[Show in footer]]></en>
+            <pl><![CDATA[Wlacz w stopce]]></pl>
         </locale>
         <locale name="social.facebook">
             <de><![CDATA[Facebook]]></de>

@@ -119,7 +119,11 @@
                     </conf>
 
                     <!-- social -->
-                    <conf name="social.show">
+                    <conf name="social.show.nav">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="social.show.footer">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
@@ -540,12 +544,22 @@
                                 />
                             </title>
 
-                            <!-- show social? -->
-                            <input conf="templatePresentation.settings.social.show"
+                            <!-- show social on nav? -->
+                            <input conf="templatePresentation.settings.social.show.nav"
                                    type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="social.show"
+                                            var="social.show.nav"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- show social on the footer? -->
+                            <input conf="templatePresentation.settings.social.show.footer"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.show.footer"
                                     />
                                 </text>
                             </input>

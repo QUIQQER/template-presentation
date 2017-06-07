@@ -19,12 +19,10 @@
     <div class="page-footer-copyright">
         <div class="grid-container">
             <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
-                {locale group="quiqqer/template-businesspro" var="copyright.text" year=$smarty.now|date_format:'%Y'}
+                {locale group="quiqqer/template-presentation" var="copyright.text" year=$smarty.now|date_format:'%Y'}
             </div>
 
-            <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
-                Social
-            </div>
+            {$socialFooter}
         </div>
     </div>
 </footer>

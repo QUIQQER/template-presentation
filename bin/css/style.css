@@ -1478,6 +1478,20 @@ footer:hover a {
     display: inline-block;
 }
 
+/* footer social */
+.footer-bar-social {
+    text-align: right;
+}
+
+.footer-bar-social a {
+    padding: 10px;
+}
+
+.footer-bar-social a:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+
 /** responsive
  **************************************************/
 
