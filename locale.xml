@@ -196,8 +196,8 @@
             <en><![CDATA[Continue Reading]]></en>
         </locale>
         <locale name="copyright.text" html="true">
-            <de><![CDATA[&copy; 2006 - [year] - PCSG. Alle Rechte vorbehalten.]]></de>
-            <en><![CDATA[Copyright [year]]]></en>
+            <de><![CDATA[&copy; [year] - Template Presentation umgesetzt mit <a href="http://www.quiqqer.de">QUIQQER</a>]]></de>
+            <en><![CDATA[&copy; [year] - Template Presentation powered by <a href="http://www.quiqqer.de">QUIQQER</a>]]></en>
         </locale>
         <locale name="copyright.link" html="true">
             <de><![CDATA[Startseite]]></de>

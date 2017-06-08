@@ -288,6 +288,7 @@ button:hover,
     color: <?php echo $colorFooterFont; ?> !important;
 }
 
+.page-footer h1,
 .page-footer h2,
 .page-footer h3,
 .page-footer h4 {
@@ -295,11 +296,15 @@ button:hover,
 }
 
 footer a {
-    color: <?php echo $colorFooterLinks; ?>;
+    color: <?php //echo $colorFooterLinks; ?>;
 }
 
 footer a:hover {
-    color: <?php echo $colorFooterLinks; ?>;
+    color: <?php //echo $colorFooterLinks; ?>;
+}
+
+.page-footer-copyright {
+    border-top: 1px solid <?php echo $Convert->colorBrightness($colorFooterBackground, 0.9)?>
 }
 
 /* pagination */

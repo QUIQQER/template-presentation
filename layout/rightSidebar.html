@@ -9,7 +9,7 @@
     {foreach from=$prefixContentBricks item=Brick}
     <div class="tpl-presentation-row">
         {if $Brick->getAttribute('frontendTitle')}
-            <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+            <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
         {/if}
         {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
         {$Brick->create()}
@@ -57,7 +57,7 @@
     {foreach from=$suffixContentBricks item=Brick}
     <div class="tpl-presentation-row">
         {if $Brick->getAttribute('frontendTitle')}
-            <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+            <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
         {/if}
         {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
         {$Brick->create()}
@@ -70,10 +70,8 @@
     {if !empty( $rightSideBar)}
         {foreach from=$rightSideBar item=Brick}
         <div class="tpl-presentation-row">
-            {if $Brick->getAttribute('frontendTitle') &&
-                $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'
-            }
-            <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+            {if $Brick->getAttribute('frontendTitle')}
+                <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
             {/if}
             {if $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'}
                 {assign var=showTitle value=$Brick->setSetting('showTitle', false)}

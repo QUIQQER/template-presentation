@@ -1184,9 +1184,9 @@ h1 {
     font-size: 54px;
 }
 
-h1.brick-title {
+/*h1.brick-title {
     text-align: center;
-}
+}*/
 
 h2 {
     font-size: 32px;
@@ -1377,30 +1377,24 @@ h2.quiqqer-navigation-title-style {
 
 .page-footer header,
 .page-footer header a {
-    font-size: 1.1em;
-    text-decoration: none;
-    padding: 0;
+    /*font-size: 1.1em;*/
+    /*text-decoration: none;*/
+    /*padding: 0;*/
 }
 
-/*.page-footer h2,
-.page-footer h3,
-.page-footer h4 {
-    font-size: 1.7em;
-    margin: 0 0 1em;
-}*/
+.page-footer header h1 {
+    font-size: 2em;
+    text-align: left;
+}
 
 .page-footer label {
     font-size: 0.8em;
 }
 
 .page-footer-copyright {
-    border-top: 1px solid #ddd;
-    clear: both;
-    float: left;
+    /*border-top: 1px solid #ddd;*/
     padding-top: 20px;
     padding-bottom: 20px;
-    text-align: left;
-    width: 100%;
 }
 
 .page-footer-copyright-right {
