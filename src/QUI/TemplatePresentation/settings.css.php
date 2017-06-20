@@ -189,6 +189,7 @@ a.quiqqer-navigation-home:hover {
     color: <?php echo $colorMain; ?>;
 }
 
+.control-color,
 .mainColor,
 .mainColorHover:hover,
 .template-breadcrumb .quiqqer-breadcrumb ul li:last-child a span:last-child {

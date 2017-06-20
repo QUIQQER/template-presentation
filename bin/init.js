@@ -16,16 +16,12 @@ window.addEvent("domready", function () {
              * show button toTop after scrolling down
              */
             var scroll = function () {
-                console.log(1);
                 if (window.getScroll().y > 300) {
-                    console.log(2)
                     if (!hasClass) {
-                        console.log(3)
                         toTop.addClass('toTop__show');
                     }
                     return;
                 }
-                console.log(4)
                 toTop.removeClass('toTop__show');
                 hasClass = false;
             };
@@ -66,7 +62,7 @@ window.addEvent("domready", function () {
                     headerBar.removeClass('header-bar-scrolled');
                     hasClass = false;
                 }
-            };
+            };set
 
 
             window.addEvents({
