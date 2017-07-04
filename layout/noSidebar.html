@@ -16,7 +16,7 @@
 {/if}
 
 
-{if !$Site->getAttribute('templatePresentation.showEmotion')}
+{*if !$Site->getAttribute('templatePresentation.showEmotion')}
 
     {if $Site->getAttribute('templatePresentation.showTitle')}
     <header class="content-header">
@@ -30,6 +30,33 @@
     </div>
     {/if}
 
+{/if*}
+
+{if !$showHeader}
+
+{if $Site->getAttribute('templatePresentation.showTitle')}
+<header class="content-header">
+    <h1 itemprop="name">
+        {if $Site->getAttribute('templatePresentation.altTitle') &&
+        $Site->getAttribute('templatePresentation.altTitle') != ''}
+        {$Site->getAttribute('templatePresentation.altTitle')}
+        {else}
+        {$Site->getAttribute('templatePresentation.title')}
+        {/if}
+    </h1>
+</header>
+{/if}
+
+{if $Site->getAttribute('templatePresentation.showShort')}
+<div class="content-short" itemprop="description">
+    {if $Site->getAttribute('templatePresentation.altShort') &&
+    $Site->getAttribute('templatePresentation.altShort') != ''}
+    {$Site->getAttribute('templatePresentation.altShort')|nl2br}
+    {else}
+    {$Site->getAttribute('short')|nl2br}
+    {/if}
+</div>
+{/if}
 {/if}
 
 {$Template->getBody()}

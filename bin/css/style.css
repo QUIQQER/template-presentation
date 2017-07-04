@@ -2234,7 +2234,7 @@ a.link-slide-right-grey:focus::before {
 
 /* FAQ liste */
 
-.content-template-faq-list {
+/*.content-template-faq-list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -2280,12 +2280,129 @@ a.link-slide-right-grey:focus::before {
 
 .faq-category-more-button:hover .faq-category-icon {
     right: 15%;
-}
+}*/
 
-@media screen and (max-width: 767px) {
+
+/*@media screen and (max-width: 767px) {
     .content-template-faq-list-category {
         margin: 20px 0;
         width: 100%;
+    }
+}*/
+
+.content-template-faq-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-template-faq-list .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-template-faq-list-category {
+    margin-bottom: 40px;
+    width: calc(33.33% - 40px);
+    margin: 20px;
+    transition: 0.3s all ease-in-out;
+}
+
+section.content-template-faq-list-category:hover {
+    /*box-shadow: 0 0 10px -1px rbga(0,0,0,0.15);*/
+    /*background: #fafafa;*/
+}
+
+.content-template-faq-list-category h2 {
+    margin-bottom: 2em;
+    position: relative;
+}
+
+
+
+.content-template-faq-list-category h2:after {
+    position: absolute;
+    content: '';
+    width: 40%;
+    height: 0;
+    left: 0;
+    bottom: 0;
+    border-bottom: 3px solid;
+    transition: 0.3s all ease-in-out;
+}
+
+.content-template-faq-list-category:hover h2:after {
+    width: 50%;
+}
+
+.content-template-faq-list-category h2 span {
+    color: #444;
+}
+
+.content-template-faq-list-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content-template-faq-list-category ul li {
+    padding-left: 0;
+    margin-left: 0;
+    /*transition: 0.3s all ease-in-out;*/
+    line-height: 2em;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.content-template-faq-list-category ul li a {
+    color: inherit;
+    display: block;
+}
+
+/*.content-template-faq-list-category .fa {
+    margin-right: 10px;
+    !*opacity: 0.5;*!
+    transition: 0.3s all ease-in-out;
+    !*color: #ddd;*!
+}*/
+
+.content-template-faq-list-category ul li:hover {
+    background: rgba(0,0,0,0.03);
+}
+
+.content-template-faq-list-category ul li span {
+    margin-left: 10px;
+}
+
+.content-template-faq-list-category ul li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    background: #f6f6f6;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.content-template-faq-list-category ul li:hover:before {
+    background: #e8e8e8;
+}
+
+
+@media screen and (max-width: 767px) {
+    .content-template-faq-list {
+        display: block;
+    }
+
+    .content-template-faq-list-category {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .content-template-faq-list-category h2 {
+        margin-bottom: 1em;
     }
 }
 
