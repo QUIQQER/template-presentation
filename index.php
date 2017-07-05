@@ -161,11 +161,10 @@ $templateSettings['BricksManager'] = $BricksManager;
 $templateSettings['Breadcrumb']    = $Breadcrumb;
 $templateSettings['MegaMenu']      = $MegaMenu;
 
-
 /**
  * header: title
  */
-$siteTitle = false;
+/*$siteTitle = false;
 
 if ($Site->getAttribute('templatePresentation.showTitle')) {
     $siteTitle = $Site->getAttribute('title');
@@ -173,12 +172,12 @@ if ($Site->getAttribute('templatePresentation.showTitle')) {
     if ($Site->getAttribute('templatePresentation.altTitle') != '') {
         $siteTitle = $Site->getAttribute('templatePresentation.altTitle');
     }
-}
+}*/
 
 /**
  * header short
  */
-$siteShort = false;
+/*$siteShort = false;
 
 if ($Site->getAttribute('templatePresentation.showShort')) {
     $siteShort = $Site->getAttribute('short');
@@ -186,12 +185,13 @@ if ($Site->getAttribute('templatePresentation.showShort')) {
     if ($Site->getAttribute('templatePresentation.altShort') != '') {
         $siteShort = $Site->getAttribute('templatePresentation.altShort');
     }
-}
+}*/
+
 
 
 $Engine->assign(array(
-    'siteTitle'    => $siteTitle,
-    'siteShort'    => $siteShort,
+//    'siteTitle'    => $siteTitle,
+//    'siteShort'    => $siteShort,
     'socialFooter' => $socialFooter
 ));
 

@@ -17,6 +17,12 @@ window.addEvent("domready", function () {
             var toTop         = document.getElements('[href=#top]'),
                 buttonVisible = false;
 
+            // show on load
+            if (QUI.getScroll().y > 300) {
+                toTop.addClass('toTop__show');
+                buttonVisible = true;
+            }
+
             // show button toTop after scrolling down
             QUI.addEvent('scroll', function () {
                 if (QUI.getScroll().y > 300) {

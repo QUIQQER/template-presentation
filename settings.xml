@@ -6,6 +6,15 @@
             <config>
                 <section name="templatePresentation.settings">
 
+                    <!-- general settings -->
+                    <conf name="showTitle">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>hide</defaultvalue>
+                    </conf>
+                    <conf name="showShort">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>hide</defaultvalue>
+                    </conf>
                     <conf name="bgColorSwitcherPrefix">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>hide</defaultvalue>
@@ -158,12 +167,30 @@
 
                         <!-- Background Color Switcher Prefix / Suffix -->
                         <settings title="templatePresentation.settings"
-                                  name="templatePresentation.settings.bgColorSwitcher">
+                                  name="templatePresentation.settings.general">
                             <title>
                                 <locale group="quiqqer/template-presentation"
-                                        var="templatePresentation.settings.bgColorSwitcher.title"
+                                        var="templatePresentation.settings.general.title"
                                 />
                             </title>
+
+                            <!-- show title -->
+                            <input conf="templatePresentation.settings.showTitle" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.showTitle.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- show short description -->
+                            <input conf="templatePresentation.settings.showShort" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.showShort.text"
+                                    />
+                                </text>
+                            </input>
 
                             <!-- Background Color Switcher Prefix -->
                             <select conf="templatePresentation.settings.bgColorSwitcherPrefix">
@@ -265,16 +292,6 @@
                                     />
                                 </text>
                             </input>
-                        </settings>
-
-                        <!-- header settings -->
-                        <settings title="templatePresentation.settings"
-                                  name="templatePresentation.settings.header">
-                            <title>
-                                <locale group="quiqqer/template-presentation"
-                                        var="templatePresentation.settings.header.title"
-                                />
-                            </title>
 
                             <!-- header height and value -->
                             <input conf="templatePresentation.settings.headerHeight" type="checkbox">
@@ -316,6 +333,7 @@
                                 </option>
                             </select>
                         </settings>
+
 
                         <!-- breadrcumb -->
                         <settings title="templatePresentation.settings"

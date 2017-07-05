@@ -77,6 +77,40 @@ class Utils
                 break;
         }
 
+
+        $showTitle = false;
+        $showShort = false;
+
+        if ($Project->getConfig('templatePresentation.settings.showTitle')) {
+            $showTitle = $Project->getConfig('templatePresentation.settings.showTitle');
+        };
+
+
+        if ($Project->getConfig('templatePresentation.settings.showShort')) {
+            $showShort = $Project->getConfig('templatePresentation.settings.showShort');
+        };
+
+        /* site own show title */
+        switch ($params['Site']->getAttribute('templatePresentation.showTitle')) {
+            case 'show':
+                $showTitle = true;
+                break;
+            case 'hide':
+                $showTitle = false;
+                break;
+        }
+
+        /* site own show short description */
+        switch ($params['Site']->getAttribute('templatePresentation.showShort')) {
+            case 'show':
+                $showShort = true;
+                break;
+            case 'hide':
+                $showShort = false;
+                break;
+        }
+
+
         /* site own show header */
         switch ($params['Site']->getAttribute('templatePresentation.showHeader')) {
             case 'show':
@@ -85,8 +119,11 @@ class Utils
             case 'hide':
                 $showHeader = false;
         }
+
+
         $headerArea  = $params['headerArea'];
         $settingsCSS = include 'settings.css.php';
+
 
         $config += array(
 //            'quiTplType'                => $Project->getConfig('templatePresentation.settings.standardType'),
@@ -98,7 +135,9 @@ class Utils
             'bodyClass'      => $bodyClass,
             'navPos'         => $Project->getConfig('templatePresentation.settings.navPos'),
             'headerArea'     => $headerArea,
-            'startPage'      => $startPage
+            'startPage'      => $startPage,
+            'showTitle'      => $showTitle,
+            'showShort'      => $showShort
         );
 
         // set cache

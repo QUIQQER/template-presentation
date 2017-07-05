@@ -1,16 +1,4 @@
 {strip}
-{assign var=useShort value=false}
-{assign var=useAltShort value=false}
-
-{if $Site->getAttribute('templatePresentation.showShort') &&
-    $Site->getAttribute('short')}
-    {assign var=useShort value=true}
-{/if}
-
-{if $Site->getAttribute('templatePresentation.altShort') &&
-    $Site->getAttribute('templatePresentation.altShort') != ''}
-    {assign var=useAltShort value=true}
-{/if}
 
 <header class="page-header">
     {if $Site->getAttribute('image_emotion')}
@@ -20,31 +8,21 @@
         }
     {/if}
     <div class="page-header-container grid-container">
-        {if $siteTitle}
+
+        {if $showTitle}
         <h1 class="page-header-text-title">
-            {$siteTitle}
+            {$Site->getAttribute('title')}
         </h1>
         {/if}
 
-        {if $siteShort}
+        {if $showShort}
         <div class="page-header-text-wrapper">
             <div class="page-header-text-wrapper-short">
-                {$siteShort}
+                {$Site->getAttribute('short')|nl2br}
             </div>
         </div>
         {/if}
 
-        {*if $useShort}
-        <div class="page-header-text-wrapper">
-            <div class="page-header-text-wrapper-short">
-                {if $useAltShort}
-                    {$Site->getAttribute('templatePresentation.altShort')|nl2br}
-                {else}
-                    {$Site->getAttribute('short')|nl2br}
-                {/if}
-            </div>
-        </div>
-        {/if*}
     </div>
 </header>
 {/strip}
