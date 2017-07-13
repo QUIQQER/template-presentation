@@ -680,9 +680,9 @@
 
         <!-- search -->
         <locale name="bricks.search.title">
-            <de><![CDATA[Template Presentation: Suchfeld]]></de>
+            <de><![CDATA[Template Presentation: Suche]]></de>
             <en><![CDATA[Template Presentation: Search input]]></en>
-            <pl><![CDATA[Template Presentation: Pole wyszukiwarki]]></pl>
+            <pl><![CDATA[Template Presentation: Wyszukiwarka]]></pl>
         </locale>
         <locale name="bricks.search.description">
             <de><![CDATA[Mit dem Brick lässt sich ein Suchfeld an beliebiger Stelle platzieren.]]></de>

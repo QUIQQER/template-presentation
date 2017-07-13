@@ -40,40 +40,32 @@ class Utils
         /**
          * no header?
          * no breadcrumb?
-         * Body Class
          *
          * own site type
          */
 
         $showHeader     = false;
         $showBreadcrumb = false;
-        $bodyClass      = '';
-        $startPage      = false;
 
         switch ($Template->getLayoutType()) {
             case 'layout/startPage':
                 $showHeader     = $Project->getConfig('templatePresentation.settings.showHeaderStartPage');
                 $showBreadcrumb = $Project->getConfig('templatePresentation.settings.showBreadcrumbStartPage');
-                $bodyClass      = 'startpage';
-                $startPage      = true;
                 break;
 
             case 'layout/noSidebar':
                 $showHeader     = $Project->getConfig('templatePresentation.settings.showHeaderNoSidebar');
                 $showBreadcrumb = $Project->getConfig('templatePresentation.settings.showBreadcrumbNoSidebar');
-                $bodyClass      = 'left-sidebar';
                 break;
 
             case 'layout/rightSidebar':
                 $showHeader     = $Project->getConfig('templatePresentation.settings.showHeaderRightSidebar');
                 $showBreadcrumb = $Project->getConfig('templatePresentation.settings.showBreadcrumbRightSidebar');
-                $bodyClass      = 'right-sidebar';
                 break;
 
             case 'layout/leftSidebar':
                 $showHeader     = $Project->getConfig('templatePresentation.settings.showHeaderLeftSidebar');
                 $showBreadcrumb = $Project->getConfig('templatePresentation.settings.showBreadcrumbLeftSidebar');
-                $bodyClass      = 'no-sidebar';
                 break;
         }
 
@@ -132,10 +124,8 @@ class Utils
             'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
             'typeClass'      => 'type-' . str_replace(array('/', ':'), '-',
                     $params['Site']->getAttribute('type')),
-            'bodyClass'      => $bodyClass,
             'navPos'         => $Project->getConfig('templatePresentation.settings.navPos'),
             'headerArea'     => $headerArea,
-            'startPage'      => $startPage,
             'showTitle'      => $showTitle,
             'showShort'      => $showShort
         );

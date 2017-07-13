@@ -88,7 +88,8 @@ input[type='radio'] {
 }
 
 ::-webkit-input-placeholder {
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.3);
+    /*color: #eee;*/
     font-size: 1em;
 }
 
@@ -154,7 +155,7 @@ header {
     padding-bottom: 1.3rem;
 }
 
-.startpage .content-header {
+.start-page .content-header {
     text-align: center;
 }
 
@@ -670,8 +671,8 @@ h1.page-header-text-title {
 /* mobile menu */
 
 .quiqqer-menu-megaMenu-mobile-search {
+    display: none;
     float: right;
-    display: block;
     padding: 0 15px;
     opacity: 0.9;
 }
@@ -999,11 +1000,11 @@ li.page-header-navigation-sub-entry:hover {
 }
 
 
-/*.header-bar-suggestSearch input[type="search"]:hover,
-.header-bar-suggestSearch input[type="search"]:focus {
-    !*background: rgba(255,255,255,0.1);*!
-    opacity: 1;
-}*/
+@media screen and (max-width: 767px) {
+    .header-bar-social {
+        margin-right: 0;
+    }
+}
 
 /** page header search
 * ========================================================== */
@@ -1077,8 +1078,8 @@ a.header-bar-search-link:hover {
 .content-header + .content-template,
 .content-short + .content-body,
 .content-short + .content-template,
-.content-template + .content-short
-    /*.content-body + .content-template,*/
+.content-template + .content-short,
+.content-body + .content-template
     /*.tpl-presentation-row + .content-body */
 {
     padding-top: 0;
@@ -1086,6 +1087,11 @@ a.header-bar-search-link:hover {
 
 .control-content {
     padding-bottom: 3rem;
+}
+
+.control-content h1:only-child,
+.control-content h2:only-child {
+    padding-bottom: 0;
 }
 
 .control-header {
@@ -1182,7 +1188,8 @@ h1 {
     font-size: 54px;
 }
 
-.startpage .brick-title {
+.start-page .brick-title,
+.no-sidebar .brick-title {
     text-align: center;
 }
 
@@ -1236,24 +1243,30 @@ p,
     margin: 20px;
     font-size: 2em;
     transform: scale(0);
+    opacity: 0.3;
 }
 
 .toTop__show {
     transform: scale(1);
 }
 
+.toTop .fa {
+    border-radius: 10px;
+}
+
+.toTop:hover {
+    opacity: 1;
+}
+
 
 .toTop .fa:before {
-    /*background: rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    color: #fff;
-    padding: 6px;*/
-    background: #57cfb0;
-    border-radius: 10%;
     color: #fff;
     padding: 6px;
-    opacity: 0.3;
     transition: 0.3s all;
+    width: 40px;
+    line-height: 40px;
+    display: block;
+    text-align: center;
 
     /* fix jumping nav in chrome */
     -webkit-transform: translateZ(0);
@@ -1263,48 +1276,14 @@ p,
     transform: translateZ(0);
 }
 
-.toTop .fa:after {
-    /*border: 3px solid #57cfb0;
-    border-radius: calc(10% + 3px);
-    content: "";
-    height: 100%;
-    left: -3px;
-    padding: 6px 0;
-    position: absolute;
-    top: -9px;
-    width: 100%;
-    transition: 0.15s all ease-in-out;
-    opacity: 0.3;*/
-    /*
-    border: 3px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    content: "";
-    height: 100%;
-    left: -3px;
-    padding: 6px 0;
-    position: absolute;
-    top: -9px;
-    width: 100%;
-    transition: 0.15s all ease-in-out;*/
-}
-
-
-
-
-.toTop .fa:hover:before {
-    transform: scale(11) !important;
-    opacity: 0.9;
-}
-
-.toTop .fa:hover:after {
-    opacity: 0.5;
-    transform: scale(1.2);
-    transition: 1.1s all cubic-bezier(.21, 1.14, .27, .91);
-}
-
 @media screen and (max-width: 767px) {
     .toTop {
         margin: 10px;
+    }
+
+    .toTop .fa:before {
+        width: 30px;
+        line-height: 30px;
     }
 }
 
@@ -1357,7 +1336,6 @@ h2.quiqqer-navigation-title-style {
  * ========================================================== */
 
 .page-footer {
-    border-top: 1px solid #e2e2e2;
     clear: both;
     font-size: 0.9em;
     line-height: 1.7em;
@@ -2192,7 +2170,7 @@ a.icon-link:hover {
     z-index: 1;
 }
 
-.tpl-presentation-row .templateQUI-startpage-intro-entry a:hover {
+.tpl-presentation-row .templateQUI-start-page-intro-entry a:hover {
     color: inherit;
 }
 

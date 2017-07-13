@@ -40,7 +40,7 @@ if (count($searchSites)) {
     try {
         $searchUrl = $searchSites[0]->getUrlRewritten();
 
-        $searchMobile = '<div class="quiqqer-menu-megaMenu-mobile-search hide-on-desktop"
+        $searchMobile = '<div class="quiqqer-menu-megaMenu-mobile-search"
                                   style="width: auto; font-size: 30px !important;">
                     <a href="' . $searchUrl . '"
                     class="header-bar-search-link searchMobile">
@@ -161,37 +161,32 @@ $templateSettings['Breadcrumb']    = $Breadcrumb;
 $templateSettings['MegaMenu']      = $MegaMenu;
 
 /**
- * header: title
+ * body class
  */
-/*$siteTitle = false;
+$bodyClass = '';
+$startPage = false;
 
-if ($Site->getAttribute('templatePresentation.showTitle')) {
-    $siteTitle = $Site->getAttribute('title');
+switch ($Template->getLayoutType()) {
+    case 'layout/startPage':
+        $bodyClass = 'start-page';
+        $startPage = true;
+        break;
 
-    if ($Site->getAttribute('templatePresentation.altTitle') != '') {
-        $siteTitle = $Site->getAttribute('templatePresentation.altTitle');
-    }
-}*/
+    case 'layout/noSidebar':
+        $bodyClass = 'no-sidebar';
+        break;
 
-/**
- * header short
- */
-/*$siteShort = false;
+    case 'layout/rightSidebar':
+        $bodyClass = 'right-sidebar';
+        break;
 
-if ($Site->getAttribute('templatePresentation.showShort')) {
-    $siteShort = $Site->getAttribute('short');
+    case 'layout/leftSidebar':
+        $bodyClass = 'left-sidebar';
+        break;
+}
 
-    if ($Site->getAttribute('templatePresentation.altShort') != '') {
-        $siteShort = $Site->getAttribute('templatePresentation.altShort');
-    }
-}*/
-
-
-
-$Engine->assign(array(
-//    'siteTitle'    => $siteTitle,
-//    'siteShort'    => $siteShort,
-    'socialFooter' => $socialFooter
-));
+$templateSettings['socialFooter'] = $socialFooter;
+$templateSettings['bodyClass']    = $bodyClass;
+$templateSettings['startPage']    = $startPage;
 
 $Engine->assign($templateSettings);

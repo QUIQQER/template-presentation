@@ -42,7 +42,11 @@ class Search extends QUI\Control
     {
         QUI::getPackage('quiqqer/search');
         $Engine = QUI::getTemplateManager()->getEngine();
-        
+
+        $Engine->assign(array(
+            'this' => $this
+        ));
+
         $this->addCSSFile(dirname(__FILE__) . '/Search.css');
         return $Engine->fetch(dirname(__FILE__) . '/Search.html');
     }

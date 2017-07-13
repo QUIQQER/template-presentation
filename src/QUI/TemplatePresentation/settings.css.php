@@ -88,8 +88,8 @@ ob_start();
 }
 
 <?php if($headerArea && $navPos == 'scroll') {?>
-.startpage .header-bar {
-/*.startpage .header-bar-inner-nav {*/
+.start-page .header-bar {
+/*.start-page .header-bar-inner-nav {*/
     position: absolute;
 }
 <?php } ?>
@@ -386,7 +386,7 @@ footer a:hover {
 <?php }; ?>
 
 <?php if ($headerArea) { ?>
-.startpage .body-container {
+.start-page .body-container {
     top: 0 !important;
 }
 
