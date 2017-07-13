@@ -66,7 +66,6 @@ $MegaMenu->prependHTML(
 
 try {
     QUI::getPackage('quiqqer/search');
-//    $Locale = QUI::getLocale();
 
     // social
     $socialNav    = '';

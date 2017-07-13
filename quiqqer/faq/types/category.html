@@ -1,0 +1,53 @@
+{if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
+<section class="content-body">
+    {$Site->getAttribute('content')}
+</section>
+{/if}
+
+<section itemscope itemtype="http://schema.org/ItemList"
+         class="content-template quiqqer-faq clear-fix"
+         data-qui="package/quiqqer/faq/bin/Category"
+>
+    {if count($entries)}
+    <ul class="quiqqer-faq-list">
+        {foreach $entries as $Faq}
+        <li>
+            <a href="{url site=$Site}#faq{$Faq->getId()}">
+                {$Faq->getAttribute('title')}
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+    {/if}
+
+    <hr />
+
+    {foreach $entries as $Faq}
+    <article id="faq{$Faq->getId()}" class="clear-fix">
+        <header>
+            <h2>{$Faq->getAttribute('title')}</h2>
+        </header>
+
+        {if $Faq->getAttribute('short')}
+        <div class="content-short">
+            {$Faq->getAttribute('short')|nl2br}
+        </div>
+        {/if}
+
+        <div class="content-body">
+            {$Faq->getAttribute('content')}
+        </div>
+
+        <a href="#top" class=" quiqqer-faq-list-linkToTop">
+           {locale group="quiqqer/faq" value="link.to.top"} <span class="fa fa-fw fa-level-up"></span>
+        </a>
+
+    </article>
+
+    {if !($Faq@last)}
+    <hr />
+    {/if}
+
+    {/foreach}
+
+</section>
