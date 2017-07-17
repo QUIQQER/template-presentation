@@ -63,3 +63,9 @@
 .quiqqer-search-suggest li:hover .fa {
     opacity: 1;
 }
+
+@media screen and (max-width: 767px) {
+    .quiqqer-suggestSearch-wrapper {
+        width: 100%;
+    }
+}

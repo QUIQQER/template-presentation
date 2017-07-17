@@ -2365,6 +2365,19 @@ a.link-slide-right-grey:focus::before {
     margin-left: 20px;
 }
 
+.button.button__ghost {
+    background: none;
+    border-color: #fff;
+    color: #fff;
+}
+
+.button.button__ghost:hover,
+.button.button__ghost:active,
+.button.button__ghost:focus {
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+}
+
 
 
 /* extra grid class  */
