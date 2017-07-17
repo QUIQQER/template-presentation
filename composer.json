@@ -2,7 +2,7 @@
     "name": "quiqqer\/template-presentation",
     "type": "quiqqer-template",
     "description": "",
-    "version": "dev-dev",
+    "version": "dev-master",
     "license": "",
     "authors": [
         {
@@ -28,7 +28,7 @@
         "quiqqer\/page-transition": "dev-master",
         "quiqqer\/pace": ">=1.2.0|dev-master|dev-dev",
         "quiqqer\/buttons": ">=1.0.0|dev-master|dev-dev",
-        "quiqqer\/presentation-bricks": "dev-dev",
+        "quiqqer\/presentation-bricks": "*",
         "quiqqer\/faq": "dev-dev",
         "quiqqer\/search": "dev-dev"
       },
