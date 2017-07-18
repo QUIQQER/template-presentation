@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <events>
     <event on="onProjectConfigSave" fire="\QUI\TemplatePresentation\EventHandler::onProjectConfigSave"/>
+    <event on="onSiteSave" fire="\QUI\TemplatePresentation\EventHandler::onProjectConfigSave"/>
     <event on="onSmartyInit" fire="\QUI\TemplatePresentation\EventHandler::onSmartyInit"/>
 </events>

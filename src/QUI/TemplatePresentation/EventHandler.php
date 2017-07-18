@@ -28,6 +28,19 @@ class EventHandler
     }
 
     /**
+     * Clear system cache on project save
+     *
+     * @return void
+     */
+    public static function onSiteSave()
+    {
+        try {
+            QUI\Cache\Manager::clear('quiqqer/templatePresentation');
+        } catch (QUI\Exception $Exception) {
+        }
+    }
+
+    /**
      * Event : on smarty init
      * @param \Smarty $Smarty - \Smarty
      */

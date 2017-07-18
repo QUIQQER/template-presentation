@@ -70,38 +70,38 @@ class Utils
         }
 
 
-        $showTitle = false;
-        $showShort = false;
+        $showPageTitle = false;
+        $showPageShort = false;
+        $showHeader    = false;
 
         if ($Project->getConfig('templatePresentation.settings.showTitle')) {
-            $showTitle = $Project->getConfig('templatePresentation.settings.showTitle');
+            $showPageTitle = $Project->getConfig('templatePresentation.settings.showTitle');
         };
 
 
         if ($Project->getConfig('templatePresentation.settings.showShort')) {
-            $showShort = $Project->getConfig('templatePresentation.settings.showShort');
+            $showPageShort = $Project->getConfig('templatePresentation.settings.showShort');
         };
 
         /* site own show title */
         switch ($params['Site']->getAttribute('templatePresentation.showTitle')) {
             case 'show':
-                $showTitle = true;
+                $showPageTitle = true;
                 break;
             case 'hide':
-                $showTitle = false;
+                $showPageTitle = false;
                 break;
         }
 
         /* site own show short description */
         switch ($params['Site']->getAttribute('templatePresentation.showShort')) {
             case 'show':
-                $showShort = true;
+                $showPageShort = true;
                 break;
             case 'hide':
-                $showShort = false;
+                $showPageShort = false;
                 break;
         }
-
 
         /* site own show header */
         switch ($params['Site']->getAttribute('templatePresentation.showHeader')) {
@@ -126,8 +126,8 @@ class Utils
                     $params['Site']->getAttribute('type')),
             'navPos'         => $Project->getConfig('templatePresentation.settings.navPos'),
             'headerArea'     => $headerArea,
-            'showTitle'      => $showTitle,
-            'showShort'      => $showShort
+            'showPageTitle'  => $showPageTitle,
+            'showPageShort'  => $showPageShort
         );
 
         // set cache

@@ -25,7 +25,7 @@ D.h. der Sidebar wird nach links gepullt, obwohl er in der HTML Code nach dem Ma
     {/if}
 
     {if !$showHeader}
-        {if $showTitle}
+        {if $showPageTitle}
         <header class="content-header">
             <h1 itemprop="name">
                 {$Site->getAttribute('title')}
@@ -33,7 +33,7 @@ D.h. der Sidebar wird nach links gepullt, obwohl er in der HTML Code nach dem Ma
         </header>
         {/if}
 
-        {if $showShort}
+        {if $showPageShort}
         <div class="content-short" itemprop="description">
             {$Site->getAttribute('short')|nl2br}
         </div>

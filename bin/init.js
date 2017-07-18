@@ -57,7 +57,7 @@ window.addEvent("domready", function () {
                 navBackground = false;
             
             window.addEvent('scroll', function () {
-                if (QUI.getScroll().y > 100) {
+                if (QUI.getScroll().y > 50) {
                     if (!navBackground) {
                         headerBar.addClass('header-bar-scrolled');
                         navBackground = true;
