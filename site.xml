@@ -86,7 +86,7 @@
                                 var="templatePresentation.siteSettings.showShort.hide"/>
                     </option>
                 </select>
-                
+
             </settings>
         </category>
     </settings>
