@@ -144,17 +144,72 @@
             <en><![CDATA[Show header picture]]></en>
             <pl><![CDATA[Pokaż zdjęcie nagłówka]]></pl>
         </locale>
+
+        <!-- header site settings-->
+        <locale name="templatePresentation.siteSettings.showHeader">
+            <de><![CDATA[Header]]></de>
+            <en><![CDATA[Header]]></en>
+            <pl><![CDATA[Header]]></pl>
+        </locale>
+            <locale name="templatePresentation.siteSettings.showHeader.default">
+                <de><![CDATA[Standard Template-Einstellung übernehmen]]></de>
+                <en><![CDATA[Default template setting]]></en>
+                <pl><![CDATA[Zastosuj ustawienia szablonu (template)]]></pl>
+            </locale>
+            <locale name="templatePresentation.siteSettings.showHeader.show">
+                <de><![CDATA[Anzeigen]]></de>
+                <en><![CDATA[Show]]></en>
+                <pl><![CDATA[Pokaż]]></pl>
+            </locale>
+            <locale name="templatePresentation.siteSettings.showHeader.hide">
+                <de><![CDATA[Verstecken]]></de>
+                <en><![CDATA[Hide]]></en>
+                <pl><![CDATA[Ukryj]]></pl>
+            </locale>
+
         <!-- Title & short -->
         <locale name="templatePresentation.siteSettings.showTitle">
             <de><![CDATA[Überschrift anzeigen]]></de>
             <en><![CDATA[Show title]]></en>
             <pl><![CDATA[Wyświetlić tytuł]]></pl>
         </locale>
+            <locale name="templatePresentation.siteSettings.showTitle.default">
+                <de><![CDATA[Standard Template-Einstellung übernehmen]]></de>
+                <en><![CDATA[Default template setting]]></en>
+                <pl><![CDATA[Zastosuj ustawienia szablonu (template)]]></pl>
+            </locale>
+            <locale name="templatePresentation.siteSettings.showTitle.show">
+                <de><![CDATA[Anzeigen]]></de>
+                <en><![CDATA[Show]]></en>
+                <pl><![CDATA[Pokaż]]></pl>
+            </locale>
+            <locale name="templatePresentation.siteSettings.showTitle.hide">
+                <de><![CDATA[Verstecken]]></de>
+                <en><![CDATA[Hide]]></en>
+                <pl><![CDATA[Ukryj]]></pl>
+            </locale>
         <locale name="templatePresentation.siteSettings.showShort">
             <de><![CDATA[Kurzbeschreibung anzeigen]]></de>
             <en><![CDATA[Show short descriptions]]></en>
             <pl><![CDATA[Wyświetlić opis strony]]></pl>
         </locale>
+            <locale name="templatePresentation.siteSettings.showShort.default">
+                <de><![CDATA[Standard Template-Einstellung übernehmen]]></de>
+                <en><![CDATA[Default template setting]]></en>
+                <pl><![CDATA[Zastosuj ustawienia szablonu (template)]]></pl>
+            </locale>
+            <locale name="templatePresentation.siteSettings.showShort.show">
+                <de><![CDATA[Anzeigen]]></de>
+                <en><![CDATA[Show]]></en>
+                <pl><![CDATA[Pokaż]]></pl>
+            </locale>
+            <locale name="templatePresentation.siteSettings.showShort.hide">
+                <de><![CDATA[Verstecken]]></de>
+                <en><![CDATA[Hide]]></en>
+                <pl><![CDATA[Ukryj]]></pl>
+            </locale>
+
+
 
 
         <locale name="package.title">
@@ -333,6 +388,8 @@
             <en><![CDATA[Rright sidebar]]></en>
             <pl><![CDATA[Układ z prawą kolumną]]></pl>
         </locale>
+
+
 
 
         <!-- breadcrumb settings -->
