@@ -148,6 +148,9 @@
                     <conf name="social.github">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="social.gitlab">
+                        <type><![CDATA[string]]></type>
+                    </conf>
                 </section>
             </config>
 
@@ -616,6 +619,15 @@
                                     />
                                 </text>
                             </input>
+                            <!-- gitlab -->
+                            <input conf="templatePresentation.settings.social.gitlab"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.gitlab"
+                                    />
+                                </text>
+                            </input>
                         </settings>
 
                     </category>
@@ -625,55 +637,10 @@
         </settings>
 
         <wysiwyg class="main-content">
-            <css src="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic"/>
+            <css src="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/style.css"/>
 
             <styles>
-                <!-- link effect 1: simple (grey) -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="linkSimpleGrey"/>
-                    <attributes>
-                        <attribute name="class">link-simple-grey</attribute>
-                    </attributes>
-                </style>
-
-                <!-- link effect 2: simple (color) -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="linkSimpleColor"/>
-                    <attributes>
-                        <attribute name="class">link-simple-color</attribute>
-                    </attributes>
-                </style>
-
-
-                <!-- link effect 3: slide up (grey) -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="LinkSlideUpGrey"/>
-                    <attributes>
-                        <attribute name="class">link-slide-up-grey</attribute>
-                    </attributes>
-                </style>
-
-                <!-- link effect 4: slide up (color) -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="LinkSlideUpColor"/>
-                    <attributes>
-                        <attribute name="class">link-slide-up-color</attribute>
-                    </attributes>
-                </style>
-
-                <!-- link effect 5: slide right (grey) -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="LinkSlideRightGrey"/>
-                    <attributes>
-                        <attribute name="class">link-slide-right-grey</attribute>
-                    </attributes>
-                </style>
 
                 <!-- Template Button small -->
                 <style element="a">
@@ -686,9 +653,9 @@
                 <!-- Template Button default -->
                 <style element="a">
                     <locale group="quiqqer/template-presentation"
-                            var="templateButton.default"/>
+                            var="templateButton.medium"/>
                     <attributes>
-                        <attribute name="class">button</attribute>
+                        <attribute name="class">button button__medium</attribute>
                     </attributes>
                 </style>
 
@@ -698,6 +665,15 @@
                             var="templateButton.large"/>
                     <attributes>
                         <attribute name="class">button button__large</attribute>
+                    </attributes>
+                </style>
+
+                <!-- Template Button ghost (white) -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="templateButton.ghost.white"/>
+                    <attributes>
+                        <attribute name="class">button button__ghost</attribute>
                     </attributes>
                 </style>
 

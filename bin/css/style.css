@@ -624,9 +624,7 @@ h1.page-header-text-title {
 
 .quiqqer-menu-megaMenu-list-item {
     font-weight: normal;
-    padding: 0 10px !important;
-    /*text-transform: uppercase;*/
-    /*font-size: 0.9em;*/
+    padding: 0 20px !important;
     letter-spacing: 1px;
 }
 
@@ -1170,9 +1168,9 @@ h1, h2, h3, h4, h5 {
     /*font-family: 'Open Sans', sans-serif;*/
     /*color: #747675;*/
     line-height: 1.15em;
-    /*font-weight: 500;*/
-    font-weight: 400;
+    font-weight: 300;
     padding-bottom: 0.8em;
+    letter-spacing: 1px;
 }
 
 header > h1,

@@ -589,37 +589,16 @@
             <pl><![CDATA[YouTube]]></pl>
         </locale>
         <locale name="social.github">
-            <de><![CDATA[GitHub / GitLab]]></de>
-            <en><![CDATA[GitHub / GitLab]]></en>
-            <pl><![CDATA[GitHub / GitLab]]></pl>
+            <de><![CDATA[GitHub]]></de>
+            <en><![CDATA[GitHub]]></en>
+            <pl><![CDATA[GitHub]]></pl>
+        </locale>
+        <locale name="social.gitlab">
+            <de><![CDATA[GitLab]]></de>
+            <en><![CDATA[GitLab]]></en>
+            <pl><![CDATA[GitLab]]></pl>
         </locale>
 
-        <!-- extra buttons -->
-        <locale name="linkSimpleGrey">
-            <de><![CDATA[Link: simple (grau)]]></de>
-            <en><![CDATA[Link: simple (grey)]]></en>
-            <pl><![CDATA[Link: simple (grey)]]></pl>
-        </locale>
-        <locale name="linkSimpleColor">
-            <de><![CDATA[Link: simple (color)]]></de>
-            <en><![CDATA[Link: simple (color)]]></en>
-            <pl><![CDATA[Link: simple (color)]]></pl>
-        </locale>
-        <locale name="LinkSlideUpGrey">
-            <de><![CDATA[Link: slide up (grau)]]></de>
-            <en><![CDATA[Link: slide up (grey)]]></en>
-            <pl><![CDATA[Link: slide up (grey)]]></pl>
-        </locale>
-        <locale name="LinkSlideUpColor">
-            <de><![CDATA[Link: slide up (color)]]></de>
-            <en><![CDATA[Link: slide up (color)]]></en>
-            <pl><![CDATA[Link: slide up (color)]]></pl>
-        </locale>
-        <locale name="LinkSlideRightGrey">
-            <de><![CDATA[Link: slide right (grey)]]></de>
-            <en><![CDATA[Link: slide right (grey)]]></en>
-            <pl><![CDATA[Link: slide right (grey)]]></pl>
-        </locale>
 
         <!--template buttons -->
         <locale name="templateButton.small">
@@ -627,15 +606,20 @@
             <en><![CDATA[Button (small)]]></en>
             <pl><![CDATA[Button (maly)]]></pl>
         </locale>
-        <locale name="templateButton.default">
-            <de><![CDATA[Button (normal)]]></de>
-            <en><![CDATA[Button (default)]]></en>
-            <pl><![CDATA[Button (standardowy)]]></pl>
+        <locale name="templateButton.medium">
+            <de><![CDATA[Button (medium)]]></de>
+            <en><![CDATA[Button (medium)]]></en>
+            <pl><![CDATA[Button (średni)]]></pl>
         </locale>
         <locale name="templateButton.large">
             <de><![CDATA[Button (groß)]]></de>
             <en><![CDATA[Button (large)]]></en>
             <pl><![CDATA[Button (duzy)]]></pl>
+        </locale>
+        <locale name="templateButton.ghost.white">
+            <de><![CDATA[Button: Ghost (weiß)]]></de>
+            <en><![CDATA[Button ghost (white)]]></en>
+            <pl><![CDATA[Button: typu ghost (biały)]]></pl>
         </locale>
         <locale name="templateButton.download">
             <de><![CDATA[Button: Download]]></de>
@@ -649,7 +633,6 @@
         </locale>
 
         <!-- site settings -->
-
         <locale name="siteSettings">
             <de><![CDATA[Template Basic Company: Einstellungen]]></de>
             <en><![CDATA[Template Basic Company: settings]]></en>
