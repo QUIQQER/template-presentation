@@ -1147,7 +1147,7 @@ header.control-header {
 .content-body ol,
 .content-body ul {
     clear: both;
-    margin: 0 0 10px 0;
+    margin: 0 0 1.3em 0;
 }
 
 .content-body ol ol,
