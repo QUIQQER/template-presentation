@@ -102,6 +102,11 @@
                     </conf>
 
                     <!-- colors -->
+
+                    <conf name="colorMainContentFont">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#333333</defaultvalue>
+                    </conf>
                     <conf name="colorMain">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#2D4D88</defaultvalue>
@@ -115,14 +120,6 @@
                         <defaultvalue>#eeeeee</defaultvalue>
                     </conf>
                     <conf name="colorFooterFont">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>#333333</defaultvalue>
-                    </conf>
-                    <conf name="colorFooterLinks">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>#333333</defaultvalue>
-                    </conf>
-                    <conf name="colorMainContentFont">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#333333</defaultvalue>
                     </conf>
@@ -483,6 +480,15 @@
                                 />
                             </title>
 
+                            <input conf="templatePresentation.settings.colorMainContentFont"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorMainContentFont.text"
+                                    />
+                                </text>
+                            </input>
+
                             <input conf="templatePresentation.settings.colorMain"
                                    type="color">
                                 <text>
@@ -527,29 +533,12 @@
                                     />
                                 </text>
                             </input>
-                            <input conf="templatePresentation.settings.colorFooterLinks"
-                                   type="color">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="template.settings.colorFooterLinks.text"
-                                    />
-                                </text>
-                            </input>
 
                             <text>
                                 <locale group="quiqqer/template-presentation"
                                         var="templatePresentation.settings.contentColor.text"
                                 />
                             </text>
-
-                            <input conf="templatePresentation.settings.colorMainContentFont"
-                                   type="color">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="template.settings.colorMainContentFont.text"
-                                    />
-                                </text>
-                            </input>
 
                         </settings>
 

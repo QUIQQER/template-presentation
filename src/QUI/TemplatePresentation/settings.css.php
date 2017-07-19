@@ -33,7 +33,6 @@ $colorFooterBackground = '#414141';
 $colorFooterFont       = '#D1D1D1';
 $colorMain             = '#dd151b';
 $buttonFontColor       = '#ffffff';
-$colorFooterLinks      = '#E6E6E6';
 $colorMainContentFont  = '#5d5d5d';
 
 if ($Project->getConfig('templatePresentation.settings.colorFooterBackground')) {
@@ -50,10 +49,6 @@ if ($Project->getConfig('templatePresentation.settings.colorMain')) {
 
 if ($Project->getConfig('templatePresentation.settings.buttonFontColor')) {
     $buttonFontColor = $Project->getConfig('templatePresentation.settings.buttonFontColor');
-}
-
-if ($Project->getConfig('templatePresentation.settings.colorFooterLinks')) {
-    $colorFooterLinks = $Project->getConfig('templatePresentation.settings.colorFooterLinks');
 }
 
 if ($Project->getConfig('templatePresentation.settings.colorMainContentFont')) {
@@ -248,8 +243,6 @@ input:hover,
 input:focus,
 select:hover,
 select:focus {
-    /*    box-shadow: 0 0 0 2px */
-<?php //echo $colorMain; ?> /*;*/
     border-color: <?php echo $colorMain; ?>;
 }
 
@@ -296,12 +289,8 @@ button:hover,
     color: <?php echo $colorFooterFont; ?>;
 }
 
-footer a {
-    color: <?php //echo $colorFooterLinks; ?>;
-}
-
-footer a:hover {
-    color: <?php //echo $colorFooterLinks; ?>;
+.page-footer a:hover {
+    color: <?php echo $colorMain; ?>;
 }
 
 .page-footer-copyright {

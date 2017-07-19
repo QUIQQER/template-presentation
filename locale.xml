@@ -526,10 +526,6 @@
             <de><![CDATA[Footer Schriftfarbe]]></de>
             <en><![CDATA[Footer font color]]></en>
         </locale>
-        <locale name="template.settings.colorFooterLinks.text">
-            <de><![CDATA[Footer Link-Farbe]]></de>
-            <en><![CDATA[Footer link color]]></en>
-        </locale>
         <locale name="template.settings.colorMain.text">
             <de><![CDATA[Hauptfarbe]]></de>
             <en><![CDATA[Main color]]></en>
