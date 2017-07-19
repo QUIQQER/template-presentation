@@ -72,7 +72,6 @@ class Utils
 
         $showPageTitle = false;
         $showPageShort = false;
-        $showHeader    = false;
 
         if ($Project->getConfig('templatePresentation.settings.showTitle')) {
             $showPageTitle = $Project->getConfig('templatePresentation.settings.showTitle');
