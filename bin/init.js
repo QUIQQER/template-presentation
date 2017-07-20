@@ -113,4 +113,20 @@ window.addEvent("domready", function () {
             window.removeEvents('click');
         })
     }
+
+    var menu       = document.getElement('.quiqqer-menu-megaMenu').getElement('.hide-on-desktop'),
+        openSocial = menu.getElement('.open-social-share');
+
+    if (openSocial) {
+        var socialBar   = menu.getElement('.header-bar-social'),
+            closeSocial = menu.getElement('.close-social-share');
+
+        openSocial.addEvent('click', function () {
+            socialBar.addClass('open');
+        });
+
+        closeSocial.addEvent('click', function () {
+            socialBar.removeClass('open');
+        });
+    }
 });

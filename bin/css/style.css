@@ -669,6 +669,12 @@ h1.page-header-text-title {
 
 /* mobile menu */
 
+/* display standard mega menu open button permanent */
+
+.page-menu-opener.hide-on-desktop {
+    display: none !important;
+}
+
 .quiqqer-menu-megaMenu-mobile-search {
     display: none;
     float: right;
@@ -677,7 +683,7 @@ h1.page-header-text-title {
 }
 
 .quiqqer-menu-megaMenu-mobile {
-    font-size: 36px !important;
+    font-size: 32px !important;
 }
 
 .quiqqer-menu-megaMenu-mobile .header-bar-search-icon {
@@ -991,17 +997,77 @@ li.page-header-navigation-sub-entry:hover {
 
 .header-bar-social .fa {
     padding: 0 10px;
-    line-height: 1.75em;
 }
 
 .header-bar-social .fa:hover {
     background: rgba(0,0,0,0.1);
 }
 
+.close-social-share,
+.open-social-share {
+    display: none;
+    cursor: pointer;
+}
+
+
 
 @media screen and (max-width: 767px) {
     .header-bar-social {
-        margin-right: 0;
+        position: absolute;
+        width: calc(100% + 40px);
+        left: -20px;
+        box-shadow: 0 0 10px #333;
+        font-size: 20px;
+        flex-wrap: wrap;
+        transition: 0.3s all ease-in-out;
+    }
+
+    .header-bar-social.open {
+        top: 0;
+    }
+
+    .header-bar-social a {
+        margin: 0 6px;
+    }
+
+    .header-bar-social .fa {
+        padding: 0 10px;
+        width: 30px;
+        text-align: center;
+    }
+
+    .fa.close-social-share {
+        display: inline;
+        position: absolute;
+        right: 20px;
+        font-size: 30px;
+        padding: 0;
+        width: 50px;
+        text-align: center;
+        top: 0;
+    }
+
+    .fa.open-social-share {
+        display: inline;
+        font-size: 28px;
+        float: right;
+        padding: 0 10px;
+        justify-self: flex-end;
+        position: relative;
+        right: 50px;
+    }
+
+    /* to avoid the break line */
+    /* if there ist no enough space for all elements */
+    .quiqqer-menu-megaMenu .hide-on-desktop {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .quiqqer-menu-megaMenu-mobile {
+        justify-self: flex-end;
+        position: absolute;
+        right: 0;
     }
 }
 
@@ -1554,6 +1620,10 @@ footer:hover a {
     .page-header-text-wrapper {
         display: none;
     }
+
+    /*.hide-on-desktop. header-bar-inner-logo {
+        margin-right: 0;
+    }*/
 
     /*.page-box-prefix-suffix {
         padding: 20px 0 !important;

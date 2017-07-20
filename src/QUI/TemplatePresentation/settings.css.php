@@ -170,7 +170,9 @@ ob_start();
 .quiqqer-menu-megaMenu-list-item,
 .hide-on-desktop .quiqqer-menu-megaMenu-mobile,
 .quiqqer-menu-megaMenu-mobile-search,
-.header-bar-suggestSearch {
+.header-bar-suggestSearch,
+.fa.close-social-share,
+.fa.open-social-share {
     line-height: <?php echo $navBarHeight; ?>px;
 }
 
@@ -380,6 +382,12 @@ button:hover,
 }
 
 <?php }; ?>
+
+@media screen and (max-width: 767px) {
+    .header-bar-social {
+        background: <?php echo $mobileMenuBackground ?>;
+        top: -<?php echo $navBarHeight?>px; /* social share bar must be hidden */
+    }
 
 <?php
 

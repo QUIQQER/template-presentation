@@ -110,9 +110,10 @@ try {
 
         // prepare social for nav
         if ($Project->getConfig('templatePresentation.settings.social.show.nav')) {
+            $socialNav .= '<span class="fa fa-share-alt open-social-share"></span>';
             $socialNav .= '<div class="header-bar-social">';
             $socialNav .= $socialHTML;
-            $socialNav .= '</div>';
+            $socialNav .= '<span class="fa fa-close close-social-share"></span></div>';
         }
 
         // prepare social for footer
