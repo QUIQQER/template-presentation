@@ -37,11 +37,12 @@
     {*assign var=layout value=false*}
 
     {*<!-- js effekt nur wenn nav position fixed -->*}
-    {if $navPos == 'fix'}
+
     <script>
-        var navIsFixed = true;
+        {if $navPos == 'fix'}var navIsFixed = true;{/if}
+        var social = {$social};
+        var socialHTML = '{$socialMobileNav}';
     </script>
-    {/if}
 
     {$settingsCSS}
 

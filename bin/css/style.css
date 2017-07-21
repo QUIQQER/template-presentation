@@ -937,27 +937,24 @@ li.page-header-navigation-sub-entry:hover {
     background: rgba(255,255,255,0);
     position: relative;
     right: 0;
-    line-height: 1.75em;
+    line-height: 40px;
     top: 0;
-    width: 30px;
+    width: 40px;
     transition: 0.3s all ease-in-out;
     cursor: pointer;
 }
 
 .header-bar-suggestSearch .fa:hover,
 .header-bar-suggestSearch.showSearch .fa {
-    /*background: rgba(255,255,255,0.25);*/
     background: rgba(0,0,0,0.1);
 }
 .header-bar-suggestSearch input[type="search"] {
-    /*background: rgba(255, 255, 255, 0.5);*/
     background: #fff;
     border: none;
     border-radius: 0;
     box-shadow: none;
     color: #333;
     margin: 0;
-    /*opacity: 0.7;*/
     padding: 0 10px;
     visibility: hidden;
     opacity: 0;
@@ -965,6 +962,7 @@ li.page-header-navigation-sub-entry:hover {
     z-index: 1;
     position: absolute;
     top: 50%;
+    line-height: 40px;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -983,6 +981,10 @@ li.page-header-navigation-sub-entry:hover {
 /** header (nav) bar social icon
 * ========================================================== */
 
+.slideout-panel {
+    background: #fff !important;
+}
+
 .header-bar-social {
     float: right;
     margin-right: 60px;
@@ -991,12 +993,12 @@ li.page-header-navigation-sub-entry:hover {
     height: 100%;
 }
 
-.header-bar-social a {
-    margin: 0 2px;
-}
-
 .header-bar-social .fa {
     padding: 0 10px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    top: 0 !important;
 }
 
 .header-bar-social .fa:hover {
@@ -1012,63 +1014,41 @@ li.page-header-navigation-sub-entry:hover {
 
 
 @media screen and (max-width: 767px) {
+
+    div.page-navigation {
+        padding-bottom: 90px;
+    }
+
     .header-bar-social {
-        position: absolute;
-        width: calc(100% + 40px);
-        left: -20px;
-        box-shadow: 0 0 10px #333;
-        font-size: 20px;
-        flex-wrap: wrap;
-        transition: 0.3s all ease-in-out;
+        display: none;
     }
 
-    .header-bar-social.open {
-        top: 0;
-    }
-
-    .header-bar-social a {
-        margin: 0 6px;
-    }
-
-    .header-bar-social .fa {
-        padding: 0 10px;
-        width: 30px;
+    .mobile-bar-social {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
         text-align: center;
+        z-index: 101;
+        max-width: 500px; /* width of the package/quiqqer/menu/bin/SlideOut */
     }
 
-    .fa.close-social-share {
-        display: inline;
-        position: absolute;
-        right: 20px;
-        font-size: 30px;
-        padding: 0;
+    .mobile-bar-social-title {
+        display: block;
+        margin: 10px 0 0;
+    }
+
+    .mobile-bar-social-container {
+        font-size: 20px;
+    }
+
+    .mobile-bar-social-container .fa {
+        line-height:50px;
         width: 50px;
         text-align: center;
-        top: 0;
     }
 
-    .fa.open-social-share {
-        display: inline;
-        font-size: 28px;
-        float: right;
-        padding: 0 10px;
-        justify-self: flex-end;
-        position: relative;
-        right: 50px;
-    }
-
-    /* to avoid the break line */
-    /* if there ist no enough space for all elements */
-    .quiqqer-menu-megaMenu .hide-on-desktop {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .quiqqer-menu-megaMenu-mobile {
-        justify-self: flex-end;
-        position: absolute;
-        right: 0;
-    }
 }
 
 /** page header search

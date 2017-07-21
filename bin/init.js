@@ -3,7 +3,7 @@ window.addEvent("domready", function () {
 
 
     // load QUI
-    require(['qui/QUI'], function (QUI) {
+    require(['qui/QUI', 'utils/Controls'], function (QUI, Controls) {
         QUI.addEvent("onError", function (msg, url, linenumber) {
             console.error(msg);
             console.error(url);
@@ -75,6 +75,29 @@ window.addEvent("domready", function () {
 
             });
         }
+
+        /**
+         * social share buttons
+         */
+
+        if (social) {
+            var SlideOutElm = document.getElement(
+                '[data-qui="package/quiqqer/menu/bin/SlideOut"]'
+            );
+
+            Controls.getControlByElement(SlideOutElm).then(function (SlideOutControl) {
+                /*SlideOutControl.Slideout.on('open', function () {
+                 console.log('open');
+                 });*/
+
+                var Elm = SlideOutControl.getElm();
+
+                new Element('div', {
+                    'class': 'mobile-bar-social hide-on-desktop',
+                    html   : socialHTML
+                }).inject(Elm);
+            });
+        }
     });
 
     /**
@@ -114,19 +137,5 @@ window.addEvent("domready", function () {
         })
     }
 
-    var menu       = document.getElement('.quiqqer-menu-megaMenu').getElement('.hide-on-desktop'),
-        openSocial = menu.getElement('.open-social-share');
 
-    if (openSocial) {
-        var socialBar   = menu.getElement('.header-bar-social'),
-            closeSocial = menu.getElement('.close-social-share');
-
-        openSocial.addEvent('click', function () {
-            socialBar.addClass('open');
-        });
-
-        closeSocial.addEvent('click', function () {
-            socialBar.removeClass('open');
-        });
-    }
 });

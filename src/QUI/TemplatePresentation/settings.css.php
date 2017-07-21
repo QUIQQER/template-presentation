@@ -384,10 +384,15 @@ button:hover,
 <?php }; ?>
 
 @media screen and (max-width: 767px) {
-    .header-bar-social {
-        background: <?php echo $mobileMenuBackground ?>;
-        top: -<?php echo $navBarHeight?>px; /* social share bar must be hidden */
+    .mobile-bar-social {
+        background: <?php echo $Convert->colorBrightness($mobileMenuBackground, 0.9) ?>;
     }
+
+    .mobile-bar-social-container a,
+    .mobile-bar-social-title {
+        color: <?php echo $mobileFontColor ?>;
+    }
+}
 
 <?php
 
