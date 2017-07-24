@@ -22,12 +22,6 @@ $MegaMenu = new QUI\Menu\MegaMenu(array(
     'showStart' => false
 ));
 
-$Contact = new QUI\Bricks\Controls\SimpleContact(array(
-    'mailTo' => 'michael@pcsg.de'
-));
-
-$Engine->assign('Contact', $Contact);
-
 /**
  * search
  */
