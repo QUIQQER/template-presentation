@@ -2,34 +2,6 @@
 <quiqqer>
     <bricks>
 
-        <!-- search brick -->
-        <brick control="\QUI\TemplatePresentation\Bricks\Search">
-            <title>
-                <locale group="quiqqer/template-presentation"
-                        var="bricks.search.title"/>
-            </title>
-            <description>
-                <locale group="quiqqer/template-presentation"
-                        var="bricks.search.description"/>
-            </description>
-            <settings>
-
-                <!--<setting name="reviewList" data-qui="package/namerobot/template-namingservice/bin/Bricks/Review">
-                    <locale group="quiqqer/bricks" var="SocialBox.socialList"/>
-                </setting>
-
-                <setting name="max" type="number">
-                    <defaoult>2</defaoult>
-                    <locale group="namerobot/namingserviceOrderForm" var="namerobot.bricks.opinions.max"/>
-                </setting>-->
-
-                <!--<setting name="site" data-qui="controls/projects/project/site/Select">
-                    <locale group="namerobot/template-namingservice" var="bricks.review.site"/>
-                </setting>-->
-
-            </settings>
-        </brick>
-
         <!-- for all bricks -->
         <brick control="*">
             <settings>

@@ -463,6 +463,7 @@ thead {
     position: relative;
     overflow: hidden;
     align-items: center;
+    justify-content: center;
 }
 
 .header-img {
@@ -476,6 +477,7 @@ thead {
     position: absolute;
     left: 0;
     right: 0;
+    bottom: 30%;
 }
 
 .page-header-text-title,
@@ -933,6 +935,17 @@ li.page-header-navigation-sub-entry:hover {
     right: 0;
 }
 
+.header-bar-suggestSearch-wrapper {
+    height: 100%;
+    background: transparent;
+    width: 200px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    right: 0;
+    transition: 0.3s all ease-in-out;
+}
+
 .header-bar-suggestSearch .fa {
     background: rgba(255,255,255,0);
     position: relative;
@@ -948,29 +961,49 @@ li.page-header-navigation-sub-entry:hover {
 .header-bar-suggestSearch.showSearch .fa {
     background: rgba(0,0,0,0.1);
 }
-.header-bar-suggestSearch input[type="search"] {
+.header-bar-suggestSearch input[type="search"].input-and-icon {
     background: #fff;
     border: none;
     border-radius: 0;
-    box-shadow: none;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
     color: #333;
     margin: 0;
     padding: 0 10px;
-    visibility: hidden;
-    opacity: 0;
-    right: 0;
+    /*visibility: hidden;*/
+    /*opacity: 0;*/
+    width: 100%;
     z-index: 1;
     position: absolute;
     top: 50%;
     line-height: 40px;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
-.header-bar-suggestSearch.showSearch input[type="search"] {
+/* setting: only input field */
+.header-bar-suggestSearch input[type="search"].only-input {
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #333;
+    line-height: 20px;
+    margin: 0;
+    opacity: 0.6;
+    padding: 6px 10px;
+}
+
+input[type="search"].only-input:hover,
+input[type="search"].only-input:active,
+input[type="search"].only-input:focus {
+    opacity: 1;
+}
+
+.header-bar-suggestSearch.showSearch .header-bar-suggestSearch-wrapper {
     right: 100%;
     opacity: 1;
     visibility: visible;
@@ -991,6 +1024,14 @@ li.page-header-navigation-sub-entry:hover {
     display: flex;
     align-items: center;
     height: 100%;
+}
+
+.header-bar-social.no-search {
+    margin-right: 0;
+}
+
+.header-bar-social.input-search {
+    margin-right: 10px;
 }
 
 .header-bar-social .fa {
@@ -1050,38 +1091,6 @@ li.page-header-navigation-sub-entry:hover {
     }
 
 }
-
-/** page header search
-* ========================================================== */
-
-/*.header-bar-search:before {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-}
-
-.header-bar-search {
-    white-space: nowrap;
-    overflow: hidden;
-    float: right;
-    padding: 0 20px;
-}
-
-a.header-bar-search-link {
-    display: inline-block;
-    text-decoration: none;
-    font-weight: bold;
-    float: right;
-}
-
-a.header-bar-search-link:hover {
-    background: none;
-    box-shadow: none;
-}
-
-.header-bar-search-icon {
-    line-height: 1.4em;
-}*/
 
 /** page header
  * ========================================================== */
@@ -1841,6 +1850,13 @@ footer:hover a {
 }
 
 /*********************************************************************************/
+/* site type: standard search
+/* quiqqer/sitetypes:types/search
+/*********************************************************************************/
+
+
+
+/*********************************************************************************/
 /* search plugin
 /*********************************************************************************/
 
@@ -1893,6 +1909,14 @@ footer:hover a {
     }
 }
 
+/*********************************************************************************/
+/* search brick
+/*********************************************************************************/
+
+.quiqqer-suggestSearch-wrapper {
+    /*border-radius: 60px;*/
+    width: 85%;
+}
 /*********************************************************************************/
 /* ChildrenList
 /* site type: quiqqer/tags:types/tag-search

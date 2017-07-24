@@ -51,6 +51,11 @@
                         <defaultvalue>#252122</defaultvalue>
                     </conf>
 
+                    <conf name="search">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>inputAndIcon</defaultvalue>
+                    </conf>
+
                     <!-- show header -->
                     <conf name="showHeaderStartPage">
                         <type><![CDATA[bool]]></type>
@@ -429,6 +434,32 @@
                                 </option>
 
 
+                            </select>
+
+                            <!-- search -->
+                            <select conf="templatePresentation.settings.search">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.text"
+                                    />
+                                </text>
+
+
+                                <option value="input">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.input"
+                                    />
+                                </option>
+                                <option value="inputAndIcon">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.inputAndIcon"
+                                    />
+                                </option>
+                                <option value="hide">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.hide"
+                                    />
+                                </option>
                             </select>
 
                             <!-- nav bar / menu colors -->

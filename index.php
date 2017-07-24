@@ -1,5 +1,8 @@
 <?php
 
+$Locale = QUI::getLocale();
+
+
 /**
  * Emotion
  */
@@ -19,17 +22,32 @@ $MegaMenu = new QUI\Menu\MegaMenu(array(
     'showStart' => false
 ));
 
+$Contact = new QUI\Bricks\Controls\SimpleContact(array(
+    'mailTo' => 'michael@pcsg.de'
+));
+
+$Engine->assign('Contact', $Contact);
 
 /**
- * check if quiqqer search plugin is installed
+ * search
  */
-$search = '';
-if (QUI::getPackageManager()->isInstalled('quiqqer/search')) {
-
-    $types = array(
-        'quiqqer/sitetypes:types/search',
-        'quiqqer/search:types/search'
+$search      = '';
+$noSearch    = 'no-search';
+$inputSearch = '';
+/* search setting is on? */
+if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
+    $noSearch = '';
+    $types    = array(
+        'quiqqer/sitetypes:types/search'
     );
+
+    /* check if quiqqer search packet is installed */
+    if (QUI::getPackageManager()->isInstalled('quiqqer/search')) {
+        $types = array(
+            'quiqqer/sitetypes:types/search',
+            'quiqqer/search:types/search'
+        );
+    }
 
     $searchSites = $Project->getSites(array(
         'where' => array(
@@ -43,14 +61,40 @@ if (QUI::getPackageManager()->isInstalled('quiqqer/search')) {
 
     if (count($searchSites)) {
         try {
-            $searchUrl = $searchSites[0]->getUrlRewritten();
+            $searchUrl  = $searchSites[0]->getUrlRewritten();
+            $searchForm = '';
 
-            $search = '<form  action="' . $searchUrl . '" class="header-bar-suggestSearch hide-on-mobile">
-                    <input type="search" name="search" data-qui="package/quiqqer/search/bin/controls/Suggest" 
-                    placeholder="' . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') . '"/>
-                    <span class="fa fa-fw fa-search"></span>
-                </form>' .
+            switch ($Project->getConfig('templatePresentation.settings.search')) {
+                case 'input':
+                    $searchForm = '
+                    <form  action="' . $searchUrl . '" class="header-bar-suggestSearch hide-on-mobile" method="get"
+                        style="position: relative; right: auto; float: right;">
+                        <input type="search" name="search" 
+                                class="only-input"
+                                data-qui="package/quiqqer/search/bin/controls/Suggest" 
+                                placeholder="'
+                                  . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
+                                  '"/>
+                    </form>';
+                    $inputSearch = 'input-search';
+                    break;
+                case 'inputAndIcon':
+                    $searchForm = '
+                    <form  action="' . $searchUrl . '" class="header-bar-suggestSearch hide-on-mobile" method="get">
+                        <div class="header-bar-suggestSearch-wrapper">
+                            <input type="search" name="search"
+                                    class="input-and-icon" 
+                                    data-qui="package/quiqqer/search/bin/controls/Suggest" 
+                                    placeholder="'
+                                  . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
+                                  '"/>
+                        </div>
+                        <span class="fa fa-fw fa-search"></span>
+                    </form>';
+                    break;
+            }
 
+            $search = $searchForm .
                       '<div class="quiqqer-menu-megaMenu-mobile-search"
                                   style="width: auto; font-size: 30px !important;">
                     <a href="' . $searchUrl . '"
@@ -123,7 +167,7 @@ if ($Project->getConfig('templatePresentation.settings.social.show.nav')
 
     // prepare social for nav
     if ($Project->getConfig('templatePresentation.settings.social.show.nav')) {
-        $socialNav .= '<div class="header-bar-social hide-on-mobile">';
+        $socialNav .= '<div class="header-bar-social hide-on-mobile ' . $noSearch . $inputSearch . '">';
         $socialNav .= $socialHTML;
         $socialNav .= '</div>';
 
@@ -142,7 +186,7 @@ if ($Project->getConfig('templatePresentation.settings.social.show.nav')
 }
 
 $MegaMenu->appendHTML(
-    $socialNav . $search
+    $search . $socialNav
 );
 
 

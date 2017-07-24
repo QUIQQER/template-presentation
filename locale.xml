@@ -3,13 +3,7 @@
     <groups name="quiqqer/template-presentation" datatype="php,js">
 
         <!-- template bricks -->
-        <locale name="navbar.search.text">
-            <de><![CDATA[Suchen]]></de>
-            <en><![CDATA[Search]]></en>
-            <pl><![CDATA[Szukaj]]></pl>
-        </locale>
-
-        <locale name="promosliderBackground">
+                <locale name="promosliderBackground">
             <de><![CDATA[Hintergrundfarbe auswählen (nur bei voller Breite)]]></de>
             <en><![CDATA[Set the background color (only by full width)]]></en>
             <pl><![CDATA[Wybierz kolor tła (tylko przy pełnej szerokości)]]></pl>
@@ -712,18 +706,32 @@
         </locale>
 
 
-        <!-- Template bricks -->
+        <!-- search setting -->
+        <locale name="navbar.search.text">
+            <de><![CDATA[Suchen]]></de>
+            <en><![CDATA[Search]]></en>
+            <pl><![CDATA[Szukaj]]></pl>
+        </locale>
 
-        <!-- search -->
-        <locale name="bricks.search.title">
-            <de><![CDATA[Template Presentation: Suche]]></de>
-            <en><![CDATA[Template Presentation: Search input]]></en>
-            <pl><![CDATA[Template Presentation: Wyszukiwarka]]></pl>
+        <locale name="templatePresentation.settings.search.text">
+            <de><![CDATA[Suche in Navigation]]></de>
+            <en><![CDATA[Search]]></en>
+            <pl><![CDATA[Pole wyszukiwania]]></pl>
         </locale>
-        <locale name="bricks.search.description">
-            <de><![CDATA[Mit dem Brick lässt sich ein Suchfeld an beliebiger Stelle platzieren.]]></de>
-            <en><![CDATA[Allow you to place an input search field as brick in every available area.]]></en>
-            <pl><![CDATA[Umożliwia umieszczenie pola do wyszukiwania w dowolnie wybranym miejscu.]]></pl>
-        </locale>
+            <locale name="templatePresentation.settings.search.input">
+                <de><![CDATA[Eingabefeld]]></de>
+                <en><![CDATA[Input field]]></en>
+                <pl><![CDATA[Pole wyszukiwania]]></pl>
+            </locale>
+            <locale name="templatePresentation.settings.search.inputAndIcon">
+                <de><![CDATA[Clickbare Icon]]></de>
+                <en><![CDATA[Search Icon]]></en>
+                <pl><![CDATA[Ikona do klkniecia]]></pl>
+            </locale>
+            <locale name="templatePresentation.settings.search.hide">
+                <de><![CDATA[Ausgeblendet]]></de>
+                <en><![CDATA[Disabled]]></en>
+                <pl><![CDATA[Wyłączone]]></pl>
+            </locale>
     </groups>
 </locales>
