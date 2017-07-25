@@ -53,7 +53,7 @@ textarea {
 }
 
 input:focus {
-    background: rgba(0, 0, 0, 0.05);
+    background: none;
     outline: none;
     box-shadow: none;
 }
@@ -196,7 +196,7 @@ button:hover,
 .button-pink:hover,
 .content-button:hover {
     box-shadow: none;
-    border-radius: 100px;
+    border-radius: 0;
 }
 
 .qui-button,
@@ -211,7 +211,7 @@ button:hover,
 .button-green,
 .button-pink {
     box-shadow: none;
-    border-radius: 100px;
+    border-radius: 0;
 }
 
 input[type='submit'],
@@ -220,7 +220,7 @@ input[type='button'],
 button,
 .button {
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 0;
     box-shadow: none;
     cursor: pointer;
     outline: none;
@@ -234,6 +234,10 @@ button,
     -o-transition: all 0.2s ease;
     min-width: 120px;
     text-align: center;
+}
+
+.button__rounded {
+    border-radius: 100px;
 }
 
 /*input[type='submit']:hover,
@@ -969,8 +973,6 @@ li.page-header-navigation-sub-entry:hover {
     color: #333;
     margin: 0;
     padding: 0 10px;
-    /*visibility: hidden;*/
-    /*opacity: 0;*/
     width: 100%;
     z-index: 1;
     position: absolute;
@@ -1914,12 +1916,82 @@ footer:hover a {
     }
 }
 
+
+/*********************************************************************************/
+/* search plugin - erweiterte Suche
+/*********************************************************************************/
+.quiqqer-search-searchinput {
+    overflow: hidden;
+}
+.quiqqer-search-searchinput form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+input.quiqqer-search-searchinput-input {
+    flex-grow: 3;
+    margin: 10px;
+    min-width: auto;
+}
+
+input.quiqqer-search-searchinput-submit,
+input.quiqqer-search-searchinput-submit:last-of-type {
+    flex-grow: 1;
+    order: 3;
+    margin: 10px;
+}
+
+.qui-select.quiqqer-search-searchinput-searchfieldselect {
+    cursor: pointer;
+    flex-grow: 1;
+    order: 2;
+    padding: 0 16px;
+    margin: 10px;
+    height: auto;
+}
+
+.qui-select.quiqqer-search-searchinput-searchfieldselect  .text {
+    height: 50px;
+    line-height: 50px;
+}
+
+.qui-select.quiqqer-search-searchinput-searchfieldselect  .drop-icon {
+    height: 50px;
+}
+
+/*********************************************************************************/
+/* search site types - standard Suche
+/*********************************************************************************/
+
+.qui-search-result form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.qui-search-result .form-field-search {
+    flex-grow: 3;
+    margin: 10px;
+    min-width: auto;
+}
+
+.qui-search-result input[type="submit"] {
+    flex-grow: 1;
+    order: 3;
+    margin: 10px;
+}
+
+
 /*********************************************************************************/
 /* search brick
 /*********************************************************************************/
 
 .quiqqer-suggestSearch-wrapper {
-    /*border-radius: 60px;*/
     width: 85%;
 }
 /*********************************************************************************/
