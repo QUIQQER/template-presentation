@@ -86,16 +86,13 @@ window.addEvent("domready", function () {
             );
 
             Controls.getControlByElement(SlideOutElm).then(function (SlideOutControl) {
-                /*SlideOutControl.Slideout.on('open', function () {
-                 console.log('open');
-                 });*/
 
                 var Elm = SlideOutControl.getElm();
 
                 new Element('div', {
                     'class': 'mobile-bar-social hide-on-desktop',
                     html   : socialHTML
-                }).inject(Elm);
+                }).inject(SlideOutElm);
             });
         }
     });
@@ -103,7 +100,9 @@ window.addEvent("domready", function () {
     /**
      * show the search input after clicking on the icon
      */
-    if (document.getElement('.header-bar-suggestSearch')) {
+    if (document.getElement('.header-bar-suggestSearch') &&
+        document.getElement('.header-bar-suggestSearch').getElement('.fa-search')) {
+
 
         var searchBar   = document.getElement('.header-bar-suggestSearch'),
             searchIcon  = searchBar.getElement('.fa-search'),
