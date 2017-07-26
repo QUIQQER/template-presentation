@@ -36,7 +36,7 @@ body {
 input, textarea, select,
 input[type="submit"] {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: 0;
     font-size: 12pt;
     line-height: 1.75em;
@@ -65,11 +65,12 @@ textarea {
 
 /* select styling with arrow set als background */
 select {
-    background-color: #f5f5f5;
+    background-color: #fff;
     background-image: url("../img/arrow-select.png");
     background-repeat: no-repeat;
     background-position: calc(100% - 20px) center;
     background-size: 20px auto;
+    color: inherit;
     -webkit-appearance: none;
     -moz-appearance: none;
     padding-right: 60px;
@@ -106,6 +107,11 @@ input[type='radio'] {
 textarea:focus::-moz-placeholder,
 input:focus::-moz-placeholder {
     color: rgba(0, 0, 0, 0);
+}
+
+legend,
+.qui-form legend {
+    font-weight: inherit;
 }
 
 fieldset.grid-50:first-child {
@@ -1938,6 +1944,10 @@ input.quiqqer-search-searchinput-submit:last-of-type {
     flex-grow: 1;
     order: 3;
     margin: 10px;
+}
+
+div.qui-select {
+    border-width: 2px;
 }
 
 .qui-select.quiqqer-search-searchinput-searchfieldselect {
