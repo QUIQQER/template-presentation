@@ -267,10 +267,6 @@ button:disabled:hover {
     margin-right: 8px;
 }
 
-.main-content .button.special {
-    border: 3px solid #efefef;
-}
-
 textarea,
 textarea:hover,
 input,
@@ -2360,6 +2356,10 @@ a.link-slide-right-grey:focus::before {
 .button.button__ghost:focus {
     color: #fff;
     background: rgba(255,255,255,0.1);
+}
+
+.button.button__ghost__color {
+    background: none;
 }
 
 

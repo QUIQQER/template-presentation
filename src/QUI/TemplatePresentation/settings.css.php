@@ -225,13 +225,9 @@ a.template-button:hover {
     background-color: <?php echo $colorMainButton; ?>;
 }
 
-#page .button.special {
-    background: none !important;
-    color: <?php echo $colorMainContentFont; ?>;
-}
-
-#page .button.special:hover {
-    border: 3px solid <?php echo $colorMain; ?>;
+.button__ghost__color {
+    color: <?php echo $colorMain; ?>;
+    border: 2px solid <?php echo $colorMain; ?>;
 }
 
 body,
