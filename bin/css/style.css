@@ -45,11 +45,10 @@ input[type="submit"] {
     margin: 6px 0;
     outline: none;
     box-shadow: none;
-}
 
-input[type="search"],
-textarea {
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 input:focus {
@@ -61,6 +60,10 @@ input:focus {
 textarea {
     font-family: 'Open Sans', sans-serif;
     min-height: 10em;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 /* select styling with arrow set als background */
