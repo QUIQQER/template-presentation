@@ -1253,7 +1253,6 @@ h1 {
 
 h2 {
     font-size: 32px;
-    font-weight: 400;
 }
 
 h3 {
@@ -2009,30 +2008,17 @@ a.qui-control-list-entry-imagelink {
     border: none;
 }
 
-a.quiqqer-tags-search-result-entry-link:hover,
-.quiqqer-tags-list-result-entry a:hover {
-    background: none;
-    box-shadow: none;
-}
-
-a.quiqqer-tags-search-result-entry-link div,
-a.quiqqer-tags-search-result-entry-link:hover div,
-.quiqqer-tags-list-result-entry a div,
-.quiqqer-tags-list-result-entry a:hover div {
-    color: black;
-}
-
-a.quiqqer-tags-search-result-entry-link:hover h4,
-.quiqqer-tags-list-result-entry a:hover h3 {
-    text-decoration: underline;
+.quiqqer-tags-list-result-entry a {
+    color: inherit;
 }
 
 .tpl-presentation-row a.news-entry-next {
-    float: right;
+    /*float: right;*/
 }
 
+
 /*********************************************************************************/
-/* site type: quiqqer/tags:types/tag-search
+/* site type: types/tag-listing
 /*********************************************************************************/
 
 .quiqqer-sheets-desktop-limits a:hover {
