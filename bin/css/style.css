@@ -33,7 +33,20 @@ body {
     font-weight: 300;
 }
 
-input, textarea, select,
+input, textarea, select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    font-size: 12pt;
+    line-height: 1.75em;
+    letter-spacing: 1px;
+    padding: 10px 16px;
+    margin: 6px 0;
+    outline: none;
+    box-shadow: none;
+}
+
+
 input[type="submit"] {
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid rgba(0, 0, 0, 0.2);
@@ -50,6 +63,7 @@ input[type="submit"] {
     -moz-appearance: none;
     appearance: none;
 }
+
 
 input:focus {
     background: none;
