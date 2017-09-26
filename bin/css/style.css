@@ -631,7 +631,7 @@ h1.page-header-text-title {
 
 .start-page-header {
     padding: 0 !important;
-    height: 100vh;
+    height: auto;
     overflow: hidden;
 }
 

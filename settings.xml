@@ -605,8 +605,15 @@
                                 </text>
                             </input>
 
+                            <text>
+                                <locale group="quiqqer/template-presentation"
+                                        var="social.linksNote"
+                                />
+                            </text>
+
                             <!-- facebook -->
                             <input conf="templatePresentation.settings.social.facebook"
+                                   placeholder="https://www.facebook.com"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -616,6 +623,7 @@
                             </input>
                             <!-- twitter -->
                             <input conf="templatePresentation.settings.social.twitter"
+                                   placeholder="https://www.twitter.com"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -625,6 +633,7 @@
                             </input>
                             <!-- google -->
                             <input conf="templatePresentation.settings.social.google"
+                                   placeholder="https://www.google.com"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -634,6 +643,7 @@
                             </input>
                             <!-- youtube -->
                             <input conf="templatePresentation.settings.social.youtube"
+                                   placeholder="https://www.youtube.com"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -643,6 +653,7 @@
                             </input>
                             <!-- github -->
                             <input conf="templatePresentation.settings.social.github"
+                                   placeholder="https://www.github.com"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -652,6 +663,7 @@
                             </input>
                             <!-- gitlab -->
                             <input conf="templatePresentation.settings.social.gitlab"
+                                   placeholder="https://www.gitlab.com"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"

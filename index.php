@@ -129,7 +129,7 @@ if ($Project->getConfig('templatePresentation.settings.social.show.nav')
 
     // check which socials should be displayed
     if ($Project->getConfig('templatePresentation.settings.social.facebook')) {
-        $socialHTML .= '<a href="http://' .
+        $socialHTML .= '<a href="' .
                        $Project->getConfig('templatePresentation.settings.social.facebook')
                        . '" target="_blank"><span class="fa fa-facebook"></span></a>';
     }
