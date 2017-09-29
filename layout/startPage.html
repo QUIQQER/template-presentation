@@ -28,7 +28,7 @@
 
 <div role="main">
     {if !$showHeader}
-        {if $showTitle}
+        {if $showPageTitle}
         <header class="content-header">
             <h1 itemprop="name">
                 {$Site->getAttribute('title')}
@@ -36,7 +36,7 @@
         </header>
         {/if}
 
-        {if $showShort}
+        {if $showPageShort}
         <div class="content-short" itemprop="description">
             {$Site->getAttribute('short')|nl2br}
         </div>

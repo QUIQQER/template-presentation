@@ -5,8 +5,6 @@
         <attribute>templatePresentation.showHeader</attribute>
         <attribute>templatePresentation.showTitle</attribute>
         <attribute>templatePresentation.showShort</attribute>
-        <!--<attribute>templatePresentation.altTitle</attribute>-->
-        <!--<attribute>templatePresentation.altShort</attribute>-->
     </attributes>
 
     <settings>
@@ -89,19 +87,6 @@
                     </option>
                 </select>
 
-                <!-- alt title -->
-                <!--<input conf="templatePresentation.altTitle" type="text">
-                    <text>
-                        <locale group="quiqqer/template-presentation" var="siteSettings.altTitle"/>
-                    </text>
-                </input>-->
-
-                <!-- alt short -->
-                <!--<input conf="templatePresentation.altShort" type="text">
-                    <text>
-                        <locale group="quiqqer/template-presentation" var="siteSettings.altShort"/>
-                    </text>
-                </input>-->
             </settings>
         </category>
     </settings>

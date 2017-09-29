@@ -3,7 +3,7 @@ window.addEvent("domready", function () {
 
 
     // load QUI
-    require(['qui/QUI'], function (QUI) {
+    require(['qui/QUI', 'utils/Controls'], function (QUI, Controls) {
         QUI.addEvent("onError", function (msg, url, linenumber) {
             console.error(msg);
             console.error(url);
@@ -55,9 +55,15 @@ window.addEvent("domready", function () {
 
             var headerBar     = document.getElement('.header-bar'),
                 navBackground = false;
-            
-            window.addEvent('scroll', function () {
-                if (QUI.getScroll().y > 100) {
+
+            // background on load
+            if (QUI.getScroll().y > 300) {
+                headerBar.addClass('header-bar-scrolled');
+                navBackground = true;
+            }
+
+            QUI.addEvent('scroll', function () {
+                if (QUI.getScroll().y > 50) {
                     if (!navBackground) {
                         headerBar.addClass('header-bar-scrolled');
                         navBackground = true;
@@ -69,12 +75,34 @@ window.addEvent("domready", function () {
 
             });
         }
+
+        /**
+         * social share buttons
+         */
+
+        if (social) {
+            var SlideOutElm = document.getElement(
+                '[data-qui="package/quiqqer/menu/bin/SlideOut"]'
+            );
+
+            Controls.getControlByElement(SlideOutElm).then(function (SlideOutControl) {
+
+                var Elm = SlideOutControl.getElm();
+
+                new Element('div', {
+                    'class': 'mobile-bar-social hide-on-desktop',
+                    html   : socialHTML
+                }).inject(SlideOutElm);
+            });
+        }
     });
 
     /**
      * show the search input after clicking on the icon
      */
-    if (document.getElement('.header-bar-suggestSearch')) {
+    if (document.getElement('.header-bar-suggestSearch') &&
+        document.getElement('.header-bar-suggestSearch').getElement('.fa-search')) {
+
 
         var searchBar   = document.getElement('.header-bar-suggestSearch'),
             searchIcon  = searchBar.getElement('.fa-search'),
@@ -107,4 +135,6 @@ window.addEvent("domready", function () {
             window.removeEvents('click');
         })
     }
+
+
 });

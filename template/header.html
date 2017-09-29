@@ -9,13 +9,13 @@
     {/if}
     <div class="page-header-container grid-container">
 
-        {if $showTitle}
+        {if $showPageTitle}
         <h1 class="page-header-text-title">
             {$Site->getAttribute('title')}
         </h1>
         {/if}
 
-        {if $showShort}
+        {if $showPageShort}
         <div class="page-header-text-wrapper">
             <div class="page-header-text-wrapper-short">
                 {$Site->getAttribute('short')|nl2br}

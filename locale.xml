@@ -3,13 +3,7 @@
     <groups name="quiqqer/template-presentation" datatype="php,js">
 
         <!-- template bricks -->
-        <locale name="navbar.search.text">
-            <de><![CDATA[Suchen]]></de>
-            <en><![CDATA[Search]]></en>
-            <pl><![CDATA[Szukaj]]></pl>
-        </locale>
-
-        <locale name="promosliderBackground">
+                <locale name="promosliderBackground">
             <de><![CDATA[Hintergrundfarbe auswählen (nur bei voller Breite)]]></de>
             <en><![CDATA[Set the background color (only by full width)]]></en>
             <pl><![CDATA[Wybierz kolor tła (tylko przy pełnej szerokości)]]></pl>
@@ -144,17 +138,72 @@
             <en><![CDATA[Show header picture]]></en>
             <pl><![CDATA[Pokaż zdjęcie nagłówka]]></pl>
         </locale>
+
+        <!-- header site settings-->
+        <locale name="templatePresentation.siteSettings.showHeader">
+            <de><![CDATA[Header]]></de>
+            <en><![CDATA[Header]]></en>
+            <pl><![CDATA[Header]]></pl>
+        </locale>
+            <locale name="templatePresentation.siteSettings.showHeader.default">
+                <de><![CDATA[Standard Template-Einstellung übernehmen]]></de>
+                <en><![CDATA[Default template setting]]></en>
+                <pl><![CDATA[Zastosuj ustawienia szablonu (template)]]></pl>
+            </locale>
+            <locale name="templatePresentation.siteSettings.showHeader.show">
+                <de><![CDATA[Anzeigen]]></de>
+                <en><![CDATA[Show]]></en>
+                <pl><![CDATA[Pokaż]]></pl>
+            </locale>
+            <locale name="templatePresentation.siteSettings.showHeader.hide">
+                <de><![CDATA[Verstecken]]></de>
+                <en><![CDATA[Hide]]></en>
+                <pl><![CDATA[Ukryj]]></pl>
+            </locale>
+
         <!-- Title & short -->
         <locale name="templatePresentation.siteSettings.showTitle">
             <de><![CDATA[Überschrift anzeigen]]></de>
             <en><![CDATA[Show title]]></en>
             <pl><![CDATA[Wyświetlić tytuł]]></pl>
         </locale>
+            <locale name="templatePresentation.siteSettings.showTitle.default">
+                <de><![CDATA[Standard Template-Einstellung übernehmen]]></de>
+                <en><![CDATA[Default template setting]]></en>
+                <pl><![CDATA[Zastosuj ustawienia szablonu (template)]]></pl>
+            </locale>
+            <locale name="templatePresentation.siteSettings.showTitle.show">
+                <de><![CDATA[Anzeigen]]></de>
+                <en><![CDATA[Show]]></en>
+                <pl><![CDATA[Pokaż]]></pl>
+            </locale>
+            <locale name="templatePresentation.siteSettings.showTitle.hide">
+                <de><![CDATA[Verstecken]]></de>
+                <en><![CDATA[Hide]]></en>
+                <pl><![CDATA[Ukryj]]></pl>
+            </locale>
         <locale name="templatePresentation.siteSettings.showShort">
             <de><![CDATA[Kurzbeschreibung anzeigen]]></de>
             <en><![CDATA[Show short descriptions]]></en>
             <pl><![CDATA[Wyświetlić opis strony]]></pl>
         </locale>
+            <locale name="templatePresentation.siteSettings.showShort.default">
+                <de><![CDATA[Standard Template-Einstellung übernehmen]]></de>
+                <en><![CDATA[Default template setting]]></en>
+                <pl><![CDATA[Zastosuj ustawienia szablonu (template)]]></pl>
+            </locale>
+            <locale name="templatePresentation.siteSettings.showShort.show">
+                <de><![CDATA[Anzeigen]]></de>
+                <en><![CDATA[Show]]></en>
+                <pl><![CDATA[Pokaż]]></pl>
+            </locale>
+            <locale name="templatePresentation.siteSettings.showShort.hide">
+                <de><![CDATA[Verstecken]]></de>
+                <en><![CDATA[Hide]]></en>
+                <pl><![CDATA[Ukryj]]></pl>
+            </locale>
+
+
 
 
         <locale name="package.title">
@@ -333,6 +382,8 @@
             <en><![CDATA[Rright sidebar]]></en>
             <pl><![CDATA[Układ z prawą kolumną]]></pl>
         </locale>
+
+
 
 
         <!-- breadcrumb settings -->
@@ -526,10 +577,6 @@
             <de><![CDATA[Footer Schriftfarbe]]></de>
             <en><![CDATA[Footer font color]]></en>
         </locale>
-        <locale name="template.settings.colorFooterLinks.text">
-            <de><![CDATA[Footer Link-Farbe]]></de>
-            <en><![CDATA[Footer link color]]></en>
-        </locale>
         <locale name="template.settings.colorMain.text">
             <de><![CDATA[Hauptfarbe]]></de>
             <en><![CDATA[Main color]]></en>
@@ -572,6 +619,11 @@
             <en><![CDATA[Show in footer]]></en>
             <pl><![CDATA[Wlacz w stopce]]></pl>
         </locale>
+        <locale name="social.linksNote" html="true">
+            <de><![CDATA[Bitte Links mit <strong>http:///</strong> oder <strong>https:///</strong> verwenden, z.B. https:///www.facebook.com]]></de>
+            <en><![CDATA[Please use only hyperlinks with <strong>http:///</strong> or <strong>https:///</strong>, e.g. https:///www.facebook.com]]></en>
+            <pl><![CDATA[Proszę używać linków z <strong>http:///</strong> albo <strong>https:///</strong>, na przyklad: https:///www.facebook.com]]></pl>
+        </locale>
         <locale name="social.facebook">
             <de><![CDATA[Facebook]]></de>
             <en><![CDATA[Facebook]]></en>
@@ -593,37 +645,16 @@
             <pl><![CDATA[YouTube]]></pl>
         </locale>
         <locale name="social.github">
-            <de><![CDATA[GitHub / GitLab]]></de>
-            <en><![CDATA[GitHub / GitLab]]></en>
-            <pl><![CDATA[GitHub / GitLab]]></pl>
+            <de><![CDATA[GitHub]]></de>
+            <en><![CDATA[GitHub]]></en>
+            <pl><![CDATA[GitHub]]></pl>
+        </locale>
+        <locale name="social.gitlab">
+            <de><![CDATA[GitLab]]></de>
+            <en><![CDATA[GitLab]]></en>
+            <pl><![CDATA[GitLab]]></pl>
         </locale>
 
-        <!-- extra buttons -->
-        <locale name="linkSimpleGrey">
-            <de><![CDATA[Link: simple (grau)]]></de>
-            <en><![CDATA[Link: simple (grey)]]></en>
-            <pl><![CDATA[Link: simple (grey)]]></pl>
-        </locale>
-        <locale name="linkSimpleColor">
-            <de><![CDATA[Link: simple (color)]]></de>
-            <en><![CDATA[Link: simple (color)]]></en>
-            <pl><![CDATA[Link: simple (color)]]></pl>
-        </locale>
-        <locale name="LinkSlideUpGrey">
-            <de><![CDATA[Link: slide up (grau)]]></de>
-            <en><![CDATA[Link: slide up (grey)]]></en>
-            <pl><![CDATA[Link: slide up (grey)]]></pl>
-        </locale>
-        <locale name="LinkSlideUpColor">
-            <de><![CDATA[Link: slide up (color)]]></de>
-            <en><![CDATA[Link: slide up (color)]]></en>
-            <pl><![CDATA[Link: slide up (color)]]></pl>
-        </locale>
-        <locale name="LinkSlideRightGrey">
-            <de><![CDATA[Link: slide right (grey)]]></de>
-            <en><![CDATA[Link: slide right (grey)]]></en>
-            <pl><![CDATA[Link: slide right (grey)]]></pl>
-        </locale>
 
         <!--template buttons -->
         <locale name="templateButton.small">
@@ -631,15 +662,20 @@
             <en><![CDATA[Button (small)]]></en>
             <pl><![CDATA[Button (maly)]]></pl>
         </locale>
-        <locale name="templateButton.default">
-            <de><![CDATA[Button (normal)]]></de>
-            <en><![CDATA[Button (default)]]></en>
-            <pl><![CDATA[Button (standardowy)]]></pl>
+        <locale name="templateButton.medium">
+            <de><![CDATA[Button (medium)]]></de>
+            <en><![CDATA[Button (medium)]]></en>
+            <pl><![CDATA[Button (średni)]]></pl>
         </locale>
         <locale name="templateButton.large">
             <de><![CDATA[Button (groß)]]></de>
             <en><![CDATA[Button (large)]]></en>
             <pl><![CDATA[Button (duzy)]]></pl>
+        </locale>
+        <locale name="templateButton.ghost.white">
+            <de><![CDATA[Button: Ghost (weiß)]]></de>
+            <en><![CDATA[Button ghost (white)]]></en>
+            <pl><![CDATA[Button: typu ghost (biały)]]></pl>
         </locale>
         <locale name="templateButton.download">
             <de><![CDATA[Button: Download]]></de>
@@ -653,7 +689,6 @@
         </locale>
 
         <!-- site settings -->
-
         <locale name="siteSettings">
             <de><![CDATA[Template Basic Company: Einstellungen]]></de>
             <en><![CDATA[Template Basic Company: settings]]></en>
@@ -676,18 +711,32 @@
         </locale>
 
 
-        <!-- Template bricks -->
+        <!-- search setting -->
+        <locale name="navbar.search.text">
+            <de><![CDATA[Suchen]]></de>
+            <en><![CDATA[Search]]></en>
+            <pl><![CDATA[Szukaj]]></pl>
+        </locale>
 
-        <!-- search -->
-        <locale name="bricks.search.title">
-            <de><![CDATA[Template Presentation: Suche]]></de>
-            <en><![CDATA[Template Presentation: Search input]]></en>
-            <pl><![CDATA[Template Presentation: Wyszukiwarka]]></pl>
+        <locale name="templatePresentation.settings.search.text">
+            <de><![CDATA[Suche in Navigation]]></de>
+            <en><![CDATA[Search]]></en>
+            <pl><![CDATA[Pole wyszukiwania]]></pl>
         </locale>
-        <locale name="bricks.search.description">
-            <de><![CDATA[Mit dem Brick lässt sich ein Suchfeld an beliebiger Stelle platzieren.]]></de>
-            <en><![CDATA[Allow you to place an input search field as brick in every available area.]]></en>
-            <pl><![CDATA[Umożliwia umieszczenie pola do wyszukiwania w dowolnie wybranym miejscu.]]></pl>
-        </locale>
+            <locale name="templatePresentation.settings.search.input">
+                <de><![CDATA[Eingabefeld]]></de>
+                <en><![CDATA[Input field]]></en>
+                <pl><![CDATA[Pole wyszukiwania]]></pl>
+            </locale>
+            <locale name="templatePresentation.settings.search.inputAndIcon">
+                <de><![CDATA[Clickbare Icon]]></de>
+                <en><![CDATA[Search Icon]]></en>
+                <pl><![CDATA[Ikona do klkniecia]]></pl>
+            </locale>
+            <locale name="templatePresentation.settings.search.hide">
+                <de><![CDATA[Ausgeblendet]]></de>
+                <en><![CDATA[Disabled]]></en>
+                <pl><![CDATA[Wyłączone]]></pl>
+            </locale>
     </groups>
 </locales>

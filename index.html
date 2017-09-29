@@ -37,11 +37,12 @@
     {*assign var=layout value=false*}
 
     {*<!-- js effekt nur wenn nav position fixed -->*}
-    {if $navPos == 'fix'}
+
     <script>
-        var navIsFixed = true;
+        {if $navPos == 'fix'}var navIsFixed = true;{/if}
+        var social = "{$social}";
+        var socialHTML = '{$socialMobileNav}';
     </script>
-    {/if}
 
     {$settingsCSS}
 
@@ -65,7 +66,7 @@
 <div class="body-container">
     <!-- header -->
     {if $showHeader}
-        {fetch template="template/header.html" showTitle=$showTitle showShort=$showShort Site=$Site}
+        {fetch template="template/header.html" showPageTitle=$showPageTitle showPageShort=$showPageShort Site=$Site}
     {/if}
 
     <!-- header brick area (only for start page) -->
@@ -97,8 +98,9 @@
         {/if}
         {if $Brick->getSetting( 'brickFullWidth' )}
         <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding}
-                                    headerSuffix-container
-                                    {cycle values='brick-even-suffix,brick-odd-suffix'}"
+                        headerSuffix-container
+                        {cycle values='brick-even-suffix,brick-odd-suffix'}
+                        brick-id-{$Brick->getAttribute('id')}"
                  {if $Brick->getSetting('promosliderBackground')}
             style="background-color: {$Brick->getSetting('promosliderBackground')};"
             {/if}>
@@ -106,8 +108,9 @@
         </section>
         {else}
         <div class="tpl-presentation-row
-                                headerSuffix-container
-                                {cycle values='brick-even-suffix,brick-odd-suffix'}">
+                    headerSuffix-container
+                    {cycle values='brick-even-suffix,brick-odd-suffix'}
+                    brick-id-{$Brick->getAttribute('id')}">
             <div class="grid-container">
                 <section>
                     {if $Brick->getAttribute('frontendTitle')}
@@ -130,6 +133,7 @@
         </div>
     </div>
 
+    
     <div class="prefixFooter">
         <!-- footer prefix-->
         {cycle assign=cy values='brick-even-suffix,brick-odd-suffix' reset=true}
@@ -143,8 +147,9 @@
 
         {if $Brick->getSetting( 'brickFullWidth' )}
         <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding}
-                                    footerPrefix-container
-                                    {cycle values='brick-even-prefix,brick-odd-prefix'}"
+                footerPrefix-container
+                {cycle values='brick-even-prefix,brick-odd-prefix'}
+                brick-id-{$Brick->getAttribute('id')}"
                  {if $Brick->getSetting('promosliderBackground')}
             style="background-color: {$Brick->getSetting('promosliderBackground')};"
             {/if}>
@@ -153,8 +158,9 @@
         </section>
         {else}
         <div class="tpl-presentation-row prefix-suffix-nofull-width
-                                footerPrefix-container
-                                {cycle values='brick-even-prefix,brick-odd-prefix'}">
+                    footerPrefix-container
+                    {cycle values='brick-even-prefix,brick-odd-prefix'}
+                    brick-id-{$Brick->getAttribute('id')}">
             <div class="grid-container">
                 <section>
                     {if $Brick->getAttribute('frontendTitle')}

@@ -51,6 +51,11 @@
                         <defaultvalue>#252122</defaultvalue>
                     </conf>
 
+                    <conf name="search">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>inputAndIcon</defaultvalue>
+                    </conf>
+
                     <!-- show header -->
                     <conf name="showHeaderStartPage">
                         <type><![CDATA[bool]]></type>
@@ -102,6 +107,11 @@
                     </conf>
 
                     <!-- colors -->
+
+                    <conf name="colorMainContentFont">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#333333</defaultvalue>
+                    </conf>
                     <conf name="colorMain">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#2D4D88</defaultvalue>
@@ -115,14 +125,6 @@
                         <defaultvalue>#eeeeee</defaultvalue>
                     </conf>
                     <conf name="colorFooterFont">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>#333333</defaultvalue>
-                    </conf>
-                    <conf name="colorFooterLinks">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>#333333</defaultvalue>
-                    </conf>
-                    <conf name="colorMainContentFont">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#333333</defaultvalue>
                     </conf>
@@ -149,6 +151,9 @@
                         <type><![CDATA[string]]></type>
                     </conf>
                     <conf name="social.github">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.gitlab">
                         <type><![CDATA[string]]></type>
                     </conf>
                 </section>
@@ -431,6 +436,32 @@
 
                             </select>
 
+                            <!-- search -->
+                            <select conf="templatePresentation.settings.search">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.text"
+                                    />
+                                </text>
+
+
+                                <option value="input">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.input"
+                                    />
+                                </option>
+                                <option value="inputAndIcon">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.inputAndIcon"
+                                    />
+                                </option>
+                                <option value="hide">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.hide"
+                                    />
+                                </option>
+                            </select>
+
                             <!-- nav bar / menu colors -->
                             <input conf="templatePresentation.settings.navBarMainColor"
                                    type="color">
@@ -483,6 +514,15 @@
                                 />
                             </title>
 
+                            <input conf="templatePresentation.settings.colorMainContentFont"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorMainContentFont.text"
+                                    />
+                                </text>
+                            </input>
+
                             <input conf="templatePresentation.settings.colorMain"
                                    type="color">
                                 <text>
@@ -527,29 +567,12 @@
                                     />
                                 </text>
                             </input>
-                            <input conf="templatePresentation.settings.colorFooterLinks"
-                                   type="color">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="template.settings.colorFooterLinks.text"
-                                    />
-                                </text>
-                            </input>
 
                             <text>
                                 <locale group="quiqqer/template-presentation"
                                         var="templatePresentation.settings.contentColor.text"
                                 />
                             </text>
-
-                            <input conf="templatePresentation.settings.colorMainContentFont"
-                                   type="color">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="template.settings.colorMainContentFont.text"
-                                    />
-                                </text>
-                            </input>
 
                         </settings>
 
@@ -582,8 +605,15 @@
                                 </text>
                             </input>
 
+                            <text>
+                                <locale group="quiqqer/template-presentation"
+                                        var="social.linksNote"
+                                />
+                            </text>
+
                             <!-- facebook -->
                             <input conf="templatePresentation.settings.social.facebook"
+                                   placeholder="https://www.facebook.com"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -593,6 +623,7 @@
                             </input>
                             <!-- twitter -->
                             <input conf="templatePresentation.settings.social.twitter"
+                                   placeholder="https://www.twitter.com"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -602,6 +633,7 @@
                             </input>
                             <!-- google -->
                             <input conf="templatePresentation.settings.social.google"
+                                   placeholder="https://www.google.com"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -611,6 +643,7 @@
                             </input>
                             <!-- youtube -->
                             <input conf="templatePresentation.settings.social.youtube"
+                                   placeholder="https://www.youtube.com"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -620,10 +653,21 @@
                             </input>
                             <!-- github -->
                             <input conf="templatePresentation.settings.social.github"
+                                   placeholder="https://www.github.com"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="social.github"
+                                    />
+                                </text>
+                            </input>
+                            <!-- gitlab -->
+                            <input conf="templatePresentation.settings.social.gitlab"
+                                   placeholder="https://www.gitlab.com"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.gitlab"
                                     />
                                 </text>
                             </input>
@@ -636,55 +680,10 @@
         </settings>
 
         <wysiwyg class="main-content">
-            <css src="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic"/>
+            <css src="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/style.css"/>
 
             <styles>
-                <!-- link effect 1: simple (grey) -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="linkSimpleGrey"/>
-                    <attributes>
-                        <attribute name="class">link-simple-grey</attribute>
-                    </attributes>
-                </style>
-
-                <!-- link effect 2: simple (color) -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="linkSimpleColor"/>
-                    <attributes>
-                        <attribute name="class">link-simple-color</attribute>
-                    </attributes>
-                </style>
-
-
-                <!-- link effect 3: slide up (grey) -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="LinkSlideUpGrey"/>
-                    <attributes>
-                        <attribute name="class">link-slide-up-grey</attribute>
-                    </attributes>
-                </style>
-
-                <!-- link effect 4: slide up (color) -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="LinkSlideUpColor"/>
-                    <attributes>
-                        <attribute name="class">link-slide-up-color</attribute>
-                    </attributes>
-                </style>
-
-                <!-- link effect 5: slide right (grey) -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="LinkSlideRightGrey"/>
-                    <attributes>
-                        <attribute name="class">link-slide-right-grey</attribute>
-                    </attributes>
-                </style>
 
                 <!-- Template Button small -->
                 <style element="a">
@@ -697,9 +696,9 @@
                 <!-- Template Button default -->
                 <style element="a">
                     <locale group="quiqqer/template-presentation"
-                            var="templateButton.default"/>
+                            var="templateButton.medium"/>
                     <attributes>
-                        <attribute name="class">button</attribute>
+                        <attribute name="class">button button__medium</attribute>
                     </attributes>
                 </style>
 
@@ -709,6 +708,15 @@
                             var="templateButton.large"/>
                     <attributes>
                         <attribute name="class">button button__large</attribute>
+                    </attributes>
+                </style>
+
+                <!-- Template Button ghost (white) -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="templateButton.ghost.white"/>
+                    <attributes>
+                        <attribute name="class">button button__ghost</attribute>
                     </attributes>
                 </style>
 

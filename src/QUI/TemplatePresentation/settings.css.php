@@ -33,7 +33,6 @@ $colorFooterBackground = '#414141';
 $colorFooterFont       = '#D1D1D1';
 $colorMain             = '#dd151b';
 $buttonFontColor       = '#ffffff';
-$colorFooterLinks      = '#E6E6E6';
 $colorMainContentFont  = '#5d5d5d';
 
 if ($Project->getConfig('templatePresentation.settings.colorFooterBackground')) {
@@ -50,10 +49,6 @@ if ($Project->getConfig('templatePresentation.settings.colorMain')) {
 
 if ($Project->getConfig('templatePresentation.settings.buttonFontColor')) {
     $buttonFontColor = $Project->getConfig('templatePresentation.settings.buttonFontColor');
-}
-
-if ($Project->getConfig('templatePresentation.settings.colorFooterLinks')) {
-    $colorFooterLinks = $Project->getConfig('templatePresentation.settings.colorFooterLinks');
 }
 
 if ($Project->getConfig('templatePresentation.settings.colorMainContentFont')) {
@@ -175,7 +170,9 @@ ob_start();
 .quiqqer-menu-megaMenu-list-item,
 .hide-on-desktop .quiqqer-menu-megaMenu-mobile,
 .quiqqer-menu-megaMenu-mobile-search,
-.header-bar-suggestSearch {
+.header-bar-suggestSearch,
+.fa.close-social-share,
+.fa.open-social-share {
     line-height: <?php echo $navBarHeight; ?>px;
 }
 
@@ -228,13 +225,9 @@ a.template-button:hover {
     background-color: <?php echo $colorMainButton; ?>;
 }
 
-#page .button.special {
-    background: none !important;
-    color: <?php echo $colorMainContentFont; ?>;
-}
-
-#page .button.special:hover {
-    border: 3px solid <?php echo $colorMain; ?>;
+.button__ghost__color {
+    color: <?php echo $colorMain; ?>;
+    border: 2px solid <?php echo $colorMain; ?>;
 }
 
 body,
@@ -248,8 +241,6 @@ input:hover,
 input:focus,
 select:hover,
 select:focus {
-    /*    box-shadow: 0 0 0 2px */
-<?php //echo $colorMain; ?> /*;*/
     border-color: <?php echo $colorMain; ?>;
 }
 
@@ -296,12 +287,8 @@ button:hover,
     color: <?php echo $colorFooterFont; ?>;
 }
 
-footer a {
-    color: <?php //echo $colorFooterLinks; ?>;
-}
-
-footer a:hover {
-    color: <?php //echo $colorFooterLinks; ?>;
+.page-footer a:hover {
+    color: <?php echo $colorMain; ?>;
 }
 
 .page-footer-copyright {
@@ -391,6 +378,17 @@ footer a:hover {
 }
 
 <?php }; ?>
+
+@media screen and (max-width: 767px) {
+    .mobile-bar-social {
+        background: <?php echo $Convert->colorBrightness($mobileMenuBackground, 0.9) ?>;
+    }
+
+    .mobile-bar-social-container a,
+    .mobile-bar-social-title {
+        color: <?php echo $mobileFontColor ?>;
+    }
+}
 
 <?php
 

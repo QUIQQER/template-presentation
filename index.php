@@ -1,5 +1,8 @@
 <?php
 
+$Locale = QUI::getLocale();
+
+
 /**
  * Emotion
  */
@@ -19,36 +22,83 @@ $MegaMenu = new QUI\Menu\MegaMenu(array(
     'showStart' => false
 ));
 
-$searchMobile = '';
+/**
+ * search
+ */
+$search      = '';
+$noSearch    = 'no-search';
+$inputSearch = '';
+/* search setting is on? */
+if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
+    $noSearch = '';
+    $types    = array(
+        'quiqqer/sitetypes:types/search'
+    );
 
-$types = array(
-    'quiqqer/sitetypes:types/search',
-    'quiqqer/search:types/search'
-);
+    /* check if quiqqer search packet is installed */
+    if (QUI::getPackageManager()->isInstalled('quiqqer/search')) {
+        $types = array(
+            'quiqqer/sitetypes:types/search',
+            'quiqqer/search:types/search'
+        );
+    }
 
-$searchSites = $Project->getSites(array(
-    'where' => array(
-        'type' => array(
-            'type'  => 'IN',
-            'value' => $types
-        )
-    ),
-    'limit' => 1
-));
+    $searchSites = $Project->getSites(array(
+        'where' => array(
+            'type' => array(
+                'type'  => 'IN',
+                'value' => $types
+            )
+        ),
+        'limit' => 1
+    ));
 
-if (count($searchSites)) {
-    try {
-        $searchUrl = $searchSites[0]->getUrlRewritten();
+    if (count($searchSites)) {
+        try {
+            $searchUrl  = $searchSites[0]->getUrlRewritten();
+            $searchForm = '';
 
-        $searchMobile = '<div class="quiqqer-menu-megaMenu-mobile-search"
+            switch ($Project->getConfig('templatePresentation.settings.search')) {
+                case 'input':
+                    $searchForm = '
+                    <form  action="' . $searchUrl . '" class="header-bar-suggestSearch hide-on-mobile" method="get"
+                        style="position: relative; right: auto; float: right;">
+                        <input type="search" name="search" 
+                                class="only-input"
+                                data-qui="package/quiqqer/search/bin/controls/Suggest" 
+                                placeholder="'
+                                  . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
+                                  '"/>
+                    </form>';
+                    $inputSearch = 'input-search';
+                    break;
+                case 'inputAndIcon':
+                    $searchForm = '
+                    <form  action="' . $searchUrl . '" class="header-bar-suggestSearch hide-on-mobile" method="get">
+                        <div class="header-bar-suggestSearch-wrapper">
+                            <input type="search" name="search"
+                                    class="input-and-icon" 
+                                    data-qui="package/quiqqer/search/bin/controls/Suggest" 
+                                    placeholder="'
+                                  . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
+                                  '"/>
+                        </div>
+                        <span class="fa fa-fw fa-search"></span>
+                    </form>';
+                    break;
+            }
+
+            $search = $searchForm .
+                      '<div class="quiqqer-menu-megaMenu-mobile-search"
                                   style="width: auto; font-size: 30px !important;">
                     <a href="' . $searchUrl . '"
                     class="header-bar-search-link searchMobile">
                         <i class="fa fa-search header-bar-search-icon"></i>
                     </a>
                 </div>';
-    } catch (QUI\Exception $Exception) {
-        QUI\System\Log::addNotice($Exception->getMessage());
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::addNotice($Exception->getMessage());
+        }
     }
 }
 
@@ -64,73 +114,75 @@ $MegaMenu->prependHTML(
             </div>'
 );
 
-try {
-    QUI::getPackage('quiqqer/search');
 
-    // social
-    $socialNav    = '';
-    $socialFooter = '';
+// social
+$social          = "false";
+$socialNav       = '';
+$socialFooter    = '';
+$socialMobileNav = '';
 
-    if ($Project->getConfig('templatePresentation.settings.social.show.nav')
-        || $Project->getConfig('templatePresentation.settings.social.show.footer')
-    ) {
-        $socialHTML = '';
+if ($Project->getConfig('templatePresentation.settings.social.show.nav')
+    || $Project->getConfig('templatePresentation.settings.social.show.footer')
+) {
+    $social     = "true";
+    $socialHTML = '';
 
-        // check what socials should be shown
-        if ($Project->getConfig('templatePresentation.settings.social.facebook')) {
-            $socialHTML .= '<a href="http://' .
-                           $Project->getConfig('templatePresentation.settings.social.facebook')
-                           . '"><span class="fa fa-facebook"></span></a>';
-        }
-        if ($Project->getConfig('templatePresentation.settings.social.twitter')) {
-            $socialHTML .= '<a href="' .
-                           $Project->getConfig('templatePresentation.settings.social.twitter')
-                           . '"><span class="fa fa-twitter"></span></a>';
-        }
-        if ($Project->getConfig('templatePresentation.settings.social.google')) {
-            $socialHTML .= '<a href="' .
-                           $Project->getConfig('templatePresentation.settings.social.google')
-                           . '"><span class="fa fa-google-plus"></span></a>';
-        }
-        if ($Project->getConfig('templatePresentation.settings.social.youtube')) {
-            $socialHTML .= '<a href="' .
-                           $Project->getConfig('templatePresentation.settings.social.youtube')
-                           . '"><span class="fa fa-youtube-play"></span></a>';
-        }
-        if ($Project->getConfig('templatePresentation.settings.social.github')) {
-            $socialHTML .= '<a href="' .
-                           $Project->getConfig('templatePresentation.settings.social.github')
-                           . '"><span class="fa fa-github"></span></a>';
-        }
-
-        // prepare social for nav
-        if ($Project->getConfig('templatePresentation.settings.social.show.nav')) {
-            $socialNav .= '<div class="header-bar-social">';
-            $socialNav .= $socialHTML;
-            $socialNav .= '</div>';
-        }
-
-        // prepare social for footer
-        if ($Project->getConfig('templatePresentation.settings.social.show.footer')) {
-            $socialFooter .= '<div class="footer-bar-social">';
-            $socialFooter .= $socialHTML;
-            $socialFooter .= '</div>';
-        }
+    // check which socials should be displayed
+    if ($Project->getConfig('templatePresentation.settings.social.facebook')) {
+        $socialHTML .= '<a href="' .
+                       $Project->getConfig('templatePresentation.settings.social.facebook')
+                       . '" target="_blank"><span class="fa fa-facebook"></span></a>';
+    }
+    if ($Project->getConfig('templatePresentation.settings.social.twitter')) {
+        $socialHTML .= '<a href="' .
+                       $Project->getConfig('templatePresentation.settings.social.twitter')
+                       . '" target="_blank"><span class="fa fa-twitter"></span></a>';
+    }
+    if ($Project->getConfig('templatePresentation.settings.social.google')) {
+        $socialHTML .= '<a href="' .
+                       $Project->getConfig('templatePresentation.settings.social.google')
+                       . '" target="_blank"><span class="fa fa-google-plus"></span></a>';
+    }
+    if ($Project->getConfig('templatePresentation.settings.social.youtube')) {
+        $socialHTML .= '<a href="' .
+                       $Project->getConfig('templatePresentation.settings.social.youtube')
+                       . '" target="_blank"><span class="fa fa-youtube-play"></span></a>';
+    }
+    if ($Project->getConfig('templatePresentation.settings.social.github')) {
+        $socialHTML .= '<a href="' .
+                       $Project->getConfig('templatePresentation.settings.social.github')
+                       . '" target="_blank"><span class="fa fa-github"></span></a>';
+    }
+    if ($Project->getConfig('templatePresentation.settings.social.gitlab')) {
+        $socialHTML .= '<a href="' .
+                       $Project->getConfig('templatePresentation.settings.social.gitlab')
+                       . '" target="_blank"><span class="fa fa-gitlab"></span></a>';
     }
 
-    $MegaMenu->appendHTML(
-        $socialNav .
-        '<div class="header-bar-suggestSearch hide-on-mobile">
-                    <input type="search" data-qui="package/quiqqer/search/bin/controls/Suggest" 
-                    placeholder="' . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') . '"/>
-                    <span class="fa fa-fw fa-search"></span>
-                </div>' .
-        $searchMobile
-    );
+    // prepare social for nav
+    if ($Project->getConfig('templatePresentation.settings.social.show.nav')) {
+        $socialNav .= '<div class="header-bar-social hide-on-mobile ' . $noSearch . $inputSearch . '">';
+        $socialNav .= $socialHTML;
+        $socialNav .= '</div>';
 
-} catch (QUI\Exception $Exception) {
-    QUI\System\Log::addNotice($Exception->getMessage());
+        $socialMobileNav .= '<span class="mobile-bar-social-title">Social Media</span>';
+        $socialMobileNav .= '<div class="mobile-bar-social-container">';
+        $socialMobileNav .= $socialHTML;
+        $socialMobileNav .= '</div>';
+    }
+
+    // prepare social for footer
+    if ($Project->getConfig('templatePresentation.settings.social.show.footer')) {
+        $socialFooter .= '<div class="footer-bar-social">';
+        $socialFooter .= $socialHTML;
+        $socialFooter .= '</div>';
+    }
 }
+
+$MegaMenu->appendHTML(
+    $search . $socialNav
+);
+
 
 /**
  * Breadcrumb
@@ -156,9 +208,11 @@ $templateSettings = QUI\TemplatePresentation\Utils::getConfig(array(
     'Template'   => $Template
 ));
 
-$templateSettings['BricksManager'] = $BricksManager;
-$templateSettings['Breadcrumb']    = $Breadcrumb;
-$templateSettings['MegaMenu']      = $MegaMenu;
+$templateSettings['BricksManager']   = $BricksManager;
+$templateSettings['Breadcrumb']      = $Breadcrumb;
+$templateSettings['MegaMenu']        = $MegaMenu;
+$templateSettings['social']          = $social;
+$templateSettings['socialMobileNav'] = $socialMobileNav;
 
 /**
  * body class
