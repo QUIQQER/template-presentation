@@ -55,18 +55,6 @@
                     </option>
                 </select>
 
-                <!--<input conf="templatePresentation.showTitle" type="checkbox">
-                    <text>
-                        <locale group="quiqqer/template-presentation" var="siteSettings.showTitle"/>
-                    </text>
-                </input>-->
-
-                <!--<input conf="templatePresentation.showShort" type="checkbox">
-                    <text>
-                        <locale group="quiqqer/template-presentation" var="siteSettings.showShort"/>
-                    </text>
-                </input>-->
-
                 <!-- show short description -->
                 <select conf="templatePresentation.showShort">
                     <text>
