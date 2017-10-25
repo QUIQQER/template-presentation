@@ -207,17 +207,14 @@
 
 
         <locale name="package.title">
-            <de><![CDATA[QUIQQER - Template: Presentation]]></de>
-            <en><![CDATA[QUIQQER - Template: Presentation]]></en>
-            <pl><![CDATA[QUIQQER - Template: Presentation]]></pl>
+            <de><![CDATA[Product Presentation]]></de>
+            <en><![CDATA[Product Presentation]]></en>
+            <pl><![CDATA[Product Presentation]]></pl>
         </locale>
         <locale name="package.description">
-            <de><![CDATA[Template für aussagekräftige Internetseiten mit
-            vielen Einstellungsmöglichkeiten.]]></de>
-            <en><![CDATA[Advanced template with a great design and a lot of settings.]]></en>
-            <pl><![CDATA[Zaawansowany template z dopracowanym designem, który wyróżni Twoją stronę
-            internetową na tle innych. Duże pole do popisu dają rozmaite ustawienia,
-            dzięki czemu możesz dopasować wygląd Twojego serwisu do własnych potrzeb.]]></pl>
+            <de><![CDATA[Geeignetes Template um Produkte, Apps und Programme zu präsentieren]]></de>
+            <en><![CDATA[Business and Marketing Template]]></en>
+            <pl><![CDATA[]]></pl>
         </locale>
 
         <locale name="admin.layout.leftSidebar">
