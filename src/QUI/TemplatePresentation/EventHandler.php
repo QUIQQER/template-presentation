@@ -28,7 +28,7 @@ class EventHandler
     }
 
     /**
-     * Clear system cache on project save
+     * Clear system cache on site save
      *
      * @return void
      */
