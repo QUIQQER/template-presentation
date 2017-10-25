@@ -266,7 +266,6 @@ button:hover,
 .button-active,
 .button:active,
 .button:hover {
-    background: none;
     color: <?php echo $colorMain; ?>;
 }
 

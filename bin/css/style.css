@@ -237,6 +237,7 @@ button:hover,
     border-radius: 0;
 }
 
+
 input[type='submit'],
 input[type='reset'],
 input[type='button'],
@@ -257,19 +258,22 @@ button,
     -o-transition: all 0.2s ease;
     min-width: 120px;
     text-align: center;
+    border: 2px solid #ddd;
+    background: #ddd;
 }
 
 .button__rounded {
     border-radius: 100px;
 }
 
-/*input[type='submit']:hover,
+input[type='submit']:hover,
 input[type='reset']:hover,
-input[type='button']:hover,*/
+input[type='button']:hover,
 button:hover,
 .button-active,
 .button:active,
 .button:hover {
+    background: none;
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
@@ -1281,14 +1285,6 @@ p,
 .content-body:hover .button,
 .content-body:hover button {
     text-decoration: none;
-}
-
-.content-body a {
-    display: inline-block;
-}
-
-.content-body a img {
-    display: block;
 }
 
 /** icon toTop
@@ -2320,11 +2316,9 @@ a.link-slide-right-grey:focus::before {
     padding: 0.5em 1.2em;
     font-weight: 600;
     position: relative;
-    /*margin: 16px 16px 16px 0;*/
     letter-spacing: 1px;
     transition: all 0.2s;
     font-size: 1em;
-    background: #aaa;
 }
 
 .button:last-of-type {
