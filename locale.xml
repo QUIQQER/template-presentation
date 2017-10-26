@@ -66,17 +66,6 @@
             <en><![CDATA[Układ strony z kolumną po prawej stronie.]]></en>
         </locale>
 
-        <locale name="area.noSidebar.title">
-            <de><![CDATA[Inhalts-Zone (Keine Sidebar)]]></de>
-            <en><![CDATA[Content area (No Sidebar)]]></en>
-            <pl><![CDATA[Główna zawartość]]></pl>
-        </locale>
-        <locale name="area.noSidebar.description">
-            <de><![CDATA[Inhaltszone eines Keine-Sidebar-Layouts]]></de>
-            <en><![CDATA[Content area of no sidebar layout]]></en>
-            <pl><![CDATA[Główna zawartość układu bez kolumn]]></pl>
-        </locale>
-
         <locale name="area.sidebar.prefix.content.title">
             <de><![CDATA[Oberhalb vom Inhalt (Content Prefix)]]></de>
             <en><![CDATA[Prefix area]]></en>
@@ -212,9 +201,9 @@
             <pl><![CDATA[Product Presentation]]></pl>
         </locale>
         <locale name="package.description">
-            <de><![CDATA[Geeignetes Template um Produkte, Apps und Programme zu präsentieren]]></de>
+            <de><![CDATA[Business und Marketing Template um Produkte, Apps oder Programme zu präsentieren]]></de>
             <en><![CDATA[Business and Marketing Template]]></en>
-            <pl><![CDATA[]]></pl>
+            <pl><![CDATA[Szablon strony internetowej do prezentacji produktów, aplikacji albo programów.]]></pl>
         </locale>
 
         <locale name="admin.layout.leftSidebar">
@@ -266,9 +255,9 @@
         
         <!-- settings -->
         <locale name="templatePresentation.settings.menu.title">
-            <de><![CDATA[Template Einstellungen: Presentation]]></de>
-            <en><![CDATA[Template settings: Presentation]]></en>
-            <pl><![CDATA[Ustawienia szablonu: Presentation]]></pl>
+            <de><![CDATA[Template Einstellungen: Product Presentation]]></de>
+            <en><![CDATA[Template settings: Product Presentation]]></en>
+            <pl><![CDATA[Ustawienia szablonu: Product Presentation]]></pl>
         </locale>
 
         <!-- general settings -->
@@ -288,12 +277,6 @@
             <pl><![CDATA[Pokaz skrócony opis strony]]></pl>
         </locale>
 
-        <!-- Background Color Switcher-->
-        <!--<locale name="templatePresentation.showTitle.text">
-            <de><![CDATA[Prefix / Suffix Hintegrundfarbe wechseln]]></de>
-            <en><![CDATA[Change prefix / suffix background]]></en>
-            <pl><![CDATA[Naprzemienne tło przestrzeni prefix / suffix ]]></pl>
-        </locale>-->
         <locale name="templatePresentation.settings.bgColorSwitcher.display">
             <de><![CDATA[Aktivieren]]></de>
             <en><![CDATA[On]]></en>
@@ -305,41 +288,18 @@
             <pl><![CDATA[Wyłącz]]></pl>
         </locale>
 
-        <!-- Menu shadow -->
-        <!--<locale name="templatePresentation.settings.navBarShadow.text">
-            <de><![CDATA[Menüschatten]]></de>
-            <en><![CDATA[Menu shadow]]></en>
-            <pl><![CDATA[Cień pod paskiem nawigacyjnym]]></pl>
-        </locale>
-        <locale name="templatePresentation.settings.navBarShadow.displaz">
-            <de><![CDATA[Schatten anzeigen]]></de>
-            <en><![CDATA[Display the shadow]]></en>
-            <pl><![CDATA[Pokaż]]></pl>
-        </locale>
-        <locale name="templatePresentation.settings.navBarShadow.hide">
-            <de><![CDATA[Schatten verbergen]]></de>
-            <en><![CDATA[Hide the shadow]]></en>
-            <pl><![CDATA[Ukryj]]></pl>
-        </locale>-->
-
 
         <!-- Background Color Switcher Prefix -->
         <locale name="templatePresentation.settings.bgColorSwitcherPrefix.text">
             <de><![CDATA[Prefix Hintergrundfarbe wechseln]]></de>
-            <en><![CDATA[Swich background color]]></en>
-        </locale>
-        <locale name="templatePresentation.settings.bgColorSwitcherPrefix.description">
-            <de><![CDATA[(...)]]></de>
-            <en><![CDATA[(...)]]></en>
+            <en><![CDATA[Switch prefix background color]]></en>
+            <pl><![CDATA[Prefix: naprzemienny kolor tła]]></pl>
         </locale>
         <!-- Background Color Switcher Suffix -->
         <locale name="templatePresentation.settings.bgColorSwitcherSuffix.text">
             <de><![CDATA[Suffix Hintergrundfarbe wechseln]]></de>
-            <en><![CDATA[Swich background color]]></en>
-        </locale>
-        <locale name="templatePresentation.settings.bgColorSwitcherSuffix.description">
-            <de><![CDATA[(...)]]></de>
-            <en><![CDATA[(...)]]></en>
+            <en><![CDATA[Switch suffix background color]]></en>
+            <pl><![CDATA[Suffix: naprzemienny kolor tła]]></pl>
         </locale>
 
         <!-- header settings -->
@@ -350,14 +310,14 @@
         </locale>
 
         <!-- show header? -->
-        <!--<locale name="showHeader.text">
-            <de><![CDATA[Header anzeigen?]]></de>
-            <en><![CDATA[Display header?]]></en>
-            <pl><![CDATA[Pokazać nagłówek (header wraz z obrazkiem)?]]></pl>
-        </locale>-->
+        <locale name="showHeader.desc">
+            <de><![CDATA[Auf welchen Seitenlayouts soll der Header (mit eingeselltem Bild) angezeigt werden?]]></de>
+            <en><![CDATA[On witch site layouts should be the header displayed?]]></en>
+            <pl><![CDATA[Na stronach z jakim układem (layout) pokazać nagłówek (wraz z ustawionym obrazkiem)?]]></pl>
+        </locale>
 
         <locale name="showHeaderStartPage.text">
-            <de><![CDATA[Startpage]]></de>
+            <de><![CDATA[Startseite]]></de>
             <en><![CDATA[Start page]]></en>
             <pl><![CDATA[Układ bez kolumn (strona startowa)]]></pl>
         </locale>
@@ -387,7 +347,7 @@
         <locale name="templatePresentation.breadcrumb.settings.title">
             <de><![CDATA[Brotkrumennavigation Einstellungen (breadcrumb)]]></de>
             <en><![CDATA[Breadcrumb settings]]></en>
-            <pl><![CDATA[Pokazać breadcrumb ("nawigacja okruszkowa")?]]></pl>
+            <pl><![CDATA[Ustawienia breadcrumb ("nawigacja okruszkowa")]]></pl>
         </locale>
         <!-- show breadcrumb? -->
         <locale name="showBreadcrumb.text">
@@ -397,7 +357,7 @@
         </locale>
 
         <locale name="showBreadcrumbStartPage.text">
-            <de><![CDATA[Startpage]]></de>
+            <de><![CDATA[Startseite]]></de>
             <en><![CDATA[Start page]]></en>
             <pl><![CDATA[Układ bez kolumn (strona startowa)]]></pl>
         </locale>
@@ -437,19 +397,23 @@
         <locale name="templatePresentation.settings.headerImagePosition.text">
             <de><![CDATA[Position des Bildes wählen:]]></de>
             <en><![CDATA[Choose position of the image:]]></en>
+            <pl><![CDATA[Umiejscowienie obrazka:]]></pl>
         </locale>
 
         <locale name="templatePresentation.settings.headerImagePosition.start">
             <de><![CDATA[Oben]]></de>
             <en><![CDATA[Top]]></en>
+            <pl><![CDATA[Góra]]></pl>
         </locale>
         <locale name="templatePresentation.settings.headerImagePosition.center">
             <de><![CDATA[Mitte]]></de>
             <en><![CDATA[Middle]]></en>
+            <pl><![CDATA[Środek]]></pl>
         </locale>
         <locale name="templatePresentation.settings.headerImagePosition.end">
             <de><![CDATA[Unten]]></de>
             <en><![CDATA[Bottom]]></en>
+            <pl><![CDATA[Dół]]></pl>
         </locale>
 
 
@@ -484,14 +448,14 @@
                 czy przewijany wraz ze stroną]]></pl>
         </locale>
         <locale name="templatePresentation.settings.navPos.fix">
-            <de><![CDATA[fix]]></de>
-            <en><![CDATA[fixed]]></en>
-            <pl><![CDATA[przylepiony]]></pl>
+            <de><![CDATA[Fix]]></de>
+            <en><![CDATA[Fixed]]></en>
+            <pl><![CDATA[Przylepiony]]></pl>
         </locale>
         <locale name="templatePresentation.settings.navPos.scroll">
-            <de><![CDATA[scrollbar]]></de>
-            <en><![CDATA[scroll]]></en>
-            <pl><![CDATA[przewijany]]></pl>
+            <de><![CDATA[Scrollbar]]></de>
+            <en><![CDATA[Scroll]]></en>
+            <pl><![CDATA[Przewijany]]></pl>
         </locale>
 
         <!-- Navbar colors -->
@@ -519,7 +483,7 @@
 
 
 
-        <!-- Share -->
+        <!-- Search -->
         <locale name="templatePresentation.settings.search.title">
             <de><![CDATA[Suchen-Button]]></de>
             <en><![CDATA[Search button]]></en>
@@ -528,7 +492,7 @@
         <locale name="templatePresentation.settings.searchShow.text">
             <de><![CDATA[Suche in Navigationsmenü anzeigen]]></de>
             <en><![CDATA[Show search button in nav bar]]></en>
-            <pl><![CDATA[Pokarz przycisk wyszukiwania]]></pl>
+            <pl><![CDATA[Pokaż przycisk wyszukiwania]]></pl>
         </locale>
         <locale name="templatePresentation.settings.searchLink.text">
             <de><![CDATA[Suchseite]]></de>
@@ -604,17 +568,17 @@
         <locale name="social.settings.title">
             <de><![CDATA[Social Icons]]></de>
             <en><![CDATA[Social icons]]></en>
-            <pl><![CDATA[Media spolecznosciowe (social icons)]]></pl>
+            <pl><![CDATA[Media społecznościowe (social icons)]]></pl>
         </locale>
         <locale name="social.show.nav">
             <de><![CDATA[Anzeigen im Menü]]></de>
             <en><![CDATA[Show in nav]]></en>
-            <pl><![CDATA[Wlacz w nawigacji]]></pl>
+            <pl><![CDATA[Włącz w nawigacji]]></pl>
         </locale>
         <locale name="social.show.footer">
             <de><![CDATA[Anzeigen im Footer]]></de>
             <en><![CDATA[Show in footer]]></en>
-            <pl><![CDATA[Wlacz w stopce]]></pl>
+            <pl><![CDATA[Włącz w stopce]]></pl>
         </locale>
         <locale name="social.linksNote" html="true">
             <de><![CDATA[Bitte Links mit <strong>http:///</strong> oder <strong>https:///</strong> verwenden, z.B. https:///www.facebook.com]]></de>
@@ -657,7 +621,7 @@
         <locale name="templateButton.small">
             <de><![CDATA[Button (klein)]]></de>
             <en><![CDATA[Button (small)]]></en>
-            <pl><![CDATA[Button (maly)]]></pl>
+            <pl><![CDATA[Button (mały)]]></pl>
         </locale>
         <locale name="templateButton.medium">
             <de><![CDATA[Button (medium)]]></de>
@@ -667,7 +631,7 @@
         <locale name="templateButton.large">
             <de><![CDATA[Button (groß)]]></de>
             <en><![CDATA[Button (large)]]></en>
-            <pl><![CDATA[Button (duzy)]]></pl>
+            <pl><![CDATA[Button (duży)]]></pl>
         </locale>
         <locale name="templateButton.ghost.white">
             <de><![CDATA[Button: Ghost (weiß)]]></de>
@@ -682,29 +646,7 @@
         <locale name="templateButton.arrow">
             <de><![CDATA[Button: Pfeil]]></de>
             <en><![CDATA[Button: arrow]]></en>
-            <pl><![CDATA[Button: strzalka]]></pl>
-        </locale>
-
-        <!-- site settings -->
-        <locale name="siteSettings">
-            <de><![CDATA[Template Basic Company: Einstellungen]]></de>
-            <en><![CDATA[Template Basic Company: settings]]></en>
-        </locale>
-
-        <locale name="siteSettings.showEmotion">
-            <de><![CDATA[Header Bild anzeigen]]></de>
-            <en><![CDATA[Show header picture]]></en>
-            <pl><![CDATA[Pokaż obrazek nagłówka]]></pl>
-        </locale>
-        <locale name="siteSettings.showTitle">
-            <de><![CDATA[Titel anzeigen]]></de>
-            <en><![CDATA[Show title]]></en>
-            <pl><![CDATA[Pokaż tytuł]]></pl>
-        </locale>
-        <locale name="siteSettings.showShort">
-            <de><![CDATA[Kurzbeschreibung anzeigen]]></de>
-            <en><![CDATA[Show short text]]></en>
-            <en><![CDATA[Pokaż krótki opis]]></en>
+            <pl><![CDATA[Button: strzałka]]></pl>
         </locale>
 
 
@@ -718,7 +660,7 @@
         <locale name="templatePresentation.settings.search.text">
             <de><![CDATA[Suche in Navigation]]></de>
             <en><![CDATA[Search]]></en>
-            <pl><![CDATA[Pole wyszukiwania]]></pl>
+            <pl><![CDATA[Wyszukiwarka]]></pl>
         </locale>
             <locale name="templatePresentation.settings.search.input">
                 <de><![CDATA[Eingabefeld]]></de>

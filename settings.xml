@@ -205,12 +205,6 @@
                                     />
                                 </text>
 
-                                <description>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcherPrefix.description"
-                                    />
-                                </description>
-
                                 <option value="hide">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.bgColorSwitcher.hide"
@@ -230,12 +224,6 @@
                                             var="templatePresentation.settings.bgColorSwitcherSuffix.text"
                                     />
                                 </text>
-
-                                <description>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcherSuffix.description"
-                                    />
-                                </description>
 
                                 <option value="hide">
                                     <locale group="quiqqer/template-presentation"
@@ -260,6 +248,12 @@
                                         var="templatePresentation.settings.showHeader.title"
                                 />
                             </title>
+
+                            <text>
+                                <locale group="quiqqer/template-presentation"
+                                        var="showHeader.desc"
+                                />
+                            </text>
 
                             <!-- start page -->
                             <input conf="templatePresentation.settings.showHeaderStartPage"

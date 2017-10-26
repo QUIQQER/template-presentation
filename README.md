@@ -1,40 +1,56 @@
-Header
+Product Presentation
 ========
 
+Business and Marketing Template
 
 
 Paketname:
 
-    quiqqer/template-businesspro
+    quiqqer/template-presentation
 
 
-Features (Funktionen)
+Features
 --------
+
+- Extra brick zone for start page layout
+- Integrated QUIQQER breadcrumb
+- Search in the top navigation (3 different layouts)
+- Menu settings (height, position, etc.)
+- Placeholder for your socials in the navigation and footer (with FontAwesome icons)
+    - Facebook
+    - Twitter
+    - Google Plus
+    - YouTube
+    - GitHub
+    - GitLab
+- 4 layouts
+- Color management
+- Global header, title and short description settings
+- Each site can define if header, title and short description should be displayed
+- Responsive
 
 
 Installation
 ------------
 
-Der Paketname ist: quiqqer/template-businesspro
+The package name is: quiqqer/template-presentation
 
 
-Mitwirken
+Contribute
 ----------
 
-- Issue Tracker: 
-- Source Code: 
+- Issue Tracker: https://dev.quiqqer.com/quiqqer/template-presentation/issues
+- Source Code: https://dev.quiqqer.com/quiqqer/template-presentation
 
 
 Support
 -------
 
-Falls Sie ein Fehler gefunden haben, oder Verbesserungen wünschen,
-dann können Sie gerne an support@pcsg.de eine E-Mail schreiben.
+If you have found a bug or want to make improvements,
+then you can write an e-mail to support@pcsg.de.
 
 
-Lizenz
+License
 -------
 
-
-Entwickler
---------
+PCSG QL-1.0, CC BY-NC-SA 4.0
