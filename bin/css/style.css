@@ -1229,8 +1229,7 @@ header.control-header {
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Source Sans Pro', sans-serif;
-    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Open Sans', sans-serif;
     /*color: #747675;*/
     line-height: 1.15em;
     font-weight: 300;
@@ -2143,7 +2142,7 @@ a.icon-link {
     max-width: 100%;
     text-decoration: none;
     position: relative;
-    font-weight: 500;
+    font-weight: normal;
 }
 
 a.icon-link:after {
@@ -2167,7 +2166,7 @@ a.icon-link:hover {
 /* link effect 1: simple (grey) */
 a.link-simple-grey {
     color: #333;
-    font-weight: 600;
+    font-weight: normal;
     border-bottom: 1px solid rgba(52, 73, 94, 0.4);
     -webkit-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
     -moz-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
@@ -2189,7 +2188,7 @@ a.link-simple-grey:focus {
 
 /* link effect 2: simple (color) */
 a.link-simple-color {
-    font-weight: 600;
+    font-weight: normal;
     -webkit-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
     -moz-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
     -ms-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
@@ -2207,7 +2206,7 @@ a.link-simple-color:focus {
 
 a.link-slide-up-grey {
     color: #333;
-    font-weight: 600;
+    font-weight: normal;
     overflow: hidden;
     display: inline-block;
     outline: medium none;
@@ -2242,7 +2241,7 @@ a.link-slide-right-grey {
 /* link effect 4: slide up (color) */
 
 a.link-slide-up-color {
-    font-weight: 600;
+    font-weight: normal;
     overflow: hidden;
     display: inline-block;
     outline: medium none;
@@ -2314,7 +2313,7 @@ a.link-slide-right-grey:focus::before {
 
 .button {
     padding: 0.5em 1.2em;
-    font-weight: 600;
+    font-weight: normal;
     position: relative;
     letter-spacing: 1px;
     transition: all 0.2s;
