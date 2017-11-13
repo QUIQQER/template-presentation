@@ -60,15 +60,15 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
 
             switch ($Project->getConfig('templatePresentation.settings.search')) {
                 case 'input':
-                    $searchForm = '
+                    $searchForm  = '
                     <form  action="' . $searchUrl . '" class="header-bar-suggestSearch hide-on-mobile" method="get"
                         style="position: relative; right: auto; float: right;">
                         <input type="search" name="search" 
                                 class="only-input"
                                 data-qui="package/quiqqer/search/bin/controls/Suggest" 
                                 placeholder="'
-                                  . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
-                                  '"/>
+                        . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
+                        '"/>
                     </form>';
                     $inputSearch = 'input-search';
                     break;
@@ -80,8 +80,8 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
                                     class="input-and-icon" 
                                     data-qui="package/quiqqer/search/bin/controls/Suggest" 
                                     placeholder="'
-                                  . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
-                                  '"/>
+                        . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
+                        '"/>
                         </div>
                         <span class="fa fa-fw fa-search"></span>
                     </form>';
@@ -89,7 +89,7 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
             }
 
             $search = $searchForm .
-                      '<div class="quiqqer-menu-megaMenu-mobile-search"
+                '<div class="quiqqer-menu-megaMenu-mobile-search"
                                   style="width: auto; font-size: 30px !important;">
                     <a href="' . $searchUrl . '"
                     class="header-bar-search-link searchMobile">
@@ -105,6 +105,43 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
 $alt = "";
 if ($Project->getMedia()->getLogoImage()) {
     $alt = $Project->getMedia()->getLogoImage()->getAttribute('title');
+}
+
+/**
+ * Dropdown Language switch
+ */
+$showDropDownFlag = false;
+$DropDownFlag     = '';
+$showFlags        = false;
+$showText         = false;
+
+switch ($Project->getConfig('templatePresentation.settings.dropdownLangNav')) {
+    case 'flag':
+        $showFlags        = true;
+        $showDropDownFlag = true;
+        break;
+
+    case 'text':
+        $showText         = true;
+        $showDropDownFlag = true;
+        break;
+
+    case 'flagAndText':
+        $showFlags        = true;
+        $showText         = true;
+        $showDropDownFlag = true;
+        break;
+}
+
+if ($showDropDownFlag) {
+
+    $DropDown = new QUI\Bricks\Controls\LanguageSwitches\DropDown(array(
+        'Site'      => $Site,
+        'showFlags' => $showFlags,
+        'showText'  => $showText
+    ));
+
+    $DropDownFlag = $DropDown->create();
 }
 
 $MegaMenu->prependHTML(
@@ -130,33 +167,33 @@ if ($Project->getConfig('templatePresentation.settings.social.show.nav')
     // check which socials should be displayed
     if ($Project->getConfig('templatePresentation.settings.social.facebook')) {
         $socialHTML .= '<a href="' .
-                       $Project->getConfig('templatePresentation.settings.social.facebook')
-                       . '" target="_blank"><span class="fa fa-facebook"></span></a>';
+            $Project->getConfig('templatePresentation.settings.social.facebook')
+            . '" target="_blank"><span class="fa fa-facebook"></span></a>';
     }
     if ($Project->getConfig('templatePresentation.settings.social.twitter')) {
         $socialHTML .= '<a href="' .
-                       $Project->getConfig('templatePresentation.settings.social.twitter')
-                       . '" target="_blank"><span class="fa fa-twitter"></span></a>';
+            $Project->getConfig('templatePresentation.settings.social.twitter')
+            . '" target="_blank"><span class="fa fa-twitter"></span></a>';
     }
     if ($Project->getConfig('templatePresentation.settings.social.google')) {
         $socialHTML .= '<a href="' .
-                       $Project->getConfig('templatePresentation.settings.social.google')
-                       . '" target="_blank"><span class="fa fa-google-plus"></span></a>';
+            $Project->getConfig('templatePresentation.settings.social.google')
+            . '" target="_blank"><span class="fa fa-google-plus"></span></a>';
     }
     if ($Project->getConfig('templatePresentation.settings.social.youtube')) {
         $socialHTML .= '<a href="' .
-                       $Project->getConfig('templatePresentation.settings.social.youtube')
-                       . '" target="_blank"><span class="fa fa-youtube-play"></span></a>';
+            $Project->getConfig('templatePresentation.settings.social.youtube')
+            . '" target="_blank"><span class="fa fa-youtube-play"></span></a>';
     }
     if ($Project->getConfig('templatePresentation.settings.social.github')) {
         $socialHTML .= '<a href="' .
-                       $Project->getConfig('templatePresentation.settings.social.github')
-                       . '" target="_blank"><span class="fa fa-github"></span></a>';
+            $Project->getConfig('templatePresentation.settings.social.github')
+            . '" target="_blank"><span class="fa fa-github"></span></a>';
     }
     if ($Project->getConfig('templatePresentation.settings.social.gitlab')) {
         $socialHTML .= '<a href="' .
-                       $Project->getConfig('templatePresentation.settings.social.gitlab')
-                       . '" target="_blank"><span class="fa fa-gitlab"></span></a>';
+            $Project->getConfig('templatePresentation.settings.social.gitlab')
+            . '" target="_blank"><span class="fa fa-gitlab"></span></a>';
     }
 
     // prepare social for nav
@@ -180,7 +217,7 @@ if ($Project->getConfig('templatePresentation.settings.social.show.nav')
 }
 
 $MegaMenu->appendHTML(
-    $search . $socialNav
+    $search . $socialNav . $DropDownFlag
 );
 
 

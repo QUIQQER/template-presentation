@@ -23,6 +23,10 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>hide</defaultvalue>
                     </conf>
+                    <conf name="dropdownLangNav">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>hide</defaultvalue>
+                    </conf>
 
                     <!-- nav bar -->
                     <conf name="navBarHeight">
@@ -233,6 +237,37 @@
                                 <option value="display">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.bgColorSwitcher.display"
+                                    />
+                                </option>
+                            </select>
+
+
+                            <!-- Dropdown Language Switch in top nav -->
+                            <select conf="templatePresentation.settings.dropdownLangNav">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNav.title"
+                                    />
+                                </text>
+
+                                <option value="hide">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNav.hide"
+                                    />
+                                </option>
+                                <option value="flag">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNav.flag"
+                                    />
+                                </option>
+                                <option value="text">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNav.text"
+                                    />
+                                </option>
+                                <option value="flagAndText">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNav.flagAndText"
                                     />
                                 </option>
                             </select>

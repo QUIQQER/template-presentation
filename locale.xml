@@ -302,6 +302,34 @@
             <pl><![CDATA[Suffix: naprzemienny kolor tła]]></pl>
         </locale>
 
+
+        <!-- Dropdown Language Switch in top nav -->
+        <locale name="templatePresentation.settings.dropdownLangNav.title">
+            <de><![CDATA[Sprache wechseln]]></de>
+            <en><![CDATA[Change language widget]]></en>
+            <pl><![CDATA[Widget zmianyjezyk]]></pl>
+        </locale>
+            <locale name="templatePresentation.settings.dropdownLangNav.hide">
+                <de><![CDATA[Deaktiviert]]></de>
+                <en><![CDATA[Disabled]]></en>
+                <pl><![CDATA[Wylaczony]]></pl>
+            </locale>
+            <locale name="templatePresentation.settings.dropdownLangNav.flag">
+                <de><![CDATA[Flagge]]></de>
+                <en><![CDATA[Flag]]></en>
+                <pl><![CDATA[Flaga]]></pl>
+            </locale>
+            <locale name="templatePresentation.settings.dropdownLangNav.text">
+                <de><![CDATA[Text]]></de>
+                <en><![CDATA[Text]]></en>
+                <pl><![CDATA[Tekst]]></pl>
+            </locale>
+            <locale name="templatePresentation.settings.dropdownLangNav.flagAndText">
+                <de><![CDATA[Flagge und Text]]></de>
+                <en><![CDATA[Flag and text]]></en>
+                <pl><![CDATA[Flaga i tekst]]></pl>
+            </locale>
+
         <!-- header settings -->
         <locale name="templatePresentation.settings.showHeader.title">
             <de><![CDATA[Header Einstellungen]]></de>
