@@ -24,6 +24,7 @@ class EventHandler
         try {
             QUI\Cache\Manager::clear('quiqqer/templatePresentation');
         } catch (QUI\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
         }
     }
 
@@ -37,6 +38,7 @@ class EventHandler
         try {
             QUI\Cache\Manager::clear('quiqqer/templatePresentation');
         } catch (QUI\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
         }
     }
 
