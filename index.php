@@ -147,7 +147,7 @@ if ($showDropDownFlag) {
 $MegaMenu->prependHTML(
     '<div class="header-bar-inner-logo">
                 <a href="' . URL_DIR . '" class="page-header-logo">
-                <img src="' . $Project->getMedia()->getLogoImage()->getSizeCacheUrl() . '" alt="' . $alt . '"/></a>
+                <img src="' . $Project->getMedia()->getLogoImage()->getSizeCacheUrl(300, 200) . '" alt="' . $alt . '"/></a>
             </div>'
 );
 
