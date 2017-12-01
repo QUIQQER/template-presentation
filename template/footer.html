@@ -1,7 +1,8 @@
-<footer class="page-footer clear-fix">
+{assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
+<footer class="page-footer clear-fix {if empty($footer)}no-footer-bricks{/if}">
+
+    {if !empty($footer)}
     <div class="page-footer-container grid-container">
-        {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
-        {if !empty($footer)}
         <div class="grid-children">
             <div class="grid-children-container">
                 {foreach from=$footer item=Brick}
@@ -13,8 +14,8 @@
                 {/foreach}
             </div>
         </div>
-        {/if}
     </div>
+    {/if}
 
     <div class="page-footer-copyright grid-container grid-children">
         <div class="grid-children-container">

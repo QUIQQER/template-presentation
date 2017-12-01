@@ -172,7 +172,8 @@ ob_start();
 .quiqqer-menu-megaMenu-mobile-search,
 .header-bar-suggestSearch,
 .fa.close-social-share,
-.fa.open-social-share {
+.fa.open-social-share,
+.quiqqer-bricks-languageswitch-dropdown {
     line-height: <?php echo $navBarHeight; ?>px;
 }
 
@@ -266,7 +267,6 @@ button:hover,
 .button-active,
 .button:active,
 .button:hover {
-    background: none;
     color: <?php echo $colorMain; ?>;
 }
 

@@ -23,6 +23,10 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>hide</defaultvalue>
                     </conf>
+                    <conf name="dropdownLangNav">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>hide</defaultvalue>
+                    </conf>
 
                     <!-- nav bar -->
                     <conf name="navBarHeight">
@@ -205,12 +209,6 @@
                                     />
                                 </text>
 
-                                <description>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcherPrefix.description"
-                                    />
-                                </description>
-
                                 <option value="hide">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.bgColorSwitcher.hide"
@@ -231,12 +229,6 @@
                                     />
                                 </text>
 
-                                <description>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcherSuffix.description"
-                                    />
-                                </description>
-
                                 <option value="hide">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.bgColorSwitcher.hide"
@@ -245,6 +237,37 @@
                                 <option value="display">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.bgColorSwitcher.display"
+                                    />
+                                </option>
+                            </select>
+
+
+                            <!-- Dropdown Language Switch in top nav -->
+                            <select conf="templatePresentation.settings.dropdownLangNav">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNav.title"
+                                    />
+                                </text>
+
+                                <option value="hide">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNav.hide"
+                                    />
+                                </option>
+                                <option value="flag">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNav.flag"
+                                    />
+                                </option>
+                                <option value="text">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNav.text"
+                                    />
+                                </option>
+                                <option value="flagAndText">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNav.flagAndText"
                                     />
                                 </option>
                             </select>
@@ -260,6 +283,12 @@
                                         var="templatePresentation.settings.showHeader.title"
                                 />
                             </title>
+
+                            <text>
+                                <locale group="quiqqer/template-presentation"
+                                        var="showHeader.desc"
+                                />
+                            </text>
 
                             <!-- start page -->
                             <input conf="templatePresentation.settings.showHeaderStartPage"
@@ -682,6 +711,7 @@
         <wysiwyg class="main-content">
             <css src="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/style.css"/>
+            <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/editor.css"/>
 
             <styles>
 

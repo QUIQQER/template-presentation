@@ -24,11 +24,12 @@ class EventHandler
         try {
             QUI\Cache\Manager::clear('quiqqer/templatePresentation');
         } catch (QUI\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
         }
     }
 
     /**
-     * Clear system cache on project save
+     * Clear system cache on site save
      *
      * @return void
      */
@@ -37,6 +38,7 @@ class EventHandler
         try {
             QUI\Cache\Manager::clear('quiqqer/templatePresentation');
         } catch (QUI\Exception $Exception) {
+            QUI\System\Log::writeException($Exception);
         }
     }
 

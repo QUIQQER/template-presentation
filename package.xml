@@ -1,0 +1,30 @@
+<quiqqer>
+    <package>
+        <title>
+            <locale group="quiqqer/template-presentation" var="package.title"/>
+        </title>
+
+        <description>
+            <locale group="quiqqer/template-presentation" var="package.description"/>
+        </description>
+
+        <image src="URL_OPT_DIR/quiqqer/template-presentation/bin/img/Logo.png"/>
+
+        <preview>
+            <image src="URL_OPT_DIR/quiqqer/template-presentation/bin/img/preview/Template_Presentation.jpg"/>
+            <image src="URL_OPT_DIR/quiqqer/template-presentation/bin/img/preview/Template_Presentation_2.jpg"/>
+        </preview>
+
+        <support>
+            <email><![CDATA[support@pcsg.de]]></email>
+            <forum><![CDATA[https://community.quiqqer.com]]></forum>
+            <source><![CDATA[https://dev.quiqqer.com/quiqqer/template-presentation]]></source>
+            <issues><![CDATA[https://dev.quiqqer.com/quiqqer/template-presentation/issues]]></issues>
+        </support>
+
+        <copyright>
+            <name><![CDATA[PCSG - Computer & Internet Service OHG]]></name>
+            <license><![CDATA[PCSG QL-1.0, CC BY-NC-SA 4.0]]></license>
+        </copyright>
+    </package>
+</quiqqer>

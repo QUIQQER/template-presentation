@@ -237,6 +237,7 @@ button:hover,
     border-radius: 0;
 }
 
+
 input[type='submit'],
 input[type='reset'],
 input[type='button'],
@@ -257,19 +258,22 @@ button,
     -o-transition: all 0.2s ease;
     min-width: 120px;
     text-align: center;
+    border: 2px solid #ddd;
+    background: #ddd;
 }
 
 .button__rounded {
     border-radius: 100px;
 }
 
-/*input[type='submit']:hover,
+input[type='submit']:hover,
 input[type='reset']:hover,
-input[type='button']:hover,*/
+input[type='button']:hover,
 button:hover,
 .button-active,
 .button:active,
 .button:hover {
+    background: none;
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
@@ -1100,7 +1104,7 @@ input[type="search"].only-input:focus {
 /** page header
  * ========================================================== */
 
-.page-languages {
+/*.page-languages {
     position: absolute;
     right: 0;
     top: 0;
@@ -1108,7 +1112,7 @@ input[type="search"].only-input:focus {
 
 .quiqqer-langSwitch a {
     text-decoration: none;
-}
+}*/
 
 /** page image
  * ========================================================== */
@@ -1225,8 +1229,7 @@ header.control-header {
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Source Sans Pro', sans-serif;
-    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Open Sans', sans-serif;
     /*color: #747675;*/
     line-height: 1.15em;
     font-weight: 300;
@@ -1281,14 +1284,6 @@ p,
 .content-body:hover .button,
 .content-body:hover button {
     text-decoration: none;
-}
-
-.content-body a {
-    display: inline-block;
-}
-
-.content-body a img {
-    display: block;
 }
 
 /** icon toTop
@@ -2139,6 +2134,40 @@ a.qui-control-list-entry-imagelink {
 }
 
 /*********************************************************************************/
+/* Dropdown Languages switch
+/*********************************************************************************/
+.quiqqer-bricks-languageswitch-dropdown.button {
+    padding: 0;
+    min-width: 0;
+    border: none;
+    background: none;
+    float: right;
+    margin-right: 20px !important;
+}
+
+.quiqqer-bricks-languageswitch-dropdown.button .quiqqer-control-languageswitch-dropdown {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.quiqqer-bricks-languageswitch-dropdown.button .quiqqer-control-languageswitch-dropdown-arrow {
+     position: relative;
+    top: 0;
+    right: 0;
+}
+
+.quiqqer-bricks-languageswitch-dropdown.button .quiqqer-control-languageswitch-dropdown-dd {
+    min-width: 100px;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid #444;
+}
+.quiqqer-menu-megaMenu .quiqqer-bricks-languageswitch-dropdown.button .fa-angle-down {
+    margin-left: 10px;
+}
+
+
+/*********************************************************************************/
 /* template extra link effects
 /*********************************************************************************/
 
@@ -2147,7 +2176,7 @@ a.icon-link {
     max-width: 100%;
     text-decoration: none;
     position: relative;
-    font-weight: 500;
+    font-weight: normal;
 }
 
 a.icon-link:after {
@@ -2171,7 +2200,7 @@ a.icon-link:hover {
 /* link effect 1: simple (grey) */
 a.link-simple-grey {
     color: #333;
-    font-weight: 600;
+    font-weight: normal;
     border-bottom: 1px solid rgba(52, 73, 94, 0.4);
     -webkit-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
     -moz-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
@@ -2193,7 +2222,7 @@ a.link-simple-grey:focus {
 
 /* link effect 2: simple (color) */
 a.link-simple-color {
-    font-weight: 600;
+    font-weight: normal;
     -webkit-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
     -moz-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
     -ms-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
@@ -2211,7 +2240,7 @@ a.link-simple-color:focus {
 
 a.link-slide-up-grey {
     color: #333;
-    font-weight: 600;
+    font-weight: normal;
     overflow: hidden;
     display: inline-block;
     outline: medium none;
@@ -2246,7 +2275,7 @@ a.link-slide-right-grey {
 /* link effect 4: slide up (color) */
 
 a.link-slide-up-color {
-    font-weight: 600;
+    font-weight: normal;
     overflow: hidden;
     display: inline-block;
     outline: medium none;
@@ -2318,13 +2347,11 @@ a.link-slide-right-grey:focus::before {
 
 .button {
     padding: 0.5em 1.2em;
-    font-weight: 600;
+    font-weight: normal;
     position: relative;
-    /*margin: 16px 16px 16px 0;*/
     letter-spacing: 1px;
     transition: all 0.2s;
     font-size: 1em;
-    background: #aaa;
 }
 
 .button:last-of-type {

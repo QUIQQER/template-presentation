@@ -55,18 +55,6 @@
                     </option>
                 </select>
 
-                <!--<input conf="templatePresentation.showTitle" type="checkbox">
-                    <text>
-                        <locale group="quiqqer/template-presentation" var="siteSettings.showTitle"/>
-                    </text>
-                </input>-->
-
-                <!--<input conf="templatePresentation.showShort" type="checkbox">
-                    <text>
-                        <locale group="quiqqer/template-presentation" var="siteSettings.showShort"/>
-                    </text>
-                </input>-->
-
                 <!-- show short description -->
                 <select conf="templatePresentation.showShort">
                     <text>
@@ -94,7 +82,8 @@
 
     <!-- layouts -->
     <layouts>
-        <layout type="layout/startPage">
+        <layout type="layout/startPage"
+                image="bin/layouts/startPage.png">
             <title>
                 <locale group="quiqqer/template-presentation" var="admin.layout.startpage"/>
             </title>
@@ -103,7 +92,8 @@
             </description>
         </layout>
 
-        <layout type="layout/noSidebar">
+        <layout type="layout/noSidebar"
+                image="bin/layouts/noSidebar.png">
             <title>
                 <locale group="quiqqer/template-presentation" var="admin.layout.noSidebar"/>
             </title>
@@ -112,7 +102,8 @@
             </description>
         </layout>
 
-        <layout type="layout/leftSidebar">
+        <layout type="layout/leftSidebar"
+                image="bin/layouts/leftSidebar.png">
             <title>
                 <locale group="quiqqer/template-presentation" var="admin.layout.leftSidebar"/>
             </title>
@@ -121,7 +112,8 @@
             </description>
         </layout>
 
-        <layout type="layout/rightSidebar">
+        <layout type="layout/rightSidebar"
+                image="bin/layouts/rightSidebar.png">
             <title>
                 <locale group="quiqqer/template-presentation" var="admin.layout.rightSidebar"/>
             </title>
