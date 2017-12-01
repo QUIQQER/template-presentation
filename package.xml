@@ -8,14 +8,18 @@
             <locale group="quiqqer/template-presentation" var="package.description"/>
         </description>
 
-        <image src="URL_OPT_DIR/quiqqer/template-presentation/bin/img/Logo.jpg"/>
+        <image src="URL_OPT_DIR/quiqqer/template-presentation/bin/img/Logo.png"/>
+
+        <preview>
+            <image src="URL_OPT_DIR/quiqqer/template-presentation/bin/img/preview/Template_Presentation.jpg"/>
+            <image src="URL_OPT_DIR/quiqqer/template-presentation/bin/img/preview/Template_Presentation_2.jpg"/>
+        </preview>
 
         <support>
             <email><![CDATA[support@pcsg.de]]></email>
             <forum><![CDATA[https://community.quiqqer.com]]></forum>
             <source><![CDATA[https://dev.quiqqer.com/quiqqer/template-presentation]]></source>
             <issues><![CDATA[https://dev.quiqqer.com/quiqqer/template-presentation/issues]]></issues>
-            <wiki><![CDATA[https://dev.quiqqer.com/quiqqer/template-presentation/wikis/home]]></wiki>
         </support>
 
         <copyright>

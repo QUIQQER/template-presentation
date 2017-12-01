@@ -197,12 +197,12 @@
 
         <locale name="package.title">
             <de><![CDATA[Product Presentation]]></de>
-            <en><![CDATA[Product Presentation]]></en>
-            <pl><![CDATA[Product Presentation]]></pl>
+            <en><![CDATA[Product Präsentation]]></en>
+            <pl><![CDATA[Prezentacja produktów]]></pl>
         </locale>
         <locale name="package.description">
-            <de><![CDATA[Business und Marketing Template um Produkte, Apps oder Programme zu präsentieren]]></de>
-            <en><![CDATA[Business and Marketing Template]]></en>
+            <de><![CDATA[Business und Marketing Template um Produkte, Apps oder Programme zu präsentieren.]]></de>
+            <en><![CDATA[Business and marketing Template.]]></en>
             <pl><![CDATA[Szablon strony internetowej do prezentacji produktów, aplikacji albo programów.]]></pl>
         </locale>
 

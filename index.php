@@ -102,9 +102,12 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
     }
 }
 
-$alt = "";
+$alt     = "QUIQQER";
+$logoUrl = $Project->getMedia()->getPlaceholder();
 if ($Project->getMedia()->getLogoImage()) {
-    $alt = $Project->getMedia()->getLogoImage()->getAttribute('title');
+    $Logo    = $Project->getMedia()->getLogoImage();
+    $alt     = $Logo->getAttribute('title');
+    $logoUrl = $Logo->getSizeCacheUrl(500, 300);
 }
 
 /**
@@ -147,7 +150,7 @@ if ($showDropDownFlag) {
 $MegaMenu->prependHTML(
     '<div class="header-bar-inner-logo">
                 <a href="' . URL_DIR . '" class="page-header-logo">
-                <img src="' . $Project->getMedia()->getLogoImage()->getSizeCacheUrl(300, 200) . '" alt="' . $alt . '"/></a>
+                <img src="' . $logoUrl . '" alt="' . $alt . '"/></a>
             </div>'
 );
 

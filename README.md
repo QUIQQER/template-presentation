@@ -1,7 +1,7 @@
 Product Presentation
 ========
 
-Business and Marketing Template
+Business and marketing template for promoting your company or product online.
 
 
 Paketname:
@@ -12,22 +12,23 @@ Paketname:
 Features
 --------
 
-- Extra brick zone for start page layout
+- Responsive
 - Integrated QUIQQER breadcrumb
-- Search in the top navigation (3 different layouts)
-- Menu settings (height, position, etc.)
-- Placeholder for your socials in the navigation and footer (with FontAwesome icons)
+- Page transition effects
+- Search icon / input in the top navigation
+- FontAwesome support
+- Placeholder for your socials in the navigation and footer
     - Facebook
     - Twitter
     - Google Plus
     - YouTube
     - GitHub
     - GitLab
-- 4 layouts
 - Color management
-- Global header, title and short description settings
-- Each site can define if header, title and short description should be displayed
-- Responsive
+- Header settings
+- Each site can define if header, title and short description should be displayed (override the global setting)
+- Template settings cache
+- Extra layout to place the bricks on the top (for start page)
 
 
 Installation
