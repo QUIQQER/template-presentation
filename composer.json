@@ -32,6 +32,11 @@
         "quiqqer\/faq": "1.*|dev-master|dev-dev"
       },
 
+
+    "suggest": {
+      "monolog/search": "The package provides an advanced search for QUIQQER."
+    },
+
     "autoload": {
         "psr-4": {
             "QUI\\TemplatePresentation\\": "src/QUI/TemplatePresentation"
