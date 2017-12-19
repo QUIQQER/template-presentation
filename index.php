@@ -30,8 +30,8 @@ $noSearch    = 'no-search';
 $inputSearch = '';
 /* search setting is on? */
 if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
-    $noSearch = '';
-    $types    = array(
+
+    $types = array(
         'quiqqer/sitetypes:types/search'
     );
 
@@ -55,6 +55,7 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
 
     if (count($searchSites)) {
         try {
+            $noSearch   = '';
             $searchUrl  = $searchSites[0]->getUrlRewritten();
             $searchForm = '';
 
