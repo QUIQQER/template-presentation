@@ -1,41 +1,42 @@
 {
-    "name": "quiqqer\/template-presentation",
-    "type": "quiqqer-template",
-    "description": "Business and marketing Template.",
-    "version": "dev-master",
-    "license": "PCSG QL-1.0, CC BY-NC-SA 4.0",
-    "authors": [
-        {
-            "name": "Michael Danielczok",
-            "email": "support@pcsg.de",
-            "homepage": "http:\/\/www.pcsg.de",
-            "role": "Developer"
-        }
-    ],
-    "support": {
-        "email": "support@pcsg.de",
-        "url": "http:\/\/www.pcsg.de"
-    },
-      "require": {
-        "php": ">=5.3",
-        "quiqqer\/quiqqer": "*@dev",
-        "quiqqer\/bricks": "*@dev",
-        "quiqqer\/fontawesome": "*@dev",
-        "quiqqer\/sitetypes": "*@dev",
-        "quiqqer\/menu": "1.*|dev-dev",
-        "quiqqer\/unsemantic": "*@dev",
-        "quiqqer\/utils": ">=1.7|dev-dev",
-        "quiqqer\/page-transition": "dev-master",
-        "quiqqer\/pace": ">=1.2.0|dev-master|dev-dev",
-        "quiqqer\/buttons": ">=1.0.0|dev-master|dev-dev",
-        "quiqqer\/presentation-bricks": "*",
-        "quiqqer\/faq": "dev-dev",
-        "quiqqer\/search": "dev-dev"
-      },
-
-    "autoload": {
-        "psr-4": {
-            "QUI\\TemplatePresentation\\": "src/QUI/TemplatePresentation"
-        }
+  "name": "quiqqer\/template-presentation",
+  "type": "quiqqer-template",
+  "description": "Business and marketing Template.",
+  "version": "dev-master",
+  "license": "PCSG QL-1.0, CC BY-NC-SA 4.0",
+  "authors": [
+    {
+      "name": "Michael Danielczok",
+      "email": "support@pcsg.de",
+      "homepage": "http:\/\/www.pcsg.de",
+      "role": "Developer"
     }
+  ],
+  "support": {
+    "email": "support@pcsg.de",
+    "url": "http:\/\/www.pcsg.de"
+  },
+  "require": {
+    "php": ">=5.3",
+    "quiqqer\/quiqqer": ">=1.1|dev-master",
+    "quiqqer\/bricks": "1.*|dev-master",
+    "quiqqer\/fontawesome": "4.*|dev-master",
+    "quiqqer\/sitetypes": "1.*|dev-master",
+    "quiqqer\/menu": "1.*|dev-master",
+    "quiqqer\/unsemantic": "1.*|dev-master",
+    "quiqqer\/utils": ">=1.7|dev-master",
+    "quiqqer\/page-transition": "1.*|dev-master",
+    "quiqqer\/pace": ">=1.2.0|dev-master",
+    "quiqqer\/buttons": ">=1.0.0|dev-master",
+    "quiqqer\/presentation-bricks": "1.*|dev-master",
+    "quiqqer\/faq": "1.*|dev-master"
+  },
+  "suggest": {
+    "quiqqer/search": "The package provides an advanced search for QUIQQER."
+  },
+  "autoload": {
+    "psr-4": {
+      "QUI\\TemplatePresentation\\": "src/QUI/TemplatePresentation"
+    }
+  }
 }
