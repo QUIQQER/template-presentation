@@ -28,7 +28,7 @@
     "quiqqer\/page-transition": "1.*|dev-master|dev-dev",
     "quiqqer\/pace": ">=1.2.0|dev-master|dev-dev",
     "quiqqer\/buttons": ">=1.0.0|dev-master|dev-dev",
-    "quiqqer\/presentation-bricks": "1.*|dev-master|dev-dev",
+    "quiqqer\/presentation-bricks": "1.*|dev-master|dev-dev"
   },
   "suggest": {
     "quiqqer/search": "The package provides an advanced search for QUIQQER.",
