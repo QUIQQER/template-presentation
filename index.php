@@ -26,6 +26,7 @@ $MegaMenu = new QUI\Menu\MegaMenu(array(
  * search
  */
 $search      = '';
+$dataQui     = '';
 $noSearch    = 'no-search';
 $inputSearch = '';
 /* search setting is on? */
@@ -41,6 +42,9 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
             'quiqqer/sitetypes:types/search',
             'quiqqer/search:types/search'
         );
+
+        // Suggest Search integrate
+        $dataQui = 'data-qui="package/quiqqer/search/bin/controls/Suggest"';
     }
 
     $searchSites = $Project->getSites(array(
@@ -65,8 +69,7 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
                     <form  action="' . $searchUrl . '" class="header-bar-suggestSearch hide-on-mobile" method="get"
                         style="position: relative; right: auto; float: right;">
                         <input type="search" name="search" 
-                                class="only-input"
-                                data-qui="package/quiqqer/search/bin/controls/Suggest" 
+                                class="only-input" ' . $dataQui . '
                                 placeholder="'
                         . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
                         '"/>
@@ -78,8 +81,7 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
                     <form  action="' . $searchUrl . '" class="header-bar-suggestSearch hide-on-mobile" method="get">
                         <div class="header-bar-suggestSearch-wrapper">
                             <input type="search" name="search"
-                                    class="input-and-icon" 
-                                    data-qui="package/quiqqer/search/bin/controls/Suggest" 
+                                    class="input-and-icon" ' . $dataQui . ' 
                                     placeholder="'
                         . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
                         '"/>
