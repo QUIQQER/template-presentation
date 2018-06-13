@@ -222,6 +222,10 @@
             <de><![CDATA[Keine Sidebar]]></de>
             <en><![CDATA[No sidebar]]></en>
         </locale>
+        <locale name="admin.layout.noSidebarSmall">
+            <de><![CDATA[Keine Sidebar - schmaller Inhalt]]></de>
+            <en><![CDATA[No sidebar - narrow content]]></en>
+        </locale>
         <locale name="admin.layout.leftSidebar.description">
             <de><![CDATA[Standardmäßig Sidebar auf der linken Seite]]></de>
             <en><![CDATA[]]></en>
