@@ -408,6 +408,13 @@ ul.basic-company-preview-ul > span {
 /** page design
  * ========================================================== */
 
+.nosidebar-small-wrapper,
+.narrow-content {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 ul,
 ol {
     margin: 0 0 2em;

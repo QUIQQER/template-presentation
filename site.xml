@@ -102,6 +102,16 @@
             </description>
         </layout>
 
+        <layout type="layout/noSidebarSmall"
+                image="bin/layouts/noSidebar.png">
+            <title>
+                <locale group="quiqqer/template-presentation" var="admin.layout.noSidebarSmall"/>
+            </title>
+            <description>
+                <locale group="quiqqer/template-presentation" var="admin.layout.noSidebarSmall.desc"/>
+            </description>
+        </layout>
+
         <layout type="layout/leftSidebar"
                 image="bin/layouts/leftSidebar.png">
             <title>

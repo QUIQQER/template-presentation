@@ -139,6 +139,34 @@
                     </area>
                 </layout>
 
+                <layout layout="layout/noSidebarSmall">
+                    <area name="prefixContentBricks" inheritance="1" priority="2">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="suffixContentBricks" inheritance="1" priority="4">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+
                 <layout layout="layout/leftSidebar">
                     <area name="leftSidebar" inheritance="1" priority="3">
                         <title>
