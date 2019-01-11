@@ -41,7 +41,7 @@
   },
   "extra": {
     "quiqqer": {
-        "demodata": "demodata.xml" 
+        "demodata": true 
     }
   }
 }
