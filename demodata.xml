@@ -2,7 +2,7 @@
     <!-- legt projekt daten an -->
     <project>
         <settings>
-            <setting name="" value="" />
+            <setting name="" value=""/>
         </settings>
         <sites>
             <site>
@@ -36,11 +36,11 @@
                 </attributes>
                 <children>
                     <site> <!-- ... --> </site>
-                    <site> <!-- ... --> </site> 
-                    <site> <!-- ... --> </site>  
-                <children>
+                    <site> <!-- ... --> </site>
+                    <site> <!-- ... --> </site>
+                </children>
             </site>
-        <sites>
+        </sites>
     </project>
 
     <!-- legt bricks an -->
@@ -54,4 +54,3 @@
         <!-- ... -->
     </bricks>
 </data>
-
