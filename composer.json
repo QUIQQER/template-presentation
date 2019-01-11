@@ -38,5 +38,10 @@
     "psr-4": {
       "QUI\\TemplatePresentation\\": "src/QUI/TemplatePresentation"
     }
+  },
+  "extra": {
+    "quiqqer": {
+        "demodata": "demodata.xml" 
+    }
   }
 }
