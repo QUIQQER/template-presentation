@@ -7,7 +7,7 @@
                      value="https://dev.quiqqer.com/quiqqer/quiqqer"/>
         </settings>
         <sites>
-            <site>
+            <site identifier="home">
                 <attributes>
                     <attribute name="name">Demo Name</attribute>
                     <attribute name="title">Demo Titel</attribute>
@@ -35,6 +35,8 @@
                         <li>Aliquam tincidunt mauris eu risus.</li>
                         </ul>
                     ]]></attribute>
+                    <attribute name="image_emotion">${media:Seiten/Home/emotion.jpg}</attribute>
+                    <attribute name="image_site">${media:Seiten/Home/seitenbild.png}</attribute>
                 </attributes>
                 <children>
                     <site>
@@ -43,63 +45,91 @@
                             <attribute name="title">Subpage1</attribute>
                             <attribute name="short">Lorem ipsum</attribute>
                             <attribute name="type">standard</attribute>
-                            <attribute name="bricks">Lorem ipsum</attribute>
-                            <attribute name="content"><![CDATA[
-                        <h1>HTML Ipsum Presents</h1>
-
-                        <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-
-                        <h2>Header Level 2</h2>
-
-                        <ol>
-                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        </ol>
-
-                        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-
-                        <h3>Header Level 3</h3>
-
-                        <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        </ul>
-                    ]]></attribute>
+                            <attribute name="content">
+                                <![CDATA[
+                                    <h1>HTML Ipsum Presents</h1>
+            
+                                    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+            
+                                    <h2>Header Level 2</h2>
+            
+                                    <ol>
+                                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                                    <li>Aliquam tincidunt mauris eu risus.</li>
+                                    </ol>
+            
+                                    <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+            
+                                    <h3>Header Level 3</h3>
+            
+                                    <ul>
+                                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                                    <li>Aliquam tincidunt mauris eu risus.</li>
+                                    </ul>
+                                ]]>
+                            </attribute>
+                            <attribute name="image_emotion">${media:Seiten/Subpage1/emotion.jpg}</attribute>
+                            <attribute name="image_site">${media:Seiten/Subpage1/seitenbild.svg}</attribute>
                         </attributes>
                         <children></children>
+                        <bricks>
+                            <area type="headerSuffix">
+                                <brick identifier="brick.pages">
+                                    <attributes>
+                                        <attribute name="settings">
+                                            <![CDATA[{"classes":[],"width":"","height":"","site":"p${site.home}","order":"release_from DESC","showImage":true,"showTitle":true,"showShort":false,"limit":"3","brickFullWidth":[],"noPadding":false}]]>
+                                        </attribute>
+                                    </attributes>
+                                </brick>
+                            </area>
+                        </bricks>
                     </site>
-                    <site>
+                    <site identifier="page2">
                         <attributes>
                             <attribute name="name">Subpage2</attribute>
                             <attribute name="title">Subpage2</attribute>
                             <attribute name="short">Lorem ipsum</attribute>
                             <attribute name="type">standard</attribute>
-                            <attribute name="bricks">Lorem ipsum</attribute>
-                            <attribute name="content"><![CDATA[
-                        <h1>HTML Ipsum Presents</h1>
-
-                        <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-
-                        <h2>Header Level 2</h2>
-
-                        <ol>
-                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        </ol>
-
-                        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-
-                        <h3>Header Level 3</h3>
-
-                        <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        </ul>
-                    ]]></attribute>
+                            <attribute name="content">
+                                <![CDATA[
+                                    <h1>HTML Ipsum Presents</h1>
+            
+                                    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+            
+                                    <h2>Header Level 2</h2>
+            
+                                    <ol>
+                                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                                    <li>Aliquam tincidunt mauris eu risus.</li>
+                                    </ol>
+            
+                                    <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+            
+                                    <h3>Header Level 3</h3>
+            
+                                    <ul>
+                                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                                    <li>Aliquam tincidunt mauris eu risus.</li>
+                                    </ul>
+                                ]]>
+                            </attribute>
+                            <attribute name="image_emotion">${media:Seiten/Subpage2/emotion.jpg}</attribute>
+                            <attribute name="image_site">fa fa-cloud</attribute>
                         </attributes>
                         <children>
 
                         </children>
+                        <bricks>
+                            <area type="headerSuffix">
+                                <brick identifier="brick.slider">
+                                    <attributes>
+                                        <attribute name="settings">
+                                            <![CDATA[{"classes":[],"width":"","height":"","pagefit":false,"pagefitcut":"","pagefitcutmobile":"","autostart":true,"delay":"5000","shownavigation":true,"showarrows":"showHoverScale","position":"center","navigation-position":"outer","desktopslides":"[{\"image\":\"${media:Bricks/Slider/wallhaven-740482.jpg}\",\"title\":\"\",\"text\":\"\",\"type\":\"right\",\"url\":\"\",\"newTab\":\"1\",\"isDisabled\":\"0\"},{\"image\":\"${media:Bricks/Slider/wallhaven-744416.jpg}\",\"title\":\"\",\"text\":\"\",\"type\":\"right\",\"url\":\"\",\"newTab\":\"1\",\"isDisabled\":\"0\"}]","isMobileSlidesEnabled":"","mobileslides":"","brickFullWidth":[],"noPadding":false}]]>
+                                        </attribute>
+                                    </attributes>
+                                </brick>
+                            </area>
+                        </bricks>
                     </site>
                 </children>
                 <bricks>
@@ -115,6 +145,22 @@
                 </bricks>
             </site>
         </sites>
+        <media>
+            <file path="Bricks/Slider/wallhaven-740482.jpg">
+                <name>wallhaven-740482.jpg</name>
+                <description>A simple wallpaper for the slider</description>
+                <title>Wallpaper 1</title>
+                <priority>0</priority>
+                <alt>Wallpaper</alt>
+            </file>
+            <file path="Bricks/Slider/wallhaven-740482.jpg">
+                <name>wallhaven-740483.jpg</name>
+                <description>A simple wallpaper for the slider</description>
+                <title>Wallpaper 2</title>
+                <priority>0</priority>
+                <alt>Wallpaper</alt>
+            </file>
+        </media>
     </project>
 
     <!-- legt bricks an -->
@@ -128,6 +174,36 @@
                 </attribute>
                 <attribute name="customfields">
                     <![CDATA[["width","height","classes","title","socialList","brickFullWidth","noPadding"]]]>
+                </attribute>
+                <attribute name="areas">
+                    ,noSidebar,header,headerSuffix,prefixContentBricks,leftSidebar,rightSidebar,suffixContentBricks,footerPrefix,footer,
+                </attribute>
+            </attributes>
+        </brick>
+        <brick identifier="brick.pages">
+            <attributes>
+                <attribute name="title">BrickMitSeiten</attribute>
+                <attribute name="type">\QUI\Bricks\Controls\SideBox3</attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":[],"width":"","height":"","site":"p1","order":"release_from DESC","showImage":true,"showTitle":true,"showShort":false,"limit":"3","brickFullWidth":[],"noPadding":false}]]>
+                </attribute>
+                <attribute name="customfields">
+                    <![CDATA[]]>
+                </attribute>
+                <attribute name="areas">
+                    ,noSidebar,header,headerSuffix,prefixContentBricks,leftSidebar,rightSidebar,suffixContentBricks,footerPrefix,footer,
+                </attribute>
+            </attributes>
+        </brick>
+        <brick identifier="brick.slider">
+            <attributes>
+                <attribute name="title">Slider</attribute>
+                <attribute name="type">\QUI\Bricks\Controls\Slider\PromosliderWallpaper</attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":[],"width":"","height":"","pagefit":false,"pagefitcut":"","pagefitcutmobile":"","autostart":true,"delay":"5000","shownavigation":true,"showarrows":"showHoverScale","position":"center","navigation-position":"outer","desktopslides":"[{\"image\":\"${media:Bricks/Slider/wallhaven-740482.jpg}\",\"title\":\"\",\"text\":\"\",\"type\":\"right\",\"url\":\"\",\"newTab\":\"1\",\"isDisabled\":\"0\"},{\"image\":\"${media:Bricks/Slider/wallhaven-744416.jpg}\",\"title\":\"\",\"text\":\"\",\"type\":\"right\",\"url\":\"\",\"newTab\":\"1\",\"isDisabled\":\"0\"}]","isMobileSlidesEnabled":"","mobileslides":"","brickFullWidth":[],"noPadding":false}]]>
+                </attribute>
+                <attribute name="customfields">
+                    <![CDATA[]]>
                 </attribute>
                 <attribute name="areas">
                     ,noSidebar,header,headerSuffix,prefixContentBricks,leftSidebar,rightSidebar,suffixContentBricks,footerPrefix,footer,
