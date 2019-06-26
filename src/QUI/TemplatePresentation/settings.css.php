@@ -81,14 +81,14 @@ ob_start();
     color: <?php echo $navBarFontColor; ?>;
 }
 
-<?php if($headerArea && $navPos == 'scroll') { ?>
+<?php if ($headerArea && $navPos == 'scroll') { ?>
 .start-page .header-bar {
 /*.start-page .header-bar-inner-nav {*/
     position: absolute;
 }
 <?php } ?>
 
-<?php if(!$showHeader && !$headerArea) { ?>
+<?php if (!$showHeader && !$headerArea) { ?>
 .header-hidden .header-bar {
     background: <?php echo $navBarMainColor; ?>;
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.35);
@@ -99,7 +99,7 @@ ob_start();
  * wenn Emotion / header angezeigt wird aber nav nicht fix ist,
  * dann trotzdem kein Abstnad der Seite von oben
  */
-<?php if($showHeader) { ?>
+<?php if ($showHeader) {?>
 .header-displayed .body-container {
     top: 0;
 }
