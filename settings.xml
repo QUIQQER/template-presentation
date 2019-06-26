@@ -96,11 +96,7 @@
                         <defaultvalue>0</defaultvalue>
                     </conf>
 
-                    <!-- header img height and value  -->
-                    <conf name="headerHeight">
-                        <type><![CDATA[bool]]></type>
-                        <defaultvalue>false</defaultvalue>
-                    </conf>
+                    <!-- header height -->
                     <conf name="headerHeightValue">
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>300</defaultvalue>
@@ -111,7 +107,6 @@
                     </conf>
 
                     <!-- colors -->
-
                     <conf name="colorMainContentFont">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#333333</defaultvalue>
@@ -327,14 +322,7 @@
                                 </text>
                             </input>
 
-                            <!-- header height and value -->
-                            <input conf="templatePresentation.settings.headerHeight" type="checkbox">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.headerHeight.text"
-                                    />
-                                </text>
-                            </input>
+                            <!-- header height-->
                             <input conf="templatePresentation.settings.headerHeightValue" type="number">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -350,9 +338,9 @@
                                     />
                                 </text>
 
-                                <option value="flex-start">
+                                <option value="top">
                                     <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.headerImagePosition.start"
+                                            var="templatePresentation.settings.headerImagePosition.top"
                                     />
                                 </option>
                                 <option value="center">
@@ -360,9 +348,9 @@
                                             var="templatePresentation.settings.headerImagePosition.center"
                                     />
                                 </option>
-                                <option value="flex-end">
+                                <option value="bottom">
                                     <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.headerImagePosition.end"
+                                            var="templatePresentation.settings.headerImagePosition.bottom"
                                     />
                                 </option>
                             </select>
@@ -596,12 +584,6 @@
                                     />
                                 </text>
                             </input>
-
-                            <text>
-                                <locale group="quiqqer/template-presentation"
-                                        var="templatePresentation.settings.contentColor.text"
-                                />
-                            </text>
 
                         </settings>
 

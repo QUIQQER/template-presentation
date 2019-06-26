@@ -432,7 +432,7 @@
             <pl><![CDATA[Umiejscowienie obrazka:]]></pl>
         </locale>
 
-        <locale name="templatePresentation.settings.headerImagePosition.start">
+        <locale name="templatePresentation.settings.headerImagePosition.top">
             <de><![CDATA[Oben]]></de>
             <en><![CDATA[Top]]></en>
             <pl><![CDATA[Góra]]></pl>
@@ -442,7 +442,7 @@
             <en><![CDATA[Middle]]></en>
             <pl><![CDATA[Środek]]></pl>
         </locale>
-        <locale name="templatePresentation.settings.headerImagePosition.end">
+        <locale name="templatePresentation.settings.headerImagePosition.bottom">
             <de><![CDATA[Unten]]></de>
             <en><![CDATA[Bottom]]></en>
             <pl><![CDATA[Dół]]></pl>
@@ -613,9 +613,9 @@
             <pl><![CDATA[Włącz w stopce]]></pl>
         </locale>
         <locale name="social.linksNote" html="true">
-            <de><![CDATA[Bitte Links mit <strong>http:///</strong> oder <strong>https:///</strong> verwenden, z.B. https:///www.facebook.com]]></de>
-            <en><![CDATA[Please use only hyperlinks with <strong>http:///</strong> or <strong>https:///</strong>, e.g. https:///www.facebook.com]]></en>
-            <pl><![CDATA[Proszę używać linków z <strong>http:///</strong> albo <strong>https:///</strong>, na przyklad: https:///www.facebook.com]]></pl>
+            <de><![CDATA[Bitte Links mit <strong>http://</strong> oder <strong>https://</strong> verwenden, z.B. https://www.facebook.com]]></de>
+            <en><![CDATA[Please use only hyperlinks with <strong>http://</strong> or <strong>https://</strong>, e.g. https://www.facebook.com]]></en>
+            <pl><![CDATA[Proszę używać linków z <strong>http://</strong> albo <strong>https://</strong>, na przyklad: https://www.facebook.com]]></pl>
         </locale>
         <locale name="social.facebook">
             <de><![CDATA[Facebook]]></de>
