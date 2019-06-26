@@ -56,7 +56,6 @@ if ($Project->getConfig('templatePresentation.settings.colorMainContentFont')) {
 }
 
 $navBarHeight = (int)$Project->getConfig('templatePresentation.settings.navBarHeight');
-$headerHeight = $Project->getConfig('templatePresentation.settings.headerHeight');
 $headerHeightValue = (int)$Project->getConfig('templatePresentation.settings.headerHeightValue');
 $bgColorSwitcherPrefix = $Project->getConfig('templatePresentation.settings.bgColorSwitcherPrefix');
 $bgColorSwitcherSuffix = $Project->getConfig('templatePresentation.settings.bgColorSwitcherSuffix');
@@ -344,18 +343,11 @@ button:hover,
 
 <?php }; ?>
 
-<?php if ($headerHeight) { ?>
 .page-header {
-    display: flex;
-    height: <?php echo $headerHeightValue; ?>px;
-    overflow: hidden;
+    min-height: <?php echo $headerHeightValue; ?>px;
+    background-position: <?php echo $headerImagePosition; ?>;
+    padding: calc(<?php echo $navBarHeight; ?>px + 20px) 0 calc(<?php echo $navBarHeight; ?>px - 20px);
 }
-
-.header-img {
-    align-self: <?php echo $headerImagePosition; ?>;
-}
-
-<?php }; ?>
 
 /**
  * Menüposition

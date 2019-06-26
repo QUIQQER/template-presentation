@@ -1,12 +1,6 @@
 {strip}
 
-<header class="page-header">
-    {if $Site->getAttribute('image_emotion')}
-        {image src=$Site->getAttribute('image_emotion')
-               class="header-img"
-               title=$Site->getAttribute('title')
-        }
-    {/if}
+<header class="page-header" {if $Site->getAttribute('image_emotion')}style="background-image: url({image src=$Site->getAttribute('image_emotion') onlysrc=1});{/if}">
     <div class="page-header-container grid-container">
 
         {if $showPageTitle}
@@ -16,10 +10,8 @@
         {/if}
 
         {if $showPageShort}
-        <div class="page-header-text-wrapper">
-            <div class="page-header-text-wrapper-short">
-                {$Site->getAttribute('short')|nl2br}
-            </div>
+        <div class="page-header-text-short">
+            {$Site->getAttribute('short')|nl2br}
         </div>
         {/if}
 

@@ -432,7 +432,7 @@
             <pl><![CDATA[Umiejscowienie obrazka:]]></pl>
         </locale>
 
-        <locale name="templatePresentation.settings.headerImagePosition.start">
+        <locale name="templatePresentation.settings.headerImagePosition.top">
             <de><![CDATA[Oben]]></de>
             <en><![CDATA[Top]]></en>
             <pl><![CDATA[Góra]]></pl>
@@ -442,7 +442,7 @@
             <en><![CDATA[Middle]]></en>
             <pl><![CDATA[Środek]]></pl>
         </locale>
-        <locale name="templatePresentation.settings.headerImagePosition.end">
+        <locale name="templatePresentation.settings.headerImagePosition.bottom">
             <de><![CDATA[Unten]]></de>
             <en><![CDATA[Bottom]]></en>
             <pl><![CDATA[Dół]]></pl>
