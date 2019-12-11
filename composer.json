@@ -1,47 +1,46 @@
 {
-  "name": "quiqqer\/template-presentation",
-  "type": "quiqqer-template",
-  "description": "Business and marketing Template.",
-  "license": "PCSG QL-1.0, CC BY-NC-SA 4.0",
-  "version": "dev-dev",
-  "authors": [
-    {
-      "name": "Michael Danielczok",
-      "email": "support@pcsg.de",
-      "homepage": "http:\/\/www.pcsg.de",
-      "role": "Developer"
+    "name": "quiqqer\/template-presentation",
+    "type": "quiqqer-template",
+    "description": "Business and marketing Template.",
+    "license": "PCSG QL-1.0, CC BY-NC-SA 4.0",
+    "authors": [
+        {
+            "name": "Michael Danielczok",
+            "email": "support@pcsg.de",
+            "homepage": "http:\/\/www.pcsg.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@pcsg.de",
+        "url": "http:\/\/www.pcsg.de"
+    },
+    "require": {
+        "php": ">=5.3",
+        "quiqqer\/quiqqer": ">=1.1|dev-master|dev-dev",
+        "quiqqer\/bricks": "1.*|dev-master|dev-dev",
+        "quiqqer\/fontawesome": "4.*|dev-master|dev-dev",
+        "quiqqer\/sitetypes": "1.*|dev-master|dev-dev",
+        "quiqqer\/menu": "1.*|dev-master|dev-dev",
+        "quiqqer\/unsemantic": "1.*|dev-master|dev-dev",
+        "quiqqer\/utils": ">=1.7|dev-master|dev-dev",
+        "quiqqer\/page-transition": "1.*|dev-master|dev-dev",
+        "quiqqer\/pace": ">=1.2.0|dev-master|dev-dev",
+        "quiqqer\/buttons": ">=1.0.0|dev-master|dev-dev",
+        "quiqqer\/presentation-bricks": "1.*|dev-master|dev-dev"
+    },
+    "suggest": {
+        "quiqqer\/search": "The package provides an advanced search for QUIQQER.",
+        "quiqqer\/faq": "The FAQ site type provides an easy way to create a FAQ for your users."
+    },
+    "autoload": {
+        "psr-4": {
+            "QUI\\TemplatePresentation\\": "src\/QUI\/TemplatePresentation"
+        }
+    },
+    "extra": {
+        "quiqqer": {
+            "demodata": true
+        }
     }
-  ],
-  "support": {
-    "email": "support@pcsg.de",
-    "url": "http:\/\/www.pcsg.de"
-  },
-  "require": {
-    "php": ">=5.3",
-    "quiqqer\/quiqqer": ">=1.1|dev-master|dev-dev",
-    "quiqqer\/bricks": "1.*|dev-master|dev-dev",
-    "quiqqer\/fontawesome": "4.*|dev-master|dev-dev",
-    "quiqqer\/sitetypes": "1.*|dev-master|dev-dev",
-    "quiqqer\/menu": "1.*|dev-master|dev-dev",
-    "quiqqer\/unsemantic": "1.*|dev-master|dev-dev",
-    "quiqqer\/utils": ">=1.7|dev-master|dev-dev",
-    "quiqqer\/page-transition": "1.*|dev-master|dev-dev",
-    "quiqqer\/pace": ">=1.2.0|dev-master|dev-dev",
-    "quiqqer\/buttons": ">=1.0.0|dev-master|dev-dev",
-    "quiqqer\/presentation-bricks": "1.*|dev-master|dev-dev"
-  },
-  "suggest": {
-    "quiqqer/search": "The package provides an advanced search for QUIQQER.",
-    "quiqqer/faq": "The FAQ site type provides an easy way to create a FAQ for your users."
-  },
-  "autoload": {
-    "psr-4": {
-      "QUI\\TemplatePresentation\\": "src/QUI/TemplatePresentation"
-    }
-  },
-  "extra": {
-    "quiqqer": {
-        "demodata": true 
-    }
-  }
 }
