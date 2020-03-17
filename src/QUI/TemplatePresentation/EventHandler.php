@@ -33,46 +33,15 @@ class EventHandler
      *
      * @return void
      */
-    public static function onSiteSave()
+    public static function onSiteSave($Site)
     {
+        $Project = $Site->getProject();
+        $cacheName = md5($Site->getId() . $Project->getName() . $Project->getLang());
+
         try {
-            QUI\Cache\Manager::clear('quiqqer/templatePresentation');
+            QUI\Cache\Manager::clear('quiqqer/templatePresentation/' . $cacheName);
         } catch (QUI\Exception $Exception) {
             QUI\System\Log::writeException($Exception);
         }
-    }
-
-    /**
-     * Event : on smarty init
-     * @param \Smarty $Smarty - \Smarty
-     */
-    public static function onSmartyInit($Smarty)
-    {
-        // {pace}
-        if (!isset($Smarty->registered_plugins['function']) ||
-            !isset($Smarty->registered_plugins['function']['fetch'])
-        ) {
-            $Smarty->registerPlugin(
-                "function",
-                "fetch",
-                "\\QUI\\TemplatePresentation\\EventHandler::fetch"
-            );
-        }
-    }
-
-    /**
-     * @param $params
-     * @param $Smarty
-     * @return string
-     */
-    public static function fetch($params, $Smarty)
-    {
-        $template = $params['template'];
-        $path     = OPT_DIR . 'quiqqer/template-presentation/';
-
-        $Engine = QUI::getTemplateManager()->getEngine();
-        $Engine->assign($params);
-
-        return $Engine->fetch($path . $template);
     }
 }
