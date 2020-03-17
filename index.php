@@ -31,7 +31,6 @@ $noSearch    = 'no-search';
 $inputSearch = '';
 /* search setting is on? */
 if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
-
     $types = array(
         'quiqqer/sitetypes:types/search'
     );
@@ -140,7 +139,6 @@ switch ($Project->getConfig('templatePresentation.settings.dropdownLangNav')) {
 }
 
 if ($showDropDownFlag) {
-
     $DropDown = new QUI\Bricks\Controls\LanguageSwitches\DropDown(array(
         'Site'      => $Site,
         'showFlags' => $showFlags,
@@ -156,7 +154,6 @@ $MegaMenu->prependHTML(
                 <img src="' . $logoUrl . '" alt="' . $alt . '"/></a>
             </div>'
 );
-
 
 // social
 $social          = "false";
