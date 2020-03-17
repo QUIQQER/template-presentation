@@ -1,29 +1,11 @@
 <!doctype html>
 <html lang="{$Project->getAttribute('lang')}" itemscope itemtype="http://schema.org/WebPage">
 <head>
+    {template_event name="quiqqer::template-presentation::header::begin" Template=$Template}
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1"/>
 
     {pace}
     {$Template->getHeader()}
-
-    {assign var=layoutType value=$Template->getLayoutType()}
-    {assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
-    {assign var=headerSuffixBricks value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
-    {assign var=footerPrefixBricks value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
-
-    <!--[if (lt IE 9) & (!IEMobile)]>
-    <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/unsemantic/ie.css"/>
-    <![endif]-->
-
-    <!-- [begin] css combine -->
-    {fontawesome}
-    {unsemantic}
-    <link href="{$URL_TPL_DIR}bin/css/style.css" rel="stylesheet" type="text/css"/>
-    <!-- [end] css combine -->
-
-    {*assign var=layout value=false*}
-
-    {*<!-- js effekt nur wenn nav position fixed -->*}
 
     <script>
         {if $navPos == 'fix'}var navIsFixed = true;{/if}
@@ -31,152 +13,46 @@
         var socialHTML = '{$socialMobileNav}';
     </script>
 
-    {$settingsCSS}
+    {fetch template="template/head/styles.html" Template=$Template}
+    {template_event name="quiqqer::template-presentation::header::afterCSSstyles" Template=$Template}
 
+    {$settingsCSS}
+    {template_event name="quiqqer::template-presentation::header::afterSettingsCSS" Template=$Template}
+
+    {template_event name="quiqqer::template-presentation::header::end" Template=$Template}
 </head>
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass}
             {if !$showHeader} header-hidden {/if}
             {if $showHeader} header-displayed{/if}" id="body-top">
+{template_event name="quiqqer::template-presentation::body::begin" Template=$Template}
 
-<!-- menu -->
-<div class="header-bar header-bar-position-{$navPos}">
-    <div class="grid-container header-bar-inner">
-        <div class="header-bar-inner-nav" id="navigation">
+{* main navigation / menu *}
+{fetch template="template/menu.html"
+    Project=$Project
+    MegaMenu=$MegaMenu
+    Template=$Template
+    navPos=$navPos
+}
 
-            {$MegaMenu->create()}
+{template_event name="quiqqer::template-presentation::body::afterMenu" Template=$Template}
 
-        </div>
-    </div>
-</div>
-
-<!-- page -->
-<div class="body-container">
-    <!-- header -->
-    {if $showHeader}
-        {fetch template="template/header.html" showPageTitle=$showPageTitle showPageShort=$showPageShort Site=$Site}
-    {/if}
-
-    <!-- header brick area (only for start page) -->
-    {if $startPage}
-    {foreach from=$headerBricks item=Brick}
-    <div class="header-brick-area start-page-header brick-id-{$Brick->getAttribute('id')}">
-        {if $Brick->getAttribute('frontendTitle')}
-        <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-        {/if}
-        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-        {$Brick->create()}
-    </div>
-    {/foreach}
-    {/if}
-
-    <!-- breadcrumb -->
-    {if $showBreadcrumb}
-    {fetch template="template/breadcrumb.html" Breadcrumb=$Breadcrumb}
-    {/if}
-
-    <div class="headerSuffix">
-        <!-- header suffix  -->
-        {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
-        {foreach $headerSuffix as $Brick}
-
-        {assign var=noPadding value=''}
-        {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
-        {assign var=noPadding value='-noPadding'}
-        {/if}
-        {if $Brick->getSetting( 'brickFullWidth' )}
-        <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding}
-                        headerSuffix-container
-                        {cycle values='brick-even-suffix,brick-odd-suffix'}
-                        brick-id-{$Brick->getAttribute('id')}"
-                 {if $Brick->getSetting('promosliderBackground')}
-            style="background-color: {$Brick->getSetting('promosliderBackground')};"
-            {/if}>
-            {$Brick->create()}
-        </section>
-        {else}
-        <div class="tpl-presentation-row
-                    headerSuffix-container
-                    {cycle values='brick-even-suffix,brick-odd-suffix'}
-                    brick-id-{$Brick->getAttribute('id')}">
-            <div class="grid-container">
-                <section>
-                    {if $Brick->getAttribute('frontendTitle')}
-                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                    {/if}
-                    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                    {$Brick->create()}
-                </section>
-            </div>
-        </div>
-        {/if}
-        {/foreach}
-    </div>
+{fetch template="template/page.html"
+    Project=$Project
+    Template=$Template
+    Site=$Site
+    showHeader=$showHeader
+    showPageTitle=$showPageTitle
+    showPageShort=$showPageShort
+    startPage=$startPage
+    BricksManager=$BricksManager
+    showBreadcrumb=$showBreadcrumb
+    Breadcrumb=$Breadcrumb
+    socialFooter=$socialFooter
+}
 
 
-    <!-- content -->
-    <div class="main-content-wrapper  {cycle values='' reset=true}">
-        <div class="grid-container main-content">
-            {$Template->getLayout()}
-        </div>
-    </div>
-
-    
-    <div class="prefixFooter">
-        <!-- footer prefix-->
-        {cycle assign=cy values='brick-even-suffix,brick-odd-suffix' reset=true}
-        {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
-        {foreach $footerPrefix as $Brick}
-
-        {assign var=noPadding value=''}
-        {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
-        {assign var=noPadding value='-noPadding'}
-        {/if}
-
-        {if $Brick->getSetting( 'brickFullWidth' )}
-        <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding}
-                footerPrefix-container
-                {cycle values='brick-even-prefix,brick-odd-prefix'}
-                brick-id-{$Brick->getAttribute('id')}"
-                 {if $Brick->getSetting('promosliderBackground')}
-            style="background-color: {$Brick->getSetting('promosliderBackground')};"
-            {/if}>
-
-            {$Brick->create()}
-        </section>
-        {else}
-        <div class="tpl-presentation-row prefix-suffix-nofull-width
-                    footerPrefix-container
-                    {cycle values='brick-even-prefix,brick-odd-prefix'}
-                    brick-id-{$Brick->getAttribute('id')}">
-            <div class="grid-container">
-                <section>
-                    {if $Brick->getAttribute('frontendTitle')}
-                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                    {/if}
-                    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                    {$Brick->create()}
-                </section>
-            </div>
-        </div>
-        {/if}
-        {/foreach}
-    </div>
-
-    <!-- footer -->
-    {fetch template="template/footer.html" BricksManager=$BricksManager
-            Site=$Site socialFooter = $socialFooter}
-
-    <a href="#top" class="toTop" style="outline: none;">
-        <i class="fa fa-arrow-up control-background"></i>
-    </a>
-
-
-</div>
-
-<!-- [begin] js combine -->
-<script src="{$URL_OPT_DIR}bin/require.js"></script>
-<script src="{$URL_TPL_DIR}bin/init.js"></script>
-<!-- [end] js combine -->
+{* javascript *}
+{fetch template="template/scripts.html" Template=$Template URL_OPT_DIR=$URL_OPT_DIR}
 
 </body>
 </html>

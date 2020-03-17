@@ -31,7 +31,6 @@ $noSearch    = 'no-search';
 $inputSearch = '';
 /* search setting is on? */
 if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
-
     $types = array(
         'quiqqer/sitetypes:types/search'
     );
@@ -110,7 +109,7 @@ $logoUrl = $Project->getMedia()->getPlaceholder();
 if ($Project->getMedia()->getLogoImage()) {
     $Logo    = $Project->getMedia()->getLogoImage();
     $alt     = $Logo->getAttribute('title');
-    $logoUrl = $Logo->getSizeCacheUrl(500, 300);
+    $logoUrl = $Logo->getSizeCacheUrl(300, 100);
 }
 
 /**
@@ -140,7 +139,6 @@ switch ($Project->getConfig('templatePresentation.settings.dropdownLangNav')) {
 }
 
 if ($showDropDownFlag) {
-
     $DropDown = new QUI\Bricks\Controls\LanguageSwitches\DropDown(array(
         'Site'      => $Site,
         'showFlags' => $showFlags,
@@ -156,7 +154,6 @@ $MegaMenu->prependHTML(
                 <img src="' . $logoUrl . '" alt="' . $alt . '"/></a>
             </div>'
 );
-
 
 // social
 $social          = "false";

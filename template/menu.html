@@ -1,0 +1,9 @@
+{if $Template->getAttribute('template-header')}
+<div class="header-bar header-bar-position-{$navPos}">
+    <div class="grid-container header-bar-inner">
+        <div class="header-bar-inner-nav" id="navigation">
+            {$MegaMenu->create()}
+        </div>
+    </div>
+</div>
+{/if}
