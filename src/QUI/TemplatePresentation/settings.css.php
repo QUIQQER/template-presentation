@@ -149,17 +149,15 @@ ob_start();
     background: <?php echo $colorMain; ?>;
 }
 
-.page-header-logo-img {
-    max-height: <?php echo 'calc(' . $navBarHeight . 'px - 20px)'; ?>;
-}
-
 .header-bar,
 .header-bar-inner-nav,
 .page-header-navigation-entry,
 .header-bar-search,
 .header-bar-search:before,
 .page-header-navigation-entry:before,
-.header-bar-inner-logo {
+.header-bar-inner-logo,
+.page-header-logo picture,
+.page-header-logo picture img {
     height: <?php echo $navBarHeight; ?>px;
 }
 

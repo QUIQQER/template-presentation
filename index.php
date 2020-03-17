@@ -110,7 +110,7 @@ $logoUrl = $Project->getMedia()->getPlaceholder();
 if ($Project->getMedia()->getLogoImage()) {
     $Logo    = $Project->getMedia()->getLogoImage();
     $alt     = $Logo->getAttribute('title');
-    $logoUrl = $Logo->getSizeCacheUrl(500, 300);
+    $logoUrl = $Logo->getSizeCacheUrl(300, 100);
 }
 
 /**
