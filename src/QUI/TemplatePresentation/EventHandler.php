@@ -41,38 +41,4 @@ class EventHandler
             QUI\System\Log::writeException($Exception);
         }
     }
-
-    /**
-     * Event : on smarty init
-     * @param \Smarty $Smarty - \Smarty
-     */
-    public static function onSmartyInit($Smarty)
-    {
-        // {pace}
-        if (!isset($Smarty->registered_plugins['function']) ||
-            !isset($Smarty->registered_plugins['function']['fetch'])
-        ) {
-            $Smarty->registerPlugin(
-                "function",
-                "fetch",
-                "\\QUI\\TemplatePresentation\\EventHandler::fetch"
-            );
-        }
-    }
-
-    /**
-     * @param $params
-     * @param $Smarty
-     * @return string
-     */
-    public static function fetch($params, $Smarty)
-    {
-        $template = $params['template'];
-        $path     = OPT_DIR . 'quiqqer/template-presentation/';
-
-        $Engine = QUI::getTemplateManager()->getEngine();
-        $Engine->assign($params);
-
-        return $Engine->fetch($path . $template);
-    }
 }
