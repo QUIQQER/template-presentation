@@ -31,7 +31,9 @@ class EventHandler
     /**
      * Clear system cache on site save
      *
+     * @param $Site QUI\Projects\Site
      * @return void
+     * @throws QUI\Exception
      */
     public static function onSiteSave($Site)
     {
