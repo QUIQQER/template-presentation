@@ -2,6 +2,7 @@
     "name": "quiqqer\/template-presentation",
     "type": "quiqqer-template",
     "description": "Business and marketing Template.",
+    "version": "1.2.0",
     "license": "PCSG QL-1.0, CC BY-NC-SA 4.0",
     "authors": [
         {
