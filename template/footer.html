@@ -17,13 +17,11 @@
     </div>
     {/if}
 
-    <div class="page-footer-copyright grid-container grid-children">
-        <div class="grid-children-container">
-            <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
-                {locale group="quiqqer/template-presentation" var="copyright.text" year=$smarty.now|date_format:'%Y'}
-            </div>
-
-            {$socialFooter}
+    <div class="page-footer-copyright grid-container">
+        <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
+            {locale group="quiqqer/template-presentation" var="copyright.text" year=$smarty.now|date_format:'%Y'}
         </div>
+
+        {$socialFooter}
     </div>
 </footer>

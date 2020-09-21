@@ -69,6 +69,10 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
+                    <conf name="showHeaderNoSidebarSmall">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
                     <conf name="showHeaderLeftSidebar">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
@@ -84,6 +88,10 @@
                         <defaultvalue>0</defaultvalue>
                     </conf>
                     <conf name="showBreadcrumbNoSidebar">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="showBreadcrumbNoSidebarSmall">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
@@ -290,7 +298,7 @@
                                    type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="showHeaderStartPage.text"
+                                            var="admin.layout.startpage"
                                     />
                                 </text>
                             </input>
@@ -299,7 +307,16 @@
                                    type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="showHeaderNoSidebar.text"
+                                            var="admin.layout.noSidebar"
+                                    />
+                                </text>
+                            </input>
+                            <!-- no sidebar thin-->
+                            <input conf="templatePresentation.settings.showHeaderNoSidebarSmall"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="admin.layout.noSidebarSmall"
                                     />
                                 </text>
                             </input>
@@ -308,7 +325,7 @@
                                    type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="showHeaderLeftSidebar.text"
+                                            var="admin.layout.leftSidebar"
                                     />
                                 </text>
                             </input>
@@ -317,7 +334,7 @@
                                    type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="showHeaderRightSidebar.text"
+                                            var="admin.layout.rightSidebar"
                                     />
                                 </text>
                             </input>
@@ -375,7 +392,7 @@
                                    type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="showBreadcrumbStartPage.text"
+                                            var="admin.layout.startpage"
                                     />
                                 </text>
                             </input>
@@ -383,7 +400,15 @@
                                    type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="showBreadcrumbNoSidebar.text"
+                                            var="admin.layout.noSidebar"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.showBreadcrumbNoSidebarSmall"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="admin.layout.noSidebarSmall"
                                     />
                                 </text>
                             </input>
@@ -391,7 +416,7 @@
                                    type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="showBreadcrumbLeftSidebar.text"
+                                            var="admin.layout.leftSidebar"
                                     />
                                 </text>
                             </input>
@@ -399,7 +424,7 @@
                                    type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="showBreadcrumbRightSidebar.text"
+                                            var="admin.layout.rightSidebar"
                                     />
                                 </text>
                             </input>
