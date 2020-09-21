@@ -11,10 +11,10 @@ use QUI;
 /**
  * Help Class for Template Presentation
  *
- * @package QUI\TemplatePresentation
+ * @return array
  * @author www.pcsg.de (Michael Danielczok)
  *
- * @return array
+ * @package QUI\TemplatePresentation
  */
 class Utils
 {
@@ -31,7 +31,7 @@ class Utils
         } catch (QUI\Exception $Exception) {
         }
 
-        $config = array();
+        $config = [];
 
         /* @var $Project QUI\Projects\Project */
         $Project  = $params['Project'];
@@ -121,18 +121,18 @@ class Utils
         $settingsCSS = include 'settings.css.php';
 
 
-        $config += array(
+        $config += [
 //            'quiTplType'                => $Project->getConfig('templatePresentation.settings.standardType'),
             'showHeader'     => $showHeader,
             'showBreadcrumb' => $showBreadcrumb,
             'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
-            'typeClass'      => 'type-' . str_replace(array('/', ':'), '-',
+            'typeClass'      => 'type-' . str_replace(['/', ':'], '-',
                     $params['Site']->getAttribute('type')),
             'navPos'         => $Project->getConfig('templatePresentation.settings.navPos'),
             'headerArea'     => $headerArea,
             'showPageTitle'  => $showPageTitle,
             'showPageShort'  => $showPageShort
-        );
+        ];
 
         // set cache
         QUI\Cache\Manager::set(
