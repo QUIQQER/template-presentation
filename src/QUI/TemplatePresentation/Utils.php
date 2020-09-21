@@ -58,6 +58,11 @@ class Utils
                 $showBreadcrumb = $Project->getConfig('templatePresentation.settings.showBreadcrumbNoSidebar');
                 break;
 
+            case 'layout/noSidebarSmall':
+                $showHeader     = $Project->getConfig('templatePresentation.settings.showHeaderNoSidebarSmall');
+                $showBreadcrumb = $Project->getConfig('templatePresentation.settings.showBreadcrumbNoSidebarSmall');
+                break;
+
             case 'layout/rightSidebar':
                 $showHeader     = $Project->getConfig('templatePresentation.settings.showHeaderRightSidebar');
                 $showBreadcrumb = $Project->getConfig('templatePresentation.settings.showBreadcrumbRightSidebar');

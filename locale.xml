@@ -224,7 +224,7 @@
         </locale>
         <locale name="admin.layout.noSidebarSmall">
             <de><![CDATA[Keine Sidebar - schmaller Inhalt]]></de>
-            <en><![CDATA[No sidebar - narrow content]]></en>
+            <en><![CDATA[No sidebar - thin content]]></en>
         </locale>
         <locale name="admin.layout.leftSidebar.description">
             <de><![CDATA[Standardmäßig Sidebar auf der linken Seite]]></de>
@@ -348,32 +348,6 @@
             <pl><![CDATA[Na stronach z jakim układem (layout) pokazać nagłówek (wraz z ustawionym obrazkiem)?]]></pl>
         </locale>
 
-        <locale name="showHeaderStartPage.text">
-            <de><![CDATA[Startseite]]></de>
-            <en><![CDATA[Start page]]></en>
-            <pl><![CDATA[Układ bez kolumn (strona startowa)]]></pl>
-        </locale>
-
-        <locale name="showHeaderNoSidebar.text">
-            <de><![CDATA[Kein Sidebar]]></de>
-            <en><![CDATA[No sidebar]]></en>
-            <pl><![CDATA[Układ bez kolumn]]></pl>
-        </locale>
-
-        <locale name="showHeaderLeftSidebar.text">
-            <de><![CDATA[Linke Sidebar]]></de>
-            <en><![CDATA[Left sidebar]]></en>
-            <pl><![CDATA[Układ z lewą kolumną]]></pl>
-        </locale>
-
-        <locale name="showHeaderRightSidebar.text">
-            <de><![CDATA[Rechte Sidebar]]></de>
-            <en><![CDATA[Rright sidebar]]></en>
-            <pl><![CDATA[Układ z prawą kolumną]]></pl>
-        </locale>
-
-
-
 
         <!-- breadcrumb settings -->
         <locale name="templatePresentation.breadcrumb.settings.title">
@@ -386,30 +360,6 @@
             <de><![CDATA[Brotkrumennavigation anzeigen?]]></de>
             <en><![CDATA[Display breadcrumb?]]></en>
             <pl><![CDATA[Pokazać breadcrumb?]]></pl>
-        </locale>
-
-        <locale name="showBreadcrumbStartPage.text">
-            <de><![CDATA[Startseite]]></de>
-            <en><![CDATA[Start page]]></en>
-            <pl><![CDATA[Układ bez kolumn (strona startowa)]]></pl>
-        </locale>
-
-        <locale name="showBreadcrumbNoSidebar.text">
-            <de><![CDATA[Kein Sidebar]]></de>
-            <en><![CDATA[No sidebar]]></en>
-            <pl><![CDATA[Układ bez kolumn]]></pl>
-        </locale>
-
-        <locale name="showBreadcrumbLeftSidebar.text">
-            <de><![CDATA[Linke Sidebar]]></de>
-            <en><![CDATA[Left sidebar]]></en>
-            <pl><![CDATA[Układ z lewą kolumną]]></pl>
-        </locale>
-
-        <locale name="showBreadcrumbRightSidebar.text">
-            <de><![CDATA[Rechte Sidebar]]></de>
-            <en><![CDATA[Rright sidebar]]></en>
-            <pl><![CDATA[Układ z prawą kolumną]]></pl>
         </locale>
         
 
