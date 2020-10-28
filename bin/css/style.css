@@ -44,6 +44,10 @@
     padding-right: 20px;
 }
 
+html {
+    font-size: 100%;
+}
+
 .grid-parent,
 .grid-container.grid-parent {
     padding-left: 0;
@@ -56,7 +60,7 @@ body {
     font-size: 16px;
     font-weight: 300;
     height: 100%;
-    line-height: 1.65em;
+    line-height: 1.75;
 }
 
 input, textarea, select {
@@ -508,9 +512,9 @@ thead {
     border-bottom: 1px solid #eee;
     display: flex;
     height: 100%;
-    justify-content: center;
     padding: 0;
     position: relative;
+    justify-content: flex-start;
 }
 
 .header-img {
@@ -1241,47 +1245,56 @@ header.control-header {
     /*width: 100%;*/
 }
 
+p,
+.content-body p {
+    margin-bottom: 1rem;
+}
+
 h1, h2, h3, h4, h5 {
-    font-family: 'Open Sans', sans-serif;
-    /*color: #747675;*/
     font-weight: 300;
+    line-height: 1.3;
+    margin: 3rem 0 1.38rem;
+    /*padding-bottom: 0.8em;*/
     letter-spacing: 1px;
-    line-height: 1.15em;
-    padding-bottom: 0.8em;
+}
+
+h1 {
+    font-size: 2.488rem;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 2.074rem;
+}
+
+h3 {
+    font-size: 1.728rem;
+}
+
+h4 {
+    font-size: 1.44rem;
+}
+
+h5 {
+    font-size: 1.2rem;
 }
 
 header > h1,
 header > h2,
 header > h3,
 header > h4,
-header > h4 {
-    padding-bottom: 0;
+header > h5 {
+    /*padding-bottom: 0;*/
+    margin-bottom: 0;
 }
 
-h1 {
-    font-size: 44px;
+small, .text_small {
+    font-size: 0.833rem;
 }
 
 .start-page .brick-title,
 .no-sidebar .brick-title {
     text-align: center;
-}
-
-h2 {
-    font-size: 32px;
-}
-
-h3 {
-    font-size: 26px;
-}
-
-h4 {
-    font-size: 18px;
-}
-
-p,
-.content-body p {
-    margin-bottom: 1.3em;
 }
 
 .content-body p:last-child {
