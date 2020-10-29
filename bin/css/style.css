@@ -1270,8 +1270,16 @@ header > h2,
 header > h3,
 header > h4,
 header > h5 {
-    /*padding-bottom: 0;*/
     margin-bottom: 0;
+    margin-top: 0;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child {
+    margin-top: 0;
 }
 
 small, .text_small {
