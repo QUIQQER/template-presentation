@@ -124,7 +124,11 @@ window.addEvent("domready", function () {
                 });
 
                 searchBar.addClass('showSearch');
-                searchInput.focus();
+
+                (function () {
+                    searchInput.focus();
+                }).delay(100);
+
                 open = true;
                 return;
             }
@@ -133,8 +137,6 @@ window.addEvent("domready", function () {
             searchBar.removeClass('showSearch');
             open = false;
             window.removeEvents('click');
-        })
+        });
     }
-
-
 });

@@ -155,9 +155,7 @@ ob_start();
 .header-bar-search,
 .header-bar-search:before,
 .page-header-navigation-entry:before,
-.header-bar-inner-logo,
-.page-header-logo picture,
-.page-header-logo picture img {
+.header-bar-inner-logo {
     height: <?php echo $navBarHeight; ?>px;
 }
 
