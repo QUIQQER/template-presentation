@@ -211,6 +211,11 @@
                                             var="templatePresentation.settings.bgColorSwitcherPrefix.text"
                                     />
                                 </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.bgColorSwitcherPrefix.desc"
+                                    />
+                                </description>
 
                                 <option value="hide">
                                     <locale group="quiqqer/template-presentation"
@@ -231,6 +236,11 @@
                                             var="templatePresentation.settings.bgColorSwitcherSuffix.text"
                                     />
                                 </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.bgColorSwitcherSuffix.desc"
+                                    />
+                                </description>
 
                                 <option value="hide">
                                     <locale group="quiqqer/template-presentation"
