@@ -295,15 +295,21 @@
 
         <!-- Background Color Switcher Prefix -->
         <locale name="templatePresentation.settings.bgColorSwitcherPrefix.text">
-            <de><![CDATA[Prefix Hintergrundfarbe wechseln]]></de>
-            <en><![CDATA[Switch prefix background color]]></en>
-            <pl><![CDATA[Prefix: naprzemienny kolor tła]]></pl>
+            <de><![CDATA[Hintergrundfarbe bei Bausteinen in "Oberhalb der Fußzeile" Zone (Footer Prefix) wechseln]]></de>
+            <en><![CDATA[Change background colour for bricks in "footer prefix" area]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.bgColorSwitcherPrefix.desc">
+            <de><![CDATA[Bei mehreren Bausteinen in der "Oberhalt der Fußzeile " Zone (Footer Prefix) wird der Hintergrund abwechselnd weiß und grau.]]></de>
+            <en><![CDATA[If there are several bricks in the "footer prefix" area, the background will alternate between white and grey.]]></en>
         </locale>
         <!-- Background Color Switcher Suffix -->
         <locale name="templatePresentation.settings.bgColorSwitcherSuffix.text">
-            <de><![CDATA[Suffix Hintergrundfarbe wechseln]]></de>
-            <en><![CDATA[Switch suffix background color]]></en>
-            <pl><![CDATA[Suffix: naprzemienny kolor tła]]></pl>
+            <de><![CDATA[Hintergrundfarbe bei Bausteinen in "Unterhalb des Kopfbereiches" Zone (Header Suffix) wechseln]]></de>
+            <en><![CDATA[Change background colour for bricks in "header suffix" area]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.bgColorSwitcherSuffix.desc">
+            <de><![CDATA[Bei mehreren Bausteinen in der "Unterhalb des Kopfbereiches" Zone (Header Suffix) wird der Hintergrund abwechselnd weiß und grau.]]></de>
+            <en><![CDATA[If there are several bricks in the "header suffix" area, the background will alternate between white and grey.]]></en>
         </locale>
 
 
