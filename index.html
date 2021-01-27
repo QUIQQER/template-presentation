@@ -1,7 +1,7 @@
 <!doctype html>
 <html itemscope itemtype="{$Site->getAttribute('meta.itemscope')}" lang="{$Project->getLang()}">
 <head>
-    {template_event name="quiqqer::template-presentation::header::begin" Template=$Template}
+    {template_event name="quiqqer::template::header::begin" Template=$Template}
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1"/>
 
     {pace}
@@ -14,17 +14,17 @@
     </script>
 
     {fetch template="template/head/styles.html" Template=$Template}
-    {template_event name="quiqqer::template-presentation::header::afterCSSstyles" Template=$Template}
+    {template_event name="quiqqer::template::header::afterCSSstyles" Template=$Template}
 
     {$settingsCSS}
-    {template_event name="quiqqer::template-presentation::header::afterSettingsCSS" Template=$Template}
+    {template_event name="quiqqer::template::header::afterSettingsCSS" Template=$Template}
 
-    {template_event name="quiqqer::template-presentation::header::end" Template=$Template}
+    {template_event name="quiqqer::template::header::end" Template=$Template}
 </head>
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass}
             {if !$showHeader} header-hidden {/if}
             {if $showHeader} header-displayed{/if}" id="body-top">
-{template_event name="quiqqer::template-presentation::body::begin" Template=$Template}
+{template_event name="quiqqer::template::body::begin" Template=$Template}
 
 {* main navigation / menu *}
 {fetch template="template/menu.html"
@@ -34,7 +34,7 @@
     navPos=$navPos
 }
 
-{template_event name="quiqqer::template-presentation::body::afterMenu" Template=$Template}
+{template_event name="quiqqer::template::body::afterMenu" Template=$Template}
 
 {fetch template="template/page.html"
     Project=$Project
