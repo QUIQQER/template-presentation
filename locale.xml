@@ -353,13 +353,11 @@
         <locale name="templatePresentation.breadcrumb.settings.title">
             <de><![CDATA[Brotkrumennavigation Einstellungen (breadcrumb)]]></de>
             <en><![CDATA[Breadcrumb settings]]></en>
-            <pl><![CDATA[Ustawienia breadcrumb ("nawigacja okruszkowa")]]></pl>
         </locale>
         <!-- show breadcrumb? -->
         <locale name="showBreadcrumb.text">
-            <de><![CDATA[Brotkrumennavigation anzeigen?]]></de>
-            <en><![CDATA[Display breadcrumb?]]></en>
-            <pl><![CDATA[Pokazać breadcrumb?]]></pl>
+            <de><![CDATA[Auf welchen Seiten soll eine Brotkrumennavigation angezeigt werden?]]></de>
+            <en><![CDATA[On which pages should breadcrumb navigation be displayed?]]></en>
         </locale>
         
 
@@ -420,24 +418,18 @@
         <locale name="templatePresentation.settings.navPos.text">
             <de><![CDATA[Menüposition]]></de>
             <en><![CDATA[Menu position]]></en>
-            <pl><![CDATA[Pasek nawigacyjny]]></pl>
         </locale>
         <locale name="templatePresentation.settings.navPos.description">
-            <de><![CDATA[Wählen Sie, ob die Navigation mitgescrollt werden, oder sich immer
-                             an gleicher Stelle auf der Seite befinden soll.]]></de>
-            <en><![CDATA[Set the menu position]]></en>
-            <pl><![CDATA[Ustawienie pozwala określić, czy pasek z menu będzie "przylepiony" na górze,
-                czy przewijany wraz ze stroną]]></pl>
+            <de><![CDATA[Wählen Sie, ob die Navigation immer sichtbar (oben fixiert) sein soll.]]></de>
+            <en><![CDATA[Should the navigation always be visible at the top of the page (fixed)?]]></en>
         </locale>
         <locale name="templatePresentation.settings.navPos.fix">
-            <de><![CDATA[Fix]]></de>
-            <en><![CDATA[Fixed]]></en>
-            <pl><![CDATA[Przylepiony]]></pl>
+            <de><![CDATA[Fixiert - das Menü ist immer oben sichtbar, auch wenn die Seite gescrollt wird.]]></de>
+            <en><![CDATA[Fixed - page menu is always visible at the top, even when the page is scrolled down.]]></en>
         </locale>
         <locale name="templatePresentation.settings.navPos.scroll">
-            <de><![CDATA[Scrollbar]]></de>
-            <en><![CDATA[Scroll]]></en>
-            <pl><![CDATA[Przewijany]]></pl>
+            <de><![CDATA[Scrollbar - das Menü ist nicht mehr zu sehen, wenn die Seite gescrollt wird.]]></de>
+            <en><![CDATA[Scroll - page menu is no longer visible when the page is scrolled down.]]></en>
         </locale>
 
         <!-- Navbar colors -->
