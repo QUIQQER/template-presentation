@@ -187,8 +187,7 @@ strong {
     font-weight: bold;
 }
 
-a,
-.fa {
+a {
     max-width: 100%;
     text-decoration: none;
     -moz-transition: all 0.2s ease;
@@ -199,7 +198,6 @@ a,
 }
 
 a:hover {
-    /*border-radius: 0;*/
     text-decoration: none;
     z-index: 1;
 }

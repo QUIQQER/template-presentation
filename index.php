@@ -88,9 +88,18 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
                         <span class="fa fa-fw fa-search"></span>
                     </form>';
                     break;
+
+                case 'popup':
+                    $searchForm = '<button>Suche</button>';
+                    break;
             }
 
-            $search = $searchForm .
+//            $searchForm = '<form  action="' . $searchUrl . '" class="header-bar-search header-bar-search- hide-on-mobile" method="get"><button type="submit"><span class="fa fa-search"></span> <span class="label">Suche</span></button></form>';
+            $searchForm = '<div  data-qui-searchUrl="' . $searchUrl . '" class="header-bar-search-typePopup hide-on-mobile"><button><span class="fa fa-search"></span> <span class="button-label">Suche</span></button></div>';
+
+
+
+                $search = $searchForm .
                 '<div class="quiqqer-menu-megaMenu-mobile-search"
                                   style="width: auto; font-size: 30px !important;">
                     <a href="' . $searchUrl . '"

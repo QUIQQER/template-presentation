@@ -153,6 +153,7 @@ ob_start();
 .header-bar-inner-nav,
 .page-header-navigation-entry,
 .header-bar-search,
+.header-bar-search-typePopup,
 .header-bar-search:before,
 .page-header-navigation-entry:before,
 .header-bar-inner-logo {
@@ -160,6 +161,7 @@ ob_start();
 }
 
 .header-bar-search,
+.header-bar-search-typePopup,
 .page-header-navigation-entry,
 .fa-chevron-down-mobile,
 .quiqqer-menu-megaMenu-list-item,
