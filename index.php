@@ -112,6 +112,8 @@ if ($Project->getMedia()->getLogoImage()) {
     $logoUrl = $Logo->getSizeCacheUrl(300, 100);
 }
 
+echo
+
 /**
  * Dropdown Language switch
  */
@@ -148,10 +150,16 @@ if ($showDropDownFlag) {
     $DropDownFlag = $DropDown->create();
 }
 
+$logoHeight = 80;
+
+if ($Project->getConfig('templatePresentation.settings.navBarHeight')) {
+    $logoHeight = (int)$Project->getConfig('templatePresentation.settings.navBarHeight');
+}
+
 $MegaMenu->prependHTML(
     '<div class="header-bar-inner-logo">
                 <a href="' . URL_DIR . '" class="page-header-logo">
-                <img src="' . $logoUrl . '" alt="' . $alt . '"/></a>
+                <img src="' . $logoUrl . '" alt="' . $alt . '" height="' . $logoHeight. '"/></a>
             </div>'
 );
 
