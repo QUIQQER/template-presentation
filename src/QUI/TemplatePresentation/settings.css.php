@@ -34,6 +34,7 @@ $colorFooterFont       = '#D1D1D1';
 $colorMain             = '#dd151b';
 $buttonFontColor       = '#ffffff';
 $colorMainContentFont  = '#5d5d5d';
+$colorMuted            = '#9095a4';
 
 if ($Project->getConfig('templatePresentation.settings.colorFooterBackground')) {
     $colorFooterBackground = $Project->getConfig('templatePresentation.settings.colorFooterBackground');
@@ -53,6 +54,7 @@ if ($Project->getConfig('templatePresentation.settings.buttonFontColor')) {
 
 if ($Project->getConfig('templatePresentation.settings.colorMainContentFont')) {
     $colorMainContentFont = $Project->getConfig('templatePresentation.settings.colorMainContentFont');
+    $colorMuted            = $Convert->colorBrightness($colorMainContentFont, 0.6);
 }
 
 $navBarHeight = (int)$Project->getConfig('templatePresentation.settings.navBarHeight');
@@ -70,6 +72,11 @@ ob_start();
 /**
  * Farbeinstellungen
  */
+
+figcaption,
+.text-muted {
+    color: <?php echo $colorMuted; ?>;
+}
 
 .header-bar,
 .header-bar-inner a,

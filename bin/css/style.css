@@ -179,6 +179,10 @@ img {
     padding: 0;
 }
 
+figcaption {
+    font-size: 0.75rem;
+}
+
 fieldset {
     border: none;
 }
