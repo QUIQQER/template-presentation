@@ -1,6 +1,5 @@
 ![QUIQQER Product Presentation](bin/img/Readme.jpg)
 
-
 Product Presentation
 ========
 
