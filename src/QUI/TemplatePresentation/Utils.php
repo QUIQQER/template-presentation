@@ -26,7 +26,7 @@ class Utils
     {
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templatePresentation/' . $params['Site']->getId()
+                'quiqqer/templatePresentation/' . $params['Site']->getId() . $params['Project']->getLang()
             );
         } catch (QUI\Exception $Exception) {
         }
@@ -135,7 +135,7 @@ class Utils
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templatePresentation/' . $params['Site']->getId(),
+            'quiqqer/templatePresentation/' . $params['Site']->getId() . $Project->getLang(),
             $config
         );
 
