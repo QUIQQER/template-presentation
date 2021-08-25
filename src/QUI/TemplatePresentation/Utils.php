@@ -24,9 +24,11 @@ class Utils
      */
     public static function getConfig($params)
     {
+        $cacheName = md5($params['Project']->getName().$params['Project']->getLang().$params['Site']->getId());
+
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templatePresentation/' . $params['Site']->getId() . $params['Project']->getLang()
+                'quiqqer/templatePresentation/'.$cacheName
             );
         } catch (QUI\Exception $Exception) {
         }
@@ -125,8 +127,8 @@ class Utils
 //            'quiTplType'                => $Project->getConfig('templatePresentation.settings.standardType'),
             'showHeader'     => $showHeader,
             'showBreadcrumb' => $showBreadcrumb,
-            'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
-            'typeClass'      => 'type-' . str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
+            'settingsCSS'    => '<style>'.$settingsCSS.'</style>',
+            'typeClass'      => 'type-'.str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
             'navPos'         => $Project->getConfig('templatePresentation.settings.navPos'),
             'headerArea'     => $headerArea,
             'showPageTitle'  => $showPageTitle,
@@ -135,7 +137,7 @@ class Utils
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templatePresentation/' . $params['Site']->getId() . $Project->getLang(),
+            'quiqqer/templatePresentation/'.$cacheName,
             $config
         );
 
