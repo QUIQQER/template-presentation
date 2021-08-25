@@ -21,11 +21,7 @@ class EventHandler
      */
     public static function onProjectConfigSave()
     {
-        try {
-            QUI\Cache\Manager::clear('quiqqer/templatePresentation');
-        } catch (QUI\Exception $Exception) {
-            QUI\System\Log::writeException($Exception);
-        }
+        QUI\Cache\Manager::clear('quiqqer/templatePresentation');
     }
 
     /**
