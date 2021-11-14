@@ -1160,12 +1160,15 @@ input[type="search"].only-input:focus {
     padding-top: 0;
 }
 
-.control-content {
+.control-content,
+.control-body {
     padding-bottom: 3rem;
 }
 
 .control-content h1:only-child,
-.control-content h2:only-child {
+.control-content h2:only-child,
+.control-body h1:only-child,
+.control-body h2:only-child {
     padding-bottom: 0;
 }
 
