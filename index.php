@@ -94,8 +94,8 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
                     break;
             }
 
-//            $searchForm = '<form  action="' . $searchUrl . '" class="header-bar-search header-bar-search- hide-on-mobile" method="get"><button type="submit"><span class="fa fa-search"></span> <span class="label">Suche</span></button></form>';
-            $searchForm = '<div  data-qui-searchUrl="' . $searchUrl . '" class="header-bar-search-typePopup hide-on-mobile"><button><span class="fa fa-search"></span> <span class="button-label">Suche</span></button></div>';
+            $searchForm = '<form  action="' . $searchUrl . '" class="header-bar-search header-bar-search- hide-on-mobile" method="get"><button type="submit"><span class="fa fa-search"></span> <span class="label">Suche</span></button></form>';
+   //@michael dev         $searchForm = '<div  data-qui-searchUrl="' . $searchUrl . '" class="header-bar-search-typePopup hide-on-mobile"><button><span class="fa fa-search"></span> <span class="button-label">Suche</span></button></div>';
 
 
 
