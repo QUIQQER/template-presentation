@@ -128,8 +128,6 @@ if ($Project->getMedia()->getLogoImage()) {
     $logoUrl = $Logo->getSizeCacheUrl(300, 100);
 }
 
-echo
-
 /**
  * Dropdown Language switch
  */
