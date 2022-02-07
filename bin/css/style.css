@@ -15,9 +15,9 @@
     font-style: normal;
     font-weight: 300;
     font-display: swap;
-    src: url('../fonts/open-sans-v15-latin-300.eot'); /* IE9 Compat Modes */
+    src: url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-300.eot'); /* IE9 Compat Modes */
     src: local('Open Sans Light'), local('OpenSans-Light'),
-    url('../fonts/open-sans-v15-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/open-sans-v15-latin-300.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/open-sans-v15-latin-300.woff') format('woff'), /* Modern Browsers */ url('../fonts/open-sans-v15-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/open-sans-v15-latin-300.svg#OpenSans') format('svg'); /* Legacy iOS */
+    url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-300.woff2') format('woff2'), /* Super Modern Browsers */ url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-300.woff') format('woff'), /* Modern Browsers */ url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */ url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-300.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
 
 /* open-sans-regular - latin */
@@ -26,9 +26,9 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../fonts/open-sans-v15-latin-regular.eot'); /* IE9 Compat Modes */
+    src: url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-regular.eot'); /* IE9 Compat Modes */
     src: local('Open Sans Regular'), local('OpenSans-Regular'),
-    url('../fonts/open-sans-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/open-sans-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/open-sans-v15-latin-regular.woff') format('woff'), /* Modern Browsers */ url('../fonts/open-sans-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/open-sans-v15-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+    url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */ url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-regular.woff') format('woff'), /* Modern Browsers */ url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
 
 /* open-sans-700 - latin */
@@ -37,9 +37,9 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('../fonts/open-sans-v15-latin-700.eot'); /* IE9 Compat Modes */
+    src: url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-700.eot'); /* IE9 Compat Modes */
     src: local('Open Sans Bold'), local('OpenSans-Bold'),
-    url('../fonts/open-sans-v15-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/open-sans-v15-latin-700.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/open-sans-v15-latin-700.woff') format('woff'), /* Modern Browsers */ url('../fonts/open-sans-v15-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/open-sans-v15-latin-700.svg#OpenSans') format('svg'); /* Legacy iOS */
+    url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-700.woff2') format('woff2'), /* Super Modern Browsers */ url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-700.woff') format('woff'), /* Modern Browsers */ url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */ url('/packages/quiqqer/template-presentation/bin/fonts/open-sans-v15-latin-700.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
 
 .mobile-grid-5, .mobile-grid-10, .mobile-grid-15, .mobile-grid-20, .mobile-grid-25, .mobile-grid-30, .mobile-grid-35, .mobile-grid-40, .mobile-grid-45, .mobile-grid-50, .mobile-grid-55, .mobile-grid-60, .mobile-grid-65, .mobile-grid-70, .mobile-grid-75, .mobile-grid-80, .mobile-grid-85, .mobile-grid-90, .mobile-grid-95, .mobile-grid-100, .mobile-grid-33, .mobile-grid-66, .grid-5, .grid-10, .grid-15, .grid-20, .grid-25, .grid-30, .grid-35, .grid-40, .grid-45, .grid-50, .grid-55, .grid-60, .grid-65, .grid-70, .grid-75, .grid-80, .grid-85, .grid-90, .grid-95, .grid-100, .grid-33, .grid-66, .grid-container {
@@ -118,7 +118,7 @@ select {
     -moz-appearance: none;
     -webkit-appearance: none;
     background-color: #fff;
-    background-image: url("../img/arrow-select.png");
+    background-image: url("/packages/quiqqer/template-presentation/bin/img/arrow-select.png");
     background-position: calc(100% - 20px) center;
     background-repeat: no-repeat;
     background-size: 20px auto;
