@@ -5,6 +5,7 @@
         <attribute>templatePresentation.showHeader</attribute>
         <attribute>templatePresentation.showTitle</attribute>
         <attribute>templatePresentation.showShort</attribute>
+        <attribute>templatePresentation.pageCustomClass</attribute>
     </attributes>
 
     <settings>
@@ -74,6 +75,18 @@
                                 var="templatePresentation.siteSettings.showShort.hide"/>
                     </option>
                 </select>
+
+                <!-- custom css class for entire page -->
+                <input conf="templatePresentation.pageCustomClass" type="text">
+                    <text>
+                        <locale group="quiqqer/template-presentation"
+                                var="siteSettings.pageCustomClass"/>
+                    </text>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="siteSettings.pageCustomClass.desc"/>
+                    </description>
+                </input>
 
             </settings>
         </category>

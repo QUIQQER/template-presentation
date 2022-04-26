@@ -118,21 +118,27 @@ class Utils
                 $showHeader = false;
         }
 
+        /* page custom class */
+        $pageCustomClass = false;
+
+        if ($params['Site']->getAttribute('templatePresentation.pageCustomClass') && $params['Site']->getAttribute('templatePresentation.pageCustomClass') !== '') {
+            $pageCustomClass = 'templateCologne__'.$params['Site']->getAttribute('templatePresentation.pageCustomClass');
+        }
 
         $headerArea  = $params['headerArea'];
         $settingsCSS = include 'settings.css.php';
 
-
         $config += [
 //            'quiTplType'                => $Project->getConfig('templatePresentation.settings.standardType'),
-            'showHeader'     => $showHeader,
-            'showBreadcrumb' => $showBreadcrumb,
-            'settingsCSS'    => '<style>'.$settingsCSS.'</style>',
-            'typeClass'      => 'type-'.str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
-            'navPos'         => $Project->getConfig('templatePresentation.settings.navPos'),
-            'headerArea'     => $headerArea,
-            'showPageTitle'  => $showPageTitle,
-            'showPageShort'  => $showPageShort
+            'showHeader'      => $showHeader,
+            'showBreadcrumb'  => $showBreadcrumb,
+            'settingsCSS'     => '<style>'.$settingsCSS.'</style>',
+            'typeClass'       => 'type-'.str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
+            'navPos'          => $Project->getConfig('templatePresentation.settings.navPos'),
+            'headerArea'      => $headerArea,
+            'showPageTitle'   => $showPageTitle,
+            'showPageShort'   => $showPageShort,
+            'pageCustomClass' => $pageCustomClass
         ];
 
         // set cache
@@ -142,5 +148,26 @@ class Utils
         );
 
         return $config;
+    }
+
+    /**
+     * Add a suffix to brick css class(es)
+     *
+     * @param array $classes
+     * @return string
+     */
+    public static function convertBrickCSSClass(array $classes)
+    {
+        if (\count($classes) < 1) {
+            return '';
+        }
+
+        $text = '';
+
+        foreach ($classes as $classString) {
+            $text .= ' brick-container__'.$classString;
+        }
+
+        return $text;
     }
 }

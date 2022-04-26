@@ -26,12 +26,14 @@
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
         {foreach $headerSuffix as $Brick}
 
+            {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+
             {assign var=noPadding value=''}
             {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
                 {assign var=noPadding value='-noPadding'}
             {/if}
             {if $Brick->getSetting( 'brickFullWidth' )}
-            <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding}
+            <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding} {$classes}
                             headerSuffix-container
                             {cycle values='brick-even-suffix,brick-odd-suffix'}
                             brick-id-{$Brick->getAttribute('id')}"
@@ -42,7 +44,7 @@
                 {$Brick->create()}
             </section>
             {else}
-            <div class="tpl-presentation-row
+            <div class="tpl-presentation-row {$classes}
                         headerSuffix-container
                         {cycle values='brick-even-suffix,brick-odd-suffix'}
                         brick-id-{$Brick->getAttribute('id')}">
@@ -74,13 +76,15 @@
         {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
         {foreach $footerPrefix as $Brick}
 
+            {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+
             {assign var=noPadding value=''}
             {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
                 {assign var=noPadding value='-noPadding'}
             {/if}
 
             {if $Brick->getSetting( 'brickFullWidth' )}
-            <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding}
+            <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding} {$classes}
                     footerPrefix-container
                     {cycle values='brick-even-prefix,brick-odd-prefix'}
                     brick-id-{$Brick->getAttribute('id')}"
@@ -92,7 +96,7 @@
                 {$Brick->create()}
             </section>
             {else}
-            <div class="tpl-presentation-row prefix-suffix-nofull-width
+            <div class="tpl-presentation-row prefix-suffix-nofull-width {$classes}
                         footerPrefix-container
                         {cycle values='brick-even-prefix,brick-odd-prefix'}
                         brick-id-{$Brick->getAttribute('id')}">
