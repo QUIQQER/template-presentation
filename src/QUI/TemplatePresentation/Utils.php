@@ -149,4 +149,25 @@ class Utils
 
         return $config;
     }
+
+    /**
+     * Add a suffix to brick css class(es)
+     *
+     * @param array $classes
+     * @return string
+     */
+    public static function convertBrickCSSClass(array $classes)
+    {
+        if (\count($classes) < 1) {
+            return '';
+        }
+
+        $text = '';
+
+        foreach ($classes as $classString) {
+            $text .= ' brick-container__'.$classString;
+        }
+
+        return $text;
+    }
 }

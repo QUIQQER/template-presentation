@@ -1,45 +1,45 @@
-
 {assign var=bricks value=$BricksManager->getBricksByArea('startpageContent', $Site)}
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
 
 {if !empty( $prefixContentBricks )}
-{foreach from=$prefixContentBricks item=Brick}
-<div class="tpl-presentation-row">
-    {if $Brick->getAttribute('frontendTitle')}
-        <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-    {/if}
-    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-    {$Brick->create()}
-</div>
-{/foreach}
+    {foreach from=$prefixContentBricks item=Brick}
+        {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+        <div class="tpl-presentation-row brick-id-{$Brick->getAttribute('id')} {$classes}">
+            {if $Brick->getAttribute('frontendTitle')}
+                <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+            {/if}
+            {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+            {$Brick->create()}
+        </div>
+    {/foreach}
 {/if}
 
-
 {foreach from=$bricks item=Brick}
-<section class="startpage-section tpl-presentation-row">
-    {if $Brick->getAttribute('frontendTitle')}
-        <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-    {/if}
-    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-    {$Brick->create()}
-</section>
+    {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+    <section class="startpage-section tpl-presentation-row brick-id-{$Brick->getAttribute('id')} {$classes}">
+        {if $Brick->getAttribute('frontendTitle')}
+            <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+        {/if}
+        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+        {$Brick->create()}
+    </section>
 {/foreach}
 
 <div role="main">
     {if !$showHeader}
         {if $showPageTitle}
-        <header class="content-header">
-            <h1 itemprop="name">
-                {$Site->getAttribute('title')}
-            </h1>
-        </header>
+            <header class="content-header">
+                <h1 itemprop="name">
+                    {$Site->getAttribute('title')}
+                </h1>
+            </header>
         {/if}
 
         {if $showPageShort}
-        <div class="content-short" itemprop="description">
-            {$Site->getAttribute('short')|nl2br}
-        </div>
+            <div class="content-short" itemprop="description">
+                {$Site->getAttribute('short')|nl2br}
+            </div>
         {/if}
     {/if}
 
@@ -47,13 +47,15 @@
 </div>
 
 {if !empty( $suffixContentBricks )}
-{foreach from=$suffixContentBricks item=Brick}
-<div class="tpl-presentation-row">
-    {if $Brick->getAttribute('frontendTitle')}
-        <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-    {/if}
-    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-    {$Brick->create()}
-</div>
-{/foreach}
+    {foreach from=$suffixContentBricks item=Brick}
+
+        {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+        <div class="tpl-presentation-row brick-id-{$Brick->getAttribute('id')} {$classes}">
+            {if $Brick->getAttribute('frontendTitle')}
+                <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+            {/if}
+            {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+            {$Brick->create()}
+        </div>
+    {/foreach}
 {/if}
