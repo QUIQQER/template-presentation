@@ -492,6 +492,28 @@
         </locale>
 
 
+        <!-- nav / menu: independent -->
+        <locale name="templatePresentation.settings.independentMenu.title">
+            <de><![CDATA[Eigenes Menü]]></de>
+            <en><![CDATA[Independent menu]]></en>
+        </locale>
+        <locale name="template.settings.independentMenu.enableIndependentMenu">
+            <de><![CDATA[Eigenes Menü aktivieren]]></de>
+            <en><![CDATA[Enable independent menu]]></en>
+        </locale>
+        <locale name="template.settings.independentMenu.menuId">
+            <de><![CDATA[Menü auswählen]]></de>
+            <en><![CDATA[Select menu]]></en>
+        </locale>
+        <locale name="template.settings.independentMenu.menuId.desc">
+            <de><![CDATA[Wenn ein eigenes Menü ausgewählt ist, wird dieses als Navigation angezeigt.]]></de>
+            <en><![CDATA[If a custom (independent) menu is selected, this will be displayed as navigation.]]></en>
+        </locale>
+        <locale name="template.settings.independentMenu.showFirstLevelIcons">
+            <de><![CDATA[Icons in der erster Ebene anzeigen]]></de>
+            <en><![CDATA[Show icons in the first level]]></en>
+        </locale>
+
         <!-- Colors -->
         <locale name="templatePresentation.settings.color.title">
             <de><![CDATA[Farbverwaltung]]></de>

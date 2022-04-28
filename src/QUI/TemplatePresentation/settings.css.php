@@ -144,10 +144,6 @@ figcaption,
     border-bottom: 14px solid <?php echo $navBarMainColorLighter; ?>;
 }
 
-.quiqqer-menu-megaMenu-list-item:hover {
-    background: rgba(255,255,255,0.15);
-}
-
 .color-main {
     color: <?php echo $colorMain; ?>;
 }
