@@ -666,14 +666,22 @@ thead {
     width: 100%;
 }
 
-.quiqqer-menu-megaMenu-list-item {
+.quiqqer-menu-megaMenu-list .quiqqer-menu-megaMenu-list-item {
     font-weight: normal;
-    letter-spacing: 1px;
-    padding: 0 20px !important;
+    padding: 0;
 }
 
 .quiqqer-menu-megaMenu-list-item:hover {
-    background: rgba(0, 0, 0, 0.1) !important;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.quiqqer-menu-megaMenu-list-item-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.quiqqer-menu-megaMenu-list-item-inner .quiqqer-icon  {
+    width: 1.5rem;
 }
 
 .quiqqer-menu-megaMenu .fa-angle-down {
