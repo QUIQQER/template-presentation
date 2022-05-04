@@ -138,7 +138,8 @@ class Utils
             'headerArea'      => $headerArea,
             'showPageTitle'   => $showPageTitle,
             'showPageShort'   => $showPageShort,
-            'pageCustomClass' => $pageCustomClass
+            'pageCustomClass' => $pageCustomClass,
+            'useSlideOutMenu' => true // for now is always true because quiqqer use currently only SlideOut nav
         ];
 
         // set cache
