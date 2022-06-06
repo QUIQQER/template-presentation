@@ -668,7 +668,7 @@ thead {
 
 .quiqqer-menu-megaMenu-list .quiqqer-menu-megaMenu-list-item {
     font-weight: normal;
-    padding: 0;
+    padding: 0 20px;
 }
 
 .quiqqer-menu-megaMenu-list-item:hover {
@@ -676,8 +676,8 @@ thead {
 }
 
 .quiqqer-menu-megaMenu-list-item-inner {
-    padding-left: 20px;
-    padding-right: 20px;
+    /*padding-left: 20px;*/
+    /*padding-right: 20px;*/
 }
 
 .quiqqer-menu-megaMenu-list-item-inner .quiqqer-icon  {
