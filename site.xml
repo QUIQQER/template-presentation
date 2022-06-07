@@ -6,6 +6,7 @@
         <attribute>templatePresentation.showTitle</attribute>
         <attribute>templatePresentation.showShort</attribute>
         <attribute>templatePresentation.pageCustomClass</attribute>
+        <attribute>templatePresentation.independentMenuId</attribute>
     </attributes>
 
     <settings>
@@ -85,6 +86,23 @@
                     <description>
                         <locale group="quiqqer/template-presentation"
                                 var="siteSettings.pageCustomClass.desc"/>
+                    </description>
+                </input>
+
+                <!-- Independent mnenu / own menu -->
+                <input conf="templatePresentation.independentMenuId"
+                       type="text"
+                       data-qui="package/quiqqer/menu/bin/Controls/Independent/Input">
+                    <text>
+                        <locale group="quiqqer/template-presentation"
+                                var="siteSettings.independentMenuId"
+                        />
+                    </text>
+
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="siteSettings.independentMenuId.desc"
+                        />
                     </description>
                 </input>
 

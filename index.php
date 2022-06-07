@@ -4,9 +4,10 @@ $Locale = QUI::getLocale();
 
 
 /**
- * Emotion
+ * Set emotion and independent menu recursive
  */
-QUI\Utils\Site::setRecursivAttribute($Site, 'image_emotion');
+QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
+QUI\Utils\Site::setRecursiveAttribute($Site, 'templatePresentation.independentMenuId');
 
 // Inhalts Verhalten
 if ($Site->getAttribute('templatePresentation.showTitle') ||
@@ -25,6 +26,11 @@ $params = [
 if ($Project->getConfig('templatePresentation.settings.enableIndependentMenu') && $Project->getConfig('templatePresentation.settings.menuId')) {
     $params['menuId']              = $Project->getConfig('templatePresentation.settings.menuId');
     $params['showFirstLevelIcons'] = $Project->getConfig('templatePresentation.settings.showFirstLevelIcons');
+}
+
+// Site own / independent menu
+if ($Site->getAttribute('templatePresentation.independentMenuId')) {
+    $params['menuId'] = $Site->getAttribute('templatePresentation.independentMenuId');
 }
 
 $MegaMenu = new QUI\Menu\MegaMenu($params);
