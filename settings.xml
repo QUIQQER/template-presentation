@@ -569,7 +569,7 @@
                         </settings>
 
                         <!-- Nav / menu: independent -->
-                        <settings title="templatePresentation.settings"
+                        <!--<settings title="templatePresentation.settings"
                                   name="templatePresentation.settings.independentMenu">
                             <title>
                                 <locale group="quiqqer/template-presentation"
@@ -610,7 +610,7 @@
                                     />
                                 </text>
                             </input>
-                        </settings>
+                        </settings>-->
 
                         <!-- Colors -->
                         <settings title="templatePresentation.settings"
