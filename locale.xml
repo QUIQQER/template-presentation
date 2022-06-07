@@ -202,7 +202,14 @@
             <en><![CDATA[<strong>For developers:</strong> you can give a page a separate CSS class. This is set on the <i>&lt;body&gt;</i> tag. This way you can address the page not only by ID. It is helpful if e.g. Live and Dev environment exist (or local installation), which are not exactly the same.<br>
                 The generated CSS class looks like this: <code>templateCologne__your-css-class</code>]]></en>
         </locale>
-
+        <locale name="siteSettings.independentMenuId">
+            <de><![CDATA[Eigenes Menü]]></de>
+            <en><![CDATA[Independent]]></en>
+        </locale>
+        <locale name="siteSettings.independentMenuId.desc">
+            <de><![CDATA[Die Option ermöglichst separates und unabhängiges Menü für eine einzelne Seite zu setzen.]]></de>
+            <en><![CDATA[The option allows to set separate and independent menu for single page.]]></en>
+        </locale>
 
 
 
