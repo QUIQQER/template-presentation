@@ -122,7 +122,7 @@ class Utils
         $pageCustomClass = false;
 
         if ($params['Site']->getAttribute('templatePresentation.pageCustomClass') && $params['Site']->getAttribute('templatePresentation.pageCustomClass') !== '') {
-            $pageCustomClass = 'templateCologne__'.$params['Site']->getAttribute('templatePresentation.pageCustomClass');
+            $pageCustomClass = 'templatePresentation__'.$params['Site']->getAttribute('templatePresentation.pageCustomClass');
         }
 
         $headerArea  = $params['headerArea'];
