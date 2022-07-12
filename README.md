@@ -14,6 +14,7 @@ Paketname:
 Features
 --------
 
+- Smooth scroll by clicking on every element with #target href attribute
 - Responsive
 - Integrated QUIQQER breadcrumb
 - Page transition effects
