@@ -3,7 +3,7 @@
     <groups name="quiqqer/template-presentation" datatype="php,js">
 
         <!-- template bricks -->
-                <locale name="promosliderBackground">
+        <locale name="promosliderBackground">
             <de><![CDATA[Hintergrundfarbe auswählen (nur bei voller Breite)]]></de>
             <en><![CDATA[Set the background color (only by full width)]]></en>
             <pl><![CDATA[Wybierz kolor tła (tylko przy pełnej szerokości)]]></pl>
@@ -214,8 +214,8 @@
 
 
         <locale name="package.title">
-            <de><![CDATA[Product Presentation]]></de>
-            <en><![CDATA[Product Präsentation]]></en>
+            <de><![CDATA[Produkt Präsentation]]></de>
+            <en><![CDATA[Product Presentation]]></en>
             <pl><![CDATA[Prezentacja produktów]]></pl>
         </locale>
         <locale name="package.description">

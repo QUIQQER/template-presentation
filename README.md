@@ -14,6 +14,7 @@ Paketname:
 Features
 --------
 
+- Smooth scroll by clicking on every element with #target href attribute (you can disable it by setting `data-qui-disableTemplateScroll="1"`)
 - Responsive
 - Integrated QUIQQER breadcrumb
 - Page transition effects

@@ -1,6 +1,47 @@
 window.addEvent("domready", function () {
     "use strict";
 
+    /**
+     * Handle click on a element with #target to perform scroll action
+     * @param event
+     */
+    function handleScrollClick (event) {
+        event.preventDefault();
+
+        const href = this.getAttribute('href');
+
+        if (href.length === 1) {
+            return;
+        }
+
+        const Target = document.querySelector(this.getAttribute('href'));
+
+        if (!Target) {
+            return;
+        }
+
+        let offset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
+
+        if (parseInt(Target.getAttribute('data-qui-offset')) ||
+            parseInt(Target.getAttribute('data-qui-offset')) === 0) {
+            offset = Target.getAttribute('data-qui-offset');
+        }
+
+        new Fx.Scroll(window, {
+            offset: {
+                y: -offset
+            }
+        }).toElement(Target);
+    }
+
+    // find all scroll links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        if (anchor.get('data-qui-disableTemplateScroll') === '1') {
+            return;
+        }
+        anchor.addEventListener('click', handleScrollClick);
+    });
+
 
     // load QUI
     require(['qui/QUI', 'utils/Controls'], function (QUI, Controls) {
