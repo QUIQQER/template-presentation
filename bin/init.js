@@ -42,6 +42,25 @@ window.addEvent("domready", function () {
         anchor.addEventListener('click', handleScrollClick);
     });
 
+    // scroll to anchor, not jump
+    (function () {
+        let queryString = window.location.hash;
+
+        if (queryString && queryString.substr(0, 4) === '#go_') {
+            const target = decodeURI(queryString.substr(4));
+            const Target = document.querySelector('[href="#' + target + '"]');
+
+            if (!Target) {
+                return;
+            }
+
+            if (!isInViewport(Target)) {
+                new Fx.Scroll(window, {
+                    duration: 500
+                }).toElement(Target);
+            }
+        }
+    })();
 
     // load QUI
     require(['qui/QUI', 'utils/Controls'], function (QUI, Controls) {
@@ -179,5 +198,20 @@ window.addEvent("domready", function () {
             open = false;
             window.removeEvents('click');
         });
+    }
+
+    /**
+     * Check if element is in viewport
+     * @param Elm
+     * @return {boolean}
+     */
+    function isInViewport(Elm) {
+        const rect = Elm.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
     }
 });
