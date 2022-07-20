@@ -8,7 +8,11 @@ window.addEvent("domready", function () {
     function handleScrollClick (event) {
         event.preventDefault();
 
-        console.log(this);
+        const href = this.getAttribute('href');
+
+        if (href.length === 1) {
+            return;
+        }
 
         const Target = document.querySelector(this.getAttribute('href'));
 
@@ -18,7 +22,8 @@ window.addEvent("domready", function () {
 
         let offset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
 
-        if (Target.getAttribute('data-qui-offset') > 0) {
+        if (parseInt(Target.getAttribute('data-qui-offset')) ||
+            parseInt(Target.getAttribute('data-qui-offset')) === 0) {
             offset = Target.getAttribute('data-qui-offset');
         }
 
@@ -31,6 +36,9 @@ window.addEvent("domready", function () {
 
     // find all scroll links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        if (anchor.get('data-qui-disableTemplateScroll') === '1') {
+            return;
+        }
         anchor.addEventListener('click', handleScrollClick);
     });
 
