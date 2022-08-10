@@ -782,10 +782,19 @@
 
         <wysiwyg class="main-content">
             <css src="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic"/>
+            <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/variables.css"/>
+            <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/fonts.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/style.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/editor.css"/>
 
             <styles>
+                <style element="p">
+                    <locale group="quiqqer/template-presentation"
+                            var="editor.element.textLead"/>
+                    <attributes>
+                        <attribute name="class">text-lead</attribute>
+                    </attributes>
+                </style>
 
                 <!-- Template Button small -->
                 <style element="a">

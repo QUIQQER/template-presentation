@@ -636,6 +636,11 @@
             <pl><![CDATA[GitLab]]></pl>
         </locale>
 
+        <!-- Editor -->
+        <locale name="editor.element.textLead">
+            <de><![CDATA[Führender Text (lead)]]></de>
+            <en><![CDATA[Leading text]]></en>
+        </locale>
 
         <!--template buttons -->
         <locale name="templateButton.small">
