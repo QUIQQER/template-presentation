@@ -1241,11 +1241,7 @@ hr {
     margin: 0 0 10px 0;
 }
 
-p {
-    margin-bottom: 0;
-}
-
-.default-content p {
+p:not(:last-child) {
     margin-bottom: var(--qui-spacing, 1rem);
 }
 
