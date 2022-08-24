@@ -1282,8 +1282,6 @@ h6,
     font-size: var(--qui-fs-6);
 }
 
-
-
 header > h1,
 header > h2,
 header > h3,
@@ -1308,6 +1306,10 @@ small, .text_small {
 strong,
 .fw-bold {
     font-weight: bold;
+}
+
+.fw-bolder {
+    font-weight: bolder;
 }
 
 .fw-normal {
@@ -1362,7 +1364,6 @@ strong,
 .toTop:hover {
     opacity: 1;
 }
-
 
 .toTop .fa:before {
     color: #fff;
