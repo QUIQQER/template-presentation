@@ -132,7 +132,7 @@ class Utils
 //            'quiTplType'                => $Project->getConfig('templatePresentation.settings.standardType'),
             'showHeader'      => $showHeader,
             'showBreadcrumb'  => $showBreadcrumb,
-            'settingsCSS'     => '<style>'.$settingsCSS.'</style>',
+            'settingsCSS'     => '<style data-no-cache=1>'.$settingsCSS.'</style>',
             'typeClass'       => 'type-'.str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
             'navPos'          => $Project->getConfig('templatePresentation.settings.navPos'),
             'headerArea'      => $headerArea,
