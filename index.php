@@ -184,7 +184,7 @@ if ($Project->getConfig('templatePresentation.settings.navBarHeight')) {
 
 $MegaMenu->prependHTML(
     '<div class="header-bar-inner-logo">
-                <a href="'.URL_DIR.'" class="page-header-logo">
+                <a href="'.$Project->get(1)->getUrlRewritten().'" class="page-header-logo">
                 <img src="'.$logoUrl.'" alt="'.$alt.'" height="'.$logoHeight.'"/></a>
             </div>'
 );
