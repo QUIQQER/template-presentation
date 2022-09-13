@@ -123,6 +123,7 @@ class Utils
 
         if ($params['Site']->getAttribute('templatePresentation.pageCustomClass') && $params['Site']->getAttribute('templatePresentation.pageCustomClass') !== '') {
             $pageCustomClass = 'templatePresentation__'.$params['Site']->getAttribute('templatePresentation.pageCustomClass');
+            $pageCustomClass .= ' '.$params['Site']->getAttribute('templatePresentation.pageCustomClass');
         }
 
         $headerArea  = $params['headerArea'];
