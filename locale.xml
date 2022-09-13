@@ -197,10 +197,8 @@
             <en><![CDATA[CSS class]]></en>
         </locale>
         <locale name="siteSettings.pageCustomClass.desc" html="true">
-            <de><![CDATA[<strong>Für Entwickler:</strong> man kann einer Seite separate CSS Klasse geben. Diese wird auf das <i>&lt;body&gt;</i> Tag gesetzt. Somit kann man die Seite nicht nur per ID ansprechen. Es ist hilfreich, wenn z.B. Live und Dev Umgebung existeirt (oder auch lokale Installation), die nicht exakt gleich sind.<br>
-                Die generierte CSS klasse ist so aufgebaut: <code>templatePresentation__deine-css-klasse</code>]]></de>
-            <en><![CDATA[<strong>For developers:</strong> you can give a page a separate CSS class. This is set on the <i>&lt;body&gt;</i> tag. This way you can address the page not only by ID. It is helpful if e.g. Live and Dev environment exist (or local installation), which are not exactly the same.<br>
-                The generated CSS class looks like this: <code>templatePresentation__your-css-class</code>]]></en>
+            <de><![CDATA[<strong>Für Entwickler:</strong> man kann einer Seite separate CSS Klasse geben. Diese wird auf das <i>&lt;body&gt;</i> Tag gesetzt. Somit kann man die Seite nicht nur per ID ansprechen. Es ist hilfreich, wenn z.B. Live und Dev Umgebung existiert (oder auch lokale Installation), die nicht exakt gleich sind.]]></de>
+            <en><![CDATA[<strong>For developers:</strong> you can give a page a separate CSS class. This is set on the <i>&lt;body&gt;</i> tag. This way you can address the page not only by ID. It is helpful if e.g. Live and Dev environment exist (or local installation), which are not exactly the same.]]></en>
         </locale>
         <locale name="siteSettings.independentMenuId">
             <de><![CDATA[Eigenes Menü]]></de>
@@ -636,6 +634,11 @@
             <pl><![CDATA[GitLab]]></pl>
         </locale>
 
+        <!-- Editor -->
+        <locale name="editor.element.textLead">
+            <de><![CDATA[Führender Text (lead)]]></de>
+            <en><![CDATA[Leading text]]></en>
+        </locale>
 
         <!--template buttons -->
         <locale name="templateButton.small">

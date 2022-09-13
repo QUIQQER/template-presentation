@@ -32,7 +32,9 @@
         {/if}
     {/if}
 
-    {$Template->getBody()}
+    <div class="default-content">
+        {$Template->getBody()}
+    </div>
 
     {if empty($Template->getBody()) ||
     empty( $prefixContentBricks ||
