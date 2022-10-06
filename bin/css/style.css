@@ -33,7 +33,65 @@ body {
     line-height: 1.75;
 }
 
-/* font size */
+/********/
+/* font */
+/********/
+/* heading */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    margin: 1em 0 1rem;
+}
+
+header > h1,
+header > h2,
+header > h3,
+header > h4,
+header > h5 {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child {
+    margin-top: 0;
+}
+
+h1,
+.fs-1 {
+    font-size: var(--qui-fs-1);
+}
+
+h2,
+.fs-2 {
+    font-size: var(--qui-fs-2);
+}
+
+h3,
+.fs-3 {
+    font-size: var(--qui-fs-3);
+}
+
+h4,
+.fs-4 {
+    font-size: var(--qui-fs-4);
+}
+
+h5,
+.fs-5 {
+    font-size: var(--qui-fs-5);
+}
+
+h6,
+.fs-6 {
+    font-size: var(--qui-fs-6);
+}
+
+/* text */
 .fs-xs {
     font-size: var(--qui-fs-xs);
 }
@@ -76,6 +134,117 @@ body {
 
 .fs-6xl {
     font-size: var(--qui-fs-6xl);
+}
+
+.display-1 {
+    font-size: var(--qui-display-1);
+}
+
+.display-2 {
+    font-size: var(--qui-display-2);
+}
+
+.display-3 {
+    font-size: var(--qui-display-3);
+}
+
+.display-4 {
+    font-size: var(--qui-display-4);
+}
+
+/****************/
+/* text helpers */
+/****************/
+small, .small, .text_small {
+    font-size: var(--qui-fs-sm);
+}
+
+strong,
+.fw-bold {
+    font-weight: bold;
+}
+
+.fw-bolder {
+    font-weight: bolder;
+}
+
+.fw-normal {
+    font-weight: normal;
+}
+
+.text-lead,
+.lead {
+    font-size: var(--qui-lead);
+}
+
+/***********/
+/* Spacing */
+/***********/
+/* margin */
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+
+.mx-0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.my-0 {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+}
+
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.ml-0 {
+    margin-left: 0 !important;
+}
+
+.mr-0 {
+    margin-right: 0 !important;
+}
+
+/* padding */
+.p-0 {
+    padding: 0 !important;
+}
+
+.px-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.py-0 {
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+}
+
+.pt-0 {
+    padding-top: 0 !important;
+}
+
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+
+.pl-0 {
+    padding-left: 0 !important;
+}
+
+.pr-0 {
+    padding-right: 0 !important;
 }
 
 input, textarea, select {
@@ -1243,82 +1412,6 @@ hr {
 
 p {
     margin-bottom: var(--qui-spacing, 1rem);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
-    letter-spacing: 1px;
-    line-height: 1.3;
-    margin: 1em 0 1rem;
-}
-
-h1,
-.fs-1 {
-    font-size: var(--qui-fs-1);
-}
-
-h2,
-.fs-2 {
-    font-size: var(--qui-fs-2);
-}
-
-h3,
-.fs-3 {
-    font-size: var(--qui-fs-3);
-}
-
-h4,
-.fs-4 {
-    font-size: var(--qui-fs-4);
-}
-
-h5,
-.fs-5 {
-    font-size: var(--qui-fs-5);
-}
-
-h6,
-.fs-6 {
-    font-size: var(--qui-fs-6);
-}
-
-header > h1,
-header > h2,
-header > h3,
-header > h4,
-header > h5 {
-    margin-bottom: 0;
-    margin-top: 0;
-}
-
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child {
-    margin-top: 0;
-}
-
-small, .text_small {
-    font-size: var(--qui-fs-sm);
-}
-
-strong,
-.fw-bold {
-    font-weight: bold;
-}
-
-.fw-bolder {
-    font-weight: bolder;
-}
-
-.fw-normal {
-    font-weight: normal;
-}
-
-.text-lead,
-.lead {
-    font-size: var(--qui-lead);
 }
 
 .start-page .brick-title,

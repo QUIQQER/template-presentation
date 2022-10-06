@@ -12,13 +12,17 @@
     --qui-fs-body: 16px;
     --qui-fs-md: 18px;
     --qui-fs-lg: 22px;
-    --qui-fs-xl: 28px;
-    --qui-fs-2xl: 2rem;
-    --qui-fs-3xl: 3rem;
-    --qui-fs-4xl: 4rem;
-    --qui-fs-5xl: 5rem;
+    --qui-fs-xl: 2rem;
+    --qui-fs-2xl: 2.5rem;
+    --qui-fs-3xl: 3.5rem;
+    --qui-fs-4xl: 4.5rem;
+    --qui-fs-5xl: 5.5rem;
     --qui-fs-6xl: 6rem;
     --qui-lead: var(--qui-fs-lg);
+    --qui-display-1: var(--qui-fs-6xl);
+    --qui-display-2: var(--qui-fs-5xl);
+    --qui-display-3: var(--qui-fs-4xl);
+    --qui-display-4: var(--qui-fs-3xl);
 
     /* font size: heading */
     --qui-fs-1: 2.488rem;
@@ -29,14 +33,18 @@
     --qui-fs-6: 1.025rem;
 
     /* spacing for margin, padding, etc */
-    --qui-spacing-xs: 0.5rem;
-    --qui-spacing-sm: 0.75rem;
-    --qui-spacing: 1rem; /* default */
-    --qui-spacing-md: 1.5rem;
-    --qui-spacing-lg: 2rem;
-    --qui-spacing-xl: 3rem;
-    --qui-spacing-2xl: 4rem;
-    --qui-spacing-3xl: 5rem;
+    --qui-spacer: 1rem;
+    --qui-spacing-xs: calc(var(--qui-spacer) * 0.25);
+    --qui-spacing-sm: calc(var(--qui-spacer) * 0.75);
+    --qui-spacing: var(--qui-spacer); /* default */
+    --qui-spacing-md: calc(var(--qui-spacer) * 1.25);
+    --qui-spacing-lg: calc(var(--qui-spacer) * 1.75);
+    --qui-spacing-xl: calc(var(--qui-spacer) * 2);
+    --qui-spacing-2xl: calc(var(--qui-spacer) * 2.5);
+    --qui-spacing-3xl: calc(var(--qui-spacer) * 3.5);
+    --qui-spacing-4xl: calc(var(--qui-spacer) * 4.5);
+    --qui-spacing-5xl: calc(var(--qui-spacer) * 5.5);
+    --qui-spacing-6xl: calc(var(--qui-spacer) * 6);
 
     /* background */
     --qui-bg-primary: #ddd;
@@ -62,10 +70,10 @@
         --qui-fs-body: 16px;
         --qui-fs-lg: 20px;
         --qui-fs-xl: 24px;
-        --qui-fs-2xl: calc(.75 * 2rem);
-        --qui-fs-3xl: calc(.75 * 3rem);
-        --qui-fs-4xl: calc(.75 * 4rem);
-        --qui-fs-5xl: calc(.75 * 5rem);
+        --qui-fs-2xl: calc(.75 * 2.5rem);
+        --qui-fs-3xl: calc(.75 * 3.5rem);
+        --qui-fs-4xl: calc(.75 * 4.5rem);
+        --qui-fs-5xl: calc(.75 * 5.5rem);
         --qui-fs-6xl: calc(.75 * 6rem);
     }
 }
@@ -83,10 +91,10 @@
         --qui-fs-md: 17px;
         --qui-fs-lg: 19px;
         --qui-fs-xl: 22px;
-        --qui-fs-2xl: calc(.7 * 2rem);
-        --qui-fs-3xl: calc(.65 * 3rem);
-        --qui-fs-4xl: calc(.6 * 4rem);
-        --qui-fs-5xl: calc(.55 * 5rem);
-        --qui-fs-6xl: calc(.5 * 6rem);
+        --qui-fs-2xl: calc(.7 * 2.5rem);
+        --qui-fs-3xl: calc(.65 * 3.5rem);
+        --qui-fs-4xl: calc(.6 * 4.5rem);
+        --qui-fs-5xl: calc(.55 * 5.5rem);
+        --qui-fs-6xl: calc(.5 * 6.5rem);
     }
 }
