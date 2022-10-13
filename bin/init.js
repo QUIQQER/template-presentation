@@ -145,15 +145,17 @@ window.addEvent("domready", function () {
                 '[data-qui="package/quiqqer/menu/bin/SlideOut"]'
             );
 
-            Controls.getControlByElement(SlideOutElm).then(function (SlideOutControl) {
+            if (SlideOutElm) {
+                Controls.getControlByElement(SlideOutElm).then(function (SlideOutControl) {
 
-                var Elm = SlideOutControl.getElm();
+                    var Elm = SlideOutControl.getElm();
 
-                new Element('div', {
-                    'class': 'mobile-bar-social hide-on-desktop',
-                    html   : socialHTML
-                }).inject(SlideOutElm);
-            });
+                    new Element('div', {
+                        'class': 'mobile-bar-social hide-on-desktop',
+                        html   : socialHTML
+                    }).inject(SlideOutElm);
+                });
+            }
         }
     });
 
