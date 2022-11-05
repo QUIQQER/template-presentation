@@ -650,24 +650,34 @@ ul.alt {
     background: #ffffff;
 }
 
+
+/*********/
+/* Table */
+/*********/
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+
 table {
     max-width: 100%;
+    margin-bottom: 1rem;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 tr {
-    background: #eee;
+    border-width: 1px 0;
 }
 
-tr:nth-child(2n+1) {
-    background: #f5f5f5;
-}
-
-tr:only-child {
-    background: #eee;
-}
-
+th,
 td {
-    padding: 6px;
+    border-width: 0 1px;
+}
+
+th,td {
+    padding: 0.5rem;
 }
 
 thead {
