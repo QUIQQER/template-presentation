@@ -114,10 +114,10 @@ ob_start();
     --qui-color-primary: <?php echo $colorMain;?>;
     --qui-color-body: <?php echo $colorMainContentFont;?>;
     --qui-color-muted: <?php echo $colorMuted;?>;
-    --qui-color-nav-color: <?php echo $navBarFontColor;?>;
 
     --qui-btn-primary-color: <?php echo $buttonFontColor;?>;
 
+    --qui-nav-color: <?php echo $navBarFontColor;?>;
     --qui-nav-position: <?php echo $navCSSPos;?>;
     --qui-nav-bg: <?php echo $navBarBackground;?>;
     --qui-nav-bg-lighter: <?php echo $navBarBackgroundLighter;?>;

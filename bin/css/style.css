@@ -834,7 +834,7 @@ thead {
 .header-bar-inner a:visited,
 .header-bar-inner a:hover,
 .quiqqer-menu-megaMenu-list-item-menu.control-background {
-    color: var(--qui-color-nav-color);
+    color: var(--qui-nav-color);
 }
 
 .header-displayed .header-bar-position-scroll {
