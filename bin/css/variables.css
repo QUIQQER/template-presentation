@@ -1,26 +1,36 @@
+/**
+ * use !important to override css variable defined by template setting
+ */
 :root {
-    /* color */
-    --qui-color-color: #3b3b3a;
-    --qui-color-main: #94c23c;
+    /* color  */
+    --qui-color-main: #94c23c; /* template settings override this variable */
     --qui-color-primary: var(--qui-color-main);
     --qui-color-secondary: #3b3b3a;
-    --qui-color-text-muted: #9ba3ad;
+    --qui-color-body: #3b3b3a; /* template settings override this variable */
+    --qui-color-muted: #9ba3ad; /* template settings override this variable */
+    --qui-line-height: 1.75;
+    --qui-btn-primary-bg: var(--qui-color-main);
+    --qui-btn-primary-color: #ffffff; /* template settings override this variable */
 
-    /* font size: text */
+    /* text: font size */
     --qui-fs-xs: 0.75rem;
     --qui-fs-sm: 0.875rem;
     --qui-fs-body: 16px;
     --qui-fs-md: 18px;
     --qui-fs-lg: 22px;
-    --qui-fs-xl: 28px;
-    --qui-fs-2xl: 2rem;
-    --qui-fs-3xl: 3rem;
-    --qui-fs-4xl: 4rem;
-    --qui-fs-5xl: 5rem;
+    --qui-fs-xl: 2rem;
+    --qui-fs-2xl: 2.5rem;
+    --qui-fs-3xl: 3.5rem;
+    --qui-fs-4xl: 4.5rem;
+    --qui-fs-5xl: 5.5rem;
     --qui-fs-6xl: 6rem;
-    --qui-lead: var(--qui-fs-lg);
+    --qui-text-lead: var(--qui-fs-lg);
+    --qui-display-1: var(--qui-fs-6xl);
+    --qui-display-2: var(--qui-fs-5xl);
+    --qui-display-3: var(--qui-fs-4xl);
+    --qui-display-4: var(--qui-fs-3xl);
 
-    /* font size: heading */
+    /* heading: font size */
     --qui-fs-1: 2.488rem;
     --qui-fs-2: 2.074rem;
     --qui-fs-3: 1.728rem;
@@ -29,18 +39,49 @@
     --qui-fs-6: 1.025rem;
 
     /* spacing for margin, padding, etc */
-    --qui-spacing-xs: 0.5rem;
-    --qui-spacing-sm: 0.75rem;
-    --qui-spacing: 1rem; /* default */
-    --qui-spacing-md: 1.5rem;
-    --qui-spacing-lg: 2rem;
-    --qui-spacing-xl: 3rem;
-    --qui-spacing-2xl: 4rem;
-    --qui-spacing-3xl: 5rem;
+    --qui-spacer: 1rem;
+    --qui-spacing-xs: calc(var(--qui-spacer) * 0.25);
+    --qui-spacing-sm: calc(var(--qui-spacer) * 0.75);
+    --qui-spacing: var(--qui-spacer); /* default */
+    --qui-spacing-md: calc(var(--qui-spacer) * 1.25);
+    --qui-spacing-lg: calc(var(--qui-spacer) * 1.75);
+    --qui-spacing-xl: calc(var(--qui-spacer) * 2);
+    --qui-spacing-2xl: calc(var(--qui-spacer) * 2.5);
+    --qui-spacing-3xl: calc(var(--qui-spacer) * 3.5);
+    --qui-spacing-4xl: calc(var(--qui-spacer) * 4.5);
+    --qui-spacing-5xl: calc(var(--qui-spacer) * 5.5);
+    --qui-spacing-6xl: calc(var(--qui-spacer) * 6);
+
+    /* nav */
+    --qui-nav-color: #ffffff; /* template settings override this variable */
+    --qui-nav-position: absolute; /* template settings override this variable */
+    --qui-nav-bg: #2d4d88; /* template settings override this variable */
+    --qui-nav-bg-lighter: #435f94; /* template settings override this variable */
+    --qui-nav-height: 80px; /* template settings override this variable */
+    --qui-nav-scrolled-bg: var(--qui-nav-bg); /* template settings override this variable */
+    --qui-body-container-top: var(--qui-nav-height); /* template settings override this variable */
+    --qui-nav-mobile-bg: #252122; /* template settings override this variable */
+    --qui-nav-mobile-font-color: #ffffff; /* template settings override this variable */
+    --qui-nav-mobile-social-bar-bg: #3b3839; /* template settings override this variable */
+
+    /* header */
+    --qui-header-min-height: 300; /* template settings override this variable */
+    --qui-header-img-position: center; /* template settings override this variable */
+
+    /* footer */
+    --qui-footer-bg: #eeeeee; /* template settings override this variable */
+    --qui-footer-font-color: #333333; /* template settings override this variable */
+    --qui-footer-copyrigth-border-top-color: #f0f0f0; /* template settings override this variable */
 
     /* background */
     --qui-bg-primary: #ddd;
     --qui-bg-secondary: #f5f5f5;
+
+    /* brick prefix / suffix bg */
+    --qui-brick-prefix-even-bg: transparent; /* template settings override this variable */
+    --qui-brick-prefix-odd-bg: transparent; /* template settings override this variable */
+    --qui-brick-suffix-even-bg: transparent; /* template settings override this variable */
+    --qui-brick-suffix-odd-bg: transparent; /* template settings override this variable */
 
     /* screen sizes */
     --qui-screen-lg: 1400px;
@@ -49,7 +90,6 @@
     --qui-screen-xs: 440px;
 }
 
-/*@media screen and (max-width: var(--qui-screen-sm, 767px)) {*/
 @media screen and (max-width: 767px) {
     :root {
         --qui-fs-1: 2rem;
@@ -62,10 +102,10 @@
         --qui-fs-body: 16px;
         --qui-fs-lg: 20px;
         --qui-fs-xl: 24px;
-        --qui-fs-2xl: calc(.75 * 2rem);
-        --qui-fs-3xl: calc(.75 * 3rem);
-        --qui-fs-4xl: calc(.75 * 4rem);
-        --qui-fs-5xl: calc(.75 * 5rem);
+        --qui-fs-2xl: calc(.75 * 2.5rem);
+        --qui-fs-3xl: calc(.75 * 3.5rem);
+        --qui-fs-4xl: calc(.75 * 4.5rem);
+        --qui-fs-5xl: calc(.75 * 5.5rem);
         --qui-fs-6xl: calc(.75 * 6rem);
     }
 }
@@ -83,10 +123,10 @@
         --qui-fs-md: 17px;
         --qui-fs-lg: 19px;
         --qui-fs-xl: 22px;
-        --qui-fs-2xl: calc(.7 * 2rem);
-        --qui-fs-3xl: calc(.65 * 3rem);
-        --qui-fs-4xl: calc(.6 * 4rem);
-        --qui-fs-5xl: calc(.55 * 5rem);
-        --qui-fs-6xl: calc(.5 * 6rem);
+        --qui-fs-2xl: calc(.7 * 2.5rem);
+        --qui-fs-3xl: calc(.65 * 3.5rem);
+        --qui-fs-4xl: calc(.6 * 4.5rem);
+        --qui-fs-5xl: calc(.55 * 5.5rem);
+        --qui-fs-6xl: calc(.5 * 6.5rem);
     }
 }

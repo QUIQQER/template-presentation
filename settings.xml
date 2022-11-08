@@ -129,7 +129,7 @@
                     <!-- colors -->
                     <conf name="colorMainContentFont">
                         <type><![CDATA[string]]></type>
-                        <defaultvalue>#333333</defaultvalue>
+                        <defaultvalue>#3b3b3a</defaultvalue>
                     </conf>
                     <conf name="colorMain">
                         <type><![CDATA[string]]></type>

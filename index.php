@@ -306,6 +306,10 @@ switch ($Template->getLayoutType()) {
         $bodyClass = 'no-sidebar';
         break;
 
+    case 'layout/noSidebarSmall':
+        $bodyClass = 'no-sidebar-small';
+        break;
+
     case 'layout/rightSidebar':
         $bodyClass = 'right-sidebar';
         break;

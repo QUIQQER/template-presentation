@@ -2,7 +2,7 @@
 <footer class="page-footer clear-fix {if empty($footer)}no-footer-bricks{/if}">
 
     {if !empty($footer)}
-    <div class="page-footer-container grid-container">
+    <div class="page-footer-container grid-container" data-nosnippet="true">
         <div class="grid-children">
             <div class="grid-children-container">
                 {foreach from=$footer item=Brick}
@@ -17,7 +17,7 @@
     </div>
     {/if}
 
-    <div class="page-footer-copyright grid-container">
+    <div class="page-footer-copyright grid-container" data-nosnippet="true">
         <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
             {locale group="quiqqer/template-presentation" var="copyright.text" year=$smarty.now|date_format:'%Y'}
         </div>
