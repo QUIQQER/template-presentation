@@ -273,12 +273,12 @@ input, textarea, select {
     border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: 0;
     box-shadow: none;
-    font-size: 12pt;
+    font-size: 1rem;
     letter-spacing: 1px;
     line-height: 1.75em;
     margin: 6px 0;
     outline: none;
-    padding: 10px 16px;
+    padding: 0.5em 1.25em;
 }
 
 
@@ -296,7 +296,7 @@ input[type="submit"] {
 
     margin: 6px 0;
     outline: none;
-    padding: 10px 16px;
+    padding: 0.5em 1.25em;
 }
 
 
@@ -488,18 +488,15 @@ button:hover,
     box-shadow: none;
 }
 
-
+button:not([name="close"]),
+.button:not([name="close"]),
 input[type='submit'],
 input[type='reset'],
 input[type='button'],
-button,
-.button,
 button:disabled,
 button:disabled:hover,
 a.template-button,
-button.qui-button-active,
-button.qui-button:active,
-button.qui-button:hover {
+button.qui-button {
     background: var(--qui-color-primary);
     border: 2px solid var(--qui-color-primary);
     border-radius: 0;
@@ -509,7 +506,7 @@ button.qui-button:hover {
     display: inline-block;
     line-height: var(--qui-line-height);
     outline: none;
-    padding: 6px 16px;
+    padding: 0.5em 1.25em;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -533,7 +530,10 @@ button:hover,
 .button:hover,
 a.template-button:focus,
 a.template-button:active,
-a.template-button:hover {
+a.template-button:hover,
+button.qui-button-active,
+button.qui-button:active,
+button.qui-button:hover {
     background: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
@@ -2596,6 +2596,33 @@ button,
     font-size: 1.6em;
     padding: 1em 1.6em;
 }
+
+/* new sizing */
+.btn-xs,
+.button-xs {
+    font-size: var(--qui-fs-xs);
+}
+
+.btn-sm,
+.button-sm {
+    font-size: var(--qui-fs-sm);
+}
+
+.btn-md,
+.button-md {
+    font-size: var(--qui-fs-md);
+}
+
+.btn-lg,
+.button-lg {
+    font-size: var(--qui-fs-lg);
+}
+
+.btn-xl,
+.button-xl {
+    font-size: var(--qui-fs-xl);
+}
+/* END new sizing */
 
 .button-arrow:after {
     content: "\f178";
