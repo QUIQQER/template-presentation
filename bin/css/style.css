@@ -437,11 +437,6 @@ header {
     text-align: center;
 }
 
-ul,
-ol {
-    padding-left: 30px;
-}
-
 .body-container {
     position: relative;
     top: var(--qui-body-container-top);
@@ -644,32 +639,18 @@ ul.basic-company-preview-ul > span {
     max-width: 750px;
 }
 
-ul,
-ol {
-    margin: 0 0 2em;
-    padding-left: 1em;
-    /*padding-top: 0.5em;*/
+ul, ol {
+    padding-left: 1.5rem;
 }
 
-ul {
-    list-style: outside disc;
-}
-
-ul li,
-ol li {
+li {
     padding-left: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
-ol ol,
-ol ol ol,
-ol ul,
-ol ul ul,
-ol ul ol,
-ul ul,
-ul ul ul,
-ul ol ol,
-ul ol ul {
-    margin-bottom: 0;
+:where(li)::marker {
+    color: var(--qui-color-primary);
 }
 
 ul.alt li:first-child {
@@ -905,6 +886,8 @@ thead {
 .quiqqer-menu-megaMenu-list .quiqqer-menu-megaMenu-list-item {
     font-weight: normal;
     padding: 0;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .quiqqer-menu-megaMenu-list-item:hover {
@@ -1510,7 +1493,6 @@ hr {
 .content-body ol,
 .content-body ul {
     clear: both;
-    margin: 0 0 1.3em 0;
 }
 
 .content-body ol ol,
@@ -1520,12 +1502,12 @@ hr {
     clear: both;
 }
 
-.content-body li {
-    margin: 0 0 10px 0;
-}
-
 p {
     margin-bottom: var(--qui-spacing, 1rem);
+}
+
+p:not(:first-child) {
+    margin-top: var(--qui-spacing, 1rem);
 }
 
 .start-page .brick-title,
