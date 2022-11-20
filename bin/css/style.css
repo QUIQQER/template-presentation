@@ -216,7 +216,7 @@ strong,
 }
 
 .my-0 {
-    margin-left: 0 !important;
+    margin-bottom: 0 !important;
     margin-top: 0 !important;
 }
 
@@ -1483,13 +1483,6 @@ hr {
     width: 100%;
 }
 
-.content-body blockquote,
-.content-body p,
-.content-body pre {
-    clear: both;
-    width: 100%;
-}
-
 .content-body ol,
 .content-body ul {
     clear: both;
@@ -1502,12 +1495,18 @@ hr {
     clear: both;
 }
 
-p {
+p,
+address {
     margin-bottom: var(--qui-spacing, 1rem);
 }
 
-p:not(:first-child) {
+p:not(:first-child),
+address:not(:first-child) {
     margin-top: var(--qui-spacing, 1rem);
+}
+
+address {
+    font-style: normal;
 }
 
 .start-page .brick-title,
