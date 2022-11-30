@@ -2558,7 +2558,7 @@ button,
     transition: all 0.2s;
 }
 
-.button:last-of-type {
+:where(.button:last-of-type) {
     margin-right: 0;
 }
 
@@ -2570,7 +2570,6 @@ button,
 .button__medium {
     font-size: 1.1em;
     padding: 1em 1.8em;
-
 }
 
 .button__large {
