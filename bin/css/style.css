@@ -422,7 +422,6 @@ a.link-slide-up-color::before {
 
 a:hover {
     text-decoration: none;
-    z-index: 1;
 }
 
 p a {
