@@ -437,6 +437,7 @@ header {
 }
 
 .body-container {
+    overflow: hidden; /* needed for gap hack (negative margin + padding) */
     position: relative;
     top: var(--qui-body-container-top);
 }
