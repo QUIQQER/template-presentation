@@ -38,9 +38,8 @@ D.h. der Sidebar wird nach links gepullt, obwohl er in der HTML Code nach dem Ma
             </div>
         {/if}
     {/if}
-    <div class="default-content">
-        {$Template->getBody()}
-    </div>
+
+    {$Template->getBody()}
 
     {if empty($Template->getBody()) ||
     empty( $prefixContentBricks ||
