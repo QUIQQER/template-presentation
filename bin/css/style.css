@@ -2081,12 +2081,6 @@ a.quiqqer-navigation-home:hover,
     background-size: contain;
 }
 
-.qui-button--no-icon {
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
 .qui-button.qui-button--no-icon {
     font-size: 20px;
     margin-bottom: 6px;
