@@ -1621,10 +1621,6 @@ h2.quiqqer-navigation-title-style {
     text-decoration: none;
 }
 
-.quiqqer-sidebar-dropdown-navigation .quiqqer-navigation-active {
-    font-weight: bold;
-}
-
 .quiqqer-sidebar-dropdown-navigation .quiqqer-navigation-open,
 .quiqqer-sidebar-dropdown-navigation .quiqqer-navigation-close {
     position: relative;
