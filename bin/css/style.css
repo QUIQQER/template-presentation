@@ -507,7 +507,6 @@ input[type='submit'],
 input[type='reset'],
 input[type='button'],
 button:disabled,
-button:disabled:hover,
 a.template-button,
 button.qui-button {
     background: var(--qui-color-primary);
