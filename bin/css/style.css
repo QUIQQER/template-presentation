@@ -1518,11 +1518,6 @@ address {
     margin-bottom: var(--qui-spacing, 1rem);
 }
 
-p:not(:first-child),
-address:not(:first-child) {
-    margin-top: var(--qui-spacing, 1rem);
-}
-
 address {
     font-style: normal;
 }
