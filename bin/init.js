@@ -1,5 +1,4 @@
-window.addEvent("domready", function () {
-    "use strict";
+whenQuiLoaded().then(() => {    "use strict";
 
     /**
      * Handle click on a element with #target to perform scroll action
