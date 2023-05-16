@@ -8,17 +8,21 @@
     --qui-color-secondary: #3b3b3a;
     --qui-color-body: #3b3b3a; /* template settings override this variable */
     --qui-color-muted: #9ba3ad; /* template settings override this variable */
-    --qui-line-height: 1.75;
+    --qui-line-height-lg: 2.5;
+    --qui-line-height-md: 2;
+    --qui-line-height: 1.75; /* base */
+    --qui-line-height-sm: 1.5;
+    --qui-line-height-xs: 1.25;
     --qui-btn-primary-bg: var(--qui-color-main);
     --qui-btn-primary-color: #ffffff; /* template settings override this variable */
 
     /* text: font size */
     --qui-fs-xs: 0.75rem;
     --qui-fs-sm: 0.875rem;
-    --qui-fs-body: 16px;
+    --qui-fs-body: 16px; /* base */
     --qui-fs-md: 18px;
     --qui-fs-lg: 22px;
-    --qui-fs-xl: 2rem;
+    --qui-fs-xl: 1.75rem;
     --qui-fs-2xl: 2.5rem;
     --qui-fs-3xl: 3.5rem;
     --qui-fs-4xl: 4.5rem;
