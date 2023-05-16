@@ -1,10 +1,11 @@
-whenQuiLoaded().then(() => {    "use strict";
+whenQuiLoaded().then(() => {
+    "use strict";
 
     /**
      * Handle click on a element with #target to perform scroll action
      * @param event
      */
-    function handleScrollClick (event) {
+    function handleScrollClick(event) {
         event.preventDefault();
 
         const href = this.getAttribute('href');
@@ -111,18 +112,18 @@ whenQuiLoaded().then(() => {    "use strict";
          * works only if nav is position fixed
          */
         if (typeof navIsFixed !== 'undefined') {
-
+            const breakPoint  = 50;
             var headerBar     = document.getElement('.header-bar'),
                 navBackground = false;
 
             // background on load
-            if (QUI.getScroll().y > 300) {
+            if (QUI.getScroll().y > breakPoint) {
                 headerBar.addClass('header-bar-scrolled');
                 navBackground = true;
             }
 
             QUI.addEvent('scroll', function () {
-                if (QUI.getScroll().y > 50) {
+                if (QUI.getScroll().y > breakPoint) {
                     if (!navBackground) {
                         headerBar.addClass('header-bar-scrolled');
                         navBackground = true;
