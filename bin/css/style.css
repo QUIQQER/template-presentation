@@ -1475,29 +1475,9 @@ input[type="search"].only-input:focus {
     padding-top: 0;
 }
 
-.tpl-presentation-row {
-    border-bottom: 1px solid #ddd;
-}
-
-.tpl-presentation-row:last-child,
-.page-multible-right .tpl-presentation-row,
-.page-multible-left .tpl-presentation-row {
-    border-bottom: none;
-}
-
 header.control-header {
     text-align: center;
 }
-
-/*
-.page-multible-right header,
-.page-multible-left header {
-    padding-bottom: 1em;
-}*/
-
-/*.page-content-site-title {
-    padding-bottom: 1em;
-}*/
 
 hr {
     border: none;
