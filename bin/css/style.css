@@ -401,16 +401,13 @@ fieldset.grid-50:last-child {
 
 /*
  1. Quiqqer sets the width and height HTML attributes on each <img> element (smarty function.image.php).
-    Therefore, we need to set the width and height properties to 'auto'
-    to avoid images being displayed at a reduced size.
+    Therefore, we need to set the max-width and height properties to '100%' and 'auto'.
 */
 img {
     margin: 0;
-    max-height: 100%;
-    max-width: 100%;
     padding: 0;
+    max-width: 100%; /* 1 */
     height: auto; /* 1 */
-    width: auto; /* 1 */
 }
 
 figcaption {
@@ -879,7 +876,6 @@ thead {
     text-decoration: none;
 }
 
-
 .page-header-logo-img {
     display: block;
     margin: 0 1em 0 0;
@@ -887,13 +883,17 @@ thead {
 }
 
 .page-header-logo picture {
-    align-items: center;
-    display: flex;
-    height: 100%;
+    display: block;
 }
 
 .page-header-logo-mobile {
     display: none;
+}
+
+.page-header-logo img {
+    display: block;
+    width: var(--logo-width);
+    height: var(--logo-height);
 }
 
 

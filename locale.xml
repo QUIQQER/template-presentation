@@ -418,6 +418,23 @@
             <pl><![CDATA[Dół]]></pl>
         </locale>
 
+        <!-- Logo settings -->
+        <locale name="templatePresentation.settings.logoHeight.title">
+            <de><![CDATA[Logo Einstellungen]]></de>
+            <en><![CDATA[Logo settings]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.logoHeight.text">
+            <de><![CDATA[Logo-Höhe]]></de>
+            <en><![CDATA[Logo height]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.logoWidth.text">
+            <de><![CDATA[Logo-Breite (optional)]]></de>
+            <en><![CDATA[Logo width (optional)]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.logoWidth.desc">
+            <de><![CDATA[Im Normalfall setzt man die Einstellung nicht. Das Template berechnet automatisch die Breite anhand von der angegebenen Höhe. In seltenen Fällen ist QUIQQER nicht in der Lage die Berechnung durchzuführen (z.B. wenn das Logo ein <code>.svg</code> Bild ist). <strong>Wenn das Logo ein <code>.svg</strong> Bild ist, muss die Breite eingegeben werden.</strong>]]></de>
+            <en><![CDATA[In most cases, you don't need to set the logo width. The template automatically calculates the width based on the specified height. In rare cases, QUIQQER may not be able to perform the calculation (e.g. if the logo is an .svg image). <strong>If the logo is a <code>.svg</strong> image, the width must be entered.</strong>]]></en>
+        </locale>
 
         <!-- Navbar settings -->
         <locale name="templatePresentation.settings.navBar.title">

@@ -2,6 +2,24 @@
 
 $Locale = QUI::getLocale();
 
+/**
+ * header area on start page?
+ */
+$headerArea    = false;
+$BricksManager = \QUI\Bricks\Manager::init();
+if (count($BricksManager->getBricksByArea('header', $Site)) > 0) {
+    $headerArea = true;
+}
+
+/**
+ * Template config
+ */
+$templateSettings = QUI\TemplatePresentation\Utils::getConfig([
+    'headerArea' => $headerArea,
+    'Project'    => $Project,
+    'Site'       => $Site,
+    'Template'   => $Template
+]);
 
 /**
  * Set emotion and independent menu recursive
@@ -10,7 +28,8 @@ QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
 QUI\Utils\Site::setRecursiveAttribute($Site, 'templatePresentation.independentMenuId');
 
 // Inhalts Verhalten
-if ($Site->getAttribute('templatePresentation.showTitle') ||
+if (
+    $Site->getAttribute('templatePresentation.showTitle') ||
     $Site->getAttribute('templatePresentation.showShort')
 ) {
     $Template->setAttribute('content-header', false);
@@ -132,14 +151,6 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
     }
 }
 
-$alt     = "QUIQQER";
-$logoUrl = $Project->getMedia()->getPlaceholder();
-if ($Project->getMedia()->getLogoImage()) {
-    $Logo    = $Project->getMedia()->getLogoImage();
-    $alt     = $Logo->getAttribute('title');
-    $logoUrl = $Logo->getSizeCacheUrl(300, 100);
-}
-
 /**
  * Dropdown Language switch
  */
@@ -176,19 +187,27 @@ if ($showDropDownFlag) {
     $DropDownFlag = $DropDown->create();
 }
 
-$logoHeight = 80;
+$logoData             = $templateSettings['logoData'];
+$widthCustomProperty  = '';
+$heightCustomProperty = '';
 
-if ($Project->getConfig('templatePresentation.settings.navBarHeight')) {
-    $logoHeight = (int)$Project->getConfig('templatePresentation.settings.navBarHeight');
+if ($logoData['width'] !== false) {
+    $widthCustomProperty = '--logo-width: '.$logoData['width'].'px;';
+}
+
+if ($logoData['height'] !== false) {
+    $heightCustomProperty = '--logo-height: '.$logoData['height'].'px;';
 }
 
 $MegaMenu->prependHTML(
-    '<div class="header-bar-inner-logo">
-                <a href="'.$Project->get(1)->getUrlRewritten().'" class="page-header-logo">
-                <img src="'.$logoUrl.'" alt="'.$alt.'" height="'.$logoHeight.'"/></a>
-            </div>'
+    '<div class="header-bar-inner-logo" 
+        style="'.$widthCustomProperty.$heightCustomProperty.'">
+        <a href="'.$Project->get(1)->getUrlRewritten().'" class="page-header-logo">
+        <img src="'.$logoData['url'].'" alt="'.$logoData['alt'].'"
+            height="'.$logoData['height'].'" width="'.$logoData['width'].'"
+        </a>
+    </div>'
 );
-
 
 // social
 $social          = "false";
@@ -196,7 +215,8 @@ $socialNav       = '';
 $socialFooter    = '';
 $socialMobileNav = '';
 
-if ($Project->getConfig('templatePresentation.settings.social.show.nav')
+if (
+    $Project->getConfig('templatePresentation.settings.social.show.nav')
     || $Project->getConfig('templatePresentation.settings.social.show.footer')
 ) {
     $social     = "true";
@@ -263,26 +283,6 @@ $MegaMenu->appendHTML(
  * Breadcrumb
  */
 $Breadcrumb = new QUI\Controls\Breadcrumb();
-
-/**
- * header area on start page?
- */
-$headerArea    = false;
-$BricksManager = \QUI\Bricks\Manager::init();
-if (count($BricksManager->getBricksByArea('header', $Site)) > 0) {
-    $headerArea = true;
-}
-
-/**
- * Template config
- */
-$templateSettings = QUI\TemplatePresentation\Utils::getConfig([
-    'headerArea' => $headerArea,
-    'Project'    => $Project,
-    'Site'       => $Site,
-    'Template'   => $Template
-]);
-
 
 $templateSettings['BricksManager']   = $BricksManager;
 $templateSettings['Breadcrumb']      = $Breadcrumb;

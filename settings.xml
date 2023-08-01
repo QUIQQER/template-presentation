@@ -60,6 +60,15 @@
                         <defaultvalue>inputAndIcon</defaultvalue>
                     </conf>
 
+                    <!-- Logo -->
+                    <conf name="logoHeight">
+                        <type><![CDATA[integer]]></type>
+                        <defaultvalue>60</defaultvalue>
+                    </conf>
+                    <conf name="logoWidth">
+                        <type><![CDATA[integer]]></type>
+                    </conf>
+
                     <!-- nav / menu: independent -->
                     <conf name="enableIndependentMenu">
                         <type><![CDATA[bool]]></type>
@@ -299,159 +308,35 @@
 
                         </settings>
 
-
-                        <!-- show header -->
+                        <!-- logo -->
                         <settings title="templatePresentation.settings"
-                                  name="templatePresentation.settings.showHeader">
+                                  name="templatePresentation.settings.logoHeight">
                             <title>
                                 <locale group="quiqqer/template-presentation"
-                                        var="templatePresentation.settings.showHeader.title"
+                                        var="templatePresentation.settings.logoHeight.title"
                                 />
                             </title>
 
-                            <text>
-                                <locale group="quiqqer/template-presentation"
-                                        var="showHeader.desc"
-                                />
-                            </text>
-
-                            <!-- start page -->
-                            <input conf="templatePresentation.settings.showHeaderStartPage"
-                                   type="checkbox">
+                            <input conf="templatePresentation.settings.logoHeight" type="number">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="admin.layout.startpage"
+                                            var="templatePresentation.settings.logoHeight.text"
                                     />
                                 </text>
                             </input>
-                            <!-- no sidebar -->
-                            <input conf="templatePresentation.settings.showHeaderNoSidebar"
-                                   type="checkbox">
+                            <input conf="templatePresentation.settings.logoWidth" type="number">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="admin.layout.noSidebar"
+                                            var="templatePresentation.settings.logoWidth.text"
                                     />
                                 </text>
-                            </input>
-                            <!-- no sidebar thin-->
-                            <input conf="templatePresentation.settings.showHeaderNoSidebarSmall"
-                                   type="checkbox">
-                                <text>
+                                <description>
                                     <locale group="quiqqer/template-presentation"
-                                            var="admin.layout.noSidebarSmall"
+                                            var="templatePresentation.settings.logoWidth.desc"
                                     />
-                                </text>
-                            </input>
-                            <!-- left sidebar -->
-                            <input conf="templatePresentation.settings.showHeaderLeftSidebar"
-                                   type="checkbox">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="admin.layout.leftSidebar"
-                                    />
-                                </text>
-                            </input>
-                            <!-- right sidebar -->
-                            <input conf="templatePresentation.settings.showHeaderRightSidebar"
-                                   type="checkbox">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="admin.layout.rightSidebar"
-                                    />
-                                </text>
-                            </input>
-
-                            <!-- header height-->
-                            <input conf="templatePresentation.settings.headerHeightValue" type="number">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.headerHeightValue.text"
-                                    />
-                                </text>
-                            </input>
-
-                            <select conf="templatePresentation.settings.headerImagePosition">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.headerImagePosition.text"
-                                    />
-                                </text>
-
-                                <option value="top">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.headerImagePosition.top"
-                                    />
-                                </option>
-                                <option value="center">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.headerImagePosition.center"
-                                    />
-                                </option>
-                                <option value="bottom">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.headerImagePosition.bottom"
-                                    />
-                                </option>
-                            </select>
-                        </settings>
-
-
-                        <!-- breadrcumb -->
-                        <settings title="templatePresentation.settings"
-                                  name="templatePresentation.breadcrumb.settings">
-                            <title>
-                                <locale group="quiqqer/template-presentation"
-                                        var="templatePresentation.breadcrumb.settings.title"
-                                />
-                            </title>
-
-                            <!-- no breadcrumb? -->
-                            <text>
-                                <locale group="quiqqer/template-presentation"
-                                        var="showBreadcrumb.text"/>
-                            </text>
-                            <input conf="templatePresentation.settings.showBreadcrumbStartPage"
-                                   type="checkbox">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="admin.layout.startpage"
-                                    />
-                                </text>
-                            </input>
-                            <input conf="templatePresentation.settings.showBreadcrumbNoSidebar"
-                                   type="checkbox">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="admin.layout.noSidebar"
-                                    />
-                                </text>
-                            </input>
-                            <input conf="templatePresentation.settings.showBreadcrumbNoSidebarSmall"
-                                   type="checkbox">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="admin.layout.noSidebarSmall"
-                                    />
-                                </text>
-                            </input>
-                            <input conf="templatePresentation.settings.showBreadcrumbLeftSidebar"
-                                   type="checkbox">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="admin.layout.leftSidebar"
-                                    />
-                                </text>
-                            </input>
-                            <input conf="templatePresentation.settings.showBreadcrumbRightSidebar"
-                                   type="checkbox">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="admin.layout.rightSidebar"
-                                    />
-                                </text>
+                                </description>
                             </input>
                         </settings>
-
 
                         <!-- nav bar -->
                         <settings title="templatePresentation.settings"
@@ -607,6 +492,159 @@
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.independentMenu.showFirstLevelIcons"
+                                    />
+                                </text>
+                            </input>
+                        </settings>
+
+
+                        <!-- show header -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.showHeader">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.settings.showHeader.title"
+                                />
+                            </title>
+
+                            <text>
+                                <locale group="quiqqer/template-presentation"
+                                        var="showHeader.desc"
+                                />
+                            </text>
+
+                            <!-- start page -->
+                            <input conf="templatePresentation.settings.showHeaderStartPage"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="admin.layout.startpage"
+                                    />
+                                </text>
+                            </input>
+                            <!-- no sidebar -->
+                            <input conf="templatePresentation.settings.showHeaderNoSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="admin.layout.noSidebar"
+                                    />
+                                </text>
+                            </input>
+                            <!-- no sidebar thin-->
+                            <input conf="templatePresentation.settings.showHeaderNoSidebarSmall"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="admin.layout.noSidebarSmall"
+                                    />
+                                </text>
+                            </input>
+                            <!-- left sidebar -->
+                            <input conf="templatePresentation.settings.showHeaderLeftSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="admin.layout.leftSidebar"
+                                    />
+                                </text>
+                            </input>
+                            <!-- right sidebar -->
+                            <input conf="templatePresentation.settings.showHeaderRightSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="admin.layout.rightSidebar"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- header height-->
+                            <input conf="templatePresentation.settings.headerHeightValue" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.headerHeightValue.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <select conf="templatePresentation.settings.headerImagePosition">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.headerImagePosition.text"
+                                    />
+                                </text>
+
+                                <option value="top">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.headerImagePosition.top"
+                                    />
+                                </option>
+                                <option value="center">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.headerImagePosition.center"
+                                    />
+                                </option>
+                                <option value="bottom">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.headerImagePosition.bottom"
+                                    />
+                                </option>
+                            </select>
+                        </settings>
+
+
+                        <!-- breadrcumb -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.breadcrumb.settings">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.breadcrumb.settings.title"
+                                />
+                            </title>
+
+                            <!-- no breadcrumb? -->
+                            <text>
+                                <locale group="quiqqer/template-presentation"
+                                        var="showBreadcrumb.text"/>
+                            </text>
+                            <input conf="templatePresentation.settings.showBreadcrumbStartPage"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="admin.layout.startpage"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.showBreadcrumbNoSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="admin.layout.noSidebar"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.showBreadcrumbNoSidebarSmall"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="admin.layout.noSidebarSmall"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.showBreadcrumbLeftSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="admin.layout.leftSidebar"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.showBreadcrumbRightSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="admin.layout.rightSidebar"
                                     />
                                 </text>
                             </input>

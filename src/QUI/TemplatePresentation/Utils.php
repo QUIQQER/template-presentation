@@ -129,6 +129,8 @@ class Utils
         $headerArea  = $params['headerArea'];
         $settingsCSS = include 'settings.css.php';
 
+        $logoData = self::getLogoData($Project);
+
         $config += [
 //            'quiTplType'                => $Project->getConfig('templatePresentation.settings.standardType'),
             'showHeader'      => $showHeader,
@@ -140,6 +142,7 @@ class Utils
             'showPageTitle'   => $showPageTitle,
             'showPageShort'   => $showPageShort,
             'pageCustomClass' => $pageCustomClass,
+            'logoData'        => $logoData,
             'useSlideOutMenu' => true // for now is always true because quiqqer use currently only SlideOut nav
         ];
 
@@ -171,5 +174,46 @@ class Utils
         }
 
         return $text;
+    }
+
+    /**
+     * Get logo data (url, alt, width, height) as an array
+     *
+     * @param $Project QUI\Projects\Project
+     * @return array
+     */
+    public static function getLogoData(QUI\Projects\Project $Project): array
+    {
+        $alt  = "QUIQQER";
+        $Logo = $Project->getMedia()->getLogoImage();
+        $url  = $Project->getMedia()->getPlaceholder();
+
+        $navbarHeight = (int)$Project->getConfig('templatePresentation.settings.navBarHeight');
+        $height       = (int)$Project->getConfig('templatePresentation.settings.logoHeight');
+        $width        = (int)$Project->getConfig('templatePresentation.settings.logoWidth');
+
+        if (!$height || $height < 0) {
+            $height = $navbarHeight;
+        }
+
+        if ($Logo) {
+            try {
+                $alt = $Logo->getAttribute('title');
+                $url = $Logo->getSizeCacheUrl(500, 200);
+
+                if (!$width) {
+                    $width = $Logo->getResizeSize(false, $height)['width'];
+                }
+            } catch (QUI\Exception $Exception) {
+                QUI\System\Log::addNotice($Exception->getMessage());
+            }
+        }
+
+        return [
+            'url'    => $url,
+            'alt'    => $alt,
+            'width'  => $width,
+            'height' => $height
+        ];
     }
 }
