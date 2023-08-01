@@ -28,10 +28,7 @@ QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
 QUI\Utils\Site::setRecursiveAttribute($Site, 'templatePresentation.independentMenuId');
 
 // Inhalts Verhalten
-if (
-    $Site->getAttribute('templatePresentation.showTitle') ||
-    $Site->getAttribute('templatePresentation.showShort')
-) {
+if ($Site->getAttribute('templatePresentation.showTitle') || $Site->getAttribute('templatePresentation.showShort')) {
     $Template->setAttribute('content-header', false);
 }
 
@@ -215,10 +212,7 @@ $socialNav       = '';
 $socialFooter    = '';
 $socialMobileNav = '';
 
-if (
-    $Project->getConfig('templatePresentation.settings.social.show.nav')
-    || $Project->getConfig('templatePresentation.settings.social.show.footer')
-) {
+if ($Project->getConfig('templatePresentation.settings.social.show.nav') || $Project->getConfig('templatePresentation.settings.social.show.footer')) {
     $social     = "true";
     $socialHTML = '';
 
