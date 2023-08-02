@@ -407,6 +407,7 @@ img {
     margin: 0;
     padding: 0;
     max-width: 100%; /* 1 */
+    max-height: 100%; /* 1 */
     height: auto; /* 1 */
 }
 
