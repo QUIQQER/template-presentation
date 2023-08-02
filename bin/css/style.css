@@ -906,6 +906,16 @@ thead {
 
 .quiqqer-menu-megaMenu nav {
     width: 100%;
+    display: flex;
+}
+
+.quiqqer-menu-megaMenu .quiqqer-menu-megaMenu-list {
+    display: flex;
+    flex-grow: 1;
+}
+
+.nav-alignment--right .quiqqer-menu-megaMenu-list {
+    justify-content: flex-end;
 }
 
 .quiqqer-menu-megaMenu-list .quiqqer-menu-megaMenu-list-item {
@@ -1277,7 +1287,6 @@ li.page-header-navigation-sub-entry:hover {
     position: relative;
     right: 0;
     top: 0;
-    transition: 0.3s all ease-in-out;
     width: 40px;
 }
 
@@ -1360,7 +1369,6 @@ input[type="search"].only-input:focus {
     line-height: 40px;
     padding: 0 10px;
     text-align: center;
-    top: 0 !important;
     width: 40px;
 }
 

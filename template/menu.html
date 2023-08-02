@@ -1,6 +1,9 @@
+{assign var=Setting value=$Template->getAttribute('TemplateSetting')}
+{assign var=MegaMenu value=$Setting->getAttribute('MegaMenu')}
+
 {if $Template->getAttribute('template-header')}
-<div class="header-bar header-bar-position-{$navPos}">
-    <div class="grid-container header-bar-inner">
+<div class="header-bar header-bar-position-{$Setting->getAttribute('navPos')}">
+    <div class="grid-container header-bar-inner nav-alignment--{$Setting->getAttribute('navAlignment')}">
         <div class="header-bar-inner-nav" id="navigation">
             {$MegaMenu->create()}
         </div>

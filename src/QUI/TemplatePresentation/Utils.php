@@ -76,14 +76,12 @@ class Utils
                 break;
         }
 
-
         $showPageTitle = false;
         $showPageShort = false;
 
         if ($Project->getConfig('templatePresentation.settings.showTitle')) {
             $showPageTitle = $Project->getConfig('templatePresentation.settings.showTitle');
         };
-
 
         if ($Project->getConfig('templatePresentation.settings.showShort')) {
             $showPageShort = $Project->getConfig('templatePresentation.settings.showShort');
@@ -138,6 +136,7 @@ class Utils
             'settingsCSS'     => '<style data-no-cache="1">'.$settingsCSS.'</style>',
             'typeClass'       => 'type-'.str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
             'navPos'          => $Project->getConfig('templatePresentation.settings.navPos'),
+            'navAlignment'    => $Project->getConfig('templatePresentation.settings.navAlignment'),
             'headerArea'      => $headerArea,
             'showPageTitle'   => $showPageTitle,
             'showPageShort'   => $showPageShort,

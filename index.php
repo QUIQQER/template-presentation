@@ -1,5 +1,4 @@
 <?php
-
 $Locale = QUI::getLocale();
 
 /**
@@ -316,5 +315,13 @@ switch ($Template->getLayoutType()) {
 $templateSettings['socialFooter'] = $socialFooter;
 $templateSettings['bodyClass']    = $bodyClass;
 $templateSettings['startPage']    = $startPage;
+
+/**
+ * Own object container for template settings
+ * Smarty example: {$Template->getAttribute('TemplateSetting')->getAttribute('navPos')}
+ */
+$Setting = new \QUI\QDOM();
+$Setting->setAttributes($templateSettings);
+$Template->setAttribute('TemplateSetting', $Setting);
 
 $Engine->assign($templateSettings);

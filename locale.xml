@@ -453,7 +453,8 @@
             <en><![CDATA[Nav bar Height (in pixel)]]></en>
             <pl><![CDATA[Wysokość (w pikselach)]]></pl>
         </locale>
-        <!-- Menüposition -->
+
+        <!-- nav attachment -->
         <locale name="templatePresentation.settings.navPos.text">
             <de><![CDATA[Menüposition]]></de>
             <en><![CDATA[Menu position]]></en>
@@ -469,6 +470,24 @@
         <locale name="templatePresentation.settings.navPos.scroll">
             <de><![CDATA[Scrollbar - das Menü ist nicht mehr zu sehen, wenn die Seite gescrollt wird.]]></de>
             <en><![CDATA[Scroll - page menu is no longer visible when the page is scrolled down.]]></en>
+        </locale>
+
+        <!-- nav alignment -->
+        <locale name="templatePresentation.settings.navAlignment.text">
+            <de><![CDATA[Menü Ausrichtung]]></de>
+            <en><![CDATA[Nav alignment]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navAlignment.description">
+            <de><![CDATA[Bestimmt die vertikale Anordnung der Menüpunkten.]]></de>
+            <en><![CDATA[Defined the vertical alignment of navigation entries.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navAlignment.left">
+            <de><![CDATA[Links]]></de>
+            <en><![CDATA[Left]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navAlignment.right">
+            <de><![CDATA[Rechts]]></de>
+            <en><![CDATA[Right]]></en>
         </locale>
 
         <!-- Navbar colors -->

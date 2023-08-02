@@ -37,6 +37,10 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>scroll</defaultvalue>
                     </conf>
+                    <conf name="navAlignment">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>left</defaultvalue>
+                    </conf>
                     <conf name="navBarMainColor">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#2d4d88</defaultvalue>
@@ -356,8 +360,7 @@
                                 </text>
                             </input>
 
-                            <!-- Menüposition -->
-
+                            <!-- nav attachment -->
                             <select conf="templatePresentation.settings.navPos">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -381,8 +384,32 @@
                                             var="templatePresentation.settings.navPos.scroll"
                                     />
                                 </option>
+                            </select>
 
+                            <!-- nav alignment -->
+                            <select conf="templatePresentation.settings.navAlignment">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navAlignment.text"
+                                    />
+                                </text>
 
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navAlignment.description"
+                                    />
+                                </description>
+
+                                <option value="left">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navAlignment.left"
+                                    />
+                                </option>
+                                <option value="right">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navAlignment.right"
+                                    />
+                                </option>
                             </select>
 
                             <!-- search -->
