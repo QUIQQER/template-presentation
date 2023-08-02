@@ -919,6 +919,10 @@ thead {
     justify-content: flex-end;
 }
 
+.nav-alignment--center .quiqqer-menu-megaMenu-list {
+    justify-content: center;
+}
+
 .quiqqer-menu-megaMenu-list .quiqqer-menu-megaMenu-list-item {
     font-weight: normal;
     padding: 0;
@@ -1266,8 +1270,13 @@ li.page-header-navigation-sub-entry:hover {
 * ========================================================== */
 
 .header-bar-suggestSearch {
-    position: absolute;
-    right: 0;
+    position: relative;
+}
+/**
+1. move icon search at the end of navigation
+ */
+.header-bar-suggestSearch--type-icon {
+    order: 10; /* 1 */
 }
 
 .header-bar-suggestSearch-wrapper {
@@ -1355,7 +1364,6 @@ input[type="search"].only-input:focus {
     display: flex;
     float: right;
     height: 100%;
-    margin-right: 60px;
 }
 
 .header-bar-social.no-search {

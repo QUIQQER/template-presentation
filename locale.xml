@@ -485,6 +485,10 @@
             <de><![CDATA[Links]]></de>
             <en><![CDATA[Left]]></en>
         </locale>
+        <locale name="templatePresentation.settings.navAlignment.center">
+            <de><![CDATA[Zentriert]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
         <locale name="templatePresentation.settings.navAlignment.right">
             <de><![CDATA[Rechts]]></de>
             <en><![CDATA[Right]]></en>
@@ -713,28 +717,27 @@
         <locale name="navbar.search.text">
             <de><![CDATA[Suchen]]></de>
             <en><![CDATA[Search]]></en>
-            <pl><![CDATA[Szukaj]]></pl>
         </locale>
 
         <locale name="templatePresentation.settings.search.text">
             <de><![CDATA[Suche in Navigation]]></de>
             <en><![CDATA[Search]]></en>
-            <pl><![CDATA[Wyszukiwarka]]></pl>
         </locale>
             <locale name="templatePresentation.settings.search.input">
                 <de><![CDATA[Eingabefeld]]></de>
                 <en><![CDATA[Input field]]></en>
-                <pl><![CDATA[Pole wyszukiwania]]></pl>
             </locale>
             <locale name="templatePresentation.settings.search.inputAndIcon">
                 <de><![CDATA[Clickbare Icon]]></de>
                 <en><![CDATA[Search Icon]]></en>
-                <pl><![CDATA[Ikona do klkniecia]]></pl>
             </locale>
             <locale name="templatePresentation.settings.search.hide">
                 <de><![CDATA[Ausgeblendet]]></de>
                 <en><![CDATA[Disabled]]></en>
-                <pl><![CDATA[Wyłączone]]></pl>
             </locale>
+        <locale name="templatePresentation.settings.search.desc">
+            <de><![CDATA[Hinweis: die Suche wird in der Navigation nur dann angezeigt, wenn eine Seite mit dem Seitentyp "Standardsuche" oder "Erweiterte Suche" existiert.]]></de>
+            <en><![CDATA[Note: The search will only be displayed in the navigation if there is a page with the page type "Standard search" or "Advanced search".]]></en>
+        </locale>
     </groups>
 </locales>

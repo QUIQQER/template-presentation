@@ -405,6 +405,11 @@
                                             var="templatePresentation.settings.navAlignment.left"
                                     />
                                 </option>
+                                <option value="center">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navAlignment.center"
+                                    />
+                                </option>
                                 <option value="right">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.navAlignment.right"
@@ -419,6 +424,11 @@
                                             var="templatePresentation.settings.search.text"
                                     />
                                 </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.desc"
+                                    />
+                                </description>
 
 
                                 <option value="input">

@@ -93,8 +93,7 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
             switch ($Project->getConfig('templatePresentation.settings.search')) {
                 case 'input':
                     $searchForm  = '
-                    <form  action="'.$searchUrl.'" class="header-bar-suggestSearch hide-on-mobile" method="get"
-                        style="position: relative; right: auto; float: right;">
+                    <form  action="'.$searchUrl.'" class="header-bar-suggestSearch header-bar-suggestSearch--type-input hide-on-mobile" method="get">
                         <input type="search" name="search" 
                                 class="only-input" '.$dataQui.'
                                 placeholder="'
@@ -105,7 +104,7 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
                     break;
                 case 'inputAndIcon':
                     $searchForm = '
-                    <form  action="'.$searchUrl.'" class="header-bar-suggestSearch hide-on-mobile" method="get">
+                    <form  action="'.$searchUrl.'" class="header-bar-suggestSearch header-bar-suggestSearch--type-icon hide-on-mobile" method="get">
                         <div class="header-bar-suggestSearch-wrapper">
                             <input type="search" name="search"
                                     class="input-and-icon" '.$dataQui.' 
