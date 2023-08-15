@@ -76,14 +76,12 @@ class Utils
                 break;
         }
 
-
         $showPageTitle = false;
         $showPageShort = false;
 
         if ($Project->getConfig('templatePresentation.settings.showTitle')) {
             $showPageTitle = $Project->getConfig('templatePresentation.settings.showTitle');
         };
-
 
         if ($Project->getConfig('templatePresentation.settings.showShort')) {
             $showPageShort = $Project->getConfig('templatePresentation.settings.showShort');
@@ -129,6 +127,8 @@ class Utils
         $headerArea  = $params['headerArea'];
         $settingsCSS = include 'settings.css.php';
 
+        $logoData = self::getLogoData($Project);
+
         $config += [
 //            'quiTplType'                => $Project->getConfig('templatePresentation.settings.standardType'),
             'showHeader'      => $showHeader,
@@ -136,10 +136,12 @@ class Utils
             'settingsCSS'     => '<style data-no-cache="1">'.$settingsCSS.'</style>',
             'typeClass'       => 'type-'.str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
             'navPos'          => $Project->getConfig('templatePresentation.settings.navPos'),
+            'navAlignment'    => $Project->getConfig('templatePresentation.settings.navAlignment'),
             'headerArea'      => $headerArea,
             'showPageTitle'   => $showPageTitle,
             'showPageShort'   => $showPageShort,
             'pageCustomClass' => $pageCustomClass,
+            'logoData'        => $logoData,
             'useSlideOutMenu' => true // for now is always true because quiqqer use currently only SlideOut nav
         ];
 
@@ -171,5 +173,46 @@ class Utils
         }
 
         return $text;
+    }
+
+    /**
+     * Get logo data (url, alt, width, height) as an array
+     *
+     * @param $Project QUI\Projects\Project
+     * @return array
+     */
+    public static function getLogoData(QUI\Projects\Project $Project): array
+    {
+        $alt  = "QUIQQER";
+        $Logo = $Project->getMedia()->getLogoImage();
+        $url  = $Project->getMedia()->getPlaceholder();
+
+        $navbarHeight = (int)$Project->getConfig('templatePresentation.settings.navBarHeight');
+        $height       = (int)$Project->getConfig('templatePresentation.settings.logoHeight');
+        $width        = (int)$Project->getConfig('templatePresentation.settings.logoWidth');
+
+        if (!$height || $height < 0) {
+            $height = $navbarHeight;
+        }
+
+        if ($Logo) {
+            try {
+                $alt = $Logo->getAttribute('title');
+                $url = $Logo->getSizeCacheUrl(500, 200);
+
+                if (!$width) {
+                    $width = $Logo->getResizeSize(false, $height)['width'];
+                }
+            } catch (QUI\Exception $Exception) {
+                QUI\System\Log::addNotice($Exception->getMessage());
+            }
+        }
+
+        return [
+            'url'    => $url,
+            'alt'    => $alt,
+            'width'  => $width,
+            'height' => $height
+        ];
     }
 }

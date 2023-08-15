@@ -37,6 +37,10 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>scroll</defaultvalue>
                     </conf>
+                    <conf name="navAlignment">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>left</defaultvalue>
+                    </conf>
                     <conf name="navBarMainColor">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#2d4d88</defaultvalue>
@@ -58,6 +62,15 @@
                     <conf name="search">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>inputAndIcon</defaultvalue>
+                    </conf>
+
+                    <!-- Logo -->
+                    <conf name="logoHeight">
+                        <type><![CDATA[integer]]></type>
+                        <defaultvalue>60</defaultvalue>
+                    </conf>
+                    <conf name="logoWidth">
+                        <type><![CDATA[integer]]></type>
                     </conf>
 
                     <!-- nav / menu: independent -->
@@ -299,6 +312,228 @@
 
                         </settings>
 
+                        <!-- logo -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.logoHeight">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.settings.logoHeight.title"
+                                />
+                            </title>
+
+                            <input conf="templatePresentation.settings.logoHeight" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.logoHeight.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.logoWidth" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.logoWidth.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.logoWidth.desc"
+                                    />
+                                </description>
+                            </input>
+                        </settings>
+
+                        <!-- nav bar -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.navBar">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.settings.navBar.title"
+                                />
+                            </title>
+
+                            <!-- nav bar height -->
+                            <input conf="templatePresentation.settings.navBarHeight" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBar.Height.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- nav attachment -->
+                            <select conf="templatePresentation.settings.navPos">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navPos.text"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navPos.description"
+                                    />
+                                </description>
+
+                                <option value="fix">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navPos.fix"
+                                    />
+                                </option>
+                                <option value="scroll">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navPos.scroll"
+                                    />
+                                </option>
+                            </select>
+
+                            <!-- nav alignment -->
+                            <select conf="templatePresentation.settings.navAlignment">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navAlignment.text"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navAlignment.description"
+                                    />
+                                </description>
+
+                                <option value="left">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navAlignment.left"
+                                    />
+                                </option>
+                                <option value="center">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navAlignment.center"
+                                    />
+                                </option>
+                                <option value="right">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navAlignment.right"
+                                    />
+                                </option>
+                            </select>
+
+                            <!-- search -->
+                            <select conf="templatePresentation.settings.search">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.desc"
+                                    />
+                                </description>
+
+
+                                <option value="input">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.input"
+                                    />
+                                </option>
+                                <option value="inputAndIcon">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.inputAndIcon"
+                                    />
+                                </option>
+                                <option value="hide">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.search.hide"
+                                    />
+                                </option>
+                            </select>
+
+                            <!-- nav bar / menu colors -->
+                            <input conf="templatePresentation.settings.navBarMainColor"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarMainColor.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.navBarFontColor"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarFontColor.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <!-- mobile menu (mega menu) -->
+                            <input conf="templatePresentation.settings.mobileFontColor"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.mobileFontColor"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.mobileMenuBackground"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.mobileMenuBackground"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.mobileMenuBackground.desc"
+                                    />
+                                </description>
+                            </input>
+                        </settings>
+
+                        <!-- Nav / menu: independent -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.independentMenu">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.settings.independentMenu.title"
+                                />
+                            </title>
+
+                            <input conf="templatePresentation.settings.enableIndependentMenu"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.independentMenu.enableIndependentMenu"
+                                    />
+                                </text>
+                            </input>
+
+                            <input conf="templatePresentation.settings.menuId"
+                                   type="text"
+                                   data-qui="package/quiqqer/menu/bin/Controls/Independent/Input">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.independentMenu.menuId"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.independentMenu.menuId.desc"
+                                    />
+                                </description>
+                            </input>
+
+                            <input conf="templatePresentation.settings.showFirstLevelIcons"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.independentMenu.showFirstLevelIcons"
+                                    />
+                                </text>
+                            </input>
+                        </settings>
+
 
                         <!-- show header -->
                         <settings title="templatePresentation.settings"
@@ -447,166 +682,6 @@
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="admin.layout.rightSidebar"
-                                    />
-                                </text>
-                            </input>
-                        </settings>
-
-
-                        <!-- nav bar -->
-                        <settings title="templatePresentation.settings"
-                                  name="templatePresentation.settings.navBar">
-                            <title>
-                                <locale group="quiqqer/template-presentation"
-                                        var="templatePresentation.settings.navBar.title"
-                                />
-                            </title>
-
-                            <!-- nav bar height -->
-                            <input conf="templatePresentation.settings.navBarHeight" type="number">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.navBar.Height.text"
-                                    />
-                                </text>
-                            </input>
-
-                            <!-- Menüposition -->
-
-                            <select conf="templatePresentation.settings.navPos">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.navPos.text"
-                                    />
-                                </text>
-
-                                <description>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.navPos.description"
-                                    />
-                                </description>
-
-                                <option value="fix">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.navPos.fix"
-                                    />
-                                </option>
-                                <option value="scroll">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.navPos.scroll"
-                                    />
-                                </option>
-
-
-                            </select>
-
-                            <!-- search -->
-                            <select conf="templatePresentation.settings.search">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.search.text"
-                                    />
-                                </text>
-
-
-                                <option value="input">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.search.input"
-                                    />
-                                </option>
-                                <option value="inputAndIcon">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.search.inputAndIcon"
-                                    />
-                                </option>
-                                <option value="hide">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.search.hide"
-                                    />
-                                </option>
-                            </select>
-
-                            <!-- nav bar / menu colors -->
-                            <input conf="templatePresentation.settings.navBarMainColor"
-                                   type="color">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.navBarMainColor.text"
-                                    />
-                                </text>
-                            </input>
-                            <input conf="templatePresentation.settings.navBarFontColor"
-                                   type="color">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.navBarFontColor.text"
-                                    />
-                                </text>
-                            </input>
-
-                            <!-- mobile menu (mega menu) -->
-                            <input conf="templatePresentation.settings.mobileFontColor"
-                                   type="color">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.mobileFontColor"
-                                    />
-                                </text>
-                            </input>
-                            <input conf="templatePresentation.settings.mobileMenuBackground"
-                                   type="color">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.mobileMenuBackground"
-                                    />
-                                </text>
-                                <description>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="template.settings.mobileMenuBackground.desc"
-                                    />
-                                </description>
-                            </input>
-                        </settings>
-
-                        <!-- Nav / menu: independent -->
-                        <settings title="templatePresentation.settings"
-                                  name="templatePresentation.settings.independentMenu">
-                            <title>
-                                <locale group="quiqqer/template-presentation"
-                                        var="templatePresentation.settings.independentMenu.title"
-                                />
-                            </title>
-
-                            <input conf="templatePresentation.settings.enableIndependentMenu"
-                                   type="checkbox">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="template.settings.independentMenu.enableIndependentMenu"
-                                    />
-                                </text>
-                            </input>
-
-                            <input conf="templatePresentation.settings.menuId"
-                                   type="text"
-                                   data-qui="package/quiqqer/menu/bin/Controls/Independent/Input">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="template.settings.independentMenu.menuId"
-                                    />
-                                </text>
-
-                                <description>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="template.settings.independentMenu.menuId.desc"
-                                    />
-                                </description>
-                            </input>
-
-                            <input conf="templatePresentation.settings.showFirstLevelIcons"
-                                   type="checkbox">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="template.settings.independentMenu.showFirstLevelIcons"
                                     />
                                 </text>
                             </input>

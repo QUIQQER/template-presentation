@@ -1,7 +1,24 @@
 <?php
-
 $Locale = QUI::getLocale();
 
+/**
+ * header area on start page?
+ */
+$headerArea    = false;
+$BricksManager = \QUI\Bricks\Manager::init();
+if (count($BricksManager->getBricksByArea('header', $Site)) > 0) {
+    $headerArea = true;
+}
+
+/**
+ * Template config
+ */
+$templateSettings = QUI\TemplatePresentation\Utils::getConfig([
+    'headerArea' => $headerArea,
+    'Project'    => $Project,
+    'Site'       => $Site,
+    'Template'   => $Template
+]);
 
 /**
  * Set emotion and independent menu recursive
@@ -10,9 +27,7 @@ QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
 QUI\Utils\Site::setRecursiveAttribute($Site, 'templatePresentation.independentMenuId');
 
 // Inhalts Verhalten
-if ($Site->getAttribute('templatePresentation.showTitle') ||
-    $Site->getAttribute('templatePresentation.showShort')
-) {
+if ($Site->getAttribute('templatePresentation.showTitle') || $Site->getAttribute('templatePresentation.showShort')) {
     $Template->setAttribute('content-header', false);
 }
 
@@ -78,8 +93,7 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
             switch ($Project->getConfig('templatePresentation.settings.search')) {
                 case 'input':
                     $searchForm  = '
-                    <form  action="'.$searchUrl.'" class="header-bar-suggestSearch hide-on-mobile" method="get"
-                        style="position: relative; right: auto; float: right;">
+                    <form  action="'.$searchUrl.'" class="header-bar-suggestSearch header-bar-suggestSearch--type-input hide-on-mobile" method="get">
                         <input type="search" name="search" 
                                 class="only-input" '.$dataQui.'
                                 placeholder="'
@@ -90,7 +104,7 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
                     break;
                 case 'inputAndIcon':
                     $searchForm = '
-                    <form  action="'.$searchUrl.'" class="header-bar-suggestSearch hide-on-mobile" method="get">
+                    <form  action="'.$searchUrl.'" class="header-bar-suggestSearch header-bar-suggestSearch--type-icon hide-on-mobile" method="get">
                         <div class="header-bar-suggestSearch-wrapper">
                             <input type="search" name="search"
                                     class="input-and-icon" '.$dataQui.' 
@@ -132,14 +146,6 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
     }
 }
 
-$alt     = "QUIQQER";
-$logoUrl = $Project->getMedia()->getPlaceholder();
-if ($Project->getMedia()->getLogoImage()) {
-    $Logo    = $Project->getMedia()->getLogoImage();
-    $alt     = $Logo->getAttribute('title');
-    $logoUrl = $Logo->getSizeCacheUrl(300, 100);
-}
-
 /**
  * Dropdown Language switch
  */
@@ -176,19 +182,27 @@ if ($showDropDownFlag) {
     $DropDownFlag = $DropDown->create();
 }
 
-$logoHeight = 80;
+$logoData             = $templateSettings['logoData'];
+$widthCustomProperty  = '';
+$heightCustomProperty = '';
 
-if ($Project->getConfig('templatePresentation.settings.navBarHeight')) {
-    $logoHeight = (int)$Project->getConfig('templatePresentation.settings.navBarHeight');
+if ($logoData['width'] !== false) {
+    $widthCustomProperty = '--logo-width: '.$logoData['width'].'px;';
+}
+
+if ($logoData['height'] !== false) {
+    $heightCustomProperty = '--logo-height: '.$logoData['height'].'px;';
 }
 
 $MegaMenu->prependHTML(
-    '<div class="header-bar-inner-logo">
-                <a href="'.$Project->get(1)->getUrlRewritten().'" class="page-header-logo">
-                <img src="'.$logoUrl.'" alt="'.$alt.'" height="'.$logoHeight.'"/></a>
-            </div>'
+    '<div class="header-bar-inner-logo" 
+        style="'.$widthCustomProperty.$heightCustomProperty.'">
+        <a href="'.$Project->get(1)->getUrlRewritten().'" class="page-header-logo">
+        <img src="'.$logoData['url'].'" alt="'.$logoData['alt'].'"
+            height="'.$logoData['height'].'" width="'.$logoData['width'].'"
+        </a>
+    </div>'
 );
-
 
 // social
 $social          = "false";
@@ -196,9 +210,7 @@ $socialNav       = '';
 $socialFooter    = '';
 $socialMobileNav = '';
 
-if ($Project->getConfig('templatePresentation.settings.social.show.nav')
-    || $Project->getConfig('templatePresentation.settings.social.show.footer')
-) {
+if ($Project->getConfig('templatePresentation.settings.social.show.nav') || $Project->getConfig('templatePresentation.settings.social.show.footer')) {
     $social     = "true";
     $socialHTML = '';
 
@@ -264,26 +276,6 @@ $MegaMenu->appendHTML(
  */
 $Breadcrumb = new QUI\Controls\Breadcrumb();
 
-/**
- * header area on start page?
- */
-$headerArea    = false;
-$BricksManager = \QUI\Bricks\Manager::init();
-if (count($BricksManager->getBricksByArea('header', $Site)) > 0) {
-    $headerArea = true;
-}
-
-/**
- * Template config
- */
-$templateSettings = QUI\TemplatePresentation\Utils::getConfig([
-    'headerArea' => $headerArea,
-    'Project'    => $Project,
-    'Site'       => $Site,
-    'Template'   => $Template
-]);
-
-
 $templateSettings['BricksManager']   = $BricksManager;
 $templateSettings['Breadcrumb']      = $Breadcrumb;
 $templateSettings['MegaMenu']        = $MegaMenu;
@@ -322,5 +314,13 @@ switch ($Template->getLayoutType()) {
 $templateSettings['socialFooter'] = $socialFooter;
 $templateSettings['bodyClass']    = $bodyClass;
 $templateSettings['startPage']    = $startPage;
+
+/**
+ * Own object container for template settings
+ * Smarty example: {$Template->getAttribute('TemplateSetting')->getAttribute('navPos')}
+ */
+$Setting = new \QUI\QDOM();
+$Setting->setAttributes($templateSettings);
+$Template->setAttribute('TemplateSetting', $Setting);
 
 $Engine->assign($templateSettings);

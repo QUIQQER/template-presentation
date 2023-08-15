@@ -401,16 +401,14 @@ fieldset.grid-50:last-child {
 
 /*
  1. Quiqqer sets the width and height HTML attributes on each <img> element (smarty function.image.php).
-    Therefore, we need to set the width and height properties to 'auto'
-    to avoid images being displayed at a reduced size.
+    Therefore, we need to set the max-width and height properties to '100%' and 'auto'.
 */
 img {
     margin: 0;
-    max-height: 100%;
-    max-width: 100%;
     padding: 0;
+    max-width: 100%; /* 1 */
+    max-height: 100%; /* 1 */
     height: auto; /* 1 */
-    width: auto; /* 1 */
 }
 
 figcaption {
@@ -508,8 +506,8 @@ button:hover,
     box-shadow: none;
 }
 
-button:not([name="close"]),
-.button:not([name="close"]),
+button:where(:not([name="close"])),
+.button:where(:not([name="close"])),
 input[type='submit'],
 input[type='reset'],
 input[type='button'],
@@ -879,7 +877,6 @@ thead {
     text-decoration: none;
 }
 
-
 .page-header-logo-img {
     display: block;
     margin: 0 1em 0 0;
@@ -887,13 +884,17 @@ thead {
 }
 
 .page-header-logo picture {
-    align-items: center;
-    display: flex;
-    height: 100%;
+    display: block;
 }
 
 .page-header-logo-mobile {
     display: none;
+}
+
+.page-header-logo img {
+    display: block;
+    width: var(--logo-width);
+    height: var(--logo-height);
 }
 
 
@@ -906,6 +907,20 @@ thead {
 
 .quiqqer-menu-megaMenu nav {
     width: 100%;
+    display: flex;
+}
+
+.quiqqer-menu-megaMenu .quiqqer-menu-megaMenu-list {
+    display: flex;
+    flex-grow: 1;
+}
+
+.nav-alignment--right .quiqqer-menu-megaMenu-list {
+    justify-content: flex-end;
+}
+
+.nav-alignment--center .quiqqer-menu-megaMenu-list {
+    justify-content: center;
 }
 
 .quiqqer-menu-megaMenu-list .quiqqer-menu-megaMenu-list-item {
@@ -1255,8 +1270,13 @@ li.page-header-navigation-sub-entry:hover {
 * ========================================================== */
 
 .header-bar-suggestSearch {
-    position: absolute;
-    right: 0;
+    position: relative;
+}
+/**
+1. move icon search at the end of navigation
+ */
+.header-bar-suggestSearch--type-icon {
+    order: 10; /* 1 */
 }
 
 .header-bar-suggestSearch-wrapper {
@@ -1277,7 +1297,6 @@ li.page-header-navigation-sub-entry:hover {
     position: relative;
     right: 0;
     top: 0;
-    transition: 0.3s all ease-in-out;
     width: 40px;
 }
 
@@ -1345,7 +1364,6 @@ input[type="search"].only-input:focus {
     display: flex;
     float: right;
     height: 100%;
-    margin-right: 60px;
 }
 
 .header-bar-social.no-search {
@@ -1360,7 +1378,6 @@ input[type="search"].only-input:focus {
     line-height: 40px;
     padding: 0 10px;
     text-align: center;
-    top: 0 !important;
     width: 40px;
 }
 
@@ -1475,29 +1492,9 @@ input[type="search"].only-input:focus {
     padding-top: 0;
 }
 
-.tpl-presentation-row {
-    border-bottom: 1px solid #ddd;
-}
-
-.tpl-presentation-row:last-child,
-.page-multible-right .tpl-presentation-row,
-.page-multible-left .tpl-presentation-row {
-    border-bottom: none;
-}
-
 header.control-header {
     text-align: center;
 }
-
-/*
-.page-multible-right header,
-.page-multible-left header {
-    padding-bottom: 1em;
-}*/
-
-/*.page-content-site-title {
-    padding-bottom: 1em;
-}*/
 
 hr {
     border: none;
@@ -1721,7 +1718,7 @@ a.quiqqer-navigation-home:hover,
     text-decoration: none;
 }
 
-.page-footer a:not(.button, button):hover {
+.page-footer a:where(:not(.button, button):hover) {
     background: none;
     box-shadow: none;
     color: var(--qui-color-primary);
