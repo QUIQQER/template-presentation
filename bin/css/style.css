@@ -508,8 +508,8 @@ button:hover,
     box-shadow: none;
 }
 
-button:not([name="close"]),
-.button:not([name="close"]),
+button:where(:not([name="close"])),
+.button:where(:not([name="close"])),
 input[type='submit'],
 input[type='reset'],
 input[type='button'],
@@ -1721,7 +1721,7 @@ a.quiqqer-navigation-home:hover,
     text-decoration: none;
 }
 
-.page-footer a:not(.button, button):hover {
+.page-footer a:where(:not(.button, button):hover) {
     background: none;
     box-shadow: none;
     color: var(--qui-color-primary);
