@@ -1,6 +1,8 @@
 whenQuiLoaded().then(() => {
     "use strict";
 
+    let scrollOffset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
+
     /**
      * Handle click on a element with #target to perform scroll action
      * @param event
@@ -20,10 +22,10 @@ whenQuiLoaded().then(() => {
             return;
         }
 
-        let offset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
+        let offset = scrollOffset;
 
         if (parseInt(Target.getAttribute('data-qui-offset')) ||
-            parseInt(Target.getAttribute('data-qui-offset')) === 0) {
+            parseInt(Target.getAttribute('data-qui-offset')) >= 0) {
             offset = Target.getAttribute('data-qui-offset');
         }
 
@@ -48,15 +50,25 @@ whenQuiLoaded().then(() => {
 
         if (queryString && queryString.substr(0, 4) === '#go_') {
             const target = decodeURI(queryString.substr(4));
-            const Target = document.querySelector('[href="#' + target + '"]');
+            const Target = document.getElementById(target);
 
             if (!Target) {
                 return;
             }
 
+            let offset = scrollOffset;
+
+            if (parseInt(Target.getAttribute('data-qui-offset')) ||
+                parseInt(Target.getAttribute('data-qui-offset')) >= 0) {
+                offset = Target.getAttribute('data-qui-offset');
+            }
+
             if (!isInViewport(Target)) {
                 new Fx.Scroll(window, {
-                    duration: 500
+                    duration: 500,
+                    offset: {
+                        y: -offset
+                    }
                 }).toElement(Target);
             }
         }
