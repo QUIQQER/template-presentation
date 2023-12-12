@@ -2,6 +2,8 @@
  * use !important to override css variable defined by template setting
  */
 :root {
+    --scroll-padding: 0; /* template settings override this variable */
+
     /* color  */
     --qui-color-main: #94c23c; /* template settings override this variable */
     --qui-color-primary: var(--qui-color-main);

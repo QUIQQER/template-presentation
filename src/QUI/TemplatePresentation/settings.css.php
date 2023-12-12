@@ -79,6 +79,11 @@ if ($navPos == 'fix') {
     $navCSSPos = 'fixed';
 }
 
+$scrollOffset = 0;
+if ($navPos == 'fix' && $navBarHeight > 0) {
+    $scrollOffset = $navBarHeight + 10;
+}
+
 if ($headerArea) {
     $bodyContainerTop = 0;
     $navBarBackground = 'transparent';
@@ -110,6 +115,8 @@ ob_start();
 ?>
 
 :root {
+    --scroll-padding: <?php echo $scrollOffset;?>px;
+
     --qui-color-main: <?php echo $colorMain;?>;
     --qui-color-primary: <?php echo $colorMain;?>;
     --qui-color-body: <?php echo $colorMainContentFont;?>;
