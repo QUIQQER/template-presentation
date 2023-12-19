@@ -129,20 +129,25 @@ class Utils
 
         $logoData = self::getLogoData($Project);
 
+        /**
+         * Include demo css
+         */
+        $includeDemoCss = $Project->getConfig('templatePresentation.settings.includeDemoStyling');
+
         $config += [
-//            'quiTplType'                => $Project->getConfig('templatePresentation.settings.standardType'),
-            'showHeader'      => $showHeader,
-            'showBreadcrumb'  => $showBreadcrumb,
-            'settingsCSS'     => '<style data-no-cache="1">'.$settingsCSS.'</style>',
-            'typeClass'       => 'type-'.str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
-            'navPos'          => $Project->getConfig('templatePresentation.settings.navPos'),
-            'navAlignment'    => $Project->getConfig('templatePresentation.settings.navAlignment'),
-            'headerArea'      => $headerArea,
-            'showPageTitle'   => $showPageTitle,
-            'showPageShort'   => $showPageShort,
+            'showHeader' => $showHeader,
+            'showBreadcrumb' => $showBreadcrumb,
+            'settingsCSS' => '<style data-no-cache="1">' . $settingsCSS . '</style>',
+            'typeClass' => 'type-' . str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
+            'navPos' => $Project->getConfig('templatePresentation.settings.navPos'),
+            'navAlignment' => $Project->getConfig('templatePresentation.settings.navAlignment'),
+            'headerArea' => $headerArea,
+            'showPageTitle' => $showPageTitle,
+            'showPageShort' => $showPageShort,
             'pageCustomClass' => $pageCustomClass,
-            'logoData'        => $logoData,
-            'useSlideOutMenu' => true // for now is always true because quiqqer use currently only SlideOut nav
+            'logoData' => $logoData,
+            'useSlideOutMenu' => true, // for now is always true because quiqqer use currently only SlideOut nav
+            'includeDemoCss' => $includeDemoCss
         ];
 
         // set cache
