@@ -9,11 +9,11 @@
                     <!-- general settings -->
                     <conf name="showTitle">
                         <type><![CDATA[bool]]></type>
-                        <defaultvalue>hide</defaultvalue>
+                        <defaultvalue>0</defaultvalue>
                     </conf>
                     <conf name="showShort">
                         <type><![CDATA[bool]]></type>
-                        <defaultvalue>hide</defaultvalue>
+                        <defaultvalue>0</defaultvalue>
                     </conf>
                     <conf name="bgColorSwitcherPrefix">
                         <type><![CDATA[string]]></type>
