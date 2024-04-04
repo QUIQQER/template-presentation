@@ -12,7 +12,7 @@ use QUI;
  * Help Class for Template Presentation
  *
  * @return array
- * @author www.pcsg.de (Michael Danielczok)
+ * @author  www.pcsg.de (Michael Danielczok)
  *
  * @package QUI\TemplatePresentation
  */
@@ -20,15 +20,16 @@ class Utils
 {
     /**
      * @param array $params
+     *
      * @return array
      */
     public static function getConfig($params)
     {
-        $cacheName = md5($params['Project']->getName().$params['Project']->getLang().$params['Site']->getId());
+        $cacheName = md5($params['Project']->getName() . $params['Project']->getLang() . $params['Site']->getId());
 
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templatePresentation/'.$cacheName
+                'quiqqer/templatePresentation/' . $cacheName
             );
         } catch (QUI\Exception $Exception) {
         }
@@ -36,8 +37,10 @@ class Utils
         $config = [];
 
         /* @var $Project QUI\Projects\Project */
-        $Project  = $params['Project'];
+        $Project = $params['Project'];
         $Template = $params['Template'];
+
+        $Site = $params['Site'];
 
         /**
          * no header?
@@ -46,32 +49,32 @@ class Utils
          * own site type
          */
 
-        $showHeader     = false;
+        $showHeader = false;
         $showBreadcrumb = false;
 
         switch ($Template->getLayoutType()) {
             case 'layout/startPage':
-                $showHeader     = $Project->getConfig('templatePresentation.settings.showHeaderStartPage');
+                $showHeader = $Project->getConfig('templatePresentation.settings.showHeaderStartPage');
                 $showBreadcrumb = $Project->getConfig('templatePresentation.settings.showBreadcrumbStartPage');
                 break;
 
             case 'layout/noSidebar':
-                $showHeader     = $Project->getConfig('templatePresentation.settings.showHeaderNoSidebar');
+                $showHeader = $Project->getConfig('templatePresentation.settings.showHeaderNoSidebar');
                 $showBreadcrumb = $Project->getConfig('templatePresentation.settings.showBreadcrumbNoSidebar');
                 break;
 
             case 'layout/noSidebarSmall':
-                $showHeader     = $Project->getConfig('templatePresentation.settings.showHeaderNoSidebarSmall');
+                $showHeader = $Project->getConfig('templatePresentation.settings.showHeaderNoSidebarSmall');
                 $showBreadcrumb = $Project->getConfig('templatePresentation.settings.showBreadcrumbNoSidebarSmall');
                 break;
 
             case 'layout/rightSidebar':
-                $showHeader     = $Project->getConfig('templatePresentation.settings.showHeaderRightSidebar');
+                $showHeader = $Project->getConfig('templatePresentation.settings.showHeaderRightSidebar');
                 $showBreadcrumb = $Project->getConfig('templatePresentation.settings.showBreadcrumbRightSidebar');
                 break;
 
             case 'layout/leftSidebar':
-                $showHeader     = $Project->getConfig('templatePresentation.settings.showHeaderLeftSidebar');
+                $showHeader = $Project->getConfig('templatePresentation.settings.showHeaderLeftSidebar');
                 $showBreadcrumb = $Project->getConfig('templatePresentation.settings.showBreadcrumbLeftSidebar');
                 break;
         }
@@ -117,14 +120,15 @@ class Utils
         }
 
         /* page custom class */
+        $customClass = $Site->getAttribute('templatePresentation.pageCustomClass');
         $pageCustomClass = false;
 
-        if ($params['Site']->getAttribute('templatePresentation.pageCustomClass') && $params['Site']->getAttribute('templatePresentation.pageCustomClass') !== '') {
-            $pageCustomClass = 'templatePresentation__'.$params['Site']->getAttribute('templatePresentation.pageCustomClass');
-            $pageCustomClass .= ' '.$params['Site']->getAttribute('templatePresentation.pageCustomClass');
+        if ($customClass && $customClass !== '') {
+            $pageCustomClass = 'templatePresentation__' . $customClass;
+            $pageCustomClass .= ' ' . $customClass;
         }
 
-        $headerArea  = $params['headerArea'];
+        $headerArea = $params['headerArea'];
         $settingsCSS = include 'settings.css.php';
 
         $logoData = self::getLogoData($Project);
@@ -152,7 +156,7 @@ class Utils
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templatePresentation/'.$cacheName,
+            'quiqqer/templatePresentation/' . $cacheName,
             $config
         );
 
@@ -163,6 +167,7 @@ class Utils
      * Add a suffix to brick css class(es)
      *
      * @param array $classes
+     *
      * @return string
      */
     public static function convertBrickCSSClass(array $classes)
@@ -174,7 +179,7 @@ class Utils
         $text = '';
 
         foreach ($classes as $classString) {
-            $text .= ' brick-container__'.$classString;
+            $text .= ' brick-container__' . $classString;
         }
 
         return $text;
@@ -184,17 +189,18 @@ class Utils
      * Get logo data (url, alt, width, height) as an array
      *
      * @param $Project QUI\Projects\Project
+     *
      * @return array
      */
     public static function getLogoData(QUI\Projects\Project $Project): array
     {
-        $alt  = "QUIQQER";
+        $alt = "QUIQQER";
         $Logo = $Project->getMedia()->getLogoImage();
-        $url  = $Project->getMedia()->getPlaceholder();
+        $url = $Project->getMedia()->getPlaceholder();
 
         $navbarHeight = (int)$Project->getConfig('templatePresentation.settings.navBarHeight');
-        $height       = (int)$Project->getConfig('templatePresentation.settings.logoHeight');
-        $width        = (int)$Project->getConfig('templatePresentation.settings.logoWidth');
+        $height = (int)$Project->getConfig('templatePresentation.settings.logoHeight');
+        $width = (int)$Project->getConfig('templatePresentation.settings.logoWidth');
 
         if (!$height || $height < 0) {
             $height = $navbarHeight;
@@ -214,9 +220,9 @@ class Utils
         }
 
         return [
-            'url'    => $url,
-            'alt'    => $alt,
-            'width'  => $width,
+            'url' => $url,
+            'alt' => $alt,
+            'width' => $width,
             'height' => $height
         ];
     }
