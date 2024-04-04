@@ -41,9 +41,7 @@ $params = [
 
 if (
     $Project->getConfig('templatePresentation.settings.enableIndependentMenu')
-    && $Project->getConfig(
-        'templatePresentation.settings.menuId'
-    )
+    && $Project->getConfig('templatePresentation.settings.menuId')
 ) {
     $params['menuId'] = $Project->getConfig('templatePresentation.settings.menuId');
     $params['showFirstLevelIcons'] = $Project->getConfig('templatePresentation.settings.showFirstLevelIcons');
@@ -218,9 +216,7 @@ $socialMobileNav = '';
 
 if (
     $Project->getConfig('templatePresentation.settings.social.show.nav')
-    || $Project->getConfig(
-        'templatePresentation.settings.social.show.footer'
-    )
+    || $Project->getConfig('templatePresentation.settings.social.show.footer')
 ) {
     $social = "true";
     $socialHTML = '';
