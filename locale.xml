@@ -356,6 +356,15 @@
                 <pl><![CDATA[Flaga i tekst]]></pl>
             </locale>
 
+        <locale name="settings.includeDemoStyling.text">
+            <de><![CDATA[Demo Design aktivieren]]></de>
+            <en><![CDATA[Active demo design]]></en>
+        </locale>
+        <locale name="settings.includeDemoStyling.desc">
+            <de><![CDATA[Wenn die Option aktiv ist, werden zusätzliche CSS Regel und ggf. Bilder eingebunden. Die Einstellung ist meistens sinnvoll, wenn das Projekt mit den Demo-Daten angelegt wurde (z.B. bei der QUIQQER Installation).]]></de>
+            <en><![CDATA[If the option is active, additional CSS rules and, if necessary, images are included. This setting is usually useful when the project has been created with demo data, for example, during the QUIQQER installation.]]></en>
+        </locale>
+
         <!-- header settings -->
         <locale name="templatePresentation.settings.showHeader.title">
             <de><![CDATA[Header Einstellungen]]></de>

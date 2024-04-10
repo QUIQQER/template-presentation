@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 291.042 105.833"
+   height="400"
+   width="1100"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="cta-brick-bg-white.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.21"
+     inkscape:cx="549.58678"
+     inkscape:cy="200"
+     inkscape:window-width="3440"
+     inkscape:window-height="1379"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <path
+     d="M-109.603 81.198s25.478-54.466 48.66-71.695C-40.68-5.558 1.559-15.555 11.333-13.155c6.949 1.707 57.982 52.53 53.176 64.277C60.346 61.3-49.907 119.745-57.649 117.416c-10.965-3.298-51.954-36.218-51.954-36.218z"
+     style="fill:#ffffff;fill-opacity:0.03459151;stroke:none;stroke-width:0.71376px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path2" />
+  <path
+     d="M205.99 18.341c6.729 12.517 34.857 22.787 49.452 37.43 12.896 12.938 22.628 22.205 31.26 62.102 5.736 26.508 56.04-78.83 56.04-78.83L305.834-6.543s-116.087-5.328-99.846 24.883z"
+     style="fill:#f4fbf7;fill-opacity:0.04940806;stroke:none;stroke-width:0.413998px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="path4" />
+  <path
+     style="fill:none;stroke:#ececec;stroke-width:1.32292;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.9375, 7.9375;stroke-dashoffset:0;stroke-opacity:0.04970709"
+     d="M.042 105.676S28.384 93.77 43.381 90.973c13.484-2.515 27.419-.957 41.115-1.71 12.465-.687 25.613 1.651 37.365-2.56 9.707-3.477 15.857-13.564 25.182-17.966 19.414-9.164 40.982-19.97 62.2-16.704 12.408 1.91 19.716 16.74 31.753 20.252 9.314 2.718 19.196 6.815 29.047.198"
+     id="path6" />
+</svg>

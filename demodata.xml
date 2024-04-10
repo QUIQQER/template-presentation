@@ -1,139 +1,773 @@
 <data>
-    <!-- legt projekt daten an -->
     <project>
+        <!-- Imports the data from a sql file -->
+        <sql file="demodata.sql" />
+
+        <!-- Settings -->
         <settings>
+
+            <!-- general settings -->
+            <setting name="logo" value="${media:projectLogo}"/>
+            <setting name="template" value="quiqqer/template-presentation"/>
             <setting name="layout" value="layout/noSidebar"/>
-            <setting name="templatePresentation.settings.social.gitlab"
-                     value="https://dev.quiqqer.com/quiqqer/quiqqer"/>
+            <setting name="standard" value="1"/>
+
+            <!-- template settings -->
+            <setting name="templatePresentation.settings.includeDemoStyling" value="1"/>
+            <setting name="templatePresentation.settings.navBarHeight" value="80"/>
+            <setting name="templatePresentation.settings.navPos" value="scroll"/>
+            <setting name="templatePresentation.settings.navAlignment" value="right"/>
+            <setting name="templatePresentation.settings.navBarMainColor" value="#f5f5f2"/>
+            <setting name="templatePresentation.settings.navBarFontColor" value="#332e2e"/>
+            <setting name="templatePresentation.settings.mobileFontColor" value="#ffffff"/>
+            <setting name="templatePresentation.settings.mobileMenuBackground" value="#252122"/>
+            <setting name="templatePresentation.settings.search" value="inputAndIcon"/>
+            <setting name="templatePresentation.settings.logoHeight" value="50"/>
+            <setting name="templatePresentation.settings.showHeaderStartPage" value="0"/>
+            <setting name="templatePresentation.settings.showHeaderNoSidebar" value="0"/>
+            <setting name="templatePresentation.settings.showHeaderNoSidebarSmall" value="0"/>
+            <setting name="templatePresentation.settings.showHeaderLeftSidebar" value="0"/>
+            <setting name="templatePresentation.settings.showHeaderRightSidebar" value="0"/>
+            <setting name="templatePresentation.settings.showBreadcrumbStartPage" value="0"/>
+            <setting name="templatePresentation.settings.showBreadcrumbNoSidebar" value="1"/>
+            <setting name="templatePresentation.settings.showBreadcrumbNoSidebarSmall" value="1"/>
+            <setting name="templatePresentation.settings.showBreadcrumbLeftSidebar" value="1"/>
+            <setting name="templatePresentation.settings.showBreadcrumbRightSidebar" value="1"/>
+            <setting name="templatePresentation.settings.colorMainContentFont" value="#3b3b3a"/>
+            <setting name="templatePresentation.settings.colorMain" value="#92b95b"/>
+            <setting name="templatePresentation.settings.buttonFontColor" value="#ffffff"/>
+            <setting name="templatePresentation.settings.colorFooterBackground" value="#f5f5f2"/>
+            <setting name="templatePresentation.settings.colorFooterFont" value="#333333"/>
+
+            <!-- gdpr settings -->
+            <setting name="gdpr.cookieconsent.position" value="bottom"/>
+            <setting name="gdpr.cookieconsent.displayLogo" value="1"/>
+
+            <!-- menu settings -->
+            <setting name="mobileMenu.settings.type" value="slideoutAdvanced"/>
+
         </settings>
+
+        <!-- Sites -->
         <sites>
-            <site>
+            <site identifier="home">
                 <attributes>
-                    <attribute name="name">Demo Name</attribute>
-                    <attribute name="title">Demo Titel</attribute>
-                    <attribute name="short">Lorem ipsum</attribute>
+                    <attribute name="name">QUIQQER Demo</attribute>
+                    <attribute name="title">QUIQQER Demo</attribute>
+                    <attribute name="short">QUIQQER Seite mit Demodata. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Sed hendrerit.</attribute>
                     <attribute name="type">standard</attribute>
-                    <attribute name="bricks">Lorem ipsum</attribute>
-                    <attribute name="content"><![CDATA[
-                        <h1>HTML Ipsum Presents</h1>
-
-                        <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-
-                        <h2>Header Level 2</h2>
-
-                        <ol>
-                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        </ol>
-
-                        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-
-                        <h3>Header Level 3</h3>
-
-                        <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        </ul>
-                    ]]></attribute>
+                    <attribute name="layout">layout/startPage</attribute>
+                    <attribute name="content"><![CDATA[]]></attribute>
                 </attributes>
-                <children>
-                    <site>
-                        <attributes>
-                            <attribute name="name">Subpage1</attribute>
-                            <attribute name="title">Subpage1</attribute>
-                            <attribute name="short">Lorem ipsum</attribute>
-                            <attribute name="type">standard</attribute>
-                            <attribute name="bricks">Lorem ipsum</attribute>
-                            <attribute name="content"><![CDATA[
-                        <h1>HTML Ipsum Presents</h1>
 
-                        <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-
-                        <h2>Header Level 2</h2>
-
-                        <ol>
-                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        </ol>
-
-                        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-
-                        <h3>Header Level 3</h3>
-
-                        <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        </ul>
-                    ]]></attribute>
-                        </attributes>
-                        <children></children>
-                    </site>
-                    <site>
-                        <attributes>
-                            <attribute name="name">Subpage2</attribute>
-                            <attribute name="title">Subpage2</attribute>
-                            <attribute name="short">Lorem ipsum</attribute>
-                            <attribute name="type">standard</attribute>
-                            <attribute name="bricks">Lorem ipsum</attribute>
-                            <attribute name="content"><![CDATA[
-                        <h1>HTML Ipsum Presents</h1>
-
-                        <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-
-                        <h2>Header Level 2</h2>
-
-                        <ol>
-                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        </ol>
-
-                        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-
-                        <h3>Header Level 3</h3>
-
-                        <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        </ul>
-                    ]]></attribute>
-                        </attributes>
-                        <children>
-
-                        </children>
-                    </site>
-                </children>
                 <bricks>
                     <area type="headerSuffix">
-                        <brick identifier="brick.demo">
+                        <brick identifier="brick.startpage.topHero"></brick>
+                        <brick identifier="brick.startpage.boxes"></brick>
+                        <brick identifier="brick.startpage.advantages1"></brick>
+                        <brick identifier="brick.startpage.advantages2"></brick>
+                        <brick identifier="brick.startpage.advantages3"></brick>
+                        <brick identifier="brick.startpage.slogan"></brick>
+                        <brick identifier="brick.startpage.reviews"></brick>
+                    </area>
+                    <area type="footerPrefix">
+                        <brick identifier="brick.startpage.contact"></brick>
+                    </area>
+                    <area type="footer">
+                        <brick identifier="brick.footer.logoWithText">
                             <attributes>
                                 <attribute name="settings">
-                                    <![CDATA[{"classes":[],"width":"100","height":"100","title":"Boomerang","socialList":"[{\"url\":\"Test\",\"icon\":\"gitlab\",\"background\":\"#222222\"}]","brickFullWidth":[],"noPadding":false}]]>
+                                    <![CDATA[{"inheritance":true}]]>
+                                </attribute>
+                            </attributes>
+                        </brick>
+                        <brick identifier="brick.footer.services">
+                            <attributes>
+                                <attribute name="settings">
+                                    <![CDATA[{"inheritance":true}]]>
+                                </attribute>
+                            </attributes>
+                        </brick>
+                        <brick identifier="brick.footer.support">
+                            <attributes>
+                                <attribute name="settings">
+                                    <![CDATA[{"inheritance":true}]]>
                                 </attribute>
                             </attributes>
                         </brick>
                     </area>
                 </bricks>
+                <children>
+
+                    <!-- About us -->
+                    <site identifier="aboutUs">
+                        <attributes>
+                            <attribute name="name">About us</attribute>
+                            <attribute name="title">About us</attribute>
+                            <attribute name="short">QUIQQER About us demo page. Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui. In hac habitasse platea dictumst.</attribute>
+                            <attribute name="type">standard</attribute>
+                            <attribute name="layout">layout/noSidebar</attribute>
+                            <attribute name="content"><![CDATA[
+                                <h1>HTML Ipsum Presents</h1>
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+<h2>Header Level 2</h2>
+
+<ol>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+</ol>
+
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+</blockquote>
+
+<h3>Header Level 3</h3>
+
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+</ul>
+
+                            ]]></attribute>
+                        </attributes>
+                        <bricks>
+                            <area type="footerPrefix">
+                                <brick identifier="brick.cta"></brick>
+                            </area>
+                        </bricks>
+                    </site>
+
+                    <!-- Typography -->
+                    <site identifier="typography">
+                        <attributes>
+                            <attribute name="name">Typography</attribute>
+                            <attribute name="title">Typography</attribute>
+                            <attribute name="short">Nullam dictum felis eu pede mollis pretium. Nunc nonummy metus. Nullam quis ante. Donec posuere vulputate arcu. Donec id justo.</attribute>
+                            <attribute name="type">standard</attribute>
+                            <attribute name="layout">layout/noSidebar</attribute>
+                            <attribute name="content"><![CDATA[
+                            <h1>HTML Ipsum Presents - Header Level 1</h1>
+
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+<p>Praesent egestas tristique nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Nunc interdum lacus sit amet orci. Curabitur turpis. Praesent egestas tristique nibh. Donec sodales sagittis magna. Curabitur ullamcorper ultricies nisi. Sed libero. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.</p>
+
+<p><a class="button btn btn-primary" href="#">Button</a></p>
+
+<h2>Header Level 2</h2>
+
+<ol>
+	<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+	<li>Aliquam tincidunt mauris eu risus.</li>
+	<li>Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus.</li>
+	<li>Nullam cursus lacinia erat. Quisque malesuada placerat nisl. Phasellus blandit leo ut odio. Praesent congue erat at massa.</li>
+	<li>Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Maecenas vestibulum mollis diam. Vestibulum ullamcorper mauris at ligula. Nam commodo suscipit quam. Vivamus in erat ut urna cursus vestibulum.</li>
+</ol>
+
+<p>Ut varius tincidunt libero. Morbi ac felis. Suspendisse eu ligula. Praesent vestibulum dapibus nibh. Aenean viverra rhoncus pede.</p>
+
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+</blockquote>
+
+<p>In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Donec mollis hendrerit risus. Maecenas nec odio et ante tincidunt tempus. Praesent adipiscing. Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus.</p>
+
+<h3>Header Level 3</h3>
+
+<ul>
+	<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+	<li>Aliquam tincidunt mauris eu risus.</li>
+	<li>Proin pretium leo ac pellentesque
+	<ul>
+		<li>Vivamus aliquet elit ac nisl</li>
+		<li>Duis arcu tortor suscipit eget</li>
+		<li>In dui magna posuere eget</li>
+	</ul>
+	</li>
+	<li>Donec vitae orci</li>
+	<li>Vestibulum rutrum mi nec elementum</li>
+</ul>
+
+<h2>Header Level 2</h2>
+
+<p>Praesent venenatis metus at tortor pulvinar varius. Morbi nec metus. Donec vitae sapien ut libero venenatis faucibus. Curabitur vestibulum aliquam leo. Sed in libero ut nibh placerat accumsan.</p>
+
+<p>Duis vel nibh at velit scelerisque suscipit. Morbi ac felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque commodo eros a enim. Suspendisse potenti. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Cras non dolor. Donec sodales sagittis magna. Etiam ultricies nisi vel augue. Praesent turpis.</p>
+
+<p>Vivamus elementum semper nisi. Etiam imperdiet imperdiet orci. Nullam vel sem. Aliquam erat volutpat. Nullam quis ante.</p>
+
+<p>Vestibulum eu odio. Proin magna. Sed a libero. Proin pretium, leo ac pellentesque mollis, felis nunc ultrices eros, sed gravida augue augue mollis justo. Nunc interdum lacus sit amet orci.</p>
+
+                            ]]></attribute>
+                        </attributes>
+                        <bricks>
+                            <area type="footerPrefix">
+                                <brick identifier="brick.cta"></brick>
+                            </area>
+                        </bricks>
+                    </site>
+
+                    <!-- Search -->
+                    <site identifier="search">
+                        <attributes>
+                            <attribute name="name">Search</attribute>
+                            <attribute name="title">Search</attribute>
+                            <attribute name="short"></attribute>
+                            <attribute name="nav_hide">1</attribute>
+                            <attribute name="type">quiqqer/sitetypes:types/search</attribute>
+                            <attribute name="layout">layout/noSidebarSmall</attribute>
+                            <attribute name="content"><![CDATA[
+<h1 style="text-align: center;">Search</h1>
+<p style="text-align: center; max-width: 600px; margin-inline: auto;">Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui. Praesent nec nisl a purus blandit viverra. Curabitur nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.</p>]]>
+                            </attribute>
+                            <attribute name="quiqqer.settings.sitetypes.list.template">cardRows</attribute>
+                            <attribute name="quiqqer.settings.sitetypes.list.showCreator">0</attribute>
+                            <attribute name="quiqqer.settings.sitetypes.list.showDate">0</attribute>
+                            <attribute name="quiqqer.settings.sitetypes.list.showImages">0</attribute>
+                        </attributes>
+                    </site>
+
+                    <!-- Gallery -->
+                    <site identifier="gallery">
+                        <attributes>
+                            <attribute name="name">Gallery</attribute>
+                            <attribute name="title">Gallery</attribute>
+                            <attribute name="short">Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam.</attribute>
+                            <attribute name="type">standard</attribute>
+                            <attribute name="layout">layout/noSidebar</attribute>
+                            <attribute name="content"><![CDATA[<h1>Gallery</h1><p>Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Nam pretium turpis et arcu. Etiam sit amet orci eget eros faucibus tincidunt. Pellentesque ut neque. Ut leo.</p>]]></attribute>
+                        </attributes>
+                        <bricks>
+                            <area type="suffixContentBricks">
+                                <brick identifier="brick.gallery"></brick>
+                            </area>
+                            <area type="footerPrefix">
+                                <brick identifier="brick.cta"></brick>
+                            </area>
+                        </bricks>
+                    </site>
+
+                    <!-- Legal notice -->
+                    <site identifier="legalNotice">
+                        <attributes>
+                            <attribute name="name">Legal notice</attribute>
+                            <attribute name="title">Legal notice</attribute>
+                            <attribute name="short">Aliquam lobortis. Ut id nisl quis enim dignissim sagittis. Cras id dui.</attribute>
+                            <attribute name="nav_hide">1</attribute>
+                            <attribute name="type">quiqqer/sitetypes:types/legalnotes</attribute>
+                            <attribute name="layout">layout/noSidebarSmall</attribute>
+                            <attribute name="content"><![CDATA[
+<h1>Legal notice</h1>
+
+<p>Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Curabitur ullamcorper ultricies nisi. Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Sed aliquam ultrices mauris. Curabitur nisi.</p>
+
+<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Praesent egestas tristique nibh. Donec vitae sapien ut libero venenatis faucibus. Quisque ut nisi. Sed a libero.</p>
+
+<h2>Nullam accumsan lorem in dui</h2>
+
+<p>Curabitur suscipit suscipit tellus. Vivamus aliquet elit ac nisl. Donec posuere vulputate arcu. Vestibulum ullamcorper mauris at ligula. Fusce risus nisl, viverra et, tempor et, pretium in, sapien.</p>
+
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque rutrum. Praesent ac massa at ligula laoreet iaculis. Vestibulum volutpat pretium libero. Fusce fermentum odio nec arcu.</p>
+
+<p>Etiam vitae tortor. Nam eget dui. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula. Praesent turpis. Pellentesque dapibus hendrerit tortor.</p>
+
+<h1>Morbi nec metus ut eros et nisl sagittis vestibulum</h1>
+
+<p>Fusce fermentum. Proin magna. Quisque ut nisi. Vestibulum dapibus nunc ac augue. Sed lectus. Cras sagittis. Duis lobortis massa imperdiet quam. Vivamus consectetuer hendrerit lacus.</p>
+
+<p>Sed fringilla mauris sit amet nibh. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Cras risus ipsum, faucibus ut, ullamcorper id, varius ac, leo. Morbi nec metus. Vivamus laoreet.</p>
+
+<p>Donec sodales sagittis magna. Curabitur ullamcorper ultricies nisi. Quisque id mi. Fusce egestas elit eget lorem. Fusce risus nisl, viverra et, tempor et, pretium in, sapien.</p>
+
+<p>Vivamus quis mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec venenatis vulputate lorem. Fusce fermentum odio nec arcu. Sed magna purus, fermentum eu, tincidunt eu, varius ut, felis.</p>
+
+        ]]>
+                            </attribute>
+                        </attributes>
+                    </site>
+
+                    <!-- Privacy policy -->
+                        <site identifier="privacyPolicy">
+                        <attributes>
+                            <attribute name="name">Privacy policy</attribute>
+                            <attribute name="title">Privacy policy</attribute>
+                            <attribute name="short">Duis leo. Ut id nisl quis enim dignissim sagittis.</attribute>
+                            <attribute name="nav_hide">1</attribute>
+                            <attribute name="type">quiqqer/sitetypes:types/privacypolicy</attribute>
+                            <attribute name="layout">layout/noSidebarSmall</attribute>
+                            <attribute name="content"><![CDATA[
+<h1>Privacy policy</h1>
+
+<p>Donec id justo. Quisque malesuada placerat nisl. Duis leo. Fusce vel dui. Cras non dolor.</p>
+
+<p>Nulla facilisi. Curabitur vestibulum aliquam leo. Etiam iaculis nunc ac metus. Donec sodales sagittis magna. Praesent turpis.</p>
+
+<p>Praesent egestas tristique nibh. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Sed fringilla mauris sit amet nibh. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi.</p>
+
+<h2>Pellentesque habitant morbi tristique senectus</h2>
+
+<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Suspendisse feugiat. Nullam dictum felis eu pede mollis pretium. Aenean imperdiet. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc.</p>
+
+<p>Suspendisse non nisl sit amet velit hendrerit rutrum. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Morbi mollis tellus ac sapien. Quisque ut nisi. Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus.&nbsp;Quisque libero metus, condimentum nec, tempor a, commodo mollis, magna. Ut non enim eleifend felis pretium feugiat. Phasellus consectetuer vestibulum elit. Curabitur vestibulum aliquam leo. Duis vel nibh at velit scelerisque suscipit.</p>
+
+<p>Praesent nec nisl a purus blandit viverra. Etiam feugiat lorem non metus. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Duis leo.</p>
+
+<p>Praesent ac sem eget est egestas volutpat. Fusce risus nisl, viverra et, tempor et, pretium in, sapien. Vestibulum suscipit nulla quis orci. Cras dapibus. Nullam vel sem.</p>
+
+<p>Praesent vestibulum dapibus nibh. Etiam ut purus mattis mauris sodales aliquam. Praesent egestas neque eu enim. Nam at tortor in tellus interdum sagittis. Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut lacus.</p>
+
+<p>Duis vel nibh at velit scelerisque suscipit. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Sed aliquam ultrices mauris. Quisque ut nisi.</p>
+
+        ]]>
+                            </attribute>
+                        </attributes>
+                    </site>
+
+                    <!-- General terms and conditions -->
+                    <site identifier="generalTermsAndConditions">
+                        <attributes>
+                            <attribute name="name">General terms and conditions</attribute>
+                            <attribute name="title">General terms and conditions</attribute>
+                            <attribute name="short">Vestibulum ullamcorper mauris at ligula. Suspendisse nisl elit, rhoncus eget, elementum ac, condimentum eget, diam.</attribute>
+                            <attribute name="nav_hide">1</attribute>
+                            <attribute name="type">quiqqer/sitetypes:types/generalTermsAndConditions</attribute>
+                            <attribute name="layout">layout/noSidebarSmall</attribute>
+                            <attribute name="content"><![CDATA[
+<h1>General terms and conditions</h1>
+
+<p>Fusce a quam. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Phasellus dolor. Cras dapibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+<p>Proin magna. Praesent ac sem eget est egestas volutpat. Sed aliquam ultrices mauris. In consectetuer turpis ut velit. Aliquam eu nunc.</p>
+
+<p>Morbi ac felis. Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est. Sed in libero ut nibh placerat accumsan. Pellentesque posuere. Ut varius tincidunt libero. Fusce a quam. Vestibulum fringilla pede sit amet augue. Ut id nisl quis enim dignissim sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus.</p>
+
+<p>Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut lacus. Phasellus magna. Phasellus ullamcorper ipsum rutrum nunc. Nam eget dui. Praesent ac sem eget est egestas volutpat.</p>
+
+<h2>Phasellus accumsan cursus velit</h2>
+
+<p>Phasellus magna. Proin magna. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. Curabitur blandit mollis lacus. Morbi mollis tellus ac sapien. Sed cursus turpis vitae tortor. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Cras non dolor.</p>
+
+<p>Cras varius. Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros. Vivamus in erat ut urna cursus vestibulum. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Ut non enim eleifend felis pretium feugiat. Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Aliquam lobortis. Fusce risus nisl, viverra et, tempor et, pretium in, sapien.</p>
+
+<p>Curabitur ullamcorper ultricies nisi. Vivamus in erat ut urna cursus vestibulum. Ut tincidunt tincidunt erat. Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus.</p>
+        ]]>
+                            </attribute>
+                        </attributes>
+                        <bricks>
+                            <area type="footerPrefix">
+                                <brick identifier="brick.cta"></brick>
+                            </area>
+                        </bricks>
+                    </site>
+                </children>
             </site>
         </sites>
+
+        <!-- MEDIA -->
+        <media>
+            <file path="logo/acme-logo-8_black.svg" identifier="projectLogo">
+                <name>acme-logo-8_black</name>
+                <description><![CDATA[{"de":"ACME - QUIQQER Demo","en":"ACME - QUIQQER demo"}]]></description>
+                <title><![CDATA[{"de":"Logo", "en":"Logo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Logo", "en":"Logo"}]]></alt>
+            </file>
+            <file path="demo/blank-user-placeholder.png" identifier="userPlaceholder">
+                <name>blank-user-placeholder</name>
+                <description><![CDATA[{"de":"Benutzerbild Platzhalter","en":"User placeholder image"}]]></description>
+                <title><![CDATA[{"de":"Benutzerbild Platzhalter","en":"User placeholder image"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Benutzerbild Platzhalter","en":"User placeholder image"}]]></alt>
+            </file>
+
+            <file path="demo/cta-brick-bg.svg" identifier="ctaBg">
+                <name>cta-brick-bg</name>
+                <description><![CDATA[{"de":"Hintergrundbild der CTA Box","en":"Background image of the CTA box"}]]></description>
+                <title><![CDATA[{"de":"CTA Box Hintergrundbild","en":"CTA box background image"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"CTA Box Hintergrundbild","en":"CTA box background image"}]]></alt>
+            </file>
+            <file path="demo/cta-brick-bg-white.svg" identifier="ctaBg.white">
+                <name>cta-brick-bg-white</name>
+                <description><![CDATA[{"de":"Hintergrundbild der CTA Box - helle Variante","en":"Background image of the CTA box - light version"}]]></description>
+                <title><![CDATA[{"de":"Helles CTA Box Hintergrundbild","en":"Light CTA box background image"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Helles CTA Box Hintergrundbild","en":"Light CTA box background image"}]]></alt>
+            </file>
+            <file path="demo/placeholder-image.svg" identifier="imagePlaceholder">
+                <name>placeholder-image</name>
+                <description><![CDATA[{"de":"Platzhalter Bild","en":"Placeholder image"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild","en":"Placeholder image"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild","en":"Placeholder image"}]]></alt>
+            </file>
+            <file path="demo/placeholder-image-dark.svg" identifier="imagePlaceholder.dark">
+                <name>placeholder-image-dark</name>
+                <description><![CDATA[{"de":"Platzhalter Bild - dunkle Version","en":"Placeholder image - dark version"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild - dunkel","en":"Placeholder image - dark"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild","en":"Placeholder image"}]]></alt>
+            </file>
+            <file path="demo/placeholder-image-vertical.svg" identifier="imagePlaceholder.vertical">
+                <name>placeholder-image-vertical</name>
+                <description><![CDATA[{"de":"Platzhalter Bild - vertikale Version","en":"Placeholder image - vertical version"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild - vertikal","en":"Placeholder image - vertical"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild","en":"Placeholder image"}]]></alt>
+            </file>
+            <file path="demo/placeholder-image-vertical-grey.svg" identifier="imagePlaceholder.vertical.grey">
+                <name>placeholder-image-vertical-grey</name>
+                <description><![CDATA[{"de":"Platzhalter Bild - vertikale graue Version","en":"Placeholder image - vertical grey version"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild - vertikal and grey","en":"Placeholder image - vertical and grey"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild","en":"Placeholder image"}]]></alt>
+            </file>
+
+            <!-- MEDIA: gallery -->
+            <file path="gallery/" identifier="galleryFolder">
+                <name>gallery-demo</name>
+            </file>
+            <file path="gallery/gallery-placeholder-image-1.svg">
+                <name>gallery-placeholder-image-1</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 1 - Demo","en":"Placeholder image 1 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 1 - Demo","en":"Placeholder image 1 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-2.svg">
+                <name>gallery-placeholder-image-2</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 2 - Demo","en":"Placeholder image 2 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 2 - Demo","en":"Placeholder image 2 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-3.svg">
+                <name>gallery-placeholder-image-3</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 3 - Demo","en":"Placeholder image 3 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 3 - Demo","en":"Placeholder image 3 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-4.svg">
+                <name>gallery-placeholder-image-4</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 4 - Demo","en":"Placeholder image 4 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 4 - Demo","en":"Placeholder image 4 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-5.svg">
+                <name>gallery-placeholder-image-5</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 5 - Demo","en":"Placeholder image 5 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 5 - Demo","en":"Placeholder image 5 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-6.svg">
+                <name>gallery-placeholder-image-6</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 6 - Demo","en":"Placeholder image 6 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 6 - Demo","en":"Placeholder image 6 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-7.svg">
+                <name>gallery-placeholder-image-7</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 7 - Demo","en":"Placeholder image 7 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 7 - Demo","en":"Placeholder image 7 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-8.svg">
+                <name>gallery-placeholder-image-8</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 8 - Demo","en":"Placeholder image 8 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 8 - Demo","en":"Placeholder image 8 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-8.svg">
+                <name>gallery-placeholder-image-8</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 8 - Demo","en":"Placeholder image 8 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 8 - Demo","en":"Placeholder image 8 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-10.svg">
+                <name>gallery-placeholder-image-10</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 10 - Demo","en":"Placeholder image 10 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 10 - Demo","en":"Placeholder image 10 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-11.svg">
+                <name>gallery-placeholder-image-11</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 11 - Demo","en":"Placeholder image 11 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 11 - Demo","en":"Placeholder image 11 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-12.svg">
+                <name>gallery-placeholder-image-12</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 12 - Demo","en":"Placeholder image 12 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 12 - Demo","en":"Placeholder image 12 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-13.svg">
+                <name>gallery-placeholder-image-13</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 13 - Demo","en":"Placeholder image 13 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 13 - Demo","en":"Placeholder image 13 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-14.svg">
+                <name>gallery-placeholder-image-14</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 14 - Demo","en":"Placeholder image 14 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 14 - Demo","en":"Placeholder image 14 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-15.svg">
+                <name>gallery-placeholder-image-15</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 15 - Demo","en":"Placeholder image 15 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 15 - Demo","en":"Placeholder image 15 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-16.svg">
+                <name>gallery-placeholder-image-16</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 16 - Demo","en":"Placeholder image 16 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 16 - Demo","en":"Placeholder image 16 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-17.svg">
+                <name>gallery-placeholder-image-17</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 17 - Demo","en":"Placeholder image 17 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 17 - Demo","en":"Placeholder image 17 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-18.svg">
+                <name>gallery-placeholder-image-18</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 18 - Demo","en":"Placeholder image 18 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 18 - Demo","en":"Placeholder image 18 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-19.svg">
+                <name>gallery-placeholder-image-19</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 19 - Demo","en":"Placeholder image 19 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 19 - Demo","en":"Placeholder image 19 - demo"}]]></alt>
+            </file>
+            <file path="gallery/gallery-placeholder-image-20.svg">
+                <name>gallery-placeholder-image-20</name>
+                <description><![CDATA[{"de":"Platzhalter Bild für die Demo-Galerie","en":"Placeholder image for the demo gallery"}]]></description>
+                <title><![CDATA[{"de":"Platzhalter Bild 20 - Demo","en":"Placeholder image 20 - demo"}]]></title>
+                <priority>0</priority>
+                <alt><![CDATA[{"de":"Platzhalter Bild 20 - Demo","en":"Placeholder image 20 - demo"}]]></alt>
+            </file>
+
+        </media>
     </project>
 
-    <!-- legt bricks an -->
+    <!-- BRICKS -->
     <bricks>
-        <brick identifier="brick.demo">
+        <brick identifier="brick.startpage.topHero">
             <attributes>
-                <attribute name="title">Demo Brick</attribute>
-                <attribute name="type">\QUI\Bricks\Controls\SocialBox</attribute>
+                <attribute name="title">Startpage - Top Hero</attribute>
+                <attribute name="type">\QUI\Bricks\Controls\TextAndImage</attribute>
+                <attribute name="customfields"><![CDATA[]]></attribute>
+                <attribute name="areas"><![CDATA[,headerSuffix,]]></attribute>
                 <attribute name="settings">
-                    <![CDATA[{"classes":[],"width":"","height":"","title":"Testbaustein","socialList":"[{\"url\":\"Test\",\"icon\":\"gitlab\",\"background\":\"#333333\"}]","brickFullWidth":[],"noPadding":false}]]>
+                    <![CDATA[{"classes":["bg-light","image-effect","image-effect--right","image-effect--white"],"width":"","height":"","image":"${media:imagePlaceholder.vertical.grey}","imageOnLeft":0,"imageShadow":0,"fullImageHeight":0,"maxImageWidth":"400","imageZoom":0,"textPosition":"center","textImageRatio":"40"}]]>
                 </attribute>
-                <attribute name="customfields">
-                    <![CDATA[["width","height","classes","title","socialList","brickFullWidth","noPadding"]]]>
-                </attribute>
-                <attribute name="areas">
-                    ,noSidebar,header,headerSuffix,prefixContentBricks,leftSidebar,rightSidebar,suffixContentBricks,footerPrefix,footer,
+                <attribute name="content">
+                    <![CDATA[<h1 class="fw-bold fs-3xl">SED CURSUS TURPIS <span style="color: var(--qui-color-primary);">VITAE</span> TORTOR</h1><p>Integer tincidunt. Phasellus tempus. Nulla sit amet est. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est. Etiam iaculis nunc ac metus.</p><p><a class="button" href="#">Kontakt</a> </p>]]>
                 </attribute>
             </attributes>
         </brick>
-        <!-- ... -->
+
+        <brick identifier="brick.startpage.boxes">
+            <attributes>
+                <attribute name="title">Startpage - boxes</attribute>
+                <attribute name="type">\QUI\Bricks\Controls\BoxContentAdvanced</attribute>
+                <attribute name="customfields"><![CDATA[]]></attribute>
+                <attribute name="areas"><![CDATA[,headerSuffix,]]></attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":["demo"],"width":"","height":"","template":"standard","centerText":1,"entriesPerLine":"3","entries":"[{\"entryTitle\":\"Proin pretium\",\"entrySubTitle\":\"\",\"entryImage\":\"fa fa-area-chart\",\"entryUrl\":\"\",\"entryOrder\":\"\",\"entryContent\":\"<p>Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Suspendisse non nisl sit amet velit hendrerit rutrum. Maecenas malesuada.<\/p>\"},{\"entryTitle\":\"Vivamus aliquet elit\",\"entrySubTitle\":\"\",\"entryImage\":\"fa fa-bolt\",\"entryUrl\":\"\",\"entryOrder\":\"\",\"entryContent\":\"<p>Sed magna purus, fermentum eu, tincidunt eu, varius ut, felis. Quisque libero metus, condimentum nec, tempor a, commodo mollis, magna. Phasellus consectetuer vestibulum elit.<\/p>\"},{\"entryTitle\":\"Vestibulum fringilla pede\",\"entrySubTitle\":\"\",\"entryImage\":\"fa fa-pencil-square-o\",\"entryUrl\":\"\",\"entryOrder\":\"\",\"entryContent\":\"<p>Fusce commodo aliquam arcu. Ut id nisl quis enim dignissim sagittis. Vestibulum eu odio.<\/p>\"},{\"entryTitle\":\"Sed aliquam\",\"entrySubTitle\":\"\",\"entryImage\":\"fa fa-gears\",\"entryUrl\":\"\",\"entryOrder\":\"\",\"entryContent\":\"<p>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Ut id nisl quis enim dignissim sagittis. Nam eget dui.<\/p>\\n\"},{\"entryTitle\":\"Nunc nonummy metus\",\"entrySubTitle\":\"\",\"entryImage\":\"fa fa-cubes\",\"entryUrl\":\"\",\"entryOrder\":\"\",\"entryContent\":\"<p>Phasellus blandit leo ut odio. Etiam ultricies nisi vel augue. Suspendisse eu ligula.<\/p>\\n\"},{\"entryTitle\":\"Donec vitae orci sed dolor\",\"entrySubTitle\":\"\",\"entryImage\":\"fa fa-paper-plane-o\",\"entryUrl\":\"\",\"entryOrder\":\"\",\"entryContent\":\"<p>Fusce egestas elit eget lorem. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.<\/p>\\n\"}]"}]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[<p class="mb-0 text-muted" style="text-align: center; text-transform: uppercase;">Lorem Ipsum</p><h2 class="fw-bold mt-0" style="text-align: center;">Praesent egestas<br>neque eu enim rhoncus</h2>]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <brick identifier="brick.startpage.advantages1">
+            <attributes>
+                <attribute name="title">Startpage - Advantages 1</attribute>
+                <attribute name="type">\QUI\Bricks\Controls\TextAndImage</attribute>
+                <attribute name="customfields"><![CDATA[]]></attribute>
+                <attribute name="areas"><![CDATA[,headerSuffix,]]></attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":["bg-light","image-effect","image-effect--left","image-effect--white"],"width":"","height":"","image":"${media:imagePlaceholder.vertical.grey}","imageOnLeft":1,"imageShadow":0,"fullImageHeight":0,"maxImageWidth":"350","imageZoom":0,"textPosition":"center","textImageRatio":"45"}]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[<h2 class="fw-bold">Sem libero volutpat nibh</h2><p>Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Nam eget dui. Ut leo.</p><p>Vitae ltricies nisi vel augue. Aliquam lobortis. Nam commodo suscipit quam.</p><p><a class="button btn btn-primary" href="${siteurl:gallery}">Gallery</a></p>]]>
+                </attribute>
+            </attributes>
+        </brick>
+        <brick identifier="brick.startpage.advantages2">
+            <attributes>
+                <attribute name="title">Startpage - Advantages 2</attribute>
+                <attribute name="type">\QUI\Bricks\Controls\TextAndImage</attribute>
+                <attribute name="customfields"><![CDATA[]]></attribute>
+                <attribute name="areas"><![CDATA[,headerSuffix,]]></attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":["image-effect","image-effect--right"],"width":"","height":"","image":"${media:imagePlaceholder.vertical}","imageOnLeft":0,"imageShadow":0,"fullImageHeight":1,"maxImageWidth":"350","imageZoom":0,"textPosition":"center","textImageRatio":"45"}]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[<h2 class="fw-bold">Etiam ultricies nisi neque dolor vel</h2><p>Nulla porta dolor. Integer tincidunt. Fusce neque. Phasellus blandit leo ut odio.</p><p>Praesent ac sem eget est egestas volutpat. Morbi ac felis. Maecenas egestas arcu quis ligula mattis placerat. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien.</p><p>Cumsan nisi mauris ac eros.</p>]]>
+                </attribute>
+            </attributes>
+        </brick>
+        <brick identifier="brick.startpage.advantages3">
+            <attributes>
+                <attribute name="title">Startpage - Advantages 3</attribute>
+                <attribute name="type">\QUI\Bricks\Controls\TextAndImage</attribute>
+                <attribute name="customfields"><![CDATA[]]></attribute>
+                <attribute name="areas"><![CDATA[,headerSuffix,]]></attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":["bg-light","image-effect","image-effect--left","image-effect--white"],"width":"","height":"","image":"${media:imagePlaceholder.vertical.grey}","imageOnLeft":1,"imageShadow":0,"fullImageHeight":0,"maxImageWidth":"350","imageZoom":0,"textPosition":"center","textImageRatio":"45"}]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[<h2 class="fw-bold">Suspendisse pulvinar augue</h2><p>Venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Aenean vulputate eleifend tellus. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. Fusce fermentum odio nec arcu. Vivamus in erat ut urna cursus vestibulum.</p><p>Praesent ut ligula non mi varius sagittis. Donec vitae sapien ut libero venenatis faucibus. Etiam ultricies nisi vel augue. Aliquam lobortis. Nam commodo suscipit quam.</p>]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <brick identifier="brick.startpage.slogan">
+            <attributes>
+                <attribute name="title">Startpage - Slogan</attribute>
+                <attribute name="type">\QUI\PresentationBricks\Controls\WallpaperText</attribute>
+                <attribute name="customfields"><![CDATA[]]></attribute>
+                <attribute name="areas"><![CDATA[,headerSuffix,]]></attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":[],"width":"","height":"","minHeight":"500px","image-background":"${media:imagePlaceholder.dark}","imageBackgroundPos":"center","image-background-fixed":1,"bg-color":"#020202","content-position":"center","contentMaxWidth":"700","fontColor":"#ffffff","brickFullWidth":1}]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[<p class="fs-xl fw-bold" style="text-align: center;">Nunc sed turpis. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.</p>]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <brick identifier="brick.startpage.reviews">
+            <attributes>
+                <attribute name="title">Startpage - Customer reviews</attribute>
+                <attribute name="type">\QUI\Bricks\Controls\Slider\CustomerReviewsSlider</attribute>
+                <attribute name="customfields"><![CDATA[]]></attribute>
+                <attribute name="areas"><![CDATA[,headerSuffix,]]></attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":[],"width":"","height":"","template":"templateOne","perView":"3","gap":"20","autoplay":0,"delay":"5000","showArrows":1,"sliderHeight":"fixed","entries":"[{\"image\":\"${media:userPlaceholder}\",\"customerName\":\"Max Mustermann\",\"addition\":\"\",\"url\":\"\",\"urlTitle\":\"\",\"review\":\"<p>Duis vel nibh at velit scelerisque suscipit. Vestibulum ullamcorper mauris at ligula. Nullam quis ante. Nunc sed turpis. In consectetuer turpis ut velit.<\/p>\\n\",\"isDisabled\":0},{\"image\":\"${media:userPlaceholder}\",\"customerName\":\"Filip Bauer\",\"addition\":\"\",\"url\":\"\",\"urlTitle\":\"\",\"review\":\"<p>Aenean vulputate eleifend tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Duis lobortis massa imperdiet quam. Nullam sagittis.<\/p>\\n\",\"isDisabled\":0},{\"image\":\"${media:userPlaceholder}\",\"customerName\":\"Eric Grunewald\",\"addition\":\"\",\"url\":\"\",\"urlTitle\":\"\",\"review\":\"<p>Donec id justo. Nunc nonummy metus. Donec venenatis vulputate lorem. Aenean massa. Praesent congue erat at massa.&nbsp;Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum.<\/p>\\n\",\"isDisabled\":0},{\"image\":\"${media:userPlaceholder}\",\"customerName\":\"Daniela Probst\",\"addition\":\"\",\"url\":\"\",\"urlTitle\":\"\",\"review\":\"<p>Aenean imperdiet. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Suspendisse eu ligula. Praesent ac sem eget est egestas volutpat. Morbi ac felis.<\/p>\\n\",\"isDisabled\":0},{\"image\":\"${media:userPlaceholder}\",\"customerName\":\"Andrea Dresdner\",\"addition\":\"\",\"url\":\"\",\"urlTitle\":\"\",\"review\":\"<p>Ut id nisl quis enim dignissim sagittis. Aliquam lobortis. Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Suspendisse nisl elit, rhoncus eget, elementum ac, condimentum eget, diam.<\/p>\\n\",\"isDisabled\":0}]"}]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[<h2 class="fw-bold" style="text-align: center;">Aenean leo ligula porttitor eu</h2>]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <brick identifier="brick.startpage.contact">
+            <attributes>
+                <attribute name="title">Startpage - Contact</attribute>
+                <attribute name="type">\QUI\Bricks\Controls\SimpleContact</attribute>
+                <attribute name="customfields"><![CDATA[]]></attribute>
+                <attribute name="areas"><![CDATA[,footerPrefix,]]></attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":["demo"],"width":"","height":"","template":"default","mailTo":"","showPrivacyPolicyCheckbox":1,"useCaptcha":0,"formContent":""}]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[<h2 class="fw-bold" style="text-align: center;" id="contact" data-qui-offset="80">Contact us</h2><p style="text-align: center;">Etiam ultricies nisi vel augue. Nulla porta dolor. Duis lobortis massa imperdiet quam. Cras varius.&nbsp;Aliquam lobortis. Morbi vestibulum volutpat enim. Nunc nonummy metus.</p>]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <!-- Footer bricks -->
+        <brick identifier="brick.footer.logoWithText">
+            <attributes>
+                <attribute name="title">Footer - logo with text</attribute>
+                <attribute name="type">content</attribute>
+                <attribute name="customfields"><![CDATA[]]></attribute>
+                <attribute name="areas"><![CDATA[,footer,]]></attribute>
+                <attribute name="settings">
+                    <![CDATA[{"width":"","height":"","classes":["grid-55","footer-brick-maxWidth"]}]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[<p><img alt="" src="${media:projectLogo}" style="width: 120px; height: 33px;"></p><p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam commodo suscipit quam. Quisque id mi. Praesent venenatis metus at tortor pulvinar varius. Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem.</p>]]>
+                </attribute>
+            </attributes>
+        </brick>
+        <brick identifier="brick.footer.services">
+            <attributes>
+                <attribute name="title">Footer - Services</attribute>
+                <attribute name="type">\QUI\Menu\UrlList</attribute>
+                <attribute name="customfields"><![CDATA[]]></attribute>
+                <attribute name="areas"><![CDATA[,footer,]]></attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":["grid-20","controlContentSmallPadding"],"width":"","height":"","display":"default","headerText":"","menuId":"1","startId":"","icon":"","resetLinkColor":1}]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[<h4>Services</h4>]]>
+                </attribute>
+            </attributes>
+        </brick>
+        <brick identifier="brick.footer.support">
+            <attributes>
+                <attribute name="title">Footer - Rechtliches</attribute>
+                <attribute name="type">\QUI\Menu\UrlList</attribute>
+                <attribute name="customfields"><![CDATA[]]></attribute>
+                <attribute name="areas"><![CDATA[,footer,]]></attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":["grid-25","controlContentSmallPadding"],"width":"","height":"","display":"default","headerText":"","menuId":"2","startId":"","icon":"","resetLinkColor":1}]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[<h4>Support</h4>]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <!-- Gallery brick -->
+        <brick identifier="brick.gallery">
+            <attributes>
+                <attribute name="title">Gallery</attribute>
+                <attribute name="description">Gallery brick for gallery page.</attribute>
+                <attribute name="type">\QUI\Gallery\Bricks\GridAdvanced</attribute>
+                <attribute name="customfields"><![CDATA[]]></attribute>
+                <attribute name="areas"><![CDATA[,suffixContentBricks,]]></attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":[],"width":"","height":"","folderId":"${media:galleryFolder}","max":"20","addGap":1,"template":"4","order":"name ASC","scaleImageOnHover":1,"darkenImageOnHover":0,"iconOnHover":0}]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[]]>
+                </attribute>
+            </attributes>
+        </brick>
+
+        <!-- CTA brick -->
+        <brick identifier="brick.cta">
+            <attributes>
+                <attribute name="title">CTA brick</attribute>
+                <attribute name="description">Call to action brick</attribute>
+                <attribute name="type">\QUI\PresentationBricks\Controls\WallpaperText</attribute>
+                <attribute name="customfields"><![CDATA[]]></attribute>
+                <attribute name="areas"><![CDATA[,footerPrefix,]]></attribute>
+                <attribute name="settings">
+                    <![CDATA[{"classes":["wallpaperText--rounded"],"width":"","height":"","minHeight":"30vh","image-background":"${media:ctaBg.white}","imageBackgroundPos":"center","image-background-fixed":0,"bg-color":"#00797b","content-position":"center","contentMaxWidth":"600","fontColor":"#ffffff"}]]>
+                </attribute>
+                <attribute name="content">
+                    <![CDATA[<h2 class="fw-bold" style="text-align: center;">Kontakt</h2><p style="text-align: center;">Curabitur vestibulum aliquam leo. Vivamus aliquet elit ac nisl. Ut leo. Maecenas egestas arcu quis ligula mattis placerat. Sed aliquam ultrices mauris.</p><p class="mb-0" style="text-align: center;">&nbsp;</p><p style="text-align: center;"><a class="button btn btn-primary" href="${siteurl:home}#go_Kontakt">Schreib uns an</a></p>]]>
+                </attribute>
+            </attributes>
+        </brick>
     </bricks>
 </data>

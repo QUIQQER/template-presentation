@@ -9,11 +9,11 @@
                     <!-- general settings -->
                     <conf name="showTitle">
                         <type><![CDATA[bool]]></type>
-                        <defaultvalue>hide</defaultvalue>
+                        <defaultvalue>0</defaultvalue>
                     </conf>
                     <conf name="showShort">
                         <type><![CDATA[bool]]></type>
-                        <defaultvalue>hide</defaultvalue>
+                        <defaultvalue>0</defaultvalue>
                     </conf>
                     <conf name="bgColorSwitcherPrefix">
                         <type><![CDATA[string]]></type>
@@ -27,6 +27,12 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>hide</defaultvalue>
                     </conf>
+
+                    <conf name="includeDemoStyling">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+
 
                     <!-- nav bar -->
                     <conf name="navBarHeight">
@@ -309,6 +315,20 @@
                                     />
                                 </option>
                             </select>
+
+                            <input conf="templatePresentation.settings.includeDemoStyling"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.includeDemoStyling.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.includeDemoStyling.desc"
+                                    />
+                                </description>
+                            </input>
 
                         </settings>
 

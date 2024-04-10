@@ -1,3 +1,5 @@
+{assign var=Settings value=$Template->getAttribute('TemplateSetting')}
+
 {fontawesome}
 {unsemantic}
 
@@ -7,3 +9,7 @@
 <link href="{$Template->getTemplateUrl('bin/css/variables.css')}" rel="stylesheet" type="text/css"/>
 <link href="{$Template->getTemplateUrl('bin/css/fonts.css')}" rel="stylesheet" type="text/css"/>
 <link href="{$Template->getTemplateUrl('bin/css/style.css')}" rel="stylesheet" type="text/css"/>
+
+{if $Settings->getAttribute('includeDemoCss')}
+    <link href="{$Template->getTemplateUrl('bin/css/demo.css')}" rel="stylesheet" type="text/css"/>
+{/if}

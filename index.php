@@ -1,10 +1,11 @@
 <?php
+
 $Locale = QUI::getLocale();
 
 /**
  * header area on start page?
  */
-$headerArea    = false;
+$headerArea = false;
 $BricksManager = \QUI\Bricks\Manager::init();
 if (count($BricksManager->getBricksByArea('header', $Site)) > 0) {
     $headerArea = true;
@@ -15,9 +16,9 @@ if (count($BricksManager->getBricksByArea('header', $Site)) > 0) {
  */
 $templateSettings = QUI\TemplatePresentation\Utils::getConfig([
     'headerArea' => $headerArea,
-    'Project'    => $Project,
-    'Site'       => $Site,
-    'Template'   => $Template
+    'Project' => $Project,
+    'Site' => $Site,
+    'Template' => $Template
 ]);
 
 /**
@@ -38,8 +39,11 @@ $params = [
     'showStart' => false
 ];
 
-if ($Project->getConfig('templatePresentation.settings.enableIndependentMenu') && $Project->getConfig('templatePresentation.settings.menuId')) {
-    $params['menuId']              = $Project->getConfig('templatePresentation.settings.menuId');
+if (
+    $Project->getConfig('templatePresentation.settings.enableIndependentMenu')
+    && $Project->getConfig('templatePresentation.settings.menuId')
+) {
+    $params['menuId'] = $Project->getConfig('templatePresentation.settings.menuId');
     $params['showFirstLevelIcons'] = $Project->getConfig('templatePresentation.settings.showFirstLevelIcons');
 }
 
@@ -53,9 +57,9 @@ $MegaMenu = new QUI\Menu\MegaMenu($params);
 /**
  * search
  */
-$search      = '';
-$dataQui     = '';
-$noSearch    = 'no-search';
+$search = '';
+$dataQui = '';
+$noSearch = 'no-search';
 $inputSearch = '';
 /* search setting is on? */
 if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
@@ -77,7 +81,7 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
     $searchSites = $Project->getSites([
         'where' => [
             'type' => [
-                'type'  => 'IN',
+                'type' => 'IN',
                 'value' => $types
             ]
         ],
@@ -86,30 +90,30 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
 
     if (count($searchSites)) {
         try {
-            $noSearch   = '';
-            $searchUrl  = $searchSites[0]->getUrlRewritten();
+            $noSearch = '';
+            $searchUrl = $searchSites[0]->getUrlRewritten();
             $searchForm = '';
 
             switch ($Project->getConfig('templatePresentation.settings.search')) {
                 case 'input':
-                    $searchForm  = '
-                    <form  action="'.$searchUrl.'" class="header-bar-suggestSearch header-bar-suggestSearch--type-input hide-on-mobile" method="get">
+                    $searchForm = '
+                    <form  action="' . $searchUrl . '" class="header-bar-suggestSearch header-bar-suggestSearch--type-input hide-on-mobile" method="get">
                         <input type="search" name="search" 
-                                class="only-input" '.$dataQui.'
+                                class="only-input" ' . $dataQui . '
                                 placeholder="'
-                        .$Locale->get('quiqqer/template-presentation', 'navbar.search.text').
+                        . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
                         '"/>
                     </form>';
                     $inputSearch = 'input-search';
                     break;
                 case 'inputAndIcon':
                     $searchForm = '
-                    <form  action="'.$searchUrl.'" class="header-bar-suggestSearch header-bar-suggestSearch--type-icon hide-on-mobile" method="get">
+                    <form  action="' . $searchUrl . '" class="header-bar-suggestSearch header-bar-suggestSearch--type-icon hide-on-mobile" method="get">
                         <div class="header-bar-suggestSearch-wrapper">
                             <input type="search" name="search"
-                                    class="input-and-icon" '.$dataQui.' 
+                                    class="input-and-icon" ' . $dataQui . ' 
                                     placeholder="'
-                        .$Locale->get('quiqqer/template-presentation', 'navbar.search.text').
+                        . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
                         '"/>
                         </div>
                         <span class="fa fa-fw fa-search"></span>
@@ -121,10 +125,10 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
                     break;
             }
 
-            $search = $searchForm.
+            $search = $searchForm .
                 '<div class="quiqqer-menu-megaMenu-mobile-search"
                                   style="width: auto; font-size: 30px !important;">
-                    <a href="'.$searchUrl.'"
+                    <a href="' . $searchUrl . '"
                     class="header-bar-search-link searchMobile">
                         <i class="fa fa-search header-bar-search-icon"></i>
                     </a>
@@ -132,10 +136,10 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
             //@michael dev         $searchForm = '<div  data-qui-searchUrl="' . $searchUrl . '" class="header-bar-search-typePopup hide-on-mobile"><button><span class="fa fa-search"></span> <span class="button-label">Suche</span></button></div>';
 
 
-            $search = $searchForm.
+            $search = $searchForm .
                 '<div class="quiqqer-menu-megaMenu-mobile-search"
                                   style="width: auto; font-size: 30px !important;">
-                    <a href="'.$searchUrl.'"
+                    <a href="' . $searchUrl . '"
                     class="header-bar-search-link searchMobile">
                         <i class="fa fa-search header-bar-search-icon"></i>
                     </a>
@@ -150,105 +154,108 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
  * Dropdown Language switch
  */
 $showDropDownFlag = false;
-$DropDownFlag     = '';
-$showFlags        = false;
-$showText         = false;
+$DropDownFlag = '';
+$showFlags = false;
+$showText = false;
 
 switch ($Project->getConfig('templatePresentation.settings.dropdownLangNav')) {
     case 'flag':
-        $showFlags        = true;
+        $showFlags = true;
         $showDropDownFlag = true;
         break;
 
     case 'text':
-        $showText         = true;
+        $showText = true;
         $showDropDownFlag = true;
         break;
 
     case 'flagAndText':
-        $showFlags        = true;
-        $showText         = true;
+        $showFlags = true;
+        $showText = true;
         $showDropDownFlag = true;
         break;
 }
 
 if ($showDropDownFlag) {
     $DropDown = new QUI\Bricks\Controls\LanguageSwitches\DropDown([
-        'Site'      => $Site,
+        'Site' => $Site,
         'showFlags' => $showFlags,
-        'showText'  => $showText
+        'showText' => $showText
     ]);
 
     $DropDownFlag = $DropDown->create();
 }
 
-$logoData             = $templateSettings['logoData'];
-$widthCustomProperty  = '';
+$logoData = $templateSettings['logoData'];
+$widthCustomProperty = '';
 $heightCustomProperty = '';
 
 if ($logoData['width'] !== false) {
-    $widthCustomProperty = '--logo-width: '.$logoData['width'].'px;';
+    $widthCustomProperty = '--logo-width: ' . $logoData['width'] . 'px;';
 }
 
 if ($logoData['height'] !== false) {
-    $heightCustomProperty = '--logo-height: '.$logoData['height'].'px;';
+    $heightCustomProperty = '--logo-height: ' . $logoData['height'] . 'px;';
 }
 
 $MegaMenu->prependHTML(
     '<div class="header-bar-inner-logo" 
-        style="'.$widthCustomProperty.$heightCustomProperty.'">
-        <a href="'.$Project->get(1)->getUrlRewritten().'" class="page-header-logo">
-        <img src="'.$logoData['url'].'" alt="'.$logoData['alt'].'"
-            height="'.$logoData['height'].'" width="'.$logoData['width'].'"
+        style="' . $widthCustomProperty . $heightCustomProperty . '">
+        <a href="' . $Project->get(1)->getUrlRewritten() . '" class="page-header-logo">
+        <img src="' . $logoData['url'] . '" alt="' . $logoData['alt'] . '"
+            height="' . $logoData['height'] . '" width="' . $logoData['width'] . '"
         </a>
     </div>'
 );
 
 // social
-$social          = "false";
-$socialNav       = '';
-$socialFooter    = '';
+$social = "false";
+$socialNav = '';
+$socialFooter = '';
 $socialMobileNav = '';
 
-if ($Project->getConfig('templatePresentation.settings.social.show.nav') || $Project->getConfig('templatePresentation.settings.social.show.footer')) {
-    $social     = "true";
+if (
+    $Project->getConfig('templatePresentation.settings.social.show.nav')
+    || $Project->getConfig('templatePresentation.settings.social.show.footer')
+) {
+    $social = "true";
     $socialHTML = '';
 
     // check which socials should be displayed
     if ($Project->getConfig('templatePresentation.settings.social.facebook')) {
-        $socialHTML .= '<a href="'.
+        $socialHTML .= '<a href="' .
             $Project->getConfig('templatePresentation.settings.social.facebook')
-            .'" target="_blank"><span class="fa fa-facebook"></span></a>';
+            . '" target="_blank"><span class="fa fa-facebook"></span></a>';
     }
     if ($Project->getConfig('templatePresentation.settings.social.twitter')) {
-        $socialHTML .= '<a href="'.
+        $socialHTML .= '<a href="' .
             $Project->getConfig('templatePresentation.settings.social.twitter')
-            .'" target="_blank"><span class="fa fa-twitter"></span></a>';
+            . '" target="_blank"><span class="fa fa-twitter"></span></a>';
     }
     if ($Project->getConfig('templatePresentation.settings.social.google')) {
-        $socialHTML .= '<a href="'.
+        $socialHTML .= '<a href="' .
             $Project->getConfig('templatePresentation.settings.social.google')
-            .'" target="_blank"><span class="fa fa-google-plus"></span></a>';
+            . '" target="_blank"><span class="fa fa-google-plus"></span></a>';
     }
     if ($Project->getConfig('templatePresentation.settings.social.youtube')) {
-        $socialHTML .= '<a href="'.
+        $socialHTML .= '<a href="' .
             $Project->getConfig('templatePresentation.settings.social.youtube')
-            .'" target="_blank"><span class="fa fa-youtube-play"></span></a>';
+            . '" target="_blank"><span class="fa fa-youtube-play"></span></a>';
     }
     if ($Project->getConfig('templatePresentation.settings.social.github')) {
-        $socialHTML .= '<a href="'.
+        $socialHTML .= '<a href="' .
             $Project->getConfig('templatePresentation.settings.social.github')
-            .'" target="_blank"><span class="fa fa-github"></span></a>';
+            . '" target="_blank"><span class="fa fa-github"></span></a>';
     }
     if ($Project->getConfig('templatePresentation.settings.social.gitlab')) {
-        $socialHTML .= '<a href="'.
+        $socialHTML .= '<a href="' .
             $Project->getConfig('templatePresentation.settings.social.gitlab')
-            .'" target="_blank"><span class="fa fa-gitlab"></span></a>';
+            . '" target="_blank"><span class="fa fa-gitlab"></span></a>';
     }
 
     // prepare social for nav
     if ($Project->getConfig('templatePresentation.settings.social.show.nav')) {
-        $socialNav .= '<div class="header-bar-social hide-on-mobile '.$noSearch.$inputSearch.'">';
+        $socialNav .= '<div class="header-bar-social hide-on-mobile ' . $noSearch . $inputSearch . '">';
         $socialNav .= $socialHTML;
         $socialNav .= '</div>';
 
@@ -267,7 +274,7 @@ if ($Project->getConfig('templatePresentation.settings.social.show.nav') || $Pro
 }
 
 $MegaMenu->appendHTML(
-    $search.$socialNav.$DropDownFlag
+    $search . $socialNav . $DropDownFlag
 );
 
 
@@ -276,10 +283,10 @@ $MegaMenu->appendHTML(
  */
 $Breadcrumb = new QUI\Controls\Breadcrumb();
 
-$templateSettings['BricksManager']   = $BricksManager;
-$templateSettings['Breadcrumb']      = $Breadcrumb;
-$templateSettings['MegaMenu']        = $MegaMenu;
-$templateSettings['social']          = $social;
+$templateSettings['BricksManager'] = $BricksManager;
+$templateSettings['Breadcrumb'] = $Breadcrumb;
+$templateSettings['MegaMenu'] = $MegaMenu;
+$templateSettings['social'] = $social;
 $templateSettings['socialMobileNav'] = $socialMobileNav;
 
 /**
@@ -312,8 +319,8 @@ switch ($Template->getLayoutType()) {
 }
 
 $templateSettings['socialFooter'] = $socialFooter;
-$templateSettings['bodyClass']    = $bodyClass;
-$templateSettings['startPage']    = $startPage;
+$templateSettings['bodyClass'] = $bodyClass;
+$templateSettings['startPage'] = $startPage;
 
 /**
  * Own object container for template settings

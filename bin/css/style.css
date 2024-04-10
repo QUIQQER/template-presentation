@@ -16,6 +16,7 @@
 
 html {
     font-size: 100%;
+    scroll-padding-top: var(--scroll-padding);
 }
 
 .grid-parent,
@@ -1029,12 +1030,16 @@ thead {
     height: var(--qui-nav-height);
 }
 
+/**
+1. quiqqer/menu sets line-height, so we have to use a small hack
+   to set new line-height without using !important
+ */
 .header-bar-search,
 .header-bar-search-typePopup,
 .page-header-navigation-entry,
 .fa-chevron-down-mobile,
 .quiqqer-menu-megaMenu-list-item,
-.hide-on-desktop .quiqqer-menu-megaMenu-mobile,
+.quiqqer-menu-megaMenu-mobile.quiqqer-menu-megaMenu-mobile, /* 1 */
 .quiqqer-menu-megaMenu-mobile-search,
 .header-bar-suggestSearch,
 .fa.close-social-share,
