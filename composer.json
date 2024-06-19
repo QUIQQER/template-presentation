@@ -23,7 +23,7 @@
         "quiqqer/sitetypes": "2.*",
         "quiqqer/menu": "3.*",
         "quiqqer/unsemantic": "2.*",
-        "quiqqer/utils": "2*",
+        "quiqqer/utils": "2.*",
         "quiqqer/page-transition": "2.*",
         "quiqqer/pace": "2.*",
         "quiqqer/buttons": "2.*",
