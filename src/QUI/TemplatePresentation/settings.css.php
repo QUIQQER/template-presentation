@@ -1,6 +1,15 @@
 <?php
 
-$Convert = new \QUI\Utils\Convert();
+/**
+ * @var QUI\Projects\Project $Project
+ * @var QUI\Projects\Site $Site
+ * @var QUI\Interfaces\Template\EngineInterface $Engine
+ * @var QUI\Template $Template
+ **/
+
+use QUI\Utils\Convert;
+
+$Convert = new Convert();
 
 $navBarBackground      = '#2d4d88';
 $navBarFontColor      = '#ffffff';
@@ -71,10 +80,6 @@ $navPos = $Project->getConfig('templatePresentation.settings.navPos');
 $navCSSPos = 'absolute';
 $bodyContainerTop = $navBarHeight;
 
-if ($headerArea && $navPos == 'scroll') {
-    $navCSSPos = 'absolute';
-}
-
 if ($navPos == 'fix') {
     $navCSSPos = 'fixed';
 }
@@ -84,12 +89,12 @@ if ($navPos == 'fix' && $navBarHeight > 0) {
     $scrollOffset = $navBarHeight + 10;
 }
 
-if ($headerArea) {
+if (isset($headerArea) && $headerArea) {
     $bodyContainerTop = 0;
     $navBarBackground = 'transparent';
 }
 
-if ($showHeader) {
+if (isset($showHeader) && $showHeader) {
     $bodyContainerTop = 0;
     $navBarBackground = 'transparent';
 }

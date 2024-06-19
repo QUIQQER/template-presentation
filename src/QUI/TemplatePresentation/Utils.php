@@ -1,19 +1,20 @@
 <?php
 
 /**
- * This file contains QUI\TemplatePresentation\TemplateLoader
+ * This file contains QUI\TemplatePresentation\Utils
  */
 
 namespace QUI\TemplatePresentation;
 
 use QUI;
 
+use function count;
+
 /**
  * Help Class for Template Presentation
  *
  * @return array
  * @author  www.pcsg.de (Michael Danielczok)
- *
  * @package QUI\TemplatePresentation
  */
 class Utils
@@ -23,7 +24,7 @@ class Utils
      *
      * @return array
      */
-    public static function getConfig($params)
+    public static function getConfig(array $params): array
     {
         $cacheName = md5($params['Project']->getName() . $params['Project']->getLang() . $params['Site']->getId());
 
@@ -84,11 +85,11 @@ class Utils
 
         if ($Project->getConfig('templatePresentation.settings.showTitle')) {
             $showPageTitle = $Project->getConfig('templatePresentation.settings.showTitle');
-        };
+        }
 
         if ($Project->getConfig('templatePresentation.settings.showShort')) {
             $showPageShort = $Project->getConfig('templatePresentation.settings.showShort');
-        };
+        }
 
         /* site own show title */
         switch ($params['Site']->getAttribute('templatePresentation.showTitle')) {
@@ -170,9 +171,9 @@ class Utils
      *
      * @return string
      */
-    public static function convertBrickCSSClass(array $classes)
+    public static function convertBrickCSSClass(array $classes): string
     {
-        if (\count($classes) < 1) {
+        if (count($classes) < 1) {
             return '';
         }
 
