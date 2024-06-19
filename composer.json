@@ -1,5 +1,5 @@
 {
-    "name": "quiqqer\/template-presentation",
+    "name": "quiqqer/template-presentation",
     "type": "quiqqer-template",
     "description": "Business and marketing Template.",
     "license": "PCSG QL-1.0, CC BY-NC-SA 4.0",
@@ -7,36 +7,36 @@
         {
             "name": "Michael Danielczok",
             "email": "support@pcsg.de",
-            "homepage": "http:\/\/www.pcsg.de",
+            "homepage": "https://www.pcsg.de",
             "role": "Developer"
         }
     ],
     "support": {
         "email": "support@pcsg.de",
-        "url": "http:\/\/www.pcsg.de"
+        "url": "https://www.pcsg.de"
     },
     "require": {
-        "php": ">=5.3",
-        "quiqqer\/quiqqer": ">=1.1|dev-master|dev-dev",
-        "quiqqer\/bricks": "1.*|dev-master|dev-dev",
-        "quiqqer\/fontawesome": "4.*|5.*|dev-master|dev-dev",
-        "quiqqer\/sitetypes": "1.*|dev-master|dev-dev",
-        "quiqqer\/menu": "2.*|dev-master|dev-dev",
-        "quiqqer\/unsemantic": "1.*|dev-master|dev-dev",
-        "quiqqer\/utils": ">=1.7|dev-master|dev-dev",
-        "quiqqer\/page-transition": "1.*|dev-master|dev-dev",
-        "quiqqer\/pace": ">=1.2.0|dev-master|dev-dev",
-        "quiqqer\/buttons": ">=1.0.0|dev-master|dev-dev",
-        "quiqqer\/presentation-bricks": "1.*|dev-master|dev-dev",
-	    "quiqqer\/gallery": "1.*|dev-master|dev-dev"
+        "php": "^8.1",
+        "quiqqer/core": "^2",
+        "quiqqer/bricks": "^2",
+        "quiqqer/fontawesome": "6.*",
+        "quiqqer/sitetypes": "2.*",
+        "quiqqer/menu": "3.*",
+        "quiqqer/unsemantic": "2.*",
+        "quiqqer/utils": "2*",
+        "quiqqer/page-transition": "2.*",
+        "quiqqer/pace": "2.*",
+        "quiqqer/buttons": "2.*",
+        "quiqqer/presentation-bricks": "2.*",
+	    "quiqqer/gallery": "2.*"
     },
     "suggest": {
-        "quiqqer\/search": "The package provides an advanced search for QUIQQER.",
-        "quiqqer\/faq": "The FAQ site type provides an easy way to create a FAQ for your users."
+        "quiqqer/search": "The package provides an advanced search for QUIQQER.",
+        "quiqqer/faq": "The FAQ site type provides an easy way to create a FAQ for your users."
     },
     "autoload": {
         "psr-4": {
-            "QUI\\TemplatePresentation\\": "src\/QUI\/TemplatePresentation"
+            "QUI\\TemplatePresentation\\": "src/QUI/TemplatePresentation"
         }
     },
     "extra": {
