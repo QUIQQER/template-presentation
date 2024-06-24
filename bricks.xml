@@ -9,6 +9,81 @@
                     <locale group="quiqqer/template-presentation"
                             var="brickFullWidth"/>
                 </setting>
+
+                <setting name="brickBgImage" class="media-image">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.bgImage"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.bgImage.desc"/>
+                    </description>
+                </setting>
+                <setting name="enableBrickBgColor" type="select">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.enableBgColor"/>
+
+                    <option value="disable" selected="selected">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.enableSelect.disable"/>
+                    </option>
+                    <option value="enable.useBrickSetting">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.enableSelect.enable.useBrickSetting"/>
+                    </option>
+                    <option value="enable.useTemplateSetting">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.enableSelect.enable.useTemplateSetting"/>
+                    </option>
+                </setting>
+                <setting name="brickBgColor" type="color">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.bgColor"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.bgColor.desc"/>
+                    </description>
+                </setting>
+                <setting name="enableBrickTextColor" type="select">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.enableTextColor"/>
+
+                    <option value="disable" selected="selected">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.enableSelect.disable"/>
+                    </option>
+                    <option value="enable.useBrickSetting">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.enableSelect.enable.useBrickSetting"/>
+                    </option>
+                    <option value="enable.useTemplateSetting">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.enableSelect.enable.useTemplateSetting"/>
+                    </option>
+                </setting>
+                <setting name="brickTextColor" type="color">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.textColor"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.textColor.desc"/>
+                    </description>
+                </setting>
+                <setting name="brickSeparatorTop" class="media-image">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorTop"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.separatorTop.desc"/>
+                    </description>
+                </setting>
+                <setting name="brickSeparatorBottom" class="media-image">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorBottom"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.separatorBottom.desc"/>
+                    </description>
+                </setting>
             </settings>
         </brick>
 

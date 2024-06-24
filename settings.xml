@@ -91,6 +91,15 @@
                         <defaultvalue>0</defaultvalue>
                     </conf>
 
+                    <!-- bricks -->
+                    <conf name="bricks.bgColor">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#f5f5f5</defaultvalue>
+                    </conf>
+                    <conf name="bricks.textColor">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+
                     <!-- show header -->
                     <conf name="showHeaderStartPage">
                         <type><![CDATA[bool]]></type>
@@ -357,6 +366,41 @@
                                 <description>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.logoWidth.desc"
+                                    />
+                                </description>
+                            </input>
+                        </settings>
+
+                        <!-- bricks -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.bricks">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="settings.bricks.bricks.title"
+                                />
+                            </title>
+
+                            <input conf="templatePresentation.settings.bricks.bgColor" type="color" value="#f5f5f5">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.bricks.bgColor.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.bricks.bgColor.desc"
+                                    />
+                                </description>
+                            </input>
+                            <input conf="templatePresentation.settings.bricks.textColor" type="color" value="transparent">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.bricks.textColor.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.bricks.textColor.desc"
                                     />
                                 </description>
                             </input>

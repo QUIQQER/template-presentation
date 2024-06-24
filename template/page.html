@@ -7,13 +7,37 @@
     {if $startPage}
         {assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
         {foreach from=$headerBricks item=Brick}
-        <div class="header-brick-area start-page-header brick-id-{$Brick->getAttribute('id')}">
-            {if $Brick->getAttribute('frontendTitle')}
-                <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+            {assign var=tplBrickBgColor value=QUI\TemplatePresentation\Utils::getBrickBgColorCssVar($Brick)}
+            {assign var=tplBrickTextColor value=QUI\TemplatePresentation\Utils::getBrickTextColorCssVar($Brick)}
+
+            {assign var=tplBrickImage value=false}
+            {if $Brick->getSetting('brickBgImage')}
+                {assign var=tplBrickImage value=true}
             {/if}
-            {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-            {$Brick->create()}
-        </div>
+
+            <div class="header-brick-area start-page-header tpl-brick brick-id-{$Brick->getAttribute('id')} tpl-brick--brickImage"
+                 style="{$tplBrickBgColor} {$tplBrickTextColor}"
+            >
+                {if $tplBrickImage}
+                <div class="tpl-brick--brickImage__imageWrapper">
+                    {image src="{$Brick->getSetting('brickBgImage')}" class="tpl-brick--brickImage__image"}
+                </div>
+                {/if}
+
+                {if $tplBrickImage}
+                <div class="tpl-brick--brickImage__contentWrapper">
+                {/if}
+
+                {if $Brick->getAttribute('frontendTitle')}
+                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                {/if}
+                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                {$Brick->create()}
+
+                {if $tplBrickImage}
+                </div>
+                {/if}
+            </div>
         {/foreach}
 
         {template_event name="quiqqer::template::body::after" Template=$Template}
@@ -25,45 +49,87 @@
     <div class="headerSuffix">
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
         {foreach $headerSuffix as $Brick}
-
             {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
 
             {assign var=noPadding value=''}
             {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
                 {assign var=noPadding value='-noPadding'}
             {/if}
-            {if $Brick->getSetting( 'brickFullWidth' )}
-            <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding} {$classes}
+
+            {assign var=tplBrickImage value=false}
+            {if $Brick->getSetting('brickBgImage')}
+                {assign var=tplBrickImage value=true}
+            {/if}
+
+            {assign var=tplBrickBgColor value=QUI\TemplatePresentation\Utils::getBrickBgColorCssVar($Brick)}
+            {assign var=tplBrickTextColor value=QUI\TemplatePresentation\Utils::getBrickTextColorCssVar($Brick)}
+
+            {if $Brick->getSetting('brickFullWidth')}
+            <section class="prefix-suffix-full-width tpl-presentation-row{$noPadding} {$classes}
+                            tpl-brick {if $tplBrickImage}tpl-brick--brickImage{/if}
                             headerSuffix-container
-                            {cycle values='brick-even-suffix,brick-odd-suffix'}
                             brick-id-{$Brick->getAttribute('id')}"
-                            {if $Brick->getSetting('promosliderBackground')}
-                                style="background-color: {$Brick->getSetting('promosliderBackground')};"
-                            {/if}
-                >
+                    style="{$tplBrickBgColor} {$tplBrickTextColor}"
+            >
+                {if $tplBrickImage}
+                <div class="tpl-brick--brickImage__imageWrapper">
+                    {image src="{$Brick->getSetting('brickBgImage')}" class="tpl-brick--brickImage__image"}
+                </div>
+                {/if}
+
+                {if $tplBrickImage}
+                <div class="tpl-brick--brickImage__contentWrapper">
+                    {/if}
+
+                    {if $Brick->getSetting('brickSeparatorTop')}
+                        {fetch template="template/bricks/separator.html"
+                            image=$Brick->getSetting('brickSeparatorTop')
+                        }
+                    {/if}
+
                 {$Brick->create()}
+
+                {if $tplBrickImage}
+                </div>
+                {/if}
             </section>
             {else}
-            <div class="tpl-presentation-row {$classes}
+
+            <section class="tpl-presentation-row {$classes}
+                        tpl-brick {if $tplBrickImage}tpl-brick--brickImage{/if}
                         headerSuffix-container
-                        {cycle values='brick-even-suffix,brick-odd-suffix'}
-                        brick-id-{$Brick->getAttribute('id')}">
-                <div class="grid-container">
-                    <section>
-                        {if $Brick->getAttribute('frontendTitle')}
-                            <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                        {/if}
-                        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                        {$Brick->create()}
-                    </section>
+                        brick-id-{$Brick->getAttribute('id')}
+                        "
+                     style="{$tplBrickBgColor} {$tplBrickTextColor}"
+            >
+                {if $tplBrickImage}
+                    <div class="tpl-brick--brickImage__imageWrapper">
+                        {image src="{$Brick->getSetting('brickBgImage')}" class="tpl-brick--brickImage__image"}
+                    </div>
+                {/if}
+
+                <div class="grid-container {if $tplBrickImage}tpl-brick--brickImage__contentWrapper{/if}">
+                    {if $Brick->getSetting('brickSeparatorTop')}
+                        {fetch template="template/bricks/separator.html"
+                        image=$Brick->getSetting('brickSeparatorTop')
+                        pos=bottom
+                        }
+                    {/if}
+
+                    {if $Brick->getAttribute('frontendTitle')}
+                        <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                    {/if}
+                    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                    {$Brick->create()}
                 </div>
-            </div>
+            </section>
             {/if}
+
         {/foreach}
     </div>
 
     {template_event name="quiqqer::template::body::beforeMain" Template=$Template}
-    <div class="main-content-wrapper  {cycle values='' reset=true}">
+    <div class="main-content-wrapper">
         <div class="grid-container main-content">
             {$Template->getLayout()}
         </div>
@@ -72,10 +138,8 @@
 
 
     <div class="prefixFooter">
-        {cycle assign=cy values='brick-even-suffix,brick-odd-suffix' reset=true}
         {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
         {foreach $footerPrefix as $Brick}
-
             {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
 
             {assign var=noPadding value=''}
@@ -83,33 +147,34 @@
                 {assign var=noPadding value='-noPadding'}
             {/if}
 
+            {assign var=tplBrickImage value=false}
+            {if $Brick->getSetting('brickBgImage')}
+                {assign var=tplBrickImage value=true}
+            {/if}
+
+            {assign var=tplBrickBgColor value=QUI\TemplatePresentation\Utils::getBrickBgColorCssVar($Brick)}
+            {assign var=tplBrickTextColor value=QUI\TemplatePresentation\Utils::getBrickTextColorCssVar($Brick)}
+
             {if $Brick->getSetting( 'brickFullWidth' )}
             <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding} {$classes}
                     footerPrefix-container
-                    {cycle values='brick-even-prefix,brick-odd-prefix'}
                     brick-id-{$Brick->getAttribute('id')}"
-                    {if $Brick->getSetting('promosliderBackground')}
-                        style="background-color: {$Brick->getSetting('promosliderBackground')};"
-                    {/if}
                 >
-
                 {$Brick->create()}
             </section>
             {else}
-            <div class="tpl-presentation-row prefix-suffix-nofull-width {$classes}
+            <section class="tpl-presentation-row prefix-suffix-nofull-width {$classes}
                         footerPrefix-container
-                        {cycle values='brick-even-prefix,brick-odd-prefix'}
+                        tpl-brick {if $tplBrickImage}tpl-brick--brickImage{/if}
                         brick-id-{$Brick->getAttribute('id')}">
                 <div class="grid-container">
-                    <section>
-                        {if $Brick->getAttribute('frontendTitle')}
-                            <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                        {/if}
-                        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                        {$Brick->create()}
-                    </section>
+                    {if $Brick->getAttribute('frontendTitle')}
+                        <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                    {/if}
+                    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                    {$Brick->create()}
                 </div>
-            </div>
+            </section>
             {/if}
         {/foreach}
     </div>

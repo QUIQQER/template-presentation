@@ -705,23 +705,6 @@ ul.alt {
     padding: 0;
 }
 
-/* brick even prefix suffix */
-.brick-even-prefix {
-    background-color: var(--qui-brick-prefix-even-bg);
-}
-
-.brick-odd-prefix {
-    background-color: var(--qui-brick-prefix-odd-bg);
-}
-
-.brick-even-suffix {
-    background-color: var(--qui-brick-suffix-even-bg);
-}
-
-.brick-odd-suffix {
-    background-color: var(--qui-brick-suffix-odd-bg);
-}
-
 /*********/
 /* Table */
 /*********/
@@ -1448,6 +1431,40 @@ input[type="search"].only-input:focus {
     max-height: 400px;
     overflow: hidden;
     width: 100%;
+}
+
+/*******************/
+/* Template bricks */
+/*******************/
+.tpl-brick {
+    color: var(--_qui-tpl-brick-textColor);
+    background-color: var(--_qui-tpl-brick-backgroundColor);
+}
+
+/* brick with background image */
+.tpl-brick--brickImage {
+    position: relative;
+}
+
+.tpl-brick--brickImage__imageWrapper {
+    position: absolute;
+    inset: 0;
+}
+
+.tpl-brick--brickImage__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tpl-brick--brickImage__contentWrapper {
+    position: relative;
+}
+
+/* bricks separator / divider */
+.tpl-brick__separator {
+    text-align: center;
 }
 
 /** page content

@@ -3,6 +3,20 @@
     <groups name="quiqqer/template-presentation" datatype="php,js">
 
         <!-- template bricks -->
+        <locale name="brick.settings.enableSelect.disable">
+            <de><![CDATA[Deaktivieren]]></de>
+            <en><![CDATA[Disable]]></en>
+        </locale>
+        <locale name="brick.settings.enableSelect.enable.useBrickSetting">
+            <de><![CDATA[Aktivieren: Baustein Einstellung verwenden]]></de>
+            <en><![CDATA[Enable: use brick setting]]></en>
+        </locale>
+        <locale name="brick.settings.enableSelect.enable.useTemplateSetting">
+            <de><![CDATA[Aktivieren: Template Einstellung verwenden]]></de>
+            <en><![CDATA[Enable: use template setting]]></en>
+        </locale>
+
+
         <locale name="promosliderBackground">
             <de><![CDATA[Hintergrundfarbe auswählen (nur bei voller Breite)]]></de>
             <en><![CDATA[Set the background color (only by full width)]]></en>
@@ -16,9 +30,63 @@
         </locale>
 
         <locale name="brickFullWidth">
-            <de><![CDATA[Volle Breite]]></de>
-            <en><![CDATA[Full width]]></en>
-            <pl><![CDATA[Pełna szerokość]]></pl>
+            <de><![CDATA[Template Presentation: Volle Breite]]></de>
+            <en><![CDATA[Template Presentation: Full width]]></en>
+            <pl><![CDATA[Template Presentation: Pełna szerokość]]></pl>
+        </locale>
+
+
+        <locale name="brick.settings.enableBgImage">
+            <de><![CDATA[Template Presentation: Baustein Hintergrundbild aktivieren]]></de>
+            <en><![CDATA[Template Presentation: Enable brick background image]]></en>
+        </locale>
+        <locale name="brick.settings.bgImage">
+            <de><![CDATA[Template Presentation: Baustein Hintergrundbild]]></de>
+            <en><![CDATA[Template Presentation: Brick background ]]></en>
+        </locale>
+        <locale name="brick.settings.bgImage.desc">
+            <de><![CDATA[Bitte beachte: einige Bausteine haben eigene Einstellung zum Setzen des Hintergrundbildes. Unter Umständen kann es besser sein, die eingebaute Baustein-Einstellung zu benutzen.]]></de>
+            <en><![CDATA[Please note: some bricks have their own settings for setting the background image. Under certain circumstances, it may be better to use the built-in brick setting.]]></en>
+        </locale>
+        <locale name="brick.settings.enableBgColor">
+            <de><![CDATA[Template Presentation: Baustein Hintergrundfarbe aktivieren]]></de>
+            <en><![CDATA[Template Presentation: Enable brick background color]]></en>
+        </locale>
+        <locale name="brick.settings.bgColor">
+            <de><![CDATA[Template Presentation: Baustein Hintergrundfarbe]]></de>
+            <en><![CDATA[Template Presentation: Brick background color]]></en>
+        </locale>
+        <locale name="brick.settings.bgColor.desc">
+            <de><![CDATA[Bitte beachte: einige Bausteine haben eigene Einstellung zum Setzen der Hintergrundfarbe. Unter Umständen kann es besser sein, die eingebaute Baustein-Einstellung zu benutzen.]]></de>
+            <en><![CDATA[Please note: some bricks have their own settings for setting the background color. Under certain circumstances, it may be better to use the built-in brick setting.]]></en>
+        </locale>
+        <locale name="brick.settings.enableTextColor">
+            <de><![CDATA[Template Presentation: Baustein Textfarbe aktivieren]]></de>
+            <en><![CDATA[Template Presentation: Enable brick text color]]></en>
+        </locale>
+        <locale name="brick.settings.textColor">
+            <de><![CDATA[Template Presentation: Baustein Textfarbe]]></de>
+            <en><![CDATA[Template Presentation: Brick text color]]></en>
+        </locale>
+        <locale name="brick.settings.textColor.desc">
+            <de><![CDATA[Diese Einstellung benötigt man nur dann, wenn man eine Kontrastfarbe zum Hintergrundbild oder zur Hintergrundfarbe braucht, um den Text lesbar zu machen.]]></de>
+            <en><![CDATA[This setting is only required if you need a contrasting color to the background image or background color to make the text legible.]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop">
+            <de><![CDATA[Template Presentation: Baustein Separator (oben)]]></de>
+            <en><![CDATA[Template Presentation: Brick top separator]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.desc">
+            <de><![CDATA[Wähle ein passendes Bild, was als Separator zwischen dem aktellen und dem vorherigen Baustein dienen kann. Beispiel Generatoren: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> und <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></de>
+            <en><![CDATA[Select a suitable image that can be used as a separator between the current and the previous brick. Example generators: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> and <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom">
+            <de><![CDATA[Template Presentation: Baustein Separator (unten)]]></de>
+            <en><![CDATA[Template Presentation: Brick bottom separator]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.desc">
+            <de><![CDATA[Wähle ein passendes Bild, was als Separator zwischen dem aktellen und dem nächsten Baustein dienen kann. Beispiel Generatoren: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> und <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></de>
+            <en><![CDATA[Select a suitable image that can be used as a separator between the current and the next brick. Example generators: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> and <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></en>
         </locale>
 
         <!-- areas -->
@@ -443,6 +511,28 @@
         <locale name="templatePresentation.settings.logoWidth.desc">
             <de><![CDATA[Im Normalfall setzt man die Einstellung nicht. Das Template berechnet automatisch die Breite anhand von der angegebenen Höhe. In seltenen Fällen ist QUIQQER nicht in der Lage die Berechnung durchzuführen (z.B. wenn das Logo ein <code>.svg</code> Bild ist). <strong>Wenn das Logo ein <code>.svg</strong> Bild ist, muss die Breite eingegeben werden.</strong>]]></de>
             <en><![CDATA[In most cases, you don't need to set the logo width. The template automatically calculates the width based on the specified height. In rare cases, QUIQQER may not be able to perform the calculation (e.g. if the logo is an .svg image). <strong>If the logo is a <code>.svg</strong> image, the width must be entered.</strong>]]></en>
+        </locale>
+
+        <!-- Bricks -->
+        <locale name="settings.bricks.bricks.title">
+            <de><![CDATA[Bausteine (Widgets)]]></de>
+            <en><![CDATA[Bricks (widgets)]]></en>
+        </locale>
+        <locale name="settings.bricks.bgColor.text">
+            <de><![CDATA[Baustein Hintergrundfarbe]]></de>
+            <en><![CDATA[Bricks background color]]></en>
+        </locale>
+        <locale name="settings.bricks.bgColor.desc">
+            <de><![CDATA[Standard Hintergrundfarbe für Bausteine. Wenn man im Baustein eine Hintergrundfarbe aktiviert, kann man entweder eigene wählen, oder die mit dieser Einstellung predefined Farbe verwenden.]]></de>
+            <en><![CDATA[Default background color for bricks. If you activate a background color in the brick setting, you can either choose your own or use the color predefined with this setting.]]></en>
+        </locale>
+        <locale name="settings.bricks.textColor.text">
+            <de><![CDATA[Baustein Textfarbe]]></de>
+            <en><![CDATA[Bricks text color]]></en>
+        </locale>
+        <locale name="settings.bricks.textColor.desc">
+            <de><![CDATA[Standard Textfarbe für Bausteine. Wenn man im Baustein eine Textfarbe aktiviert, kann man entweder eigene wählen, oder die mit dieser Einstellung predefined Farbe verwenden.]]></de>
+            <en><![CDATA[Default text color for bricks. If you activate a text color in the brick setting, you can either choose your own or use the color predefined with this setting.]]></en>
         </locale>
 
         <!-- Navbar settings -->
