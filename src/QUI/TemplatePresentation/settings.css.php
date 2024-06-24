@@ -70,8 +70,6 @@ if ($Project->getConfig('templatePresentation.settings.colorMainContentFont')) {
 
 $navBarHeight = (int)$Project->getConfig('templatePresentation.settings.navBarHeight');
 $headerHeightValue = (int)$Project->getConfig('templatePresentation.settings.headerHeightValue');
-$bgColorSwitcherPrefix = $Project->getConfig('templatePresentation.settings.bgColorSwitcherPrefix');
-$bgColorSwitcherSuffix = $Project->getConfig('templatePresentation.settings.bgColorSwitcherSuffix');
 $headerImagePosition = $Project->getConfig('templatePresentation.settings.headerImagePosition');
 $colorMainButton = $Convert->colorBrightness($colorMain, 0.7);
 
@@ -97,22 +95,6 @@ if (isset($headerArea) && $headerArea) {
 if (isset($showHeader) && $showHeader) {
     $bodyContainerTop = 0;
     $navBarBackground = 'transparent';
-}
-
-/* brick background switch */
-$brickPrefixEvenBg = 'transparent';
-$brickPrefixOddBg = 'transparent';
-$brickSuffixEvenBg = 'transparent';
-$brickSuffixOddBg = 'transparent';
-
-if ($bgColorSwitcherPrefix == 'display') {
-    $brickPrefixEvenBg = '#f5f5f5';
-    $brickPrefixOddBg = '#e5e5e5';
-}
-
-if ($bgColorSwitcherSuffix == 'display') {
-    $brickSuffixEvenBg = '#f5f5f5';
-    $brickSuffixOddBg = '#e5e5e5';
 }
 
 ob_start();
@@ -146,11 +128,6 @@ ob_start();
     --qui-footer-bg: <?php echo $colorFooterBackground;?>;
     --qui-footer-font-color: <?php echo $colorFooterFont;?>;
     --qui-footer-copyrigth-border-top-color: <?php echo $Convert->colorBrightness($colorFooterBackground, 0.9);?>;
-
-    --qui-brick-prefix-even-bg: <?php echo $brickPrefixEvenBg;?>;
-    --qui-brick-prefix-odd-bg: <?php echo $brickPrefixOddBg;?>;
-    --qui-brick-suffix-even-bg: <?php echo $brickSuffixEvenBg;?>;
-    --qui-brick-suffix-odd-bg: <?php echo $brickSuffixOddBg;?>;
 }
 
 <?php

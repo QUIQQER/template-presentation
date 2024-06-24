@@ -15,14 +15,6 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
-                    <conf name="bgColorSwitcherPrefix">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>hide</defaultvalue>
-                    </conf>
-                    <conf name="bgColorSwitcherSuffix">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>hide</defaultvalue>
-                    </conf>
                     <conf name="dropdownLangNav">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>hide</defaultvalue>
@@ -243,56 +235,6 @@
                                     />
                                 </text>
                             </input>
-
-                            <!-- Background Color Switcher Prefix -->
-                            <select conf="templatePresentation.settings.bgColorSwitcherPrefix">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcherPrefix.text"
-                                    />
-                                </text>
-                                <description>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcherPrefix.desc"
-                                    />
-                                </description>
-
-                                <option value="hide">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcher.hide"
-                                    />
-                                </option>
-                                <option value="display">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcher.display"
-                                    />
-                                </option>
-                            </select>
-
-                            <!-- Background Color Switcher Suffix-->
-                            <select conf="templatePresentation.settings.bgColorSwitcherSuffix">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcherSuffix.text"
-                                    />
-                                </text>
-                                <description>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcherSuffix.desc"
-                                    />
-                                </description>
-
-                                <option value="hide">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcher.hide"
-                                    />
-                                </option>
-                                <option value="display">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcher.display"
-                                    />
-                                </option>
-                            </select>
 
 
                             <!-- Dropdown Language Switch in top nav -->
