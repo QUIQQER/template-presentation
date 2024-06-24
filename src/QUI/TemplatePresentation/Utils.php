@@ -227,4 +227,49 @@ class Utils
             'height' => $height
         ];
     }
+
+    public static function getBrickBgColorCssVar(QUI\Bricks\Brick $Brick): string
+    {
+        $setting = $Brick->getSetting('enableBrickBgColor');
+
+        if ($setting === 'disable') {
+            return '';
+        }
+
+        $bgColor = $Brick->getSetting('brickBgColor');
+
+        if ($setting === 'enable.useTemplateSetting') {
+            $Project = QUI::getRewrite()->getProject();
+            $bgColor = $Project->getConfig('templatePresentation.settings.bricks.bgColor');
+        }
+
+        if (!$bgColor) {
+            return '';
+        }
+
+        return '--_qui-tpl-brick-backgroundColor: ' . $bgColor . ';';
+    }
+
+    public static function getBrickTextColorCssVar(QUI\Bricks\Brick $Brick): string
+    {
+        $setting = $Brick->getSetting('enableBrickTextColor');
+
+
+        if ($setting === 'disable') {
+            return '';
+        }
+
+        $color = $Brick->getSetting('brickTextColor');
+
+        if ($setting === 'enable.useTemplateSetting') {
+            $Project = QUI::getRewrite()->getProject();
+            $color = $Project->getConfig('templatePresentation.settings.bricks.textColor');
+        }
+
+        if (!$color) {
+            return '';
+        }
+
+        return '--_qui-tpl-brick-textColor: ' . $color . ';';
+    }
 }
