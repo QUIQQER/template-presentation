@@ -1,0 +1,47 @@
+{assign var=brickClasses value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+{assign var=tplBrickBgColor value=QUI\TemplatePresentation\Utils::getBrickBgColorCssVar($Brick)}
+{assign var=tplBrickTextColor value=QUI\TemplatePresentation\Utils::getBrickTextColorCssVar($Brick)}
+{assign var=verticalSpacingTop value=$Brick->getSetting('verticalSpacingTop')}
+{assign var=verticalSpacingBottom value=$Brick->getSetting('verticalSpacingBottom')}
+
+{* allow to passing through the fullWidth variable bei fetching the brick tpl file *}
+{if !isset($fullWidth)}
+    {assign var=fullWidth value=$Brick->getSetting('brickFullWidth')}
+{/if}
+
+{assign var=tplBrickImage value=false}
+{if $Brick->getSetting('brickBgImage')}
+    {assign var=tplBrickImage value=true}
+{/if}
+
+<section class="{$brickClasses} {if $fullWidth}prefix-suffix-full-width{/if}
+                    tpl-brick {if $tplBrickImage}tpl-brick--brickImage{/if}
+                    {if $verticalSpacingTop}tpl-brick--verticalSpacingTop--{$verticalSpacingTop}{/if}
+                    {if $verticalSpacingBottom}tpl-brick--verticalSpacingBottom--{$verticalSpacingBottom}{/if}
+                    {$tplPos}-container
+                    brick-id-{$Brick->getAttribute('id')}
+                    "
+         style="{$tplBrickBgColor} {$tplBrickTextColor}"
+>
+    {* works like background image *}
+    {if $tplBrickImage}
+        <div class="tpl-brick--brickImage__imageWrapper">
+            {image src="{$Brick->getSetting('brickBgImage')}" class="tpl-brick--brickImage__image"}
+        </div>
+    {/if}
+
+    {if $Brick->getSetting('brickSeparatorTop')}
+        {fetch template="template/bricks/separator.html"
+        image=$Brick->getSetting('brickSeparatorTop')
+        pos=bottom
+        }
+    {/if}
+    <div class="tpl-brick__inner {if !$fullWidth}grid-container{/if} {if $tplBrickImage}tpl-brick--brickImage__contentWrapper{/if}">
+            {if $Brick->getAttribute('frontendTitle')}
+                <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+            {/if}
+            {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+
+            {$Brick->create()}
+    </div>
+</section>
