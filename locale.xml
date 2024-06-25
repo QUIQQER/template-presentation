@@ -29,12 +29,40 @@
             <pl><![CDATA[Tytuł]]></pl>
         </locale>
 
-        <locale name="brickFullWidth">
+        <locale name="brick.settings.enableBgImage.fullWidth">
             <de><![CDATA[Template Presentation: Volle Breite]]></de>
             <en><![CDATA[Template Presentation: Full width]]></en>
             <pl><![CDATA[Template Presentation: Pełna szerokość]]></pl>
         </locale>
 
+        <locale name="brick.settings.verticalSpacingTop">
+            <de><![CDATA[Template Presentation: Baustein-Abstand oben]]></de>
+            <en><![CDATA[Template Presentation: brick top spacing]]></en>
+        </locale>
+        <locale name="brick.settings.verticalSpacingBottom">
+            <de><![CDATA[Template Presentation: Baustein-Abstand unten]]></de>
+            <en><![CDATA[Template Presentation: brick bottom spacing]]></en>
+        </locale>
+        <locale name="brick.settings.verticalSpacing.disabled">
+            <de><![CDATA[Deaktiviert]]></de>
+            <en><![CDATA[Disabled]]></en>
+        </locale>
+        <locale name="brick.settings.verticalSpacing.small">
+            <de><![CDATA[Klein]]></de>
+            <en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="brick.settings.verticalSpacing.medium">
+            <de><![CDATA[Mittel]]></de>
+            <en><![CDATA[Medium]]></en>
+        </locale>
+        <locale name="brick.settings.verticalSpacing.large">
+            <de><![CDATA[Groß]]></de>
+            <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="brick.settings.verticalSpacing.extraLarge">
+            <de><![CDATA[Extra groß]]></de>
+            <en><![CDATA[Extra large]]></en>
+        </locale>
 
         <locale name="brick.settings.enableBgImage">
             <de><![CDATA[Template Presentation: Baustein Hintergrundbild aktivieren]]></de>

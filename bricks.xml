@@ -7,7 +7,60 @@
             <settings>
                 <setting name="brickFullWidth" type="checkbox">
                     <locale group="quiqqer/template-presentation"
-                            var="brickFullWidth"/>
+                            var="brick.settings.enableBgImage.fullWidth"/>
+                </setting>
+
+                <setting name="verticalSpacingTop" type="select">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.verticalSpacingTop"/>
+
+                    <option value=""></option>
+                    <option value="disabled">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.verticalSpacing.disabled"/>
+                    </option>
+                    <option value="small">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.verticalSpacing.small"/>
+                    </option>
+                    <option value="medium" selected="selected">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.verticalSpacing.medium"/>
+                    </option>
+                    <option value="large">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.verticalSpacing.large"/>
+                    </option>
+                    <option value="extraLarge">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.verticalSpacing.extraLarge"/>
+                    </option>
+                </setting>
+                <setting name="verticalSpacingBottom" type="select">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.verticalSpacingBottom"/>
+
+                    <option value=""></option>
+                    <option value="disabled">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.verticalSpacing.disabled"/>
+                    </option>
+                    <option value="small">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.verticalSpacing.small"/>
+                    </option>
+                    <option value="medium" selected="selected">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.verticalSpacing.medium"/>
+                    </option>
+                    <option value="large">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.verticalSpacing.large"/>
+                    </option>
+                    <option value="extraLarge">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.verticalSpacing.extraLarge"/>
+                    </option>
                 </setting>
 
                 <setting name="brickBgImage" class="media-image">
