@@ -1,21 +1,40 @@
 {if $showHeader}
 {strip}
-<header class="page-header" {if $Site->getAttribute('image_emotion')}style="background-image: url('{image src=$Site->getAttribute('image_emotion') onlysrc=1}');{/if}">
-    <div class="page-header-container grid-container">
+    {assign var=TS value=$Template->getAttribute('TemplateSetting')}
+    {assign var=bgImagCSSVar value=''}
+    {assign var=textColorCSSVar value=$TS->getAttribute('headerTextColor')}
+    {assign var=textPosCSSVar value=$TS->getAttribute('headerTextPos')}
+    {assign var=textAlignmentCSSVar value=$TS->getAttribute('headerTextAlignment')}
 
-        {if $showPageTitle}
-        <h1 class="page-header-text-title">
-            {$Site->getAttribute('title')}
-        </h1>
-        {/if}
+    {if $Site->getAttribute('image_emotion')}
+        {assign var=bgImagCSSVar value="--_tpl-header-backgroundImage: url('{image src=$Site->getAttribute('image_emotion') onlysrc=1}');"}
+    {/if}
+    {if $TS->getAttribute('headerTextColor')}
+        {assign var=textColorCSSVar value="--_tpl-header-textColor: {$TS->getAttribute('headerTextColor')};"}
+    {/if}
+    {if $TS->getAttribute('headerTextPos')}
+        {assign var=textPosCSSVar value="--_tpl-header-textPos: {$TS->getAttribute('headerTextPos')};"}
+    {/if}
+    {if $TS->getAttribute('headerTextAlignment')}
+        {assign var=textAlignmentCSSVar value="--_tpl-header-textAlignment: {$TS->getAttribute('headerTextAlignment')};"}
+    {/if}
 
-        {if $showPageShort}
-        <div class="page-header-text-short">
-            {$Site->getAttribute('short')|nl2br}
+    <header class="page-header" style="{$bgImagCSSVar} {$textColorCSSVar} {$textPosCSSVar} {$textAlignmentCSSVar}">
+        <div class="page-header-container grid-container">
+
+            {if $showPageTitle}
+            <h1 class="page-header-text-title">
+                {$Site->getAttribute('title')}
+            </h1>
+            {/if}
+
+            {if $showPageShort}
+            <div class="page-header-text-short">
+                {$Site->getAttribute('short')|nl2br}
+            </div>
+            {/if}
+
         </div>
-        {/if}
-
-    </div>
-</header>
+    </header>
 {/strip}
 {/if}

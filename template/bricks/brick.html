@@ -18,7 +18,7 @@
                     tpl-brick {if $tplBrickImage}tpl-brick--brickImage{/if}
                     {if $verticalSpacingTop}tpl-brick--verticalSpacingTop--{$verticalSpacingTop}{/if}
                     {if $verticalSpacingBottom}tpl-brick--verticalSpacingBottom--{$verticalSpacingBottom}{/if}
-                    {$tplPos}-container
+                    tpl-brickArea-{$brickArea}__container
                     brick-id-{$Brick->getAttribute('id')}
                     "
          style="{$tplBrickBgColor} {$tplBrickTextColor}"
@@ -30,18 +30,29 @@
         </div>
     {/if}
 
-    {if $Brick->getSetting('brickSeparatorTop')}
+    {if $Brick->getSetting('brickSeparatorTop.image')}
         {fetch template="template/bricks/separator.html"
-        image=$Brick->getSetting('brickSeparatorTop')
-        pos=bottom
+        image=$Brick->getSetting('brickSeparatorTop.image')
+        width=$Brick->getSetting('brickSeparatorTop.width')
+        height=$Brick->getSetting('brickSeparatorTop.height')
+        pos=top
         }
     {/if}
     <div class="tpl-brick__inner {if !$fullWidth}grid-container{/if} {if $tplBrickImage}tpl-brick--brickImage__contentWrapper{/if}">
             {if $Brick->getAttribute('frontendTitle')}
-                <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+                <h2 class="tpl-brick__title">{$Brick->getAttribute('frontendTitle')}</h2>
             {/if}
             {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
 
             {$Brick->create()}
     </div>
+
+    {if $Brick->getSetting('brickSeparatorBottom.image')}
+        {fetch template="template/bricks/separator.html"
+        image=$Brick->getSetting('brickSeparatorBottom.image')
+        width=$Brick->getSetting('brickSeparatorBottom.width')
+        height=$Brick->getSetting('brickSeparatorBottom.height')
+        pos=top
+        }
+    {/if}
 </section>

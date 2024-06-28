@@ -82,6 +82,8 @@ class Utils
 
         $showPageTitle = false;
         $showPageShort = false;
+        $headerTextColor = 'inherit';
+        $headerTextPos = 'center';
 
         if ($Project->getConfig('templatePresentation.settings.showTitle')) {
             $showPageTitle = $Project->getConfig('templatePresentation.settings.showTitle');
@@ -91,8 +93,16 @@ class Utils
             $showPageShort = $Project->getConfig('templatePresentation.settings.showShort');
         }
 
+        if ($Project->getConfig('templatePresentation.settings.header.textColor')) {
+            $headerTextColor = $Project->getConfig('templatePresentation.settings.header.textColor');
+        }
+
+        if ($Project->getConfig('templatePresentation.settings.header.textPos')) {
+            $headerTextPos = $Project->getConfig('templatePresentation.settings.header.textPos');
+        }
+
         /* site own show title */
-        switch ($params['Site']->getAttribute('templatePresentation.showTitle')) {
+        switch ($Site->getAttribute('templatePresentation.showTitle')) {
             case 'show':
                 $showPageTitle = true;
                 break;
@@ -102,7 +112,7 @@ class Utils
         }
 
         /* site own show short description */
-        switch ($params['Site']->getAttribute('templatePresentation.showShort')) {
+        switch ($Site->getAttribute('templatePresentation.showShort')) {
             case 'show':
                 $showPageShort = true;
                 break;
@@ -112,13 +122,39 @@ class Utils
         }
 
         /* site own show header */
-        switch ($params['Site']->getAttribute('templatePresentation.showHeader')) {
+        switch ($Site->getAttribute('templatePresentation.showHeader')) {
             case 'show':
                 $showHeader = true;
                 break;
             case 'hide':
                 $showHeader = false;
+                break;
         }
+
+        /* site own header text color */
+        switch ($Site->getAttribute('templatePresentation.header.textColor.enable')) {
+            case 'useSiteSetting':
+                $headerTextColor = $Site->getAttribute('templatePresentation.header.textColor.color');
+                break;
+            case 'useDefaultColor':
+                $headerTextColor = 'inherit';
+                break;
+        }
+
+        /* site own header text position */
+        switch ($Site->getAttribute('templatePresentation.header.textPos')) {
+            case 'flex-start':
+            case 'center':
+            case 'flex-right':
+                $headerTextPos = $Site->getAttribute('templatePresentation.header.textPos');
+        }
+
+        // make text alignment depend on content (flexbox) alignment
+        $headerTextAlignment = match ($headerTextPos) {
+            'flex-start' => 'left',
+            'flex-end' => 'right',
+            default => 'center',
+        };
 
         /* page custom class */
         $customClass = $Site->getAttribute('templatePresentation.pageCustomClass');
@@ -143,7 +179,7 @@ class Utils
             'showHeader' => $showHeader,
             'showBreadcrumb' => $showBreadcrumb,
             'settingsCSS' => '<style data-no-cache="1">' . $settingsCSS . '</style>',
-            'typeClass' => 'type-' . str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
+            'typeClass' => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'navPos' => $Project->getConfig('templatePresentation.settings.navPos'),
             'navAlignment' => $Project->getConfig('templatePresentation.settings.navAlignment'),
             'headerArea' => $headerArea,
@@ -152,7 +188,10 @@ class Utils
             'pageCustomClass' => $pageCustomClass,
             'logoData' => $logoData,
             'useSlideOutMenu' => true, // for now is always true because quiqqer use currently only SlideOut nav
-            'includeDemoCss' => $includeDemoCss
+            'includeDemoCss' => $includeDemoCss,
+            'headerTextColor' => $headerTextColor,
+            'headerTextPos' => $headerTextPos,
+            'headerTextAlignment' => $headerTextAlignment,
         ];
 
         // set cache

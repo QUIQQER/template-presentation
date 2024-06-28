@@ -5,6 +5,9 @@
         <attribute>templatePresentation.showHeader</attribute>
         <attribute>templatePresentation.showTitle</attribute>
         <attribute>templatePresentation.showShort</attribute>
+        <attribute>templatePresentation.header.textColor.enable</attribute>
+        <attribute>templatePresentation.header.textColor.color</attribute>
+        <attribute>templatePresentation.header.textPos</attribute>
         <attribute>templatePresentation.pageCustomClass</attribute>
         <attribute>templatePresentation.independentMenuId</attribute>
     </attributes>
@@ -76,6 +79,38 @@
                                 var="templatePresentation.siteSettings.showShort.hide"/>
                     </option>
                 </select>
+
+                <!-- header text color -->
+                <select conf="templatePresentation.header.textColor.enable">
+                    <text>
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.header.textColor.enable"/>
+                    </text>
+
+                    <option></option>
+                    <option value="useTemplateSetting">
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.header.textColor.enable.useTemplateSetting"/>
+                    </option>
+                    <option value="useSiteSetting">
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.header.textColor.enable.useSiteSetting"/>
+                    </option>
+                    <option value="useDefaultColor">
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.header.textColor.enable.useDefaultColor"/>
+                    </option>
+                </select>
+                <input conf="templatePresentation.header.textColor.color" type="color">
+                    <text>
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.header.textColor.color"/>
+                    </text>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.header.textColor.color.desc"/>
+                    </description>
+                </input>
 
                 <!-- custom css class for entire page -->
                 <input conf="templatePresentation.pageCustomClass" type="text">
