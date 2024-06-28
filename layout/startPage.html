@@ -3,7 +3,10 @@
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
 
 {if !empty( $prefixContentBricks )}
+    <div class="tpl-brickArea-contentPrefix">
     {foreach from=$prefixContentBricks item=Brick}
+        {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="contentPrefix"}
+        {*
         {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
         <div class="tpl-presentation-row brick-id-{$Brick->getAttribute('id')} {$classes}">
             {if $Brick->getAttribute('frontendTitle')}
@@ -12,7 +15,9 @@
             {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
             {$Brick->create()}
         </div>
+        *}
     {/foreach}
+    </div>
 {/if}
 
 {foreach from=$bricks item=Brick}
@@ -47,8 +52,11 @@
 </div>
 
 {if !empty( $suffixContentBricks )}
+    <div class="tpl-brickArea-contentPrefix">
     {foreach from=$suffixContentBricks item=Brick}
+        {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="contentSuffix"}
 
+        {*
         {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
         <div class="tpl-presentation-row brick-id-{$Brick->getAttribute('id')} {$classes}">
             {if $Brick->getAttribute('frontendTitle')}
@@ -57,5 +65,7 @@
             {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
             {$Brick->create()}
         </div>
+        *}
     {/foreach}
+    </div>
 {/if}

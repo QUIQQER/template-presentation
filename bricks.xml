@@ -121,20 +121,54 @@
                                 var="brick.settings.textColor.desc"/>
                     </description>
                 </setting>
-                <setting name="brickSeparatorTop" class="media-image">
+                <!-- BRICK SETTINGS: separator top -->
+                <setting name="brickSeparatorTop.image" class="media-image">
                     <locale group="quiqqer/template-presentation"
-                            var="brick.settings.separatorTop"/>
+                            var="brick.settings.separatorTop.image"/>
                     <description>
                         <locale group="quiqqer/template-presentation"
-                                var="brick.settings.separatorTop.desc"/>
+                                var="brick.settings.separatorTop.image.desc"/>
                     </description>
                 </setting>
-                <setting name="brickSeparatorBottom" class="media-image">
+                <setting name="brickSeparatorTop.width" type="text">
                     <locale group="quiqqer/template-presentation"
-                            var="brick.settings.separatorBottom"/>
+                            var="brick.settings.separatorTop.width"/>
                     <description>
                         <locale group="quiqqer/template-presentation"
-                                var="brick.settings.separatorBottom.desc"/>
+                                var="brick.settings.separatorTop.width.desc"/>
+                    </description>
+                </setting>
+                <setting name="brickSeparatorTop.height" type="text">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorTop.height"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.separatorTop.height.desc"/>
+                    </description>
+                </setting>
+                <!-- BRICK SETTINGS: separator top -->
+                <setting name="brickSeparatorBottom.image" class="media-image">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorBottom.image"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.separatorBottom.image.desc"/>
+                    </description>
+                </setting>
+                <setting name="brickSeparatorBottom.width" type="text">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorBottom.width"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.separatorBottom.width.desc"/>
+                    </description>
+                </setting>
+                <setting name="brickSeparatorBottom.height" type="text">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorBottom.height"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.separatorBottom.height.desc"/>
                     </description>
                 </setting>
             </settings>

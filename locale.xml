@@ -100,19 +100,19 @@
             <de><![CDATA[Diese Einstellung benötigt man nur dann, wenn man eine Kontrastfarbe zum Hintergrundbild oder zur Hintergrundfarbe braucht, um den Text lesbar zu machen.]]></de>
             <en><![CDATA[This setting is only required if you need a contrasting color to the background image or background color to make the text legible.]]></en>
         </locale>
-        <locale name="brick.settings.separatorTop">
+        <locale name="brick.settings.separatorTop.image">
             <de><![CDATA[Template Presentation: Baustein Separator (oben)]]></de>
             <en><![CDATA[Template Presentation: Brick top separator]]></en>
         </locale>
-        <locale name="brick.settings.separatorTop.desc">
+        <locale name="brick.settings.separatorTop.image.desc">
             <de><![CDATA[Wähle ein passendes Bild, was als Separator zwischen dem aktellen und dem vorherigen Baustein dienen kann. Beispiel Generatoren: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> und <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></de>
             <en><![CDATA[Select a suitable image that can be used as a separator between the current and the previous brick. Example generators: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> and <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></en>
         </locale>
-        <locale name="brick.settings.separatorBottom">
+        <locale name="brick.settings.separatorBottom.image">
             <de><![CDATA[Template Presentation: Baustein Separator (unten)]]></de>
             <en><![CDATA[Template Presentation: Brick bottom separator]]></en>
         </locale>
-        <locale name="brick.settings.separatorBottom.desc">
+        <locale name="brick.settings.separatorBottom.image.desc">
             <de><![CDATA[Wähle ein passendes Bild, was als Separator zwischen dem aktellen und dem nächsten Baustein dienen kann. Beispiel Generatoren: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> und <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></de>
             <en><![CDATA[Select a suitable image that can be used as a separator between the current and the next brick. Example generators: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> and <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></en>
         </locale>
@@ -287,6 +287,32 @@
                 <en><![CDATA[Hide]]></en>
                 <pl><![CDATA[Ukryj]]></pl>
             </locale>
+
+        <locale name="site.settings.header.textColor.enable">
+            <de><![CDATA[Header Textfarbe anpassen]]></de>
+            <en><![CDATA[Adjust header text color]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.enable.useTemplateSetting">
+            <de><![CDATA[Ja, verwende in Template Einstellungen gesetzte Farbe für header]]></de>
+            <en><![CDATA[Yes, use color set in template setting for header]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.enable.useSiteSetting">
+            <de><![CDATA[Ja, verwende eigene Farbe auf dieser Seite]]></de>
+            <en><![CDATA[Yes, Yes, use your own color on this page]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.enable.useDefaultColor">
+            <de><![CDATA[Nein, verwende die standard Template Farbe]]></de>
+            <en><![CDATA[No, use default template color]]></en>
+        </locale>
+
+        <locale name="site.settings.header.textColor.color">
+            <de><![CDATA[Header Textfarbe]]></de>
+            <en><![CDATA[Show short descriptions]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.color.desc">
+            <de><![CDATA[Diese Option hat nur dann Auswirkung, wenn oben <i>"Ja, verwende eigene Farbe auf dieser Seite"</i> gewählt wurde.]]></de>
+            <en><![CDATA[This option only has an effect if <i>"Yes, use your own color on this page"</i> was selected above.]]></en>
+        </locale>
 
         <locale name="siteSettings.pageCustomClass">
             <de><![CDATA[CSS Klasse]]></de>
@@ -501,6 +527,24 @@
             <de><![CDATA[Unten]]></de>
             <en><![CDATA[Bottom]]></en>
             <pl><![CDATA[Dół]]></pl>
+        </locale>
+
+
+        <locale name="templatePresentation.settings.header.textColor">
+            <de><![CDATA[Header Textfarbe]]></de>
+            <en><![CDATA[Header text color]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.header.textPos.flex-start">
+            <de><![CDATA[Links]]></de>
+            <en><![CDATA[Left]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.header.textPos.center">
+            <de><![CDATA[Zentriert]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.header.textPos.flex-end">
+            <de><![CDATA[Rechts]]></de>
+            <en><![CDATA[Right]]></en>
         </locale>
 
         <!-- Logo settings -->

@@ -146,6 +146,14 @@
                         <defaultvalue>center</defaultvalue>
                     </conf>
 
+                    <conf name="header.textColor">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="header.textPos">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>center</defaultvalue>
+                    </conf>
+
                     <!-- colors -->
                     <conf name="colorMainContentFont">
                         <type><![CDATA[string]]></type>
@@ -631,6 +639,39 @@
                                 <option value="bottom">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.headerImagePosition.bottom"
+                                    />
+                                </option>
+                            </select>
+
+                            <input conf="templatePresentation.settings.header.textColor" type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.header.textColor"
+                                    />
+                                </text>
+                            </input>
+
+                            <select conf="templatePresentation.settings.header.textPos">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.header.textPos"
+                                    />
+                                </text>
+
+                                <option></option>
+                                <option value="flex-start">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.header.textPos.flex-start"
+                                    />
+                                </option>
+                                <option value="center">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.header.textPos.center"
+                                    />
+                                </option>
+                                <option value="flex-end">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.header.textPos.flex-end"
                                     />
                                 </option>
                             </select>

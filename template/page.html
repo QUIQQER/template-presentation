@@ -1,55 +1,28 @@
-{template_event name="quiqqer::template::body::pageBegin" Template=$Template}
 <div class="body-container">
-    {fetch template="template/page/header.html" showPageTitle=$showPageTitle showPageShort=$showPageShort showHeader=$showHeader Site=$Site}
+    {template_event name="quiqqer::template::body::pageBegin" Template=$Template}
+
+    {fetch template="template/page/header.html" showPageTitle=$showPageTitle showPageShort=$showPageShort showHeader=$showHeader Site=$Site Template=$Template}
+    
     {template_event name="quiqqer::template::body::afterHeader" Template=$Template}
 
     {*<!-- header brick area (only for start page) -->*}
     {if $startPage}
-        {assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
-        {foreach from=$headerBricks item=Brick}
-            {assign var=tplBrickBgColor value=QUI\TemplatePresentation\Utils::getBrickBgColorCssVar($Brick)}
-            {assign var=tplBrickTextColor value=QUI\TemplatePresentation\Utils::getBrickTextColorCssVar($Brick)}
-
-            {assign var=tplBrickImage value=false}
-            {if $Brick->getSetting('brickBgImage')}
-                {assign var=tplBrickImage value=true}
-            {/if}
-
-            <div class="header-brick-area start-page-header tpl-brick brick-id-{$Brick->getAttribute('id')} tpl-brick--brickImage"
-                 style="{$tplBrickBgColor} {$tplBrickTextColor}"
-            >
-                {if $tplBrickImage}
-                <div class="tpl-brick--brickImage__imageWrapper">
-                    {image src="{$Brick->getSetting('brickBgImage')}" class="tpl-brick--brickImage__image"}
-                </div>
-                {/if}
-
-                {if $tplBrickImage}
-                <div class="tpl-brick--brickImage__contentWrapper">
-                {/if}
-
-                {if $Brick->getAttribute('frontendTitle')}
-                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                {/if}
-                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                {$Brick->create()}
-
-                {if $tplBrickImage}
-                </div>
-                {/if}
-            </div>
-        {/foreach}
-
-        {template_event name="quiqqer::template::body::after" Template=$Template}
+        <div class="tpl-brickArea-header">
+            {assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
+            {foreach from=$headerBricks item=Brick}
+                {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="header"}
+            {/foreach}
+        </div>
     {/if}
 
     {fetch template="template/page/breadcrumb.html" showBreadcrumb=$showBreadcrumb Breadcrumb=$Breadcrumb}
     {template_event name="quiqqer::template::body::afterBreadcrumb" Template=$Template}
 
-    <div class="headerSuffix">
+    {*<!-- header suffix -->*}
+    <div class="tpl-brickArea-headerSuffix">
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
         {foreach $headerSuffix as $Brick}
-            {fetch template="template/bricks/brick.html" Brick=$Brick tplPos="headerSuffix"}
+            {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="headerSuffix"}
         {/foreach}
     </div>
 
@@ -61,11 +34,11 @@
     </div>
     {template_event name="quiqqer::template::body::afterMain" Template=$Template}
 
-
-    <div class="prefixFooter">
+    {*<!-- footer prefix -->*}
+    <div class="tpl-brickArea-prefixFooter">
         {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
         {foreach $footerPrefix as $Brick}
-            {fetch template="template/bricks/brick.html" Brick=$Brick tplPos="footerPrefix"}
+            {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="footerPrefix"}
         {/foreach}
     </div>
 
@@ -79,6 +52,6 @@
     <a href="#top" class="toTop" style="outline: none;">
         <i class="fa fa-arrow-up control-background"></i>
     </a>
+    
+    {template_event name="quiqqer::template::body::pageEnd" Template=$Template}
 </div>
-
-{template_event name="quiqqer::template::body::pageEnd" Template=$Template}
