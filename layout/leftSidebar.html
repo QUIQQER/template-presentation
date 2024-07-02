@@ -1,6 +1,9 @@
 {assign var=leftSideBar value=$BricksManager->getBricksByArea('leftSidebar', $Site)}
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
+{assign var=TS value=$Template->getAttribute('TemplateSetting')}
+{assign var=mainContentSpacingTopCSSVar value=$TS->getAttribute('mainContentSpacingTopCSSVar')}
+{assign var=mainContentSpacingBottomCSSVar value=$TS->getAttribute('mainContentSpacingBottomCSSVar')}
 
 {*
 

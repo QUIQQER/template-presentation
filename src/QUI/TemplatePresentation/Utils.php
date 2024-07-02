@@ -84,6 +84,8 @@ class Utils
         $showPageShort = false;
         $headerTextColor = 'inherit';
         $headerTextPos = 'center';
+        $mainContentSpacingTop = 'base';
+        $mainContentSpacingBottom = 'base';
 
         if ($Project->getConfig('templatePresentation.settings.showTitle')) {
             $showPageTitle = $Project->getConfig('templatePresentation.settings.showTitle');
@@ -99,6 +101,14 @@ class Utils
 
         if ($Project->getConfig('templatePresentation.settings.header.textPos')) {
             $headerTextPos = $Project->getConfig('templatePresentation.settings.header.textPos');
+        }
+
+        if ($Project->getConfig('templatePresentation.settings.mainContentSpacingTop')) {
+            $mainContentSpacingTop = $Project->getConfig('templatePresentation.settings.mainContentSpacingTop');
+        }
+
+        if ($Project->getConfig('templatePresentation.settings.mainContentSpacingBottom')) {
+            $mainContentSpacingBottom = $Project->getConfig('templatePresentation.settings.mainContentSpacingBottom');
         }
 
         /* site own show title */
@@ -156,6 +166,28 @@ class Utils
             default => 'center',
         };
 
+        /* site own main content spacing top */
+        switch ($Site->getAttribute('templatePresentation.mainContent.spacingTop')) {
+            case 'disabled':
+            case 'small':
+            case 'base':
+            case 'medium':
+            case 'large':
+            case 'extraLarge':
+                $mainContentSpacingTop = $Site->getAttribute('templatePresentation.mainContent.spacingTop');
+        }
+
+        /* site own main content spacing bottom */
+        switch ($Site->getAttribute('templatePresentation.mainContent.spacingBottom')) {
+            case 'disabled':
+            case 'small':
+            case 'base':
+            case 'medium':
+            case 'large':
+            case 'extraLarge':
+                $mainContentSpacingBottom = $Site->getAttribute('templatePresentation.mainContent.spacingBottom');
+        }
+
         /* page custom class */
         $customClass = $Site->getAttribute('templatePresentation.pageCustomClass');
         $pageCustomClass = false;
@@ -192,6 +224,8 @@ class Utils
             'headerTextColor' => $headerTextColor,
             'headerTextPos' => $headerTextPos,
             'headerTextAlignment' => $headerTextAlignment,
+            'mainContentSpacingTopCSSVar' => self::getSpacingVariable($mainContentSpacingTop, 'top'),
+            'mainContentSpacingBottomCSSVar' => self::getSpacingVariable($mainContentSpacingBottom, 'bottom')
         ];
 
         // set cache
@@ -267,6 +301,13 @@ class Utils
         ];
     }
 
+    /**
+     * Get css variable declaration for background color depend on given brick setting
+     *
+     * @param QUI\Bricks\Brick $Brick
+     * @return string
+     * @throws QUI\Exception
+     */
     public static function getBrickBgColorCssVar(QUI\Bricks\Brick $Brick): string
     {
         $setting = $Brick->getSetting('enableBrickBgColor');
@@ -289,6 +330,13 @@ class Utils
         return '--_qui-tpl-brick-backgroundColor: ' . $bgColor . ';';
     }
 
+    /**
+     * Get css variable declaration for text color depend on given brick setting
+     *
+     * @param QUI\Bricks\Brick $Brick
+     * @return string
+     * @throws QUI\Exception
+     */
     public static function getBrickTextColorCssVar(QUI\Bricks\Brick $Brick): string
     {
         $setting = $Brick->getSetting('enableBrickTextColor');
@@ -310,5 +358,53 @@ class Utils
         }
 
         return '--_qui-tpl-brick-textColor: ' . $color . ';';
+    }
+
+    /**
+     * Return spacing css variable declaration (top or bottom).
+     * This row spacing variable is defined in template variable.css file.
+     *
+     * Examples:
+     *    --_qui-tpl-spacing--top:  var(--qui-row-spacing--base);
+     *    --_qui-tpl-spacing--top:  var(--qui-row-spacing--small);
+     *    --_qui-tpl-spacing--bottom:  var(--qui-row-spacing--extraLarge);
+     *
+     * @param string $name
+     * @param string $pos
+     * @return string
+     */
+    public static function getSpacingVariable(string $name, string $pos): string
+    {
+        if (!$name || !$pos) {
+            return '';
+        }
+
+        if ($pos !== 'top' && $pos !== 'bottom') {
+            return '';
+        }
+
+        return '--_qui-tpl-spacing--' . $pos . ': var(--qui-row-spacing--' . $name . ');';
+    }
+
+    /**
+     * Get custom css variable declaration by given name and value.
+     *
+     * Examples:
+     *    --_qui-tpl-VAR_NAME: var(--qui-tpl-VAR_NAME, VALUE);
+     *
+     * @param string $name
+     * @param string $value
+     * @return string
+     */
+    public static function getCustomVariable(string $name, string $value): string
+    {
+        if (!$name || !$value) {
+            return '';
+        }
+
+        $variable = '--_qui-tpl-' . $name . ': ';
+        $value = 'var(--qui-tpl-' . $name . ',' . $value . ');';
+
+        return $variable . $value;
     }
 }
