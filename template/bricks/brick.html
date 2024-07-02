@@ -1,8 +1,8 @@
 {assign var=brickClasses value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
 {assign var=tplBrickBgColor value=QUI\TemplatePresentation\Utils::getBrickBgColorCssVar($Brick)}
 {assign var=tplBrickTextColor value=QUI\TemplatePresentation\Utils::getBrickTextColorCssVar($Brick)}
-{assign var=verticalSpacingTop value=$Brick->getSetting('verticalSpacingTop')}
-{assign var=verticalSpacingBottom value=$Brick->getSetting('verticalSpacingBottom')}
+{assign var=verticalSpacingTopCSSVariable value=\QUI\TemplatePresentation\Utils::getSpacingVariable($Brick->getSetting('verticalSpacingTop'), 'top')}
+{assign var=verticalSpacingBottomCSSVariable value=\QUI\TemplatePresentation\Utils::getSpacingVariable($Brick->getSetting('verticalSpacingBottom'), 'bottom')}
 
 {* allow to passing through the fullWidth variable bei fetching the brick tpl file *}
 {if !isset($fullWidth)}
@@ -16,12 +16,10 @@
 
 <section class="{$brickClasses} {if $fullWidth}prefix-suffix-full-width{/if}
                     tpl-brick {if $tplBrickImage}tpl-brick--brickImage{/if}
-                    {if $verticalSpacingTop}tpl-brick--verticalSpacingTop--{$verticalSpacingTop}{/if}
-                    {if $verticalSpacingBottom}tpl-brick--verticalSpacingBottom--{$verticalSpacingBottom}{/if}
                     tpl-brickArea-{$brickArea}__container
                     brick-id-{$Brick->getAttribute('id')}
                     "
-         style="{$tplBrickBgColor} {$tplBrickTextColor}"
+         style="{$tplBrickBgColor} {$tplBrickTextColor} {$verticalSpacingTopCSSVariable} {$verticalSpacingBottomCSSVariable}"
 >
     {* works like background image *}
     {if $tplBrickImage}
@@ -30,29 +28,34 @@
         </div>
     {/if}
 
+    {* brick image separator abvoe the brick *}
     {if $Brick->getSetting('brickSeparatorTop.image')}
         {fetch template="template/bricks/separator.html"
-        image=$Brick->getSetting('brickSeparatorTop.image')
-        width=$Brick->getSetting('brickSeparatorTop.width')
-        height=$Brick->getSetting('brickSeparatorTop.height')
-        pos=top
+            image=$Brick->getSetting('brickSeparatorTop.image')
+            width=$Brick->getSetting('brickSeparatorTop.width')
+            height=$Brick->getSetting('brickSeparatorTop.height')
+            pos=top
+            Template=$Template
         }
     {/if}
+
     <div class="tpl-brick__inner {if !$fullWidth}grid-container{/if} {if $tplBrickImage}tpl-brick--brickImage__contentWrapper{/if}">
-            {if $Brick->getAttribute('frontendTitle')}
+            {*if $Brick->getAttribute('frontendTitle')}
                 <h2 class="tpl-brick__title">{$Brick->getAttribute('frontendTitle')}</h2>
             {/if}
-            {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+            {assign var=showTitle value=$Brick->setSetting('showTitle', false)*}
 
             {$Brick->create()}
     </div>
 
+    {* brick image separator underneath the brick *}
     {if $Brick->getSetting('brickSeparatorBottom.image')}
         {fetch template="template/bricks/separator.html"
-        image=$Brick->getSetting('brickSeparatorBottom.image')
-        width=$Brick->getSetting('brickSeparatorBottom.width')
-        height=$Brick->getSetting('brickSeparatorBottom.height')
-        pos=top
+            image=$Brick->getSetting('brickSeparatorBottom.image')
+            width=$Brick->getSetting('brickSeparatorBottom.width')
+            height=$Brick->getSetting('brickSeparatorBottom.height')
+            pos=top
+            Template=$Template
         }
     {/if}
 </section>

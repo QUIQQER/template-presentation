@@ -10,7 +10,7 @@
         <div class="tpl-brickArea-header">
             {assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
             {foreach from=$headerBricks item=Brick}
-                {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="header"}
+                {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="header" Template=$Template}
             {/foreach}
         </div>
     {/if}
@@ -22,15 +22,13 @@
     <div class="tpl-brickArea-headerSuffix">
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
         {foreach $headerSuffix as $Brick}
-            {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="headerSuffix"}
+            {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="headerSuffix" Template=$Template}
         {/foreach}
     </div>
 
     {template_event name="quiqqer::template::body::beforeMain" Template=$Template}
-    <div class="main-content-wrapper">
-        <div class="grid-container main-content">
-            {$Template->getLayout()}
-        </div>
+    <div class="main-contentWrapper">
+        {$Template->getLayout()}
     </div>
     {template_event name="quiqqer::template::body::afterMain" Template=$Template}
 
@@ -38,7 +36,7 @@
     <div class="tpl-brickArea-prefixFooter">
         {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
         {foreach $footerPrefix as $Brick}
-            {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="footerPrefix"}
+            {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="footerPrefix" Template=$Template}
         {/foreach}
     </div>
 
@@ -46,7 +44,7 @@
 
     {if $Template->getAttribute('template-footer')}
         {fetch template="template/footer.html" BricksManager=$BricksManager
-        Site=$Site socialFooter=$socialFooter}
+        Site=$Site socialFooter=$socialFooter Template=$Template}
     {/if}
 
     <a href="#top" class="toTop" style="outline: none;">

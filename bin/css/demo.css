@@ -28,10 +28,6 @@
     background-color: #fff;
 }
 
-.controlContentSmallPadding .control-content {
-    padding-bottom: 0.5rem;
-}
-
 .footer-brick-maxWidth .control-content {
     max-width: 500px;
 }

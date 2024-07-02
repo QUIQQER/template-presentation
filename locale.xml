@@ -35,31 +35,35 @@
             <pl><![CDATA[Template Presentation: Pełna szerokość]]></pl>
         </locale>
 
-        <locale name="brick.settings.verticalSpacingTop">
+        <locale name="settings.verticalSpacingTop">
             <de><![CDATA[Template Presentation: Baustein-Abstand oben]]></de>
             <en><![CDATA[Template Presentation: brick top spacing]]></en>
         </locale>
-        <locale name="brick.settings.verticalSpacingBottom">
+        <locale name="settings.verticalSpacingBottom">
             <de><![CDATA[Template Presentation: Baustein-Abstand unten]]></de>
             <en><![CDATA[Template Presentation: brick bottom spacing]]></en>
         </locale>
-        <locale name="brick.settings.verticalSpacing.disabled">
+        <locale name="settings.verticalSpacing.disabled">
             <de><![CDATA[Deaktiviert]]></de>
             <en><![CDATA[Disabled]]></en>
         </locale>
-        <locale name="brick.settings.verticalSpacing.small">
+        <locale name="settings.verticalSpacing.small">
             <de><![CDATA[Klein]]></de>
             <en><![CDATA[Small]]></en>
         </locale>
-        <locale name="brick.settings.verticalSpacing.medium">
+        <locale name="settings.verticalSpacing.base">
+            <de><![CDATA[Normal (default)]]></de>
+            <en><![CDATA[Normal (default)]]></en>
+        </locale>
+        <locale name="settings.verticalSpacing.medium">
             <de><![CDATA[Mittel]]></de>
             <en><![CDATA[Medium]]></en>
         </locale>
-        <locale name="brick.settings.verticalSpacing.large">
+        <locale name="settings.verticalSpacing.large">
             <de><![CDATA[Groß]]></de>
             <en><![CDATA[Large]]></en>
         </locale>
-        <locale name="brick.settings.verticalSpacing.extraLarge">
+        <locale name="settings.verticalSpacing.extraLarge">
             <de><![CDATA[Extra groß]]></de>
             <en><![CDATA[Extra large]]></en>
         </locale>
