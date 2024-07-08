@@ -1,29 +1,30 @@
 <?php
 
 /**
- * This file contains QUI\TemplatePresentation\TemplateLoader
+ * This file contains QUI\TemplatePresentation\Utils
  */
 
 namespace QUI\TemplatePresentation;
 
 use QUI;
 
+use function count;
+
 /**
  * Help Class for Template Presentation
  *
  * @return array
  * @author  www.pcsg.de (Michael Danielczok)
- *
  * @package QUI\TemplatePresentation
  */
 class Utils
 {
     /**
-     * @param array $params
+     * @param Array<string, mixed> $params
      *
-     * @return array
+     * @return Array<string, mixed>
      */
-    public static function getConfig($params)
+    public static function getConfig(array $params): array
     {
         $cacheName = md5($params['Project']->getName() . $params['Project']->getLang() . $params['Site']->getId());
 
@@ -84,11 +85,11 @@ class Utils
 
         if ($Project->getConfig('templatePresentation.settings.showTitle')) {
             $showPageTitle = $Project->getConfig('templatePresentation.settings.showTitle');
-        };
+        }
 
         if ($Project->getConfig('templatePresentation.settings.showShort')) {
             $showPageShort = $Project->getConfig('templatePresentation.settings.showShort');
-        };
+        }
 
         /* site own show title */
         switch ($params['Site']->getAttribute('templatePresentation.showTitle')) {
@@ -166,13 +167,13 @@ class Utils
     /**
      * Add a suffix to brick css class(es)
      *
-     * @param array $classes
+     * @param string[] $classes
      *
      * @return string
      */
-    public static function convertBrickCSSClass(array $classes)
+    public static function convertBrickCSSClass(array $classes): string
     {
-        if (\count($classes) < 1) {
+        if (count($classes) < 1) {
             return '';
         }
 
@@ -190,7 +191,7 @@ class Utils
      *
      * @param $Project QUI\Projects\Project
      *
-     * @return array
+     * @return array{url: string, alt: string, width: int, height: int}
      */
     public static function getLogoData(QUI\Projects\Project $Project): array
     {
