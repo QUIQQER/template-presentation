@@ -20,9 +20,9 @@ use function count;
 class Utils
 {
     /**
-     * @param array $params
+     * @param Array<string, mixed> $params
      *
-     * @return array
+     * @return Array<string, mixed>
      */
     public static function getConfig(array $params): array
     {
@@ -167,7 +167,7 @@ class Utils
     /**
      * Add a suffix to brick css class(es)
      *
-     * @param array $classes
+     * @param string[] $classes
      *
      * @return string
      */
@@ -191,7 +191,7 @@ class Utils
      *
      * @param $Project QUI\Projects\Project
      *
-     * @return array
+     * @return array{url: string, alt: string, width: int, height: int}
      */
     public static function getLogoData(QUI\Projects\Project $Project): array
     {
