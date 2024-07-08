@@ -6,3 +6,5 @@ parameters:
     paths:
         - src
     tipsOfTheDay: false
+    bootstrapFiles:
+            - tests/phpstan-bootstrap.php
