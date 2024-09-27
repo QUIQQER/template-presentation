@@ -36,12 +36,12 @@
         </locale>
 
         <locale name="settings.verticalSpacingTop">
-            <de><![CDATA[Template Presentation: Baustein-Abstand oben]]></de>
-            <en><![CDATA[Template Presentation: brick top spacing]]></en>
+            <de><![CDATA[Abstand oben<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Top spacing<br><small>Template Presentation</small>]]></en>
         </locale>
         <locale name="settings.verticalSpacingBottom">
-            <de><![CDATA[Template Presentation: Baustein-Abstand unten]]></de>
-            <en><![CDATA[Template Presentation: brick bottom spacing]]></en>
+            <de><![CDATA[Abstand unten<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Bottom spacing<br><small>Template Presentation</small>]]></en>
         </locale>
         <locale name="settings.verticalSpacing.disabled">
             <de><![CDATA[Deaktiviert]]></de>
@@ -69,56 +69,90 @@
         </locale>
 
         <locale name="brick.settings.enableBgImage">
-            <de><![CDATA[Template Presentation: Baustein Hintergrundbild aktivieren]]></de>
-            <en><![CDATA[Template Presentation: Enable brick background image]]></en>
+            <de><![CDATA[Baustein Hintergrundbild aktivieren<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Enable brick background image<br><small>Template Presentation</small>]]></en>
         </locale>
         <locale name="brick.settings.bgImage">
-            <de><![CDATA[Template Presentation: Baustein Hintergrundbild]]></de>
-            <en><![CDATA[Template Presentation: Brick background ]]></en>
+            <de><![CDATA[Baustein Hintergrundbild<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Brick background<br><small>Template Presentation</small>]]></en>
         </locale>
         <locale name="brick.settings.bgImage.desc">
             <de><![CDATA[Bitte beachte: einige Bausteine haben eigene Einstellung zum Setzen des Hintergrundbildes. Unter Umständen kann es besser sein, die eingebaute Baustein-Einstellung zu benutzen.]]></de>
             <en><![CDATA[Please note: some bricks have their own settings for setting the background image. Under certain circumstances, it may be better to use the built-in brick setting.]]></en>
         </locale>
         <locale name="brick.settings.enableBgColor">
-            <de><![CDATA[Template Presentation: Baustein Hintergrundfarbe aktivieren]]></de>
-            <en><![CDATA[Template Presentation: Enable brick background color]]></en>
+            <de><![CDATA[Baustein Hintergrundfarbe aktivieren<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Enable brick background color<br><small>Template Presentation</small>]]></en>
         </locale>
         <locale name="brick.settings.bgColor">
-            <de><![CDATA[Template Presentation: Baustein Hintergrundfarbe]]></de>
-            <en><![CDATA[Template Presentation: Brick background color]]></en>
+            <de><![CDATA[Baustein Hintergrundfarbe<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Brick background color<br><small>Template Presentation</small>]]></en>
         </locale>
         <locale name="brick.settings.bgColor.desc">
             <de><![CDATA[Bitte beachte: einige Bausteine haben eigene Einstellung zum Setzen der Hintergrundfarbe. Unter Umständen kann es besser sein, die eingebaute Baustein-Einstellung zu benutzen.]]></de>
             <en><![CDATA[Please note: some bricks have their own settings for setting the background color. Under certain circumstances, it may be better to use the built-in brick setting.]]></en>
         </locale>
         <locale name="brick.settings.enableTextColor">
-            <de><![CDATA[Template Presentation: Baustein Textfarbe aktivieren]]></de>
-            <en><![CDATA[Template Presentation: Enable brick text color]]></en>
+            <de><![CDATA[Baustein Textfarbe aktivieren<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Enable brick text color<br><small>Template Presentation</small>]]></en>
         </locale>
         <locale name="brick.settings.textColor">
-            <de><![CDATA[Template Presentation: Baustein Textfarbe]]></de>
-            <en><![CDATA[Template Presentation: Brick text color]]></en>
+            <de><![CDATA[Baustein Textfarbe<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Brick text color<br><small>Template Presentation</small>]]></en>
         </locale>
         <locale name="brick.settings.textColor.desc">
-            <de><![CDATA[Diese Einstellung benötigt man nur dann, wenn man eine Kontrastfarbe zum Hintergrundbild oder zur Hintergrundfarbe braucht, um den Text lesbar zu machen.]]></de>
-            <en><![CDATA[This setting is only required if you need a contrasting color to the background image or background color to make the text legible.]]></en>
+            <de><![CDATA[Diese Einstellung ist nur erforderlich, wenn man eine Kontrastfarbe zum Hintergrundbild oder zur Hintergrundfarbe benötigt, um die Lesbarkeit des Textes zu gewährleisten.]]></de>
+            <en><![CDATA[This setting is only necessary if a contrasting color to the background image or background color is needed to ensure the readability of the text.]]></en>
         </locale>
+
         <locale name="brick.settings.separatorTop.image">
-            <de><![CDATA[Template Presentation: Baustein Separator (oben)]]></de>
-            <en><![CDATA[Template Presentation: Brick top separator]]></en>
+            <de><![CDATA[Oberer Separator (Trennung)<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Top separator<br><small>Template Presentation</small>]]></en>
         </locale>
         <locale name="brick.settings.separatorTop.image.desc">
-            <de><![CDATA[Wähle ein passendes Bild, was als Separator zwischen dem aktellen und dem vorherigen Baustein dienen kann. Beispiel Generatoren: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> und <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></de>
-            <en><![CDATA[Select a suitable image that can be used as a separator between the current and the previous brick. Example generators: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> and <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></en>
+            <de><![CDATA[Wähle ein geeignetes Bild, das als Trennung zwischen dem aktuellen und dem vorherigen Baustein dienen kann. Beispiel Generatoren: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> und <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></de>
+            <en><![CDATA[Select a suitable image that can serve as a separator between the current and the previous block. Example generators: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> and <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></en>
         </locale>
+        <locale name="brick.settings.separatorTop.width">
+            <de><![CDATA[Separator Breite<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Separator width<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.width.desc">
+            <de><![CDATA[Wird kein Wert eingetragen, wird die Breite des Bildes genutzt. Bitte Wert mit Einheit eingeben. Beispiele: 100%, 100vw, 500px, 40rem, etc.]]></de>
+            <en><![CDATA[If no value is entered, the width of the image is used. Please enter a value with unit. Examples: 100%, 100vw, 500px, 40rem, etc.]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.height">
+            <de><![CDATA[Separator Höhe<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Separator height<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.height.desc">
+            <de><![CDATA[Wird kein Wert eingetragen, wird die Höhe des Bildes genutzt. Bitte Wert mit Einheit eingeben. Beispiele: 100%, 100vw, 500px, 40rem, etc.]]></de>
+            <en><![CDATA[If no value is entered, the height of the image is used. Please enter a value with unit. Examples: 100%, 100vw, 500px, 40rem, etc.]]></en>
+        </locale>
+
         <locale name="brick.settings.separatorBottom.image">
-            <de><![CDATA[Template Presentation: Baustein Separator (unten)]]></de>
-            <en><![CDATA[Template Presentation: Brick bottom separator]]></en>
+            <de><![CDATA[Unterer Separator (Trennung)<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Brick bottom separator<br><small>Template Presentation</small>]]></en>
         </locale>
         <locale name="brick.settings.separatorBottom.image.desc">
-            <de><![CDATA[Wähle ein passendes Bild, was als Separator zwischen dem aktellen und dem nächsten Baustein dienen kann. Beispiel Generatoren: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> und <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></de>
+            <de><![CDATA[Wähle ein geeignetes Bild, das als Trennung zwischen dem aktellen und dem nächsten Baustein dienen kann. Beispiel Generatoren: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> und <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></de>
             <en><![CDATA[Select a suitable image that can be used as a separator between the current and the next brick. Example generators: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> and <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.width">
+            <de><![CDATA[Separator Breite<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Bottom separator width<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.width.desc">
+            <de><![CDATA[Wird kein Wert eingetragen, wird die Breite des Bildes genutzt. Bitte Wert mit Einheit eingeben. Beispiele: 100%, 100vw, 500px, 40rem, etc.]]></de>
+            <en><![CDATA[If no value is entered, the width of the image is used. Please enter a value with unit. Examples: 100%, 100vw, 500px, 40rem, etc.]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.height">
+            <de><![CDATA[Separator Höhe<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Separator height<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.height.desc">
+            <de><![CDATA[Wird kein Wert eingetragen, wird die Höhe des Bildes genutzt. Bitte Wert mit Einheit eingeben. Beispiele: 100%, 100vw, 500px, 40rem, etc.]]></de>
+            <en><![CDATA[If no value is entered, the height of the image is used. Please enter a value with unit. Examples: 100%, 100vw, 500px, 40rem, etc.]]></en>
         </locale>
 
         <!-- areas -->
