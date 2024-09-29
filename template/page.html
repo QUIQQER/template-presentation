@@ -1,3 +1,7 @@
+{assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
+{assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+{assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+
 <div class="body-container">
     {template_event name="quiqqer::template::body::pageBegin" Template=$Template}
 
@@ -7,38 +11,41 @@
 
     {*<!-- header brick area (only for start page) -->*}
     {if $startPage}
+        {if !empty($headerBricks)}
         <div class="tpl-brickArea-header">
-            {assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
             {foreach from=$headerBricks item=Brick}
                 {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="header" Template=$Template}
             {/foreach}
         </div>
+        {/if}
     {/if}
 
     {fetch template="template/page/breadcrumb.html" showBreadcrumb=$showBreadcrumb Breadcrumb=$Breadcrumb}
     {template_event name="quiqqer::template::body::afterBreadcrumb" Template=$Template}
 
     {*<!-- header suffix -->*}
-    <div class="tpl-brickArea-headerSuffix">
-        {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
-        {foreach $headerSuffix as $Brick}
-            {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="headerSuffix" Template=$Template}
-        {/foreach}
-    </div>
+    {if !empty($headerSuffix)}
+        <div class="tpl-brickArea-headerSuffix">
+            {foreach $headerSuffix as $Brick}
+                {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="headerSuffix" Template=$Template}
+            {/foreach}
+        </div>
+    {/if}
 
     {template_event name="quiqqer::template::body::beforeMain" Template=$Template}
-    <div class="main-contentWrapper">
+    <div class="main-contentWrapper grid-container">
         {$Template->getLayout()}
     </div>
     {template_event name="quiqqer::template::body::afterMain" Template=$Template}
 
     {*<!-- footer prefix -->*}
-    <div class="tpl-brickArea-prefixFooter">
-        {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
-        {foreach $footerPrefix as $Brick}
-            {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="footerPrefix" Template=$Template}
-        {/foreach}
-    </div>
+    {if !empty($footerPrefix)}
+        <div class="tpl-brickArea-prefixFooter">
+            {foreach $footerPrefix as $Brick}
+                {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="footerPrefix" Template=$Template}
+            {/foreach}
+        </div>
+    {/if}
 
     {template_event name="quiqqer::template::body::beforeFooter" Template=$Template}
 

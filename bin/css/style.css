@@ -670,15 +670,21 @@ ul.basic-company-preview-ul > span {
 /***************/
 /* Page layout */
 /***************/
-.tpl-layout-two-columns {
-    display: grid;
-    grid-gap: 3rem;
-}
+@media screen and (min-width: 768px) {
+    .tpl-layout-two-columns {
+        display: grid;
+        grid-gap: 3rem;
+    }
 
-.tpl-layout-two-columns--rightSidebar {
-    grid-template-areas: "main sidebar";
-    grid-template-columns: 1fr 30%;
-    grid-template-columns: minmax(500px, 1fr) 30%;
+    .tpl-layout-two-columns--rightSidebar {
+        grid-template-areas: "main sidebar";
+        grid-template-columns: minmax(500px, 1fr) 30%;
+    }
+
+    .tpl-layout-two-columns--leftSidebar {
+        grid-template-areas: "sidebar main";
+        grid-template-columns: 30% minmax(500px, 1fr);
+    }
 }
 
 .tpl-layout-two-columns__main {
@@ -1822,17 +1828,6 @@ a.quiqqer-navigation-home:hover,
 }
 
 @media screen and (max-width: 767px) {
-
-    .tpl-presentation-row,
-    .content-header,
-    .content-body,
-    .tpl-presentation-row + .content-body,
-    .content-template,
-    .content-short {
-        padding-bottom: 1.2em;
-        padding-top: 1.2rem;
-    }
-
     .page-header {
         height: auto !important;
         min-height: initial !important;

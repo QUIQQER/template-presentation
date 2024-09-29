@@ -126,6 +126,8 @@
         --qui-fs-4xl: calc(.75 * 4.5rem);
         --qui-fs-5xl: calc(.75 * 5.5rem);
         --qui-fs-6xl: calc(.75 * 6rem);
+
+        --_qui-row-spacer: var(--qui-row-spacer--mobile, 1.5rem);
     }
 }
 

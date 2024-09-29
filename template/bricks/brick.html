@@ -5,6 +5,7 @@
 {assign var=verticalSpacingBottomCSSVariable value=\QUI\TemplatePresentation\Utils::getSpacingVariable($Brick->getSetting('verticalSpacingBottom'), 'bottom')}
 
 {* allow to passing through the fullWidth variable bei fetching the brick tpl file *}
+{* it is used in layout/rightSidebar.html and layout/leftSidebar.html to avoid double padding*}
 {if !isset($fullWidth)}
     {assign var=fullWidth value=$Brick->getSetting('brickFullWidth')}
 {/if}
@@ -14,11 +15,11 @@
     {assign var=tplBrickImage value=true}
 {/if}
 
-<section class="{$brickClasses} {if $fullWidth}prefix-suffix-full-width{/if}
-                    tpl-brick {if $tplBrickImage}tpl-brick--brickImage{/if}
-                    tpl-brickArea-{$brickArea}__container
-                    brick-id-{$Brick->getAttribute('id')}
-                    "
+<section class="{$brickClasses}
+                tpl-brick
+                {if $tplBrickImage}tpl-brick--brickImage{/if}
+                tpl-brickArea-{$brickArea}__inner
+                brick-id-{$Brick->getAttribute('id')}"
          style="{$tplBrickBgColor} {$tplBrickTextColor} {$verticalSpacingTopCSSVariable} {$verticalSpacingBottomCSSVariable}"
 >
     {* works like background image *}
@@ -40,11 +41,6 @@
     {/if}
 
     <div class="tpl-brick__inner {if !$fullWidth}grid-container{/if} {if $tplBrickImage}tpl-brick--brickImage__contentWrapper{/if}">
-            {*if $Brick->getAttribute('frontendTitle')}
-                <h2 class="tpl-brick__title">{$Brick->getAttribute('frontendTitle')}</h2>
-            {/if}
-            {assign var=showTitle value=$Brick->setSetting('showTitle', false)*}
-
             {$Brick->create()}
     </div>
 

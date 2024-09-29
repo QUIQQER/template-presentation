@@ -1,3 +1,8 @@
+{*
+  1. Set "fullWidth" to true to avoid adding grid-container class in brick tpl file.
+  Otehrwise it will produce a double inline padding (because of double .grid-container class)
+*}
+
 {assign var=rightSideBar value=$BricksManager->getBricksByArea('rightSidebar', $Site)}
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
@@ -5,52 +10,53 @@
 {assign var=mainContentSpacingTopCSSVar value=$TS->getAttribute('mainContentSpacingTopCSSVar')}
 {assign var=mainContentSpacingBottomCSSVar value=$TS->getAttribute('mainContentSpacingBottomCSSVar')}
 
-<div class="grid-container">
-    <div class="tpl-layout-two-columns tpl-layout-two-columns--rightSidebar">
-        <div class="tpl-layout-two-columns__main">
-            {if !empty($prefixContentBricks)}
-                <div class="tpl-brickArea-contentPrefix">
-                    {foreach from=$prefixContentBricks item=Brick}
-                        {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="contentPrefix" Template=$Template fullWidth=true}
-                    {/foreach}
-                </div>
-            {/if}
-
-            <div role="main" class="main-content" style="{$mainContentSpacingTopCSSVar} {$mainContentSpacingBottomCSSVar}">
-                {if !$showHeader && ($showPageTitle || $showPageShort)}
-                    <div class="content-header page-intro">
-                        {if $showPageTitle}
-                            <h1 itemprop="name" class="page-intro__title">
-                                {$Site->getAttribute('title')}
-                            </h1>
-                        {/if}
-
-                        {if $showPageShort}
-                            <div class="content-short page-intro__short lead" itemprop="description">
-                                {$Site->getAttribute('short')|nl2br}
-                            </div>
-                        {/if}
-                    </div>
-                {/if}
-
-                {$Template->getBody()}
+<div class="tpl-layout-two-columns tpl-layout-two-columns--rightSidebar">
+    <div class="tpl-layout-two-columns__main">
+        {if !empty($prefixContentBricks)}
+            <div class="tpl-brickArea-contentPrefix">
+                {foreach from=$prefixContentBricks item=Brick}
+                    {* 1. *}
+                    {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="contentPrefix" Template=$Template fullWidth=true}
+                {/foreach}
             </div>
+        {/if}
 
-            {if !empty($suffixContentBricks)}
-                <div class="tpl-brickArea-contentPrefix">
-                    {foreach from=$suffixContentBricks item=Brick}
-                        {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="contentSuffix" Template=$Template fullWidth=true}
-                    {/foreach}
+        <div role="main" class="main-content" style="{$mainContentSpacingTopCSSVar} {$mainContentSpacingBottomCSSVar}">
+            {if !$showHeader && ($showPageTitle || $showPageShort)}
+                <div class="content-header page-intro">
+                    {if $showPageTitle}
+                        <h1 itemprop="name" class="page-intro__title">
+                            {$Site->getAttribute('title')}
+                        </h1>
+                    {/if}
+
+                    {if $showPageShort}
+                        <div class="content-short page-intro__short lead" itemprop="description">
+                            {$Site->getAttribute('short')|nl2br}
+                        </div>
+                    {/if}
                 </div>
             {/if}
+
+            {$Template->getBody()}
         </div>
 
-        <aside class="tpl-layout-two-columns__sidebar tpl-layout-two-columns__sidebar--right">
-            {if !empty( $rightSideBar)}
-                {foreach from=$rightSideBar item=Brick}
-                    {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="rightSidebar" Template=$Template fullWidth=true}
+        {if !empty($suffixContentBricks)}
+            <div class="tpl-brickArea-contentPrefix">
+                {foreach from=$suffixContentBricks item=Brick}
+                    {* 1. *}
+                    {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="contentSuffix" Template=$Template fullWidth=true}
                 {/foreach}
-            {/if}
-        </aside>
+            </div>
+        {/if}
     </div>
+
+    <aside class="tpl-layout-two-columns__sidebar tpl-layout-two-columns__sidebar--right">
+        {if !empty( $rightSideBar)}
+            {foreach from=$rightSideBar item=Brick}
+                {* 1. *}
+                {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="rightSidebar" Template=$Template fullWidth=true}
+            {/foreach}
+        {/if}
+    </aside>
 </div>

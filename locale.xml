@@ -613,7 +613,7 @@
             <en><![CDATA[Bricks background color]]></en>
         </locale>
         <locale name="settings.bricks.bgColor.desc">
-            <de><![CDATA[Standard Hintergrundfarbe für Bausteine. Wenn man im Baustein eine Hintergrundfarbe aktiviert, kann man entweder eigene wählen, oder die mit dieser Einstellung predefined Farbe verwenden.]]></de>
+            <de><![CDATA[Standard Hintergrundfarbe für Bausteine. Wenn man im Baustein eine Hintergrundfarbe aktiviert, kann man entweder eigene wählen, oder die mit dieser Einstellung vordefinierte Farbe verwenden.]]></de>
             <en><![CDATA[Default background color for bricks. If you activate a background color in the brick setting, you can either choose your own or use the color predefined with this setting.]]></en>
         </locale>
         <locale name="settings.bricks.textColor.text">
@@ -621,7 +621,7 @@
             <en><![CDATA[Bricks text color]]></en>
         </locale>
         <locale name="settings.bricks.textColor.desc">
-            <de><![CDATA[Standard Textfarbe für Bausteine. Wenn man im Baustein eine Textfarbe aktiviert, kann man entweder eigene wählen, oder die mit dieser Einstellung predefined Farbe verwenden.]]></de>
+            <de><![CDATA[Standard Textfarbe für Bausteine. Wenn man im Baustein eine Textfarbe aktiviert, kann man entweder eigene wählen, oder die mit dieser Einstellung vordefinierte Farbe verwenden.]]></de>
             <en><![CDATA[Default text color for bricks. If you activate a text color in the brick setting, you can either choose your own or use the color predefined with this setting.]]></en>
         </locale>
 

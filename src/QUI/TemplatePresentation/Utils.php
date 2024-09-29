@@ -259,6 +259,8 @@ class Utils
         return $text;
     }
 
+    // region brick settings
+
     /**
      * Get logo data (url, alt, width, height) as an array
      *
@@ -341,7 +343,6 @@ class Utils
     {
         $setting = $Brick->getSetting('enableBrickTextColor');
 
-
         if ($setting === 'disable') {
             return '';
         }
@@ -359,6 +360,8 @@ class Utils
 
         return '--_qui-tpl-brick-textColor: ' . $color . ';';
     }
+
+    // endregion
 
     /**
      * Return spacing css variable declaration (top or bottom).
