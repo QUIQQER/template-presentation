@@ -130,7 +130,13 @@
                     </description>
                 </setting>
                 <!-- BRICK SETTINGS: separator top -->
-                <setting name="brickSeparatorTop.image" class="media-image">
+                <setting name="brickSeparatorTop.enable" type="checkbox"
+                         data-qui="package/quiqqer/template-presentation/bin/Controls/backend/SettingDependency"
+                >
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorTop.enable"/>
+                </setting>
+                <setting name="brickSeparatorTop.image" class="media-image" data-dependency="templatePresentation-brickSeparatorTop.enable">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorTop.image"/>
                     <description>
@@ -138,7 +144,7 @@
                                 var="brick.settings.separatorTop.image.desc"/>
                     </description>
                 </setting>
-                <setting name="brickSeparatorTop.width" type="text">
+                <setting name="brickSeparatorTop.width" type="text" data-dependency="templatePresentation-brickSeparatorTop.enable">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorTop.width"/>
                     <description>
@@ -146,7 +152,7 @@
                                 var="brick.settings.separatorTop.width.desc"/>
                     </description>
                 </setting>
-                <setting name="brickSeparatorTop.height" type="text">
+                <setting name="brickSeparatorTop.height" type="text" data-dependency="templatePresentation-brickSeparatorTop.enable">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorTop.height"/>
                     <description>
@@ -154,8 +160,14 @@
                                 var="brick.settings.separatorTop.height.desc"/>
                     </description>
                 </setting>
-                <!-- BRICK SETTINGS: separator top -->
-                <setting name="brickSeparatorBottom.image" class="media-image">
+                <!-- BRICK SETTINGS: separator bottom -->
+                <setting name="brickSeparatorBottom.enable" type="checkbox"
+                         data-qui="package/quiqqer/template-presentation/bin/Controls/backend/SettingDependency"
+                >
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorBottom.enable"/>
+                </setting>
+                <setting name="brickSeparatorBottom.image" class="media-image" data-dependency="templatePresentation-brickSeparatorBottom.enable">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorBottom.image"/>
                     <description>
@@ -163,7 +175,7 @@
                                 var="brick.settings.separatorBottom.image.desc"/>
                     </description>
                 </setting>
-                <setting name="brickSeparatorBottom.width" type="text">
+                <setting name="brickSeparatorBottom.width" type="text" data-dependency="templatePresentation-brickSeparatorBottom.enable">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorBottom.width"/>
                     <description>
@@ -171,7 +183,7 @@
                                 var="brick.settings.separatorBottom.width.desc"/>
                     </description>
                 </setting>
-                <setting name="brickSeparatorBottom.height" type="text">
+                <setting name="brickSeparatorBottom.height" type="text" data-dependency="templatePresentation-brickSeparatorBottom.enable">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorBottom.height"/>
                     <description>

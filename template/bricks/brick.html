@@ -30,7 +30,7 @@
     {/if}
 
     {* brick image separator abvoe the brick *}
-    {if $Brick->getSetting('brickSeparatorTop.image')}
+    {if $Brick->getSetting('brickSeparatorTop.enable') && $Brick->getSetting('brickSeparatorTop.image')}
         {fetch template="template/bricks/separator.html"
             image=$Brick->getSetting('brickSeparatorTop.image')
             width=$Brick->getSetting('brickSeparatorTop.width')
@@ -45,7 +45,7 @@
     </div>
 
     {* brick image separator underneath the brick *}
-    {if $Brick->getSetting('brickSeparatorBottom.image')}
+    {if $Brick->getSetting('brickSeparatorBottom.enable') && $Brick->getSetting('brickSeparatorBottom.image')}
         {fetch template="template/bricks/separator.html"
             image=$Brick->getSetting('brickSeparatorBottom.image')
             width=$Brick->getSetting('brickSeparatorBottom.width')
