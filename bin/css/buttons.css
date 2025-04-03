@@ -122,6 +122,8 @@ button.qui-button.btn-link:hover,
 button.qui-button.btn-link:active,
 .btn-link:hover,
 .btn-link:active {
+    background-color: transparent;
+    border-color: transparent;
     color: var(--_qui-btn-link-color--hover);
 }
 
@@ -149,6 +151,8 @@ button.qui-button.btn-link-dark:hover,
 button.qui-button.btn-link-dark:active,
 .btn-link-dark:hover,
 .btn-link-dark:active {
+    background-color: transparent;
+    border-color: transparent;
     color: var(--_qui-btn-linkDark-color--hover);
 }
 
