@@ -5,18 +5,27 @@
     --scroll-padding: 0; /* template settings override this variable */
 
     /* color  */
-    --qui-color-main: #94c23c; /* template settings override this variable */
-    --qui-color-primary: var(--qui-color-main);
-    --qui-color-secondary: #3b3b3a;
-    --qui-color-body: #3b3b3a; /* template settings override this variable */
-    --qui-color-muted: #9ba3ad; /* template settings override this variable */
-    --qui-line-height-lg: 2.5;
-    --qui-line-height-md: 2;
-    --qui-line-height: 1.75; /* base */
-    --qui-line-height-sm: 1.5;
+    --_qui-color-primary: var(--qui-color-primary, var(--qui-color-main));  /* template settings override this variable */
+    --_qui-color-secondary: var(--qui-color-secondary, #6c757d);
+    --_qui-color-success: var(--qui-color-success, #28a745); /* template settings override this variable */
+    --_qui-color-danger: var(--qui-color-danger, #dc4139); /* template settings override this variable */
+    --_qui-color-warning: var(--qui-color-warning, #ffd147); /* template settings override this variable */
+    --_qui-color-info: var(--qui-color-info, #51a1c0);
+    --_qui-color-light: var(--qui-color-light, #e5e5e5);
+    --_qui-color-dark: var(--qui-color-dark, #393f46);
+
+    --_qui-color-main: var(--qui-color-main, #94c23c); /* template settings override this variable */
+    --_qui-color-body: var(--qui-color-body, #3b3b3a); /* template settings override this variable */
+    --_qui-color-muted: var(--qui-color-muted, #9ba3ad); /* template settings override this variable */
+
     --qui-line-height-xs: 1.25;
-    --qui-btn-primary-bg: var(--qui-color-main);
-    --qui-btn-primary-color: #ffffff; /* template settings override this variable */
+    --qui-line-height-sm: 1.5;
+    --qui-line-height: 1.75; /* base */
+    --qui-line-height-md: 2;
+    --qui-line-height-lg: 2.5;
+
+    /* text */
+    --_qui-font-family: var(--qui-font-family, 'Open Sans', sans-serif);
 
     /* text: font size */
     --qui-fs-xs: 0.75rem;
@@ -70,6 +79,80 @@
     --_qui-tpl-spacing--top: var(--qui-tpl-spacing--top, var(--qui-row-spacing--base));
     --_qui-tpl-spacing--bottom: var(--qui-tpl-spacing--bottom, var(--qui-row-spacing--base));
 
+    /* Buttons */
+    --_qui-btn-borderRadius: var(--qui-btn-borderRadius, 0.25em);
+
+    /* Button: primary */
+    --_qui-btn-primary-bg: var(--qui-btn-primary-bg, var(--_qui-color-main));
+    --_qui-btn-primary-color: var(--qui-btn-primary-color, #ffffff);
+    --_qui-btn-primary-borderColor: var(--qui-btn-primary-borderColor, var(--_qui-color-main));
+    --_qui-btn-primary-bg--hover: var(--qui-btn-primary-bg--hover, color-mix(in srgb, var(--_qui-btn-primary-bg), black 10%));
+    --_qui-btn-primary-color--hover: var(--qui-btn-primary-color--hover, #ffffff);
+    --_qui-btn-primary-borderColor--hover: var(--qui-btn-primary-borderColor--hover, color-mix(in srgb, var(--_qui-btn-primary-bg), black 10%));
+
+    /* Button: secondary */
+    --_qui-btn-secondary-bg: var(--qui-btn-secondary-bg, var(--_qui-color-secondary));
+    --_qui-btn-secondary-color: var(--qui-btn-secondary-color, #ffffff);
+    --_qui-btn-secondary-borderColor: var(--qui-btn-secondary-borderColor, var(--_qui-color-secondary));
+    --_qui-btn-secondary-bg--hover: var(--qui-btn-secondary-bg--hover, color-mix(in srgb, var(--_qui-btn-secondary-bg), black 10%));
+    --_qui-btn-secondary-color--hover: var(--qui-btn-secondary-color--hover, #ffffff);
+    --_qui-btn-secondary-borderColor--hover: var(--qui-btn-secondary-borderColor--hover, color-mix(in srgb, var(--_qui-btn-secondary-bg), black 10%));
+
+    /* Button: success */
+    --_qui-btn-success-bg: var(--qui-btn-success-bg, var(--_qui-color-success));
+    --_qui-btn-success-color: var(--qui-btn-success-color, #ffffff);
+    --_qui-btn-success-borderColor: var(--qui-btn-success-borderColor, var(--_qui-color-success));
+    --_qui-btn-success-bg--hover: var(--qui-btn-success-bg--hover, color-mix(in srgb, var(--_qui-btn-success-bg), black 10%));
+    --_qui-btn-success-color--hover: var(--qui-btn-success-color--hover, #ffffff);
+    --_qui-btn-success-borderColor--hover: var(--qui-btn-success-borderColor--hover, color-mix(in srgb, var(--_qui-btn-success-bg), black 10%));
+
+    /* Button: danger */
+    --_qui-btn-danger-bg: var(--qui-btn-danger-bg, var(--_qui-color-danger));
+    --_qui-btn-danger-color: var(--qui-btn-danger-color, #ffffff);
+    --_qui-btn-danger-borderColor: var(--qui-btn-danger-borderColor, var(--_qui-color-danger));
+    --_qui-btn-danger-bg--hover: var(--qui-btn-danger-bg--hover, color-mix(in srgb, var(--_qui-btn-danger-bg), black 10%));
+    --_qui-btn-danger-color--hover: var(--qui-btn-danger-color--hover, #ffffff);
+    --_qui-btn-danger-borderColor--hover: var(--qui-btn-danger-borderColor--hover, color-mix(in srgb, var(--_qui-btn-danger-bg), black 10%));
+
+    /* Button: warning */
+    --_qui-btn-warning-bg: var(--qui-btn-warning-bg, var(--_qui-color-warning));
+    --_qui-btn-warning-color: var(--qui-btn-warning-color, #000000);
+    --_qui-btn-warning-borderColor: var(--qui-btn-warning-borderColor, var(--_qui-color-warning));
+    --_qui-btn-warning-bg--hover: var(--qui-btn-warning-bg--hover, color-mix(in srgb, var(--_qui-btn-warning-bg), black 10%));
+    --_qui-btn-warning-color--hover: var(--qui-btn-warning-color--hover, #000000);
+    --_qui-btn-warning-borderColor--hover: var(--qui-btn-warning-borderColor--hover, color-mix(in srgb, var(--_qui-btn-warning-bg), black 10%));
+
+    /* Button: info */
+    --_qui-btn-info-bg: var(--qui-btn-info-bg, var(--_qui-color-info));
+    --_qui-btn-info-color: var(--qui-btn-info-color, #ffffff);
+    --_qui-btn-info-borderColor: var(--qui-btn-info-borderColor, var(--_qui-color-info));
+    --_qui-btn-info-bg--hover: var(--qui-btn-info-bg--hover, color-mix(in srgb, var(--_qui-btn-info-bg), black 10%));
+    --_qui-btn-info-color--hover: var(--qui-btn-info-color--hover, #ffffff);
+    --_qui-btn-info-borderColor--hover: var(--qui-btn-info-borderColor--hover, color-mix(in srgb, var(--_qui-btn-info-bg), black 10%));
+
+    /* Button: light */
+    --_qui-btn-light-bg: var(--qui-btn-light-bg, var(--_qui-color-light));
+    --_qui-btn-light-color: var(--qui-btn-light-color, #000000);
+    --_qui-btn-light-borderColor: var(--qui-btn-light-borderColor, var(--_qui-color-light));
+    --_qui-btn-light-bg--hover: var(--qui-btn-light-bg--hover, color-mix(in srgb, var(--_qui-btn-light-bg), black 10%));
+    --_qui-btn-light-color--hover: var(--qui-btn-light-color--hover, #000000);
+    --_qui-btn-light-borderColor--hover: var(--qui-btn-light-borderColor--hover, color-mix(in srgb, var(--_qui-btn-light-bg), black 10%));
+
+    /* Button: dark */
+    --_qui-btn-dark-bg: var(--qui-btn-dark-bg, var(--_qui-color-dark));
+    --_qui-btn-dark-color: var(--qui-btn-dark-color, #ffffff);
+    --_qui-btn-dark-borderColor: var(--qui-btn-dark-borderColor, var(--_qui-color-dark));
+    --_qui-btn-dark-bg--hover: var(--qui-btn-dark-bg--hover, color-mix(in srgb, var(--_qui-btn-dark-bg), black 10%));
+    --_qui-btn-dark-color--hover: var(--qui-btn-dark-color--hover, #ffffff);
+    --_qui-btn-dark-borderColor--hover: var(--qui-btn-dark-borderColor--hover, color-mix(in srgb, var(--_qui-btn-dark-bg), black 10%));
+
+    /* Button: link */
+    --_qui-btn-link-color: var(--qui-btn-link-color, var(--_qui-color-primary));
+    --_qui-btn-link-color--hover: var(--qui-btn-link-color--hover, color-mix(in srgb, var(--_qui-color-primary), black 10%));
+
+    /* Button: link dark */
+    --_qui-btn-linkDark-color: var(--qui-btn-linkDark-color, var(--_qui-color-body));
+    --_qui-btn-linkDark-color--hover: var(--qui-btn-linkDark-color, color-mix(in srgb, var(--_qui-color-primary), black 10%));
 
     /* nav */
     --qui-nav-color: #ffffff; /* template settings override this variable */

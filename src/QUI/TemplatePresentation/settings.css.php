@@ -104,12 +104,12 @@ ob_start();
 :root {
     --scroll-padding: <?php echo $scrollOffset;?>px;
 
-    --qui-color-main: <?php echo $colorMain;?>;
-    --qui-color-primary: <?php echo $colorMain;?>;
-    --qui-color-body: <?php echo $colorMainContentFont;?>;
-    --qui-color-muted: <?php echo $colorMuted;?>;
+    --_qui-color-main: var(--qui-color-main, <?php echo $colorMain;?>);
+    --_qui-color-primary: var(--qui-color-primary, <?php echo $colorMain;?>);
+    --_qui-color-body: var(--qui-color-body, <?php echo $colorMainContentFont;?>);
+    --_qui-color-muted: var(--qui-color-muted, <?php echo $colorMuted;?>);
 
-    --qui-btn-primary-color: <?php echo $buttonFontColor;?>;
+    --_qui-btn-primary-color: var(--qui-btn-primary-color, <?php echo $buttonFontColor;?>);
 
     --qui-nav-color: <?php echo $navBarFontColor;?>;
     --qui-nav-position: <?php echo $navCSSPos;?>;

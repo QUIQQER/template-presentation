@@ -26,8 +26,8 @@ html {
 }
 
 body {
-    color: var(--qui-color-body);
-    font-family: 'Open Sans', sans-serif;
+    color: var(--_qui-color-body);
+    font-family: var(--_qui-font-family);
     font-size: var(--qui-fs-body, 16px);
     font-weight: 300;
     height: 100%;
@@ -192,11 +192,6 @@ strong,
     font-weight: normal;
 }
 
-.text-body,
-.mainFontColor {
-    color: var(--qui-color-primary);
-}
-
 .text-lead,
 .lead {
     font-size: var(--qui-text-lead);
@@ -204,7 +199,7 @@ strong,
 }
 
 .text-muted {
-    color: var(--qui-color-muted);
+    color: var(--_qui-color-muted);
 }
 
 .text-narrow {
@@ -229,11 +224,11 @@ strong,
 .color-main,
 .control-color,
 .mainColor {
-    color: var(--qui-color-primary);
+    color: var(--_qui-color-primary);
 }
 
 .qui-sitetypes-sitemap-block-category .control-background {
-    background-color: var(--qui-color-primary);
+    background-color: var(--_qui-color-primary);
 }
 
 /***********/
@@ -320,23 +315,6 @@ input, textarea, select {
     padding: 0.5em 1.25em;
 }
 
-input[type="submit"] {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: 0;
-    box-shadow: none;
-    font-size: 12pt;
-    letter-spacing: 1px;
-    line-height: 1.75em;
-
-    margin: 6px 0;
-    outline: none;
-    padding: 0.5em 1.25em;
-}
-
 
 input:focus {
     background: none;
@@ -381,7 +359,7 @@ input[type='radio'] {
 #page input[type='checkbox']:checked + label::before,
 #page input[type='radio']:checked + label::before,
 .pace .pace-progress {
-    background-color: var(--qui-color-primary);
+    background-color: var(--_qui-color-primary);
 }
 
 ::-webkit-input-placeholder {
@@ -452,15 +430,15 @@ a {
 a,
 a.link-simple-color,
 a.slide-up-color {
-    color: var(--qui-color-primary);
+    color: var(--_qui-color-primary);
 }
 
 a.link-slide-up-color::before {
-    background: var(--qui-color-primary);
+    background: var(--_qui-color-primary);
 }
 
 .quiqqer-content a:hover:after {
-    color: var(--qui-color-primary);
+    color: var(--_qui-color-primary);
 }
 
 a:hover {
@@ -486,109 +464,6 @@ header {
     top: var(--qui-body-container-top);
 }
 
-/** buttons
- * ========================================================== */
-
-button:hover,
-.qui-button:hover,
-.button-black:hover,
-.button-grey:hover,
-.button-white:hover,
-.button-silver:hover,
-.button-orange:hover,
-.button-red:hover,
-.button-blue:hover,
-.button-rosy:hover,
-.button-green:hover,
-.button-pink:hover,
-.content-button:hover {
-    border-radius: 0;
-    box-shadow: none;
-}
-
-.qui-button,
-.button-black,
-.button-grey,
-.button-white,
-.button-silver,
-.button-orange,
-.button-red,
-.button-blue,
-.button-rosy,
-.button-green,
-.button-pink {
-    border-radius: 0;
-    box-shadow: none;
-}
-
-button:where(:not([name="close"])),
-.button:where(:not([name="close"])),
-input[type='submit'],
-input[type='reset'],
-input[type='button'],
-button:disabled,
-a.template-button,
-button.qui-button {
-    background: var(--qui-color-primary);
-    border: 2px solid var(--qui-color-primary);
-    border-radius: 0;
-    box-shadow: none;
-    color: var(--qui-btn-primary-color);
-    cursor: pointer;
-    display: inline-block;
-    line-height: var(--qui-line-height);
-    outline: none;
-    padding: 0.5em 1.25em;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-
-.button__rounded {
-    border-radius: 100px;
-}
-
-input[type='submit']:hover,
-input[type='reset']:hover,
-input[type='button']:hover,
-button:hover,
-.button-active,
-.button:active,
-.button:hover,
-a.template-button:focus,
-a.template-button:active,
-a.template-button:hover,
-button.qui-button-active,
-button.qui-button:active,
-button.qui-button:hover {
-    background: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    color: var(--qui-color-primary);
-    opacity: 1;
-}
-
-button:hover,
-.button:hover {
-    opacity: 0.8;
-}
-
-button:disabled,
-button:disabled:hover {
-    cursor: default;
-    opacity: 0.5;
-}
-
-.button.fa:before {
-    margin-right: 8px;
-}
-
 textarea,
 input {
     -moz-transition: all 0.2s ease;
@@ -604,7 +479,7 @@ input:hover,
 input:focus,
 select:hover,
 select:focus {
-    border-color: var(--qui-color-primary);
+    border-color: var(--_qui-color-primary);
 }
 
 .sidebox-button {
@@ -708,7 +583,7 @@ li {
 }
 
 :where(li)::marker {
-    color: var(--qui-color-primary);
+    color: var(--_qui-color-primary);
 }
 
 ul.alt li:first-child {
@@ -1561,12 +1436,6 @@ address {
     margin: 0;
 }
 
-.content-body:hover .qui-button,
-.content-body:hover .button,
-.content-body:hover button {
-    text-decoration: none;
-}
-
 /** icon toTop
  * ========================================================== */
 
@@ -1650,7 +1519,7 @@ h2.quiqqer-navigation-title-style {
 .quiqqer-navigation-level-1 a:hover,
 a.quiqqer-navigation-home:hover,
 .quiqqer-navigation-entry:hover .quiqqer-fa-list-icon {
-    color: var(--qui-color-primary);
+    color: var(--_qui-color-primary);
 }
 
 /** page footer
@@ -1743,7 +1612,7 @@ a.quiqqer-navigation-home:hover,
 .page-footer a:where(:not(.button, button):hover) {
     background: none;
     box-shadow: none;
-    color: var(--qui-color-primary);
+    color: var(--_qui-color-primary);
     text-decoration: underline;
 }
 
@@ -1853,12 +1722,12 @@ a.quiqqer-navigation-home:hover,
 /*********************************************************************************/
 /* todo @michael do we need this? */
 .control-background {
-    background: var(--qui-color-primary);
+    background: var(--_qui-color-primary);
 }
 
 /* todo @michael do we need this? */
 .control-background-active {
-    background: var(--qui-color-primary);
+    background: var(--_qui-color-primary);
     color: #FFFFFF;
 }
 
@@ -1879,8 +1748,8 @@ a.quiqqer-navigation-home:hover,
 }
 
 .quiqqer-sheets-desktop a:hover {
-    background-color: var(--qui-color-primary);
-    border: 1px solid var(--qui-color-primary);
+    background-color: var(--_qui-color-primary);
+    border: 1px solid var(--_qui-color-primary);
     color: #fff;
 }
 
@@ -2174,7 +2043,7 @@ a.qui-control-list-entry-imagelink {
 .quiqqer-sheets-desktop-limits a:hover {
     background: none;
     box-shadow: none;
-    color: var(--qui-color-primary);
+    color: var(--_qui-color-primary);
 }
 
 .quiqqer-tags-search-pool .qui-button.qui-button--no-icon {
@@ -2193,8 +2062,8 @@ a.qui-control-list-entry-imagelink {
 
 /* todo @michael.daniel improve css selector */
 .tpl-presentation-row a.qui-tags-tag:hover {
-    border: 1px solid var(--qui-color-primary);
-    color: var(--qui-color-primary);
+    border: 1px solid var(--_qui-color-primary);
+    color: var(--_qui-color-primary);
 }
 
 /*********************************************************************************/
@@ -2239,11 +2108,11 @@ a.qui-control-list-entry-imagelink {
 }
 
 .quiqqer-breadcrumb a {
-    color: var(--qui-color-muted);
+    color: var(--_qui-color-muted);
 }
 
 .template-breadcrumb .quiqqer-breadcrumb ul li:last-child a span:last-child {
-    color: var(--qui-color-primary);
+    color: var(--_qui-color-primary);
 }
 
 /*********************************************************************************/
@@ -2505,96 +2374,6 @@ a.link-slide-right-grey:hover::before,
 a.link-slide-right-grey:focus::before {
     transform: scaleY(0.718) translateX(0px);
 }
-
-/* Template Button */
-
-button,
-.button {
-    font-size: 1em;
-    font-weight: normal;
-    letter-spacing: 1px;
-    padding: 0.5em 1.2em;
-    position: relative;
-    transition: all 0.2s;
-}
-
-:where(.button:last-of-type) {
-    margin-right: 0;
-}
-
-.button__small {
-    font-size: 0.9em;
-    padding: 0.4em 1.1em;
-}
-
-.button__medium {
-    font-size: 1.1em;
-    padding: 1em 1.8em;
-}
-
-.button__large {
-    font-size: 1.6em;
-    padding: 1em 1.6em;
-}
-
-/* new sizing */
-.btn-xs,
-.button-xs {
-    font-size: var(--qui-fs-xs);
-}
-
-.btn-sm,
-.button-sm {
-    font-size: var(--qui-fs-sm);
-}
-
-.btn-md,
-.button-md {
-    font-size: var(--qui-fs-md);
-}
-
-.btn-lg,
-.button-lg {
-    font-size: var(--qui-fs-lg);
-}
-
-.btn-xl,
-.button-xl {
-    font-size: var(--qui-fs-xl);
-}
-/* END new sizing */
-
-.button-arrow:after {
-    content: "\f178";
-    font-family: FontAwesome;
-    margin-left: 20px;
-}
-
-.button-download:after {
-    content: "\f019";
-    font-family: FontAwesome;
-    margin-left: 20px;
-}
-
-.button.button__ghost {
-    background: none;
-    border-color: #fff;
-    color: #fff;
-}
-
-.button.button__ghost:hover,
-.button.button__ghost:active,
-.button.button__ghost:focus {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-}
-
-.button.button__ghost__color {
-    background: none;
-    border: 2px solid var(--qui-color-primary);
-    color: var(--qui-color-primary);
-}
-
 
 /* extra grid class  */
 .grid-children-container {
