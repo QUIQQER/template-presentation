@@ -580,6 +580,10 @@
             <de><![CDATA[Header Textfarbe]]></de>
             <en><![CDATA[Header text color]]></en>
         </locale>
+        <locale name="templatePresentation.settings.header.textPos">
+            <de><![CDATA[Text Ausrichtung]]></de>
+            <en><![CDATA[Text alignment]]></en>
+        </locale>
         <locale name="templatePresentation.settings.header.textPos.flex-start">
             <de><![CDATA[Links]]></de>
             <en><![CDATA[Left]]></en>
