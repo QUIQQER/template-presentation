@@ -14,7 +14,7 @@ a.qui-button,
     -ms-user-select: none;
     user-select: none;
     border: 1px solid transparent;
-    padding: .375em .75em;
+    padding: .375em 1em;
     font-size: 1rem;
     line-height: 1.5;
     border-radius: var(--_qui-btn-borderRadius);
@@ -659,7 +659,7 @@ input[type="submit"].btn-sm,
 input[type="button"].btn-sm,
 input[type="reset"].btn-sm,
 .qui-button.btn-sm {
-    padding: .25em .5em;
+    padding: .25em .75em;
     font-size: .875rem;
     line-height: 1.5;
     border-radius: .2rem;
@@ -671,7 +671,7 @@ input[type="submit"].btn-lg,
 input[type="button"].btn-lg,
 input[type="reset"].btn-lg,
 .qui-button.btn-lg {
-    padding: .5em 1em;
+    padding: .5em 1.5em;
     font-size: 1.25rem;
     line-height: 1.5;
     border-radius: .3rem;
