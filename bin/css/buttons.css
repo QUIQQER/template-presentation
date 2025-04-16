@@ -13,7 +13,7 @@ a.qui-button,
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    border: 1px solid transparent;
+    border: var(--_qui-btn-borderWidth) solid transparent;
     padding: .5em 1.25em;
     font-size: 1rem;
     line-height: 1.5;
@@ -649,6 +649,19 @@ button.btn-outline:disabled:active,
 .btn-outline.btn-disabled:hover,
 .btn-outline.btn-disabled:active {
     opacity: 0.3;
+}
+
+/*****************/
+/* btn with icon */
+/*****************/
+.btn :where(.fa-solid:last-child),
+.btn :where(.fa:last-child) {
+    margin-left: 0.5em;
+}
+
+.btn :where(.fa-solid:first-child),
+.btn :where(.fa:first-child) {
+    margin-left: 0.5em;
 }
 
 /****************/

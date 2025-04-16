@@ -81,6 +81,7 @@
 
     /* Buttons */
     --_qui-btn-borderRadius: var(--qui-btn-borderRadius, 0.25em);
+    --_qui-btn-borderWidth: var(--qui-btn-borderWidth, 1px);
 
     /* Button: primary */
     --_qui-btn-primary-bg: var(--qui-btn-primary-bg, var(--_qui-color-main));
