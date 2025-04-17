@@ -1551,14 +1551,13 @@ a.quiqqer-navigation-home:hover,
     clear: both;
     color: var(--qui-footer-font-color);
     font-size: 0.9em;
-    padding: 80px 0 0;
+    padding-top: var(--_qui-tpl-spacing--top);
     width: 100%;
 }
 
-@media screen and (min-width: 768px) {
-    .page-footer-brick {
-        padding-bottom: 30px;
-    }
+.page-footer-brick {
+    margin-top: var(--_qui-tpl-spacing--top);
+    margin-bottom: var(--_qui-tpl-spacing--bottom);
 }
 
 .page-footer input,
