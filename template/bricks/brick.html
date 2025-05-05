@@ -1,8 +1,8 @@
-{assign var=brickClasses value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+{assign var=brickClasses value=QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
 {assign var=tplBrickBgColor value=QUI\TemplatePresentation\Utils::getBrickBgColorCssVar($Brick)}
 {assign var=tplBrickTextColor value=QUI\TemplatePresentation\Utils::getBrickTextColorCssVar($Brick)}
-{assign var=verticalSpacingTopCSSVariable value=\QUI\TemplatePresentation\Utils::getSpacingVariable($Brick->getSetting('verticalSpacingTop'), 'top')}
-{assign var=verticalSpacingBottomCSSVariable value=\QUI\TemplatePresentation\Utils::getSpacingVariable($Brick->getSetting('verticalSpacingBottom'), 'bottom')}
+{assign var=verticalSpacingTopCSSVariable value=QUI\TemplatePresentation\Utils::getSpacingVariable($Brick->getSetting('verticalSpacingTop'), 'top')}
+{assign var=verticalSpacingBottomCSSVariable value=QUI\TemplatePresentation\Utils::getSpacingVariable($Brick->getSetting('verticalSpacingBottom'), 'bottom')}
 
 {* allow to passing through the fullWidth variable bei fetching the brick tpl file *}
 {* it is used in layout/rightSidebar.html and layout/leftSidebar.html to avoid double padding*}
