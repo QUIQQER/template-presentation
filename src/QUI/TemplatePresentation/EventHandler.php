@@ -7,6 +7,7 @@
 namespace QUI\TemplatePresentation;
 
 use QUI;
+use Smarty;
 
 /**
  * Event Class
@@ -35,4 +36,16 @@ class EventHandler
 
         QUI\Cache\Manager::clear('quiqqer/templatePresentation/' . $cacheName);
     }
+
+    /**
+     * Event: on smarty init
+     *
+     * @param Smarty $Smarty
+     * @return void
+     */
+    public static function onSmartyInit(Smarty $Smarty): void
+    {
+        $Smarty->registerClass('QUI\TemplatePresentation\Utils', '\QUI\TemplatePresentation\Utils');
+    }
+
 }
