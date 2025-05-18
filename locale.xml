@@ -941,4 +941,11 @@
             <en><![CDATA[Note: The search will only be displayed in the navigation if there is a page with the page type "Standard search" or "Advanced search".]]></en>
         </locale>
     </groups>
+
+    <groups name="quiqqer/template-presentation" datatype="php">
+        <locale name="frontend.button.toTop">
+            <de><![CDATA[Nach oben scrollen]]></de>
+            <en><![CDATA[Scroll to top]]></en>
+        </locale>
+    </groups>
 </locales>
