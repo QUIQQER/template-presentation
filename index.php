@@ -133,8 +133,6 @@ if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
                         <i class="fa fa-search header-bar-search-icon"></i>
                     </a>
                 </div>';
-            //@michael dev         $searchForm = '<div  data-qui-searchUrl="' . $searchUrl . '" class="header-bar-search-typePopup hide-on-mobile"><button><span class="fa fa-search"></span> <span class="button-label">Suche</span></button></div>';
-
 
             $search = $searchForm .
                 '<div class="quiqqer-menu-megaMenu-mobile-search"
@@ -185,28 +183,6 @@ if ($showDropDownFlag) {
 
     $DropDownFlag = $DropDown->create();
 }
-
-$logoData = $templateSettings['logoData'];
-$widthCustomProperty = '';
-$heightCustomProperty = '';
-
-if ($logoData['width'] !== false) {
-    $widthCustomProperty = '--logo-width: ' . $logoData['width'] . 'px;';
-}
-
-if ($logoData['height'] !== false) {
-    $heightCustomProperty = '--logo-height: ' . $logoData['height'] . 'px;';
-}
-
-$MegaMenu->prependHTML(
-    '<div class="header-bar-inner-logo" 
-        style="' . $widthCustomProperty . $heightCustomProperty . '">
-        <a href="' . $Project->get(1)->getUrlRewritten() . '" class="page-header-logo">
-        <img src="' . $logoData['url'] . '" alt="' . $logoData['alt'] . '"
-            height="' . $logoData['height'] . '" width="' . $logoData['width'] . '"
-        </a>
-    </div>'
-);
 
 // social
 $social = "false";

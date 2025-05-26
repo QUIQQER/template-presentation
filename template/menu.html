@@ -1,5 +1,6 @@
 {assign var=Setting value=$Template->getAttribute('TemplateSetting')}
 {assign var=MegaMenu value=$Setting->getAttribute('MegaMenu')}
+{assign var=t value=$MegaMenu->prependHTML({fetch template="template/menu/prefix.html" Site=$Site Template=$Template})}
 
 {if $Template->getAttribute('template-header')}
 <div class="header-bar header-bar-position-{$Setting->getAttribute('navPos')}">

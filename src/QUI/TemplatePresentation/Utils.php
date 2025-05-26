@@ -19,6 +19,8 @@ use function count;
  */
 class Utils
 {
+    private static QUI\Projects\Project $Project;
+
     /**
      * @param Array<string, mixed> $params
      *
@@ -40,8 +42,9 @@ class Utils
         /* @var $Project QUI\Projects\Project */
         $Project = $params['Project'];
         $Template = $params['Template'];
-
         $Site = $params['Site'];
+
+        self::$Project = $Project;
 
         /**
          * no header?
@@ -200,8 +203,6 @@ class Utils
         $headerArea = $params['headerArea'];
         $settingsCSS = include 'settings.css.php';
 
-        $logoData = self::getLogoData($Project);
-
         /**
          * Include demo css
          */
@@ -218,7 +219,7 @@ class Utils
             'showPageTitle' => $showPageTitle,
             'showPageShort' => $showPageShort,
             'pageCustomClass' => $pageCustomClass,
-            'logoData' => $logoData,
+            'logoSize' => self::getLogoSize(),
             'useSlideOutMenu' => true, // for now is always true because quiqqer use currently only SlideOut nav
             'includeDemoCss' => $includeDemoCss,
             'headerTextColor' => $headerTextColor,
@@ -262,21 +263,16 @@ class Utils
     // region brick settings
 
     /**
-     * Get logo data (url, alt, width, height) as an array
+     * Get logo size as an array
      *
-     * @param $Project QUI\Projects\Project
-     *
-     * @return array{url: string, alt: string, width: int, height: int}
+     * @return array {width: int, height: int}
      */
-    public static function getLogoData(QUI\Projects\Project $Project): array
+    private static function getLogoSize(): array
     {
-        $alt = "QUIQQER";
-        $Logo = $Project->getMedia()->getLogoImage();
-        $url = $Project->getMedia()->getPlaceholder();
-
-        $navbarHeight = (int)$Project->getConfig('templatePresentation.settings.navBarHeight');
-        $height = (int)$Project->getConfig('templatePresentation.settings.logoHeight');
-        $width = (int)$Project->getConfig('templatePresentation.settings.logoWidth');
+        $Logo = self::$Project->getMedia()->getLogoImage();
+        $navbarHeight = (int)self::$Project->getConfig('templatePresentation.settings.navBarHeight');
+        $height = (int)self::$Project->getConfig('templatePresentation.settings.logoHeight');
+        $width = (int)self::$Project->getConfig('templatePresentation.settings.logoWidth');
 
         if (!$height || $height < 0) {
             $height = $navbarHeight;
@@ -284,9 +280,6 @@ class Utils
 
         if ($Logo) {
             try {
-                $alt = $Logo->getAttribute('title');
-                $url = $Logo->getSizeCacheUrl(500, 200);
-
                 if (!$width) {
                     $width = $Logo->getResizeSize(false, $height)['width'];
                 }
@@ -296,8 +289,6 @@ class Utils
         }
 
         return [
-            'url' => $url,
-            'alt' => $alt,
             'width' => $width,
             'height' => $height
         ];
