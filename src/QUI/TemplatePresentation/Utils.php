@@ -8,6 +8,8 @@ namespace QUI\TemplatePresentation;
 
 use QUI;
 
+use QUI\Exception;
+
 use function count;
 
 /**
@@ -25,6 +27,7 @@ class Utils
      * @param Array<string, mixed> $params
      *
      * @return Array<string, mixed>
+     * @throws Exception
      */
     public static function getConfig(array $params): array
     {
@@ -200,6 +203,34 @@ class Utils
             $pageCustomClass .= ' ' . $customClass;
         }
 
+        /**
+         * Dropdown Language switch
+         */
+        $showLangSelect = false;
+        $showFlag = false;
+        $showText = false;
+
+        switch ($Project->getConfig('templatePresentation.settings.dropdownLangNav')) {
+            case 'flag':
+                $showFlag = true;
+                $showLangSelect = true;
+                break;
+
+            case 'text':
+                $showText = 'abbreviation';
+                $showLangSelect = true;
+                break;
+
+            case 'flagAndText':
+                $showFlag = true;
+                $showText = 'abbreviation';
+                $showLangSelect = true;
+                break;
+        }
+
+        /**
+         * css settings
+         */
         $headerArea = $params['headerArea'];
         $settingsCSS = include 'settings.css.php';
 
@@ -207,6 +238,8 @@ class Utils
          * Include demo css
          */
         $includeDemoCss = $Project->getConfig('templatePresentation.settings.includeDemoStyling');
+
+        $searchData = self::getSearchData();
 
         $config += [
             'showHeader' => $showHeader,
@@ -226,7 +259,17 @@ class Utils
             'headerTextPos' => $headerTextPos,
             'headerTextAlignment' => $headerTextAlignment,
             'mainContentSpacingTopCSSVar' => self::getSpacingVariable($mainContentSpacingTop, 'top'),
-            'mainContentSpacingBottomCSSVar' => self::getSpacingVariable($mainContentSpacingBottom, 'bottom')
+            'mainContentSpacingBottomCSSVar' => self::getSpacingVariable($mainContentSpacingBottom, 'bottom'),
+            'socialData' => self::getSocialLinks(),
+
+            'showLangSelect' => $showLangSelect,
+            'showFlag' => $showFlag,
+            'showText' => $showText,
+
+            'searchType' => $searchData['searchType'],
+            'noSearch' => $searchData['noSearch'],
+            'searchUrl' => $searchData['searchUrl'],
+            'searchDataQui' => $searchData['searchDataQui'],
         ];
 
         // set cache
@@ -400,5 +443,110 @@ class Utils
         $value = 'var(--qui-tpl-' . $name . ',' . $value . ');';
 
         return $variable . $value;
+    }
+
+    /**
+     * Returns social links as an array with URL and icon
+     *
+     * @return array<int, array{url: string, icon: string}>
+     */
+    public static function getSocialLinks(): array
+    {
+        $socials = [
+            'facebook' => 'fa-facebook',
+            'twitter' => 'fa-twitter',
+            'google' => 'fa-google-plus',
+            'youtube' => 'fa-youtube-play',
+            'github' => 'fa-github',
+            'gitlab' => 'fa-gitlab',
+        ];
+        $result = [];
+        foreach ($socials as $key => $icon) {
+            $url = self::$Project->getConfig('templatePresentation.settings.social.' . $key);
+            if (!empty($url)) {
+                $result[] = [
+                    'url' => $url,
+                    'icon' => $icon
+                ];
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * Returns search data and settings for the template.
+     *
+     * @return array{
+     *     searchType: string,
+     *     searchUrl: string,
+     *     searchDataQui: string,
+     *     noSearch: string,
+     *     inputSearch: string
+     * }
+     * @throws QUI\Exception If an error occurs while fetching the search sites.
+     */
+    public static function getSearchData(): array
+    {
+        $searchType = '';
+        $searchUrl = '';
+        $searchDataQui = '';
+        $noSearch = 'no-search';
+        $inputSearch = '';
+
+        if (self::$Project->getConfig('templatePresentation.settings.search') != 'hide') {
+            $types = [
+                'quiqqer/sitetypes:types/search'
+            ];
+
+            /* check if quiqqer search packet is installed */
+            if (QUI::getPackageManager()->isInstalled('quiqqer/search')) {
+                $types = [
+                    'quiqqer/sitetypes:types/search',
+                    'quiqqer/search:types/search'
+                ];
+
+                // Suggest Search integrate
+                $searchDataQui = 'data-qui="package/quiqqer/search/bin/controls/Suggest"';
+            }
+
+            $searchSites = self::$Project->getSites([
+                'where' => [
+                    'type' => [
+                        'type' => 'IN',
+                        'value' => $types
+                    ]
+                ],
+                'limit' => 1
+            ]);
+
+            if (count($searchSites)) {
+                try {
+                    $noSearch = '';
+                    $searchUrl = $searchSites[0]->getUrlRewritten();
+
+                    switch (self::$Project->getConfig('templatePresentation.settings.search')) {
+                        case 'input':
+                            $inputSearch = 'input-search';
+                            $searchType = 'input';
+                            break;
+
+                        case 'inputAndIcon':
+                            $searchType = 'inputAndIcon';
+                            break;
+                    }
+                } catch (QUI\Exception $Exception) {
+                    QUI\System\Log::addNotice($Exception->getMessage());
+                }
+            }
+        }
+
+        return [
+            'searchType' => $searchType,
+            'searchUrl' => $searchUrl,
+            'searchDataQui' => $searchDataQui,
+            'noSearch' => $noSearch,
+            'inputSearch' => $inputSearch
+        ];
     }
 }
