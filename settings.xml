@@ -15,14 +15,6 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
-                    <conf name="bgColorSwitcherPrefix">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>hide</defaultvalue>
-                    </conf>
-                    <conf name="bgColorSwitcherSuffix">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>hide</defaultvalue>
-                    </conf>
                     <conf name="dropdownLangNav">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>hide</defaultvalue>
@@ -91,6 +83,15 @@
                         <defaultvalue>0</defaultvalue>
                     </conf>
 
+                    <!-- bricks -->
+                    <conf name="bricks.bgColor">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#f5f5f5</defaultvalue>
+                    </conf>
+                    <conf name="bricks.textColor">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+
                     <!-- show header -->
                     <conf name="showHeaderStartPage">
                         <type><![CDATA[bool]]></type>
@@ -141,6 +142,14 @@
                         <defaultvalue>300</defaultvalue>
                     </conf>
                     <conf name="headerImagePosition">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>center</defaultvalue>
+                    </conf>
+
+                    <conf name="header.textColor">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="header.textPos">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>center</defaultvalue>
                     </conf>
@@ -235,56 +244,6 @@
                                 </text>
                             </input>
 
-                            <!-- Background Color Switcher Prefix -->
-                            <select conf="templatePresentation.settings.bgColorSwitcherPrefix">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcherPrefix.text"
-                                    />
-                                </text>
-                                <description>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcherPrefix.desc"
-                                    />
-                                </description>
-
-                                <option value="hide">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcher.hide"
-                                    />
-                                </option>
-                                <option value="display">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcher.display"
-                                    />
-                                </option>
-                            </select>
-
-                            <!-- Background Color Switcher Suffix-->
-                            <select conf="templatePresentation.settings.bgColorSwitcherSuffix">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcherSuffix.text"
-                                    />
-                                </text>
-                                <description>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcherSuffix.desc"
-                                    />
-                                </description>
-
-                                <option value="hide">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcher.hide"
-                                    />
-                                </option>
-                                <option value="display">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.bgColorSwitcher.display"
-                                    />
-                                </option>
-                            </select>
-
 
                             <!-- Dropdown Language Switch in top nav -->
                             <select conf="templatePresentation.settings.dropdownLangNav">
@@ -357,6 +316,41 @@
                                 <description>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.logoWidth.desc"
+                                    />
+                                </description>
+                            </input>
+                        </settings>
+
+                        <!-- bricks -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.bricks">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="settings.bricks.bricks.title"
+                                />
+                            </title>
+
+                            <input conf="templatePresentation.settings.bricks.bgColor" type="color" value="#f5f5f5">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.bricks.bgColor.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.bricks.bgColor.desc"
+                                    />
+                                </description>
+                            </input>
+                            <input conf="templatePresentation.settings.bricks.textColor" type="color" value="transparent">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.bricks.textColor.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.bricks.textColor.desc"
                                     />
                                 </description>
                             </input>
@@ -648,6 +642,39 @@
                                     />
                                 </option>
                             </select>
+
+                            <input conf="templatePresentation.settings.header.textColor" type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.header.textColor"
+                                    />
+                                </text>
+                            </input>
+
+                            <select conf="templatePresentation.settings.header.textPos">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.header.textPos"
+                                    />
+                                </text>
+
+                                <option></option>
+                                <option value="flex-start">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.header.textPos.flex-start"
+                                    />
+                                </option>
+                                <option value="center">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.header.textPos.center"
+                                    />
+                                </option>
+                                <option value="flex-end">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.header.textPos.flex-end"
+                                    />
+                                </option>
+                            </select>
                         </settings>
 
 
@@ -879,6 +906,7 @@
             <css src="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/variables.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/fonts.css"/>
+            <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/buttons.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/style.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/editor.css"/>
 

@@ -3,6 +3,20 @@
     <groups name="quiqqer/template-presentation" datatype="php,js">
 
         <!-- template bricks -->
+        <locale name="brick.settings.enableSelect.disable">
+            <de><![CDATA[Deaktivieren]]></de>
+            <en><![CDATA[Disable]]></en>
+        </locale>
+        <locale name="brick.settings.enableSelect.enable.useBrickSetting">
+            <de><![CDATA[Aktivieren: Baustein Einstellung verwenden]]></de>
+            <en><![CDATA[Enable: use brick setting]]></en>
+        </locale>
+        <locale name="brick.settings.enableSelect.enable.useTemplateSetting">
+            <de><![CDATA[Aktivieren: Template Einstellung verwenden]]></de>
+            <en><![CDATA[Enable: use template setting]]></en>
+        </locale>
+
+
         <locale name="promosliderBackground">
             <de><![CDATA[Hintergrundfarbe auswählen (nur bei voller Breite)]]></de>
             <en><![CDATA[Set the background color (only by full width)]]></en>
@@ -15,10 +29,138 @@
             <pl><![CDATA[Tytuł]]></pl>
         </locale>
 
-        <locale name="brickFullWidth">
-            <de><![CDATA[Volle Breite]]></de>
-            <en><![CDATA[Full width]]></en>
-            <pl><![CDATA[Pełna szerokość]]></pl>
+        <locale name="brick.settings.enableBgImage.fullWidth">
+            <de><![CDATA[Template Presentation: Volle Breite]]></de>
+            <en><![CDATA[Template Presentation: Full width]]></en>
+            <pl><![CDATA[Template Presentation: Pełna szerokość]]></pl>
+        </locale>
+
+        <locale name="settings.verticalSpacingTop">
+            <de><![CDATA[Abstand oben<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Top spacing<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="settings.verticalSpacingBottom">
+            <de><![CDATA[Abstand unten<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Bottom spacing<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="settings.verticalSpacing.disabled">
+            <de><![CDATA[Deaktiviert]]></de>
+            <en><![CDATA[Disabled]]></en>
+        </locale>
+        <locale name="settings.verticalSpacing.small">
+            <de><![CDATA[Klein]]></de>
+            <en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="settings.verticalSpacing.base">
+            <de><![CDATA[Normal (default)]]></de>
+            <en><![CDATA[Normal (default)]]></en>
+        </locale>
+        <locale name="settings.verticalSpacing.medium">
+            <de><![CDATA[Mittel]]></de>
+            <en><![CDATA[Medium]]></en>
+        </locale>
+        <locale name="settings.verticalSpacing.large">
+            <de><![CDATA[Groß]]></de>
+            <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="settings.verticalSpacing.extraLarge">
+            <de><![CDATA[Extra groß]]></de>
+            <en><![CDATA[Extra large]]></en>
+        </locale>
+
+        <locale name="brick.settings.enableBgImage">
+            <de><![CDATA[Baustein Hintergrundbild aktivieren<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Enable brick background image<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.bgImage">
+            <de><![CDATA[Baustein Hintergrundbild<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Brick background<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.bgImage.desc">
+            <de><![CDATA[Bitte beachte: einige Bausteine haben eigene Einstellung zum Setzen des Hintergrundbildes. Unter Umständen kann es besser sein, die eingebaute Baustein-Einstellung zu benutzen.]]></de>
+            <en><![CDATA[Please note: some bricks have their own settings for setting the background image. Under certain circumstances, it may be better to use the built-in brick setting.]]></en>
+        </locale>
+        <locale name="brick.settings.enableBgColor">
+            <de><![CDATA[Baustein Hintergrundfarbe aktivieren<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Enable brick background color<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.bgColor">
+            <de><![CDATA[Baustein Hintergrundfarbe<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Brick background color<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.bgColor.desc">
+            <de><![CDATA[Bitte beachte: einige Bausteine haben eigene Einstellung zum Setzen der Hintergrundfarbe. Unter Umständen kann es besser sein, die eingebaute Baustein-Einstellung zu benutzen.]]></de>
+            <en><![CDATA[Please note: some bricks have their own settings for setting the background color. Under certain circumstances, it may be better to use the built-in brick setting.]]></en>
+        </locale>
+        <locale name="brick.settings.enableTextColor">
+            <de><![CDATA[Baustein Textfarbe aktivieren<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Enable brick text color<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.textColor">
+            <de><![CDATA[Baustein Textfarbe<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Brick text color<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.textColor.desc">
+            <de><![CDATA[Diese Einstellung ist nur erforderlich, wenn man eine Kontrastfarbe zum Hintergrundbild oder zur Hintergrundfarbe benötigt, um die Lesbarkeit des Textes zu gewährleisten.]]></de>
+            <en><![CDATA[This setting is only necessary if a contrasting color to the background image or background color is needed to ensure the readability of the text.]]></en>
+        </locale>
+
+        <locale name="brick.settings.separatorTop.enable">
+            <de><![CDATA[Oberen Separator (Trennung) aktivieren<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Enable brick top separator<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.image">
+            <de><![CDATA[Oberer Separator (Trennung)<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Top separator<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.image.desc">
+            <de><![CDATA[Wähle ein geeignetes Bild, das als Trennung zwischen dem aktuellen und dem vorherigen Baustein dienen kann. Beispiel Generatoren: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> und <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></de>
+            <en><![CDATA[Select a suitable image that can serve as a separator between the current and the previous block. Example generators: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> and <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.width">
+            <de><![CDATA[Separator Breite<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Separator width<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.width.desc">
+            <de><![CDATA[Wird kein Wert eingetragen, wird die Breite des Bildes genutzt. Bitte Wert mit Einheit eingeben. Beispiele: 100%, 100vw, 500px, 40rem, etc.]]></de>
+            <en><![CDATA[If no value is entered, the width of the image is used. Please enter a value with unit. Examples: 100%, 100vw, 500px, 40rem, etc.]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.height">
+            <de><![CDATA[Separator Höhe<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Separator height<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.height.desc">
+            <de><![CDATA[Wird kein Wert eingetragen, wird die Höhe des Bildes genutzt. Bitte Wert mit Einheit eingeben. Beispiele: 100%, 100vw, 500px, 40rem, etc.]]></de>
+            <en><![CDATA[If no value is entered, the height of the image is used. Please enter a value with unit. Examples: 100%, 100vw, 500px, 40rem, etc.]]></en>
+        </locale>
+
+        <locale name="brick.settings.separatorBottom.enable">
+            <de><![CDATA[Unteren Separator (Trennung) aktivieren<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Enable brick bottom separator<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.image">
+            <de><![CDATA[Unterer Separator (Trennung)<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Brick bottom separator<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.image.desc">
+            <de><![CDATA[Wähle ein geeignetes Bild, das als Trennung zwischen dem aktellen und dem nächsten Baustein dienen kann. Beispiel Generatoren: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> und <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></de>
+            <en><![CDATA[Select a suitable image that can be used as a separator between the current and the next brick. Example generators: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> and <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.width">
+            <de><![CDATA[Separator Breite<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Bottom separator width<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.width.desc">
+            <de><![CDATA[Wird kein Wert eingetragen, wird die Breite des Bildes genutzt. Bitte Wert mit Einheit eingeben. Beispiele: 100%, 100vw, 500px, 40rem, etc.]]></de>
+            <en><![CDATA[If no value is entered, the width of the image is used. Please enter a value with unit. Examples: 100%, 100vw, 500px, 40rem, etc.]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.height">
+            <de><![CDATA[Separator Höhe<br><small>Template Presentation</small>]]></de>
+            <en><![CDATA[Separator height<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.height.desc">
+            <de><![CDATA[Wird kein Wert eingetragen, wird die Höhe des Bildes genutzt. Bitte Wert mit Einheit eingeben. Beispiele: 100%, 100vw, 500px, 40rem, etc.]]></de>
+            <en><![CDATA[If no value is entered, the height of the image is used. Please enter a value with unit. Examples: 100%, 100vw, 500px, 40rem, etc.]]></en>
         </locale>
 
         <!-- areas -->
@@ -192,6 +334,32 @@
                 <pl><![CDATA[Ukryj]]></pl>
             </locale>
 
+        <locale name="site.settings.header.textColor.enable">
+            <de><![CDATA[Header Textfarbe anpassen]]></de>
+            <en><![CDATA[Adjust header text color]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.enable.useTemplateSetting">
+            <de><![CDATA[Ja, verwende in Template Einstellungen gesetzte Farbe für header]]></de>
+            <en><![CDATA[Yes, use color set in template setting for header]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.enable.useSiteSetting">
+            <de><![CDATA[Ja, verwende eigene Farbe auf dieser Seite]]></de>
+            <en><![CDATA[Yes, Yes, use your own color on this page]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.enable.useDefaultColor">
+            <de><![CDATA[Nein, verwende die standard Template Farbe]]></de>
+            <en><![CDATA[No, use default template color]]></en>
+        </locale>
+
+        <locale name="site.settings.header.textColor.color">
+            <de><![CDATA[Header Textfarbe]]></de>
+            <en><![CDATA[Show short descriptions]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.color.desc">
+            <de><![CDATA[Diese Option hat nur dann Auswirkung, wenn oben <i>"Ja, verwende eigene Farbe auf dieser Seite"</i> gewählt wurde.]]></de>
+            <en><![CDATA[This option only has an effect if <i>"Yes, use your own color on this page"</i> was selected above.]]></en>
+        </locale>
+
         <locale name="siteSettings.pageCustomClass">
             <de><![CDATA[CSS Klasse]]></de>
             <en><![CDATA[CSS class]]></en>
@@ -309,26 +477,6 @@
         </locale>
 
 
-        <!-- Background Color Switcher Prefix -->
-        <locale name="templatePresentation.settings.bgColorSwitcherPrefix.text">
-            <de><![CDATA[Hintergrundfarbe bei Bausteinen in "Oberhalb der Fußzeile" Zone (Footer Prefix) wechseln]]></de>
-            <en><![CDATA[Change background colour for bricks in "footer prefix" area]]></en>
-        </locale>
-        <locale name="templatePresentation.settings.bgColorSwitcherPrefix.desc">
-            <de><![CDATA[Bei mehreren Bausteinen in der "Oberhalt der Fußzeile " Zone (Footer Prefix) wird der Hintergrund abwechselnd weiß und grau.]]></de>
-            <en><![CDATA[If there are several bricks in the "footer prefix" area, the background will alternate between white and grey.]]></en>
-        </locale>
-        <!-- Background Color Switcher Suffix -->
-        <locale name="templatePresentation.settings.bgColorSwitcherSuffix.text">
-            <de><![CDATA[Hintergrundfarbe bei Bausteinen in "Unterhalb des Kopfbereiches" Zone (Header Suffix) wechseln]]></de>
-            <en><![CDATA[Change background colour for bricks in "header suffix" area]]></en>
-        </locale>
-        <locale name="templatePresentation.settings.bgColorSwitcherSuffix.desc">
-            <de><![CDATA[Bei mehreren Bausteinen in der "Unterhalb des Kopfbereiches" Zone (Header Suffix) wird der Hintergrund abwechselnd weiß und grau.]]></de>
-            <en><![CDATA[If there are several bricks in the "header suffix" area, the background will alternate between white and grey.]]></en>
-        </locale>
-
-
         <!-- Dropdown Language Switch in top nav -->
         <locale name="templatePresentation.settings.dropdownLangNav.title">
             <de><![CDATA[Sprache wechseln]]></de>
@@ -427,6 +575,28 @@
             <pl><![CDATA[Dół]]></pl>
         </locale>
 
+
+        <locale name="templatePresentation.settings.header.textColor">
+            <de><![CDATA[Header Textfarbe]]></de>
+            <en><![CDATA[Header text color]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.header.textPos">
+            <de><![CDATA[Text Ausrichtung]]></de>
+            <en><![CDATA[Text alignment]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.header.textPos.flex-start">
+            <de><![CDATA[Links]]></de>
+            <en><![CDATA[Left]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.header.textPos.center">
+            <de><![CDATA[Zentriert]]></de>
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.header.textPos.flex-end">
+            <de><![CDATA[Rechts]]></de>
+            <en><![CDATA[Right]]></en>
+        </locale>
+
         <!-- Logo settings -->
         <locale name="templatePresentation.settings.logoHeight.title">
             <de><![CDATA[Logo Einstellungen]]></de>
@@ -443,6 +613,28 @@
         <locale name="templatePresentation.settings.logoWidth.desc">
             <de><![CDATA[Im Normalfall setzt man die Einstellung nicht. Das Template berechnet automatisch die Breite anhand von der angegebenen Höhe. In seltenen Fällen ist QUIQQER nicht in der Lage die Berechnung durchzuführen (z.B. wenn das Logo ein <code>.svg</code> Bild ist). <strong>Wenn das Logo ein <code>.svg</strong> Bild ist, muss die Breite eingegeben werden.</strong>]]></de>
             <en><![CDATA[In most cases, you don't need to set the logo width. The template automatically calculates the width based on the specified height. In rare cases, QUIQQER may not be able to perform the calculation (e.g. if the logo is an .svg image). <strong>If the logo is a <code>.svg</strong> image, the width must be entered.</strong>]]></en>
+        </locale>
+
+        <!-- Bricks -->
+        <locale name="settings.bricks.bricks.title">
+            <de><![CDATA[Bausteine (Widgets)]]></de>
+            <en><![CDATA[Bricks (widgets)]]></en>
+        </locale>
+        <locale name="settings.bricks.bgColor.text">
+            <de><![CDATA[Baustein Hintergrundfarbe]]></de>
+            <en><![CDATA[Bricks background color]]></en>
+        </locale>
+        <locale name="settings.bricks.bgColor.desc">
+            <de><![CDATA[Standard Hintergrundfarbe für Bausteine. Wenn man im Baustein eine Hintergrundfarbe aktiviert, kann man entweder eigene wählen, oder die mit dieser Einstellung vordefinierte Farbe verwenden.]]></de>
+            <en><![CDATA[Default background color for bricks. If you activate a background color in the brick setting, you can either choose your own or use the color predefined with this setting.]]></en>
+        </locale>
+        <locale name="settings.bricks.textColor.text">
+            <de><![CDATA[Baustein Textfarbe]]></de>
+            <en><![CDATA[Bricks text color]]></en>
+        </locale>
+        <locale name="settings.bricks.textColor.desc">
+            <de><![CDATA[Standard Textfarbe für Bausteine. Wenn man im Baustein eine Textfarbe aktiviert, kann man entweder eigene wählen, oder die mit dieser Einstellung vordefinierte Farbe verwenden.]]></de>
+            <en><![CDATA[Default text color for bricks. If you activate a text color in the brick setting, you can either choose your own or use the color predefined with this setting.]]></en>
         </locale>
 
         <!-- Navbar settings -->

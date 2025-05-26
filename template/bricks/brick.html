@@ -1,0 +1,57 @@
+{assign var=brickClasses value=QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+{assign var=tplBrickBgColor value=QUI\TemplatePresentation\Utils::getBrickBgColorCssVar($Brick)}
+{assign var=tplBrickTextColor value=QUI\TemplatePresentation\Utils::getBrickTextColorCssVar($Brick)}
+{assign var=verticalSpacingTopCSSVariable value=QUI\TemplatePresentation\Utils::getSpacingVariable($Brick->getSetting('verticalSpacingTop'), 'top')}
+{assign var=verticalSpacingBottomCSSVariable value=QUI\TemplatePresentation\Utils::getSpacingVariable($Brick->getSetting('verticalSpacingBottom'), 'bottom')}
+
+{* allow to passing through the fullWidth variable bei fetching the brick tpl file *}
+{* it is used in layout/rightSidebar.html and layout/leftSidebar.html to avoid double padding*}
+{if !isset($fullWidth)}
+    {assign var=fullWidth value=$Brick->getSetting('brickFullWidth')}
+{/if}
+
+{assign var=tplBrickImage value=false}
+{if $Brick->getSetting('brickBgImage')}
+    {assign var=tplBrickImage value=true}
+{/if}
+
+<section class="{$brickClasses}
+                tpl-brick
+                {if $tplBrickImage}tpl-brick--brickImage{/if}
+                tpl-brickArea-{$brickArea}__inner
+                brick-id-{$Brick->getAttribute('id')}"
+         style="{$tplBrickBgColor} {$tplBrickTextColor} {$verticalSpacingTopCSSVariable} {$verticalSpacingBottomCSSVariable}"
+>
+    {* works like background image *}
+    {if $tplBrickImage}
+        <div class="tpl-brick--brickImage__imageWrapper">
+            {image src="{$Brick->getSetting('brickBgImage')}" class="tpl-brick--brickImage__image"}
+        </div>
+    {/if}
+
+    {* brick image separator abvoe the brick *}
+    {if $Brick->getSetting('brickSeparatorTop.enable') && $Brick->getSetting('brickSeparatorTop.image')}
+        {fetch template="template/bricks/separator.html"
+            image=$Brick->getSetting('brickSeparatorTop.image')
+            width=$Brick->getSetting('brickSeparatorTop.width')
+            height=$Brick->getSetting('brickSeparatorTop.height')
+            pos=top
+            Template=$Template
+        }
+    {/if}
+
+    <div class="tpl-brick__inner {if !$fullWidth}grid-container{/if} {if $tplBrickImage}tpl-brick--brickImage__contentWrapper{/if}">
+            {$Brick->create()}
+    </div>
+
+    {* brick image separator underneath the brick *}
+    {if $Brick->getSetting('brickSeparatorBottom.enable') && $Brick->getSetting('brickSeparatorBottom.image')}
+        {fetch template="template/bricks/separator.html"
+            image=$Brick->getSetting('brickSeparatorBottom.image')
+            width=$Brick->getSetting('brickSeparatorBottom.width')
+            height=$Brick->getSetting('brickSeparatorBottom.height')
+            pos=top
+            Template=$Template
+        }
+    {/if}
+</section>
