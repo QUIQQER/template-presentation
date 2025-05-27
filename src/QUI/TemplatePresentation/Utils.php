@@ -7,7 +7,6 @@
 namespace QUI\TemplatePresentation;
 
 use QUI;
-
 use QUI\Exception;
 
 use function count;
