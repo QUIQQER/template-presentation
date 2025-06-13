@@ -23,35 +23,35 @@
 </head>
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass} {$pageCustomClass}
             {if !$showHeader} header-hidden {/if}
-            {if $showHeader} header-displayed{/if}" id="body-top">
+            {if $showHeader} header-displayed{/if}" id="body-top"
+>
+
 {template_event name="quiqqer::template::body::begin" Template=$Template}
 
 {if $useSlideOutMenu}
 <div class="slideout-panel">
 {/if}
-    {* main navigation / menu *}
-    {fetch template="template/menu.html"
-        Project=$Project
-        MegaMenu=$MegaMenu
-        Template=$Template
-        navPos=$navPos
-    }
 
-    {template_event name="quiqqer::template::body::afterMenu" Template=$Template}
+{* main navigation / menu *}
+{if $Template->getAttribute('template-header')}
+    {fetch template="template/menu.html" Template=$Template}
+{/if}
 
-    {fetch template="template/page.html"
-        Project=$Project
-        Template=$Template
-        Site=$Site
-        showHeader=$showHeader
-        showPageTitle=$showPageTitle
-        showPageShort=$showPageShort
-        startPage=$startPage
-        BricksManager=$BricksManager
-        showBreadcrumb=$showBreadcrumb
-        Breadcrumb=$Breadcrumb
-        socialFooter=$socialFooter
-    }
+{template_event name="quiqqer::template::body::afterMenu" Template=$Template}
+
+{fetch template="template/page.html"
+    Project=$Project
+    Template=$Template
+    Site=$Site
+    showPageTitle=$showPageTitle
+    showPageShort=$showPageShort
+    startPage=$startPage
+    BricksManager=$BricksManager
+    showBreadcrumb=$showBreadcrumb
+    Breadcrumb=$Breadcrumb
+    socialFooter=$socialFooter
+}
+
 {if $useSlideOutMenu}
 </div>
 {/if}
@@ -63,5 +63,6 @@
 {fetch template="template/scripts.html" Template=$Template URL_OPT_DIR=$URL_OPT_DIR}
 
 {template_event name="quiqqer::template::body::end" Template=$Template}
+
 </body>
 </html>

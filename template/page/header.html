@@ -1,10 +1,11 @@
+{assign var=TS value=$Template->getAttribute('TemplateSetting')}
+{assign var=textColorCSSVar value=$TS->getAttribute('headerTextColor')}
+{assign var=showHeader value=$TS->getAttribute('showHeader')}
+{assign var=textPosCSSVar value=$TS->getAttribute('headerTextPos')}
+{assign var=textAlignmentCSSVar value=$TS->getAttribute('headerTextAlignment')}
+
 {if $showHeader}
 {strip}
-    {assign var=TS value=$Template->getAttribute('TemplateSetting')}
-    {assign var=textColorCSSVar value=$TS->getAttribute('headerTextColor')}
-    {assign var=textPosCSSVar value=$TS->getAttribute('headerTextPos')}
-    {assign var=textAlignmentCSSVar value=$TS->getAttribute('headerTextAlignment')}
-
     {if $TS->getAttribute('headerTextColor')}
         {assign var=textColorCSSVar value="--_tpl-header-textColor: {$TS->getAttribute('headerTextColor')};"}
     {/if}

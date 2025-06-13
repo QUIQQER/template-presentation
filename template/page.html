@@ -5,8 +5,10 @@
 <div class="body-container">
     {template_event name="quiqqer::template::body::pageBegin" Template=$Template}
 
-    {fetch template="template/page/header.html" showPageTitle=$showPageTitle showPageShort=$showPageShort showHeader=$showHeader Site=$Site Template=$Template}
-    
+    {if $Template->getAttribute('template-header')}
+        {fetch template="template/page/header.html" showPageTitle=$showPageTitle showPageShort=$showPageShort Site=$Site Template=$Template}
+    {/if}
+
     {template_event name="quiqqer::template::body::afterHeader" Template=$Template}
 
     {*<!-- header brick area (only for start page) -->*}
