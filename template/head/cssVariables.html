@@ -1,0 +1,41 @@
+{assign var=css value=$Template->getAttribute('TemplateSetting')->getAttribute('cssVariables')}
+
+<style>
+    :root {
+        /* general */
+        --template-presentation__scroll-offset: {$css['scrollOffset']}px;
+        --template-presentation__body-container-top: {$css['bodyContainerTop']}px;
+
+        /* colors */
+        --template-presentation__color-primary: {$css['colorPrimary']};
+        --template-presentation__btn-text-color: {$css['btnTextColor']};
+
+        /* typography */
+        --template-presentation__body-color: {$css['bodyColor']};
+        --template-presentation__heading-color: {$css['headingColor']};
+        --template-presentation__body-font-weight: {$css['bodyFontWeight']};
+        --template-presentation__heading-font-weight: {$css['headingFontWeight']};
+
+        /* nav */
+        --template-presentation__nav-position: {$css['navPosition']};
+        --template-presentation__nav-link-color: {$css['navLinkColor']};
+        --template-presentation__nav-bgColor: {$css['navBgColor']};
+        --template-presentation__nav-bgColor--scrolled: {$css['navBgColorScrolled']};
+        --template-presentation__nav-height: {$css['navHeight']}px;
+        --template-presentation__nav-mobile-bgColor: {$css['navMobileBgColor']};
+        --template-presentation__nav-mobile-text-color: {$css['navMobileTextColor']};
+
+        /* page header */
+        --template-presentation__page-header-minHeightDesktop: {$css['pageHeaderMinHeightDesktop']}px;
+        --template-presentation__page-header-minHeightMobile: {$css['pageHeaderMinHeightMobile']}px;
+        --template-presentation__page-header-img-position: {$css['pageHeaderImgPosition']};
+        --template-presentation__page-header-text-alignment: {$css['pageHeaderTextAlignment']}; /* todo */
+        --template-presentation__page-header-heading-color: {$css['pageHeaderHeadingColor']}; /* todo */
+        --template-presentation__page-header-text-color: {$css['pageHeaderTextColor']}; /* todo */
+
+        /* footer */
+        --template-presentation__footer-bgColor: {$css['footerBgColor']};
+        --template-presentation__footer-text-color: {$css['footerTextColor']};
+        --template-presentation__footer-link-color: {$css['footerLinkColor']}; /* todo */
+    }
+</style>

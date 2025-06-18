@@ -231,7 +231,7 @@ class Utils
          * css settings
          */
         $headerArea = $params['headerArea'];
-        $settingsCSS = include 'settings.css.php';
+        $cssVariables = self::getCssVariables($headerArea);
 
         /**
          * Include demo css
@@ -243,7 +243,7 @@ class Utils
         $config += [
             'showHeader' => $showHeader,
             'showBreadcrumb' => $showBreadcrumb,
-            'settingsCSS' => '<style data-no-cache="1">' . $settingsCSS . '</style>',
+            'cssVariables' => $cssVariables,
             'typeClass' => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'navPos' => $Project->getConfig('templatePresentation.settings.navPos'),
             'navAlignment' => $Project->getConfig('templatePresentation.settings.navAlignment'),
@@ -546,6 +546,182 @@ class Utils
             'searchDataQui' => $searchDataQui,
             'noSearch' => $noSearch,
             'inputSearch' => $inputSearch
+        ];
+    }
+
+    /**
+     * Returns an array of CSS variables for the template presentation.
+     * These variables include general layout, color, typography, navigation,
+     * page header, and footer settings, which are used to dynamically generate
+     * CSS custom properties for the frontend.
+     *
+     * @param bool $headerArea Whether the header area is enabled (affects certain CSS variables).
+     * @return array Associative array of CSS variable names and their values.
+     */
+    protected static function getCssVariables(bool $headerArea = false): array
+    {
+        /**
+         * colors & typography
+         */
+        $bodyColor = '#3b3b3a';
+        $bodyFontWeight = '400'; /* normal */
+        $headingColor = '';
+        $headingFontWeight = '700'; /* bold */
+
+        $colorMain = '#2e4d87';
+        $btnTextColor = '#ffffff';
+
+        // footer
+        $footerBgColor = '#414141';
+        $footerTextColor = '#d1d1d1';
+        $footerLinkColor = '#aaaaaa';
+
+        if (self::$Project->getConfig('templatePresentation.settings.colorFooterBackground')) {
+            $footerBgColor = self::$Project->getConfig('templatePresentation.settings.colorFooterBackground');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.colorFooterFont')) {
+            $footerLinkColor = self::$Project->getConfig('templatePresentation.settings.colorFooterFont');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.colorMain')) {
+            $colorMain = self::$Project->getConfig('templatePresentation.settings.colorMain');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.buttonFontColor')) {
+            $btnTextColor = self::$Project->getConfig('templatePresentation.settings.buttonFontColor');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.colorMainContentFont')) {
+            $bodyColor = self::$Project->getConfig('templatePresentation.settings.colorMainContentFont');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.bodyFontWeight')) {
+            $bodyFontWeight = self::$Project->getConfig('templatePresentation.settings.bodyFontWeight');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.headingColor')) {
+            $headingColor = self::$Project->getConfig('templatePresentation.settings.headingColor');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.headingFontWeight')) {
+            $headingFontWeight = self::$Project->getConfig('templatePresentation.settings.headingFontWeight');
+        }
+
+        /**
+         * Nav
+         */
+        $navBgColor = '#2d4d88';
+        $navBarFontColor = '#ffffff';
+        $navMobileTextColor = '#ffffff';
+        $navMobileBgColor = '#252122';
+        $navHeight = (int)self::$Project->getConfig('templatePresentation.settings.navBarHeight');
+        $navPos = self::$Project->getConfig('templatePresentation.settings.navPos');
+
+        if (self::$Project->getConfig('templatePresentation.settings.navBarMainColor')) {
+            $navBgColor = self::$Project->getConfig('templatePresentation.settings.navBarMainColor');
+        }
+
+        $navBgColorScrolled = $navBgColor;
+
+        if (self::$Project->getConfig('templatePresentation.settings.navBarFontColor')) {
+            $navBarFontColor = self::$Project->getConfig('templatePresentation.settings.navBarFontColor');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.mobileFontColor')) {
+            $navMobileTextColor = self::$Project->getConfig('templatePresentation.settings.mobileFontColor');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.mobileMenuBackground')) {
+            $navMobileBgColor = self::$Project->getConfig('templatePresentation.settings.mobileMenuBackground');
+        }
+
+        $navPositionCSS = 'absolute';
+        $bodyContainerTop = $navHeight;
+
+        if ($navPos == 'fix') {
+            $navPositionCSS = 'fixed';
+        }
+
+        /**
+         * Page header
+         */
+        $pageHeaderMinHeightDesktop = (int)self::$Project->getConfig('templatePresentation.settings.headerHeightValue');
+        $pageHeaderMinHeightMobile = (int)self::$Project->getConfig(
+            'templatePresentation.settings.headerHeightValueMobile'
+        );
+        $pageHeaderTextAlignment = self::$Project->getConfig('templatePresentation.settings.pageHeaderTextAlignment');
+        $pageHeaderHeadingColor = self::$Project->getConfig('templatePresentation.settings.pageHeaderHeadingColor');
+        $pageHeaderTextColor = self::$Project->getConfig('templatePresentation.settings.pageHeaderTextColor');
+
+        if (!$pageHeaderMinHeightMobile) {
+            $pageHeaderMinHeightMobile = $pageHeaderMinHeightDesktop;
+        }
+
+        if (!$pageHeaderHeadingColor) {
+            $pageHeaderHeadingColor = 'inherit';
+        }
+
+        if (!$pageHeaderTextColor) {
+            $pageHeaderTextColor = 'inherit';
+        }
+
+        $pageHeaderImgPosition = self::$Project->getConfig('templatePresentation.settings.headerImagePosition');
+
+        /**
+         * Others
+         */
+        $scrollOffset = 0;
+        if ($navPos == 'fix' && $navHeight > 0) {
+            $scrollOffset = $navHeight + 10;
+        }
+
+        if ($headerArea) {
+            $bodyContainerTop = 0;
+            $navBgColor = 'transparent';
+        }
+
+        if (isset($showHeader) && $showHeader) {
+            $bodyContainerTop = 0;
+            $navBgColor = 'transparent';
+        }
+
+        return [
+            /* general */
+            'scrollOffset' => $scrollOffset,
+            'bodyContainerTop' => $bodyContainerTop,
+
+            /* colors */
+            'colorPrimary' => $colorMain,
+            'btnTextColor' => $btnTextColor,
+
+            /* typography */
+            'bodyColor' => $bodyColor,
+            'headingColor' => $headingColor,
+            'bodyFontWeight' => $bodyFontWeight,
+            'headingFontWeight' => $headingFontWeight,
+
+            /* nav */
+            'navPosition' => $navPositionCSS,
+            'navLinkColor' => $navBarFontColor,
+            'navBgColor' => $navBgColor,
+            'navBgColorScrolled' => $navBgColorScrolled,
+            'navHeight' => $navHeight,
+            'navMobileBgColor' => $navMobileBgColor,
+            'navMobileTextColor' => $navMobileTextColor,
+
+            /* page header */
+            'pageHeaderMinHeightDesktop' => $pageHeaderMinHeightDesktop,
+            'pageHeaderMinHeightMobile' => $pageHeaderMinHeightMobile,
+            'pageHeaderImgPosition' => $pageHeaderImgPosition,
+            'pageHeaderTextAlignment' => $pageHeaderTextAlignment, /* todo */
+            'pageHeaderHeadingColor' => $pageHeaderHeadingColor, /* todo */
+            'pageHeaderTextColor' => $pageHeaderTextColor, /* todo */
+
+            /* footer */
+            'footerBgColor' => $footerBgColor,
+            'footerTextColor' => $footerTextColor,
+            'footerLinkColor' => $footerLinkColor, /* todo al setting */
         ];
     }
 }

@@ -13,10 +13,12 @@
         var socialHTML = '{$socialMobileNav}';
     </script>
 
+    {fetch template="template/head/cssVariables.html" Template=$Template}
+    {template_event name="quiqqer::template::header::afterCSSVariables" Template=$Template}
+
     {fetch template="template/head/styles.html" Template=$Template}
     {template_event name="quiqqer::template::header::afterCSSstyles" Template=$Template}
 
-    {$settingsCSS}
     {template_event name="quiqqer::template::header::afterSettingsCSS" Template=$Template}
 
     {template_event name="quiqqer::template::header::end" Template=$Template}
