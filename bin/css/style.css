@@ -26,8 +26,8 @@ html {
 }
 
 body {
-    color: var(--_qui-color-body);
-    font-family: var(--_qui-font-family);
+    color: var(--qui-color-body);
+    font-family: var(--qui-font-family);
     font-size: var(--qui-fs-body, 16px);
     font-weight: 300;
     height: 100%;
@@ -199,7 +199,7 @@ strong,
 }
 
 .text-muted {
-    color: var(--_qui-color-muted);
+    color: var(--qui-color-muted);
 }
 
 .text-narrow {
@@ -224,11 +224,11 @@ strong,
 .color-main,
 .control-color,
 .mainColor {
-    color: var(--_qui-color-primary);
+    color: var(--qui-color-primary);
 }
 
 .qui-sitetypes-sitemap-block-category .control-background {
-    background-color: var(--_qui-color-primary);
+    background-color: var(--qui-color-primary);
 }
 
 /***********/
@@ -359,7 +359,7 @@ input[type='radio'] {
 #page input[type='checkbox']:checked + label::before,
 #page input[type='radio']:checked + label::before,
 .pace .pace-progress {
-    background-color: var(--_qui-color-primary);
+    background-color: var(--qui-color-primary);
 }
 
 ::-webkit-input-placeholder {
@@ -430,15 +430,15 @@ a {
 a,
 a.link-simple-color,
 a.slide-up-color {
-    color: var(--_qui-color-primary);
+    color: var(--qui-color-primary);
 }
 
 a.link-slide-up-color::before {
-    background: var(--_qui-color-primary);
+    background: var(--qui-color-primary);
 }
 
 .quiqqer-content a:hover:after {
-    color: var(--_qui-color-primary);
+    color: var(--qui-color-primary);
 }
 
 a:hover {
@@ -479,7 +479,7 @@ input:hover,
 input:focus,
 select:hover,
 select:focus {
-    border-color: var(--_qui-color-primary);
+    border-color: var(--qui-color-primary);
 }
 
 .sidebox-button {
@@ -583,7 +583,7 @@ li {
 }
 
 :where(li)::marker {
-    color: var(--_qui-color-primary);
+    color: var(--qui-color-primary);
 }
 
 ul.alt li:first-child {
@@ -1335,8 +1335,8 @@ input[type="search"].only-input:focus {
 /* Template bricks */
 /*******************/
 .tpl-brick {
-    color: var(--_qui-tpl-brick-textColor);
-    background-color: var(--_qui-tpl-brick-backgroundColor);
+    color: var(--qui-tpl-brick-textColor);
+    background-color: var(--qui-tpl-brick-backgroundColor);
 }
 
 /* brick with background image */
@@ -1369,21 +1369,21 @@ input[type="search"].only-input:focus {
 .tpl-brick__separatorImage {
     display: block;
     margin-inline: auto;
-    width: var(--_qui-tpl-brick-separatorWidth, initial);
-    height: var(--_qui-tpl-brick-separatorHeight, initial);
+    width: var(--qui-tpl-brick-separatorWidth, initial);
+    height: var(--qui-tpl-brick-separatorHeight, initial);
 }
 
 /** page content
  * ========================================================== */
 
 .tpl-brick__inner {
-    padding-top: var(--_qui-tpl-spacing--top);
-    padding-bottom: var(--_qui-tpl-spacing--bottom);
+    padding-top: var(--qui-tpl-spacing--top);
+    padding-bottom: var(--qui-tpl-spacing--bottom);
 }
 
 .tpl-presentation-row {
-    padding-top: var(--_qui-tpl-spacing--top);
-    padding-bottom: var(--_qui-tpl-spacing--bottom);
+    padding-top: var(--qui-tpl-spacing--top);
+    padding-bottom: var(--qui-tpl-spacing--bottom);
 }
 
 .content-header,
@@ -1405,8 +1405,8 @@ input[type="search"].only-input:focus {
 }
 
 .main-content:where([role="main"]) {
-    margin-top: var(--_qui-tpl-spacing--top);
-    margin-bottom: var(--_qui-tpl-spacing--bottom);
+    margin-top: var(--qui-tpl-spacing--top);
+    margin-bottom: var(--qui-tpl-spacing--bottom);
 }
 
 .control-header {
@@ -1514,7 +1514,7 @@ h2.quiqqer-navigation-title-style {
 .quiqqer-navigation-level-1 a:hover,
 a.quiqqer-navigation-home:hover,
 .quiqqer-navigation-entry:hover .quiqqer-fa-list-icon {
-    color: var(--_qui-color-primary);
+    color: var(--qui-color-primary);
 }
 
 /** page footer
@@ -1525,13 +1525,13 @@ a.quiqqer-navigation-home:hover,
     clear: both;
     color: var(--qui-footer-font-color);
     font-size: 0.9em;
-    padding-top: var(--_qui-tpl-spacing--top);
+    padding-top: var(--qui-tpl-spacing--top);
     width: 100%;
 }
 
 .page-footer-brick {
-    margin-top: var(--_qui-tpl-spacing--top);
-    margin-bottom: var(--_qui-tpl-spacing--bottom);
+    margin-top: var(--qui-tpl-spacing--top);
+    margin-bottom: var(--qui-tpl-spacing--bottom);
 }
 
 .page-footer input,
@@ -1606,7 +1606,7 @@ a.quiqqer-navigation-home:hover,
 .page-footer a:where(:not(.button, button):hover) {
     background: none;
     box-shadow: none;
-    color: var(--_qui-color-primary);
+    color: var(--qui-color-primary);
     text-decoration: underline;
 }
 
@@ -1716,12 +1716,12 @@ a.quiqqer-navigation-home:hover,
 /*********************************************************************************/
 /* todo @michael do we need this? */
 .control-background {
-    background: var(--_qui-color-primary);
+    background: var(--qui-color-primary);
 }
 
 /* todo @michael do we need this? */
 .control-background-active {
-    background: var(--_qui-color-primary);
+    background: var(--qui-color-primary);
     color: #FFFFFF;
 }
 
@@ -1742,8 +1742,8 @@ a.quiqqer-navigation-home:hover,
 }
 
 .quiqqer-sheets-desktop a:hover {
-    background-color: var(--_qui-color-primary);
-    border: 1px solid var(--_qui-color-primary);
+    background-color: var(--qui-color-primary);
+    border: 1px solid var(--qui-color-primary);
     color: #fff;
 }
 
@@ -2037,7 +2037,7 @@ a.qui-control-list-entry-imagelink {
 .quiqqer-sheets-desktop-limits a:hover {
     background: none;
     box-shadow: none;
-    color: var(--_qui-color-primary);
+    color: var(--qui-color-primary);
 }
 
 .quiqqer-tags-search-pool .qui-button.qui-button--no-icon {
@@ -2056,8 +2056,8 @@ a.qui-control-list-entry-imagelink {
 
 /* todo @michael.daniel improve css selector */
 .tpl-presentation-row a.qui-tags-tag:hover {
-    border: 1px solid var(--_qui-color-primary);
-    color: var(--_qui-color-primary);
+    border: 1px solid var(--qui-color-primary);
+    color: var(--qui-color-primary);
 }
 
 /*********************************************************************************/
@@ -2102,11 +2102,11 @@ a.qui-control-list-entry-imagelink {
 }
 
 .quiqqer-breadcrumb a {
-    color: var(--_qui-color-muted);
+    color: var(--qui-color-muted);
 }
 
 .template-breadcrumb .quiqqer-breadcrumb ul li:last-child a span:last-child {
-    color: var(--_qui-color-primary);
+    color: var(--qui-color-primary);
 }
 
 /*********************************************************************************/

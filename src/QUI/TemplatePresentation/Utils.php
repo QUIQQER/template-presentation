@@ -231,7 +231,7 @@ class Utils
          * css settings
          */
         $headerArea = $params['headerArea'];
-        $cssVariables = self::getCssVariables($headerArea);
+        $cssVariables = self::getCssVariables($headerArea, $showHeader);
 
         /**
          * Include demo css
@@ -362,7 +362,7 @@ class Utils
             return '';
         }
 
-        return '--_qui-tpl-brick-backgroundColor: ' . $bgColor . ';';
+        return '--qui-tpl-brick-backgroundColor: ' . $bgColor . ';';
     }
 
     /**
@@ -391,7 +391,7 @@ class Utils
             return '';
         }
 
-        return '--_qui-tpl-brick-textColor: ' . $color . ';';
+        return '--qui-tpl-brick-textColor: ' . $color . ';';
     }
 
     // endregion
@@ -401,12 +401,12 @@ class Utils
      * This row spacing variable is defined in template variable.css file.
      *
      * Examples:
-     *    --_qui-tpl-spacing--top:  var(--qui-row-spacing--base);
-     *    --_qui-tpl-spacing--top:  var(--qui-row-spacing--small);
-     *    --_qui-tpl-spacing--bottom:  var(--qui-row-spacing--extraLarge);
+     *    --qui-tpl-spacing--top:  var(--qui-row-spacing--base);
+     *    --qui-tpl-spacing--top:  var(--qui-row-spacing--small);
+     *    --qui-tpl-spacing--bottom:  var(--qui-row-spacing--extraLarge);
      *
-     * @param string $name
-     * @param string $pos
+     * @param string $name // allowed values: 'disabled', 'extraSmall', 'small', 'base', 'medium', 'large', 'extraLarge'
+     * @param string $pos // only 'top' and 'bottom' are allowed
      * @return string
      */
     public static function getSpacingVariable(string $name, string $pos): string
@@ -419,14 +419,14 @@ class Utils
             return '';
         }
 
-        return '--_qui-tpl-spacing--' . $pos . ': var(--qui-row-spacing--' . $name . ');';
+        return '--qui-tpl-spacing--' . $pos . ': var(--qui-row-spacing--' . $name . ');';
     }
 
     /**
      * Get custom css variable declaration by given name and value.
      *
      * Examples:
-     *    --_qui-tpl-VAR_NAME: var(--qui-tpl-VAR_NAME, VALUE);
+     *    --qui-tpl-VAR_NAME: var(--theme--qui-tpl-VAR_NAME, VALUE);
      *
      * @param string $name
      * @param string $value
@@ -438,8 +438,8 @@ class Utils
             return '';
         }
 
-        $variable = '--_qui-tpl-' . $name . ': ';
-        $value = 'var(--qui-tpl-' . $name . ',' . $value . ');';
+        $variable = '--qui-tpl-' . $name . ': ';
+        $value = 'var(--theme--qui-tpl-' . $name . ',' . $value . ');';
 
         return $variable . $value;
     }
@@ -556,9 +556,10 @@ class Utils
      * CSS custom properties for the frontend.
      *
      * @param bool $headerArea Whether the header area is enabled (affects certain CSS variables).
+     * @param bool $showHeader Whether the page header (hero) is enabled (affects certain CSS variables).
      * @return array Associative array of CSS variable names and their values.
      */
-    protected static function getCssVariables(bool $headerArea = false): array
+    protected static function getCssVariables(bool $headerArea = false, bool $showHeader = false): array
     {
         /**
          * colors & typography
@@ -581,7 +582,7 @@ class Utils
         }
 
         if (self::$Project->getConfig('templatePresentation.settings.colorFooterFont')) {
-            $footerLinkColor = self::$Project->getConfig('templatePresentation.settings.colorFooterFont');
+            $footerTextColor = self::$Project->getConfig('templatePresentation.settings.colorFooterFont');
         }
 
         if (self::$Project->getConfig('templatePresentation.settings.colorMain')) {

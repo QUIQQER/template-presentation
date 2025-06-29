@@ -13,15 +13,15 @@ a.qui-button,
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    border: var(--_qui-btn-borderWidth) solid transparent;
+    border: var(--qui-btn-borderWidth) solid transparent;
     padding: .5em 1.25em;
     font-size: 1em;
     line-height: 1.5;
-    border-radius: var(--_qui-btn-borderRadius);
+    border-radius: var(--qui-btn-borderRadius);
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, opacity .15s ease-in-out;
     cursor: pointer;
     text-decoration: none;
-    font-family: var(--_qui-font-family, inherit), sans-serif;
+    font-family: var(--qui-font-family, inherit), sans-serif;
     -webkit-box-shadow: none; /* qui-button reset */
     -moz-box-shadow: none; /* qui-button reset */
     box-shadow: none; /* qui-button reset */
@@ -49,9 +49,9 @@ button:disabled,
 button[disabled],
 a.qui-button,
 .btn-primary {
-    background-color: var(--_qui-btn-primary-bg);
-    border-color: var(--_qui-btn-primary-borderColor);
-    color: var(--_qui-btn-primary-color);
+    background-color: var(--qui-btn-primary-bg);
+    border-color: var(--qui-btn-primary-borderColor);
+    color: var(--qui-btn-primary-color);
 }
 
 input[type="submit"]:hover,
@@ -70,9 +70,9 @@ button:hover,
 button:active,
 .btn-primary:hover,
 .btn-primary:active {
-    background: var(--_qui-btn-primary-bg--hover);
-    color: var(--_qui-btn-primary-color--hover);
-    border-color: var(--_qui-btn-primary-borderColor--hover);
+    background: var(--qui-btn-primary-bg--hover);
+    color: var(--qui-btn-primary-color--hover);
+    border-color: var(--qui-btn-primary-borderColor--hover);
     outline: none;
 }
 
@@ -95,7 +95,7 @@ button:disabled.btn-outline:hover,
 button:disabled.btn-outline:active,
 .btn-primary.btn-disabled.btn-outline:hover,
 .btn-primary.btn-disabled.btn-outline:active {
-    color: var(--_qui-btn-primary-bg--hover);
+    color: var(--qui-btn-primary-bg--hover);
 }
 
 /***************/
@@ -109,7 +109,7 @@ button.btn-link,
 .btn-link {
     background-color: transparent;
     border-color: transparent;
-    color: var(--_qui-btn-link-color);
+    color: var(--qui-btn-link-color);
 }
 
 input[type="submit"].btn-link:hover,
@@ -124,7 +124,7 @@ button.qui-button.btn-link:active,
 .btn-link:active {
     background-color: transparent;
     border-color: transparent;
-    color: var(--_qui-btn-link-color--hover);
+    color: var(--qui-btn-link-color--hover);
 }
 
 /********************/
@@ -138,7 +138,7 @@ button.btn-link-dark,
 .btn-link-dark {
     background-color: transparent;
     border-color: transparent;
-    color: var(--_qui-btn-linkDark-color);
+    color: var(--qui-btn-linkDark-color);
 }
 
 input[type="submit"].btn-link-dark:hover,
@@ -153,7 +153,7 @@ button.qui-button.btn-link-dark:active,
 .btn-link-dark:active {
     background-color: transparent;
     border-color: transparent;
-    color: var(--_qui-btn-linkDark-color--hover);
+    color: var(--qui-btn-linkDark-color--hover);
 }
 
 /********************/
@@ -165,9 +165,9 @@ input[type="reset"].btn-secondary,
 button.qui-button.btn-secondary,
 button.btn-secondary,
 .btn-secondary {
-    background-color: var(--_qui-btn-secondary-bg);
-    border-color: var(--_qui-btn-secondary-borderColor);
-    color: var(--_qui-btn-secondary-color);
+    background-color: var(--qui-btn-secondary-bg);
+    border-color: var(--qui-btn-secondary-borderColor);
+    color: var(--qui-btn-secondary-color);
 }
 
 input[type="submit"].btn-secondary:hover,
@@ -180,9 +180,9 @@ button.qui-button.btn-secondary:hover,
 button.qui-button.btn-secondary:active,
 .btn-secondary:hover,
 .btn-secondary:active {
-    background: var(--_qui-btn-secondary-bg--hover);
-    color: var(--_qui-btn-secondary-color--hover);
-    border-color: var(--_qui-btn-secondary-borderColor--hover);
+    background: var(--qui-btn-secondary-bg--hover);
+    color: var(--qui-btn-secondary-color--hover);
+    border-color: var(--qui-btn-secondary-borderColor--hover);
     outline: none;
 }
 
@@ -205,7 +205,7 @@ button.btn-secondary.btn-outline:disabled:hover,
 button.btn-secondary.btn-outline:disabled:active,
 .btn-secondary.btn-outline.btn-disabled:hover,
 .btn-secondary.btn-outline.btn-disabled:active {
-    color: var(--_qui-btn-secondary-bg--hover);
+    color: var(--qui-btn-secondary-bg--hover);
 }
 
 /******************/
@@ -217,9 +217,9 @@ input[type="reset"].btn-success,
 button.qui-button.btn-success,
 button.btn-success,
 .btn-success {
-    background-color: var(--_qui-btn-success-bg);
-    border-color: var(--_qui-btn-success-borderColor);
-    color: var(--_qui-btn-success-color);
+    background-color: var(--qui-btn-success-bg);
+    border-color: var(--qui-btn-success-borderColor);
+    color: var(--qui-btn-success-color);
 }
 
 input[type="submit"].btn-success:hover,
@@ -232,9 +232,9 @@ button.qui-button.btn-success:hover,
 button.qui-button.btn-success:active,
 .btn-success:hover,
 .btn-success:active {
-    background: var(--_qui-btn-success-bg--hover);
-    color: var(--_qui-btn-success-color--hover);
-    border-color: var(--_qui-btn-success-borderColor--hover);
+    background: var(--qui-btn-success-bg--hover);
+    color: var(--qui-btn-success-color--hover);
+    border-color: var(--qui-btn-success-borderColor--hover);
 }
 
 /* outline */
@@ -256,7 +256,7 @@ button.btn-success.btn-outline:disabled:hover,
 button.btn-success.btn-outline:disabled:active,
 .btn-success.btn-outline.btn-disabled:hover,
 .btn-success.btn-outline.btn-disabled:active {
-    color: var(--_qui-btn-success-bg--hover);
+    color: var(--qui-btn-success-bg--hover);
 }
 
 /*****************/
@@ -268,9 +268,9 @@ input[type="reset"].btn-danger,
 button.qui-button.btn-danger,
 button.btn-danger,
 .btn-danger {
-    background-color: var(--_qui-btn-danger-bg);
-    border-color: var(--_qui-btn-danger-borderColor);
-    color: var(--_qui-btn-danger-color);
+    background-color: var(--qui-btn-danger-bg);
+    border-color: var(--qui-btn-danger-borderColor);
+    color: var(--qui-btn-danger-color);
 }
 
 input[type="submit"].btn-danger:hover,
@@ -283,9 +283,9 @@ button.qui-button.btn-danger:hover,
 button.qui-button.btn-danger:active,
 .btn-danger:hover,
 .btn-danger:active {
-    background: var(--_qui-btn-danger-bg--hover);
-    color: var(--_qui-btn-danger-color--hover);
-    border-color: var(--_qui-btn-danger-borderColor--hover);
+    background: var(--qui-btn-danger-bg--hover);
+    color: var(--qui-btn-danger-color--hover);
+    border-color: var(--qui-btn-danger-borderColor--hover);
     outline: none;
 }
 
@@ -308,7 +308,7 @@ button.btn-danger.btn-outline:disabled:hover,
 button.btn-danger.btn-outline:disabled:active,
 .btn-danger.btn-outline.btn-disabled:hover,
 .btn-danger.btn-outline.btn-disabled:active {
-    color: var(--_qui-btn-danger-bg--hover);
+    color: var(--qui-btn-danger-bg--hover);
 }
 
 /******************/
@@ -320,9 +320,9 @@ input[type="reset"].btn-warning,
 button.qui-button.btn-warning,
 button.btn-warning,
 .btn-warning {
-    background-color: var(--_qui-btn-warning-bg);
-    border-color: var(--_qui-btn-warning-borderColor);
-    color: var(--_qui-btn-warning-color);
+    background-color: var(--qui-btn-warning-bg);
+    border-color: var(--qui-btn-warning-borderColor);
+    color: var(--qui-btn-warning-color);
 }
 
 input[type="submit"].btn-warning:hover,
@@ -335,9 +335,9 @@ button.qui-button.btn-warning:hover,
 button.qui-button.btn-warning:active,
 .btn-warning:hover,
 .btn-warning:active {
-    background: var(--_qui-btn-warning-bg--hover);
-    color: var(--_qui-btn-warning-color--hover);
-    border-color: var(--_qui-btn-warning-borderColor--hover);
+    background: var(--qui-btn-warning-bg--hover);
+    color: var(--qui-btn-warning-color--hover);
+    border-color: var(--qui-btn-warning-borderColor--hover);
     outline: none;
 }
 
@@ -360,7 +360,7 @@ button.btn-warning.btn-outline:disabled:hover,
 button.btn-warning.btn-outline:disabled:active,
 .btn-warning.btn-outline.btn-disabled:hover,
 .btn-warning.btn-outline.btn-disabled:active {
-    color: var(--_qui-btn-warning-bg--hover);
+    color: var(--qui-btn-warning-bg--hover);
 }
 
 /***************/
@@ -372,9 +372,9 @@ input[type="reset"].btn-info,
 button.qui-button.btn-info,
 button.btn-info,
 .btn-info {
-    background-color: var(--_qui-btn-info-bg);
-    border-color: var(--_qui-btn-info-borderColor);
-    color: var(--_qui-btn-info-color);
+    background-color: var(--qui-btn-info-bg);
+    border-color: var(--qui-btn-info-borderColor);
+    color: var(--qui-btn-info-color);
 }
 
 input[type="submit"].btn-info:hover,
@@ -387,9 +387,9 @@ button.qui-button.btn-info:hover,
 button.qui-button.btn-info:active,
 .btn-info:hover,
 .btn-info:active {
-    background: var(--_qui-btn-info-bg--hover);
-    color: var(--_qui-btn-info-color--hover);
-    border-color: var(--_qui-btn-info-borderColor--hover);
+    background: var(--qui-btn-info-bg--hover);
+    color: var(--qui-btn-info-color--hover);
+    border-color: var(--qui-btn-info-borderColor--hover);
     outline: none;
 }
 
@@ -412,7 +412,7 @@ button.btn-info.btn-outline:disabled:hover,
 button.btn-info.btn-outline:disabled:active,
 .btn-info.btn-outline.btn-disabled:hover,
 .btn-info.btn-outline.btn-disabled:active {
-    color: var(--_qui-btn-info-bg--hover);
+    color: var(--qui-btn-info-bg--hover);
 }
 
 /***************/
@@ -424,9 +424,9 @@ input[type="reset"].btn-dark,
 button.qui-button.btn-dark,
 button.btn-dark,
 .btn-dark {
-    background-color: var(--_qui-btn-dark-bg);
-    border-color: var(--_qui-btn-dark-borderColor);
-    color: var(--_qui-btn-dark-color);
+    background-color: var(--qui-btn-dark-bg);
+    border-color: var(--qui-btn-dark-borderColor);
+    color: var(--qui-btn-dark-color);
 }
 
 input[type="submit"].btn-dark:hover,
@@ -439,9 +439,9 @@ button.qui-button.btn-dark:hover,
 button.qui-button.btn-dark:active,
 .btn-dark:hover,
 .btn-dark:active {
-    background: var(--_qui-btn-dark-bg--hover);
-    color: var(--_qui-btn-dark-color--hover);
-    border-color: var(--_qui-btn-dark-borderColor--hover);
+    background: var(--qui-btn-dark-bg--hover);
+    color: var(--qui-btn-dark-color--hover);
+    border-color: var(--qui-btn-dark-borderColor--hover);
     outline: none;
 }
 
@@ -464,7 +464,7 @@ button.btn-dark.btn-outline:disabled:hover,
 button.btn-dark.btn-outline:disabled:active,
 .btn-dark.btn-outline.btn-disabled:hover,
 .btn-dark.btn-outline.btn-disabled:active {
-    color: var(--_qui-btn-dark-bg--hover);
+    color: var(--qui-btn-dark-bg--hover);
 }
 
 /***************/
@@ -476,9 +476,9 @@ input[type="reset"].btn-light,
 button.qui-button.btn-light,
 button.btn-light,
 .btn-light {
-    background-color: var(--_qui-btn-light-bg);
-    border-color: var(--_qui-btn-light-borderColor);
-    color: var(--_qui-btn-light-color);
+    background-color: var(--qui-btn-light-bg);
+    border-color: var(--qui-btn-light-borderColor);
+    color: var(--qui-btn-light-color);
 }
 
 input[type="submit"].btn-light:hover,
@@ -491,9 +491,9 @@ button.qui-button.btn-light:hover,
 button.qui-button.btn-light:active,
 .btn-light:hover,
 .btn-light:active {
-    background: var(--_qui-btn-light-bg--hover);
-    color: var(--_qui-btn-light-color--hover);
-    border-color: var(--_qui-btn-light-borderColor--hover);
+    background: var(--qui-btn-light-bg--hover);
+    color: var(--qui-btn-light-color--hover);
+    border-color: var(--qui-btn-light-borderColor--hover);
     outline: none;
 }
 
@@ -516,7 +516,7 @@ button.btn-light.btn-outline:disabled:hover,
 button.btn-light.btn-outline:disabled:active,
 .btn-light.btn-outline.btn-disabled:hover,
 .btn-light.btn-outline.btn-disabled:active {
-    color: var(--_qui-btn-light-bg--hover);
+    color: var(--qui-btn-light-bg--hover);
 }
 
 /****************/
