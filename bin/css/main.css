@@ -1,3 +1,14 @@
 @import "variables/colors.css";
 @import "variables/general.css";
 @import "variables/typography.css";
+@import "variables/buttons.css";
+
+/* todo: remove */
+@import "variables.css";
+
+/*@import "reset.css";*/
+@import "buttons.css";
+@import "fonts.css";
+@import "form.css";
+@import "typography.css";
+@import "style.css";

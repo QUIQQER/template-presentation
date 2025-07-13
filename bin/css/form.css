@@ -1,0 +1,119 @@
+/**
+ * This file contains form styles
+ */
+
+input, textarea, select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 1.75em;
+    margin: 6px 0;
+    outline: none;
+    padding: 0.5em 1.25em;
+}
+
+
+input:focus {
+    background: none;
+    box-shadow: none;
+    outline: none;
+}
+
+textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    appearance: none;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 10em;
+}
+
+/* select styling with arrow set als background */
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: url("/packages/quiqqer/template-presentation/bin/img/arrow-select.png");
+    background-position: calc(100% - 20px) center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    color: inherit;
+    padding-right: 60px;
+
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#page input[type='checkbox']:checked + label::before,
+#page input[type='radio']:checked + label::before,
+.pace .pace-progress {
+    background-color: var(--qui-color-primary);
+}
+
+::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+    /*color: #eee;*/
+    font-size: 1em;
+}
+
+::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1em;
+}
+
+:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1em;
+}
+
+textarea:focus::-moz-placeholder,
+input:focus::-moz-placeholder {
+    color: rgba(0, 0, 0, 0);
+}
+
+legend,
+.qui-form legend {
+    font-weight: inherit;
+}
+
+fieldset.grid-50:first-child {
+    padding-left: 0;
+}
+
+fieldset.grid-50:last-child {
+    padding-right: 0;
+}
+
+fieldset {
+    border: none;
+}
+
+textarea,
+input {
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+textarea:hover,
+textarea:focus,
+input:hover,
+input:focus,
+select:hover,
+select:focus {
+    border-color: var(--qui-color-primary);
+}

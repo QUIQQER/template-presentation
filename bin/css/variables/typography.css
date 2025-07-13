@@ -1,0 +1,47 @@
+/**
+ * Set your own variables by using "--theme" prefix, for example:
+ * - To change success color set variable --theme--qui-color-success
+ * - To change font size set variable --theme--qui-font-size
+ */
+:root {
+    --qui-font-family: var(--theme--qui-font-family, 'Open Sans', sans-serif);
+
+    /* line height */
+    --qui-line-height-xs: 1.25;
+    --qui-line-height-sm: 1.5;
+    --qui-line-height: 1.6; /* base */
+    --qui-line-height-md: 2;
+    --qui-line-height-lg: 2.5;
+
+    /* text */
+    --qui-text-fontWeight: var(--theme--qui-text-fontWeight, var(--template-settings__body-font-weight, 700));
+
+    /* text: font size */
+    /* the calculated values base on 16px */
+    --qui-fs-xs: 0.75rem;  /* 12px */
+    --qui-fs-sm: 0.875rem; /* 14px */
+    --qui-fs-body: var(--theme--qui-font-size, var(--template-settings__body-font-size, 16px)); /* base */
+    --qui-fs-lg: 1.25rem;  /* 20px */
+    --qui-fs-xl: 1.625rem; /* 26px */
+    --qui-fs-2xl: 2rem;    /* 32px */
+    --qui-fs-3xl: 2.5rem;  /* 40px */
+    --qui-fs-4xl: 3rem;    /* 48px */
+    --qui-fs-5xl: 3.5rem;  /* 56px */
+    --qui-fs-6xl: 4rem;    /* 64px */
+    --qui-text-lead: var(--qui-fs-lg);
+    --qui-display-1: var(--qui-fs-6xl);
+    --qui-display-2: var(--qui-fs-5xl);
+    --qui-display-3: var(--qui-fs-4xl);
+    --qui-display-4: var(--qui-fs-3xl);
+
+    /* heading */
+    --qui-heading-fontWeight: var(--theme--qui-heading-fontWeight, var(--template-settings__heading-font-weight, 700));
+
+    /* heading: font size */
+    --qui-fs-1: 2.75rem;
+    --qui-fs-2: 2rem;
+    --qui-fs-3: 1.728rem;
+    --qui-fs-4: 1.44rem;
+    --qui-fs-5: 1.2rem;
+    --qui-fs-6: 1.025rem;
+}

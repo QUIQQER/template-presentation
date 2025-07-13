@@ -5,29 +5,40 @@ button.qui-button,
 button,
 a.qui-button,
 .btn {
-    display: inline-block;
-    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--qui-btn-gap);
+    font-weight: var(--qui-btn-fontWeight);
+    border-width: var(--qui-btn-borderWidth);
+    border-style: var(--qui-btn-borderStyle);
+    border-radius: var(--qui-btn-borderRadius);
+    border-color: transparent;
+    transition: var(--qui-btn-transition);
+
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    border: var(--qui-btn-borderWidth) solid transparent;
+
     padding: .5em 1.25em;
     font-size: 1em;
-    line-height: 1.5;
-    border-radius: var(--qui-btn-borderRadius);
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, opacity .15s ease-in-out;
+    line-height: 1.25;
     cursor: pointer;
     text-decoration: none;
     font-family: var(--qui-font-family, inherit), sans-serif;
+
     -webkit-box-shadow: none; /* qui-button reset */
     -moz-box-shadow: none; /* qui-button reset */
     box-shadow: none; /* qui-button reset */
     float: none; /* qui-button reset */
 }
 
+.btn:hover,
+.btn:active {
+    text-decoration: none;
+}
 
 /*****************************/
 /* button primary & standard */
@@ -649,19 +660,6 @@ button.btn-outline:disabled:active,
 .btn-outline.btn-disabled:hover,
 .btn-outline.btn-disabled:active {
     opacity: 0.3;
-}
-
-/*****************/
-/* btn with icon */
-/*****************/
-.btn :where(.fa-solid:last-child),
-.btn :where(.fa:last-child) {
-    margin-left: 0.5em;
-}
-
-.btn :where(.fa-solid:first-child),
-.btn :where(.fa:first-child) {
-    margin-left: 0.5em;
 }
 
 /****************/

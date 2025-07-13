@@ -513,6 +513,74 @@
             <en><![CDATA[If the option is active, additional CSS rules and, if necessary, images are included. This setting is usually useful when the project has been created with demo data, for example, during the QUIQQER installation.]]></en>
         </locale>
 
+
+        <locale name="settings.typography.title">
+            <de><![CDATA[Typographie]]></de>
+            <en><![CDATA[Typography]]></en>
+        </locale>
+        <locale name="settings.typography.heading.fontWeight.title">
+            <de><![CDATA[Überschriften Schriftstärke (font-weight)]]></de>
+            <en><![CDATA[Heading font weight]]></en>
+        </locale>
+        <locale name="settings.typography.heading.fontWeight.desc">
+            <de><![CDATA[Mit dieser Einstellung kannst du die Schriftstärke (font-weight) der Überschriften (h1, h2, etc.) festlegen. Typischer Wert ist "700 - Bold". Bitte beachte, dass die gewählte Schriftstärke von der verwendeten Schriftart unterstützt werden muss.]]></de>
+            <en><![CDATA[This setting allows you to define the font weight of headings (h1, h2, etc). Typical value is "700 - Bold". Please note that the selected font weight must be supported by the chosen font.]]></en>
+        </locale>
+        <locale name="settings.typography.text.fontWeight.title">
+            <de><![CDATA[Überschriften Schriftstärke (font-weight)]]></de>
+            <en><![CDATA[Heading font weight]]></en>
+        </locale>
+        <locale name="settings.typography.text.fontWeight.desc">
+            <de><![CDATA[Mit dieser Einstellung kannst du die Schriftstärke (font-weight) der Schrift festlegen. Typischer Wert ist "400 - Normal (Regular)". Bitte beachte, dass die gewählte Schriftstärke von der verwendeten Schriftart unterstützt werden muss.]]></de>
+            <en><![CDATA[This setting allows you to define the font weight. Typical value is "400 - Normal (Regular)". Please note that the selected font weight must be supported by the chosen font.]]></en>
+        </locale>
+        <!-- font weight -->
+        <locale name="settings.typography.100">
+            <de><![CDATA[100 - Thin]]></de>
+            <en><![CDATA[100 - Thin]]></en>
+        </locale>
+        <locale name="settings.typography.200">
+            <de><![CDATA[200 - Extra Light]]></de>
+            <en><![CDATA[200 - Extra Light]]></en>
+        </locale>
+        <locale name="settings.typography.300">
+            <de><![CDATA[300 - Light]]></de>
+            <en><![CDATA[300 - Light]]></en>
+        </locale>
+        <locale name="settings.typography.400">
+            <de><![CDATA[400 - Normal (Regular)]]></de>
+            <en><![CDATA[400 - Normal (Regular)]]></en>
+        </locale>
+        <locale name="settings.typography.500">
+            <de><![CDATA[500 - Medium]]></de>
+            <en><![CDATA[500 - Medium]]></en>
+        </locale>
+        <locale name="settings.typography.600">
+            <de><![CDATA[600 - Semi Bold]]></de>
+            <en><![CDATA[600 - Semi Bold]]></en>
+        </locale>
+        <locale name="settings.typography.700">
+            <de><![CDATA[700 - Bold]]></de>
+            <en><![CDATA[700 - Bold]]></en>
+        </locale>
+        <locale name="settings.typography.800">
+            <de><![CDATA[800 - Extra Bold]]></de>
+            <en><![CDATA[800 - Extra Bold]]></en>
+        </locale>
+        <locale name="settings.typography.900">
+            <de><![CDATA[900 - Black]]></de>
+            <en><![CDATA[900 - Black]]></en>
+        </locale>
+
+        <locale name="settings.typography.text.fontSize.title">
+            <de><![CDATA[Schriftgröße (in Pixel)]]></de>
+            <en><![CDATA[Font size (in pixel)]]></en>
+        </locale>
+        <locale name="settings.typography.text.fontSize.desc">
+            <de><![CDATA[Basis Schriftgröße für den Fließtext. Typischer Wert ist "16px".]]></de>
+            <en><![CDATA[Base font size for flowing text. Typical value is "16px".]]></en>
+        </locale>
+
         <!-- header settings -->
         <locale name="templatePresentation.settings.showHeader.title">
             <de><![CDATA[Header Einstellungen]]></de>

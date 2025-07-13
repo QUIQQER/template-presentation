@@ -565,6 +565,7 @@ class Utils
          * colors & typography
          */
         $bodyColor = '#3b3b3a';
+        $bodyFontSize = '16px';
         $bodyFontWeight = '400'; /* normal */
         $headingColor = '';
         $headingFontWeight = '700'; /* bold */
@@ -597,16 +598,20 @@ class Utils
             $bodyColor = self::$Project->getConfig('templatePresentation.settings.colorMainContentFont');
         }
 
-        if (self::$Project->getConfig('templatePresentation.settings.bodyFontWeight')) {
-            $bodyFontWeight = self::$Project->getConfig('templatePresentation.settings.bodyFontWeight');
+        if (self::$Project->getConfig('templatePresentation.settings.typography.text.fontWeight')) {
+            $bodyFontWeight = self::$Project->getConfig('templatePresentation.settings.typography.text.fontWeight');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.typography.text.fontSize')) {
+            $bodyFontSize = self::$Project->getConfig('templatePresentation.settings.typography.text.fontSize') . 'px';
         }
 
         if (self::$Project->getConfig('templatePresentation.settings.headingColor')) {
             $headingColor = self::$Project->getConfig('templatePresentation.settings.headingColor');
         }
 
-        if (self::$Project->getConfig('templatePresentation.settings.headingFontWeight')) {
-            $headingFontWeight = self::$Project->getConfig('templatePresentation.settings.headingFontWeight');
+        if (self::$Project->getConfig('templatePresentation.settings.typography.heading.fontWeight')) {
+            $headingFontWeight = self::$Project->getConfig('templatePresentation.settings.typography.heading.fontWeight');
         }
 
         /**
@@ -697,6 +702,7 @@ class Utils
             'btnTextColor' => $btnTextColor,
 
             /* typography */
+            'bodyFontSize' => $bodyFontSize,
             'bodyColor' => $bodyColor,
             'headingColor' => $headingColor,
             'bodyFontWeight' => $bodyFontWeight,
