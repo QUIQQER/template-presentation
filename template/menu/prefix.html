@@ -1,0 +1,12 @@
+{assign var=Setting value=$Template->getAttribute('TemplateSetting')}
+{assign var=Project value=$Site->getProject()}
+{assign var=Logo value=$Project->getMedia()->getLogoImage()}
+{assign var=logoSize value=$Setting->getAttribute('logoSize')}
+
+{if $Logo}
+<div class="header-bar-inner-logo" style=" {if $logoSize.width}--logo-width: {$logoSize.width}px;{/if} {if $logoSize.height}--logo-height: {$logoSize.height}px;{/if}">
+    <a href="{$Project->get(1)->getUrlRewritten()}" class="page-header-logo">
+        {image image=$Logo class="page-header-logo__image" height=$logoSize.height width=$logoSize.width}
+    </a>
+</div>
+{/if}

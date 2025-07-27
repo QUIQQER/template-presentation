@@ -1,21 +1,50 @@
+{assign var=TS value=$Template->getAttribute('TemplateSetting')}
+{assign var=textColorCSSVar value=$TS->getAttribute('headerTextColor')}
+{assign var=showHeader value=$TS->getAttribute('showHeader')}
+{assign var=textPosCSSVar value=$TS->getAttribute('headerTextPos')}
+{assign var=textAlignmentCSSVar value=$TS->getAttribute('headerTextAlignment')}
+
 {if $showHeader}
 {strip}
-<header class="page-header" {if $Site->getAttribute('image_emotion')}style="background-image: url('{image src=$Site->getAttribute('image_emotion') onlysrc=1}');{/if}">
-    <div class="page-header-container grid-container">
+    {if $TS->getAttribute('headerTextColor')}
+        {assign var=textColorCSSVar value="--_tpl-header-textColor: {$TS->getAttribute('headerTextColor')};"}
+    {/if}
+    {if $TS->getAttribute('headerTextPos')}
+        {assign var=textPosCSSVar value="--_tpl-header-textPos: {$TS->getAttribute('headerTextPos')};"}
+    {/if}
+    {if $TS->getAttribute('headerTextAlignment')}
+        {assign var=textAlignmentCSSVar value="--_tpl-header-textAlignment: {$TS->getAttribute('headerTextAlignment')};"}
+    {/if}
 
-        {if $showPageTitle}
-        <h1 class="page-header-text-title">
-            {$Site->getAttribute('title')}
-        </h1>
+    {template_event name="quiqqer::template::body::header::before" Template=$Template}
+    <header class="page-header" style=" {$textColorCSSVar} {$textPosCSSVar} {$textAlignmentCSSVar}">
+        {template_event name="quiqqer::template::body::header::start" Template=$Template}
+
+        {if $Site->getAttribute('image_emotion')}
+            <div class="page-header__imageWrapper">
+                {image src=$Site->getAttribute('image_emotion') width=4000 class="page-header__image"}
+            </div>
         {/if}
+        <div class="page-header__container">
+            {if $showPageTitle || $showPageShort}
+                <div class="page-header-text grid-container">
+                    {if $showPageTitle}
+                        <h1 class="page-header-text__title">
+                            {$Site->getAttribute('title')}
+                        </h1>
+                    {/if}
 
-        {if $showPageShort}
-        <div class="page-header-text-short">
-            {$Site->getAttribute('short')|nl2br}
+                    {if $showPageShort}
+                        <div class="page-header-text__short">
+                            {$Site->getAttribute('short')|nl2br}
+                        </div>
+                    {/if}
+                </div>
+            {/if}
         </div>
-        {/if}
 
-    </div>
-</header>
+        {template_event name="quiqqer::template::body::header::end" Template=$Template}
+    </header>
+    {template_event name="quiqqer::template::body::header::after" Template=$Template}
 {/strip}
 {/if}

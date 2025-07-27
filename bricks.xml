@@ -7,7 +7,189 @@
             <settings>
                 <setting name="brickFullWidth" type="checkbox">
                     <locale group="quiqqer/template-presentation"
-                            var="brickFullWidth"/>
+                            var="brick.settings.enableBgImage.fullWidth"/>
+                </setting>
+
+                <setting name="verticalSpacingTop" type="select">
+                    <locale group="quiqqer/template-presentation"
+                            var="settings.verticalSpacingTop"/>
+
+                    <option value=""></option>
+                    <option value="disabled">
+                        <locale group="quiqqer/template-presentation"
+                                var="settings.verticalSpacing.disabled"/>
+                    </option>
+                    <option value="small">
+                        <locale group="quiqqer/template-presentation"
+                                var="settings.verticalSpacing.small"/>
+                    </option>
+                    <option value="base" selected="selected">
+                        <locale group="quiqqer/template-presentation"
+                                var="settings.verticalSpacing.base"/>
+                    </option>
+                    <option value="medium">
+                        <locale group="quiqqer/template-presentation"
+                                var="settings.verticalSpacing.medium"/>
+                    </option>
+                    <option value="large">
+                        <locale group="quiqqer/template-presentation"
+                                var="settings.verticalSpacing.large"/>
+                    </option>
+                    <option value="extraLarge">
+                        <locale group="quiqqer/template-presentation"
+                                var="settings.verticalSpacing.extraLarge"/>
+                    </option>
+                </setting>
+                <setting name="verticalSpacingBottom" type="select">
+                    <locale group="quiqqer/template-presentation"
+                            var="settings.verticalSpacingBottom"/>
+
+                    <option value=""></option>
+                    <option value="disabled">
+                        <locale group="quiqqer/template-presentation"
+                                var="settings.verticalSpacing.disabled"/>
+                    </option>
+                    <option value="small">
+                        <locale group="quiqqer/template-presentation"
+                                var="settings.verticalSpacing.small"/>
+                    </option>
+                    <option value="base" selected="selected">
+                        <locale group="quiqqer/template-presentation"
+                                var="settings.verticalSpacing.base"/>
+                    </option>
+                    <option value="medium">
+                        <locale group="quiqqer/template-presentation"
+                                var="settings.verticalSpacing.medium"/>
+                    </option>
+                    <option value="large">
+                        <locale group="quiqqer/template-presentation"
+                                var="settings.verticalSpacing.large"/>
+                    </option>
+                    <option value="extraLarge">
+                        <locale group="quiqqer/template-presentation"
+                                var="settings.verticalSpacing.extraLarge"/>
+                    </option>
+                </setting>
+
+                <setting name="brickBgImage" class="media-image">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.bgImage"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.bgImage.desc"/>
+                    </description>
+                </setting>
+                <setting name="enableBrickBgColor" type="select">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.enableBgColor"/>
+
+                    <option value="disable" selected="selected">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.enableSelect.disable"/>
+                    </option>
+                    <option value="enable.useBrickSetting">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.enableSelect.enable.useBrickSetting"/>
+                    </option>
+                    <option value="enable.useTemplateSetting">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.enableSelect.enable.useTemplateSetting"/>
+                    </option>
+                </setting>
+                <setting name="brickBgColor" type="color">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.bgColor"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.bgColor.desc"/>
+                    </description>
+                </setting>
+                <setting name="enableBrickTextColor" type="select">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.enableTextColor"/>
+
+                    <option value="disable" selected="selected">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.enableSelect.disable"/>
+                    </option>
+                    <option value="enable.useBrickSetting">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.enableSelect.enable.useBrickSetting"/>
+                    </option>
+                    <option value="enable.useTemplateSetting">
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.enableSelect.enable.useTemplateSetting"/>
+                    </option>
+                </setting>
+                <setting name="brickTextColor" type="color">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.textColor"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.textColor.desc"/>
+                    </description>
+                </setting>
+                <!-- BRICK SETTINGS: separator top -->
+                <setting name="brickSeparatorTop.enable" type="checkbox"
+                         data-qui="package/quiqqer/template-presentation/bin/Controls/backend/SettingDependency"
+                >
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorTop.enable"/>
+                </setting>
+                <setting name="brickSeparatorTop.image" class="media-image" data-dependency="templatePresentation-brickSeparatorTop.enable">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorTop.image"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.separatorTop.image.desc"/>
+                    </description>
+                </setting>
+                <setting name="brickSeparatorTop.width" type="text" data-dependency="templatePresentation-brickSeparatorTop.enable">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorTop.width"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.separatorTop.width.desc"/>
+                    </description>
+                </setting>
+                <setting name="brickSeparatorTop.height" type="text" data-dependency="templatePresentation-brickSeparatorTop.enable">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorTop.height"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.separatorTop.height.desc"/>
+                    </description>
+                </setting>
+                <!-- BRICK SETTINGS: separator bottom -->
+                <setting name="brickSeparatorBottom.enable" type="checkbox"
+                         data-qui="package/quiqqer/template-presentation/bin/Controls/backend/SettingDependency"
+                >
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorBottom.enable"/>
+                </setting>
+                <setting name="brickSeparatorBottom.image" class="media-image" data-dependency="templatePresentation-brickSeparatorBottom.enable">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorBottom.image"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.separatorBottom.image.desc"/>
+                    </description>
+                </setting>
+                <setting name="brickSeparatorBottom.width" type="text" data-dependency="templatePresentation-brickSeparatorBottom.enable">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorBottom.width"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.separatorBottom.width.desc"/>
+                    </description>
+                </setting>
+                <setting name="brickSeparatorBottom.height" type="text" data-dependency="templatePresentation-brickSeparatorBottom.enable">
+                    <locale group="quiqqer/template-presentation"
+                            var="brick.settings.separatorBottom.height"/>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="brick.settings.separatorBottom.height.desc"/>
+                    </description>
                 </setting>
             </settings>
         </brick>

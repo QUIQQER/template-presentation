@@ -1,7 +1,8 @@
 {assign var=Setting value=$Template->getAttribute('TemplateSetting')}
 {assign var=MegaMenu value=$Setting->getAttribute('MegaMenu')}
+{assign var=t value=$MegaMenu->prependHTML({fetch template="template/menu/prefix.html" Site=$Site Template=$Template})}
+{assign var=t value=$MegaMenu->appendHTML({fetch template="template/menu/suffix.html" Site=$Site Template=$Template})}
 
-{if $Template->getAttribute('template-header')}
 <div class="header-bar header-bar-position-{$Setting->getAttribute('navPos')}">
     <div class="grid-container header-bar-inner nav-alignment--{$Setting->getAttribute('navAlignment')}">
         <div class="header-bar-inner-nav" id="navigation">
@@ -9,4 +10,3 @@
         </div>
     </div>
 </div>
-{/if}

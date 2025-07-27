@@ -55,162 +55,22 @@ if ($Site->getAttribute('templatePresentation.independentMenuId')) {
 $MegaMenu = new QUI\Menu\MegaMenu($params);
 
 /**
- * search
+ * Language select
  */
-$search = '';
-$dataQui = '';
-$noSearch = 'no-search';
-$inputSearch = '';
-/* search setting is on? */
-if ($Project->getConfig('templatePresentation.settings.search') != 'hide') {
-    $types = [
-        'quiqqer/sitetypes:types/search'
-    ];
+$LangSelectControl = null;
 
-    /* check if quiqqer search packet is installed */
-    if (QUI::getPackageManager()->isInstalled('quiqqer/search')) {
-        $types = [
-            'quiqqer/sitetypes:types/search',
-            'quiqqer/search:types/search'
-        ];
-
-        // Suggest Search integrate
-        $dataQui = 'data-qui="package/quiqqer/search/bin/controls/Suggest"';
-    }
-
-    $searchSites = $Project->getSites([
-        'where' => [
-            'type' => [
-                'type' => 'IN',
-                'value' => $types
-            ]
-        ],
-        'limit' => 1
-    ]);
-
-    if (count($searchSites)) {
-        try {
-            $noSearch = '';
-            $searchUrl = $searchSites[0]->getUrlRewritten();
-            $searchForm = '';
-
-            switch ($Project->getConfig('templatePresentation.settings.search')) {
-                case 'input':
-                    $searchForm = '
-                    <form  action="' . $searchUrl . '" class="header-bar-suggestSearch header-bar-suggestSearch--type-input hide-on-mobile" method="get">
-                        <input type="search" name="search" 
-                                class="only-input" ' . $dataQui . '
-                                placeholder="'
-                        . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
-                        '"/>
-                    </form>';
-                    $inputSearch = 'input-search';
-                    break;
-                case 'inputAndIcon':
-                    $searchForm = '
-                    <form  action="' . $searchUrl . '" class="header-bar-suggestSearch header-bar-suggestSearch--type-icon hide-on-mobile" method="get">
-                        <div class="header-bar-suggestSearch-wrapper">
-                            <input type="search" name="search"
-                                    class="input-and-icon" ' . $dataQui . ' 
-                                    placeholder="'
-                        . $Locale->get('quiqqer/template-presentation', 'navbar.search.text') .
-                        '"/>
-                        </div>
-                        <span class="fa fa-fw fa-search"></span>
-                    </form>';
-                    break;
-
-                case 'popup':
-                    $searchForm = '<button>Suche</button>';
-                    break;
-            }
-
-            $search = $searchForm .
-                '<div class="quiqqer-menu-megaMenu-mobile-search"
-                                  style="width: auto; font-size: 30px !important;">
-                    <a href="' . $searchUrl . '"
-                    class="header-bar-search-link searchMobile">
-                        <i class="fa fa-search header-bar-search-icon"></i>
-                    </a>
-                </div>';
-            //@michael dev         $searchForm = '<div  data-qui-searchUrl="' . $searchUrl . '" class="header-bar-search-typePopup hide-on-mobile"><button><span class="fa fa-search"></span> <span class="button-label">Suche</span></button></div>';
-
-
-            $search = $searchForm .
-                '<div class="quiqqer-menu-megaMenu-mobile-search"
-                                  style="width: auto; font-size: 30px !important;">
-                    <a href="' . $searchUrl . '"
-                    class="header-bar-search-link searchMobile">
-                        <i class="fa fa-search header-bar-search-icon"></i>
-                    </a>
-                </div>';
-        } catch (QUI\Exception $Exception) {
-            QUI\System\Log::addNotice($Exception->getMessage());
-        }
-    }
-}
-
-/**
- * Dropdown Language switch
- */
-$showDropDownFlag = false;
-$DropDownFlag = '';
-$showFlags = false;
-$showText = false;
-
-switch ($Project->getConfig('templatePresentation.settings.dropdownLangNav')) {
-    case 'flag':
-        $showFlags = true;
-        $showDropDownFlag = true;
-        break;
-
-    case 'text':
-        $showText = true;
-        $showDropDownFlag = true;
-        break;
-
-    case 'flagAndText':
-        $showFlags = true;
-        $showText = true;
-        $showDropDownFlag = true;
-        break;
-}
-
-if ($showDropDownFlag) {
-    $DropDown = new QUI\Bricks\Controls\LanguageSwitches\DropDown([
+if ($templateSettings['showLangSelect']) {
+    $LangSelectControl = new QUI\Bricks\Controls\LanguageSwitches\DropDown([
         'Site' => $Site,
-        'showFlags' => $showFlags,
-        'showText' => $showText
+        'buttonShowFlag' => $templateSettings['showFlag'],
+        'buttonText' => $templateSettings['showText']
     ]);
-
-    $DropDownFlag = $DropDown->create();
 }
 
-$logoData = $templateSettings['logoData'];
-$widthCustomProperty = '';
-$heightCustomProperty = '';
-
-if ($logoData['width'] !== false) {
-    $widthCustomProperty = '--logo-width: ' . $logoData['width'] . 'px;';
-}
-
-if ($logoData['height'] !== false) {
-    $heightCustomProperty = '--logo-height: ' . $logoData['height'] . 'px;';
-}
-
-$MegaMenu->prependHTML(
-    '<div class="header-bar-inner-logo" 
-        style="' . $widthCustomProperty . $heightCustomProperty . '">
-        <a href="' . $Project->get(1)->getUrlRewritten() . '" class="page-header-logo">
-        <img src="' . $logoData['url'] . '" alt="' . $logoData['alt'] . '"
-            height="' . $logoData['height'] . '" width="' . $logoData['width'] . '"
-        </a>
-    </div>'
-);
+$templateSettings['LangSelectControl'] = $LangSelectControl;
 
 // social
 $social = "false";
-$socialNav = '';
 $socialFooter = '';
 $socialMobileNav = '';
 
@@ -255,10 +115,6 @@ if (
 
     // prepare social for nav
     if ($Project->getConfig('templatePresentation.settings.social.show.nav')) {
-        $socialNav .= '<div class="header-bar-social hide-on-mobile ' . $noSearch . $inputSearch . '">';
-        $socialNav .= $socialHTML;
-        $socialNav .= '</div>';
-
         $socialMobileNav .= '<span class="mobile-bar-social-title">Social Media</span>';
         $socialMobileNav .= '<div class="mobile-bar-social-container">';
         $socialMobileNav .= $socialHTML;
@@ -272,11 +128,6 @@ if (
         $socialFooter .= '</div>';
     }
 }
-
-$MegaMenu->appendHTML(
-    $search . $socialNav . $DropDownFlag
-);
-
 
 /**
  * Breadcrumb

@@ -1,50 +1,48 @@
+{*
+  1. Set "fullWidth" to true to avoid adding grid-container class in brick tpl file.
+  Otehrwise it will produce a double inline padding (because of double .grid-container class)
+*}
+
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
+{assign var=TS value=$Template->getAttribute('TemplateSetting')}
+{assign var=mainContentSpacingTopCSSVar value=$TS->getAttribute('mainContentSpacingTopCSSVar')}
+{assign var=mainContentSpacingBottomCSSVar value=$TS->getAttribute('mainContentSpacingBottomCSSVar')}
 
-{if !empty( $prefixContentBricks )}
-    {foreach from=$prefixContentBricks item=Brick}
-        {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
-        <section class="tpl-presentation-row brick-id-{$Brick->getAttribute('id')} {$classes}">
-            {if $Brick->getAttribute('frontendTitle')}
-                <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-            {/if}
-
-            {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-            {$Brick->create()}
-        </section>
-    {/foreach}
+{if !empty($prefixContentBricks)}
+    <div class="tpl-brickArea-contentPrefix noSidebar--narrowContent">
+        {foreach from=$prefixContentBricks item=Brick}
+            {* 1. *}
+            {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="contentPrefix" Template=$Template fullWidth=true}
+        {/foreach}
+    </div>
 {/if}
 
-<div class="nosidebar-small-wrapper">
-    {if !$showHeader}
-        {if $showPageTitle}
-            <header class="content-header">
-                <h1 itemprop="name">
+<div role="main" class="main-content noSidebar--narrowContent" style="{$mainContentSpacingTopCSSVar} {$mainContentSpacingBottomCSSVar}">
+    {if !$showHeader && ($showPageTitle || $showPageShort)}
+        <div class="content-header page-intro">
+            {if $showPageTitle}
+                <h1 itemprop="name" class="page-intro__title">
                     {$Site->getAttribute('title')}
                 </h1>
-            </header>
-        {/if}
+            {/if}
 
-        {if $showPageShort}
-            <div class="content-short" itemprop="description">
-                {$Site->getAttribute('short')|nl2br}
-            </div>
-        {/if}
+            {if $showPageShort}
+                <div class="content-short page-intro__short lead" itemprop="description">
+                    {$Site->getAttribute('short')|nl2br}
+                </div>
+            {/if}
+        </div>
     {/if}
 
     {$Template->getBody()}
 </div>
 
-{if !empty( $suffixContentBricks )}
-    {foreach from=$suffixContentBricks item=Brick}
-        {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
-        <section class="tpl-presentation-row brick-id-{$Brick->getAttribute('id')} {$classes}">
-            {if $Brick->getAttribute('frontendTitle')}
-                <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-            {/if}
-
-            {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-            {$Brick->create()}
-        </section>
-    {/foreach}
+{if !empty($suffixContentBricks)}
+    <div class="tpl-brickArea-contentPrefix noSidebar--narrowContent">
+        {foreach from=$suffixContentBricks item=Brick}
+            {* 1. *}
+            {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="contentSuffix" Template=$Template fullWidth=true}
+        {/foreach}
+    </div>
 {/if}

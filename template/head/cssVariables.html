@@ -1,0 +1,42 @@
+{assign var=css value=$Template->getAttribute('TemplateSetting')->getAttribute('cssVariables')}
+
+<style>
+    :root {
+        /* general */
+        --template-settings__scroll-offset: {$css['scrollOffset']}px;
+        --template-settings__body-container-top: {$css['bodyContainerTop']}px;
+
+        /* colors */
+        --template-settings__color-primary: {$css['colorPrimary']};
+        --template-settings__btn-text-color: {$css['btnTextColor']};
+
+        /* typography */
+        --template-settings__body-font-size: {$css['bodyFontSize']};
+        --template-settings__body-color: {$css['bodyColor']};
+        --template-settings__heading-color: {$css['headingColor']};
+        --template-settings__body-font-weight: {$css['bodyFontWeight']};
+        --template-settings__heading-font-weight: {$css['headingFontWeight']};
+
+        /* nav */
+        --template-settings__nav-position: {$css['navPosition']};
+        --template-settings__nav-link-color: {$css['navLinkColor']};
+        --template-settings__nav-bgColor: {$css['navBgColor']};
+        --template-settings__nav-bgColor--scrolled: {$css['navBgColorScrolled']};
+        --template-settings__nav-height: {$css['navHeight']}px;
+        --template-settings__nav-mobile-bgColor: {$css['navMobileBgColor']};
+        --template-settings__nav-mobile-text-color: {$css['navMobileTextColor']};
+
+        /* page header */
+        --template-settings__page-header-minHeightDesktop: {$css['pageHeaderMinHeightDesktop']}px;
+        --template-settings__page-header-minHeightMobile: {$css['pageHeaderMinHeightMobile']}px;
+        --template-settings__page-header-img-position: {$css['pageHeaderImgPosition']};
+        --template-settings__page-header-text-alignment: {$css['pageHeaderTextAlignment']}; /* todo */
+        --template-settings__page-header-heading-color: {$css['pageHeaderHeadingColor']}; /* todo */
+        --template-settings__page-header-text-color: {$css['pageHeaderTextColor']}; /* todo */
+
+        /* footer */
+        --template-settings__footer-bgColor: {$css['footerBgColor']};
+        --template-settings__footer-text-color: {$css['footerTextColor']};
+        --template-settings__footer-link-color: {$css['footerLinkColor']}; /* todo */
+    }
+</style>
