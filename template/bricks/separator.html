@@ -1,0 +1,11 @@
+{assign var=widthCssCar value=''}
+{if $width}
+    {assign var=widthCssVar value="--qui-tpl-brick-separatorWidth: {$width};"}
+{/if}
+{assign var=heightCssCar value=''}
+{if $height}
+    {assign var=heightCssCar value="--qui-tpl-brick-separatorHeight: {$height};"}
+{/if}
+<div class="tpl-brick__separator tpl-brick__separator--{$pos}" style="{$widthCssVar} {$heightCssCar}">
+    {image src="$image" class="tpl-brick__separatorImage"}
+</div>

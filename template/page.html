@@ -1,125 +1,60 @@
-{template_event name="quiqqer::template::body::pageBegin" Template=$Template}
+{assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
+{assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+{assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+
 <div class="body-container">
-    {fetch template="template/page/header.html" showPageTitle=$showPageTitle showPageShort=$showPageShort showHeader=$showHeader Site=$Site}
+    {template_event name="quiqqer::template::body::pageBegin" Template=$Template}
+
+    {if $Template->getAttribute('template-header')}
+        {fetch template="template/page/header.html" showPageTitle=$showPageTitle showPageShort=$showPageShort Site=$Site Template=$Template}
+    {/if}
+
     {template_event name="quiqqer::template::body::afterHeader" Template=$Template}
 
     {*<!-- header brick area (only for start page) -->*}
     {if $startPage}
-        {assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
-        {foreach from=$headerBricks item=Brick}
-        <div class="header-brick-area start-page-header brick-id-{$Brick->getAttribute('id')}">
-            {if $Brick->getAttribute('frontendTitle')}
-                <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-            {/if}
-            {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-            {$Brick->create()}
+        {if !empty($headerBricks)}
+        <div class="tpl-brickArea-header">
+            {foreach from=$headerBricks item=Brick}
+                {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="header" Template=$Template}
+            {/foreach}
         </div>
-        {/foreach}
-
-        {template_event name="quiqqer::template::body::after" Template=$Template}
+        {/if}
     {/if}
 
     {fetch template="template/page/breadcrumb.html" showBreadcrumb=$showBreadcrumb Breadcrumb=$Breadcrumb}
     {template_event name="quiqqer::template::body::afterBreadcrumb" Template=$Template}
 
-    <div class="headerSuffix">
-        {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
-        {foreach $headerSuffix as $Brick}
-
-            {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
-
-            {assign var=noPadding value=''}
-            {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
-                {assign var=noPadding value='-noPadding'}
-            {/if}
-            {if $Brick->getSetting( 'brickFullWidth' )}
-            <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding} {$classes}
-                            headerSuffix-container
-                            {cycle values='brick-even-suffix,brick-odd-suffix'}
-                            brick-id-{$Brick->getAttribute('id')}"
-                            {if $Brick->getSetting('promosliderBackground')}
-                                style="background-color: {$Brick->getSetting('promosliderBackground')};"
-                            {/if}
-                >
-                {$Brick->create()}
-            </section>
-            {else}
-            <div class="tpl-presentation-row {$classes}
-                        headerSuffix-container
-                        {cycle values='brick-even-suffix,brick-odd-suffix'}
-                        brick-id-{$Brick->getAttribute('id')}">
-                <div class="grid-container">
-                    <section>
-                        {if $Brick->getAttribute('frontendTitle')}
-                            <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                        {/if}
-                        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                        {$Brick->create()}
-                    </section>
-                </div>
-            </div>
-            {/if}
-        {/foreach}
-    </div>
+    {*<!-- header suffix -->*}
+    {if !empty($headerSuffix)}
+        <div class="tpl-brickArea-headerSuffix">
+            {foreach $headerSuffix as $Brick}
+                {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="headerSuffix" Template=$Template}
+            {/foreach}
+        </div>
+    {/if}
 
     {template_event name="quiqqer::template::body::beforeMain" Template=$Template}
-    <div class="main-content-wrapper  {cycle values='' reset=true}">
-        <div class="grid-container main-content">
-            {$Template->getLayout()}
-        </div>
+    <div class="main-contentWrapper grid-container">
+        {$Template->getLayout()}
     </div>
     {template_event name="quiqqer::template::body::afterMain" Template=$Template}
 
-
-    <div class="prefixFooter">
-        {cycle assign=cy values='brick-even-suffix,brick-odd-suffix' reset=true}
-        {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
-        {foreach $footerPrefix as $Brick}
-
-            {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
-
-            {assign var=noPadding value=''}
-            {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
-                {assign var=noPadding value='-noPadding'}
-            {/if}
-
-            {if $Brick->getSetting( 'brickFullWidth' )}
-            <section class="prefix-suffix-full-width clear-fix tpl-presentation-row{$noPadding} {$classes}
-                    footerPrefix-container
-                    {cycle values='brick-even-prefix,brick-odd-prefix'}
-                    brick-id-{$Brick->getAttribute('id')}"
-                    {if $Brick->getSetting('promosliderBackground')}
-                        style="background-color: {$Brick->getSetting('promosliderBackground')};"
-                    {/if}
-                >
-
-                {$Brick->create()}
-            </section>
-            {else}
-            <div class="tpl-presentation-row prefix-suffix-nofull-width {$classes}
-                        footerPrefix-container
-                        {cycle values='brick-even-prefix,brick-odd-prefix'}
-                        brick-id-{$Brick->getAttribute('id')}">
-                <div class="grid-container">
-                    <section>
-                        {if $Brick->getAttribute('frontendTitle')}
-                            <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                        {/if}
-                        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                        {$Brick->create()}
-                    </section>
-                </div>
-            </div>
-            {/if}
-        {/foreach}
-    </div>
+    {*<!-- footer prefix -->*}
+    {if !empty($footerPrefix)}
+        <div class="tpl-brickArea-footerPrefix">
+            {foreach $footerPrefix as $Brick}
+                {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="footerPrefix" Template=$Template}
+            {/foreach}
+        </div>
+    {/if}
 
     {template_event name="quiqqer::template::body::beforeFooter" Template=$Template}
 
     {if $Template->getAttribute('template-footer')}
         {fetch template="template/footer.html" BricksManager=$BricksManager
-        Site=$Site socialFooter=$socialFooter}
+        Site=$Site socialFooter=$socialFooter Template=$Template}
     {/if}
+    
+    {template_event name="quiqqer::template::body::pageEnd" Template=$Template}
 </div>
-
-{template_event name="quiqqer::template::body::pageEnd" Template=$Template}

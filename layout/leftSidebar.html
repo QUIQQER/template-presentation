@@ -1,84 +1,62 @@
+{*
+  1. Set "fullWidth" to true to avoid adding grid-container class in brick tpl file.
+  Otehrwise it will produce a double inline padding (because of double .grid-container class)
+*}
+
 {assign var=leftSideBar value=$BricksManager->getBricksByArea('leftSidebar', $Site)}
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
+{assign var=TS value=$Template->getAttribute('TemplateSetting')}
+{assign var=mainContentSpacingTopCSSVar value=$TS->getAttribute('mainContentSpacingTopCSSVar')}
+{assign var=mainContentSpacingBottomCSSVar value=$TS->getAttribute('mainContentSpacingBottomCSSVar')}
 
-{*
-
-ACHTUNG!
-Das ist der LINKE Sidebar mit push- und pull- Klassen von Unsemantic.
-D.h. der Sidebar wird nach links gepullt, obwohl er in der HTML Code nach dem Main-Content kommt.
-
-*}
-<div class="page-multible-right grid-70 push-30 mobile-grid-100" role="main">
-    {if !empty( $prefixContentBricks )}
-        {foreach from=$prefixContentBricks item=Brick}
-            {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
-            <div class="tpl-presentation-row brick-id-{$Brick->getAttribute('id')} {$classes}">
-                {if $Brick->getAttribute('frontendTitle')}
-                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                {/if}
-                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                {$Brick->create()}
-            </div>
-        {/foreach}
-    {/if}
-
-    {if !$showHeader}
-        {if $showPageTitle}
-            <header class="content-header">
-                <h1 itemprop="name">
-                    {$Site->getAttribute('title')}
-                </h1>
-            </header>
-        {/if}
-
-        {if $showPageShort}
-            <div class="content-short" itemprop="description">
-                {$Site->getAttribute('short')|nl2br}
+<div class="tpl-layout-two-columns tpl-layout-two-columns--leftSidebar">
+    <div class="tpl-layout-two-columns__main">
+        {if !empty($prefixContentBricks)}
+            <div class="tpl-brickArea-contentPrefix">
+                {foreach from=$prefixContentBricks item=Brick}
+                    {* 1. *}
+                    {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="contentPrefix" Template=$Template fullWidth=true}
+                {/foreach}
             </div>
         {/if}
-    {/if}
 
-    {$Template->getBody()}
+        <div role="main" class="main-content" style="{$mainContentSpacingTopCSSVar} {$mainContentSpacingBottomCSSVar}">
+            {if !$showHeader && ($showPageTitle || $showPageShort)}
+                <div class="content-header page-intro">
+                    {if $showPageTitle}
+                        <h1 itemprop="name" class="page-intro__title">
+                            {$Site->getAttribute('title')}
+                        </h1>
+                    {/if}
 
-    {if empty($Template->getBody()) ||
-    empty( $prefixContentBricks ||
-    empty( $suffixContentBricks ))}
-        &nbsp;
-    {/if}
+                    {if $showPageShort}
+                        <div class="content-short page-intro__short lead" itemprop="description">
+                            {$Site->getAttribute('short')|nl2br}
+                        </div>
+                    {/if}
+                </div>
+            {/if}
 
-    {if !empty( $suffixContentBricks )}
-        {foreach from=$suffixContentBricks item=Brick}
-            {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
-            <div class="tpl-presentation-row brick-id-{$Brick->getAttribute('id')} {$classes}">
-                {if $Brick->getAttribute('frontendTitle')}
-                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                {/if}
-                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                {$Brick->create()}
+            {$Template->getBody()}
+        </div>
+
+        {if !empty($suffixContentBricks)}
+            <div class="tpl-brickArea-contentPrefix">
+                {foreach from=$suffixContentBricks item=Brick}
+                    {* 1. *}
+                    {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="contentSuffix" Template=$Template fullWidth=true}
+                {/foreach}
             </div>
-        {/foreach}
-    {/if}
-</div>
+        {/if}
+    </div>
 
-<div class="page-multible-left grid-30 pull-70 mobile-grid-100">
-    {if !empty( $leftSideBar )}
-        {foreach from=$leftSideBar item=Brick}
-            {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
-            <div class="tpl-presentation-row brick-id-{$Brick->getAttribute('id')} {$classes}">
-                {if $Brick->getAttribute('frontendTitle') &&
-                $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'
-                }
-                    <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
-                {/if}
-                {if $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'}
-                    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                {/if}
-                {$Brick->create()}
-            </div>
-        {/foreach}
-    {else}
-        &nbsp;
-    {/if}
+    <aside class="tpl-layout-two-columns__sidebar tpl-layout-two-columns__sidebar--left">
+        {if !empty( $leftSideBar)}
+            {foreach from=$leftSideBar item=Brick}
+                {* 1. *}
+                {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="rightSidebar" Template=$Template fullWidth=true}
+            {/foreach}
+        {/if}
+    </aside>
 </div>
-

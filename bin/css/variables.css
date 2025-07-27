@@ -1,51 +1,30 @@
 /**
- * use !important to override css variable defined by template setting
+ * Set your own variables by using "--theme" prefix, for example:
+ * - To change success color set variable --theme--qui-color-success
+ * - To change font size set variable --theme--qui-font-size
  */
 :root {
     --scroll-padding: 0; /* template settings override this variable */
 
     /* color  */
-    --qui-color-main: #94c23c; /* template settings override this variable */
-    --qui-color-primary: var(--qui-color-main);
-    --qui-color-secondary: #3b3b3a;
-    --qui-color-body: #3b3b3a; /* template settings override this variable */
-    --qui-color-muted: #9ba3ad; /* template settings override this variable */
-    --qui-line-height-lg: 2.5;
-    --qui-line-height-md: 2;
-    --qui-line-height: 1.75; /* base */
-    --qui-line-height-sm: 1.5;
-    --qui-line-height-xs: 1.25;
-    --qui-btn-primary-bg: var(--qui-color-main);
-    --qui-btn-primary-color: #ffffff; /* template settings override this variable */
+    --qui-color-main: var(--template-settings__color-primary);
+    --qui-color-body: var(--template-settings__body-color);
+    --qui-color-muted: var(--qui-color-muted, #9ba3ad);
+    
+    --qui-color-primary: var(--theme--qui-color-primary, var(--qui-color-main));
+    --qui-color-secondary: var(--theme--qui-color-secondary, #6c757d);
+    --qui-color-success: var(--theme--qui-color-success, #28a745);
+    --qui-color-danger: var(--theme--qui-color-danger, #dc4139);
+    --qui-color-warning: var(--theme--qui-color-warning, #ffd147);
+    --qui-color-info: var(--theme--qui-color-info, #51a1c0);
+    --qui-color-light: var(--theme--qui-color-light, #e5e5e5);
+    --qui-color-dark: var(--theme--qui-color-dark, #393f46);
 
-    /* text: font size */
-    --qui-fs-xs: 0.75rem;
-    --qui-fs-sm: 0.875rem;
-    --qui-fs-body: 16px; /* base */
-    --qui-fs-md: 18px;
-    --qui-fs-lg: 22px;
-    --qui-fs-xl: 1.75rem;
-    --qui-fs-2xl: 2.5rem;
-    --qui-fs-3xl: 3.5rem;
-    --qui-fs-4xl: 4.5rem;
-    --qui-fs-5xl: 5.5rem;
-    --qui-fs-6xl: 6rem;
-    --qui-text-lead: var(--qui-fs-lg);
-    --qui-display-1: var(--qui-fs-6xl);
-    --qui-display-2: var(--qui-fs-5xl);
-    --qui-display-3: var(--qui-fs-4xl);
-    --qui-display-4: var(--qui-fs-3xl);
 
-    /* heading: font size */
-    --qui-fs-1: 2.488rem;
-    --qui-fs-2: 2.074rem;
-    --qui-fs-3: 1.728rem;
-    --qui-fs-4: 1.44rem;
-    --qui-fs-5: 1.2rem;
-    --qui-fs-6: 1.025rem;
 
     /* spacing for margin, padding, etc */
-    --qui-spacer: 1rem;
+    --qui-spacer: var(--theme--qui-spacer, 1rem);
+    --qui-spacer--mobile: var(--theme--qui-spacer--mobile, 0.75rem);
     --qui-spacing-xs: calc(var(--qui-spacer) * 0.25);
     --qui-spacing-sm: calc(var(--qui-spacer) * 0.75);
     --qui-spacing: var(--qui-spacer); /* default */
@@ -58,14 +37,27 @@
     --qui-spacing-5xl: calc(var(--qui-spacer) * 5.5);
     --qui-spacing-6xl: calc(var(--qui-spacer) * 6);
 
+    --qui-row-spacer: var(--theme--qui-row-spacer, 3rem);
+    --qui-row-spacer--mobile: var(--theme--qui-row-spacer--mobile, 2rem);
+    --qui-row-spacing--disabled: 0;
+    --qui-row-spacing--extraSmall: calc(var(--qui-row-spacer) * 0.25);
+    --qui-row-spacing--small: calc(var(--qui-row-spacer) * 0.5);
+    --qui-row-spacing--base: var(--qui-row-spacer);
+    --qui-row-spacing--medium: calc(var(--qui-row-spacer) * 2);
+    --qui-row-spacing--large: calc(var(--qui-row-spacer) * 3);
+    --qui-row-spacing--extraLarge: calc(var(--qui-row-spacer) * 5);
+
+    --qui-tpl-spacing--top: var(--theme--qui-tpl-spacing--top, var(--qui-row-spacing--base));
+    --qui-tpl-spacing--bottom: var(--theme--qui-tpl-spacing--bottom, var(--qui-row-spacing--base));
+
     /* nav */
     --qui-nav-color: #ffffff; /* template settings override this variable */
     --qui-nav-position: absolute; /* template settings override this variable */
     --qui-nav-bg: #2d4d88; /* template settings override this variable */
     --qui-nav-bg-lighter: #435f94; /* template settings override this variable */
-    --qui-nav-height: 80px; /* template settings override this variable */
+    --qui-nav-height: var(--template-settings__nav-height);
     --qui-nav-scrolled-bg: var(--qui-nav-bg); /* template settings override this variable */
-    --qui-body-container-top: var(--qui-nav-height); /* template settings override this variable */
+    --qui-body-container-top: var(--template-settings__body-container-top); /* template settings override this variable */
     --qui-nav-mobile-bg: #252122; /* template settings override this variable */
     --qui-nav-mobile-font-color: #ffffff; /* template settings override this variable */
     --qui-nav-mobile-social-bar-bg: #3b3839; /* template settings override this variable */
@@ -75,19 +67,13 @@
     --qui-header-img-position: center; /* template settings override this variable */
 
     /* footer */
-    --qui-footer-bg: #eeeeee; /* template settings override this variable */
-    --qui-footer-font-color: #333333; /* template settings override this variable */
-    --qui-footer-copyrigth-border-top-color: #f0f0f0; /* template settings override this variable */
+    --qui-footer-bg: var(--template-settings__footer-bgColor);
+    --qui-footer-font-color: var(--template-settings__footer-text-color);
+    --qui-footer-copyrigth-border-top-color: var(--template-settings__footer-link-color);
 
     /* background */
-    --qui-bg-primary: #ddd;
-    --qui-bg-secondary: #f5f5f5;
-
-    /* brick prefix / suffix bg */
-    --qui-brick-prefix-even-bg: transparent; /* template settings override this variable */
-    --qui-brick-prefix-odd-bg: transparent; /* template settings override this variable */
-    --qui-brick-suffix-even-bg: transparent; /* template settings override this variable */
-    --qui-brick-suffix-odd-bg: transparent; /* template settings override this variable */
+    --qui-bg-primary: #ddd; /* todo  */
+    --qui-bg-secondary: #f5f5f5; /* todo */
 
     /* screen sizes */
     --qui-screen-lg: 1400px;
@@ -98,7 +84,7 @@
 
 @media screen and (max-width: 767px) {
     :root {
-        --qui-fs-1: 2rem;
+        --qui-fs-1: 2.2rem;
         --qui-fs-2: 1.625rem;
         --qui-fs-3: 1.375rem;
         --qui-fs-4: 1.25rem;
@@ -113,6 +99,8 @@
         --qui-fs-4xl: calc(.75 * 4.5rem);
         --qui-fs-5xl: calc(.75 * 5.5rem);
         --qui-fs-6xl: calc(.75 * 6rem);
+
+        --qui-row-spacer: var(--qui-row-spacer--mobile);
     }
 }
 
