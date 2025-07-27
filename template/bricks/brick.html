@@ -18,14 +18,14 @@
 <section class="{$brickClasses}
                 tpl-brick
                 {if $tplBrickImage}tpl-brick--brickImage{/if}
-                tpl-brickArea-{$brickArea}__inner
+                tpl-brickArea-{$brickArea}__entry
                 brick-id-{$Brick->getAttribute('id')}"
          style="{$tplBrickBgColor} {$tplBrickTextColor} {$verticalSpacingTopCSSVariable} {$verticalSpacingBottomCSSVariable}"
 >
     {* works like background image *}
     {if $tplBrickImage}
-        <div class="tpl-brick--brickImage__imageWrapper">
-            {image src="{$Brick->getSetting('brickBgImage')}" class="tpl-brick--brickImage__image"}
+        <div class="tpl-brick__imageBgWrapper">
+            {image src="{$Brick->getSetting('brickBgImage')}" class="tpl-brick__imageBg"}
         </div>
     {/if}
 
@@ -40,7 +40,7 @@
         }
     {/if}
 
-    <div class="tpl-brick__inner {if !$fullWidth}grid-container{/if} {if $tplBrickImage}tpl-brick--brickImage__contentWrapper{/if}">
+    <div class="tpl-brick__inner {if !$fullWidth}grid-container{/if}">
             {$Brick->create()}
     </div>
 

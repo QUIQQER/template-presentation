@@ -42,7 +42,7 @@
 
     {*<!-- footer prefix -->*}
     {if !empty($footerPrefix)}
-        <div class="tpl-brickArea-prefixFooter">
+        <div class="tpl-brickArea-footerPrefix">
             {foreach $footerPrefix as $Brick}
                 {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="footerPrefix" Template=$Template}
             {/foreach}

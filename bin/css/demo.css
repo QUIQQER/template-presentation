@@ -69,7 +69,7 @@
 /*
  1. height of the triangle separator
 */
-.brick-container__starttpage-slogan .tpl-brick-separator--top {
+.brick-container__starttpage-slogan .tpl-brick__separator--top {
     margin-bottom: -50px; /* 1 */
     position: relative;
     z-index: 1;

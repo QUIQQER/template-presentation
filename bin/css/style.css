@@ -1006,24 +1006,54 @@ input[type="search"].only-input:focus {
     background-color: var(--qui-tpl-brick-backgroundColor);
 }
 
+/*
+ * Top and bottom spacing depend on place where the brick is used.
+ * "Full width bricks" are using padding-top and padding-bottom.
+ * This are the following brick areas:
+ *   - header
+ *   - headerSuffix
+ *   - footerPrefix
+ *
+ * "Column bricks" are using margin-top and margin-bottom
+ * This are the following brick areas:
+ *   - contentPrefix
+ *   - contentSuffix
+ *   - rightSidebar
+ *   - leftSidebar
+ */
+.tpl-brickArea-rightSidebar__entry .tpl-brick__inner,
+.tpl-brickArea-leftSidebar__entry .tpl-brick__inner,
+.tpl-brickArea-contentPrefix__entry .tpl-brick__inner,
+.tpl-brickArea-contentSuffix__entry .tpl-brick__inner {
+    margin-top: var(--qui-tpl-spacing--top);
+    margin-bottom: var(--qui-tpl-spacing--bottom);
+}
+
+.tpl-brickArea-header__entry .tpl-brick__inner,
+.tpl-brickArea-headerSuffix__entry .tpl-brick__inner,
+.tpl-brickArea-footerPrefix__entry .tpl-brick__inner {
+    padding-top: var(--qui-tpl-spacing--top);
+    padding-bottom: var(--qui-tpl-spacing--bottom);
+}
+
 /* brick with background image */
 .tpl-brick--brickImage {
     position: relative;
 }
 
-.tpl-brick--brickImage__imageWrapper {
+.tpl-brick__imageBgWrapper {
     position: absolute;
     inset: 0;
 }
 
-.tpl-brick--brickImage__image {
+.tpl-brick__imageBg {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.tpl-brick--brickImage__contentWrapper {
+.tpl-brick--brickImage .tpl-brick__inner {
     position: relative;
 }
 
@@ -1042,11 +1072,6 @@ input[type="search"].only-input:focus {
 
 /** page content
  * ========================================================== */
-
-.tpl-brick__inner {
-    padding-top: var(--qui-tpl-spacing--top);
-    padding-bottom: var(--qui-tpl-spacing--bottom);
-}
 
 .tpl-presentation-row {
     padding-top: var(--qui-tpl-spacing--top);
@@ -1109,11 +1134,6 @@ address {
 
 address {
     font-style: normal;
-}
-
-.start-page .tpl-brick__title,
-.no-sidebar .tpl-brick__title {
-    text-align: center;
 }
 
 .content-body p:last-child {
