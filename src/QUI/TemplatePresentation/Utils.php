@@ -7,6 +7,7 @@
 namespace QUI\TemplatePresentation;
 
 use QUI;
+
 use function count;
 
 /**

@@ -47,5 +47,4 @@ class EventHandler
     {
         $Smarty->registerClass('QUI\TemplatePresentation\Utils', '\QUI\TemplatePresentation\Utils');
     }
-
 }
