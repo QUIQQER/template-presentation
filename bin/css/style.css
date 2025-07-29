@@ -400,16 +400,35 @@ fieldset.grid-50:last-child {
     padding-right: 0;
 }
 
-/*
- 1. Quiqqer sets the width and height HTML attributes on each <img> element (smarty function.image.php).
-    Therefore, we need to set the max-width and height properties to '100%' and 'auto'.
-*/
+video,
 img {
     margin: 0;
     padding: 0;
-    max-width: 100%; /* 1 */
-    max-height: 100%; /* 1 */
-    height: auto; /* 1 */
+    max-width: 100%;
+    height: auto;
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+}
+
+/**
+ * Center element if user set text-align
+ * to center (per CKEditor)
+ */
+[style*="text-align: center"] > :is(img, svg, video, audio, iframe, embed, object),
+[style*="text-align:center"] > :is(img, svg, video, audio, iframe, embed, object) {
+    display: initial;
+}
+
+/**
+ * Center element if user set text-align
+ * to center (per CKEditor)
+ */
+[style*="text-align: center"] > picture img,
+[style*="text-align:center"] > picture img {
+    display: initial;
 }
 
 figcaption {
