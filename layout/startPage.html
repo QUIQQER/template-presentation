@@ -4,7 +4,7 @@
 
 {if !empty( $prefixContentBricks )}
     {foreach from=$prefixContentBricks item=Brick}
-        {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+        {assign var=classes value=QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
         <div class="tpl-presentation-row brick-id-{$Brick->getAttribute('id')} {$classes}">
             {if $Brick->getAttribute('frontendTitle')}
                 <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
@@ -16,7 +16,7 @@
 {/if}
 
 {foreach from=$bricks item=Brick}
-    {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+    {assign var=classes value=QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
     <section class="startpage-section tpl-presentation-row brick-id-{$Brick->getAttribute('id')} {$classes}">
         {if $Brick->getAttribute('frontendTitle')}
             <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
@@ -49,7 +49,7 @@
 {if !empty( $suffixContentBricks )}
     {foreach from=$suffixContentBricks item=Brick}
 
-        {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+        {assign var=classes value=QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
         <div class="tpl-presentation-row brick-id-{$Brick->getAttribute('id')} {$classes}">
             {if $Brick->getAttribute('frontendTitle')}
                 <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>

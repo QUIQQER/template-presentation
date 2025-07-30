@@ -26,7 +26,7 @@
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
         {foreach $headerSuffix as $Brick}
 
-            {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+            {assign var=classes value=QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
 
             {assign var=noPadding value=''}
             {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
@@ -76,7 +76,7 @@
         {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
         {foreach $footerPrefix as $Brick}
 
-            {assign var=classes value=\QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+            {assign var=classes value=QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
 
             {assign var=noPadding value=''}
             {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
