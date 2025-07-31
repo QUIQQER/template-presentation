@@ -1057,7 +1057,7 @@ thead {
 .header-bar-suggestSearch,
 .fa.close-social-share,
 .fa.open-social-share,
-.quiqqer-bricks-languageswitch-dropdown {
+.quiqqer-control-languageswitch-dropdown-button {
     line-height: var(--qui-nav-height);
 }
 
@@ -1517,8 +1517,6 @@ header.control-header {
 hr {
     border: none;
     border-top: 1px solid #ccc;
-    clear: both;
-    float: left;
     margin: 3em 0;
     width: 100%;
 }
