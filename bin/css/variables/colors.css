@@ -1,0 +1,19 @@
+/**
+ * Set your own variables by using "--theme" prefix, for example:
+ * - To change success color set variable --theme--qui-color-success
+ * - To change warning color set variable --theme--qui-color-warning
+ */
+:root {
+    --qui-color-main: var(--template-settings__color-primary);
+    --qui-color-body: var(--template-settings__body-color);
+    --qui-color-muted: var(--qui-color-muted, #9ba3ad);
+
+    --qui-color-primary: var(--theme--qui-color-primary, var(--qui-color-main));
+    --qui-color-secondary: var(--theme--qui-color-secondary, #6c757d);
+    --qui-color-success: var(--theme--qui-color-success, #28a745);
+    --qui-color-danger: var(--theme--qui-color-danger, #dc4139);
+    --qui-color-warning: var(--theme--qui-color-warning, #ffd147);
+    --qui-color-info: var(--theme--qui-color-info, #51a1c0);
+    --qui-color-light: var(--theme--qui-color-light, #e5e5e5);
+    --qui-color-dark: var(--theme--qui-color-dark, #393f46);
+}
