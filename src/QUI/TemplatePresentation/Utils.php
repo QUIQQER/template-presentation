@@ -717,6 +717,7 @@ class Utils
             'navLinkColor' => $navBarFontColor,
             'navBgColor' => $navBgColor,
             'navBgColorScrolled' => $navBgColorScrolled,
+            'navSubMenuBgColor' => '#fafafa', /* todo as setting */
             'navHeight' => $navHeight,
             'navMobileBgColor' => $navMobileBgColor,
             'navMobileTextColor' => $navMobileTextColor,
