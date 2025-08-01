@@ -405,21 +405,25 @@ class Utils
      *    --qui-tpl-spacing--top:  var(--qui-row-spacing--small);
      *    --qui-tpl-spacing--bottom:  var(--qui-row-spacing--extraLarge);
      *
-     * @param string $name // allowed values: 'disabled', 'extraSmall', 'small', 'base', 'medium', 'large', 'extraLarge'
+     * @param string $value // allowed values: 'disabled', 'extraSmall', 'small', 'base', 'medium', 'large', 'extraLarge'
      * @param string $pos // only 'top' and 'bottom' are allowed
      * @return string
      */
-    public static function getSpacingVariable(string $name, string $pos): string
+    public static function getSpacingVariable(string $value, string $pos): string
     {
-        if (!$name || !$pos) {
+        if (!$pos) {
             return '';
+        }
+
+        if (!$value) {
+            $value = 'base';
         }
 
         if ($pos !== 'top' && $pos !== 'bottom') {
             return '';
         }
 
-        return '--qui-tpl-spacing--' . $pos . ': var(--qui-row-spacing--' . $name . ');';
+        return '--qui-tpl-spacing--' . $pos . ': var(--qui-row-spacing--' . $value . ');';
     }
 
     /**
