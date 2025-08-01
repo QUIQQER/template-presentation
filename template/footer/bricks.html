@@ -1,0 +1,21 @@
+{assign var=Setting value=$Template->getAttribute('TemplateSetting')}
+{assign var=BricksManager value=$Setting->getAttribute('BricksManager')}
+{assign var=footerBricks value=$BricksManager->getBricksByArea('footer', $Site)}
+
+{if !empty($footerBricks)}
+    <div class="page-footer-container grid-container" data-nosnippet="true">
+        <div class="grid-children">
+            <div class="grid-children-container">
+                {foreach from=$footerBricks item=Brick}
+                    {if !$Brick->hasCSSClass('grid-*')}
+                        {$Brick->addCSSClass('grid-100')}
+                    {/if}
+                    {$Brick->addCSSClass('page-footer-brick clear-fix')}
+
+                    {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="footer" Template=$Template fullWidth=true}
+
+                {/foreach}
+            </div>
+        </div>
+    </div>
+{/if}
