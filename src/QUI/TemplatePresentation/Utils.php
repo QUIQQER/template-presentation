@@ -691,7 +691,7 @@ class Utils
             $navBgColor = 'transparent';
         }
 
-        if (isset($showHeader) && $showHeader) {
+        if ($showHeader) {
             $bodyContainerTop = 0;
             $navBgColor = 'transparent';
         }
