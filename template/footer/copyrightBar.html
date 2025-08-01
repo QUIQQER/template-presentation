@@ -1,0 +1,11 @@
+{assign var=Setting value=$Template->getAttribute('TemplateSetting')}
+{assign var=socialFooter value=$Setting->getAttribute('socialFooter')}
+
+<div class="page-footer-copyright grid-container" data-nosnippet="true">
+
+    <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
+        {locale group="quiqqer/template-presentation" var="copyright.text" year=$smarty.now|date_format:'Y'}
+    </div>
+
+    {$socialFooter}
+</div>

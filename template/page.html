@@ -52,8 +52,7 @@
     {template_event name="quiqqer::template::body::beforeFooter" Template=$Template}
 
     {if $Template->getAttribute('template-footer')}
-        {fetch template="template/footer.html" BricksManager=$BricksManager
-        Site=$Site socialFooter=$socialFooter Template=$Template}
+        {fetch template="template/footer.html" Site=$Site  Template=$Template}
     {/if}
     
     {template_event name="quiqqer::template::body::pageEnd" Template=$Template}

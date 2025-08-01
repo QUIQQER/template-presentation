@@ -1,0 +1,82 @@
+/**
+ * Set your own variables by using "--theme" prefix, for example:
+ * - To change success color set variable --theme--qui-color-success
+ * - To change font size set variable --theme--qui-font-size
+ */
+:root {
+    --qui-scroll-padding: var(--theme--qui-scroll-padding, --template-settings__scroll-offset); /* template settings override this variable */
+
+
+    /* spacing for margin, padding, etc */
+    --qui-spacer--desktop: var(--theme--qui-spacer--desktop, 1rem);
+    --qui-spacer--mobile: var(--theme--qui-spacer--mobile, 0.75rem);
+    --qui-spacer: var(--theme--qui-spacer--desktop);
+    --qui-spacing-xs: calc(var(--qui-spacer) * 0.25);
+    --qui-spacing-sm: calc(var(--qui-spacer) * 0.75);
+    --qui-spacing: var(--qui-spacer); /* default */
+    --qui-spacing-md: calc(var(--qui-spacer) * 1.25);
+    --qui-spacing-lg: calc(var(--qui-spacer) * 1.75);
+    --qui-spacing-xl: calc(var(--qui-spacer) * 2);
+    --qui-spacing-2xl: calc(var(--qui-spacer) * 2.5);
+    --qui-spacing-3xl: calc(var(--qui-spacer) * 3.5);
+    --qui-spacing-4xl: calc(var(--qui-spacer) * 4.5);
+    --qui-spacing-5xl: calc(var(--qui-spacer) * 5.5);
+    --qui-spacing-6xl: calc(var(--qui-spacer) * 6);
+
+    /* the suffix naming bases on brick settings */
+    /* for verticalSpacingTop and verticalSpacingBottom */
+    --qui-row-spacer--desktop: var(--theme--qui-row-spacer--desktop, 3rem);
+    --qui-row-spacer--mobile: var(--theme--qui-row-spacer--mobile, 2rem);
+    --qui-row-spacer: var(--qui-row-spacer--desktop);
+    --qui-row-spacing--disabled: 0;
+    --qui-row-spacing--extraSmall: calc(var(--qui-row-spacer) * 0.25);
+    --qui-row-spacing--small: calc(var(--qui-row-spacer) * 0.5);
+    --qui-row-spacing--base: var(--qui-row-spacer);
+    --qui-row-spacing--medium: calc(var(--qui-row-spacer) * 2);
+    --qui-row-spacing--large: calc(var(--qui-row-spacer) * 3);
+    --qui-row-spacing--extraLarge: calc(var(--qui-row-spacer) * 5);
+
+    --qui-tpl-spacing--top: var(--theme--qui-tpl-spacing--top, var(--qui-row-spacing));
+    --qui-tpl-spacing--bottom: var(--theme--qui-tpl-spacing--bottom, var(--qui-row-spacing));
+
+    /* nav */
+    --qui-nav-color: var(--theme--qui-nav-color, var(--template-settings__nav-link-color, #ffffff));
+    --qui-nav-position: var(--theme--qui-nav-position, var(--template-settings__nav-position, absolute));
+    --qui-nav-bgColor: var(--theme--qui-nav-bgColor, var(--template-settings__nav-bgColor ,#2d4d88));
+    --qui-nav-bgColor--lighter: var(--theme--qui-nav-bgColor--lighter, color-mix(in srgb, var(--qui-nav-bgColor--lighter) 10%, white));
+    --qui-nav-height: var(--template-settings__nav-height);
+    --qui-nav-scrolled-bg: var(--theme--qui-nav-scrolled-bg, var(--template-settings__nav-bgColor--scrolled));
+    --qui-body-container-top: var(--template-settings__body-container-top);
+    --qui-nav-mobile-bg: var(--theme--qui-nav-mobile-bg, var(--template-settings__nav-mobile-bgColor, #252122));
+    --qui-nav-mobile-font-color: var(--theme--qui-nav-mobile-font-color, var(--template-settings__nav-mobile-text-color, #ffffff));
+    --qui-nav-mobile-social-bar-bg: var(--qui-nav-mobile-social-bar-bg, color-mix(in srgb, var(--qui-nav-mobile-bg) 10%, white)); /* template settings override this variable */
+
+    /* header */
+    --qui-header-minHeight--desktop: var(--theme--qui-header-minHeight--desktop, var(--template-settings__page-header-minHeightDesktop, 300px));
+    --qui-header-minHeight--mobile: var(--theme--qui-header-minHeight--mobile, var(--template-settings__page-header-minHeightMobile, 300px));
+    --qui-header-minHeight: 300; /* todo */
+    --qui-header-img-position: var(--theme--qui-header-img-position, var(--template-settings__page-header-img-position, center));
+
+    /* footer */
+    --qui-footer-bg: var(--template-settings__footer-bgColor);
+    --qui-footer-font-color: var(--template-settings__footer-text-color);
+    --qui-footer-copyrigth-border-top-color: var(--template-settings__footer-link-color);
+
+    /* background */
+    --qui-bg-primary: #ddd; /* todo  */
+    --qui-bg-secondary: #f5f5f5; /* todo */
+
+    /* screen sizes */
+    --qui-screen-lg: 1400px;
+    --qui-screen-md: 1100px;
+    --qui-screen-sm: 767px;
+    --qui-screen-xs: 440px;
+}
+
+@media screen and (max-width: 767px) {
+    :root {
+        --qui-spacer: var(--qui-spacer--mobile);
+        --qui-row-spacer: var(--qui-row-spacer--mobile);
+    }
+}
+

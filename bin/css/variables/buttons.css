@@ -15,7 +15,7 @@
 
     /* Button: primary */
     --qui-btn-primary-bg: var(--theme--qui-btn-primary-bg, var(--qui-color-primary));
-    --qui-btn-primary-color: var(--theme-qui-btn-primary-color, #ffffff);
+    --qui-btn-primary-color: var(--theme-qui-btn-primary-color, var(--template-settings__btn-text-color, #ffffff));
     --qui-btn-primary-borderColor: var(--theme-qui-btn-primary-borderColor, var(--qui-color-primary));
     --qui-btn-primary-bg--hover: var(--theme-qui-btn-primary-bg--hover, color-mix(in srgb, var(--qui-btn-primary-bg), black 10%));
     --qui-btn-primary-color--hover: var(--theme-qui-btn-primary-color--hover, #ffffff);

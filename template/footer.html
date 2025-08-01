@@ -1,32 +1,11 @@
-{assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
 
 {template_event name="quiqqer::template::body::footer::before" Template=$Template}
 <footer class="page-footer clear-fix {if empty($footer)}no-footer-bricks{/if}">
     {template_event name="quiqqer::template::body::footer::start" Template=$Template}
 
-    {if !empty($footer)}
-    <div class="page-footer-container grid-container" data-nosnippet="true">
-        <div class="grid-children">
-            <div class="grid-children-container">
-                {foreach from=$footer item=Brick}
-                {if !$Brick->hasCSSClass('grid-*')}
-                {$Brick->addCSSClass('grid-100')}
-                {/if}
-                {$Brick->addCSSClass('page-footer-brick clear-fix')}
-                {$Brick->create()}
-                {/foreach}
-            </div>
-        </div>
-    </div>
-    {/if}
+    {fetch template="template/footer/bricks.html" Site=$Site Template=$Template}
 
-    <div class="page-footer-copyright grid-container" data-nosnippet="true">
-        <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
-            {locale group="quiqqer/template-presentation" var="copyright.text" year=$smarty.now|date_format:'Y'}
-        </div>
-
-        {$socialFooter}
-    </div>
+    {fetch template="template/footer/copyrightBar.html" Site=$Site Template=$Template}
 
     {template_event name="quiqqer::template::body::footer::end" Template=$Template}
 </footer>

@@ -16,7 +16,7 @@
 
 html {
     font-size: 100%;
-    scroll-padding-top: var(--scroll-padding);
+    scroll-padding-top: var(--qui-scroll-padding);
 }
 
 .grid-parent,
@@ -110,25 +110,37 @@ body {
     padding-right: 0 !important;
 }
 
-
-
-
-/*
- 1. Quiqqer sets the width and height HTML attributes on each <img> element (smarty function.image.php).
-    Therefore, we need to set the max-width and height properties to '100%' and 'auto'.
-*/
+video,
 img {
     margin: 0;
     padding: 0;
-    max-width: 100%; /* 1 */
-    max-height: 100%; /* 1 */
-    height: auto; /* 1 */
+    max-width: 100%;
+    height: auto;
 }
 
-figcaption {
-    color: var(--qui-color-muted);
-    font-size: 0.75rem;
+img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
 }
+
+/**
+ * Center element if user set text-align
+ * to center (per CKEditor)
+ */
+[style*="text-align: center"] > :is(img, svg, video, audio, iframe, embed, object),
+[style*="text-align:center"] > :is(img, svg, video, audio, iframe, embed, object) {
+    display: initial;
+}
+
+/**
+ * Center element if user set text-align
+ * to center (per CKEditor)
+ */
+[style*="text-align: center"] > picture img,
+[style*="text-align:center"] > picture img {
+    display: initial;
+}
+
 
 
 
@@ -308,7 +320,7 @@ thead {
     padding-top: calc(var(--qui-nav-height) + 1rem);
     padding-bottom: calc(var(--qui-nav-height) - 1rem);
     position: relative;
-    min-height: var(--qui-header-min-height);
+    min-height: var(--qui-header-minHeight);
 }
 
 .page-header__imageWrapper {
@@ -355,7 +367,7 @@ thead {
 /** header bar
  * ========================================================== */
 .header-bar {
-    background-color: var(--qui-nav-bg);
+    background-color: var(--qui-nav-bgColor);
     position: var(--qui-nav-position);
     -moz-transform: translateZ(0);
     -ms-transform: translateZ(0);
@@ -484,7 +496,7 @@ thead {
 }
 
 .quiqqer-menu-megaMenu-list-item-menu.control-background {
-    background-color: var(--qui-nav-bg-lighter);
+    background-color: var(--qui-nav-bgColor--lighter);
 }
 
 .quiqqer-menu-megaMenu-list-item-inner {
@@ -519,7 +531,7 @@ thead {
 
 /* menu arrow */
 .quiqqer-menu-megaMenu-children-simple:after {
-    border-bottom: 14px solid var(--qui-nav-bg-lighter);
+    border-bottom: 14px solid var(--qui-nav-bgColor--lighter);
     border-left: 14px solid transparent;
     border-right: 14px solid transparent;
     border-top: 14px solid transparent;
@@ -718,7 +730,7 @@ section.quiqqer-portfolio-list {
 }
 
 .page-header-navigation li:hover {
-    background-color: var(--qui-nav-bg-lighter);
+    background-color: var(--qui-nav-bgColor--lighter);
 }
 
 .page-header-navigation a {
@@ -774,7 +786,7 @@ li.page-header-navigation-entry {
 }
 
 .page-header-navigation-sub-list {
-    background-color: var(--qui-nav-bg-lighter);
+    background-color: var(--qui-nav-bgColor--lighter);
     display: block;
     opacity: 1;
     padding: 0;
@@ -816,7 +828,7 @@ li.page-header-navigation-sub-entry:hover {
 
 /* header bar search */
 .header-bar-search:hover {
-    background-color: var(--qui-nav-bg-lighter);
+    background-color: var(--qui-nav-bgColor--lighter);
 }
 
 /** page header suggest search

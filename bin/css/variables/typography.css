@@ -1,7 +1,7 @@
 /**
  * Set your own variables by using "--theme" prefix, for example:
- * - To change success color set variable --theme--qui-color-success
- * - To change font size set variable --theme--qui-font-size
+ * - To change font family use variable --theme--qui-font-family
+ * - To change body font size set variable --theme--qui-font-size
  */
 :root {
     --qui-font-family: var(--theme--qui-font-family, 'Open Sans', sans-serif);
@@ -44,4 +44,49 @@
     --qui-fs-4: 1.44rem;
     --qui-fs-5: 1.2rem;
     --qui-fs-6: 1.025rem;
+}
+
+@media screen and (max-width: 767px) {
+    :root {
+        /* heading: font size */
+        --qui-fs-1: 2rem;
+        --qui-fs-2: 1.625rem;
+        --qui-fs-3: 1.375rem;
+        --qui-fs-4: 1.25rem;
+        --qui-fs-5: 1.125rem;
+        --qui-fs-6: 1.025rem;
+
+        /* font size: text */
+        --qui-fs-body: 16px;
+        --qui-fs-lg: calc(.8 * 1.25rem);
+        --qui-fs-xl: calc(.8 * 1.625rem);
+        --qui-fs-2xl: calc(.8 * 2rem);
+        --qui-fs-3xl: calc(.8 * 2.5rem);
+        --qui-fs-4xl: calc(.8 * 3rem);
+        --qui-fs-5xl: calc(.8 * 3.5rem);
+        --qui-fs-6xl: calc(.8 * 4rem);
+    }
+}
+
+@media screen and (max-width: 440px) {
+    :root {
+        /* heading: font size */
+        --qui-fs-1: 1.75rem;
+        --qui-fs-2: 1.5rem;
+        --qui-fs-3: 1.375rem;
+        --qui-fs-4: 1.25rem;
+        --qui-fs-5: 1.125rem;
+        --qui-fs-6: 1.025rem;
+
+        /* font size: text */
+        --qui-fs-body: 16px;
+        --qui-fs-md: 17px;
+        --qui-fs-lg: 19px;
+        --qui-fs-xl: 22px;
+        --qui-fs-2xl: calc(.7 * 2.5rem);
+        --qui-fs-3xl: calc(.65 * 3.5rem);
+        --qui-fs-4xl: calc(.6 * 4.5rem);
+        --qui-fs-5xl: calc(.55 * 5.5rem);
+        --qui-fs-6xl: calc(.5 * 6.5rem);
+    }
 }
