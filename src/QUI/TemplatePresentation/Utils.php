@@ -722,8 +722,8 @@ class Utils
             'navMobileTextColor' => $navMobileTextColor,
 
             /* page header */
-            'pageHeaderMinHeightDesktop' => $pageHeaderMinHeightDesktop,
-            'pageHeaderMinHeightMobile' => $pageHeaderMinHeightMobile,
+            'pageHeaderMinHeightDesktop' => $pageHeaderMinHeightDesktop, /* todo */
+            'pageHeaderMinHeightMobile' => $pageHeaderMinHeightMobile, /* todo */
             'pageHeaderImgPosition' => $pageHeaderImgPosition,
             'pageHeaderTextAlignment' => $pageHeaderTextAlignment, /* todo */
             'pageHeaderHeadingColor' => $pageHeaderHeadingColor, /* todo */
@@ -732,7 +732,7 @@ class Utils
             /* footer */
             'footerBgColor' => $footerBgColor,
             'footerTextColor' => $footerTextColor,
-            'footerLinkColor' => $footerLinkColor, /* todo al setting */
+            'footerLinkColor' => $footerLinkColor, /* todo as setting */
         ];
     }
 }
