@@ -346,13 +346,13 @@ thead {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: var(--_tpl-header-textPos, center);
+    align-items: var(--qui-header-text-pos);
 }
 
 .page-header-text__title,
 .page-header-text__short {
-    color: var(--_tpl-header-textColor, inherit);
-    text-align: var(--_tpl-header-textAlignment, center);
+    color: var(--qui-header-text-color);
+    text-align: var(--qui-header-text-aligment);
     width: max(700px, 50%);
 }
 
@@ -1389,16 +1389,6 @@ a.quiqqer-navigation-home:hover,
 }
 
 @media screen and (max-width: 767px) {
-    .page-header {
-        height: auto !important;
-        min-height: initial !important;
-    }
-
-    .page-header-text-title,
-    .page-header-text-short {
-        max-width: 100%;
-    }
-
     .page-footer-left {
         padding-right: 0;
     }

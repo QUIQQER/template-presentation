@@ -22,6 +22,10 @@ class Utils
 {
     private static QUI\Projects\Project $Project;
 
+    private static QUI\Projects\Site $Site;
+
+    private static array $cssVars = [];
+
     /**
      * @param Array<string, mixed> $params
      *
@@ -47,6 +51,7 @@ class Utils
         $Site = $params['Site'];
 
         self::$Project = $Project;
+        self::$Site = $Site;
 
         /**
          * no header?
@@ -87,8 +92,6 @@ class Utils
 
         $showPageTitle = false;
         $showPageShort = false;
-        $headerTextColor = 'inherit';
-        $headerTextPos = 'center';
         $mainContentSpacingTop = 'base';
         $mainContentSpacingBottom = 'base';
 
@@ -98,14 +101,6 @@ class Utils
 
         if ($Project->getConfig('templatePresentation.settings.showShort')) {
             $showPageShort = $Project->getConfig('templatePresentation.settings.showShort');
-        }
-
-        if ($Project->getConfig('templatePresentation.settings.header.textColor')) {
-            $headerTextColor = $Project->getConfig('templatePresentation.settings.header.textColor');
-        }
-
-        if ($Project->getConfig('templatePresentation.settings.header.textPos')) {
-            $headerTextPos = $Project->getConfig('templatePresentation.settings.header.textPos');
         }
 
         if ($Project->getConfig('templatePresentation.settings.mainContentSpacingTop')) {
@@ -145,31 +140,6 @@ class Utils
                 $showHeader = false;
                 break;
         }
-
-        /* site own header text color */
-        switch ($Site->getAttribute('templatePresentation.header.textColor.enable')) {
-            case 'useSiteSetting':
-                $headerTextColor = $Site->getAttribute('templatePresentation.header.textColor.color');
-                break;
-            case 'useDefaultColor':
-                $headerTextColor = 'inherit';
-                break;
-        }
-
-        /* site own header text position */
-        switch ($Site->getAttribute('templatePresentation.header.textPos')) {
-            case 'flex-start':
-            case 'center':
-            case 'flex-right':
-                $headerTextPos = $Site->getAttribute('templatePresentation.header.textPos');
-        }
-
-        // make text alignment depend on content (flexbox) alignment
-        $headerTextAlignment = match ($headerTextPos) {
-            'flex-start' => 'left',
-            'flex-end' => 'right',
-            default => 'center',
-        };
 
         /* site own main content spacing top */
         switch ($Site->getAttribute('templatePresentation.mainContent.spacingTop')) {
@@ -254,9 +224,6 @@ class Utils
             'logoSize' => self::getLogoSize(),
             'useSlideOutMenu' => true, // for now is always true because quiqqer use currently only SlideOut nav
             'includeDemoCss' => $includeDemoCss,
-            'headerTextColor' => $headerTextColor,
-            'headerTextPos' => $headerTextPos,
-            'headerTextAlignment' => $headerTextAlignment,
             'mainContentSpacingTopCSSVar' => self::getSpacingVariable($mainContentSpacingTop, 'top'),
             'mainContentSpacingBottomCSSVar' => self::getSpacingVariable($mainContentSpacingBottom, 'bottom'),
             'socialData' => self::getSocialLinks(),
@@ -656,25 +623,56 @@ class Utils
         /**
          * Page header
          */
+//        $mainContentSpacingTop = 'base'; // todo
+//        $mainContentSpacingBottom = 'base'; // todo
+
         $pageHeaderMinHeightDesktop = (int)self::$Project->getConfig('templatePresentation.settings.headerHeightValue');
         $pageHeaderMinHeightMobile = (int)self::$Project->getConfig(
             'templatePresentation.settings.headerHeightValueMobile'
         );
-        $pageHeaderTextAlignment = self::$Project->getConfig('templatePresentation.settings.pageHeaderTextAlignment');
-        $pageHeaderHeadingColor = self::$Project->getConfig('templatePresentation.settings.pageHeaderHeadingColor');
-        $pageHeaderTextColor = self::$Project->getConfig('templatePresentation.settings.pageHeaderTextColor');
 
         if (!$pageHeaderMinHeightMobile) {
             $pageHeaderMinHeightMobile = $pageHeaderMinHeightDesktop;
         }
 
-        if (!$pageHeaderHeadingColor) {
-            $pageHeaderHeadingColor = 'inherit';
+        $pageHeaderTextAlignment = self::$Project->getConfig('templatePresentation.settings.header.textColor');
+        $pageHeaderFontColor = self::$Project->getConfig('templatePresentation.settings.header.textColor');
+
+        /* site own header text color */
+        switch (self::$Site->getAttribute('templatePresentation.header.textColor.enable')) {
+            case 'useSiteSetting':
+                $pageHeaderFontColor = self::$Site->getAttribute('templatePresentation.header.textColor.color');
+                break;
+            case 'useDefaultColor':
+                $pageHeaderFontColor = 'inherit';
+                break;
         }
 
-        if (!$pageHeaderTextColor) {
-            $pageHeaderTextColor = 'inherit';
+        if (!$pageHeaderFontColor) {
+            $pageHeaderFontColor = 'inherit';
         }
+
+        $pageHeaderTextColor = $pageHeaderFontColor;
+        $pageHeaderHeadingColor = $pageHeaderFontColor;
+
+        if (!$pageHeaderTextAlignment) {
+            $pageHeaderTextAlignment = 'center';
+        }
+
+        /* site own header text position */
+//        switch (self::$Site->getAttribute('templatePresentation.header.textPos')) {
+//            case 'flex-start':
+//            case 'center':
+//            case 'flex-right':
+//            $pageHeaderTextAlignment = self::$Site->getAttribute('templatePresentation.header.textPos');
+//        }
+
+        // Convert flexbox alignment values (from earlier template settings versions) to text-align values
+        $pageHeaderTextAlignment = match ($pageHeaderTextAlignment) {
+            'flex-start' => 'left',
+            'flex-end' => 'right',
+            default => 'center',
+        };
 
         $pageHeaderImgPosition = self::$Project->getConfig('templatePresentation.settings.headerImagePosition');
 
@@ -723,12 +721,12 @@ class Utils
             'navMobileTextColor' => $navMobileTextColor,
 
             /* page header */
-            'pageHeaderMinHeightDesktop' => $pageHeaderMinHeightDesktop, /* todo */
-            'pageHeaderMinHeightMobile' => $pageHeaderMinHeightMobile, /* todo */
+            'pageHeaderMinHeightDesktop' => $pageHeaderMinHeightDesktop,
+            'pageHeaderMinHeightMobile' => $pageHeaderMinHeightMobile,
             'pageHeaderImgPosition' => $pageHeaderImgPosition,
-            'pageHeaderTextAlignment' => $pageHeaderTextAlignment, /* todo */
-            'pageHeaderHeadingColor' => $pageHeaderHeadingColor, /* todo */
-            'pageHeaderTextColor' => $pageHeaderTextColor, /* todo */
+            'pageHeaderTextAlignment' => $pageHeaderTextAlignment,
+            'pageHeaderHeadingColor' => $pageHeaderHeadingColor,
+            'pageHeaderTextColor' => $pageHeaderTextColor,
 
             /* footer */
             'footerBgColor' => $footerBgColor,

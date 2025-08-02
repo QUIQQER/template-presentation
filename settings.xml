@@ -154,6 +154,9 @@
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>300</defaultvalue>
                     </conf>
+                    <conf name="headerHeightValueMobile">
+                        <type><![CDATA[integer]]></type>
+                    </conf>
                     <conf name="headerImagePosition">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>center</defaultvalue>
@@ -776,6 +779,19 @@
                                             var="templatePresentation.settings.headerHeightValue.text"
                                     />
                                 </text>
+                            </input>
+
+                            <input conf="templatePresentation.settings.headerHeightValueMobile" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.headerHeightValueMobile.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.headerHeightValueMobile.desc"
+                                    />
+                                </description>
                             </input>
 
                             <select conf="templatePresentation.settings.headerImagePosition">

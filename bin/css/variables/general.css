@@ -55,7 +55,11 @@
     /* header */
     --qui-header-minHeight--desktop: var(--theme--qui-header-minHeight--desktop, var(--template-settings__page-header-minHeightDesktop, 300px));
     --qui-header-minHeight--mobile: var(--theme--qui-header-minHeight--mobile, var(--template-settings__page-header-minHeightMobile, 300px));
-    --qui-header-minHeight: 300; /* todo */
+    --qui-header-minHeight: var(--qui-header-minHeight--desktop);
+    --qui-header-text-pos: var(--theme--qui-header-text-post, center);
+    --qui-header-text-aligment: var(--theme--qui-header-text-aligment, var(--template-settings__page-header-text-alignment, center));
+    --qui-header-text-color: var(--theme--qui-header-text-color, var(--template-settings__page-header-text-color, inherit));
+    --qui-header-headign-color: var(--theme--qui-header-heading-color, var(--template-settings__page-header-heading-color, inherit));
     --qui-header-img-position: var(--theme--qui-header-img-position, var(--template-settings__page-header-img-position, center));
 
     /* footer */
@@ -78,6 +82,7 @@
     :root {
         --qui-spacer: var(--qui-spacer--mobile);
         --qui-row-spacer: var(--qui-row-spacer--mobile);
+        --qui-header-minHeight: var(--qui-header-minHeight--mobile);
     }
 }
 

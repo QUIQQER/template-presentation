@@ -609,15 +609,17 @@
         
 
         <!-- Header Größe-->
-        <locale name="templatePresentation.settings.headerHeight.text">
-            <de><![CDATA[Feste Höhe des Headers]]></de>
-            <en><![CDATA[Fixed size of the header]]></en>
-            <pl><![CDATA[Stała wysokość nagłówka (header)]]></pl>
-        </locale>
         <locale name="templatePresentation.settings.headerHeightValue.text">
-            <de><![CDATA[Höhe (in Pixel)]]></de>
-            <en><![CDATA[Height (in pixel)]]></en>
-            <pl><![CDATA[Wysokość (w pikselach)]]></pl>
+            <de><![CDATA[Höhe (in Pixel) - Desktop]]></de>
+            <en><![CDATA[Height (in pixel) - desktop]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.headerHeightValueMobile.text">
+            <de><![CDATA[Höhe (in Pixel) - Mobile]]></de>
+            <en><![CDATA[Height (in pixel) - mobile]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.headerHeightValueMobile.desc">
+            <de><![CDATA[Wird kein Wert gesetzt, wird die Desktop-Höhe verwendet. Bitte beachte, dass der Wert eine minimale Höhe ist, die auch durch mehrere Faktoren beeinflusst werden kann, z.B. padding-top und padding-bottom oder die Länge des Textes im Header (wenn die Einstellung aktiviert ist).]]></de>
+            <en><![CDATA[If no value is set, the desktop height will be used. Please note that the value is a minimum height that can also be influenced by several factors, e.g. padding-top and padding-bottom or the length of the text in the header (if the setting is enabled).]]></en>
         </locale>
 
         <!-- Position des Bildes im Header-->
