@@ -317,8 +317,8 @@ thead {
  * ========================================================== */
 .page-header {
     display: grid;
-    padding-top: calc(var(--qui-nav-height) + 1rem);
-    padding-bottom: calc(var(--qui-nav-height) - 1rem);
+    padding-top: var(--qui-page-header-padding-block);
+    padding-bottom: var(--qui-page-header-padding-block);
     position: relative;
     min-height: var(--qui-header-minHeight);
 }
@@ -333,7 +333,8 @@ thead {
     height: 100%;
     object-fit: cover;
     width: 100%;
-    object-position: var(--qui-header-img-position, center);}
+    object-position: var(--qui-header-img-position, center);
+}
 
 .page-header__container {
     position: relative;

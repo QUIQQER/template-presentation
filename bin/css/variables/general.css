@@ -53,6 +53,7 @@
     --qui-nav-mobile-social-bar-bg: var(--qui-nav-mobile-social-bar-bg, color-mix(in srgb, var(--qui-nav-mobile-bg) 10%, white)); /* template settings override this variable */
 
     /* header */
+    --qui-page-header-padding-block: var(--theme--qui-page-header-padding-block, calc(var(--qui-nav-height) + 1rem));
     --qui-header-minHeight--desktop: var(--theme--qui-header-minHeight--desktop, var(--template-settings__page-header-minHeightDesktop, 300px));
     --qui-header-minHeight--mobile: var(--theme--qui-header-minHeight--mobile, var(--template-settings__page-header-minHeightMobile, 300px));
     --qui-header-minHeight: var(--qui-header-minHeight--desktop);
