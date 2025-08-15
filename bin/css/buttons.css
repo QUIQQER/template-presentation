@@ -6,7 +6,7 @@ button,
 a.qui-button,
 .btn {
     display: inline-flex;
-    align-items: center;
+    justify-content: center;
     gap: var(--qui-btn-gap);
     font-weight: var(--qui-btn-fontWeight);
     border-width: var(--qui-btn-borderWidth);
