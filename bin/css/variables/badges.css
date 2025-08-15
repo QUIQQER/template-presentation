@@ -1,0 +1,43 @@
+/**
+ * Badges css variables
+ *
+ * Set your own variables by using "--theme" prefix, for example:
+ * - To change success color set variable --theme--qui-color-success
+ * - To change font size set variable --theme--qui-font-size
+ */
+:root {
+    --qui-badge-padding-y: var(--theme--qui-badge-padding-y, 0.4em);
+    --qui-badge-padding-x: var(--theme--qui-badge-padding-x, 0.75em);
+    --qui-badge-fontSize--base: var(--theme--qui-badge-fontSize--base, 0.85em);
+    --qui-badge-fontWeight: var(--theme--qui-badge-fontWeight, normal);
+    --qui-badge-color: var(--theme--qui-badge-color, inherit);
+    --qui-badge-bgColor: var(--theme--qui-badge-bgColor, transparent);
+    --qui-badge-borderRadius: var(--theme--qui-badge-borderRadius, 0.4em);
+
+    --qui-badge-primary-bgColor: var(--theme--qui-badge-primary-bgColor, var(--qui-color-primary));
+    --qui-badge-primary-color: var(--theme--qui-badge-primary-color, #ffffff);
+
+    --qui-badge-secondary-bgColor: var(--theme--qui-badge-secondary-bgColor, var(--qui-color-secondary));
+    --qui-badge-secondary-color: var(--theme--qui-badge-secondary-color, #ffffff);
+
+    --qui-badge-success-bgColor: var(--theme--qui-badge-success-bgColor, var(--qui-color-success));
+    --qui-badge-success-color: var(--theme--qui-badge-success-color, #ffffff);
+
+    --qui-badge-danger-bgColor: var(--theme--qui-badge-danger-bgColor, var(--qui-color-danger));
+    --qui-badge-danger-color: var(--theme--qui-badge-danger-color, #ffffff);
+
+    --qui-badge-warning-bgColor: var(--theme--qui-badge-warning-bgColor, var(--qui-color-warning));
+    --qui-badge-warning-color: var(--theme--qui-badge-warning-color, #000000);
+
+    --qui-badge-info-bgColor: var(--theme--qui-badge-info-bgColor, var(--qui-color-info));
+    --qui-badge-info-color: var(--theme--qui-badge-info-color, #ffffff);
+
+    --qui-badge-light-bgColor: var(--theme--qui-badge-light-bgColor, var(--qui-color-light));
+    --qui-badge-light-color: var(--theme--qui-badge-light-color, #000000);
+
+    --qui-badge-dark-bgColor: var(--theme--qui-badge-dark-bgColor, var(--qui-color-dark));
+    --qui-badge-dark-color: var(--theme--qui-badge-dark-color, #ffffff);
+
+    --qui-badge-white-bgColor: var(--theme--qui-badge-white-bgColor, #fff);
+    --qui-badge-white-color: var(--theme--qui-badge-white-color, #111);
+}

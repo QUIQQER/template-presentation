@@ -1,0 +1,74 @@
+.badge {
+    display: inline-block;
+    padding: var(--qui-badge-padding-y) var(--qui-badge-padding-x);
+    font-size: var(--qui-badge-fontSize--base);
+    font-weight: var(--qui-badge-fontWeight);
+    line-height: 1;
+    color: var(--qui-badge-color);
+    background-color: var(--qui-badge-bgColor);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: var(--qui-badge-borderRadius);
+    font-style: normal;
+}
+
+/* colors */
+.badge--primary {
+    --qui-badge-bgColor: var(--qui-badge-primary-bgColor);
+    --qui-badge-color: var(--qui-badge-primary-color);
+}
+
+.badge--secondary {
+    --qui-badge-bgColor: var(--qui-badge-secondary-bgColor);
+    --qui-badge-color: var(--qui-badge-secondary-color);
+}
+
+.badge--success {
+    --qui-badge-bgColor: var(--qui-badge-success-bgColor);
+    --qui-badge-color: var(--qui-badge-success-color);
+}
+
+.badge--danger {
+    --qui-badge-bgColor: var(--qui-badge-danger-bgColor);
+    --qui-badge-color: var(--qui-badge-danger-color);
+}
+
+.badge--warning {
+    --qui-badge-bgColor: var(--qui-badge-warning-bgColor);
+    --qui-badge-color: var(--qui-badge-warning-color);
+}
+
+.badge--info {
+    --qui-badge-bgColor: var(--qui-badge-info-bgColor);
+    --qui-badge-color: var(--qui-badge-info-color);
+}
+
+.badge--light {
+    --qui-badge-bgColor: var(--qui-badge-light-bgColor);
+    --qui-badge-color: var(--qui-badge-light-color);
+}
+
+.badge--dark {
+    --qui-badge-bgColor: var(--qui-badge-dark-bgColor);
+    --qui-badge-color: var(--qui-badge-dark-color);
+}
+
+.badge--white {
+    --qui-badge-bgColor: var(--qui-badge-white-bgColor);
+    --qui-badge-color: var(--qui-badge-white-color);
+}
+
+/* rounded */
+.badge--pill {
+    border-radius: 10rem;
+}
+
+/* sizing */
+.badge--sm {
+    font-size: 0.7em;
+}
+
+.badge--lg {
+    font-size: 1em;
+}

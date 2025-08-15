@@ -1,4 +1,5 @@
 @import "variables/colors.css";
+@import "variables/badges.css";
 @import "variables/general.css";
 @import "variables/typography.css";
 @import "variables/buttons.css";
@@ -7,6 +8,7 @@
 
 /*@import "reset.css";*/
 @import "buttons.css";
+@import "badges.css";
 @import "fonts.css";
 @import "form.css";
 @import "typography.css";
