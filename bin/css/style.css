@@ -328,7 +328,8 @@ thead {
 .page-header-text__short {
     color: var(--qui-header-text-color);
     text-align: var(--qui-header-text-aligment);
-    width: max(700px, 50%);
+    width: 100%;
+    max-width: 50rem;
 }
 
 .page-header-text__title {
