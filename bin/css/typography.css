@@ -3,7 +3,7 @@
  */
 
 body {
-    color: var(--qui-color-body);
+    color: var(--qui-colors-body);
     font-family: var(--qui-font-family);
     font-size: var(--qui-fs-body, 16px);
     font-weight: var(--qui-text-fontWeight);
@@ -141,7 +141,7 @@ h6,
 
 /* link */
 a {
-    color: var(--qui-color-primary);
+    color: var(--qui-colors-primary);
     max-width: 100%;
     text-decoration: none;
     -moz-transition: all 0.2s ease;
@@ -182,7 +182,7 @@ strong,
 }
 
 .text-muted {
-    color: var(--qui-color-muted);
+    color: var(--qui-colors-muted);
 }
 
 .text-narrow {

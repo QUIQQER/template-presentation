@@ -59,7 +59,7 @@ input[type='radio'] {
 #page input[type='checkbox']:checked + label::before,
 #page input[type='radio']:checked + label::before,
 .pace .pace-progress {
-    background-color: var(--qui-color-primary);
+    background-color: var(--qui-colors-primary);
 }
 
 ::-webkit-input-placeholder {
@@ -115,5 +115,5 @@ input:hover,
 input:focus,
 select:hover,
 select:focus {
-    border-color: var(--qui-color-primary);
+    border-color: var(--qui-colors-primary);
 }

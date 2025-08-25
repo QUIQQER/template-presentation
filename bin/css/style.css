@@ -33,11 +33,11 @@ body {
 .color-main,
 .control-color,
 .mainColor {
-    color: var(--qui-color-primary);
+    color: var(--qui-colors-primary);
 }
 
 .qui-sitetypes-sitemap-block-category .control-background {
-    background-color: var(--qui-color-primary);
+    background-color: var(--qui-colors-primary);
 }
 
 /***********/
@@ -236,7 +236,7 @@ li {
 }
 
 :where(li)::marker {
-    color: var(--qui-color-primary);
+    color: var(--qui-colors-primary);
 }
 
 ul.alt li:first-child {
@@ -1188,7 +1188,7 @@ h2.quiqqer-navigation-title-style {
 .quiqqer-navigation-level-1 a:hover,
 a.quiqqer-navigation-home:hover,
 .quiqqer-navigation-entry:hover .quiqqer-fa-list-icon {
-    color: var(--qui-color-primary);
+    color: var(--qui-colors-primary);
 }
 
 /** page footer
@@ -1280,7 +1280,7 @@ a.quiqqer-navigation-home:hover,
 .page-footer a:where(:not(.button, button):hover) {
     background: none;
     box-shadow: none;
-    color: var(--qui-color-primary);
+    color: var(--qui-colors-primary);
     text-decoration: underline;
 }
 
@@ -1380,12 +1380,12 @@ a.quiqqer-navigation-home:hover,
 /*********************************************************************************/
 /* todo @michael do we need this? */
 .control-background {
-    background: var(--qui-color-primary);
+    background: var(--qui-colors-primary);
 }
 
 /* todo @michael do we need this? */
 .control-background-active {
-    background: var(--qui-color-primary);
+    background: var(--qui-colors-primary);
     color: #FFFFFF;
 }
 
@@ -1406,8 +1406,8 @@ a.quiqqer-navigation-home:hover,
 }
 
 .quiqqer-sheets-desktop a:hover {
-    background-color: var(--qui-color-primary);
-    border: 1px solid var(--qui-color-primary);
+    background-color: var(--qui-colors-primary);
+    border: 1px solid var(--qui-colors-primary);
     color: #fff;
 }
 
@@ -1701,7 +1701,7 @@ a.qui-control-list-entry-imagelink {
 .quiqqer-sheets-desktop-limits a:hover {
     background: none;
     box-shadow: none;
-    color: var(--qui-color-primary);
+    color: var(--qui-colors-primary);
 }
 
 .quiqqer-tags-search-pool .qui-button.qui-button--no-icon {
@@ -1720,8 +1720,8 @@ a.qui-control-list-entry-imagelink {
 
 /* todo @michael.daniel improve css selector */
 .tpl-presentation-row a.qui-tags-tag:hover {
-    border: 1px solid var(--qui-color-primary);
-    color: var(--qui-color-primary);
+    border: 1px solid var(--qui-colors-primary);
+    color: var(--qui-colors-primary);
 }
 
 /*********************************************************************************/
@@ -1766,11 +1766,11 @@ a.qui-control-list-entry-imagelink {
 }
 
 .quiqqer-breadcrumb a {
-    color: var(--qui-color-muted);
+    color: var(--qui-colors-muted);
 }
 
 .template-breadcrumb .quiqqer-breadcrumb ul li:last-child a span:last-child {
-    color: var(--qui-color-primary);
+    color: var(--qui-colors-primary);
 }
 
 /*********************************************************************************/

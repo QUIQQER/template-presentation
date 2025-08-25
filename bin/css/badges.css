@@ -19,9 +19,19 @@
     --qui-badge-color: var(--qui-badge-primary-color);
 }
 
+.badge--primary-light {
+    --qui-badge-bgColor: var(--qui-badge-primary-light-bgColor);
+    --qui-badge-color: var(--qui-badge-primary-light-color);
+}
+
 .badge--secondary {
     --qui-badge-bgColor: var(--qui-badge-secondary-bgColor);
     --qui-badge-color: var(--qui-badge-secondary-color);
+}
+
+.badge--secondary-light {
+    --qui-badge-bgColor: var(--qui-badge-secondary-light-bgColor);
+    --qui-badge-color: var(--qui-badge-secondary-light-color);
 }
 
 .badge--success {
@@ -29,9 +39,19 @@
     --qui-badge-color: var(--qui-badge-success-color);
 }
 
+.badge--success-light {
+    --qui-badge-bgColor: var(--qui-badge-success-light-bgColor);
+    --qui-badge-color: var(--qui-badge-success-light-color);
+}
+
 .badge--danger {
     --qui-badge-bgColor: var(--qui-badge-danger-bgColor);
     --qui-badge-color: var(--qui-badge-danger-color);
+}
+
+.badge--danger-light {
+    --qui-badge-bgColor: var(--qui-badge-danger-light-bgColor);
+    --qui-badge-color: var(--qui-badge-danger-light-color);
 }
 
 .badge--warning {
@@ -39,9 +59,19 @@
     --qui-badge-color: var(--qui-badge-warning-color);
 }
 
+.badge--warning-light {
+    --qui-badge-bgColor: var(--qui-badge-warning-light-bgColor);
+    --qui-badge-color: var(--qui-badge-warning-light-color);
+}
+
 .badge--info {
     --qui-badge-bgColor: var(--qui-badge-info-bgColor);
     --qui-badge-color: var(--qui-badge-info-color);
+}
+
+.badge--info-light {
+    --qui-badge-bgColor: var(--qui-badge-info-light-bgColor);
+    --qui-badge-color: var(--qui-badge-info-light-color);
 }
 
 .badge--light {
@@ -52,6 +82,11 @@
 .badge--dark {
     --qui-badge-bgColor: var(--qui-badge-dark-bgColor);
     --qui-badge-color: var(--qui-badge-dark-color);
+}
+
+.badge--dark-light {
+    --qui-badge-bgColor: var(--qui-badge-dark-light-bgColor);
+    --qui-badge-color: var(--qui-badge-dark-light-color);
 }
 
 .badge--white {
