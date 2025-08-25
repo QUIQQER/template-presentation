@@ -539,9 +539,9 @@ input[type="reset"].btn-white,
 button.qui-button.btn-white,
 button.btn-white,
 .btn-white {
-    background: #fafafa;
-    border-color: #fafafa;
-    color: #393f46;
+    background: var(--qui-btn-white-bg);
+    border-color: var(--qui-btn-white-borderColor);
+    color: var(--qui-btn-white-color);
 }
 
 input[type="submit"].btn-white:hover,
@@ -554,8 +554,8 @@ button.qui-button.btn-white:hover,
 button.qui-button.btn-white:active,
 .btn-white:hover,
 .btn-white:active {
-    background: #eaeaea;
-    color: #393f46;
+    background: var(--qui-btn-white-bg--hover);
+    color: var(--qui-btn-white-color--hover);
     outline: none;
 }
 
