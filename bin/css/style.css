@@ -27,6 +27,7 @@ html {
 
 body {
     height: 100%;
+    background-color: var(--qui-colors-body-bgColor);
 }
 
 /* todo @michael.daniel standardize names */
@@ -896,7 +897,7 @@ input[type="search"].only-input:focus {
 * ========================================================== */
 
 .slideout-panel {
-    background: #fff !important;
+    background: background-color: var(--qui-colors-body-bgColor); !important;
 }
 
 .header-bar-social {

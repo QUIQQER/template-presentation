@@ -230,15 +230,22 @@
             <pl><![CDATA[Miejsce na widgety po głównej zawartości]]></pl>
         </locale>
 
+        <locale name="area.header.title">
+            <de><![CDATA[Kopfbereich - Zusatzbausteinzone (Header)]]></de>
+            <en><![CDATA[Header - extra brick zone]]></en>
+        </locale>
+        <locale name="area.header.description">
+            <de><![CDATA[Diese Zone funktioniert ähnlich wie die "Unterhalb des Kopfbereichs" Zone (Header Suffix). Der einzige Unterschied besteht darin, dass das Menü über dem Baustein schwebt.]]></de>
+            <en><![CDATA[This zone functions similarly to the header suffix zone. The only difference is that the menu floats above the module.]]></en>
+        </locale>
+
         <locale name="area.headerSuffix.title">
             <de><![CDATA[Unterhalb des Kopfbereiches (Header Suffix)]]></de>
             <en><![CDATA[Header suffix]]></en>
-            <pl><![CDATA[Suffix nagłówka]]></pl>
         </locale>
         <locale name="area.headerSuffix.description">
             <de><![CDATA[Bausteinzone nach dem Header]]></de>
             <en><![CDATA[Brick area after the header]]></en>
-            <pl><![CDATA[Miejsce na widgety po nagłówku strony]]></pl>
         </locale>
 
         <locale name="area.footerPrefix.title">
@@ -250,12 +257,6 @@
             <de><![CDATA[Bausteinzone vor dem Footer]]></de>
             <en><![CDATA[Brick area before the footer]]></en>
             <pl><![CDATA[Miejsce na widgety przed stopka strony]]></pl>
-        </locale>
-
-        <locale name="area.header.title">
-            <de><![CDATA[Kopfbereich - Zusatzbausteinzone (Header)]]></de>
-            <en><![CDATA[Header - extra brick zone]]></en>
-            <pl><![CDATA[Nagłówek strony startowej]]></pl>
         </locale>
 
         <!-- template site settings -->

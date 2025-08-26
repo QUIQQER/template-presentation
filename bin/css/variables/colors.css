@@ -5,6 +5,7 @@
  */
 :root {
     --qui-colors-body: var(--template-settings__body-color);
+    --qui-colors-body-bgColor: var(--theme--template-settings__body-bgColor, #fff);
     --qui-colors-muted: var(--qui-colors-muted, #9ba3ad);
 
     /* primary */

@@ -23,10 +23,7 @@
 
     {template_event name="quiqqer::template::header::end" Template=$Template}
 </head>
-<body class="{$bodyClass} page-{$Site->getId()} {$typeClass} {$pageCustomClass}
-            {if !$showHeader} header-hidden {/if}
-            {if $showHeader} header-displayed{/if}" id="body-top"
->
+<body class="{$bodyClass} page-{$Site->getId()} {$typeClass} {$pageCustomClass} {if !$showHeader}header-hidden{/if} {if $showHeader}header-displayed{/if}" id="body-top">
 
 {template_event name="quiqqer::template::body::begin" Template=$Template}
 
