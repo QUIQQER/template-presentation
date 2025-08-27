@@ -36,7 +36,8 @@ if ($Site->getAttribute('templatePresentation.showTitle') || $Site->getAttribute
  * Mega menu
  */
 $params = [
-    'showStart' => false
+    'showStart' => false,
+    'subMenuIndicator' => 'fa-caret-down'
 ];
 
 if (
