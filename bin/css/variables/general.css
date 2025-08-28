@@ -39,20 +39,6 @@
     --qui-tpl-spacing--top: var(--theme--qui-tpl-spacing--top, var(--qui-row-spacing));
     --qui-tpl-spacing--bottom: var(--theme--qui-tpl-spacing--bottom, var(--qui-row-spacing));
 
-    /* nav */
-    --qui-nav-color: var(--theme--qui-nav-color, var(--template-settings__nav-link-color, #ffffff));
-    --qui-nav-position: var(--theme--qui-nav-position, var(--template-settings__nav-position, absolute));
-    --qui-nav-bgColor: var(--theme--qui-nav-bgColor, var(--template-settings__nav-bgColor ,#2d4d88));
-    --qui-nav-subMenu-bgColor: var(--theme--qui-nav-subMenu-bgColor, var(--template-settings__nav-subMenu-bgColor ,#2d4d88));
-    --qui-nav-bgColor--lighter: var(--theme--qui-nav-bgColor--lighter, color-mix(in srgb, var(--qui-nav-bgColor) 10%, white));
-    /*--qui-nav-openerMobileBtn-show: var(--theme----qui-nav-openerMobileBtn-show, none);*/
-    --qui-nav-height: var(--template-settings__nav-height);
-    --qui-nav-scrolled-bg: var(--theme--qui-nav-scrolled-bg, var(--template-settings__nav-bgColor--scrolled));
-    --qui-body-container-top: var(--template-settings__body-container-top);
-    --qui-nav-mobile-bg: var(--theme--qui-nav-mobile-bg, var(--template-settings__nav-mobile-bgColor, #252122));
-    --qui-nav-mobile-font-color: var(--theme--qui-nav-mobile-font-color, var(--template-settings__nav-mobile-text-color, #ffffff));
-    --qui-nav-mobile-social-bar-bg: var(--qui-nav-mobile-social-bar-bg, color-mix(in srgb, var(--qui-nav-mobile-bg) 10%, white)); /* template settings override this variable */
-
     /* header */
     --qui-page-header-padding-block: var(--theme--qui-page-header-padding-block, calc(var(--qui-nav-height) + 1rem));
     --qui-header-minHeight--desktop: var(--theme--qui-header-minHeight--desktop, var(--template-settings__page-header-minHeightDesktop, 300px));

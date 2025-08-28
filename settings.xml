@@ -536,6 +536,37 @@
                                 </text>
                             </input>
 
+                            <!-- nav style -->
+                            <select conf="templatePresentation.settings.navStyle">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navStyle.text"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navStyle.description"
+                                    />
+                                </description>
+
+                                <option value="default">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navStyle.default"
+                                    />
+                                </option>
+                                <option value="none">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navStyle.none"
+                                    />
+                                </option>
+                                <option value="style1">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navStyle.style1"
+                                    />
+                                </option>
+                            </select>
+
                             <!-- nav attachment -->
                             <select conf="templatePresentation.settings.navPos">
                                 <text>

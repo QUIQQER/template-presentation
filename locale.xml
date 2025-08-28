@@ -744,6 +744,28 @@
             <en><![CDATA[Scroll - page menu is no longer visible when the page is scrolled down.]]></en>
         </locale>
 
+        <!-- nav style -->
+        <locale name="templatePresentation.settings.navStyle.text">
+            <de><![CDATA[Menu Design]]></de>
+            <en><![CDATA[Menu style]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navStyle.description">
+            <de><![CDATA[Mit dieser Option kann das Design des Menüs angepasst werden. Die Auswahl „Kein Design“ sorgt dafür, dass keine templatespezifischen Anpassungen am Menü vorgenommen werden. Es wird lediglich das Standarddesign des Menü-Moduls verwendet. Diese Option ist sinnvoll, wenn ein Kind-Template eingesetzt wird und das Menü individuell per CSS gestaltet werden soll.]]></de>
+            <en><![CDATA[This option allows you to customize the menu design. Selecting “No Design” means that no template-specific adjustments will be applied to the menu. Only the default design of the menu module will be used. This option is useful when using a child template and you want to style the menu individually with your own CSS.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navStyle.default">
+            <de><![CDATA[Standarddesign des Templates]]></de>
+            <en><![CDATA[Template default design]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navStyle.none">
+            <de><![CDATA[Kein Design]]></de>
+            <en><![CDATA[No style]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navStyle.style1">
+            <de><![CDATA[Design 1]]></de>
+            <en><![CDATA[Style 1]]></en>
+        </locale>
+
         <!-- nav alignment -->
         <locale name="templatePresentation.settings.navAlignment.text">
             <de><![CDATA[Menü Ausrichtung]]></de>

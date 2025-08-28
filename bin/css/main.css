@@ -3,6 +3,7 @@
 @import "variables/general.css";
 @import "variables/typography.css";
 @import "variables/buttons.css";
+@import "variables/nav.css";
 
 /* todo: remove */
 
@@ -11,5 +12,6 @@
 @import "badges.css";
 @import "fonts.css";
 @import "form.css";
+@import "nav.css";
 @import "typography.css";
 @import "style.css";
