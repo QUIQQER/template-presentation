@@ -14,7 +14,7 @@
     --qui-line-height-lg: 2.5;
 
     /* text */
-    --qui-text-fontWeight: var(--theme--qui-text-fontWeight, var(--template-settings__body-font-weight, 700));
+    --qui-text-fontWeight: var(--theme--qui-text-fontWeight, var(--template-settings__body-font-weight, 400));
 
     /* text: font size */
     /* the calculated values base on 16px */
