@@ -197,7 +197,7 @@ class Utils
                 break;
         }
 
-        $navStyle = match($Project->getConfig('templatePresentation.settings.navStyle')) {
+        $navStyle = match ($Project->getConfig('templatePresentation.settings.navStyle')) {
             'none', 'style1' => $Project->getConfig('templatePresentation.settings.navStyle'),
             default => 'default'
         };
