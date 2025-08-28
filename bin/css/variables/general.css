@@ -45,6 +45,7 @@
     --qui-nav-bgColor: var(--theme--qui-nav-bgColor, var(--template-settings__nav-bgColor ,#2d4d88));
     --qui-nav-subMenu-bgColor: var(--theme--qui-nav-subMenu-bgColor, var(--template-settings__nav-subMenu-bgColor ,#2d4d88));
     --qui-nav-bgColor--lighter: var(--theme--qui-nav-bgColor--lighter, color-mix(in srgb, var(--qui-nav-bgColor) 10%, white));
+    /*--qui-nav-openerMobileBtn-show: var(--theme----qui-nav-openerMobileBtn-show, none);*/
     --qui-nav-height: var(--template-settings__nav-height);
     --qui-nav-scrolled-bg: var(--theme--qui-nav-scrolled-bg, var(--template-settings__nav-bgColor--scrolled));
     --qui-body-container-top: var(--template-settings__body-container-top);

@@ -197,6 +197,11 @@ class Utils
                 break;
         }
 
+        $navStyle = match($Project->getConfig('templatePresentation.settings.navStyle')) {
+            'none', 'style1' => $Project->getConfig('templatePresentation.settings.navStyle'),
+            default => 'default'
+        };
+
         /**
          * css settings
          */
@@ -216,7 +221,7 @@ class Utils
             'cssVariables' => $cssVariables,
             'typeClass' => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'navPos' => $Project->getConfig('templatePresentation.settings.navPos'),
-            'navAlignment' => $Project->getConfig('templatePresentation.settings.navAlignment'),
+            'navStyle' => $navStyle,
             'headerArea' => $headerArea,
             'showPageTitle' => $showPageTitle,
             'showPageShort' => $showPageShort,
@@ -615,6 +620,11 @@ class Utils
 
         $navPositionCSS = 'absolute';
         $bodyContainerTop = $navHeight;
+        $navAlignment = match (self::$Project->getConfig('templatePresentation.settings.navAlignment')) {
+            'center' => 'center',
+            'right' => 'flex-end',
+            default => 'flex-start'
+        };
 
         if ($navPos == 'fix') {
             $navPositionCSS = 'fixed';
@@ -712,6 +722,7 @@ class Utils
 
             /* nav */
             'navPosition' => $navPositionCSS,
+            'navAlignment' => $navAlignment,
             'navLinkColor' => $navBarFontColor,
             'navBgColor' => $navBgColor,
             'navBgColorScrolled' => $navBgColorScrolled,
