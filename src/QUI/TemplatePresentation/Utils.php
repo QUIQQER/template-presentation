@@ -652,6 +652,25 @@ class Utils
             );
         }
 
+        // page settings for nav initial transparent
+        if (self::$Site->getAttribute('templatePresentation.nav.initialTransparent.linkColor')) {
+            $navInitialTransparentLinkColor = self::$Site->getAttribute(
+                'templatePresentation.nav.initialTransparent.linkColor'
+            );
+        }
+
+        if (self::$Site->getAttribute('templatePresentation.nav.initialTransparent.linkColorHover')) {
+            $navInitialTransparentLinkColorHover = self::$Site->getAttribute(
+                'templatePresentation.nav.initialTransparent.linkColorHover'
+            );
+        }
+
+        if (self::$Site->getAttribute('templatePresentation.nav.initialTransparent.linkBgColorHover')) {
+            $navInitialTransparentLinkBgColorHover = self::$Site->getAttribute(
+                'templatePresentation.nav.initialTransparent.linkBgColorHover'
+            );
+        }
+
 
         if (self::$Project->getConfig('templatePresentation.settings.mobileFontColor')) {
             $navMobileTextColor = self::$Project->getConfig('templatePresentation.settings.mobileFontColor');

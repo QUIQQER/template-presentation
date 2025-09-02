@@ -377,7 +377,26 @@
             <de><![CDATA[Die Option ermöglichst separates und unabhängiges Menü für eine einzelne Seite zu setzen.]]></de>
             <en><![CDATA[The option allows to set separate and independent menu for single page.]]></en>
         </locale>
-
+        <locale name="templatePresentation.siteSettings.nav.title">
+            <de><![CDATA[Template Presentation: Navigationsleiste]]></de>
+            <en><![CDATA[Template Presentation: Nav bar]]></en>
+        </locale>
+        <locale name="templatePresentation.nav.initialTransparent.desc">
+            <de><![CDATA[Wenn die Navigationsleiste fixiert ist (immer oben sichtbar) und die Option „Navigationsleiste ist initial transparent“ in den Projekteinstellungen aktiviert ist, können die Menüpunkte unter Umständen schwer lesbar sein. Mit den folgenden Optionen können die Farben für jede Seite individuell angepasst werden, sodass sie zum Hintergrundbild passen.]]></de>
+            <en><![CDATA[If the navigation bar is fixed (always visible at the top) and the "Navigation bar is initially transparent" option is enabled in the project settings, the menu items may be difficult to read in some cases. With the options below, you can define the colors for each page individually to match the background image.]]></en>
+        </locale>
+1        <locale name="templatePresentation.nav.initialTransparent.linkColor">
+        <de><![CDATA[Linkfarbe (transparente Navigationsleiste)]]></de>
+        <en><![CDATA[Link color (navigation bar is transparent)]]></en>
+        </locale>
+        <locale name="templatePresentation.nav.initialTransparent.linkColorHover">
+            <de><![CDATA[Linkfarbe beim Hover (transparente Navigationsleiste)]]></de>
+            <en><![CDATA[Link color on hover(navigation bar is transparent)]]></en>
+        </locale>
+        <locale name="templatePresentation.nav.initialTransparent.linkBgColorHover">
+            <de><![CDATA[Linkfarbe beim Hover (transparente Navigationsleiste)]]></de>
+            <en><![CDATA[Link color on hover(navigation bar is transparent)]]></en>
+        </locale>
 
 
         <locale name="package.title">
@@ -810,8 +829,8 @@
             <en><![CDATA[Navigation bar is initially transparent]]></en>
         </locale>
         <locale name="templatePresentation.settings.navBarInitialTransparent.desc">
-            <de><![CDATA[Die Navigationsleiste ist standardmäßig transparent, wenn ein Header-Bild aktiviert ist oder ein Baustein in der Zone „Kopfbereich – Zusatzbausteinzone (Header)“ gesetzt ist. Sobald das Menü oben fixiert ist, erhält sie die zuvor eingestellten Farben.]]></de>
-            <en><![CDATA[The navigation bar is transparent by default if a header image is enabled or a widget is placed in the "Header – Additional Widget Area". When the menu is fixed at the top, it uses the previously configured colors.]]></en>
+            <de><![CDATA[Wenn die Navigationsleiste fixiert ist (immer oben sichtbar), hat sie standardmäßig die eingestellte Hintergrundfarbe. Aktiviert man die Option, wird die Navigationsleiste initial transparent, wenn ein Header-Bild aktiviert ist oder ein Baustein in der Zone „Kopfbereich – Zusatzbausteinzone (Header)“ gesetzt ist. Sobald die Seite gescrollt wird, erhält sie die zuvor eingestellten Farben.]]></de>
+            <en><![CDATA[When the navigation bar is fixed (always visible at the top), it has the configured background color by default. If you activate this option, the navigation bar will initially be transparent when a header image is enabled or a widget is placed in the "Header – Additional Widget Area". As soon as the page is scrolled, it will use the previously configured colors.]]></en>
         </locale>
         <locale name="templatePresentation.settings.navBarInitialTransparentLinkColor.text">
             <de><![CDATA[Linkfarbe (transparente Navigationsleiste)]]></de>
