@@ -44,6 +44,14 @@
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>80</defaultvalue>
                     </conf>
+                    <conf name="navMaxWidth">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>1200px</defaultvalue>
+                    </conf>
+                    <conf name="navStyle">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>default</defaultvalue>
+                    </conf>
                     <conf name="navPos">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>scroll</defaultvalue>
@@ -223,13 +231,28 @@
                     <conf name="social.facebook">
                         <type><![CDATA[string]]></type>
                     </conf>
-                    <conf name="social.twitter">
+                    <conf name="social.instagram">
                         <type><![CDATA[string]]></type>
                     </conf>
-                    <conf name="social.google">
+                    <conf name="social.tiktok">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.pinterest">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.x">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.linkedin">
                         <type><![CDATA[string]]></type>
                     </conf>
                     <conf name="social.youtube">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.whatsapp">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.telegram">
                         <type><![CDATA[string]]></type>
                     </conf>
                     <conf name="social.github">
@@ -555,6 +578,19 @@
                                 </text>
                             </input>
 
+                            <input conf="templatePresentation.settings.navMaxWidth" type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.nav.maxWidth"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.nav.maxWidth.desc"
+                                    />
+                                </description>
+                            </input>
+
                             <!-- nav style -->
                             <select conf="templatePresentation.settings.navStyle">
                                 <text>
@@ -569,19 +605,24 @@
                                     />
                                 </description>
 
-                                <option value="default">
-                                    <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.navStyle.default"
-                                    />
-                                </option>
                                 <option value="none">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.navStyle.none"
                                     />
                                 </option>
-                                <option value="style1">
+                                <option value="default">
                                     <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.navStyle.style1"
+                                            var="templatePresentation.settings.navStyle.default"
+                                    />
+                                </option>
+                                <option value="defaultWithBigButtons">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navStyle.defaultWithBigButtons"
+                                    />
+                                </option>
+                                <option value="pill">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navStyle.pill"
                                     />
                                 </option>
                             </select>
@@ -1123,23 +1164,53 @@
                                     />
                                 </text>
                             </input>
-                            <!-- twitter -->
-                            <input conf="templatePresentation.settings.social.twitter"
-                                   placeholder="https://www.twitter.com"
+                            <!-- facebook -->
+                            <input conf="templatePresentation.settings.social.instagram"
+                                   placeholder="https://www.instagram.com"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="social.twitter"
+                                            var="social.instagram"
                                     />
                                 </text>
                             </input>
-                            <!-- google -->
-                            <input conf="templatePresentation.settings.social.google"
-                                   placeholder="https://www.google.com"
+                            <!-- tiktok -->
+                            <input conf="templatePresentation.settings.social.tiktok"
+                                   placeholder="https://www.tiktok.com"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="social.google"
+                                            var="social.tiktok"
+                                    />
+                                </text>
+                            </input>
+                            <!-- pinterest -->
+                            <input conf="templatePresentation.settings.social.pinterest"
+                                   placeholder="https://www.pinterest.com"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.pinterest"
+                                    />
+                                </text>
+                            </input>
+                            <!-- x / twitter -->
+                            <input conf="templatePresentation.settings.social.x"
+                                   placeholder="https://www.x.com"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.x"
+                                    />
+                                </text>
+                            </input>
+                            <!-- linkedin -->
+                            <input conf="templatePresentation.settings.social.linkedin"
+                                   placeholder="https://www.linkedin.com"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.linkedin"
                                     />
                                 </text>
                             </input>
@@ -1150,6 +1221,26 @@
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="social.youtube"
+                                    />
+                                </text>
+                            </input>
+                            <!-- whatsapp -->
+                            <input conf="templatePresentation.settings.social.whatsapp"
+                                   placeholder="https://www.whatsapp.com"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.whatsapp"
+                                    />
+                                </text>
+                            </input>
+                            <!-- telegram -->
+                            <input conf="templatePresentation.settings.social.telegram"
+                                   placeholder="https://www.telegram.com"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.telegram"
                                     />
                                 </text>
                             </input>

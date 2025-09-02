@@ -731,18 +731,19 @@
         <locale name="templatePresentation.settings.navBar.title">
             <de><![CDATA[Navigationsbar Einstellungen]]></de>
             <en><![CDATA[Nav bar settings]]></en>
-            <pl><![CDATA[Ustawienia paska nawigacyjnego]]></pl>
         </locale>
 
         <locale name="templatePresentation.settings.navBar.Height.text">
             <de><![CDATA[Navigationsbar Höhe (in Pixel)]]></de>
             <en><![CDATA[Nav bar Height (in pixel)]]></en>
-            <pl><![CDATA[Wysokość (w pikselach)]]></pl>
         </locale>
-        <locale name="templatePresentation.settings.navBar.Height.text">
-            <de><![CDATA[Navigationsbar Höhe (in Pixel)]]></de>
-            <en><![CDATA[Nav bar Height (in pixel)]]></en>
-            <pl><![CDATA[Wysokość (w pikselach)]]></pl>
+        <locale name="templatePresentation.settings.nav.maxWidth">
+            <de><![CDATA[Navigationsbar Breite]]></de>
+            <en><![CDATA[Nav bar width]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.nav.maxWidth.desc">
+            <de><![CDATA[Jeder gültige CSS-Wert ist erlaubt, z. B. 100%, 100vw, 500px, 40rem usw. Standardwert: 1200px.]]></de>
+            <en><![CDATA[Any valid CSS value is allowed, e.g. 100%, 100vw, 500px, 40rem, etc. Default value: 1200px.]]></en>
         </locale>
 
         <!-- nav attachment -->
@@ -772,17 +773,21 @@
             <de><![CDATA[Mit dieser Option kann das Design des Menüs angepasst werden. Die Auswahl „Kein Design“ sorgt dafür, dass keine templatespezifischen Anpassungen am Menü vorgenommen werden. Es wird lediglich das Standarddesign des Menü-Moduls verwendet. Diese Option ist sinnvoll, wenn ein Kind-Template eingesetzt wird und das Menü individuell per CSS gestaltet werden soll.]]></de>
             <en><![CDATA[This option allows you to customize the menu design. Selecting “No Design” means that no template-specific adjustments will be applied to the menu. Only the default design of the menu module will be used. This option is useful when using a child template and you want to style the menu individually with your own CSS.]]></en>
         </locale>
-        <locale name="templatePresentation.settings.navStyle.default">
-            <de><![CDATA[Standarddesign des Templates]]></de>
-            <en><![CDATA[Template default design]]></en>
-        </locale>
         <locale name="templatePresentation.settings.navStyle.none">
             <de><![CDATA[Kein Design]]></de>
             <en><![CDATA[No style]]></en>
         </locale>
-        <locale name="templatePresentation.settings.navStyle.style1">
-            <de><![CDATA[Design 1]]></de>
-            <en><![CDATA[Style 1]]></en>
+        <locale name="templatePresentation.settings.navStyle.default">
+            <de><![CDATA[Standarddesign des Templates]]></de>
+            <en><![CDATA[Template default design]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navStyle.defaultWithBigButtons">
+            <de><![CDATA[Standarddesign des Templates mit großen klickbaren Menüpunkten]]></de>
+            <en><![CDATA[Template default design with big buttons]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navStyle.pill">
+            <de><![CDATA[Navigation in Pillen-Form]]></de>
+            <en><![CDATA[Pill shaped navigation]]></en>
         </locale>
 
         <!-- nav alignment -->

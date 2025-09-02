@@ -90,13 +90,8 @@ if (
     }
     if ($Project->getConfig('templatePresentation.settings.social.twitter')) {
         $socialHTML .= '<a href="' .
-            $Project->getConfig('templatePresentation.settings.social.twitter')
+            $Project->getConfig('templatePresentation.settings.social.x-twitter')
             . '" target="_blank"><span class="fa fa-twitter"></span></a>';
-    }
-    if ($Project->getConfig('templatePresentation.settings.social.google')) {
-        $socialHTML .= '<a href="' .
-            $Project->getConfig('templatePresentation.settings.social.google')
-            . '" target="_blank"><span class="fa fa-google-plus"></span></a>';
     }
     if ($Project->getConfig('templatePresentation.settings.social.youtube')) {
         $socialHTML .= '<a href="' .

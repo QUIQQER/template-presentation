@@ -197,11 +197,6 @@ class Utils
                 break;
         }
 
-        $navStyle = match ($Project->getConfig('templatePresentation.settings.navStyle')) {
-            'none', 'style1' => $Project->getConfig('templatePresentation.settings.navStyle'),
-            default => 'default'
-        };
-
         /**
          * css settings
          */
@@ -218,6 +213,17 @@ class Utils
         }
 
         /**
+         * Nav style
+         */
+        $a = $Project->getConfig('templatePresentation.settings.navStyle');
+        $navStyle = match ($Project->getConfig('templatePresentation.settings.navStyle')) {
+            'default', 'none', 'defaultWithBigButtons', 'pill' => $Project->getConfig(
+                'templatePresentation.settings.navStyle'
+            ),
+            default => 'default'
+        };
+
+        /**
          * Include demo css
          */
         $includeDemoCss = $Project->getConfig('templatePresentation.settings.includeDemoStyling');
@@ -230,6 +236,7 @@ class Utils
             'cssVariables' => $cssVariables,
             'typeClass' => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'navPos' => $Project->getConfig('templatePresentation.settings.navPos'),
+            '' => $Project->getConfig('templatePresentation.settings.navMaxWidth'),
             'navStyle' => $navStyle,
             'navInitialTransparent' => $navInitialTransparent,
             'headerArea' => $headerArea,
@@ -789,6 +796,7 @@ class Utils
             'navInitialTransparentLinkBgColorHover' => $navInitialTransparentLinkBgColorHover,
             'navSubMenuBgColor' => '#fafafa', /* todo as setting */
             'navHeight' => $navHeight,
+            'navMaxWidth' => self::$Project->getConfig('templatePresentation.settings.navMaxWidth'),
             'navMobileBgColor' => $navMobileBgColor,
             'navMobileTextColor' => $navMobileTextColor,
 
