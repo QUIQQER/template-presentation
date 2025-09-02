@@ -4,7 +4,7 @@
     :root {
         /* general */
         --template-settings__scroll-offset: {$css['scrollOffset']}px;
-        --template-settings__body-container-top: {$css['bodyContainerTop']}px;
+        --template-settings__body-spacing-top: {$css['bodySpacingTop']}px;
 
         /* colors */
         --template-settings__color-primary: {$css['colorPrimary']};
@@ -20,9 +20,14 @@
         /* nav */
         --template-settings__nav-position: {$css['navPosition']};
         --template-settings__nav-aligment: {$css['navAlignment']};
-        --template-settings__nav-link-color: {$css['navLinkColor']};
         --template-settings__nav-bgColor: {$css['navBgColor']};
         --template-settings__nav-bgColor--scrolled: {$css['navBgColorScrolled']};
+        --template-settings__nav-link-color: {$css['navLinkColor']};
+        {if $css['navLinkColorHover']}--template-settings__nav-link-color--hover: {$css['navLinkColorHover']};{/if}
+        {if $css['navLinkBgColorHover']}--template-settings__nav-link-bgColor--hover: {$css['navLinkBgColorHover']};{/if}
+        {if $css['navInitialTransparentLinkColor']}--template-settings__nav-initialTransparent-link-color: {$css['navInitialTransparentLinkColor']};{/if}
+        {if $css['navInitialTransparentLinkColorHover']}--template-settings__nav-initialTransparent-link-color--hover: {$css['navInitialTransparentLinkColorHover']};{/if}
+        {if $css['navInitialTransparentLinkBgColorHover']}--template-settings__nav-initialTransparent-link-bgColor--hover: {$css['navInitialTransparentLinkBgColorHover']};{/if}
         --template-settings__nav-subMenu-bgColor: {$css['navSubMenuBgColor']};
         --template-settings__nav-height: {$css['navHeight']}px;
         --template-settings__nav-mobile-bgColor: {$css['navMobileBgColor']};

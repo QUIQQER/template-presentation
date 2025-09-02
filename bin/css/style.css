@@ -126,14 +126,7 @@ img {
 }
 
 .body-container {
-    position: relative;
-    top: var(--qui-body-container-top);
-}
-
-/* todo @michael.daniel check if needed */
-.start-page .body-container {
-    position: relative;
-    top: var(--qui-body-container-top);
+    padding-top: var(--qui-body-spacing-top);
 }
 
 .sidebox-button {

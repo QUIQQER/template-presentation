@@ -209,6 +209,15 @@ class Utils
         $cssVariables = self::getCssVariables($headerArea, $showHeader);
 
         /**
+         * Nav bar initial transparent
+         */
+        $navInitialTransparent = false;
+
+        if ($headerArea || $showHeader) {
+            $navInitialTransparent = $Project->getConfig('templatePresentation.settings.navBarInitialTransparent');
+        }
+
+        /**
          * Include demo css
          */
         $includeDemoCss = $Project->getConfig('templatePresentation.settings.includeDemoStyling');
@@ -222,6 +231,7 @@ class Utils
             'typeClass' => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'navPos' => $Project->getConfig('templatePresentation.settings.navPos'),
             'navStyle' => $navStyle,
+            'navInitialTransparent' => $navInitialTransparent,
             'headerArea' => $headerArea,
             'showPageTitle' => $showPageTitle,
             'showPageShort' => $showPageShort,
@@ -587,28 +597,61 @@ class Utils
         }
 
         if (self::$Project->getConfig('templatePresentation.settings.typography.heading.fontWeight')) {
-            $headingFontWeight = self::$Project->getConfig('templatePresentation.settings.typography.heading.fontWeight');
+            $headingFontWeight = self::$Project->getConfig(
+                'templatePresentation.settings.typography.heading.fontWeight'
+            );
         }
 
         /**
          * Nav
          */
         $navBgColor = '#2d4d88';
-        $navBarFontColor = '#ffffff';
+        $navBgColorScrolled = $navBgColor;
+        $navLinkColor = '#ffffff';
+        $navLinkColorHover = $navLinkColor;
+        $navLinkBgColorHover = '';
+        $navInitialTransparentLinkColor = '';
+        $navInitialTransparentLinkColorHover = '';
+        $navInitialTransparentLinkBgColorHover = '';
         $navMobileTextColor = '#ffffff';
         $navMobileBgColor = '#252122';
         $navHeight = (int)self::$Project->getConfig('templatePresentation.settings.navBarHeight');
         $navPos = self::$Project->getConfig('templatePresentation.settings.navPos');
 
-        if (self::$Project->getConfig('templatePresentation.settings.navBarMainColor')) {
-            $navBgColor = self::$Project->getConfig('templatePresentation.settings.navBarMainColor');
+        if (self::$Project->getConfig('templatePresentation.settings.navBarBgColor')) {
+            $navBgColor = self::$Project->getConfig('templatePresentation.settings.navBarBgColor');
         }
 
-        $navBgColorScrolled = $navBgColor;
-
-        if (self::$Project->getConfig('templatePresentation.settings.navBarFontColor')) {
-            $navBarFontColor = self::$Project->getConfig('templatePresentation.settings.navBarFontColor');
+        if (self::$Project->getConfig('templatePresentation.settings.navBarLinkColor')) {
+            $navLinkColor = self::$Project->getConfig('templatePresentation.settings.navBarLinkColor');
         }
+
+        if (self::$Project->getConfig('templatePresentation.settings.navBarLinkColorHover')) {
+            $navLinkColorHover = self::$Project->getConfig('templatePresentation.settings.navBarLinkColorHover');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.navBarLinkBgColorHover')) {
+            $navLinkBgColorHover = self::$Project->getConfig('templatePresentation.settings.navBarLinkBgColorHover');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.navBarInitialTransparentLinkColor')) {
+            $navInitialTransparentLinkColor = self::$Project->getConfig(
+                'templatePresentation.settings.navBarInitialTransparentLinkColor'
+            );
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.navBarInitialTransparentLinkColorHover')) {
+            $navInitialTransparentLinkColorHover = self::$Project->getConfig(
+                'templatePresentation.settings.navBarInitialTransparentLinkColorHover'
+            );
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.navBarInitialTransparentLinkBgColorHover')) {
+            $navInitialTransparentLinkBgColorHover = self::$Project->getConfig(
+                'templatePresentation.settings.navBarInitialTransparentLinkBgColorHover'
+            );
+        }
+
 
         if (self::$Project->getConfig('templatePresentation.settings.mobileFontColor')) {
             $navMobileTextColor = self::$Project->getConfig('templatePresentation.settings.mobileFontColor');
@@ -619,7 +662,7 @@ class Utils
         }
 
         $navPositionCSS = 'absolute';
-        $bodyContainerTop = $navHeight;
+        $bodySpacingTop = $navHeight;
         $navAlignment = match (self::$Project->getConfig('templatePresentation.settings.navAlignment')) {
             'center' => 'center',
             'right' => 'flex-end',
@@ -694,20 +737,14 @@ class Utils
             $scrollOffset = $navHeight + 10;
         }
 
-        if ($headerArea) {
-            $bodyContainerTop = 0;
-            $navBgColor = 'transparent';
-        }
-
-        if ($showHeader) {
-            $bodyContainerTop = 0;
-            $navBgColor = 'transparent';
+        if ($headerArea || $showHeader) {
+            $bodySpacingTop = 0;
         }
 
         return [
             /* general */
             'scrollOffset' => $scrollOffset,
-            'bodyContainerTop' => $bodyContainerTop,
+            'bodySpacingTop' => $bodySpacingTop,
 
             /* colors */
             'colorPrimary' => $colorMain,
@@ -723,9 +760,14 @@ class Utils
             /* nav */
             'navPosition' => $navPositionCSS,
             'navAlignment' => $navAlignment,
-            'navLinkColor' => $navBarFontColor,
             'navBgColor' => $navBgColor,
             'navBgColorScrolled' => $navBgColorScrolled,
+            'navLinkColor' => $navLinkColor,
+            'navLinkColorHover' => $navLinkColorHover,
+            'navLinkBgColorHover' => $navLinkBgColorHover,
+            'navInitialTransparentLinkColor' => $navInitialTransparentLinkColor,
+            'navInitialTransparentLinkColorHover' => $navInitialTransparentLinkColorHover,
+            'navInitialTransparentLinkBgColorHover' => $navInitialTransparentLinkBgColorHover,
             'navSubMenuBgColor' => '#fafafa', /* todo as setting */
             'navHeight' => $navHeight,
             'navMobileBgColor' => $navMobileBgColor,

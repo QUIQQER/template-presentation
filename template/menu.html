@@ -3,7 +3,12 @@
 {assign var=t value=$MegaMenu->prependHTML({fetch template="template/menu/prefix.html" Site=$Site Template=$Template})}
 {assign var=t value=$MegaMenu->appendHTML({fetch template="template/menu/suffix.html" Site=$Site Template=$Template})}
 
-<div class="header-bar header-bar-position-{$Setting->getAttribute('navPos')}">
+{assign var=navInitialTransparentClass value=''}
+{if $Setting->getAttribute('navInitialTransparent')}
+    {assign var=navInitialTransparentClass value='header-bar--initial-transparent'}
+{/if}
+
+<div class="header-bar {$navInitialTransparentClass}">
     <div class="grid-container header-bar-inner">
         <div class="header-bar-inner-nav" id="navigation">
             {$MegaMenu->create()}

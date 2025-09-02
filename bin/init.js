@@ -130,19 +130,19 @@ whenQuiLoaded().then(() => {
 
             // background on load
             if (QUI.getScroll().y > breakPoint) {
-                headerBar.addClass('header-bar-scrolled');
+                headerBar.addClass('header-bar--scrolled');
                 navBackground = true;
             }
 
             QUI.addEvent('scroll', function () {
                 if (QUI.getScroll().y > breakPoint) {
                     if (!navBackground) {
-                        headerBar.addClass('header-bar-scrolled');
+                        headerBar.addClass('header-bar--scrolled');
                         navBackground = true;
                     }
                     return;
                 }
-                headerBar.removeClass('header-bar-scrolled');
+                headerBar.removeClass('header-bar--scrolled');
                 navBackground = false;
 
             });

@@ -232,7 +232,7 @@
 
         <locale name="area.header.title">
             <de><![CDATA[Kopfbereich - Zusatzbausteinzone (Header)]]></de>
-            <en><![CDATA[Header - extra brick zone]]></en>
+            <en><![CDATA[Header – Additional widget area]]></en>
         </locale>
         <locale name="area.header.description">
             <de><![CDATA[Diese Zone funktioniert ähnlich wie die "Unterhalb des Kopfbereichs" Zone (Header Suffix). Der einzige Unterschied besteht darin, dass das Menü über dem Baustein schwebt.]]></de>
@@ -789,15 +789,41 @@
         </locale>
 
         <!-- Navbar colors -->
-        <locale name="templatePresentation.settings.navBarMainColor.text">
+        <locale name="templatePresentation.settings.navBarBgColor.text">
             <de><![CDATA[Menü Hintergrundfarbe]]></de>
             <en><![CDATA[Nav background color]]></en>
-            <pl><![CDATA[Kolor tła nawigacji]]></pl>
         </locale>
-        <locale name="templatePresentation.settings.navBarFontColor.text">
-            <de><![CDATA[Menü Schriftfarbe]]></de>
-            <en><![CDATA[Nav font color]]></en>
-            <pl><![CDATA[Kolor czcionki]]></pl>
+        <locale name="templatePresentation.settings.navBarLinkColor.text">
+            <de><![CDATA[Linkfarbe]]></de>
+            <en><![CDATA[Link color]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarLinkColorHover.text">
+            <de><![CDATA[Linkfarbe beim Hover]]></de>
+            <en><![CDATA[Link color on hover]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarLinkBgColorHover.text">
+            <de><![CDATA[Linkhintergrundfarbe beim Hover]]></de>
+            <en><![CDATA[Link background color on hover]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarInitialTransparent.text">
+            <de><![CDATA[Navigationsleiste ist initial transparent]]></de>
+            <en><![CDATA[Navigation bar is initially transparent]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarInitialTransparent.desc">
+            <de><![CDATA[Die Navigationsleiste ist standardmäßig transparent, wenn ein Header-Bild aktiviert ist oder ein Baustein in der Zone „Kopfbereich – Zusatzbausteinzone (Header)“ gesetzt ist. Sobald das Menü oben fixiert ist, erhält sie die zuvor eingestellten Farben.]]></de>
+            <en><![CDATA[The navigation bar is transparent by default if a header image is enabled or a widget is placed in the "Header – Additional Widget Area". When the menu is fixed at the top, it uses the previously configured colors.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarInitialTransparentLinkColor.text">
+            <de><![CDATA[Linkfarbe (transparente Navigationsleiste)]]></de>
+            <en><![CDATA[Link color (navigation bar is transparent)]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarInitialTransparentLinkColorHover.text">
+            <de><![CDATA[Linkfarbe beim Hover (transparente Navigationsleiste)]]></de>
+            <en><![CDATA[Link color on hover(navigation bar is transparent)]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarInitialTransparentLinkBgColorHover.text">
+            <de><![CDATA[Linkfarbe beim Hover (transparente Navigationsleiste)]]></de>
+            <en><![CDATA[Link color on hover(navigation bar is transparent)]]></en>
         </locale>
 
         <locale name="templatePresentation.settings.mobileFontColor">

@@ -52,13 +52,32 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>left</defaultvalue>
                     </conf>
-                    <conf name="navBarMainColor">
+                    <conf name="navBarBgColor">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#2d4d88</defaultvalue>
                     </conf>
-                    <conf name="navBarFontColor">
+                    <conf name="navBarLinkColor">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#ffffff</defaultvalue>
+                    </conf>
+                    <conf name="navBarLinkColorHover">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="navBarLinkBgColorHover">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="navBarInitialTransparent">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="navBarInitialTransparentLinkColor">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="navBarInitialTransparentLinkColorHover">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="navBarInitialTransparentLinkBgColorHover">
+                        <type><![CDATA[string]]></type>
                     </conf>
 
                     <conf name="mobileFontColor">
@@ -656,22 +675,76 @@
                             </select>
 
                             <!-- nav bar / menu colors -->
-                            <input conf="templatePresentation.settings.navBarMainColor"
+                            <input conf="templatePresentation.settings.navBarBgColor"
                                    type="color">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.navBarMainColor.text"
+                                            var="templatePresentation.settings.navBarBgColor.text"
                                     />
                                 </text>
                             </input>
-                            <input conf="templatePresentation.settings.navBarFontColor"
+                            <input conf="templatePresentation.settings.navBarLinkColor"
                                    type="color">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.navBarFontColor.text"
+                                            var="templatePresentation.settings.navBarLinkColor.text"
                                     />
                                 </text>
                             </input>
+                            <input conf="templatePresentation.settings.navBarLinkColorHover"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarLinkColorHover.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.navBarLinkBgColorHover"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarLinkBgColorHover.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <input conf="templatePresentation.settings.navBarInitialTransparent" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparent.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparent.desc"
+                                    />
+                                </description>
+                            </input>
+                            <input conf="templatePresentation.settings.navBarInitialTransparentLinkColor"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparentLinkColor.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.navBarInitialTransparentLinkColorHover"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparentLinkColorHover.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.navBarInitialTransparentLinkBgColorHover"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparentLinkBgColorHover.text"
+                                    />
+                                </text>
+                            </input>
+
 
                             <!-- mobile menu (mega menu) -->
                             <input conf="templatePresentation.settings.mobileFontColor"

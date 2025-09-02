@@ -7,19 +7,17 @@
 :root {
     --qui-nav-position: var(--theme--qui-nav-position, var(--template-settings__nav-position, absolute));
     --qui-nav-bgColor: var(--theme--qui-nav-bgColor, var(--template-settings__nav-bgColor ,#2d4d88));
-    --qui-nav-color: var(--theme--qui-nav-color, var(--template-settings__nav-link-color, #ffffff));
-    --qui-nav-bgColor--lighter: var(--theme--qui-nav-bgColor--lighter, color-mix(in srgb, var(--qui-nav-bgColor) 10%, white));
+    --qui-nav-bgColor--scrolled: var(--theme--qui-nav-bgColor--scrolled, var(--template-settings__nav-bgColor--scrolled, var(--qui-nav-bgColor)));
+    --qui-nav-link-color: var(--theme--qui-nav-link-color, var(--template-settings__nav-link-color, #ffffff));
+    --qui-nav-link-color--hover: var(--theme--qui-nav-link-color--hover, var(--template-settings__nav-link-color--hover, #ffffff));
+    --qui-nav-link-bgColor--hover: var(--theme--qui-nav-link-bgColor--hover, var(--template-settings__nav-link-bgColor--hover, color-mix(in srgb, var(--qui-nav-bgColor) 85%, black)));
+    --qui-nav-initialTransparent-link-color: var(--theme--qui-nav-initialTransparent-link-color, var(--template-settings__nav-initialTransparent-link-color, var(--qui-colors-body)));
+    --qui-nav-initialTransparent-link-color--hover: var(--theme--qui-nav-initialTransparent-link-color--hover, var(--template-settings__nav-initialTransparent-link-color--hover, var(--qui-colors-body)));
+    --qui-nav-initialTransparent-link-bgColor--hover: var(--theme--qui-nav-initialTransparent-link-bgColor--hover, var(--template-settings__nav-initialTransparent-link-bgColor--hover));
     --qui-nav-subMenu-bgColor: var(--theme--qui-nav-subMenu-bgColor, var(--template-settings__nav-subMenu-bgColor ,#2d4d88));
-    /*--qui-nav-openerMobileBtn-show: var(--theme----qui-nav-openerMobileBtn-show, none);*/
+    /*--qui-nav-openerMobileBtn-show: var(--theme--qui-nav-openerMobileBtn-show, none);*/
     --qui-nav-height: var(--template-settings__nav-height);
-    --qui-nav-scrolled-bg: var(--theme--qui-nav-scrolled-bg, var(--template-settings__nav-bgColor--scrolled, #ffffff));
-    --qui-body-container-top: var(--template-settings__body-container-top);
     --qui-nav-mobile-bg: var(--theme--qui-nav-mobile-bg, var(--template-settings__nav-mobile-bgColor, #252122));
     --qui-nav-mobile-font-color: var(--theme--qui-nav-mobile-font-color, var(--template-settings__nav-mobile-text-color, #ffffff));
     --qui-nav-mobile-social-bar-bg: var(--theme--qui-nav-mobile-social-bar-bg, color-mix(in srgb, var(--qui-nav-mobile-bg) 10%, white));
-
-
-    /* control MegaMenu */
-    --qui-megaMenu-link-color: var(--qui-nav-color);
-    --qui-megaMenu-link-color--hover: var(--qui-nav-color);
 }

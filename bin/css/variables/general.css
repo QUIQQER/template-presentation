@@ -4,8 +4,8 @@
  * - To change font size set variable --theme--qui-font-size
  */
 :root {
-    --qui-scroll-padding: var(--theme--qui-scroll-padding, --template-settings__scroll-offset); /* template settings override this variable */
-
+    --qui-scroll-padding: var(--theme--qui-scroll-padding, --template-settings__scroll-offset);
+    --qui-body-spacing-top: var(--template-settings__body-spacing-top); /* it depends on nav bar height */
 
     /* spacing for margin, padding, etc */
     --qui-spacer--desktop: var(--theme--qui-spacer--desktop, 1rem);

@@ -10,8 +10,16 @@
  * Header bar
  */
 .header-bar {
+    /* control MegaMenu */
+    --qui-megaMenu-link-color: var(--qui-nav-link-color);
+    --qui-megaMenu-link-color--hover: var(--qui-nav-link-color--hover);
+    --qui-megaMenu-link-bgColor--hover: var(--qui-nav-link-bgColor--hover);
+
+    /* template */
+    --_bg: var(--qui-nav-bgColor);
+
     height: var(--qui-nav-height);
-    background-color: var(--qui-nav-bgColor);
+    background-color: var(--_bg);
     position: var(--qui-nav-position);
     -moz-transform: translateZ(0);
     -ms-transform: translateZ(0);
@@ -19,7 +27,7 @@
     -o-transform: translateZ(0);
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
-    transition: 0.3s all ease-in-out;
+    transition: 0.25s all ease-in-out;
     width: 100%;
     z-index: 10;
 }
@@ -34,21 +42,14 @@
     width: 100%;
 }
 
-.header-bar-scrolled {
-    background-color: var(--qui-nav-scrolled-bg);
-    box-shadow: 0 -5px 20px 0 rgb(0, 0, 0, 0.25);
-    transition: 0.25s all ease-in-out;
-}
+.header-bar--initial-transparent:not(.header-bar--scrolled) {
+    /* control MegaMenu */
+    --qui-megaMenu-link-color: var(--qui-nav-initialTransparent-link-color);
+    --qui-megaMenu-link-color--hover: var(--qui-nav-initialTransparent-link-color--hover);
+    --qui-megaMenu-link-bgColor--hover: var(--qui-nav-initialTransparent-link-bgColor--hover);
 
-
-.header-displayed .header-bar-position-scroll {
-    background: none;
-}
-
-.start-page-header {
-    height: auto;
-    overflow: hidden;
-    padding: 0 !important;
+    /* template */
+    --_bg: transparent;
 }
 
 /********/
@@ -91,10 +92,13 @@
     display: none;
 }
 
+/**
+ * 1. width and height are set in html file template/menu/prefix.html
+ */
 .page-header-logo img {
     display: block;
-    width: var(--logo-width);
-    height: var(--logo-height);
+    width: var(--logo-width); /* 1 */
+    height: var(--logo-height); /* 1 */
 }
 
 
