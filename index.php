@@ -70,61 +70,6 @@ if ($templateSettings['showLangSelect']) {
 
 $templateSettings['LangSelectControl'] = $LangSelectControl;
 
-// social
-$social = "false";
-$socialFooter = '';
-$socialMobileNav = '';
-
-if (
-    $Project->getConfig('templatePresentation.settings.social.show.nav')
-    || $Project->getConfig('templatePresentation.settings.social.show.footer')
-) {
-    $social = "true";
-    $socialHTML = '';
-
-    // check which socials should be displayed
-    if ($Project->getConfig('templatePresentation.settings.social.facebook')) {
-        $socialHTML .= '<a href="' .
-            $Project->getConfig('templatePresentation.settings.social.facebook')
-            . '" target="_blank"><span class="fa fa-facebook"></span></a>';
-    }
-    if ($Project->getConfig('templatePresentation.settings.social.twitter')) {
-        $socialHTML .= '<a href="' .
-            $Project->getConfig('templatePresentation.settings.social.x-twitter')
-            . '" target="_blank"><span class="fa fa-twitter"></span></a>';
-    }
-    if ($Project->getConfig('templatePresentation.settings.social.youtube')) {
-        $socialHTML .= '<a href="' .
-            $Project->getConfig('templatePresentation.settings.social.youtube')
-            . '" target="_blank"><span class="fa fa-youtube-play"></span></a>';
-    }
-    if ($Project->getConfig('templatePresentation.settings.social.github')) {
-        $socialHTML .= '<a href="' .
-            $Project->getConfig('templatePresentation.settings.social.github')
-            . '" target="_blank"><span class="fa fa-github"></span></a>';
-    }
-    if ($Project->getConfig('templatePresentation.settings.social.gitlab')) {
-        $socialHTML .= '<a href="' .
-            $Project->getConfig('templatePresentation.settings.social.gitlab')
-            . '" target="_blank"><span class="fa fa-gitlab"></span></a>';
-    }
-
-    // prepare social for nav
-    if ($Project->getConfig('templatePresentation.settings.social.show.nav')) {
-        $socialMobileNav .= '<span class="mobile-bar-social-title">Social Media</span>';
-        $socialMobileNav .= '<div class="mobile-bar-social-container">';
-        $socialMobileNav .= $socialHTML;
-        $socialMobileNav .= '</div>';
-    }
-
-    // prepare social for footer
-    if ($Project->getConfig('templatePresentation.settings.social.show.footer')) {
-        $socialFooter .= '<div class="footer-bar-social">';
-        $socialFooter .= $socialHTML;
-        $socialFooter .= '</div>';
-    }
-}
-
 /**
  * Breadcrumb
  */
@@ -133,8 +78,6 @@ $Breadcrumb = new QUI\Controls\Breadcrumb();
 $templateSettings['BricksManager'] = $BricksManager;
 $templateSettings['Breadcrumb'] = $Breadcrumb;
 $templateSettings['MegaMenu'] = $MegaMenu;
-$templateSettings['social'] = $social;
-$templateSettings['socialMobileNav'] = $socialMobileNav;
 
 /**
  * body class
@@ -167,14 +110,6 @@ switch ($Template->getLayoutType()) {
 
 $templateSettings['bodyClass'] = $bodyClass;
 $templateSettings['startPage'] = $startPage;
-$templateSettings['social'] =(bool)$Project->getConfig('templatePresentation.settings.social.show.nav');
-
-/**
- * Social for menu
- */
-if ($Project->getConfig('templatePresentation.settings.social.show.nav')) {
-    $socialMobileNav = true;
-}
 
 /**
  * Own object container for template settings
