@@ -151,22 +151,13 @@ whenQuiLoaded().then(() => {
         /**
          * social share buttons
          */
-
         if (social) {
             var SlideOutElm = document.getElement(
                 '[data-qui="package/quiqqer/menu/bin/SlideOut"]'
             );
 
             if (SlideOutElm) {
-                Controls.getControlByElement(SlideOutElm).then(function (SlideOutControl) {
-
-                    var Elm = SlideOutControl.getElm();
-
-                    new Element('div', {
-                        'class': 'mobile-bar-social hide-on-desktop',
-                        html   : socialHTML
-                    }).inject(SlideOutElm);
-                });
+                SlideOutElm.insertAdjacentHTML('beforeend', socialHTML);
             }
         }
     });

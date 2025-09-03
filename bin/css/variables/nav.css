@@ -21,5 +21,5 @@
     --qui-nav-height: var(--template-settings__nav-height);
     --qui-nav-mobile-bg: var(--theme--qui-nav-mobile-bg, var(--template-settings__nav-mobile-bgColor, #252122));
     --qui-nav-mobile-font-color: var(--theme--qui-nav-mobile-font-color, var(--template-settings__nav-mobile-text-color, #ffffff));
-    --qui-nav-mobile-social-bar-bg: var(--theme--qui-nav-mobile-social-bar-bg, color-mix(in srgb, var(--qui-nav-mobile-bg) 10%, white));
+    --qui-nav-mobile-social-bar-bg: var(--theme--qui-nav-mobile-social-bar-bg, color-mix(in srgb, var(--qui-nav-mobile-bg) 95%, white));
 }

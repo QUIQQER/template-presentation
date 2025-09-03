@@ -266,7 +266,7 @@ input[type="search"].only-input:focus {
     margin-right: 10px;
 }
 
-.header-bar__social-link {
+.header-bar__social :where(.social-link) {
     color: var(--qui-nav-link-color);
     line-height: 40px;
     padding: 0 10px;

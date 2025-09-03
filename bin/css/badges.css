@@ -96,7 +96,7 @@
 
 /* rounded */
 .badge--pill {
-    border-radius: 10rem;
+    border-radius: var(--qui-radius-pill);
 }
 
 /* sizing */

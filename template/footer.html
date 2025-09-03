@@ -1,11 +1,10 @@
-
 {template_event name="quiqqer::template::body::footer::before" Template=$Template}
 <footer class="page-footer clear-fix {if empty($footer)}no-footer-bricks{/if}">
     {template_event name="quiqqer::template::body::footer::start" Template=$Template}
 
     {fetch template="template/footer/bricks.html" Site=$Site Template=$Template}
 
-    {fetch template="template/footer/copyrightBar.html" Site=$Site Template=$Template}
+    {fetch template="template/footer/footerBar.html" Site=$Site Template=$Template}
 
     {template_event name="quiqqer::template::body::footer::end" Template=$Template}
 </footer>

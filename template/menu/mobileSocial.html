@@ -1,0 +1,12 @@
+{assign var=Setting value=$Template->getAttribute('TemplateSetting')}
+{assign var=showSocial value=$Setting->getAttribute('showSocialInMenu')}
+{assign var=socialData value=$Setting->getAttribute('socialData')}
+
+{if $showSocial && $socialData}
+<div class="mobile-bar-social">
+    <span class="mobile-bar-social-title">Social Media</span>
+    <div class="mobile-bar-social-container">
+        {fetch template="template/social.html" socialData=$socialData Site=$Site Template=$Template}
+    </div>
+</div>
+{/if}

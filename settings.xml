@@ -1156,7 +1156,7 @@
 
                             <!-- facebook -->
                             <input conf="templatePresentation.settings.social.facebook"
-                                   placeholder="https://www.facebook.com"
+                                   placeholder="https://www.facebook.com/exampleCompany"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1164,39 +1164,9 @@
                                     />
                                 </text>
                             </input>
-                            <!-- facebook -->
-                            <input conf="templatePresentation.settings.social.instagram"
-                                   placeholder="https://www.instagram.com"
-                                   type="text">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="social.instagram"
-                                    />
-                                </text>
-                            </input>
-                            <!-- tiktok -->
-                            <input conf="templatePresentation.settings.social.tiktok"
-                                   placeholder="https://www.tiktok.com"
-                                   type="text">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="social.tiktok"
-                                    />
-                                </text>
-                            </input>
-                            <!-- pinterest -->
-                            <input conf="templatePresentation.settings.social.pinterest"
-                                   placeholder="https://www.pinterest.com"
-                                   type="text">
-                                <text>
-                                    <locale group="quiqqer/template-presentation"
-                                            var="social.pinterest"
-                                    />
-                                </text>
-                            </input>
                             <!-- x / twitter -->
                             <input conf="templatePresentation.settings.social.x"
-                                   placeholder="https://www.x.com"
+                                   placeholder="https://x.com/exampleCompany"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1204,9 +1174,19 @@
                                     />
                                 </text>
                             </input>
+                            <!-- instagram -->
+                            <input conf="templatePresentation.settings.social.instagram"
+                                   placeholder="https://www.instagram.com/exampleCompany"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.instagram"
+                                    />
+                                </text>
+                            </input>
                             <!-- linkedin -->
                             <input conf="templatePresentation.settings.social.linkedin"
-                                   placeholder="https://www.linkedin.com"
+                                   placeholder="https://www.linkedin.com/company/exampleCompany"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1214,9 +1194,19 @@
                                     />
                                 </text>
                             </input>
+                            <!-- pinterest -->
+                            <input conf="templatePresentation.settings.social.pinterest"
+                                   placeholder="https://www.pinterest.com/exampleCompany"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.pinterest"
+                                    />
+                                </text>
+                            </input>
                             <!-- youtube -->
                             <input conf="templatePresentation.settings.social.youtube"
-                                   placeholder="https://www.youtube.com"
+                                   placeholder="https://www.youtube.com/@exampleCompany"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1224,9 +1214,19 @@
                                     />
                                 </text>
                             </input>
+                            <!-- tiktok -->
+                            <input conf="templatePresentation.settings.social.tiktok"
+                                   placeholder="https://www.tiktok.com/@exampleCompany"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.tiktok"
+                                    />
+                                </text>
+                            </input>
                             <!-- whatsapp -->
                             <input conf="templatePresentation.settings.social.whatsapp"
-                                   placeholder="https://www.whatsapp.com"
+                                   placeholder="https://wa.me/49123456789"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1236,7 +1236,7 @@
                             </input>
                             <!-- telegram -->
                             <input conf="templatePresentation.settings.social.telegram"
-                                   placeholder="https://www.telegram.com"
+                                   placeholder="https://t.me/exampleCompany"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1246,7 +1246,7 @@
                             </input>
                             <!-- github -->
                             <input conf="templatePresentation.settings.social.github"
-                                   placeholder="https://www.github.com"
+                                   placeholder="https://github.com/exampleCompany"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1256,7 +1256,7 @@
                             </input>
                             <!-- gitlab -->
                             <input conf="templatePresentation.settings.social.gitlab"
-                                   placeholder="https://www.gitlab.com"
+                                   placeholder="https://gitlab.com/exampleCompany"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"

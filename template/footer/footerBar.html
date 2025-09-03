@@ -1,0 +1,17 @@
+{assign var=Setting value=$Template->getAttribute('TemplateSetting')}
+{assign var=socialData value=$Setting->getAttribute('socialData')}
+{assign var=showSocial value=$Setting->getAttribute('showSocialInFooter')}
+
+<div class="page-footer__bar" data-nosnippet="true">
+    <div class="grid-container page-footer__barInner">
+        <div class="page-footer__copyright">
+            {locale group="quiqqer/template-presentation" var="copyright.text" year=$smarty.now|date_format:'Y'}
+        </div>
+
+        {if $showSocial && $socialData}
+            <div class="page-footer__social">
+                {fetch template="template/social.html" socialData=$socialData Site=$Site Template=$Template}
+            </div>
+        {/if}
+    </div>
+</div>

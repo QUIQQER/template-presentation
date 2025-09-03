@@ -1,3 +1,6 @@
+{assign var=Setting value=$Template->getAttribute('TemplateSetting')}
+{assign var=showSocialInMenu value=$Setting->getAttribute('showSocialInMenu')}
+
 <!doctype html>
 <html itemscope itemtype="{$Site->getAttribute('meta.itemscope')}" lang="{$Project->getLang()}">
 <head>
@@ -9,8 +12,8 @@
 
     <script>
         {if $navPos == 'fix'}var navIsFixed = true;{/if}
-        var social     = "{$social}";
-        var socialHTML = '{$socialMobileNav}';
+        var social     = "{if $showSocialInMenu}treu{else}false{/if}";
+        var socialHTML = '{{fetch template="template/menu/mobileSocial.html" Project=$Project Template=$Template Site=$Site}|json_encode nofilter}';
     </script>
 
     {fetch template="template/head/cssVariables.html" Template=$Template}
@@ -48,7 +51,6 @@
     BricksManager=$BricksManager
     showBreadcrumb=$showBreadcrumb
     Breadcrumb=$Breadcrumb
-    socialFooter=$socialFooter
 }
 
 {if $useSlideOutMenu}

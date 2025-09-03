@@ -215,7 +215,6 @@ class Utils
         /**
          * Nav style
          */
-        $a = $Project->getConfig('templatePresentation.settings.navStyle');
         $navStyle = match ($Project->getConfig('templatePresentation.settings.navStyle')) {
             'default', 'none', 'defaultWithBigButtons', 'pill' => $Project->getConfig(
                 'templatePresentation.settings.navStyle'
@@ -236,7 +235,6 @@ class Utils
             'cssVariables' => $cssVariables,
             'typeClass' => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'navPos' => $Project->getConfig('templatePresentation.settings.navPos'),
-            '' => $Project->getConfig('templatePresentation.settings.navMaxWidth'),
             'navStyle' => $navStyle,
             'navInitialTransparent' => $navInitialTransparent,
             'headerArea' => $headerArea,
@@ -248,7 +246,9 @@ class Utils
             'includeDemoCss' => $includeDemoCss,
             'mainContentSpacingTopCSSVar' => self::getSpacingVariable($mainContentSpacingTop, 'top'),
             'mainContentSpacingBottomCSSVar' => self::getSpacingVariable($mainContentSpacingBottom, 'bottom'),
-            'socialData' => self::getSocialLinks(),
+            'socialData' => self::getSocialData(),
+            'showSocialInMenu' => $Project->getConfig('templatePresentation.settings.social.show.nav'),
+            'showSocialInFooter' => $Project->getConfig('templatePresentation.settings.social.show.footer'),
 
             'showLangSelect' => $showLangSelect,
             'showFlag' => $showFlag,
@@ -438,27 +438,44 @@ class Utils
     }
 
     /**
-     * Returns social links as an array with URL and icon
+     * Returns social data as an array with url, icon and title
      *
-     * @return array<int, array{url: string, icon: string}>
+     * @return array<int, array{url: string, icon: string, title: string}>
      */
-    public static function getSocialLinks(): array
+    public static function getSocialData(): array
     {
+        if (
+            !self::$Project->getConfig('templatePresentation.settings.social.show.nav') ||
+            !self::$Project->getConfig('templatePresentation.settings.social.show.footer')
+        ) {
+            return [];
+        }
+
         $socials = [
-            'facebook' => 'fa-facebook',
-            'twitter' => 'fa-twitter',
-            'google' => 'fa-google-plus',
-            'youtube' => 'fa-youtube-play',
+            'facebook' => 'fa-square-facebook',
+            'x' => 'fa-x-twitter',
+            'instagram' => 'fa-instagram',
+            'linkedin' => 'fa-linkedin',
+            'pinterest' => 'fa-pinterest',
+            'youtube' => 'fa-youtube',
+            'tiktok' => 'fa-tiktok',
+            'whatsapp' => 'fa-whatsapp',
+            'telegram' => 'fa-telegram',
             'github' => 'fa-github',
             'gitlab' => 'fa-gitlab',
         ];
+
         $result = [];
+        $Locale = QUI::getLocale();
+
         foreach ($socials as $key => $icon) {
             $url = self::$Project->getConfig('templatePresentation.settings.social.' . $key);
+
             if (!empty($url)) {
                 $result[] = [
                     'url' => $url,
-                    'icon' => $icon
+                    'icon' => $icon,
+                    'title' => $Locale->get('quiqqer/template-presentation', 'frontend.social.' . $key)
                 ];
             }
         }

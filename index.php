@@ -165,9 +165,16 @@ switch ($Template->getLayoutType()) {
         break;
 }
 
-$templateSettings['socialFooter'] = $socialFooter;
 $templateSettings['bodyClass'] = $bodyClass;
 $templateSettings['startPage'] = $startPage;
+$templateSettings['social'] =(bool)$Project->getConfig('templatePresentation.settings.social.show.nav');
+
+/**
+ * Social for menu
+ */
+if ($Project->getConfig('templatePresentation.settings.social.show.nav')) {
+    $socialMobileNav = true;
+}
 
 /**
  * Own object container for template settings

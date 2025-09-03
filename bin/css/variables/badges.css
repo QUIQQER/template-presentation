@@ -12,10 +12,10 @@
     --qui-badge-fontWeight: var(--theme--qui-badge-fontWeight, normal);
     --qui-badge-color: var(--theme--qui-badge-color, inherit);
     --qui-badge-bgColor: var(--theme--qui-badge-bgColor, transparent);
-    --qui-badge-borderRadius: var(--theme--qui-badge-borderRadius, 0.4em);
+    --qui-badge-borderRadius: var(--theme--qui-badge-borderRadius, var(--qui-radius-badge));
 
     --qui-badge-primary-bgColor: var(--theme--qui-badge-primary-bgColor, var(--qui-colors-primary));
-    --qui-badge-primary-color: var(--theme--qui-badge-primary-color, #ffffff);
+    --qui-badge-primary-color: var(--theme--qui-badge-primary-color, var(--qui-colors-primary--accent));
     --qui-badge-primary-light-bgColor: var(--theme--qui-badge-primary-light-bgColor, var(--qui-colors-primary-50));
     --qui-badge-primary-light-color: var(--theme--qui-badge-primary-light-color, var(--qui-colors-primary-800));
 

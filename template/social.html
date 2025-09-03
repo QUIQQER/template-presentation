@@ -1,0 +1,5 @@
+{foreach $socialData as $social}
+    <a href="{$social.url}" target="_blank" class="social-link" title="{$social.title}" rel="nofollow">
+        <span class="fa-brands {$social.icon}" aria-hidden="true"></span>
+    </a>
+{/foreach}
