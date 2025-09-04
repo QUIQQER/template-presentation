@@ -3,9 +3,9 @@
 {assign var=socialData value=$Setting->getAttribute('socialData')}
 
 {if $showSocial && $socialData}
-<div class="mobile-bar-social">
-    <span class="mobile-bar-social-title">Social Media</span>
-    <div class="mobile-bar-social-container">
+<div class="menuMobile-socialBar">
+    <div class="menuMobile-socialBar__title">{locale group="quiqqer/template-presentation" var="frontend.menuMobile.social.title"}</div>
+    <div class="menuMobile-socialBar__icons">
         {fetch template="template/social.html" socialData=$socialData Site=$Site Template=$Template}
     </div>
 </div>

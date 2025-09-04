@@ -1012,6 +1012,10 @@
             <de><![CDATA[Finde uns auf GitLab]]></de>
             <en><![CDATA[Find us on GitLab]]></en>
         </locale>
+        <locale name="frontend.menuMobile.social.title">
+            <de><![CDATA[Social Media]]></de>
+            <en><![CDATA[Social]]></en>
+        </locale>
 
         <!-- Editor -->
         <locale name="editor.element.textLead">
