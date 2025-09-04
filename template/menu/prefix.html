@@ -4,9 +4,9 @@
 {assign var=logoSize value=$Setting->getAttribute('logoSize')}
 
 {if $Logo}
-<div class="header-bar-inner-logo" style=" {if $logoSize.width}--logo-width: {$logoSize.width}px;{/if} {if $logoSize.height}--logo-height: {$logoSize.height}px;{/if}">
-    <a href="{$Project->get(1)->getUrlRewritten()}" class="page-header-logo">
-        {image image=$Logo class="page-header-logo__image" height=$logoSize.height width=$logoSize.width}
+<div class="header-bar-logo" style=" {if $logoSize.width}--logo-width: {$logoSize.width}px;{/if} {if $logoSize.height}--logo-height: {$logoSize.height}px;{/if}">
+    <a href="{$Project->get(1)->getUrlRewritten()}" class="header-bar-logo__link">
+        {image image=$Logo class="header-bar-logo__img" height=$logoSize.height width=$logoSize.width}
     </a>
 </div>
 {/if}

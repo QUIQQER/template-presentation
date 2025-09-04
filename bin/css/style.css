@@ -639,20 +639,6 @@ a.quiqqer-navigation-home:hover,
     }
 }
 
-@media screen and (max-width: 1024px) {
-    .page-header-logo-desktop {
-        display: none;
-    }
-
-    .header-bar-inner-logo {
-        align-items: flex-start;
-    }
-
-    .header-bar-search {
-        display: none;
-    }
-}
-
 /*********************************************************************************/
 /* Design standard
 /*********************************************************************************/
