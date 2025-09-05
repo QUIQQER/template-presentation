@@ -775,7 +775,7 @@
             <en><![CDATA[Link color on hover]]></en>
         </locale>
         <locale name="templatePresentation.settings.navBarLinkBgColorHover.text">
-            <de><![CDATA[Linkhintergrundfarbe beim Hover]]></de>
+            <de><![CDATA[Link Hintergrundfarbe beim Hover]]></de>
             <en><![CDATA[Link background color on hover]]></en>
         </locale>
         <locale name="templatePresentation.settings.navBarInitialTransparent.text">
@@ -795,8 +795,8 @@
             <en><![CDATA[Link color on hover(navigation bar is transparent)]]></en>
         </locale>
         <locale name="templatePresentation.settings.navBarInitialTransparentLinkBgColorHover.text">
-            <de><![CDATA[Linkfarbe beim Hover (transparente Navigationsleiste)]]></de>
-            <en><![CDATA[Link color on hover(navigation bar is transparent)]]></en>
+            <de><![CDATA[Link Hintergrundfarbe beim Hover (transparente Navigationsleiste)]]></de>
+            <en><![CDATA[Link background color on hover(navigation bar is transparent)]]></en>
         </locale>
 
         <locale name="templatePresentation.settings.mobileFontColor">
