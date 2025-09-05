@@ -634,8 +634,8 @@ class Utils
         $navLinkColor = '#ffffff';
         $navLinkColorHover = $navLinkColor;
         $navLinkBgColorHover = '';
-        $navInitialTransparentLinkColor = '';
-        $navInitialTransparentLinkColorHover = '';
+        $navInitialTransparentLinkColor = $navLinkColor;
+        $navInitialTransparentLinkColorHover = $navLinkColorHover;
         $navInitialTransparentLinkBgColorHover = '';
         $navMobileTextColor = '#ffffff';
         $navMobileBgColor = '#252122';

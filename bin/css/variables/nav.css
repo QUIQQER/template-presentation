@@ -15,7 +15,7 @@
     --qui-nav-link-bgColor--hover: var(--theme--qui-nav-link-bgColor--hover, var(--template-settings__nav-link-bgColor--hover, color-mix(in srgb, var(--qui-nav-bgColor) 85%, black)));
     --qui-nav-initialTransparent-link-color: var(--theme--qui-nav-initialTransparent-link-color, var(--template-settings__nav-initialTransparent-link-color, var(--qui-colors-body)));
     --qui-nav-initialTransparent-link-color--hover: var(--theme--qui-nav-initialTransparent-link-color--hover, var(--template-settings__nav-initialTransparent-link-color--hover, var(--qui-colors-body)));
-    --qui-nav-initialTransparent-link-bgColor--hover: var(--theme--qui-nav-initialTransparent-link-bgColor--hover, var(--template-settings__nav-initialTransparent-link-bgColor--hover));
+    --qui-nav-initialTransparent-link-bgColor--hover: var(--theme--qui-nav-initialTransparent-link-bgColor--hover, var(--template-settings__nav-initialTransparent-link-bgColor--hover, color-mix(in srgb, var(--qui-nav-bgColor) 85%, black)));
     --qui-nav-subMenu-bgColor: var(--theme--qui-nav-subMenu-bgColor, var(--template-settings__nav-subMenu-bgColor ,#2d4d88));
     /*--qui-nav-openerMobileBtn-show: var(--theme--qui-nav-openerMobileBtn-show, none);*/
     --qui-nav-height: var(--template-settings__nav-height);

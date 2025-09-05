@@ -9,6 +9,19 @@
 /**
  * Header bar
  */
+
+/* all styles */
+.header-bar:not(.header-bar--style-none) {
+    /* control MegaMenu */
+    --qui-megaMenu-link-color: var(--qui-nav-link-color);
+    --qui-megaMenu-link-color--hover: var(--qui-nav-link-color--hover);
+    --qui-megaMenu-link-bgColor--hover: var(--qui-nav-link-bgColor--hover);
+
+    /* template */
+    --_bg: var(--qui-nav-bgColor);
+}
+
+/* header bar styling */
 .header-bar {
     position: var(--qui-nav-position);
     -moz-transform: translateZ(0);
@@ -26,17 +39,6 @@
     transition: 0.25s all ease-in-out;
     height: var(--qui-nav-height);
     background-color: var(--_bg);
-}
-
-/* all styles */
-.header-bar:not(.header-bar--style-none) {
-    /* control MegaMenu */
-    --qui-megaMenu-link-color: var(--qui-nav-link-color);
-    --qui-megaMenu-link-color--hover: var(--qui-nav-link-color--hover);
-    --qui-megaMenu-link-bgColor--hover: var(--qui-nav-link-bgColor--hover);
-
-    /* template */
-    --_bg: var(--qui-nav-bgColor);
 }
 
 .header-bar-inner {
