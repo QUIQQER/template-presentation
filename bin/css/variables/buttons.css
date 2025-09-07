@@ -11,7 +11,7 @@
     --qui-btn-borderStyle: var(--theme--qui-btn-borderStyle, solid);
     --qui-btn-gap: var(--theme--qui-btn-gap, 0.5em);
     --qui-btn-fontWeight: var(--theme--qui-btn-fontWeight, normal);
-    --qui-btn-transition: var(--theme--qui-btn-fontWeight, color .15s ease-in-out);
+    --qui-btn-transition: var(--theme--qui-btn-transitiont, all .15s ease-in-out);
 
     /* Button: primary */
     --qui-btn-primary-bg: var(--theme--qui-btn-primary-bg, var(--qui-colors-primary));
@@ -87,9 +87,12 @@
 
     /* Button: link */
     --qui-btn-link-color: var(--theme--qui-btn-link-color, var(--qui-colors-primary));
-    --qui-btn-link-color--hover: var(--theme--qui-btn-link-color--hover, color-mix(in srgb, var(--qui-colors-primary), black 10%));
+    --qui-btn-link-color--hover: var(--theme--qui-btn-link-color--hover, color-mix(in srgb, var(--qui-colors-body), black 10%));
+    --qui-btn-link-bg--hover: var(--theme--qui-btn-link-bg--hover, rgba(0,0,0,0.075));
 
     /* Button: link dark */
     --qui-btn-linkDark-color: var(--theme--qui-btn-linkDark-color, var(--qui-colors-body));
-    --qui-btn-linkDark-color--hover: var(--theme--qui-btn-linkDark-color, color-mix(in srgb, var(--qui-colors-primary), black 10%));
+    --qui-btn-linkDark-color--hover: var(--theme--qui-btn-linkDark-color, color-mix(in srgb, var(--qui-colors-body), black 10%));
+    --qui-btn-linkDark-bg--hover: var(--theme--qui-btn-linkDark-bg--hover, rgba(0,0,0,0.075));
+
 }

@@ -244,8 +244,8 @@
 
         <!-- template site settings -->
         <locale name="templatePresentation.siteSettings">
-            <de><![CDATA[Template Presentation: Einstellungen]]></de>
-            <en><![CDATA[Template Presentation: settings]]></en>
+            <de><![CDATA[Template Presentation: Allgemeine Einstellungen]]></de>
+            <en><![CDATA[Template Presentation: general settings]]></en>
         </locale>
         <locale name="templatePresentation.siteSettings.showEmotion">
             <de><![CDATA[Header Bild anzeigen]]></de>

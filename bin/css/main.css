@@ -17,3 +17,7 @@
 @import "footer.css";
 @import "typography.css";
 @import "style.css";
+
+/* utilities */
+@import "utility/buttons.css";
+@import "utility/text.css";

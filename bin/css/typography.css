@@ -29,52 +29,27 @@ h6:where(:not(:first-child)){
     margin-top: 0;
 }
 
-h1 {
+h1, .h1, .fs-1 {
     font-size: var(--qui-fs-1);
 }
 
-h2  {
+h2, .h2, .fs-2  {
     font-size: var(--qui-fs-2);
 }
 
-h3  {
+h3, .h3, .fs-3 {
     font-size: var(--qui-fs-3);
 }
 
-h4 {
+h4, .h4, .fs-4 {
     font-size: var(--qui-fs-4);
 }
 
-h5 {
+h5, .h5, .fs-5 {
     font-size: var(--qui-fs-5);
 }
 
-h6,
-.fs-6 {
-    font-size: var(--qui-fs-6);
-}
-
-.fs-1 {
-    font-size: var(--qui-fs-1);
-}
-
-.fs-2 {
-    font-size: var(--qui-fs-2);
-}
-
-.fs-3 {
-    font-size: var(--qui-fs-3);
-}
-
-.fs-4 {
-    font-size: var(--qui-fs-4);
-}
-
-.fs-5 {
-    font-size: var(--qui-fs-5);
-}
-
-.fs-6 {
+h6, .h6, .fs-6 {
     font-size: var(--qui-fs-6);
 }
 
@@ -183,17 +158,5 @@ strong,
 
 .text-muted {
     color: var(--qui-colors-muted);
-}
-
-.text-narrow {
-    max-width: 60ch;
-}
-
-.text-narrow-sm {
-    max-width: 40ch;
-}
-
-.text-narrow-xs {
-    max-width: 30ch;
 }
 

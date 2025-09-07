@@ -7,6 +7,7 @@ a.qui-button,
 .btn {
     display: inline-flex;
     justify-content: center;
+    align-items: center;
     gap: var(--qui-btn-gap);
     font-weight: var(--qui-btn-fontWeight);
     border-width: var(--qui-btn-borderWidth);
@@ -133,7 +134,7 @@ button.qui-button.btn-link:hover,
 button.qui-button.btn-link:active,
 .btn-link:hover,
 .btn-link:active {
-    background-color: transparent;
+    background-color: var(--qui-btn-link-bg--hover);
     border-color: transparent;
     color: var(--qui-btn-link-color--hover);
 }
@@ -162,7 +163,7 @@ button.qui-button.btn-link-dark:hover,
 button.qui-button.btn-link-dark:active,
 .btn-link-dark:hover,
 .btn-link-dark:active {
-    background-color: transparent;
+    background-color: var(--qui-btn-linkDark-bg--hover);
     border-color: transparent;
     color: var(--qui-btn-linkDark-color--hover);
 }

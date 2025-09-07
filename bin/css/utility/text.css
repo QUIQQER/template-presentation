@@ -1,0 +1,37 @@
+/**
+ * This file contains text utility classes
+ */
+
+/* text width */
+.text-width-xl {
+    max-width: 80ch;
+}
+
+.text-width-lg {
+    max-width: 60ch;
+}
+
+.text-width-md {
+    max-width: 40ch;
+}
+
+.text-width-sm {
+    max-width: 30ch;
+}
+
+.text-width-xs {
+    max-width: 20ch;
+}
+
+/* text alignment */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
