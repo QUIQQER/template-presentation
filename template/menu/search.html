@@ -1,30 +1,44 @@
 {assign var=Setting value=$Template->getAttribute('TemplateSetting')}
 {assign var=Project value=$Site->getProject()}
-{assign var=searchType value=$Setting->getAttribute('searchType')}
-{assign var=searchUrl value=$Setting->getAttribute('searchUrl')}
-{assign var=dataQui value=$Setting->getAttribute('searchDataQui')}
+{assign var=searchData value=$Setting->getAttribute('searchData')}
+{assign var=searchType value=$searchData['searchType']}
+{assign var=searchUrl value=$searchData['searchUrl']}
+{assign var=dataQui value=$searchData['searchDataQui']}
 
 {if $searchType === 'input'}
-    <form  action="{$searchUrl}" class="header-bar-suggestSearch header-bar-suggestSearch--type-input hide-on-mobile" method="get">
-        <input type="search" name="search" class="only-input" {$dataQui}
+    <form action="{$searchUrl}"
+          class="searchForm searchForm--onlyInput hide-on-mobile"
+          method="get"
+    >
+        <input type="search" name="search"
+               class="searchForm__input"
+               {if $dataQui}data-qui="{$dataQui}"{/if}
                placeholder="{locale group='quiqqer/template-presentation' var='navbar.search.text'}"
         />
     </form>
 {elseif $searchType === 'inputAndIcon'}
-    <form  action="{$searchUrl}" class="header-bar-suggestSearch header-bar-suggestSearch--type-icon hide-on-mobile" method="get">
+    <form action="{$searchUrl}"
+          data-name="headerBar-searchForm"
+          class="searchForm searchForm--inputAndIcon hide-on-mobile"
+          method="get"
+    >
         <div class="header-bar-suggestSearch-wrapper">
             <input type="search" name="search"
-                   class="input-and-icon" {$dataQui}
+                   class="searchForm__input"
+                   {if $dataQui}data-qui="{$dataQui}"{/if}
                    placeholder="{locale group='quiqqer/template-presentation' var='navbar.search.text'}"
             />
         </div>
-{*        <span class="fa fa-fw fa-search"></span>*}
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <button data-name="headerBar-searchForm-submit"
+                class="btn searchForm__btn"
+        >
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        </button>
     </form>
 {/if}
 
-<div class="quiqqer-menu-megaMenu-mobile-search">
-    <a href="{$searchUrl}" class="header-bar-search-link searchMobile">
-        <i class="fa-solid fa-magnifying-glass header-bar-search-icon"></i>
-    </a>
-</div>
+{*    <div class="quiqqer-menu-megaMenu-mobile-search">*}
+{*        <a href="{$searchUrl}" class="header-bar-search-link searchMobile">*}
+{*            <i class="fa-solid fa-magnifying-glass header-bar-search-icon"></i>*}
+{*        </a>*}
+{*    </div>*}

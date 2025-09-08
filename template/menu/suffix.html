@@ -1,14 +1,19 @@
 {assign var=Setting value=$Template->getAttribute('TemplateSetting')}
 {assign var=socialData value=$Setting->getAttribute('socialData')}
 {assign var=showSocial value=$Setting->getAttribute('showSocialInMenu')}
+{assign var=searchData value=$Setting->getAttribute('searchData')}
 {assign var=showLangSelect value=$Setting->getAttribute('showLangSelect')}
 
 <div class="header-bar__suffix hide-on-mobile">
-    {fetch template="template/menu/search.html" Site=$Site Template=$Template}
-
     {if $showSocial && $socialData}
         <div class="header-bar__social">
             {fetch template="template/social.html" socialData=$socialData Site=$Site Template=$Template}
+        </div>
+    {/if}
+
+    {if $searchData.searchType === 'input' || $searchData.searchType === 'inputAndIcon'}
+        <div class="header-bar__search">
+            {fetch template="template/menu/search.html" Site=$Site Template=$Template}
         </div>
     {/if}
 

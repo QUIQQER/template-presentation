@@ -165,8 +165,8 @@ whenQuiLoaded().then(() => {
     /**
      * show the search input after clicking on the icon
      */
-    if (document.getElement('.header-bar-suggestSearch') &&
-        document.getElement('.header-bar-suggestSearch').getElement('.fa-search')) {
+    if (document.getElement('[data-name="headerBar-suggestSearch"]') &&
+        document.getElement('[data-name="headerBar-suggestSearch"]').getElement('.fa-search')) {
 
 
         var searchBar   = document.getElement('.header-bar-suggestSearch'),

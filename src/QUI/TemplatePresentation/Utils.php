@@ -227,8 +227,6 @@ class Utils
          */
         $includeDemoCss = $Project->getConfig('templatePresentation.settings.includeDemoStyling');
 
-        $searchData = self::getSearchData();
-
         $config += [
             'showHeader' => $showHeader,
             'showBreadcrumb' => $showBreadcrumb,
@@ -236,6 +234,7 @@ class Utils
             'typeClass' => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'navPos' => $Project->getConfig('templatePresentation.settings.navPos'),
             'navStyle' => $navStyle,
+            'searchData' => self::getSearchData(),
             'navInitialTransparent' => $navInitialTransparent,
             'headerArea' => $headerArea,
             'showPageTitle' => $showPageTitle,
@@ -253,11 +252,6 @@ class Utils
             'showLangSelect' => $showLangSelect,
             'showFlag' => $showFlag,
             'showText' => $showText,
-
-            'searchType' => $searchData['searchType'],
-            'noSearch' => $searchData['noSearch'],
-            'searchUrl' => $searchData['searchUrl'],
-            'searchDataQui' => $searchData['searchDataQui'],
         ];
 
         // set cache
@@ -490,72 +484,68 @@ class Utils
      *     searchType: string,
      *     searchUrl: string,
      *     searchDataQui: string,
-     *     noSearch: string,
-     *     inputSearch: string
      * }
      * @throws QUI\Exception If an error occurs while fetching the search sites.
      */
     public static function getSearchData(): array
     {
-        $searchType = '';
-        $searchUrl = '';
-        $searchDataQui = '';
-        $noSearch = 'no-search';
-        $inputSearch = '';
-
-        if (self::$Project->getConfig('templatePresentation.settings.search') != 'hide') {
-            $types = [
-                'quiqqer/sitetypes:types/search'
+        if (self::$Project->getConfig('templatePresentation.settings.search') === 'hide') {
+            return [
+                'searchType' => '',
+                'searchUrl' => '',
+                'searchDataQui' => '',
             ];
-
-            /* check if quiqqer search packet is installed */
-            if (QUI::getPackageManager()->isInstalled('quiqqer/search')) {
-                $types = [
-                    'quiqqer/sitetypes:types/search',
-                    'quiqqer/search:types/search'
-                ];
-
-                // Suggest Search integrate
-                $searchDataQui = 'data-qui="package/quiqqer/search/bin/controls/Suggest"';
-            }
-
-            $searchSites = self::$Project->getSites([
-                'where' => [
-                    'type' => [
-                        'type' => 'IN',
-                        'value' => $types
-                    ]
-                ],
-                'limit' => 1
-            ]);
-
-            if (count($searchSites)) {
-                try {
-                    $noSearch = '';
-                    $searchUrl = $searchSites[0]->getUrlRewritten();
-
-                    switch (self::$Project->getConfig('templatePresentation.settings.search')) {
-                        case 'input':
-                            $inputSearch = 'input-search';
-                            $searchType = 'input';
-                            break;
-
-                        case 'inputAndIcon':
-                            $searchType = 'inputAndIcon';
-                            break;
-                    }
-                } catch (QUI\Exception $Exception) {
-                    QUI\System\Log::addNotice($Exception->getMessage());
-                }
-            }
         }
+
+        $siteTypes = ['quiqqer/sitetypes:types/search'];
+        $searchDataQui = '';
+
+        /* check if quiqqer search package is installed */
+        if (QUI::getPackageManager()->isInstalled('quiqqer/search')) {
+            $siteTypes[] = 'quiqqer/search:types/search';
+            $searchDataQui = 'package/quiqqer/search/bin/controls/Suggest';
+        }
+
+        $searchSites = self::$Project->getSites([
+            'where' => [
+                'type' => [
+                    'type' => 'IN',
+                    'value' => $siteTypes,
+                ]
+            ],
+            'limit' => 1,
+            'active' => 1
+        ]);
+
+        if (empty($searchSites)) {
+            return [
+                'searchType' => '',
+                'searchUrl' => '',
+                'searchDataQui' => '',
+            ];
+        }
+
+        try {
+            $searchUrl = $searchSites[0]->getUrlRewritten();
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::addNotice($Exception->getMessage());
+            return [
+                'searchType' => '',
+                'searchUrl' => '',
+                'searchDataQui' => '',
+            ];
+        }
+
+        $searchType = match (self::$Project->getConfig('templatePresentation.settings.search')) {
+            'input' => 'input',
+            'inputAndIcon' => 'inputAndIcon',
+            default => '',
+        };
 
         return [
             'searchType' => $searchType,
             'searchUrl' => $searchUrl,
             'searchDataQui' => $searchDataQui,
-            'noSearch' => $noSearch,
-            'inputSearch' => $inputSearch
         ];
     }
 
@@ -648,14 +638,19 @@ class Utils
 
         if (self::$Project->getConfig('templatePresentation.settings.navBarLinkColor')) {
             $navLinkColor = self::$Project->getConfig('templatePresentation.settings.navBarLinkColor');
+            $navLinkColorHover = $navLinkColor;
+            $navInitialTransparentLinkColor = $navLinkColor;
+            $navInitialTransparentLinkColorHover = $navLinkColor;
         }
 
         if (self::$Project->getConfig('templatePresentation.settings.navBarLinkColorHover')) {
             $navLinkColorHover = self::$Project->getConfig('templatePresentation.settings.navBarLinkColorHover');
+            $navInitialTransparentLinkColorHover = $navLinkColorHover;
         }
 
         if (self::$Project->getConfig('templatePresentation.settings.navBarLinkBgColorHover')) {
             $navLinkBgColorHover = self::$Project->getConfig('templatePresentation.settings.navBarLinkBgColorHover');
+            $navInitialTransparentLinkBgColorHover = $navLinkBgColorHover;
         }
 
         if (self::$Project->getConfig('templatePresentation.settings.navBarInitialTransparentLinkColor')) {
