@@ -350,19 +350,36 @@
             <de><![CDATA[Template Presentation: Navigationsleiste]]></de>
             <en><![CDATA[Template Presentation: Nav bar]]></en>
         </locale>
-        <locale name="templatePresentation.nav.initialTransparent.desc">
+
+        <locale name="site.settings.nav.initialTransparent">
+            <de><![CDATA[Navigationsleiste ist initial transparent]]></de>
+            <en><![CDATA[Navigation bar is initially transparent]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent.default">
+            <de><![CDATA[Standard Template-Einstellung übernehmen]]></de>
+            <en><![CDATA[Default template setting]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent.enable">
+            <de><![CDATA[Aktivieren]]></de>
+            <en><![CDATA[Enable]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent.disable">
+            <de><![CDATA[Deaktivieren]]></de>
+            <en><![CDATA[Disable]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent.desc">
             <de><![CDATA[Wenn die Navigationsleiste fixiert ist (immer oben sichtbar) und die Option „Navigationsleiste ist initial transparent“ in den Projekteinstellungen aktiviert ist, können die Menüpunkte unter Umständen schwer lesbar sein. Mit den folgenden Optionen können die Farben für jede Seite individuell angepasst werden, sodass sie zum Hintergrundbild passen.]]></de>
             <en><![CDATA[If the navigation bar is fixed (always visible at the top) and the "Navigation bar is initially transparent" option is enabled in the project settings, the menu items may be difficult to read in some cases. With the options below, you can define the colors for each page individually to match the background image.]]></en>
         </locale>
-1        <locale name="templatePresentation.nav.initialTransparent.linkColor">
+1        <locale name="site.settings.nav.initialTransparent.linkColor">
         <de><![CDATA[Linkfarbe (transparente Navigationsleiste)]]></de>
         <en><![CDATA[Link color (navigation bar is transparent)]]></en>
         </locale>
-        <locale name="templatePresentation.nav.initialTransparent.linkColorHover">
+        <locale name="site.settings.nav.initialTransparent.linkColorHover">
             <de><![CDATA[Linkfarbe beim Hover (transparente Navigationsleiste)]]></de>
             <en><![CDATA[Link color on hover(navigation bar is transparent)]]></en>
         </locale>
-        <locale name="templatePresentation.nav.initialTransparent.linkBgColorHover">
+        <locale name="site.settings.nav.initialTransparent.linkBgColorHover">
             <de><![CDATA[Linkfarbe beim Hover (transparente Navigationsleiste)]]></de>
             <en><![CDATA[Link color on hover(navigation bar is transparent)]]></en>
         </locale>

@@ -10,6 +10,7 @@
         <attribute>templatePresentation.header.textPos</attribute>
         <attribute>templatePresentation.pageCustomClass</attribute>
         <attribute>templatePresentation.independentMenuId</attribute>
+        <attribute>templatePresentation.nav.initialTransparent</attribute>
         <attribute>templatePresentation.nav.initialTransparent.linkColor</attribute>
         <attribute>templatePresentation.nav.initialTransparent.linkColorHover</attribute>
         <attribute>templatePresentation.nav.initialTransparent.linkBgColorHover</attribute>
@@ -157,22 +158,43 @@
                             var="templatePresentation.nav.initialTransparent.desc"/>
                 </text>
 
+                <select conf="templatePresentation.nav.initialTransparent">
+                    <text>
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.nav.initialTransparent"/>
+                    </text>
+
+                    <option></option>
+                    <option value="default">
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.nav.initialTransparent.default"/>
+                    </option>
+                    <option value="enable">
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.nav.initialTransparent.enable"/>
+                    </option>
+                    <option value="disable">
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.nav.initialTransparent.disable"/>
+                    </option>
+                </select>
+
                 <input conf="templatePresentation.nav.initialTransparent.linkColor" type="color">
                     <text>
                         <locale group="quiqqer/template-presentation"
-                                var="templatePresentation.nav.initialTransparent.linkColor"/>
+                                var="site.settings.nav.initialTransparent.linkColor"/>
                     </text>
                 </input>
                 <input conf="templatePresentation.nav.initialTransparent.linkColorHover" type="color">
                     <text>
                         <locale group="quiqqer/template-presentation"
-                                var="templatePresentation.nav.initialTransparent.linkColorHover"/>
+                                var="site.settings.nav.initialTransparent.linkColorHover"/>
                     </text>
                 </input>
                 <input conf="templatePresentation.nav.initialTransparent.linkBgColorHover" type="color">
                     <text>
                         <locale group="quiqqer/template-presentation"
-                                var="templatePresentation.nav.initialTransparent.linkBgColorHover"/>
+                                var="site.settings.nav.initialTransparent.linkBgColorHover"/>
                     </text>
                 </input>
 
