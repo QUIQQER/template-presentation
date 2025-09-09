@@ -212,7 +212,7 @@ class Utils
             $navInitialTransparent = $Project->getConfig('templatePresentation.settings.navBarInitialTransparent');
 
             // site settings
-            $navInitialTransparent = match($Site->getAttribute('templatePresentation.nav.initialTransparent')) {
+            $navInitialTransparent = match ($Site->getAttribute('templatePresentation.nav.initialTransparent')) {
                 'enable' => true,
                 'disable' => false,
                 default => $navInitialTransparent
