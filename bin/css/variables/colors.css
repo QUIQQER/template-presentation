@@ -132,7 +132,7 @@
     --qui-colors-light-950: color-mix(in srgb, var(--qui-colors-light) 50%, black);
 
     /* dark */
-    --qui-colors-dark: var(--theme--qui-colors-dark, #393f46);
+    --qui-colors-dark: var(--theme--qui-colors-dark, #2c3136);
     --qui-colors-dark-25: color-mix(in srgb, var(--qui-colors-dark) 5%, white);
     --qui-colors-dark-50: color-mix(in srgb, var(--qui-colors-dark) 10%, white);
     --qui-colors-dark-100: color-mix(in srgb, var(--qui-colors-dark) 20%, white);

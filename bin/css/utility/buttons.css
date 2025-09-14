@@ -8,6 +8,10 @@
     flex-wrap: wrap;
 }
 
+.btn-container--center {
+    justify-content: center;
+}
+
 @media (max-width: 767px) {
     .btn-container > .btn {
         width: 100%;

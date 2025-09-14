@@ -133,7 +133,7 @@ a:hover {
 /****************/
 /* text helpers */
 /****************/
-small, .small, .text_small {
+small, .small, .text-small {
     font-size: var(--qui-fs-sm);
 }
 
@@ -155,8 +155,3 @@ strong,
     font-size: var(--qui-text-lead);
     line-height: 1.5;
 }
-
-.text-muted {
-    color: var(--qui-colors-muted);
-}
-

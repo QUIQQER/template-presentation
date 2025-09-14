@@ -20,4 +20,5 @@
 
 /* utilities */
 @import "utility/buttons.css";
+@import "utility/colors.css";
 @import "utility/text.css";
