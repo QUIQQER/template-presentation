@@ -8,15 +8,15 @@
 }
 
 .text-width-lg {
-    max-width: 60ch;
+    max-width: 50ch;
 }
 
 .text-width-md {
-    max-width: 40ch;
+    max-width: 35ch;
 }
 
 .text-width-sm {
-    max-width: 30ch;
+    max-width: 25ch;
 }
 
 .text-width-xs {
