@@ -1040,32 +1040,6 @@
             <en><![CDATA[Leading text]]></en>
         </locale>
 
-        <!--template buttons -->
-        <locale name="templateButton.small">
-            <de><![CDATA[Button (klein)]]></de>
-            <en><![CDATA[Button (small)]]></en>
-        </locale>
-        <locale name="templateButton.medium">
-            <de><![CDATA[Button (medium)]]></de>
-            <en><![CDATA[Button (medium)]]></en>
-        </locale>
-        <locale name="templateButton.large">
-            <de><![CDATA[Button (groß)]]></de>
-            <en><![CDATA[Button (large)]]></en>
-        </locale>
-        <locale name="templateButton.ghost.white">
-            <de><![CDATA[Button: Ghost (weiß)]]></de>
-            <en><![CDATA[Button ghost (white)]]></en>
-        </locale>
-        <locale name="templateButton.download">
-            <de><![CDATA[Button: Download]]></de>
-            <en><![CDATA[Button: download]]></en>
-        </locale>
-        <locale name="templateButton.arrow">
-            <de><![CDATA[Button: Pfeil]]></de>
-            <en><![CDATA[Button: arrow]]></en>
-        </locale>
-
 
         <!-- search setting -->
         <locale name="navbar.search.text">

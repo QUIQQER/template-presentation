@@ -35,9 +35,10 @@ if ($Site->getAttribute('templatePresentation.showTitle') || $Site->getAttribute
 /**
  * Mega menu
  */
+$menuDropdownIcon = 'fa-solid fa-caret-down';
 $params = [
     'showStart' => false,
-    'subMenuIndicator' => 'fa-caret-down'
+    'subMenuIndicator' => $menuDropdownIcon
 ];
 
 if (
@@ -64,7 +65,8 @@ if ($templateSettings['showLangSelect']) {
     $LangSelectControl = new QUI\Bricks\Controls\LanguageSwitches\DropDown([
         'Site' => $Site,
         'buttonShowFlag' => $templateSettings['showFlag'],
-        'buttonText' => $templateSettings['showText']
+        'buttonText' => $templateSettings['showText'],
+        'arrowIconCssClass' => $menuDropdownIcon
     ]);
 }
 

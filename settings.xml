@@ -1285,59 +1285,6 @@
                         <attribute name="class">text-lead</attribute>
                     </attributes>
                 </style>
-
-                <!-- Template Button small -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="templateButton.small"/>
-                    <attributes>
-                        <attribute name="class">button button__small</attribute>
-                    </attributes>
-                </style>
-                <!-- Template Button default -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="templateButton.medium"/>
-                    <attributes>
-                        <attribute name="class">button button__medium</attribute>
-                    </attributes>
-                </style>
-
-                <!-- Template Button large -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="templateButton.large"/>
-                    <attributes>
-                        <attribute name="class">button button__large</attribute>
-                    </attributes>
-                </style>
-
-                <!-- Template Button ghost (white) -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="templateButton.ghost.white"/>
-                    <attributes>
-                        <attribute name="class">button button__ghost</attribute>
-                    </attributes>
-                </style>
-
-                <!-- Template Button icon: download -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="templateButton.download"/>
-                    <attributes>
-                        <attribute name="class">button button-download</attribute>
-                    </attributes>
-                </style>
-
-                <!-- Template Button icon: arrow -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="templateButton.arrow"/>
-                    <attributes>
-                        <attribute name="class">button button-arrow</attribute>
-                    </attributes>
-                </style>
             </styles>
         </wysiwyg>
 
