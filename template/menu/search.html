@@ -7,34 +7,41 @@
 
 {if $searchType === 'input'}
     <form action="{$searchUrl}"
-          class="searchForm searchForm--onlyInput hide-on-mobile"
+          class="headerBarSearchForm headerBarSearchForm--onlyInput hide-on-mobile"
           method="get"
     >
         <input type="search" name="search"
-               class="searchForm__input"
+               class="headerBarSearchForm__input"
                {if $dataQui}data-qui="{$dataQui}"{/if}
                placeholder="{locale group='quiqqer/template-presentation' var='navbar.search.text'}"
         />
     </form>
 {elseif $searchType === 'inputAndIcon'}
-    <form action="{$searchUrl}"
-          data-name="headerBar-searchForm"
-          class="searchForm searchForm--inputAndIcon hide-on-mobile"
-          method="get"
-    >
-        <div class="header-bar-suggestSearch-wrapper">
-            <input type="search" name="search"
-                   class="searchForm__input"
-                   {if $dataQui}data-qui="{$dataQui}"{/if}
-                   placeholder="{locale group='quiqqer/template-presentation' var='navbar.search.text'}"
-            />
-        </div>
-        <button data-name="headerBar-searchForm-submit"
-                class="btn searchForm__btn"
+        <form action="{$searchUrl}"
+              class="headerBarSearchForm headerBarSearchForm--inputAndIcon hide-on-mobile"
+              data-name="headerBarSearchForm"
+              data-show-input="0"
+              method="get"
         >
-            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-        </button>
-    </form>
+            <div style="position: relative;">
+                <div class="headerBarSearchForm__inputWrapper">
+                    <input type="search" name="search"
+                           data-name="headerBarSearchForm-input"
+                           class="headerBarSearchForm__input"
+                           {if $dataQui}data-qui="{$dataQui}"{/if}
+                           placeholder="{locale group='quiqqer/template-presentation' var='navbar.search.text'}"
+                    />
+                </div>
+            </div>
+
+
+            <button data-name="headerBarSearchForm-showInputBtn"
+                    class="headerBarSearchForm__btn btn-icon"
+                    type="button"
+            >
+                <i class="fa-solid fa-magnifying-glass icon" aria-hidden="true"></i>
+            </button>
+        </form>
 {/if}
 
 {*    <div class="quiqqer-menu-megaMenu-mobile-search">*}

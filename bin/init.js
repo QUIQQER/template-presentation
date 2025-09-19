@@ -163,45 +163,46 @@ whenQuiLoaded().then(() => {
     });
 
     /**
-     * show the search input after clicking on the icon
+     * show the search input after clicking on the button
      */
-    if (document.getElement('[data-name="headerBar-suggestSearch"]') &&
-        document.getElement('[data-name="headerBar-suggestSearch"]').getElement('.fa-search')) {
+    const SearchForm = document.getElement('[data-name="headerBarSearchForm"]');
+    const SearchInput = document.getElement('[data-name="headerBarSearchForm-input"]');
+    const ShowBtn = document.getElement('[data-name="headerBarSearchForm-showInputBtn"]');
+    if (SearchForm && SearchInput && ShowBtn) {
+        let open        = false;
 
+        const hideInput = function () {
+            SearchForm.setAttribute('data-show-input', '0');
+            open = false;
+            window.removeEventListener('click', hideInput);
+        };
 
-        var searchBar   = document.getElement('.header-bar-suggestSearch'),
-            searchIcon  = searchBar.getElement('.fa-search'),
-            searchInput = searchBar.getElement('input[type="search"]'),
-            open        = false;
-
-        searchIcon.addEvent('click', function (event) {
+        ShowBtn.addEvent('click', function (event) {
             event.stopPropagation();
 
-            /* open */
             if (!open) {
-                searchInput.addEvent('click', function (e) {
+                SearchForm.querySelector('input').addEvent('click', function (e) {
                     e.stopPropagation();
                 });
-                window.addEvent('click', function () {
-                    searchBar.removeClass('showSearch');
-                    open = false;
-                    window.removeEvents('click');
-                });
 
-                searchBar.addClass('showSearch');
+                SearchForm.setAttribute('data-show-input', '1');
+                window.addEventListener('click', hideInput);
 
                 (function () {
-                    searchInput.focus();
+                    SearchInput.focus();
                 }).delay(100);
 
                 open = true;
                 return;
             }
 
-            /* close */
-            searchBar.removeClass('showSearch');
-            open = false;
-            window.removeEvents('click');
+            if (SearchInput.value.length === 0) {
+                SearchInput.focus();
+
+                return;
+            }
+
+            SearchForm.submit();
         });
     }
 
