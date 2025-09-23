@@ -207,6 +207,7 @@ class Utils
          * Nav bar initial transparent
          */
         $navInitialTransparent = false;
+        $logoForTransparentNav = false;
 
         if ($headerArea || $showHeader) {
             $navInitialTransparent = $Project->getConfig('templatePresentation.settings.navBarInitialTransparent');
@@ -217,6 +218,21 @@ class Utils
                 'disable' => false,
                 default => $navInitialTransparent
             };
+
+            if (
+                $navInitialTransparent && $Project->getConfig(
+                    'templatePresentation.settings.navBarInitialTransparentLogo'
+                )
+            ) {
+                $logoForTransparentNav = $Project->getConfig(
+                    'templatePresentation.settings.navBarInitialTransparentLogo'
+                );
+            }
+
+            // site setting for alternate logo (for transparent nav)
+            if ($navInitialTransparent && $Site->getAttribute('templatePresentation.nav.initialTransparent.logo')) {
+                $logoForTransparentNav = $Site->getAttribute('templatePresentation.nav.initialTransparent.logo');
+            }
         }
 
         /**
@@ -243,6 +259,7 @@ class Utils
             'navStyle' => $navStyle,
             'searchData' => self::getSearchData(),
             'navInitialTransparent' => $navInitialTransparent,
+            'logoForTransparentNav' => $logoForTransparentNav,
             'headerArea' => $headerArea,
             'showPageTitle' => $showPageTitle,
             'showPageShort' => $showPageShort,

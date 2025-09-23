@@ -57,6 +57,19 @@ if ($Site->getAttribute('templatePresentation.independentMenuId')) {
 $MegaMenu = new QUI\Menu\MegaMenu($params);
 
 /**
+ * Logo for transparent nav
+ */
+if ($templateSettings['logoForTransparentNav']) {
+    try {
+        $templateSettings['LogoForTransparentNav'] = QUI\Projects\Media\Utils::getImageByUrl(
+            $templateSettings['logoForTransparentNav']
+        );
+    } catch (Exception $e) {
+        QUI\System\Log::addError($e->getMessage());
+    }
+}
+
+/**
  * Language select
  */
 $LangSelectControl = null;

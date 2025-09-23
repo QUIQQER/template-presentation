@@ -78,6 +78,9 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
+                    <conf name="navBarInitialTransparentLogo">
+                        <type><![CDATA[string]]></type>
+                    </conf>
                     <conf name="navBarInitialTransparentLinkColor">
                         <type><![CDATA[string]]></type>
                     </conf>
@@ -758,6 +761,19 @@
                                 <description>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.navBarInitialTransparent.desc"
+                                    />
+                                </description>
+                            </input>
+
+                            <input conf="templatePresentation.settings.navBarInitialTransparentLogo" class="media-image">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparentLogo.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparentLogo.desc"
                                     />
                                 </description>
                             </input>

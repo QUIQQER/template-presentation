@@ -90,6 +90,22 @@
     height: var(--logo-height); /* 1 */
 }
 
+/* switch logos (for solid and transparent nav) */
+.header-bar.header-bar--initial-transparent [data-show-for="solid-nav"] {
+    display: none;
+}
+
+.header-bar.header-bar--initial-transparent [data-show-for="transparent-nav"] {
+    display: block;
+}
+
+.header-bar.header-bar--scrolled [data-show-for="solid-nav"] {
+    display: block;
+}
+
+.header-bar.header-bar--scrolled [data-show-for="transparent-nav"] {
+    display: none;
+}
 
 /* mega menu
  * ========================================================== */

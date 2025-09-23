@@ -11,6 +11,7 @@
         <attribute>templatePresentation.pageCustomClass</attribute>
         <attribute>templatePresentation.independentMenuId</attribute>
         <attribute>templatePresentation.nav.initialTransparent</attribute>
+        <attribute>templatePresentation.nav.initialTransparent.logo</attribute>
         <attribute>templatePresentation.nav.initialTransparent.linkColor</attribute>
         <attribute>templatePresentation.nav.initialTransparent.linkColorHover</attribute>
         <attribute>templatePresentation.nav.initialTransparent.linkBgColorHover</attribute>
@@ -178,6 +179,17 @@
                                 var="site.settings.nav.initialTransparent.disable"/>
                     </option>
                 </select>
+
+                <input conf="templatePresentation.nav.initialTransparent.logo" class="media-image">
+                    <text>
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.nav.initialTransparent.logo"/>
+                    </text>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.nav.initialTransparent.logo.desc"/>
+                    </description>
+                </input>
 
                 <input conf="templatePresentation.nav.initialTransparent.linkColor" type="color">
                     <text>
