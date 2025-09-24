@@ -1,0 +1,74 @@
+/**
+ * This file contains button utility classes
+ */
+
+/**
+ * Basic alert styles
+ */
+.alert {
+    --alert-bg: var(--qui-colors-primary-50, #f0f4ff);
+    --alert-color: var(--qui-colors-primary, #004085);
+    --alert-border: var(--qui-colors-primary-200, #b8daff);
+    background: var(--alert-bg);
+    color: var(--alert-color);
+    border: 1px solid var(--alert-border);
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/**
+ * Primary alert
+ */
+.alert-primary {
+    --alert-bg: var(--qui-colors-primary-50, #f0f4ff);
+    --alert-color: var(--qui-colors-primary, #004085);
+    --alert-border: var(--qui-colors-primary-200, #b8daff);
+}
+
+/**
+ * Success alert
+ */
+.alert-success {
+    --alert-bg: var(--qui-colors-success-50, #eafaf1);
+    --alert-color: var(--qui-colors-success, #155724);
+    --alert-border: var(--qui-colors-success-200, #c3e6cb);
+}
+
+/**
+ * Danger alert
+ */
+.alert-danger {
+    --alert-bg: var(--qui-colors-danger-50, #fdf2f2);
+    --alert-color: var(--qui-colors-danger, #721c24);
+    --alert-border: var(--qui-colors-danger-200, #f5c6cb);
+}
+
+/**
+ * Warning alert
+ */
+.alert-warning {
+    --alert-bg: var(--qui-colors-warning-50, #fffbe6);
+    --alert-color: var(--qui-colors-warning, #856404);
+    --alert-border: var(--qui-colors-warning-200, #ffeeba);
+}
+
+/**
+ * Info alert
+ */
+.alert-info {
+    --alert-bg: var(--qui-colors-info-50, #e9f7fd);
+    --alert-color: var(--qui-colors-info, #0c5460);
+    --alert-border: var(--qui-colors-info-200, #bee5eb);
+}
+
+/**
+ * Dark alert
+ */
+.alert-dark {
+    --alert-bg: var(--qui-colors-dark-50, #f4f4f4);
+    --alert-color: var(--qui-colors-dark, #1b1e21);
+    --alert-border: var(--qui-colors-dark-200, #d6d8d9);
+}

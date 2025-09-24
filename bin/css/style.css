@@ -25,98 +25,29 @@ html {
     padding-right: 0;
 }
 
+/* extra grid class  */
+.grid-children-container {
+    left: -20px;
+    width: calc(100% + 40px);
+}
+
+
 body {
     height: 100%;
     background-color: var(--qui-colors-body-bgColor);
 }
 
-/* todo @michael.daniel standardize names */
-.color-main,
-.control-color,
-.mainColor {
-    color: var(--qui-colors-primary);
-}
 
 .qui-sitetypes-sitemap-block-category .control-background {
     background-color: var(--qui-colors-primary);
 }
 
-/***********/
-/* Spacing */
-/***********/
-/* margin */
-.mx-auto {
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
 
-.m-0 {
-    margin: 0 !important;
-}
-
-.mx-0 {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-.my-0 {
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
-}
-
-.mt-0 {
-    margin-top: 0 !important;
-}
-
-.mb-0 {
-    margin-bottom: 0 !important;
-}
-
-.ml-0 {
-    margin-left: 0 !important;
-}
-
-.mr-0 {
-    margin-right: 0 !important;
-}
-
-/* padding */
-.p-0 {
-    padding: 0 !important;
-}
-
-.px-0 {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-.py-0 {
-    padding-left: 0 !important;
-    padding-top: 0 !important;
-}
-
-.pt-0 {
-    padding-top: 0 !important;
-}
-
-.pb-0 {
-    padding-bottom: 0 !important;
-}
-
-.pl-0 {
-    padding-left: 0 !important;
-}
-
-.pr-0 {
-    padding-right: 0 !important;
-}
-
-video,
-img {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    height: auto;
+/***************/
+/* Page layout */
+/***************/
+.body-container {
+    padding-top: var(--qui-body-spacing-top);
 }
 
 .noSidebar--narrowContent {
@@ -125,73 +56,6 @@ img {
     max-width: 750px;
 }
 
-.body-container {
-    padding-top: var(--qui-body-spacing-top);
-}
-
-.sidebox-button {
-    background: #414141;
-    color: #eee;
-    padding: 10px 20px;
-    text-decoration: none !important;
-}
-
-.sidebox-button:hover {
-    box-shadow: none;
-}
-
-code {
-    background: #f7f7f7 none repeat scroll 0 0;
-    border: 2px solid #efefef;
-    border-radius: 0.35em;
-    font-family: "Courier New", monospace;
-    font-size: 0.9em;
-    margin: 0 0.25em;
-    padding: 0.25em 0.65em;
-}
-
-blockquote {
-    border-left: 6px solid #efefef;
-    font-style: italic;
-    margin: 0 0 2em;
-    padding: 0.5em 0 0.5em 1.5em;
-}
-
-pre {
-    margin-bottom: 10px;
-    max-width: 100%;
-    overflow: auto;
-}
-
-pre code {
-    display: block;
-    line-height: 1.75em;
-    overflow-x: auto;
-    padding: 1em 1.5em;
-}
-
-.basic-company-preview-ul {
-    list-style: none;
-}
-
-ul.basic-company-preview-ul {
-    margin: 0 !important;
-}
-
-ul.basic-company-preview-ul > li {
-    display: inline-block;
-    list-style: none;
-    width: 25%;
-}
-
-ul.basic-company-preview-ul > a,
-ul.basic-company-preview-ul > span {
-    margin: 0.5em 3em;
-}
-
-/***************/
-/* Page layout */
-/***************/
 @media screen and (min-width: 768px) {
     .tpl-layout-two-columns {
         display: grid;
@@ -217,69 +81,7 @@ ul.basic-company-preview-ul > span {
     grid-area: sidebar;
 }
 
-/** page design
- * ========================================================== */
-ul, ol {
-    padding-left: 1.5rem;
-}
 
-li {
-    padding-left: 0.5em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-:where(li)::marker {
-    color: var(--qui-colors-primary);
-}
-
-ul.alt li:first-child {
-    border-top: 0 none;
-    padding-top: 0;
-}
-
-ul.alt li {
-    border-top: 2px solid #efefef;
-    padding: 0.5em 0;
-}
-
-ul.alt {
-    list-style: outside none none;
-    padding-left: 0;
-}
-
-/*********/
-/* Table */
-/*********/
-tbody, td, tfoot, th, thead, tr {
-    border-color: inherit;
-    border-style: solid;
-    border-width: 0;
-}
-
-table {
-    border-collapse: collapse;
-    margin-bottom: 1rem;
-    max-width: 100%;
-    width: 100%;
-}
-
-tr {
-    border-width: 1px 0;
-}
-
-th,
-td {
-    border-width: 0 1px;
-}
-
-th, td {
-    padding: 0.5rem;
-}
-
-thead {
-    font-weight: bold;
-}
 
 /** page header
  * ========================================================== */
@@ -532,44 +334,6 @@ section.quiqqer-portfolio-list {
     text-align: center;
 }
 
-hr {
-    border: none;
-    border-top: 1px solid #ccc;
-    clear: both;
-    float: left;
-    margin: 3em 0;
-    width: 100%;
-}
-
-.content-body ol,
-.content-body ul {
-    clear: both;
-}
-
-.content-body ol ol,
-.content-body ol ul,
-.content-body ul ul,
-.content-body ul ol {
-    clear: both;
-}
-
-p,
-address {
-    margin-bottom: var(--qui-spacing, 1rem);
-}
-
-address {
-    font-style: normal;
-}
-
-.content-body p:last-child {
-    margin-bottom: 0;
-}
-
-.content-body li p {
-    margin: 0;
-}
-
 /** icon toTop
  * ========================================================== */
 
@@ -637,20 +401,6 @@ a.quiqqer-navigation-home:hover,
     li.nav-button-close {
         display: block !important;
     }
-}
-
-/*********************************************************************************/
-/* Design standard
-/*********************************************************************************/
-/* todo @michael do we need this? */
-.control-background {
-    background: var(--qui-colors-primary);
-}
-
-/* todo @michael do we need this? */
-.control-background-active {
-    background: var(--qui-colors-primary);
-    color: #FFFFFF;
 }
 
 /*********************************************************************************/
@@ -1000,23 +750,6 @@ a.qui-control-list-entry-imagelink {
 }
 
 /*********************************************************************************/
-/* img brick
-/*********************************************************************************/
-
-.brick-image-picture-container {
-    line-height: 0;
-}
-
-/*********************************************************************************/
-/* slider
-/*********************************************************************************/
-
-.quiqqer-bricks-children-slider .quiqqer-bricks-children-slider-prev,
-.quiqqer-bricks-children-slider .quiqqer-bricks-children-slider-next {
-    color: #ddd;
-}
-
-/*********************************************************************************/
 /* breadcrumb
 /*********************************************************************************/
 
@@ -1086,8 +819,3 @@ a.qui-control-list-entry-imagelink {
     font-size: 130px;
 }
 
-/* extra grid class  */
-.grid-children-container {
-    left: -20px;
-    width: calc(100% + 40px);
-}
