@@ -87,7 +87,7 @@
     --qui-colors-warning-950: color-mix(in srgb, var(--qui-colors-warning) 50%, black);
 
     /* info */
-    --qui-colors-info: var(--theme--qui-colors-info, #51a1c0);
+    --qui-colors-info: var(--theme--qui-colors-info, #4ca5ce);
     --qui-colors-info-25: color-mix(in srgb, var(--qui-colors-info) 5%, white);
     --qui-colors-info-50: color-mix(in srgb, var(--qui-colors-info) 10%, white);
     --qui-colors-info-100: color-mix(in srgb, var(--qui-colors-info) 20%, white);

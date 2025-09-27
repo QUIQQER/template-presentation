@@ -16,7 +16,8 @@ body {
 /**
  * Headings
  */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: var(--qui-heading-fontWeight);
     letter-spacing: 1px;
     line-height: 1.3;
@@ -27,7 +28,12 @@ h2:where(:not(:first-child)),
 h3:where(:not(:first-child)),
 h4:where(:not(:first-child)),
 h5:where(:not(:first-child)),
-h6:where(:not(:first-child)){
+h6:where(:not(:first-child)),
+.h2:where(:not(:first-child)),
+.h3:where(:not(:first-child)),
+.h4:where(:not(:first-child)),
+.h5:where(:not(:first-child)),
+.h6:where(:not(:first-child)) {
     margin-top: 1.5em;
 }
 
