@@ -463,7 +463,7 @@ class Utils
     public static function getSocialData(): array
     {
         if (
-            !self::$Project->getConfig('templatePresentation.settings.social.show.nav') ||
+            !self::$Project->getConfig('templatePresentation.settings.social.show.nav') &&
             !self::$Project->getConfig('templatePresentation.settings.social.show.footer')
         ) {
             return [];
