@@ -57,7 +57,10 @@
 
     /* footer */
     --qui-footer-bg: var(--template-settings__footer-bgColor);
-    --qui-footer-font-color: var(--template-settings__footer-text-color);
+    --qui-footer-font-color: var(--template-settings__footer-text-color, inherit);
+    --qui-footer-link-color: var(--template-settings__footer-link-color, var(--qui-colors-link));
+    --qui-footer-link-color--hover: var(--template-settings__footer-link-color--hover, var(--qui-colors-link--hover));
+
     --qui-footer-copyrigth-border-top-color: var(--theme--qui-footer-copyrigth-border-top-color, color-mix(in srgb, var(--qui-footer-bg) 90%, black 10%));
 
     /* background */

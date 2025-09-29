@@ -599,9 +599,11 @@ class Utils
 
         // footer
         $footerBgColor = '#414141';
-        $footerTextColor = '#d1d1d1';
-        $footerLinkColor = '#aaaaaa';
+        $footerTextColor = '';
+        $footerLinkColor = '';
+        $footerLinkColorHover = '';
 
+        /* footer colors */
         if (self::$Project->getConfig('templatePresentation.settings.colorFooterBackground')) {
             $footerBgColor = self::$Project->getConfig('templatePresentation.settings.colorFooterBackground');
         }
@@ -610,6 +612,15 @@ class Utils
             $footerTextColor = self::$Project->getConfig('templatePresentation.settings.colorFooterFont');
         }
 
+        if (self::$Project->getConfig('templatePresentation.settings.colorFooterLink')) {
+            $footerLinkColor = self::$Project->getConfig('templatePresentation.settings.colorFooterLink');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.colorFooterLinkHover')) {
+            $footerLinkColorHover = self::$Project->getConfig('templatePresentation.settings.colorFooterLinkHover');
+        }
+
+        /* primary / main colors */
         if (self::$Project->getConfig('templatePresentation.settings.colorMain')) {
             $colorMain = self::$Project->getConfig('templatePresentation.settings.colorMain');
         }
@@ -847,7 +858,8 @@ class Utils
             /* footer */
             'footerBgColor' => $footerBgColor,
             'footerTextColor' => $footerTextColor,
-            'footerLinkColor' => $footerLinkColor, /* todo as setting */
+            'footerLinkColor' => $footerLinkColor,
+            'footerLinkColorHover' => $footerLinkColorHover,
         ];
     }
 }

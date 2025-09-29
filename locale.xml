@@ -913,6 +913,18 @@
             <de><![CDATA[Footer Schriftfarbe]]></de>
             <en><![CDATA[Footer font color]]></en>
         </locale>
+        <locale name="template.settings.colorFooterLink.text">
+            <de><![CDATA[Footer: Link-Farbe]]></de>
+            <en><![CDATA[Footer: link color]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterLinkHover.text">
+            <de><![CDATA[Footer: Link Farbe beim Hover]]></de>
+            <en><![CDATA[Footer: Link color on hover]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterLinkHover.desc">
+            <de><![CDATA[Farbe der Links, wenn der Mauszeiger über ihnen steht (Hover)]]></de>
+            <en><![CDATA[Link color when mouse hovers over it]]></en>
+        </locale>
         <locale name="template.settings.colorMain.text">
             <de><![CDATA[Hauptfarbe]]></de>
             <en><![CDATA[Main color]]></en>

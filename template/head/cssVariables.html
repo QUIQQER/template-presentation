@@ -44,7 +44,8 @@
 
         /* footer */
         --template-settings__footer-bgColor: {$css['footerBgColor']};
-        --template-settings__footer-text-color: {$css['footerTextColor']};
-        --template-settings__footer-link-color: {$css['footerLinkColor']}; /* todo */
+        {if $css['footerTextColor']}--template-settings__footer-text-color: {$css['footerTextColor']};{/if}
+        {if $css['footerLinkColor']}--template-settings__footer-link-color: {$css['footerLinkColor']};{/if}
+        {if $css['footerLinkColorHover']}--template-settings__footer-link-color--hover: {$css['footerLinkColorHover']};{/if}
     }
 </style>

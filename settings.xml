@@ -219,7 +219,12 @@
                     </conf>
                     <conf name="colorFooterFont">
                         <type><![CDATA[string]]></type>
-                        <defaultvalue>#333333</defaultvalue>
+                    </conf>
+                    <conf name="colorFooterLink">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="colorFooterLinkHover">
+                        <type><![CDATA[string]]></type>
                     </conf>
 
                     <!-- social -->
@@ -1131,6 +1136,29 @@
                                             var="template.settings.colorFooterFont.text"
                                     />
                                 </text>
+                            </input>
+
+                            <input conf="templatePresentation.settings.colorFooterLink"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorFooterLink.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <input conf="templatePresentation.settings.colorFooterLinkHover"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorFooterLinkHover.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorFooterLinkHover.desc"
+                                    />
+                                </description>
                             </input>
 
                         </settings>

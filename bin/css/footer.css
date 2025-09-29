@@ -16,6 +16,14 @@
     margin-bottom: var(--qui-tpl-spacing--bottom);
 }
 
+.page-footer a:not(.btn) {
+    color: var(--qui-footer-link-color);
+}
+
+.page-footer a:not(.btn):is(:hover, :focus) {
+    color: var(--qui-footer-link-color--hover);
+}
+
 /* footer bar */
 .page-footer__bar {
     border-top: 1px solid var(--qui-footer-copyrigth-border-top-color);
@@ -40,7 +48,7 @@
     gap: 0.5rem;
 }
 
-.page-footer__social :where(.social-link) {
+.page-footer__social a.social-link {
     position: relative;
     aspect-ratio: 1;
     display: grid;
@@ -52,8 +60,9 @@
     border-radius: var(--qui-radius-btn);
 }
 
-.page-footer__social :where(.social-link:hover) {
+.page-footer__social a.social-link:is(:hover, :focus) {
     background-color: rgba(0,0,0,0.1);
+    color: var(--qui-footer-font-color);
 }
 
 .page-footer__social :where(.social-link:before) {

@@ -159,7 +159,7 @@ a {
 :where(.default-content) a,
 :where(.control-content) a {
     color: var(--qui-colors-primary);
-    transition: var(var(--qui-transition));
+    transition: var(--qui-transition);
 }
 
 /**
