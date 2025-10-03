@@ -198,13 +198,13 @@ pre code {
 /**
  * Lists
  */
-.default-content :is(ul, ol),
-.control-content :is(ul, ol) {
+:where(.default-content) :is(ul, ol),
+:where(.control-content) :is(ul, ol) {
     padding-left: 1.5rem;
 }
 
-.default-content li,
-.control-content li {
+:where(.default-content) li,
+:where(.control-content) li {
     padding-left: 0.5em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
