@@ -201,6 +201,7 @@ pre code {
 :where(.default-content) :is(ul, ol),
 :where(.control-content) :is(ul, ol) {
     padding-left: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 :where(.default-content) li,
