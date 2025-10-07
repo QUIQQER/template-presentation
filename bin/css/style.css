@@ -31,7 +31,6 @@ html {
     width: calc(100% + 40px);
 }
 
-
 body {
     height: 100%;
     background-color: var(--qui-colors-body-bgColor);
