@@ -408,29 +408,6 @@ img {
     height: auto;
 }
 
-img, svg, video, canvas, audio, iframe, embed, object {
-    display: block;
-    vertical-align: middle;
-}
-
-/**
- * Center element if user set text-align
- * to center (per CKEditor)
- */
-[style*="text-align: center"] > :is(img, svg, video, audio, iframe, embed, object),
-[style*="text-align:center"] > :is(img, svg, video, audio, iframe, embed, object) {
-    display: initial;
-}
-
-/**
- * Center element if user set text-align
- * to center (per CKEditor)
- */
-[style*="text-align: center"] > picture img,
-[style*="text-align:center"] > picture img {
-    display: initial;
-}
-
 figcaption {
     color: var(--qui-color-muted);
     font-size: 0.75rem;
@@ -865,12 +842,6 @@ thead {
     background: none;
 }
 
-.start-page-header {
-    height: auto;
-    overflow: hidden;
-    padding: 0 !important;
-}
-
 /********/
 /* Logo */
 /********/
@@ -1063,7 +1034,7 @@ thead {
 .header-bar-suggestSearch,
 .fa.close-social-share,
 .fa.open-social-share,
-.quiqqer-bricks-languageswitch-dropdown {
+.quiqqer-control-languageswitch-dropdown-button {
     line-height: var(--qui-nav-height);
 }
 
@@ -1523,8 +1494,6 @@ header.control-header {
 hr {
     border: none;
     border-top: 1px solid #ccc;
-    clear: both;
-    float: left;
     margin: 3em 0;
     width: 100%;
 }

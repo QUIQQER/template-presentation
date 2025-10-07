@@ -7,13 +7,14 @@
     {if $startPage}
         {assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
         {foreach from=$headerBricks item=Brick}
-        <div class="header-brick-area start-page-header brick-id-{$Brick->getAttribute('id')}">
-            {if $Brick->getAttribute('frontendTitle')}
-                <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-            {/if}
-            {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-            {$Brick->create()}
-        </div>
+            {assign var=classes value=QUI\TemplatePresentation\Utils::convertBrickCSSClass($Brick->getAttribute('classes'))}
+            <div class="header-brick-area start-page-header brick-id-{$Brick->getAttribute('id')} {$classes}">
+                {if $Brick->getAttribute('frontendTitle')}
+                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                {/if}
+                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                {$Brick->create()}
+            </div>
         {/foreach}
 
         {template_event name="quiqqer::template::body::after" Template=$Template}

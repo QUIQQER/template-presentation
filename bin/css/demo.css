@@ -6,6 +6,13 @@
     --qui-nav-bg: #fff;
 }
 
+.hero-imageBasicSlider {
+    padding-block: clamp(5rem, 10vw, 8rem);
+    padding-inline: 20px;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
 .brick-container__bg-light {
     background-color: var(--demo-bg-light) !important;
 }
