@@ -408,29 +408,6 @@ img {
     height: auto;
 }
 
-img, svg, video, canvas, audio, iframe, embed, object {
-    display: block;
-    vertical-align: middle;
-}
-
-/**
- * Center element if user set text-align
- * to center (per CKEditor)
- */
-[style*="text-align: center"] > :is(img, svg, video, audio, iframe, embed, object),
-[style*="text-align:center"] > :is(img, svg, video, audio, iframe, embed, object) {
-    display: initial;
-}
-
-/**
- * Center element if user set text-align
- * to center (per CKEditor)
- */
-[style*="text-align: center"] > picture img,
-[style*="text-align:center"] > picture img {
-    display: initial;
-}
-
 figcaption {
     color: var(--qui-color-muted);
     font-size: 0.75rem;
