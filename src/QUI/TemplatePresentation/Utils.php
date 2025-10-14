@@ -24,8 +24,6 @@ class Utils
 
     private static QUI\Projects\Site $Site;
 
-    private static array $cssVars = [];
-
     /**
      * @param Array<string, mixed> $params
      *
