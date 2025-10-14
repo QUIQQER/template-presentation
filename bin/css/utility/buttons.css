@@ -1,0 +1,45 @@
+/**
+ * This file contains button utility classes
+ */
+
+.btn-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-container--center {
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .btn-container > .btn {
+        width: 100%;
+    }
+}
+
+/* Button stack: always stacked and full width */
+.btn-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-stack > .btn {
+    width: 100%;
+}
+
+/**
+ * Button sizes
+ */
+.btn-sm {
+    /*padding: .25em .75em;*/
+    /*padding: calc(0.5 * var(--paddding-y)) calc(0.5 * var(--paddding-x));*/
+    font-size: .875em;
+}
+
+.btn-lg {
+    /*padding: .5em 1.25em;*/
+    /*padding: calc(0.5 * var(--paddding-y)) calc(0.5 * var(--paddding-x));*/
+    font-size: 1.25em;
+}

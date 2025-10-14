@@ -130,19 +130,19 @@ whenQuiLoaded().then(() => {
 
             // background on load
             if (QUI.getScroll().y > breakPoint) {
-                headerBar.addClass('header-bar-scrolled');
+                headerBar.addClass('header-bar--scrolled');
                 navBackground = true;
             }
 
             QUI.addEvent('scroll', function () {
                 if (QUI.getScroll().y > breakPoint) {
                     if (!navBackground) {
-                        headerBar.addClass('header-bar-scrolled');
+                        headerBar.addClass('header-bar--scrolled');
                         navBackground = true;
                     }
                     return;
                 }
-                headerBar.removeClass('header-bar-scrolled');
+                headerBar.removeClass('header-bar--scrolled');
                 navBackground = false;
 
             });
@@ -151,66 +151,58 @@ whenQuiLoaded().then(() => {
         /**
          * social share buttons
          */
-
         if (social) {
             var SlideOutElm = document.getElement(
                 '[data-qui="package/quiqqer/menu/bin/SlideOut"]'
             );
 
             if (SlideOutElm) {
-                Controls.getControlByElement(SlideOutElm).then(function (SlideOutControl) {
-
-                    var Elm = SlideOutControl.getElm();
-
-                    new Element('div', {
-                        'class': 'mobile-bar-social hide-on-desktop',
-                        html   : socialHTML
-                    }).inject(SlideOutElm);
-                });
+                SlideOutElm.insertAdjacentHTML('beforeend', socialHTML);
             }
         }
     });
 
     /**
-     * show the search input after clicking on the icon
+     * show the search input after clicking on the button
      */
-    if (document.getElement('.header-bar-suggestSearch') &&
-        document.getElement('.header-bar-suggestSearch').getElement('.fa-search')) {
+    const SearchForm = document.getElement('[data-name="headerBarSearchForm"]');
+    const SearchInput = document.getElement('[data-name="headerBarSearchForm-input"]');
+    const ShowBtn = document.getElement('[data-name="headerBarSearchForm-showInputBtn"]');
+    if (SearchForm && SearchInput && ShowBtn) {
+        let open        = false;
 
+        const hideInput = function () {
+            SearchForm.setAttribute('data-show-input', '0');
+            open = false;
+            window.removeEventListener('click', hideInput);
+        };
 
-        var searchBar   = document.getElement('.header-bar-suggestSearch'),
-            searchIcon  = searchBar.getElement('.fa-search'),
-            searchInput = searchBar.getElement('input[type="search"]'),
-            open        = false;
-
-        searchIcon.addEvent('click', function (event) {
+        ShowBtn.addEvent('click', function (event) {
             event.stopPropagation();
 
-            /* open */
             if (!open) {
-                searchInput.addEvent('click', function (e) {
+                SearchForm.querySelector('input').addEvent('click', function (e) {
                     e.stopPropagation();
                 });
-                window.addEvent('click', function () {
-                    searchBar.removeClass('showSearch');
-                    open = false;
-                    window.removeEvents('click');
-                });
 
-                searchBar.addClass('showSearch');
+                SearchForm.setAttribute('data-show-input', '1');
+                window.addEventListener('click', hideInput);
 
                 (function () {
-                    searchInput.focus();
+                    SearchInput.focus();
                 }).delay(100);
 
                 open = true;
                 return;
             }
 
-            /* close */
-            searchBar.removeClass('showSearch');
-            open = false;
-            window.removeEvents('click');
+            if (SearchInput.value.length === 0) {
+                SearchInput.focus();
+
+                return;
+            }
+
+            SearchForm.submit();
         });
     }
 

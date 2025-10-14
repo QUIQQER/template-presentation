@@ -5,7 +5,11 @@ button.qui-button,
 button,
 a.qui-button,
 .btn {
+    --paddding-block: 0.5em;
+    --paddding-inline: 1.25em;
+
     display: inline-flex;
+    justify-content: center;
     align-items: center;
     gap: var(--qui-btn-gap);
     font-weight: var(--qui-btn-fontWeight);
@@ -22,7 +26,7 @@ a.qui-button,
     -ms-user-select: none;
     user-select: none;
 
-    padding: .5em 1.25em;
+    padding: var(--paddding-block) var(--paddding-inline);
     font-size: 1em;
     line-height: 1.25;
     cursor: pointer;
@@ -133,7 +137,7 @@ button.qui-button.btn-link:hover,
 button.qui-button.btn-link:active,
 .btn-link:hover,
 .btn-link:active {
-    background-color: transparent;
+    background-color: var(--qui-btn-link-bg--hover);
     border-color: transparent;
     color: var(--qui-btn-link-color--hover);
 }
@@ -162,7 +166,7 @@ button.qui-button.btn-link-dark:hover,
 button.qui-button.btn-link-dark:active,
 .btn-link-dark:hover,
 .btn-link-dark:active {
-    background-color: transparent;
+    background-color: var(--qui-btn-linkDark-bg--hover);
     border-color: transparent;
     color: var(--qui-btn-linkDark-color--hover);
 }
@@ -539,9 +543,9 @@ input[type="reset"].btn-white,
 button.qui-button.btn-white,
 button.btn-white,
 .btn-white {
-    background: #fafafa;
-    border-color: #fafafa;
-    color: #393f46;
+    background: var(--qui-btn-white-bg);
+    border-color: var(--qui-btn-white-borderColor);
+    color: var(--qui-btn-white-color);
 }
 
 input[type="submit"].btn-white:hover,
@@ -554,8 +558,8 @@ button.qui-button.btn-white:hover,
 button.qui-button.btn-white:active,
 .btn-white:hover,
 .btn-white:active {
-    background: #eaeaea;
-    color: #393f46;
+    background: var(--qui-btn-white-bg--hover);
+    color: var(--qui-btn-white-color--hover);
     outline: none;
 }
 
@@ -660,32 +664,4 @@ button.btn-outline:disabled:active,
 .btn-outline.btn-disabled:hover,
 .btn-outline.btn-disabled:active {
     opacity: 0.3;
-}
-
-/****************/
-/* button sizes */
-/****************/
-.btn-sm,
-input[type="submit"].btn-sm,
-input[type="button"].btn-sm,
-input[type="reset"].btn-sm,
-.qui-button.btn-sm {
-    padding: .25em .75em;
-    font-size: .875em;
-    line-height: 1.5;
-    border-radius: .2rem;
-    height: auto;
-}
-
-.btn-lg,
-input[type="submit"].btn-lg,
-input[type="button"].btn-lg,
-input[type="reset"].btn-lg,
-.qui-button.btn-lg {
-    padding: .75em 1.75em;
-    font-size: 1.25em;
-    line-height: 1.5;
-    border-radius: .3rem;
-    height: auto;
-
 }

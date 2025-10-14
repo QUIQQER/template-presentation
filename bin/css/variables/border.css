@@ -1,0 +1,28 @@
+/**
+ * Border css variables
+ * Set your own variables by using "--theme" prefix, for example:
+ * - To change success color set variable --theme--qui-colors-success
+ * - To change font size set variable --theme--qui-font-size
+ */
+
+:root {
+    /* generic naming */
+    --qui-radius--xs: var(--theme--qui-radius--xs, calc(var(--qui-radius) * 0.25));
+    --qui-radius--sm: var(--theme--qui-radius--sm, calc(var(--qui-radius) * 0.5));
+    --qui-radius: var(--theme--qui-radius, 0.5rem);
+    --qui-radius--md: var(--theme-radius--md, calc(var(--qui-radius) * 1.5));
+    --qui-radius--lg: var(--theme-radius--lg, calc(var(--qui-radius) * 2));
+    --qui-radius--xl: var(--theme-radius--xl, calc(var(--qui-radius) * 3));
+    --qui-radius--2xl: var(--theme-radius--2xl, calc(var(--qui-radius) * 4));
+    --qui-radius--3xl: var(--theme-radius--3xl, calc(var(--qui-radius) * 5));
+    --qui-radius--full: 9999px;
+
+    /* semantic naming */
+    --qui-radius-btn: var(--theme--qui-radius-btn, var(--qui-radius));
+    --qui-radius-card: var(--theme--qui-radius-card, var(--qui-radius--md));
+    --qui-radius-widget: var(--theme--qui-radius-widget, var(--qui-radius--lg));
+    --qui-radius-badge: var(--theme--qui-radius-badge, var(--qui-radius--sm));
+    --qui-radius-image: var(--theme--qui-radius-image, var(--qui-radius));
+    --qui-radius-pill: var(--qui-radius--full);
+    --qui-radius-circle: 50%;
+}

@@ -4,7 +4,7 @@
     :root {
         /* general */
         --template-settings__scroll-offset: {$css['scrollOffset']}px;
-        --template-settings__body-container-top: {$css['bodyContainerTop']}px;
+        --template-settings__body-spacing-top: {$css['bodySpacingTop']}px;
 
         /* colors */
         --template-settings__color-primary: {$css['colorPrimary']};
@@ -19,24 +19,33 @@
 
         /* nav */
         --template-settings__nav-position: {$css['navPosition']};
-        --template-settings__nav-link-color: {$css['navLinkColor']};
+        --template-settings__nav-aligment: {$css['navAlignment']};
         --template-settings__nav-bgColor: {$css['navBgColor']};
         --template-settings__nav-bgColor--scrolled: {$css['navBgColorScrolled']};
+        --template-settings__nav-link-color: {$css['navLinkColor']};
+        {if $css['navLinkColorHover']}--template-settings__nav-link-color--hover: {$css['navLinkColorHover']};{/if}
+        {if $css['navLinkBgColorHover']}--template-settings__nav-link-bgColor--hover: {$css['navLinkBgColorHover']};{/if}
+        {if $css['navInitialTransparentLinkColor']}--template-settings__nav-initialTransparent-link-color: {$css['navInitialTransparentLinkColor']};{/if}
+        {if $css['navInitialTransparentLinkColorHover']}--template-settings__nav-initialTransparent-link-color--hover: {$css['navInitialTransparentLinkColorHover']};{/if}
+        {if $css['navInitialTransparentLinkBgColorHover']}--template-settings__nav-initialTransparent-link-bgColor--hover: {$css['navInitialTransparentLinkBgColorHover']};{/if}
+        --template-settings__nav-subMenu-bgColor: {$css['navSubMenuBgColor']};
         --template-settings__nav-height: {$css['navHeight']}px;
+        {if $css['navMaxWidth']}--template-settings__nav-maxWidth: {$css['navMaxWidth']};{/if}
         --template-settings__nav-mobile-bgColor: {$css['navMobileBgColor']};
         --template-settings__nav-mobile-text-color: {$css['navMobileTextColor']};
 
         /* page header */
-        --template-settings__page-header-minHeightDesktop: {$css['pageHeaderMinHeightDesktop']}px; /* todo */
-        --template-settings__page-header-minHeightMobile: {$css['pageHeaderMinHeightMobile']}px; /* todo */
+        --template-settings__page-header-minHeightDesktop: {$css['pageHeaderMinHeightDesktop']}px;
+        --template-settings__page-header-minHeightMobile: {$css['pageHeaderMinHeightMobile']}px;
         --template-settings__page-header-img-position: {$css['pageHeaderImgPosition']};
-        --template-settings__page-header-text-alignment: {$css['pageHeaderTextAlignment']}; /* todo */
-        --template-settings__page-header-heading-color: {$css['pageHeaderHeadingColor']}; /* todo */
-        --template-settings__page-header-text-color: {$css['pageHeaderTextColor']}; /* todo */
+        --template-settings__page-header-text-alignment: {$css['pageHeaderTextAlignment']};
+        --template-settings__page-header-text-color: {$css['pageHeaderTextColor']};
+        --template-settings__page-header-heading-color: {$css['pageHeaderHeadingColor']};
 
         /* footer */
         --template-settings__footer-bgColor: {$css['footerBgColor']};
-        --template-settings__footer-text-color: {$css['footerTextColor']};
-        --template-settings__footer-link-color: {$css['footerLinkColor']}; /* todo */
+        {if $css['footerTextColor']}--template-settings__footer-text-color: {$css['footerTextColor']};{/if}
+        {if $css['footerLinkColor']}--template-settings__footer-link-color: {$css['footerLinkColor']};{/if}
+        {if $css['footerLinkColorHover']}--template-settings__footer-link-color--hover: {$css['footerLinkColorHover']};{/if}
     }
 </style>

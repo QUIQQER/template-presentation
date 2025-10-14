@@ -1,0 +1,12 @@
+{assign var=Setting value=$Template->getAttribute('TemplateSetting')}
+{assign var=showSocial value=$Setting->getAttribute('showSocialInMenu')}
+{assign var=socialData value=$Setting->getAttribute('socialData')}
+
+{if $showSocial && $socialData}
+<div class="menuMobile-socialBar">
+    <div class="menuMobile-socialBar__title">{locale group="quiqqer/template-presentation" var="frontend.menuMobile.social.title"}</div>
+    <div class="menuMobile-socialBar__icons">
+        {fetch template="template/social.html" socialData=$socialData Site=$Site Template=$Template}
+    </div>
+</div>
+{/if}

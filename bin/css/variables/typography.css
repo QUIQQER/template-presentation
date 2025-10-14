@@ -14,7 +14,7 @@
     --qui-line-height-lg: 2.5;
 
     /* text */
-    --qui-text-fontWeight: var(--theme--qui-text-fontWeight, var(--template-settings__body-font-weight, 700));
+    --qui-text-fontWeight: var(--theme--qui-text-fontWeight, var(--template-settings__body-font-weight, 400));
 
     /* text: font size */
     /* the calculated values base on 16px */
@@ -25,9 +25,9 @@
     --qui-fs-xl: 1.625rem; /* 26px */
     --qui-fs-2xl: 2rem;    /* 32px */
     --qui-fs-3xl: 2.5rem;  /* 40px */
-    --qui-fs-4xl: 3rem;    /* 48px */
-    --qui-fs-5xl: 3.5rem;  /* 56px */
-    --qui-fs-6xl: 4rem;    /* 64px */
+    --qui-fs-4xl: 3.25rem; /* 52px */
+    --qui-fs-5xl: 4rem;    /* 64px */
+    --qui-fs-6xl: 5.5rem;    /* 88px */
     --qui-text-lead: var(--qui-fs-lg);
     --qui-display-1: var(--qui-fs-6xl);
     --qui-display-2: var(--qui-fs-5xl);
@@ -62,9 +62,9 @@
         --qui-fs-xl: calc(.8 * 1.625rem);
         --qui-fs-2xl: calc(.8 * 2rem);
         --qui-fs-3xl: calc(.8 * 2.5rem);
-        --qui-fs-4xl: calc(.8 * 3rem);
-        --qui-fs-5xl: calc(.8 * 3.5rem);
-        --qui-fs-6xl: calc(.8 * 4rem);
+        --qui-fs-4xl: calc(.8 * 3.25rem);
+        --qui-fs-5xl: calc(.8 * 4rem);
+        --qui-fs-6xl: calc(.8 * 5.5rem);
     }
 }
 
@@ -83,10 +83,10 @@
         --qui-fs-md: 17px;
         --qui-fs-lg: 19px;
         --qui-fs-xl: 22px;
-        --qui-fs-2xl: calc(.7 * 2.5rem);
-        --qui-fs-3xl: calc(.65 * 3.5rem);
-        --qui-fs-4xl: calc(.6 * 4.5rem);
-        --qui-fs-5xl: calc(.55 * 5.5rem);
-        --qui-fs-6xl: calc(.5 * 6.5rem);
+        --qui-fs-2xl: calc(.7 * 2rem);
+        --qui-fs-3xl: calc(.65 *2.5rem);
+        --qui-fs-4xl: calc(.6 * 3.25rem);
+        --qui-fs-5xl: calc(.55 *4rem);
+        --qui-fs-6xl: calc(.5 * 5.5rem);
     }
 }

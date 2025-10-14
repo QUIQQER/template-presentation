@@ -1,19 +1,25 @@
 {assign var=Setting value=$Template->getAttribute('TemplateSetting')}
-{assign var=Project value=$Site->getProject()}
 {assign var=socialData value=$Setting->getAttribute('socialData')}
+{assign var=showSocial value=$Setting->getAttribute('showSocialInMenu')}
+{assign var=searchData value=$Setting->getAttribute('searchData')}
 {assign var=showLangSelect value=$Setting->getAttribute('showLangSelect')}
 
-<div class="header-bar-social hide-on-mobile">
-    {fetch template="template/menu/search.html" Site=$Site Template=$Template}
-
-    {foreach $socialData as $social}
-        <a href="{$social.url}" target="_blank">
-            <span class="fa {$social.icon}"></span>
-        </a>
-    {/foreach}
-
-    {if $showLangSelect && $Setting->getAttribute('LangSelectControl')}
-        {$Setting->getAttribute('LangSelectControl')->create()}
+<div class="header-bar__suffix hide-on-mobile">
+    {if $showSocial && $socialData}
+        <div class="header-bar__social">
+            {fetch template="template/social.html" socialData=$socialData Site=$Site Template=$Template}
+        </div>
     {/if}
 
+    {if $searchData.searchType === 'input' || $searchData.searchType === 'inputAndIcon'}
+        <div class="header-bar__search">
+            {fetch template="template/menu/search.html" Site=$Site Template=$Template}
+        </div>
+    {/if}
+
+    {if $showLangSelect && $Setting->getAttribute('LangSelectControl')}
+        <div class="header-bar__langSwitch">
+            {$Setting->getAttribute('LangSelectControl')->create()}
+        </div>
+    {/if}
 </div>

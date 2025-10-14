@@ -1,11 +1,16 @@
 /**
  * Set your own variables by using "--theme" prefix, for example:
- * - To change success color set variable --theme--qui-color-success
+ * - To change success color set variable --theme--qui-colors-success
  * - To change font size set variable --theme--qui-font-size
  */
 :root {
-    --qui-scroll-padding: var(--theme--qui-scroll-padding, --template-settings__scroll-offset); /* template settings override this variable */
+    --qui-scroll-padding: var(--theme--qui-scroll-padding, --template-settings__scroll-offset);
+    --qui-body-spacing-top: var(--template-settings__body-spacing-top); /* it depends on nav bar height */
 
+    --qui-transition-duration: var(--theme--qui-transition-duration, 0.3s);
+    --qui-transition-timing-function: var(--theme--qui-transition-timing-function, ease);
+    --qui-transition-property: var(--theme--qui-transition-property, all);
+    --qui-transition: var(--theme--qui-transition, var(--qui-transition-duration) var(--qui-transition-timing-function) var(--qui-transition-property));
 
     /* spacing for margin, padding, etc */
     --qui-spacer--desktop: var(--theme--qui-spacer--desktop, 1rem);
@@ -39,28 +44,24 @@
     --qui-tpl-spacing--top: var(--theme--qui-tpl-spacing--top, var(--qui-row-spacing));
     --qui-tpl-spacing--bottom: var(--theme--qui-tpl-spacing--bottom, var(--qui-row-spacing));
 
-    /* nav */
-    --qui-nav-color: var(--theme--qui-nav-color, var(--template-settings__nav-link-color, #ffffff));
-    --qui-nav-position: var(--theme--qui-nav-position, var(--template-settings__nav-position, absolute));
-    --qui-nav-bgColor: var(--theme--qui-nav-bgColor, var(--template-settings__nav-bgColor ,#2d4d88));
-    --qui-nav-bgColor--lighter: var(--theme--qui-nav-bgColor--lighter, color-mix(in srgb, var(--qui-nav-bgColor--lighter) 10%, white));
-    --qui-nav-height: var(--template-settings__nav-height);
-    --qui-nav-scrolled-bg: var(--theme--qui-nav-scrolled-bg, var(--template-settings__nav-bgColor--scrolled));
-    --qui-body-container-top: var(--template-settings__body-container-top);
-    --qui-nav-mobile-bg: var(--theme--qui-nav-mobile-bg, var(--template-settings__nav-mobile-bgColor, #252122));
-    --qui-nav-mobile-font-color: var(--theme--qui-nav-mobile-font-color, var(--template-settings__nav-mobile-text-color, #ffffff));
-    --qui-nav-mobile-social-bar-bg: var(--qui-nav-mobile-social-bar-bg, color-mix(in srgb, var(--qui-nav-mobile-bg) 10%, white)); /* template settings override this variable */
-
     /* header */
+    --qui-page-header-padding-block: var(--theme--qui-page-header-padding-block, calc(var(--qui-nav-height) + 1rem));
     --qui-header-minHeight--desktop: var(--theme--qui-header-minHeight--desktop, var(--template-settings__page-header-minHeightDesktop, 300px));
     --qui-header-minHeight--mobile: var(--theme--qui-header-minHeight--mobile, var(--template-settings__page-header-minHeightMobile, 300px));
-    --qui-header-minHeight: 300; /* todo */
+    --qui-header-minHeight: var(--qui-header-minHeight--desktop);
+    --qui-header-text-pos: var(--theme--qui-header-text-post, center);
+    --qui-header-text-aligment: var(--theme--qui-header-text-aligment, var(--template-settings__page-header-text-alignment, center));
+    --qui-header-text-color: var(--theme--qui-header-text-color, var(--template-settings__page-header-text-color, inherit));
+    --qui-header-headign-color: var(--theme--qui-header-heading-color, var(--template-settings__page-header-heading-color, inherit));
     --qui-header-img-position: var(--theme--qui-header-img-position, var(--template-settings__page-header-img-position, center));
 
     /* footer */
     --qui-footer-bg: var(--template-settings__footer-bgColor);
-    --qui-footer-font-color: var(--template-settings__footer-text-color);
-    --qui-footer-copyrigth-border-top-color: var(--template-settings__footer-link-color);
+    --qui-footer-font-color: var(--template-settings__footer-text-color, inherit);
+    --qui-footer-link-color: var(--template-settings__footer-link-color, var(--qui-colors-link));
+    --qui-footer-link-color--hover: var(--template-settings__footer-link-color--hover, var(--qui-colors-link--hover));
+
+    --qui-footer-copyrigth-border-top-color: var(--theme--qui-footer-copyrigth-border-top-color, color-mix(in srgb, var(--qui-footer-bg) 90%, black 10%));
 
     /* background */
     --qui-bg-primary: #ddd; /* todo  */
@@ -77,6 +78,7 @@
     :root {
         --qui-spacer: var(--qui-spacer--mobile);
         --qui-row-spacer: var(--qui-row-spacer--mobile);
+        --qui-header-minHeight: var(--qui-header-minHeight--mobile);
     }
 }
 

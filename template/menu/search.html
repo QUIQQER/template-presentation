@@ -1,31 +1,51 @@
 {assign var=Setting value=$Template->getAttribute('TemplateSetting')}
 {assign var=Project value=$Site->getProject()}
-{assign var=searchType value=$Setting->getAttribute('searchType')}
-{assign var=searchUrl value=$Setting->getAttribute('searchUrl')}
-{assign var=dataQui value=$Setting->getAttribute('searchDataQui')}
+{assign var=searchData value=$Setting->getAttribute('searchData')}
+{assign var=searchType value=$searchData['searchType']}
+{assign var=searchUrl value=$searchData['searchUrl']}
+{assign var=dataQui value=$searchData['searchDataQui']}
 
 {if $searchType === 'input'}
-    <form  action="{$searchUrl}" class="header-bar-suggestSearch header-bar-suggestSearch--type-input hide-on-mobile" method="get">
-        <input type="search" name="search" class="only-input" {$dataQui}
+    <form action="{$searchUrl}"
+          class="headerBarSearchForm headerBarSearchForm--onlyInput hide-on-mobile"
+          method="get"
+    >
+        <input type="search" name="search"
+               class="headerBarSearchForm__input"
+               {if $dataQui}data-qui="{$dataQui}"{/if}
                placeholder="{locale group='quiqqer/template-presentation' var='navbar.search.text'}"
         />
     </form>
 {elseif $searchType === 'inputAndIcon'}
-    <form  action="{$searchUrl}" class="header-bar-suggestSearch header-bar-suggestSearch--type-icon hide-on-mobile" method="get">
-        <div class="header-bar-suggestSearch-wrapper">
-            <input type="search" name="search"
-                   class="input-and-icon" {$dataQui}
-                   placeholder="{locale group='quiqqer/template-presentation' var='navbar.search.text'}"
-            />
-        </div>
-        <span class="fa fa-fw fa-search"></span>
-    </form>
+        <form action="{$searchUrl}"
+              class="headerBarSearchForm headerBarSearchForm--inputAndIcon hide-on-mobile"
+              data-name="headerBarSearchForm"
+              data-show-input="0"
+              method="get"
+        >
+            <div style="position: relative;">
+                <div class="headerBarSearchForm__inputWrapper">
+                    <input type="search" name="search"
+                           data-name="headerBarSearchForm-input"
+                           class="headerBarSearchForm__input"
+                           {if $dataQui}data-qui="{$dataQui}"{/if}
+                           placeholder="{locale group='quiqqer/template-presentation' var='navbar.search.text'}"
+                    />
+                </div>
+            </div>
+
+
+            <button data-name="headerBarSearchForm-showInputBtn"
+                    class="headerBarSearchForm__btn btn-icon"
+                    type="button"
+            >
+                <i class="fa-solid fa-magnifying-glass icon" aria-hidden="true"></i>
+            </button>
+        </form>
 {/if}
 
-<div class="quiqqer-menu-megaMenu-mobile-search"
-     style="width: auto; font-size: 30px !important;"
->
-    <a href="{$searchUrl}" class="header-bar-search-link searchMobile">
-        <i class="fa fa-search header-bar-search-icon"></i>
-    </a>
-</div>
+{*    <div class="quiqqer-menu-megaMenu-mobile-search">*}
+{*        <a href="{$searchUrl}" class="header-bar-search-link searchMobile">*}
+{*            <i class="fa-solid fa-magnifying-glass header-bar-search-icon"></i>*}
+{*        </a>*}
+{*    </div>*}

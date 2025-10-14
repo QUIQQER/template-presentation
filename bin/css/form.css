@@ -10,7 +10,6 @@ input, textarea, select {
     font-size: 1rem;
     letter-spacing: 1px;
     line-height: 1.75em;
-    margin: 6px 0;
     outline: none;
     padding: 0.5em 1.25em;
 }
@@ -59,7 +58,7 @@ input[type='radio'] {
 #page input[type='checkbox']:checked + label::before,
 #page input[type='radio']:checked + label::before,
 .pace .pace-progress {
-    background-color: var(--qui-color-primary);
+    background-color: var(--qui-colors-primary);
 }
 
 ::-webkit-input-placeholder {
@@ -115,5 +114,5 @@ input:hover,
 input:focus,
 select:hover,
 select:focus {
-    border-color: var(--qui-color-primary);
+    border-color: var(--qui-colors-primary);
 }
