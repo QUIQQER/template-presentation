@@ -5,8 +5,12 @@ button.qui-button,
 button,
 a.qui-button,
 .btn {
-    --paddding-block: 0.5em;
-    --paddding-inline: 1.25em;
+    --padding-block: 0.5em;
+    --padding-inline: 1.25em;
+
+    color: var(--qui-btn-color, inherit);
+    background-color: var(--qui-btn-bgColor, transparent);
+    border-color: var(--qui-btn-borderColor, transparent);
 
     display: inline-flex;
     justify-content: center;
@@ -16,7 +20,6 @@ a.qui-button,
     border-width: var(--qui-btn-borderWidth);
     border-style: var(--qui-btn-borderStyle);
     border-radius: var(--qui-btn-borderRadius);
-    border-color: transparent;
     transition: var(--qui-btn-transition);
 
     text-align: center;
@@ -26,7 +29,7 @@ a.qui-button,
     -ms-user-select: none;
     user-select: none;
 
-    padding: var(--paddding-block) var(--paddding-inline);
+    padding: var(--padding-block) var(--padding-inline);
     font-size: 1em;
     line-height: 1.25;
     cursor: pointer;
@@ -42,6 +45,9 @@ a.qui-button,
 .btn:hover,
 .btn:active {
     text-decoration: none;
+    color: var(--qui-btn-color--hover, inherit);
+    background-color: var(--qui-btn-bgColor--hover, transparent);
+    border-color: var(--qui-btn-borderColor--hover, transparent);
 }
 
 /*****************************/
@@ -64,9 +70,9 @@ button:disabled,
 button[disabled],
 a.qui-button,
 .btn-primary {
-    background-color: var(--qui-btn-primary-bg);
-    border-color: var(--qui-btn-primary-borderColor);
-    color: var(--qui-btn-primary-color);
+    --qui-btn-color: var(--qui-btn-primary-color);
+    --qui-btn-bgColor: var(--qui-btn-primary-bg);
+    --qui-btn-borderColor: var(--qui-btn-primary-borderColor);
 }
 
 input[type="submit"]:hover,
@@ -85,10 +91,9 @@ button:hover,
 button:active,
 .btn-primary:hover,
 .btn-primary:active {
-    background: var(--qui-btn-primary-bg--hover);
-    color: var(--qui-btn-primary-color--hover);
-    border-color: var(--qui-btn-primary-borderColor--hover);
-    outline: none;
+    --qui-btn-color--hover: var(--qui-btn-primary-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-primary-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-primary-borderColor--hover);
 }
 
 /* outline */
@@ -110,7 +115,7 @@ button:disabled.btn-outline:hover,
 button:disabled.btn-outline:active,
 .btn-primary.btn-disabled.btn-outline:hover,
 .btn-primary.btn-disabled.btn-outline:active {
-    color: var(--qui-btn-primary-bg--hover);
+    --qui-btn-color--hover: var(--qui-btn-primary-bg--hover);
 }
 
 /***************/
@@ -664,4 +669,26 @@ button.btn-outline:disabled:active,
 .btn-outline.btn-disabled:hover,
 .btn-outline.btn-disabled:active {
     opacity: 0.3;
+}
+
+/**
+ * Button sizes
+ */
+.btn-sm {
+    font-size: .875em;
+}
+
+.btn-lg {
+    font-size: 1.25em;
+}
+
+/**
+ * Button icon
+ */
+.btn.btn-icon {
+    aspect-ratio: 1;
+}
+
+.btn.btn-rounded {
+    border-radius: 10em;
 }
