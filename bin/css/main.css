@@ -26,6 +26,7 @@
 /* utilities */
 @import "utility/buttons.css";
 @import "utility/colors.css";
+@import "utility/loaders.css";
 @import "utility/spacing.css";
 @import "utility/helpers.css";
 @import "utility/text.css";
