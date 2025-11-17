@@ -157,6 +157,7 @@ a {
 }
 
 :where(.default-content) a,
+:where(.qui-window-popup-content) a, /* fallback for qui windows */
 :where(.control-content) a {
     color: var(--qui-colors-primary);
     transition: var(--qui-transition);
@@ -199,12 +200,14 @@ pre code {
  * Lists
  */
 :where(.default-content) :is(ul, ol),
+:where(.qui-window-popup-content) :is(ul, ol), /* fallback for qui windows */
 :where(.control-content) :is(ul, ol) {
     padding-left: 1.5rem;
     margin-bottom: 1rem;
 }
 
 :where(.default-content) li,
+:where(.qui-window-popup-content) li, /* fallback for qui windows */
 :where(.control-content) li {
     padding-left: 0.5em;
     margin-top: 0.5em;

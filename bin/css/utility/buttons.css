@@ -28,18 +28,3 @@
 .btn-stack > .btn {
     width: 100%;
 }
-
-/**
- * Button sizes
- */
-.btn-sm {
-    /*padding: .25em .75em;*/
-    /*padding: calc(0.5 * var(--paddding-y)) calc(0.5 * var(--paddding-x));*/
-    font-size: .875em;
-}
-
-.btn-lg {
-    /*padding: .5em 1.25em;*/
-    /*padding: calc(0.5 * var(--paddding-y)) calc(0.5 * var(--paddding-x));*/
-    font-size: 1.25em;
-}
