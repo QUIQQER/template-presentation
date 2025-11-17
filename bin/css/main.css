@@ -1,14 +1,32 @@
+@import "variables/badges.css";
+@import "variables/border.css";
+@import "variables/buttons.css";
 @import "variables/colors.css";
 @import "variables/general.css";
+@import "variables/nav.css";
 @import "variables/typography.css";
-@import "variables/buttons.css";
 
 /* todo: remove */
-@import "variables.css";
 
-/*@import "reset.css";*/
-@import "buttons.css";
+/* base */
+@import "normalize.css"; /* css reset */
 @import "fonts.css";
 @import "form.css";
+@import "nav.css";
+@import "footer.css";
 @import "typography.css";
 @import "style.css";
+
+/* components */
+@import "components/badges.css";
+@import "components/buttons.css";
+@import "components/messages.css";
+
+
+/* utilities */
+@import "utility/buttons.css";
+@import "utility/colors.css";
+@import "utility/loaders.css";
+@import "utility/spacing.css";
+@import "utility/helpers.css";
+@import "utility/text.css";

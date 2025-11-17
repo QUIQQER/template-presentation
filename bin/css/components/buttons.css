@@ -5,14 +5,21 @@ button.qui-button,
 button,
 a.qui-button,
 .btn {
+    --padding-block: 0.5em;
+    --padding-inline: 1.25em;
+
+    color: var(--qui-btn-color, inherit);
+    background-color: var(--qui-btn-bgColor, transparent);
+    border-color: var(--qui-btn-borderColor, transparent);
+
     display: inline-flex;
+    justify-content: center;
     align-items: center;
     gap: var(--qui-btn-gap);
     font-weight: var(--qui-btn-fontWeight);
     border-width: var(--qui-btn-borderWidth);
     border-style: var(--qui-btn-borderStyle);
     border-radius: var(--qui-btn-borderRadius);
-    border-color: transparent;
     transition: var(--qui-btn-transition);
 
     text-align: center;
@@ -22,7 +29,7 @@ a.qui-button,
     -ms-user-select: none;
     user-select: none;
 
-    padding: .5em 1.25em;
+    padding: var(--padding-block) var(--padding-inline);
     font-size: 1em;
     line-height: 1.25;
     cursor: pointer;
@@ -38,6 +45,9 @@ a.qui-button,
 .btn:hover,
 .btn:active {
     text-decoration: none;
+    color: var(--qui-btn-color--hover, inherit);
+    background-color: var(--qui-btn-bgColor--hover, transparent);
+    border-color: var(--qui-btn-borderColor--hover, transparent);
 }
 
 /*****************************/
@@ -60,9 +70,9 @@ button:disabled,
 button[disabled],
 a.qui-button,
 .btn-primary {
-    background-color: var(--qui-btn-primary-bg);
-    border-color: var(--qui-btn-primary-borderColor);
-    color: var(--qui-btn-primary-color);
+    --qui-btn-color: var(--qui-btn-primary-color);
+    --qui-btn-bgColor: var(--qui-btn-primary-bg);
+    --qui-btn-borderColor: var(--qui-btn-primary-borderColor);
 }
 
 input[type="submit"]:hover,
@@ -81,10 +91,9 @@ button:hover,
 button:active,
 .btn-primary:hover,
 .btn-primary:active {
-    background: var(--qui-btn-primary-bg--hover);
-    color: var(--qui-btn-primary-color--hover);
-    border-color: var(--qui-btn-primary-borderColor--hover);
-    outline: none;
+    --qui-btn-color--hover: var(--qui-btn-primary-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-primary-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-primary-borderColor--hover);
 }
 
 /* outline */
@@ -106,7 +115,7 @@ button:disabled.btn-outline:hover,
 button:disabled.btn-outline:active,
 .btn-primary.btn-disabled.btn-outline:hover,
 .btn-primary.btn-disabled.btn-outline:active {
-    color: var(--qui-btn-primary-bg--hover);
+    --qui-btn-color--hover: var(--qui-btn-primary-bg--hover);
 }
 
 /***************/
@@ -133,7 +142,7 @@ button.qui-button.btn-link:hover,
 button.qui-button.btn-link:active,
 .btn-link:hover,
 .btn-link:active {
-    background-color: transparent;
+    background-color: var(--qui-btn-link-bg--hover);
     border-color: transparent;
     color: var(--qui-btn-link-color--hover);
 }
@@ -162,7 +171,7 @@ button.qui-button.btn-link-dark:hover,
 button.qui-button.btn-link-dark:active,
 .btn-link-dark:hover,
 .btn-link-dark:active {
-    background-color: transparent;
+    background-color: var(--qui-btn-linkDark-bg--hover);
     border-color: transparent;
     color: var(--qui-btn-linkDark-color--hover);
 }
@@ -539,9 +548,9 @@ input[type="reset"].btn-white,
 button.qui-button.btn-white,
 button.btn-white,
 .btn-white {
-    background: #fafafa;
-    border-color: #fafafa;
-    color: #393f46;
+    background: var(--qui-btn-white-bg);
+    border-color: var(--qui-btn-white-borderColor);
+    color: var(--qui-btn-white-color);
 }
 
 input[type="submit"].btn-white:hover,
@@ -554,8 +563,8 @@ button.qui-button.btn-white:hover,
 button.qui-button.btn-white:active,
 .btn-white:hover,
 .btn-white:active {
-    background: #eaeaea;
-    color: #393f46;
+    background: var(--qui-btn-white-bg--hover);
+    color: var(--qui-btn-white-color--hover);
     outline: none;
 }
 
@@ -662,30 +671,24 @@ button.btn-outline:disabled:active,
     opacity: 0.3;
 }
 
-/****************/
-/* button sizes */
-/****************/
-.btn-sm,
-input[type="submit"].btn-sm,
-input[type="button"].btn-sm,
-input[type="reset"].btn-sm,
-.qui-button.btn-sm {
-    padding: .25em .75em;
+/**
+ * Button sizes
+ */
+.btn-sm {
     font-size: .875em;
-    line-height: 1.5;
-    border-radius: .2rem;
-    height: auto;
 }
 
-.btn-lg,
-input[type="submit"].btn-lg,
-input[type="button"].btn-lg,
-input[type="reset"].btn-lg,
-.qui-button.btn-lg {
-    padding: .75em 1.75em;
+.btn-lg {
     font-size: 1.25em;
-    line-height: 1.5;
-    border-radius: .3rem;
-    height: auto;
+}
 
+/**
+ * Button icon
+ */
+.btn.btn-icon {
+    aspect-ratio: 1;
+}
+
+.btn.btn-rounded {
+    border-radius: 10em;
 }

@@ -22,6 +22,8 @@ class Utils
 {
     private static QUI\Projects\Project $Project;
 
+    private static QUI\Projects\Site $Site;
+
     /**
      * @param Array<string, mixed> $params
      *
@@ -47,6 +49,7 @@ class Utils
         $Site = $params['Site'];
 
         self::$Project = $Project;
+        self::$Site = $Site;
 
         /**
          * no header?
@@ -87,8 +90,6 @@ class Utils
 
         $showPageTitle = false;
         $showPageShort = false;
-        $headerTextColor = 'inherit';
-        $headerTextPos = 'center';
         $mainContentSpacingTop = 'base';
         $mainContentSpacingBottom = 'base';
 
@@ -98,14 +99,6 @@ class Utils
 
         if ($Project->getConfig('templatePresentation.settings.showShort')) {
             $showPageShort = $Project->getConfig('templatePresentation.settings.showShort');
-        }
-
-        if ($Project->getConfig('templatePresentation.settings.header.textColor')) {
-            $headerTextColor = $Project->getConfig('templatePresentation.settings.header.textColor');
-        }
-
-        if ($Project->getConfig('templatePresentation.settings.header.textPos')) {
-            $headerTextPos = $Project->getConfig('templatePresentation.settings.header.textPos');
         }
 
         if ($Project->getConfig('templatePresentation.settings.mainContentSpacingTop')) {
@@ -145,31 +138,6 @@ class Utils
                 $showHeader = false;
                 break;
         }
-
-        /* site own header text color */
-        switch ($Site->getAttribute('templatePresentation.header.textColor.enable')) {
-            case 'useSiteSetting':
-                $headerTextColor = $Site->getAttribute('templatePresentation.header.textColor.color');
-                break;
-            case 'useDefaultColor':
-                $headerTextColor = 'inherit';
-                break;
-        }
-
-        /* site own header text position */
-        switch ($Site->getAttribute('templatePresentation.header.textPos')) {
-            case 'flex-start':
-            case 'center':
-            case 'flex-right':
-                $headerTextPos = $Site->getAttribute('templatePresentation.header.textPos');
-        }
-
-        // make text alignment depend on content (flexbox) alignment
-        $headerTextAlignment = match ($headerTextPos) {
-            'flex-start' => 'left',
-            'flex-end' => 'right',
-            default => 'center',
-        };
 
         /* site own main content spacing top */
         switch ($Site->getAttribute('templatePresentation.mainContent.spacingTop')) {
@@ -234,11 +202,51 @@ class Utils
         $cssVariables = self::getCssVariables($headerArea, $showHeader);
 
         /**
+         * Nav bar initial transparent
+         */
+        $navInitialTransparent = false;
+        $logoForTransparentNav = false;
+
+        if ($headerArea || $showHeader) {
+            $navInitialTransparent = $Project->getConfig('templatePresentation.settings.navBarInitialTransparent');
+
+            // site settings
+            $navInitialTransparent = match ($Site->getAttribute('templatePresentation.nav.initialTransparent')) {
+                'enable' => true,
+                'disable' => false,
+                default => $navInitialTransparent
+            };
+
+            if (
+                $navInitialTransparent && $Project->getConfig(
+                    'templatePresentation.settings.navBarInitialTransparentLogo'
+                )
+            ) {
+                $logoForTransparentNav = $Project->getConfig(
+                    'templatePresentation.settings.navBarInitialTransparentLogo'
+                );
+            }
+
+            // site setting for alternate logo (for transparent nav)
+            if ($navInitialTransparent && $Site->getAttribute('templatePresentation.nav.initialTransparent.logo')) {
+                $logoForTransparentNav = $Site->getAttribute('templatePresentation.nav.initialTransparent.logo');
+            }
+        }
+
+        /**
+         * Nav style
+         */
+        $navStyle = match ($Project->getConfig('templatePresentation.settings.navStyle')) {
+            'default', 'none', 'defaultWithBigButtons', 'pill' => $Project->getConfig(
+                'templatePresentation.settings.navStyle'
+            ),
+            default => 'default'
+        };
+
+        /**
          * Include demo css
          */
         $includeDemoCss = $Project->getConfig('templatePresentation.settings.includeDemoStyling');
-
-        $searchData = self::getSearchData();
 
         $config += [
             'showHeader' => $showHeader,
@@ -246,7 +254,10 @@ class Utils
             'cssVariables' => $cssVariables,
             'typeClass' => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'navPos' => $Project->getConfig('templatePresentation.settings.navPos'),
-            'navAlignment' => $Project->getConfig('templatePresentation.settings.navAlignment'),
+            'navStyle' => $navStyle,
+            'searchData' => self::getSearchData(),
+            'navInitialTransparent' => $navInitialTransparent,
+            'logoForTransparentNav' => $logoForTransparentNav,
             'headerArea' => $headerArea,
             'showPageTitle' => $showPageTitle,
             'showPageShort' => $showPageShort,
@@ -254,21 +265,15 @@ class Utils
             'logoSize' => self::getLogoSize(),
             'useSlideOutMenu' => true, // for now is always true because quiqqer use currently only SlideOut nav
             'includeDemoCss' => $includeDemoCss,
-            'headerTextColor' => $headerTextColor,
-            'headerTextPos' => $headerTextPos,
-            'headerTextAlignment' => $headerTextAlignment,
             'mainContentSpacingTopCSSVar' => self::getSpacingVariable($mainContentSpacingTop, 'top'),
             'mainContentSpacingBottomCSSVar' => self::getSpacingVariable($mainContentSpacingBottom, 'bottom'),
-            'socialData' => self::getSocialLinks(),
+            'socialData' => self::getSocialData(),
+            'showSocialInMenu' => $Project->getConfig('templatePresentation.settings.social.show.nav'),
+            'showSocialInFooter' => $Project->getConfig('templatePresentation.settings.social.show.footer'),
 
             'showLangSelect' => $showLangSelect,
             'showFlag' => $showFlag,
             'showText' => $showText,
-
-            'searchType' => $searchData['searchType'],
-            'noSearch' => $searchData['noSearch'],
-            'searchUrl' => $searchData['searchUrl'],
-            'searchDataQui' => $searchData['searchDataQui'],
         ];
 
         // set cache
@@ -405,21 +410,25 @@ class Utils
      *    --qui-tpl-spacing--top:  var(--qui-row-spacing--small);
      *    --qui-tpl-spacing--bottom:  var(--qui-row-spacing--extraLarge);
      *
-     * @param string $name // allowed values: 'disabled', 'extraSmall', 'small', 'base', 'medium', 'large', 'extraLarge'
+     * @param string $value // allowed values: 'disabled', 'extraSmall', 'small', 'base', 'medium', 'large', 'extraLarge'
      * @param string $pos // only 'top' and 'bottom' are allowed
      * @return string
      */
-    public static function getSpacingVariable(string $name, string $pos): string
+    public static function getSpacingVariable(string $value, string $pos): string
     {
-        if (!$name || !$pos) {
+        if (!$pos) {
             return '';
+        }
+
+        if (!$value) {
+            $value = 'base';
         }
 
         if ($pos !== 'top' && $pos !== 'bottom') {
             return '';
         }
 
-        return '--qui-tpl-spacing--' . $pos . ': var(--qui-row-spacing--' . $name . ');';
+        return '--qui-tpl-spacing--' . $pos . ': var(--qui-row-spacing--' . $value . ');';
     }
 
     /**
@@ -445,27 +454,44 @@ class Utils
     }
 
     /**
-     * Returns social links as an array with URL and icon
+     * Returns social data as an array with url, icon and title
      *
-     * @return array<int, array{url: string, icon: string}>
+     * @return array<int, array{url: string, icon: string, title: string}>
      */
-    public static function getSocialLinks(): array
+    public static function getSocialData(): array
     {
+        if (
+            !self::$Project->getConfig('templatePresentation.settings.social.show.nav') &&
+            !self::$Project->getConfig('templatePresentation.settings.social.show.footer')
+        ) {
+            return [];
+        }
+
         $socials = [
-            'facebook' => 'fa-facebook',
-            'twitter' => 'fa-twitter',
-            'google' => 'fa-google-plus',
-            'youtube' => 'fa-youtube-play',
+            'facebook' => 'fa-square-facebook',
+            'x' => 'fa-x-twitter',
+            'instagram' => 'fa-instagram',
+            'linkedin' => 'fa-linkedin',
+            'pinterest' => 'fa-pinterest',
+            'youtube' => 'fa-youtube',
+            'tiktok' => 'fa-tiktok',
+            'whatsapp' => 'fa-whatsapp',
+            'telegram' => 'fa-telegram',
             'github' => 'fa-github',
             'gitlab' => 'fa-gitlab',
         ];
+
         $result = [];
+        $Locale = QUI::getLocale();
+
         foreach ($socials as $key => $icon) {
             $url = self::$Project->getConfig('templatePresentation.settings.social.' . $key);
+
             if (!empty($url)) {
                 $result[] = [
                     'url' => $url,
-                    'icon' => $icon
+                    'icon' => $icon,
+                    'title' => $Locale->get('quiqqer/template-presentation', 'frontend.social.' . $key)
                 ];
             }
         }
@@ -480,72 +506,68 @@ class Utils
      *     searchType: string,
      *     searchUrl: string,
      *     searchDataQui: string,
-     *     noSearch: string,
-     *     inputSearch: string
      * }
      * @throws QUI\Exception If an error occurs while fetching the search sites.
      */
     public static function getSearchData(): array
     {
-        $searchType = '';
-        $searchUrl = '';
-        $searchDataQui = '';
-        $noSearch = 'no-search';
-        $inputSearch = '';
-
-        if (self::$Project->getConfig('templatePresentation.settings.search') != 'hide') {
-            $types = [
-                'quiqqer/sitetypes:types/search'
+        if (self::$Project->getConfig('templatePresentation.settings.search') === 'hide') {
+            return [
+                'searchType' => '',
+                'searchUrl' => '',
+                'searchDataQui' => '',
             ];
-
-            /* check if quiqqer search packet is installed */
-            if (QUI::getPackageManager()->isInstalled('quiqqer/search')) {
-                $types = [
-                    'quiqqer/sitetypes:types/search',
-                    'quiqqer/search:types/search'
-                ];
-
-                // Suggest Search integrate
-                $searchDataQui = 'data-qui="package/quiqqer/search/bin/controls/Suggest"';
-            }
-
-            $searchSites = self::$Project->getSites([
-                'where' => [
-                    'type' => [
-                        'type' => 'IN',
-                        'value' => $types
-                    ]
-                ],
-                'limit' => 1
-            ]);
-
-            if (count($searchSites)) {
-                try {
-                    $noSearch = '';
-                    $searchUrl = $searchSites[0]->getUrlRewritten();
-
-                    switch (self::$Project->getConfig('templatePresentation.settings.search')) {
-                        case 'input':
-                            $inputSearch = 'input-search';
-                            $searchType = 'input';
-                            break;
-
-                        case 'inputAndIcon':
-                            $searchType = 'inputAndIcon';
-                            break;
-                    }
-                } catch (QUI\Exception $Exception) {
-                    QUI\System\Log::addNotice($Exception->getMessage());
-                }
-            }
         }
+
+        $siteTypes = ['quiqqer/sitetypes:types/search'];
+        $searchDataQui = '';
+
+        /* check if quiqqer search package is installed */
+        if (QUI::getPackageManager()->isInstalled('quiqqer/search')) {
+            $siteTypes[] = 'quiqqer/search:types/search';
+            $searchDataQui = 'package/quiqqer/search/bin/controls/Suggest';
+        }
+
+        $searchSites = self::$Project->getSites([
+            'where' => [
+                'type' => [
+                    'type' => 'IN',
+                    'value' => $siteTypes,
+                ]
+            ],
+            'limit' => 1,
+            'active' => 1
+        ]);
+
+        if (empty($searchSites)) {
+            return [
+                'searchType' => '',
+                'searchUrl' => '',
+                'searchDataQui' => '',
+            ];
+        }
+
+        try {
+            $searchUrl = $searchSites[0]->getUrlRewritten();
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::addNotice($Exception->getMessage());
+            return [
+                'searchType' => '',
+                'searchUrl' => '',
+                'searchDataQui' => '',
+            ];
+        }
+
+        $searchType = match (self::$Project->getConfig('templatePresentation.settings.search')) {
+            'input' => 'input',
+            'inputAndIcon' => 'inputAndIcon',
+            default => '',
+        };
 
         return [
             'searchType' => $searchType,
             'searchUrl' => $searchUrl,
             'searchDataQui' => $searchDataQui,
-            'noSearch' => $noSearch,
-            'inputSearch' => $inputSearch
         ];
     }
 
@@ -575,9 +597,11 @@ class Utils
 
         // footer
         $footerBgColor = '#414141';
-        $footerTextColor = '#d1d1d1';
-        $footerLinkColor = '#aaaaaa';
+        $footerTextColor = '';
+        $footerLinkColor = '';
+        $footerLinkColorHover = '';
 
+        /* footer colors */
         if (self::$Project->getConfig('templatePresentation.settings.colorFooterBackground')) {
             $footerBgColor = self::$Project->getConfig('templatePresentation.settings.colorFooterBackground');
         }
@@ -586,6 +610,15 @@ class Utils
             $footerTextColor = self::$Project->getConfig('templatePresentation.settings.colorFooterFont');
         }
 
+        if (self::$Project->getConfig('templatePresentation.settings.colorFooterLink')) {
+            $footerLinkColor = self::$Project->getConfig('templatePresentation.settings.colorFooterLink');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.colorFooterLinkHover')) {
+            $footerLinkColorHover = self::$Project->getConfig('templatePresentation.settings.colorFooterLinkHover');
+        }
+
+        /* primary / main colors */
         if (self::$Project->getConfig('templatePresentation.settings.colorMain')) {
             $colorMain = self::$Project->getConfig('templatePresentation.settings.colorMain');
         }
@@ -611,28 +644,85 @@ class Utils
         }
 
         if (self::$Project->getConfig('templatePresentation.settings.typography.heading.fontWeight')) {
-            $headingFontWeight = self::$Project->getConfig('templatePresentation.settings.typography.heading.fontWeight');
+            $headingFontWeight = self::$Project->getConfig(
+                'templatePresentation.settings.typography.heading.fontWeight'
+            );
         }
 
         /**
          * Nav
          */
         $navBgColor = '#2d4d88';
-        $navBarFontColor = '#ffffff';
+        $navBgColorScrolled = $navBgColor;
+        $navLinkColor = '#ffffff';
+        $navLinkColorHover = $navLinkColor;
+        $navLinkBgColorHover = '';
+        $navInitialTransparentLinkColor = $navLinkColor;
+        $navInitialTransparentLinkColorHover = $navLinkColorHover;
+        $navInitialTransparentLinkBgColorHover = '';
         $navMobileTextColor = '#ffffff';
         $navMobileBgColor = '#252122';
         $navHeight = (int)self::$Project->getConfig('templatePresentation.settings.navBarHeight');
         $navPos = self::$Project->getConfig('templatePresentation.settings.navPos');
 
-        if (self::$Project->getConfig('templatePresentation.settings.navBarMainColor')) {
-            $navBgColor = self::$Project->getConfig('templatePresentation.settings.navBarMainColor');
+        if (self::$Project->getConfig('templatePresentation.settings.navBarBgColor')) {
+            $navBgColor = self::$Project->getConfig('templatePresentation.settings.navBarBgColor');
         }
 
-        $navBgColorScrolled = $navBgColor;
-
-        if (self::$Project->getConfig('templatePresentation.settings.navBarFontColor')) {
-            $navBarFontColor = self::$Project->getConfig('templatePresentation.settings.navBarFontColor');
+        if (self::$Project->getConfig('templatePresentation.settings.navBarLinkColor')) {
+            $navLinkColor = self::$Project->getConfig('templatePresentation.settings.navBarLinkColor');
+            $navLinkColorHover = $navLinkColor;
+            $navInitialTransparentLinkColor = $navLinkColor;
+            $navInitialTransparentLinkColorHover = $navLinkColor;
         }
+
+        if (self::$Project->getConfig('templatePresentation.settings.navBarLinkColorHover')) {
+            $navLinkColorHover = self::$Project->getConfig('templatePresentation.settings.navBarLinkColorHover');
+            $navInitialTransparentLinkColorHover = $navLinkColorHover;
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.navBarLinkBgColorHover')) {
+            $navLinkBgColorHover = self::$Project->getConfig('templatePresentation.settings.navBarLinkBgColorHover');
+            $navInitialTransparentLinkBgColorHover = $navLinkBgColorHover;
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.navBarInitialTransparentLinkColor')) {
+            $navInitialTransparentLinkColor = self::$Project->getConfig(
+                'templatePresentation.settings.navBarInitialTransparentLinkColor'
+            );
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.navBarInitialTransparentLinkColorHover')) {
+            $navInitialTransparentLinkColorHover = self::$Project->getConfig(
+                'templatePresentation.settings.navBarInitialTransparentLinkColorHover'
+            );
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.navBarInitialTransparentLinkBgColorHover')) {
+            $navInitialTransparentLinkBgColorHover = self::$Project->getConfig(
+                'templatePresentation.settings.navBarInitialTransparentLinkBgColorHover'
+            );
+        }
+
+        // page settings for nav initial transparent
+        if (self::$Site->getAttribute('templatePresentation.nav.initialTransparent.linkColor')) {
+            $navInitialTransparentLinkColor = self::$Site->getAttribute(
+                'templatePresentation.nav.initialTransparent.linkColor'
+            );
+        }
+
+        if (self::$Site->getAttribute('templatePresentation.nav.initialTransparent.linkColorHover')) {
+            $navInitialTransparentLinkColorHover = self::$Site->getAttribute(
+                'templatePresentation.nav.initialTransparent.linkColorHover'
+            );
+        }
+
+        if (self::$Site->getAttribute('templatePresentation.nav.initialTransparent.linkBgColorHover')) {
+            $navInitialTransparentLinkBgColorHover = self::$Site->getAttribute(
+                'templatePresentation.nav.initialTransparent.linkBgColorHover'
+            );
+        }
+
 
         if (self::$Project->getConfig('templatePresentation.settings.mobileFontColor')) {
             $navMobileTextColor = self::$Project->getConfig('templatePresentation.settings.mobileFontColor');
@@ -643,7 +733,12 @@ class Utils
         }
 
         $navPositionCSS = 'absolute';
-        $bodyContainerTop = $navHeight;
+        $bodySpacingTop = $navHeight;
+        $navAlignment = match (self::$Project->getConfig('templatePresentation.settings.navAlignment')) {
+            'center' => 'center',
+            'right' => 'flex-end',
+            default => 'flex-start'
+        };
 
         if ($navPos == 'fix') {
             $navPositionCSS = 'fixed';
@@ -652,25 +747,56 @@ class Utils
         /**
          * Page header
          */
+//        $mainContentSpacingTop = 'base'; // todo
+//        $mainContentSpacingBottom = 'base'; // todo
+
         $pageHeaderMinHeightDesktop = (int)self::$Project->getConfig('templatePresentation.settings.headerHeightValue');
         $pageHeaderMinHeightMobile = (int)self::$Project->getConfig(
             'templatePresentation.settings.headerHeightValueMobile'
         );
-        $pageHeaderTextAlignment = self::$Project->getConfig('templatePresentation.settings.pageHeaderTextAlignment');
-        $pageHeaderHeadingColor = self::$Project->getConfig('templatePresentation.settings.pageHeaderHeadingColor');
-        $pageHeaderTextColor = self::$Project->getConfig('templatePresentation.settings.pageHeaderTextColor');
 
         if (!$pageHeaderMinHeightMobile) {
             $pageHeaderMinHeightMobile = $pageHeaderMinHeightDesktop;
         }
 
-        if (!$pageHeaderHeadingColor) {
-            $pageHeaderHeadingColor = 'inherit';
+        $pageHeaderTextAlignment = self::$Project->getConfig('templatePresentation.settings.header.textColor');
+        $pageHeaderFontColor = self::$Project->getConfig('templatePresentation.settings.header.textColor');
+
+        /* site own header text color */
+        switch (self::$Site->getAttribute('templatePresentation.header.textColor.enable')) {
+            case 'useSiteSetting':
+                $pageHeaderFontColor = self::$Site->getAttribute('templatePresentation.header.textColor.color');
+                break;
+            case 'useDefaultColor':
+                $pageHeaderFontColor = 'inherit';
+                break;
         }
 
-        if (!$pageHeaderTextColor) {
-            $pageHeaderTextColor = 'inherit';
+        if (!$pageHeaderFontColor) {
+            $pageHeaderFontColor = 'inherit';
         }
+
+        $pageHeaderTextColor = $pageHeaderFontColor;
+        $pageHeaderHeadingColor = $pageHeaderFontColor;
+
+        if (!$pageHeaderTextAlignment) {
+            $pageHeaderTextAlignment = 'center';
+        }
+
+        /* site own header text position */
+//        switch (self::$Site->getAttribute('templatePresentation.header.textPos')) {
+//            case 'flex-start':
+//            case 'center':
+//            case 'flex-right':
+//            $pageHeaderTextAlignment = self::$Site->getAttribute('templatePresentation.header.textPos');
+//        }
+
+        // Convert flexbox alignment values (from earlier template settings versions) to text-align values
+        $pageHeaderTextAlignment = match ($pageHeaderTextAlignment) {
+            'flex-start' => 'left',
+            'flex-end' => 'right',
+            default => 'center',
+        };
 
         $pageHeaderImgPosition = self::$Project->getConfig('templatePresentation.settings.headerImagePosition');
 
@@ -682,20 +808,14 @@ class Utils
             $scrollOffset = $navHeight + 10;
         }
 
-        if ($headerArea) {
-            $bodyContainerTop = 0;
-            $navBgColor = 'transparent';
-        }
-
-        if (isset($showHeader) && $showHeader) {
-            $bodyContainerTop = 0;
-            $navBgColor = 'transparent';
+        if ($headerArea || $showHeader) {
+            $bodySpacingTop = 0;
         }
 
         return [
             /* general */
             'scrollOffset' => $scrollOffset,
-            'bodyContainerTop' => $bodyContainerTop,
+            'bodySpacingTop' => $bodySpacingTop,
 
             /* colors */
             'colorPrimary' => $colorMain,
@@ -710,10 +830,18 @@ class Utils
 
             /* nav */
             'navPosition' => $navPositionCSS,
-            'navLinkColor' => $navBarFontColor,
+            'navAlignment' => $navAlignment,
             'navBgColor' => $navBgColor,
             'navBgColorScrolled' => $navBgColorScrolled,
+            'navLinkColor' => $navLinkColor,
+            'navLinkColorHover' => $navLinkColorHover,
+            'navLinkBgColorHover' => $navLinkBgColorHover,
+            'navInitialTransparentLinkColor' => $navInitialTransparentLinkColor,
+            'navInitialTransparentLinkColorHover' => $navInitialTransparentLinkColorHover,
+            'navInitialTransparentLinkBgColorHover' => $navInitialTransparentLinkBgColorHover,
+            'navSubMenuBgColor' => '#fafafa', /* todo as setting */
             'navHeight' => $navHeight,
+            'navMaxWidth' => self::$Project->getConfig('templatePresentation.settings.navMaxWidth'),
             'navMobileBgColor' => $navMobileBgColor,
             'navMobileTextColor' => $navMobileTextColor,
 
@@ -721,14 +849,15 @@ class Utils
             'pageHeaderMinHeightDesktop' => $pageHeaderMinHeightDesktop,
             'pageHeaderMinHeightMobile' => $pageHeaderMinHeightMobile,
             'pageHeaderImgPosition' => $pageHeaderImgPosition,
-            'pageHeaderTextAlignment' => $pageHeaderTextAlignment, /* todo */
-            'pageHeaderHeadingColor' => $pageHeaderHeadingColor, /* todo */
-            'pageHeaderTextColor' => $pageHeaderTextColor, /* todo */
+            'pageHeaderTextAlignment' => $pageHeaderTextAlignment,
+            'pageHeaderHeadingColor' => $pageHeaderHeadingColor,
+            'pageHeaderTextColor' => $pageHeaderTextColor,
 
             /* footer */
             'footerBgColor' => $footerBgColor,
             'footerTextColor' => $footerTextColor,
-            'footerLinkColor' => $footerLinkColor, /* todo al setting */
+            'footerLinkColor' => $footerLinkColor,
+            'footerLinkColorHover' => $footerLinkColorHover,
         ];
     }
 }

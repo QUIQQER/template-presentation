@@ -44,6 +44,14 @@
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>80</defaultvalue>
                     </conf>
+                    <conf name="navMaxWidth">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>1200px</defaultvalue>
+                    </conf>
+                    <conf name="navStyle">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>default</defaultvalue>
+                    </conf>
                     <conf name="navPos">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>scroll</defaultvalue>
@@ -52,13 +60,35 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>left</defaultvalue>
                     </conf>
-                    <conf name="navBarMainColor">
+                    <conf name="navBarBgColor">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#2d4d88</defaultvalue>
                     </conf>
-                    <conf name="navBarFontColor">
+                    <conf name="navBarLinkColor">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#ffffff</defaultvalue>
+                    </conf>
+                    <conf name="navBarLinkColorHover">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="navBarLinkBgColorHover">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="navBarInitialTransparent">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="navBarInitialTransparentLogo">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="navBarInitialTransparentLinkColor">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="navBarInitialTransparentLinkColorHover">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="navBarInitialTransparentLinkBgColorHover">
+                        <type><![CDATA[string]]></type>
                     </conf>
 
                     <conf name="mobileFontColor">
@@ -154,6 +184,9 @@
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>300</defaultvalue>
                     </conf>
+                    <conf name="headerHeightValueMobile">
+                        <type><![CDATA[integer]]></type>
+                    </conf>
                     <conf name="headerImagePosition">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>center</defaultvalue>
@@ -186,7 +219,12 @@
                     </conf>
                     <conf name="colorFooterFont">
                         <type><![CDATA[string]]></type>
-                        <defaultvalue>#333333</defaultvalue>
+                    </conf>
+                    <conf name="colorFooterLink">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="colorFooterLinkHover">
+                        <type><![CDATA[string]]></type>
                     </conf>
 
                     <!-- social -->
@@ -201,13 +239,28 @@
                     <conf name="social.facebook">
                         <type><![CDATA[string]]></type>
                     </conf>
-                    <conf name="social.twitter">
+                    <conf name="social.instagram">
                         <type><![CDATA[string]]></type>
                     </conf>
-                    <conf name="social.google">
+                    <conf name="social.tiktok">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.pinterest">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.x">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.linkedin">
                         <type><![CDATA[string]]></type>
                     </conf>
                     <conf name="social.youtube">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.whatsapp">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="social.telegram">
                         <type><![CDATA[string]]></type>
                     </conf>
                     <conf name="social.github">
@@ -533,6 +586,55 @@
                                 </text>
                             </input>
 
+                            <input conf="templatePresentation.settings.navMaxWidth" type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.nav.maxWidth"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.nav.maxWidth.desc"
+                                    />
+                                </description>
+                            </input>
+
+                            <!-- nav style -->
+                            <select conf="templatePresentation.settings.navStyle">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navStyle.text"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navStyle.description"
+                                    />
+                                </description>
+
+                                <option value="none">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navStyle.none"
+                                    />
+                                </option>
+                                <option value="default">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navStyle.default"
+                                    />
+                                </option>
+                                <option value="defaultWithBigButtons">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navStyle.defaultWithBigButtons"
+                                    />
+                                </option>
+                                <option value="pill">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navStyle.pill"
+                                    />
+                                </option>
+                            </select>
+
                             <!-- nav attachment -->
                             <select conf="templatePresentation.settings.navPos">
                                 <text>
@@ -622,22 +724,89 @@
                             </select>
 
                             <!-- nav bar / menu colors -->
-                            <input conf="templatePresentation.settings.navBarMainColor"
+                            <input conf="templatePresentation.settings.navBarBgColor"
                                    type="color">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.navBarMainColor.text"
+                                            var="templatePresentation.settings.navBarBgColor.text"
                                     />
                                 </text>
                             </input>
-                            <input conf="templatePresentation.settings.navBarFontColor"
+                            <input conf="templatePresentation.settings.navBarLinkColor"
                                    type="color">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="templatePresentation.settings.navBarFontColor.text"
+                                            var="templatePresentation.settings.navBarLinkColor.text"
                                     />
                                 </text>
                             </input>
+                            <input conf="templatePresentation.settings.navBarLinkColorHover"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarLinkColorHover.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.navBarLinkBgColorHover"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarLinkBgColorHover.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <input conf="templatePresentation.settings.navBarInitialTransparent" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparent.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparent.desc"
+                                    />
+                                </description>
+                            </input>
+
+                            <input conf="templatePresentation.settings.navBarInitialTransparentLogo" class="media-image">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparentLogo.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparentLogo.desc"
+                                    />
+                                </description>
+                            </input>
+                            <input conf="templatePresentation.settings.navBarInitialTransparentLinkColor"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparentLinkColor.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.navBarInitialTransparentLinkColorHover"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparentLinkColorHover.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templatePresentation.settings.navBarInitialTransparentLinkBgColorHover"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarInitialTransparentLinkBgColorHover.text"
+                                    />
+                                </text>
+                            </input>
+
 
                             <!-- mobile menu (mega menu) -->
                             <input conf="templatePresentation.settings.mobileFontColor"
@@ -776,6 +945,19 @@
                                             var="templatePresentation.settings.headerHeightValue.text"
                                     />
                                 </text>
+                            </input>
+
+                            <input conf="templatePresentation.settings.headerHeightValueMobile" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.headerHeightValueMobile.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.headerHeightValueMobile.desc"
+                                    />
+                                </description>
                             </input>
 
                             <select conf="templatePresentation.settings.headerImagePosition">
@@ -956,6 +1138,29 @@
                                 </text>
                             </input>
 
+                            <input conf="templatePresentation.settings.colorFooterLink"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorFooterLink.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <input conf="templatePresentation.settings.colorFooterLinkHover"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorFooterLinkHover.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorFooterLinkHover.desc"
+                                    />
+                                </description>
+                            </input>
+
                         </settings>
 
                         <!-- social icons -->
@@ -995,7 +1200,7 @@
 
                             <!-- facebook -->
                             <input conf="templatePresentation.settings.social.facebook"
-                                   placeholder="https://www.facebook.com"
+                                   placeholder="https://www.facebook.com/exampleCompany"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1003,29 +1208,49 @@
                                     />
                                 </text>
                             </input>
-                            <!-- twitter -->
-                            <input conf="templatePresentation.settings.social.twitter"
-                                   placeholder="https://www.twitter.com"
+                            <!-- x / twitter -->
+                            <input conf="templatePresentation.settings.social.x"
+                                   placeholder="https://x.com/exampleCompany"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="social.twitter"
+                                            var="social.x"
                                     />
                                 </text>
                             </input>
-                            <!-- google -->
-                            <input conf="templatePresentation.settings.social.google"
-                                   placeholder="https://www.google.com"
+                            <!-- instagram -->
+                            <input conf="templatePresentation.settings.social.instagram"
+                                   placeholder="https://www.instagram.com/exampleCompany"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
-                                            var="social.google"
+                                            var="social.instagram"
+                                    />
+                                </text>
+                            </input>
+                            <!-- linkedin -->
+                            <input conf="templatePresentation.settings.social.linkedin"
+                                   placeholder="https://www.linkedin.com/company/exampleCompany"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.linkedin"
+                                    />
+                                </text>
+                            </input>
+                            <!-- pinterest -->
+                            <input conf="templatePresentation.settings.social.pinterest"
+                                   placeholder="https://www.pinterest.com/exampleCompany"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.pinterest"
                                     />
                                 </text>
                             </input>
                             <!-- youtube -->
                             <input conf="templatePresentation.settings.social.youtube"
-                                   placeholder="https://www.youtube.com"
+                                   placeholder="https://www.youtube.com/@exampleCompany"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1033,9 +1258,39 @@
                                     />
                                 </text>
                             </input>
+                            <!-- tiktok -->
+                            <input conf="templatePresentation.settings.social.tiktok"
+                                   placeholder="https://www.tiktok.com/@exampleCompany"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.tiktok"
+                                    />
+                                </text>
+                            </input>
+                            <!-- whatsapp -->
+                            <input conf="templatePresentation.settings.social.whatsapp"
+                                   placeholder="https://wa.me/49123456789"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.whatsapp"
+                                    />
+                                </text>
+                            </input>
+                            <!-- telegram -->
+                            <input conf="templatePresentation.settings.social.telegram"
+                                   placeholder="https://t.me/exampleCompany"
+                                   type="text">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="social.telegram"
+                                    />
+                                </text>
+                            </input>
                             <!-- github -->
                             <input conf="templatePresentation.settings.social.github"
-                                   placeholder="https://www.github.com"
+                                   placeholder="https://github.com/exampleCompany"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1045,7 +1300,7 @@
                             </input>
                             <!-- gitlab -->
                             <input conf="templatePresentation.settings.social.gitlab"
-                                   placeholder="https://www.gitlab.com"
+                                   placeholder="https://gitlab.com/exampleCompany"
                                    type="text">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1063,10 +1318,7 @@
 
         <wysiwyg class="main-content">
             <css src="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic"/>
-            <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/variables.css"/>
-            <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/fonts.css"/>
-            <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/buttons.css"/>
-            <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/style.css"/>
+            <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/main.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/editor.css"/>
 
             <styles>
@@ -1075,59 +1327,6 @@
                             var="editor.element.textLead"/>
                     <attributes>
                         <attribute name="class">text-lead</attribute>
-                    </attributes>
-                </style>
-
-                <!-- Template Button small -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="templateButton.small"/>
-                    <attributes>
-                        <attribute name="class">button button__small</attribute>
-                    </attributes>
-                </style>
-                <!-- Template Button default -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="templateButton.medium"/>
-                    <attributes>
-                        <attribute name="class">button button__medium</attribute>
-                    </attributes>
-                </style>
-
-                <!-- Template Button large -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="templateButton.large"/>
-                    <attributes>
-                        <attribute name="class">button button__large</attribute>
-                    </attributes>
-                </style>
-
-                <!-- Template Button ghost (white) -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="templateButton.ghost.white"/>
-                    <attributes>
-                        <attribute name="class">button button__ghost</attribute>
-                    </attributes>
-                </style>
-
-                <!-- Template Button icon: download -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="templateButton.download"/>
-                    <attributes>
-                        <attribute name="class">button button-download</attribute>
-                    </attributes>
-                </style>
-
-                <!-- Template Button icon: arrow -->
-                <style element="a">
-                    <locale group="quiqqer/template-presentation"
-                            var="templateButton.arrow"/>
-                    <attributes>
-                        <attribute name="class">button button-arrow</attribute>
                     </attributes>
                 </style>
             </styles>

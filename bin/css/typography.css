@@ -2,15 +2,22 @@
  * This file contains typography styles
  */
 
+/**
+ * Typography base
+ */
 body {
-    color: var(--qui-color-body);
+    color: var(--qui-colors-body);
     font-family: var(--qui-font-family);
     font-size: var(--qui-fs-body, 16px);
     font-weight: var(--qui-text-fontWeight);
     line-height: var(--qui-line-height);
 }
 
-h1, h2, h3, h4, h5, h6 {
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: var(--qui-heading-fontWeight);
     letter-spacing: 1px;
     line-height: 1.3;
@@ -21,179 +28,229 @@ h2:where(:not(:first-child)),
 h3:where(:not(:first-child)),
 h4:where(:not(:first-child)),
 h5:where(:not(:first-child)),
-h6:where(:not(:first-child)){
+h6:where(:not(:first-child)),
+.h2:where(:not(:first-child)),
+.h3:where(:not(:first-child)),
+.h4:where(:not(:first-child)),
+.h5:where(:not(:first-child)),
+.h6:where(:not(:first-child)) {
     margin-top: 1.5em;
 }
 
-:is(h1, h2, h3, h4, h5, h6) + * {
+/* Stacked headers: sibling child has no top margin */
+:is(h1, h2, h3, h4, h5, h6) + :is(h2, h3, h4, h5, h6) {
     margin-top: 0;
 }
 
-h1 {
+h1, .h1, .fs-1 {
     font-size: var(--qui-fs-1);
 }
-
-h2  {
+h2, .h2, .fs-2  {
     font-size: var(--qui-fs-2);
 }
-
-h3  {
+h3, .h3, .fs-3 {
     font-size: var(--qui-fs-3);
 }
-
-h4 {
+h4, .h4, .fs-4 {
     font-size: var(--qui-fs-4);
 }
-
-h5 {
+h5, .h5, .fs-5 {
     font-size: var(--qui-fs-5);
 }
-
-h6,
-.fs-6 {
+h6, .h6, .fs-6 {
     font-size: var(--qui-fs-6);
 }
 
-.fs-1 {
-    font-size: var(--qui-fs-1);
-}
-
-.fs-2 {
-    font-size: var(--qui-fs-2);
-}
-
-.fs-3 {
-    font-size: var(--qui-fs-3);
-}
-
-.fs-4 {
-    font-size: var(--qui-fs-4);
-}
-
-.fs-5 {
-    font-size: var(--qui-fs-5);
-}
-
-.fs-6 {
-    font-size: var(--qui-fs-6);
-}
-
-/* text */
+/**
+ * Font sizes
+ */
 .fs-xs {
     font-size: var(--qui-fs-xs);
 }
-
 .fs-sm {
     font-size: var(--qui-fs-sm);
 }
-
 .fs-body {
     font-size: var(--qui-fs-body);
 }
-
 .fs-md {
     font-size: var(--qui-fs-md);
 }
-
 .fs-lg {
     font-size: var(--qui-fs-lg);
 }
-
 .fs-xl {
     font-size: var(--qui-fs-xl);
 }
-
 .fs-2xl {
     font-size: var(--qui-fs-2xl);
 }
-
 .fs-3xl {
     font-size: var(--qui-fs-3xl);
 }
-
 .fs-4xl {
     font-size: var(--qui-fs-4xl);
 }
-
 .fs-5xl {
     font-size: var(--qui-fs-5xl);
 }
-
 .fs-6xl {
     font-size: var(--qui-fs-6xl);
 }
-
 .display-1 {
     font-size: var(--qui-display-1);
 }
-
 .display-2 {
     font-size: var(--qui-display-2);
 }
-
 .display-3 {
     font-size: var(--qui-display-3);
 }
-
 .display-4 {
     font-size: var(--qui-display-4);
 }
 
-/* link */
-a {
-    color: var(--qui-color-primary);
+/**
+ * Horizontal rules
+ */
+hr, .hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    clear: both;
+    float: left;
+    margin: 3em 0;
+    width: 100%;
+}
+
+/**
+ * Paragraphs & address
+ */
+p {
+    margin-bottom: var(--qui-spacing, 1rem);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+address {
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit;
+}
+
+/**
+ * Images & videos
+ */
+video, img {
+    margin: 0;
+    padding: 0;
     max-width: 100%;
-    text-decoration: none;
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+    height: auto;
 }
 
-a:hover {
+/**
+ * Links
+ */
+a {
     text-decoration: none;
 }
 
-/****************/
-/* text helpers */
-/****************/
-small, .small, .text_small {
-    font-size: var(--qui-fs-sm);
+:where(.default-content) a,
+:where(.qui-window-popup-content) a, /* fallback for qui windows */
+:where(.control-content) a {
+    color: var(--qui-colors-primary);
+    transition: var(--qui-transition);
 }
 
-strong,
-.fw-bold {
+/**
+ * Code & blockquote
+ */
+code {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border: 2px solid #efefef;
+    border-radius: 0.35em;
+    font-family: "Courier New", monospace;
+    font-size: 0.9em;
+    margin: 0 0.25em;
+    padding: 0.25em 0.65em;
+}
+
+blockquote {
+    border-left: 6px solid #efefef;
+    font-style: italic;
+    margin: 0 0 2em;
+    padding: 0.5em 0 0.5em 1.5em;
+}
+
+pre {
+    margin-bottom: 10px;
+    max-width: 100%;
+    overflow: auto;
+}
+
+pre code {
+    display: block;
+    line-height: 1.75em;
+    overflow-x: auto;
+    padding: 1em 1.5em;
+}
+
+/**
+ * Lists
+ */
+:where(.default-content) :is(ul, ol),
+:where(.qui-window-popup-content) :is(ul, ol), /* fallback for qui windows */
+:where(.control-content) :is(ul, ol) {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+:where(.default-content) li,
+:where(.qui-window-popup-content) li, /* fallback for qui windows */
+:where(.control-content) li {
+    padding-left: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+:where(li)::marker {
+    color: var(--qui-colors-primary);
+}
+
+/**
+ * Tables
+ */
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    width: 100%;
+}
+
+tr {
+    border-width: 1px 0;
+}
+
+th, td {
+    border-width: 0 1px;
+}
+
+th, td {
+    padding: 0.5rem;
+}
+
+thead {
     font-weight: bold;
 }
 
-.fw-bolder {
-    font-weight: bolder;
-}
-
-.fw-normal {
-    font-weight: normal;
-}
-
-.text-lead,
-.lead {
-    font-size: var(--qui-text-lead);
-    line-height: 1.5;
-}
-
-.text-muted {
-    color: var(--qui-color-muted);
-}
-
-.text-narrow {
-    max-width: 60ch;
-}
-
-.text-narrow-sm {
-    max-width: 40ch;
-}
-
-.text-narrow-xs {
-    max-width: 30ch;
-}
-
+/**
+ * Misc
+ */
+[hidden] { display: none !important; }

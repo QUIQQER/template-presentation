@@ -1,0 +1,135 @@
+/**
+ * This file contains page footer styles
+ */
+
+.page-footer {
+    background-color: var(--qui-footer-bg);
+    clear: both;
+    color: var(--qui-footer-font-color);
+    font-size: var(--qui-fs-sm);
+    padding-top: var(--qui-tpl-spacing--top);
+    width: 100%;
+}
+
+.page-footer-brick {
+    margin-top: var(--qui-tpl-spacing--top);
+    margin-bottom: var(--qui-tpl-spacing--bottom);
+}
+
+.page-footer a:not(.btn) {
+    color: var(--qui-footer-link-color);
+}
+
+.page-footer a:not(.btn):is(:hover, :focus) {
+    color: var(--qui-footer-link-color--hover);
+}
+
+/* footer bar */
+.page-footer__bar {
+    border-top: 1px solid var(--qui-footer-copyrigth-border-top-color);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.page-footer__barInner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page-footer__copyright,
+.page-footer__social {
+    flex-grow: 1;
+}
+
+.page-footer__social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: 0.5rem;
+}
+
+.page-footer__social a.social-link {
+    position: relative;
+    aspect-ratio: 1;
+    display: grid;
+    min-width: 2em;
+    place-items: center;
+    text-decoration: none;
+    color: var(--qui-footer-font-color);
+    font-size: 1rem;
+    border-radius: var(--qui-radius-btn);
+}
+
+.page-footer__social a.social-link:is(:hover, :focus) {
+    background-color: rgba(0,0,0,0.1);
+    color: var(--qui-footer-font-color);
+}
+
+.page-footer__social :where(.social-link:before) {
+    content: '';
+    position: absolute;
+    inset: -0.375rem;
+}
+
+/* links styling for footer */
+
+/*.page-footer a {*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.page-footer ul {*/
+/*    list-style: none;*/
+/*    padding-left: 0;*/
+/*    padding-right: 0;*/
+/*}*/
+
+/*.page-footer ul li {*/
+/*    line-height: 2em;*/
+/*    padding-left: 0;*/
+/*}*/
+
+/*.page-footer ul li a {*/
+/*    display: block;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.page-footer a:where(:not(.button, button):hover) {*/
+/*    background: none;*/
+/*    box-shadow: none;*/
+/*    color: var(--qui-colors-primary);*/
+/*    text-decoration: underline;*/
+/*}*/
+
+/* copyright */
+
+/* footer social */
+.page-footer__social {
+    text-align: right;
+}
+
+.footer-bar-social a {
+    padding: 10px;
+}
+
+.footer-bar-social a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1024px) {
+    .page-footer-copyright-right,
+    .page-footer-copyright-left {
+        padding-bottom: 10px;
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    .page-footer-copyright {
+        padding-bottom: 0;
+        padding-top: 10px;
+    }
+
+    .footer-bar-social {
+        padding: 10px 0 20px;
+        text-align: center;
+    }
+}

@@ -1,23 +1,10 @@
 {assign var=TS value=$Template->getAttribute('TemplateSetting')}
-{assign var=textColorCSSVar value=$TS->getAttribute('headerTextColor')}
 {assign var=showHeader value=$TS->getAttribute('showHeader')}
-{assign var=textPosCSSVar value=$TS->getAttribute('headerTextPos')}
-{assign var=textAlignmentCSSVar value=$TS->getAttribute('headerTextAlignment')}
 
 {if $showHeader}
 {strip}
-    {if $TS->getAttribute('headerTextColor')}
-        {assign var=textColorCSSVar value="--_tpl-header-textColor: {$TS->getAttribute('headerTextColor')};"}
-    {/if}
-    {if $TS->getAttribute('headerTextPos')}
-        {assign var=textPosCSSVar value="--_tpl-header-textPos: {$TS->getAttribute('headerTextPos')};"}
-    {/if}
-    {if $TS->getAttribute('headerTextAlignment')}
-        {assign var=textAlignmentCSSVar value="--_tpl-header-textAlignment: {$TS->getAttribute('headerTextAlignment')};"}
-    {/if}
-
     {template_event name="quiqqer::template::body::header::before" Template=$Template}
-    <header class="page-header" style=" {$textColorCSSVar} {$textPosCSSVar} {$textAlignmentCSSVar}">
+    <header class="page-header">
         {template_event name="quiqqer::template::body::header::start" Template=$Template}
 
         {if $Site->getAttribute('image_emotion')}

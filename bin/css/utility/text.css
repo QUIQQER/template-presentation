@@ -1,0 +1,128 @@
+/**
+ * This file contains text utility classes
+ */
+
+/* text width */
+.text-width-xl {
+    max-width: 80ch;
+}
+
+.text-width-lg {
+    max-width: 50ch;
+}
+
+.text-width-md {
+    max-width: 35ch;
+}
+
+.text-width-sm {
+    max-width: 25ch;
+}
+
+.text-width-xs {
+    max-width: 20ch;
+}
+
+/* text alignment */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* text style */
+small, .small, .text-small {
+    font-size: var(--qui-fs-sm);
+}
+
+strong,
+.fw-bold {
+    font-weight: bold;
+}
+
+.fw-bolder {
+    font-weight: bolder;
+}
+
+.fw-normal {
+    font-weight: normal;
+}
+
+.text-lead,
+.lead {
+    font-size: var(--qui-text-lead);
+    line-height: 1.5;
+}
+
+/**
+ * Link
+ */
+.link {
+    --color: inherit;
+    --color--hover: inherit;
+
+    text-underline-offset: 1px;
+    text-decoration: none;
+    color: var(--color);
+}
+
+.link:is(:hover, :focus) {
+    text-decoration: underline;
+    color: var(--color--hover);
+}
+
+.link-primary {
+    --color: var(--qui-colors-primary);
+    --color--hover: var(--qui-colors-primary-700);
+}
+
+.link-secondary {
+    --color: var(--qui-colors-secondary);
+    --color--hover: var(--qui-colors-secondary-700);
+}
+
+.link-success {
+    --color: var(--qui-colors-success);
+    --color--hover: var(--qui-colors-success-700);
+}
+
+.link-danger {
+    --color: var(--qui-colors-danger);
+    --color--hover: var(--qui-colors-danger-700);
+}
+
+.link-warning {
+    --color: var(--qui-colors-warning);
+    --color--hover: var(--qui-colors-warning-700);
+}
+
+.link-info {
+    --color: var(--qui-colors-info);
+    --color--hover: var(--qui-colors-info-700);
+}
+
+.link-light {
+    --color: var(--qui-colors-light);
+    --color--hover: var(--qui-colors-light-700);
+}
+
+.link-dark {
+    --color: var(--qui-colors-dark);
+    --color--hover: var(--qui-colors-dark-700);
+}
+
+.link-white {
+    --color: var(--qui-colors-white);
+    --color--hover: var(--qui-colors-gray-50);
+}
+
+.link-muted {
+    --color: var(--qui-colors-muted);
+    --color--hover: var(--qui-colors-dark-400);
+}

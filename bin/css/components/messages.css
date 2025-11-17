@@ -1,0 +1,81 @@
+/**
+ * Message component
+ */
+
+/* basic styling */
+.q-message {
+    --q-message-bg: var(--qui-colors-gray-50);
+    --q-message-color: var(--qui-colors-body);
+    --q-message-border: var(--qui-colors-gray-100);
+    --q-message-border-width: var(--theme--q-message-border-width, 1px);
+    --q-message-border-radius: var(--theme--q-message-border-radius, 0.5rem);
+
+    background: var(--q-message-bg);
+    color: var(--q-message-color);
+    border: var(--q-message-border-width) solid var(--q-message-border);
+    border-radius: var(--q-message-border-radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Error message */
+.q-message-error,
+.q-message-danger {
+    --q-message-bg: var(--qui-colors-danger-100);
+    --q-message-color: var(--qui-colors-danger-800);
+    --q-message-border: var(--qui-colors-danger-200);
+}
+
+/* Info message */
+.q-message-info {
+    --q-message-bg: var(--qui-colors-info-100);
+    --q-message-color: var(--qui-colors-info-800);
+    --q-message-border: var(--qui-colors-info-200);
+}
+
+/* Warning message */
+.q-message-warning {
+    --q-message-bg: var(--qui-colors-warning-200);
+    --q-message-color: var(--qui-colors-body);
+    --q-message-border: var(--qui-colors-warning-300);
+}
+
+/* Success message */
+.q-message-success {
+    --q-message-bg: var(--qui-colors-success-100);
+    --q-message-color: var(--qui-colors-success-800);
+    --q-message-border: var(--qui-colors-success-200);
+}
+
+
+/* variant: solid */
+/* Error message */
+.q-message-error--solid,
+.q-message-danger--solid {
+    --q-message-bg: var(--qui-colors-danger-500);
+    --q-message-color: #fff;
+    --q-message-border: var(--qui-colors-danger-600);
+}
+
+/* Info message */
+.q-message-info--solid {
+    --q-message-bg: var(--qui-colors-info-500);
+    --q-message-color: #fff;
+    --q-message-border: var(--qui-colors-info-600);
+}
+
+/* Warning message */
+.q-message-warning--solid {
+    --q-message-bg: var(--qui-colors-warning-500);
+    --q-message-color: var(--qui-colors-body);
+    --q-message-border: var(--qui-colors-warning-600);
+}
+
+/* Success message */
+.q-message-success--solid {
+    --q-message-bg: var(--qui-colors-success-500);
+    --q-message-color: #fff;
+    --q-message-border: var(--qui-colors-success-600);
+}
