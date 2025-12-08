@@ -116,8 +116,6 @@ h6, .h6, .fs-6 {
 hr, .hr {
     border: none;
     border-top: 1px solid #ccc;
-    clear: both;
-    float: left;
     margin: 3em 0;
     width: 100%;
 }
@@ -204,6 +202,11 @@ pre code {
 :where(.control-content) :is(ul, ol) {
     padding-left: 1.5rem;
     margin-bottom: 1rem;
+}
+
+:where(.default-content) :is(ul, ol):last-child,
+:where(.control-content) :is(ul, ol):last-child {
+    margin-bottom: 0;
 }
 
 :where(.default-content) li,
