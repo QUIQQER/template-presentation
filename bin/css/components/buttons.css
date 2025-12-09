@@ -5,7 +5,7 @@ button.qui-button,
 button,
 a.qui-button,
 .btn {
-    --padding-block: 0.5em;
+    --padding-block: 0.75em;
     --padding-inline: 1.25em;
 
     color: var(--qui-btn-color, inherit);
@@ -675,10 +675,14 @@ button.btn-outline:disabled:active,
  * Button sizes
  */
 .btn-sm {
+    --padding-block: 0.5em;
+    --padding-inline: 1em;
+
     font-size: .875em;
 }
 
 .btn-lg {
+    gap: 1em;
     font-size: 1.25em;
 }
 

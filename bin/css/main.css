@@ -16,6 +16,8 @@
 @import "footer.css";
 @import "typography.css";
 @import "style.css";
+@import "layout/gap.css";
+@import "layout/columns.css";
 
 /* components */
 @import "components/badges.css";
