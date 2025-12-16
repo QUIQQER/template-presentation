@@ -41,8 +41,8 @@
     --qui-row-spacing--large: calc(var(--qui-row-spacer) * 3);
     --qui-row-spacing--extraLarge: calc(var(--qui-row-spacer) * 5);
 
-    --qui-tpl-spacing--top: var(--theme--qui-tpl-spacing--top, var(--qui-row-spacing));
-    --qui-tpl-spacing--bottom: var(--theme--qui-tpl-spacing--bottom, var(--qui-row-spacing));
+    --qui-tpl-spacing--top: var(--theme--qui-tpl-spacing--top, var(--qui-row-spacing--base));
+    --qui-tpl-spacing--bottom: var(--theme--qui-tpl-spacing--bottom, var(--qui-row-spacing--base));
 
     /* header */
     --qui-page-header-padding-block: var(--theme--qui-page-header-padding-block, calc(var(--qui-nav-height) + 1rem));
