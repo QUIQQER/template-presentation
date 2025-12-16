@@ -9,7 +9,7 @@
     --qui-btn-borderRadius: var(--theme--qui-btn-borderRadius, var(--qui-radius-btn));
     --qui-btn-borderWidth: var(--theme--qui-btn-borderWidth, 1px);
     --qui-btn-borderStyle: var(--theme--qui-btn-borderStyle, solid);
-    --qui-btn-gap: var(--theme--qui-btn-gap, 0.5em);
+    --qui-btn-gap: var(--theme--qui-btn-gap, 0.75em);
     --qui-btn-fontWeight: var(--theme--qui-btn-fontWeight, normal);
     --qui-btn-transition: var(--theme--qui-btn-transitiont, all .15s ease-in-out);
 
