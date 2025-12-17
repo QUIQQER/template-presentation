@@ -565,6 +565,7 @@ button.qui-button.btn-white:active,
 .btn-white:active {
     background: var(--qui-btn-white-bg--hover);
     color: var(--qui-btn-white-color--hover);
+    border-color: var(--qui-btn-white-borderColor--hover);
     outline: none;
 }
 
