@@ -1,0 +1,32 @@
+/**
+ * This file contains gap classes
+ */
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 1rem; }
+.gap-4 { gap: 1.5rem; }
+.gap-5 { gap: 2rem; }
+
+@media screen and (min-width: 640px) {
+    .sm\:gap-1 { gap: 0.25rem; }
+    .sm\:gap-2 { gap: 0.5rem; }
+    .sm\:gap-3 { gap: 1rem; }
+    .sm\:gap-4 { gap: 1.5rem; }
+    .sm\:gap-5 { gap: 2rem; }
+}
+
+@media screen and (min-width: 768px) {
+    .md\:gap-1 { gap: 0.25rem; }
+    .md\:gap-2 { gap: 0.5rem; }
+    .md\:gap-3 { gap: 1rem; }
+    .md\:gap-4 { gap: 1.5rem; }
+    .md\:gap-5 { gap: 2rem; }
+}
+
+@media screen and (min-width: 1024px) {
+    .lg\:gap-1 { gap: 0.25rem; }
+    .lg\:gap-2 { gap: 0.5rem; }
+    .lg\:gap-3 { gap: 1rem; }
+    .lg\:gap-4 { gap: 1.5rem; }
+    .lg\:gap-5 { gap: 2rem; }
+}

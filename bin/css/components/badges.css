@@ -1,11 +1,14 @@
 .badge {
+    --color: var(--qui-badge-color);
+    --background-color: var(--qui-badge-bgColor);
+
     display: inline-block;
     padding: var(--qui-badge-padding-y) var(--qui-badge-padding-x);
     font-size: var(--qui-badge-fontSize--base);
     font-weight: var(--qui-badge-fontWeight);
     line-height: 1;
-    color: var(--qui-badge-color);
-    background-color: var(--qui-badge-bgColor);
+    color: var(--color);
+    background-color: var(--background-color);
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
@@ -19,7 +22,7 @@
     --qui-badge-color: var(--qui-badge-primary-color);
 }
 
-.badge-primary--light {
+.badge-primary-light {
     --qui-badge-bgColor: var(--qui-badge-primary-light-bgColor);
     --qui-badge-color: var(--qui-badge-primary-light-color);
 }
@@ -29,7 +32,7 @@
     --qui-badge-color: var(--qui-badge-secondary-color);
 }
 
-.badge-secondary--light {
+.badge-secondary-light {
     --qui-badge-bgColor: var(--qui-badge-secondary-light-bgColor);
     --qui-badge-color: var(--qui-badge-secondary-light-color);
 }
@@ -39,7 +42,7 @@
     --qui-badge-color: var(--qui-badge-success-color);
 }
 
-.badge-success--light {
+.badge-success-light {
     --qui-badge-bgColor: var(--qui-badge-success-light-bgColor);
     --qui-badge-color: var(--qui-badge-success-light-color);
 }
@@ -49,7 +52,7 @@
     --qui-badge-color: var(--qui-badge-danger-color);
 }
 
-.badge-danger--light {
+.badge-danger-light {
     --qui-badge-bgColor: var(--qui-badge-danger-light-bgColor);
     --qui-badge-color: var(--qui-badge-danger-light-color);
 }
@@ -59,7 +62,7 @@
     --qui-badge-color: var(--qui-badge-warning-color);
 }
 
-.badge-warning--light {
+.badge-warning-light {
     --qui-badge-bgColor: var(--qui-badge-warning-light-bgColor);
     --qui-badge-color: var(--qui-badge-warning-light-color);
 }
@@ -69,7 +72,7 @@
     --qui-badge-color: var(--qui-badge-info-color);
 }
 
-.badge-info--light {
+.badge-info-light {
     --qui-badge-bgColor: var(--qui-badge-info-light-bgColor);
     --qui-badge-color: var(--qui-badge-info-light-color);
 }
@@ -84,7 +87,7 @@
     --qui-badge-color: var(--qui-badge-dark-color);
 }
 
-.badge-dark--light {
+.badge-dark-light {
     --qui-badge-bgColor: var(--qui-badge-dark-light-bgColor);
     --qui-badge-color: var(--qui-badge-dark-light-color);
 }
@@ -95,15 +98,15 @@
 }
 
 /* rounded */
-.badge--pill {
+.badge-pill {
     border-radius: var(--qui-radius-pill);
 }
 
 /* sizing */
-.badge--sm {
+.badge-sm {
     font-size: 0.7em;
 }
 
-.badge--lg {
+.badge-lg {
     font-size: 1em;
 }
