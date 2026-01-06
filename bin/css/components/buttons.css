@@ -5,12 +5,22 @@ button.qui-button,
 button,
 a.qui-button,
 .btn {
-    --padding-block: 0.5em;
+    --padding-block: 0.75em;
     --padding-inline: 1.25em;
 
-    color: var(--qui-btn-color, inherit);
-    background-color: var(--qui-btn-bgColor, transparent);
-    border-color: var(--qui-btn-borderColor, transparent);
+    --color: var(--qui-btn-color, inherit);
+    --background-color: var(--qui-btn-bgColor, transparent);
+    --border-color: var(--qui-btn-borderColor, transparent);
+    --color--hover: var(--qui-btn-color--hover, inherit);
+    --background-color--hover: var(--qui-btn-bgColor--hover, transparent);
+    --border-color--hover: var(--qui-btn-borderColor--hover, transparent);
+    --color--disabled: var(--qui-btn-color--disabled, inherit);
+    --background-color--disabled: var(--qui-btn-bgColor--disabled, transparent);
+    --border-color--disabled: var(--qui-btn-borderColor--disabled, transparent);
+
+    color: var(--color);
+    background-color: var(--background-color);
+    border-color: var(--border-color);
 
     display: inline-flex;
     justify-content: center;
@@ -44,641 +54,312 @@ a.qui-button,
 
 .btn:hover,
 .btn:active {
+    color: var(--color--hover);
+    background-color: var(--background-color--hover);
+    border-color: var(--border-color--hover);
+    outline: none;
     text-decoration: none;
-    color: var(--qui-btn-color--hover, inherit);
-    background-color: var(--qui-btn-bgColor--hover, transparent);
-    border-color: var(--qui-btn-borderColor--hover, transparent);
 }
 
-/*****************************/
-/* button primary & standard */
-/*****************************/
-input[type="submit"],
-input[type="submit"]:disabled,
-input[type="submit"][disabled],
-input[type="button"],
-input[type="button"]:disabled,
-input[type="button"][disabled],
-input[type="reset"],
-input[type="reset"]:disabled,
-input[type="reset"][disabled],
-button.qui-button,
-button.qui-button:disabled,
-button.qui-button[disabled],
-button,
-button:disabled,
-button[disabled],
-a.qui-button,
+/**
+ * Button primary
+ */
 .btn-primary {
     --qui-btn-color: var(--qui-btn-primary-color);
     --qui-btn-bgColor: var(--qui-btn-primary-bg);
     --qui-btn-borderColor: var(--qui-btn-primary-borderColor);
-}
-
-input[type="submit"]:hover,
-input[type="submit"]:active,
-input[type="button"]:hover,
-input[type="button"]:active,
-input[type="reset"]:hover,
-input[type="reset"]:active,
-button.qui-button:hover,
-button.qui-button:active,
-button.qui-button.btn-primary:hover,
-button.qui-button.btn-primary:active,
-button.qui-button[disabled]:hover,
-button.qui-button[disabled]:active,
-button:hover,
-button:active,
-.btn-primary:hover,
-.btn-primary:active {
     --qui-btn-color--hover: var(--qui-btn-primary-color--hover);
     --qui-btn-bgColor--hover: var(--qui-btn-primary-bg--hover);
     --qui-btn-borderColor--hover: var(--qui-btn-primary-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-primary-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-primary-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-primary-borderColor--disabled);
 }
 
-/* outline */
-input[type="submit"].btn-outline,
-input[type="button"].btn-outline,
-input[type="reset"].btn-outline,
-button.qui-button.btn-outline,
-button.btn-outline,
-.btn-primary.btn-outline,
-input[type="submit"].btn-outline:disabled:hover, /* outline disabled */
-input[type="submit"].btn-outline:disabled:active,
-input[type="button"].btn-outline:disabled:hover,
-input[type="button"].btn-outline:disabled:active,
-input[type="reset"].btn-outline:disabled:hover,
-input[type="reset"].btn-outline:disabled:active,
-button.qui-button.btn-primary.btn-outline:disabled:hover,
-button.qui-button.btn-primary.btn-outline:disabled:active,
-button:disabled.btn-outline:hover,
-button:disabled.btn-outline:active,
-.btn-primary.btn-disabled.btn-outline:hover,
-.btn-primary.btn-disabled.btn-outline:active {
-    --qui-btn-color--hover: var(--qui-btn-primary-bg--hover);
+.btn-primary-outline {
+    --qui-btn-color: var(--qui-btn-primary-outline-color);
+    --qui-btn-bgColor: var(--qui-btn-primary-outline-bg);
+    --qui-btn-borderColor: var(--qui-btn-primary-outline-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-primary-outline-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-primary-outline-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-primary-outline-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-primary-outline-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-primary-outline-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-primary-outline-borderColor--disabled);
+}
+
+/**
+ * Button secondary
+ */
+.btn-secondary {
+    --qui-btn-color: var(--qui-btn-secondary-color);
+    --qui-btn-bgColor: var(--qui-btn-secondary-bg);
+    --qui-btn-borderColor: var(--qui-btn-secondary-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-secondary-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-secondary-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-secondary-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-secondary-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-secondary-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-secondary-borderColor--disabled);
+}
+
+.btn-secondary-outline {
+    --qui-btn-color: var(--qui-btn-secondary-outline-color);
+    --qui-btn-bgColor: var(--qui-btn-secondary-outline-bg);
+    --qui-btn-borderColor: var(--qui-btn-secondary-outline-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-secondary-outline-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-secondary-outline-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-secondary-outline-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-secondary-outline-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-secondary-outline-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-secondary-outline-borderColor--disabled);
+}
+
+/**
+ * Button success
+ */
+.btn-success {
+    --qui-btn-color: var(--qui-btn-success-color);
+    --qui-btn-bgColor: var(--qui-btn-success-bg);
+    --qui-btn-borderColor: var(--qui-btn-success-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-success-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-success-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-success-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-success-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-success-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-success-borderColor--disabled);
+}
+
+.btn-success-outline {
+    --qui-btn-color: var(--qui-btn-success-outline-color);
+    --qui-btn-bgColor: var(--qui-btn-success-outline-bg);
+    --qui-btn-borderColor: var(--qui-btn-success-outline-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-success-outline-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-success-outline-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-success-outline-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-success-outline-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-success-outline-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-success-outline-borderColor--disabled);
+}
+
+/**
+ * Button danger
+ */
+.btn-danger {
+    --qui-btn-color: var(--qui-btn-danger-color);
+    --qui-btn-bgColor: var(--qui-btn-danger-bg);
+    --qui-btn-borderColor: var(--qui-btn-danger-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-danger-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-danger-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-danger-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-danger-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-danger-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-danger-borderColor--disabled);
+}
+
+.btn-danger-outline {
+    --qui-btn-color: var(--qui-btn-danger-outline-color);
+    --qui-btn-bgColor: var(--qui-btn-danger-outline-bg);
+    --qui-btn-borderColor: var(--qui-btn-danger-outline-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-danger-outline-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-danger-outline-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-danger-outline-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-danger-outline-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-danger-outline-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-danger-outline-borderColor--disabled);
+}
+
+/**
+ * Button warning
+ */
+.btn-warning {
+    --qui-btn-color: var(--qui-btn-warning-color);
+    --qui-btn-bgColor: var(--qui-btn-warning-bg);
+    --qui-btn-borderColor: var(--qui-btn-warning-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-warning-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-warning-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-warning-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-warning-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-warning-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-warning-borderColor--disabled);
+}
+
+.btn-warning-outline {
+    --qui-btn-color: var(--qui-btn-warning-outline-color);
+    --qui-btn-bgColor: var(--qui-btn-warning-outline-bg);
+    --qui-btn-borderColor: var(--qui-btn-warning-outline-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-warning-outline-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-warning-outline-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-warning-outline-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-warning-outline-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-warning-outline-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-warning-outline-borderColor--disabled);
+}
+
+/**
+ * Button info
+ */
+.btn-info {
+    --qui-btn-color: var(--qui-btn-info-color);
+    --qui-btn-bgColor: var(--qui-btn-info-bg);
+    --qui-btn-borderColor: var(--qui-btn-info-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-info-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-info-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-info-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-info-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-info-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-info-borderColor--disabled);
+}
+
+.btn-info-outline {
+    --qui-btn-color: var(--qui-btn-info-outline-color);
+    --qui-btn-bgColor: var(--qui-btn-info-outline-bg);
+    --qui-btn-borderColor: var(--qui-btn-info-outline-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-info-outline-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-info-outline-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-info-outline-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-info-outline-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-info-outline-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-info-outline-borderColor--disabled);
+}
+
+/**
+ * Button dark
+ */
+.btn-dark {
+    --qui-btn-color: var(--qui-btn-dark-color);
+    --qui-btn-bgColor: var(--qui-btn-dark-bg);
+    --qui-btn-borderColor: var(--qui-btn-dark-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-dark-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-dark-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-dark-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-dark-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-dark-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-dark-borderColor--disabled);
+}
+
+.btn-dark-outline {
+    --qui-btn-color: var(--qui-btn-dark-outline-color);
+    --qui-btn-bgColor: var(--qui-btn-dark-outline-bg);
+    --qui-btn-borderColor: var(--qui-btn-dark-outline-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-dark-outline-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-dark-outline-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-dark-outline-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-dark-outline-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-dark-outline-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-dark-outline-borderColor--disabled);
+}
+
+/**
+ * Button light
+ */
+.btn-light {
+    --qui-btn-color: var(--qui-btn-light-color);
+    --qui-btn-bgColor: var(--qui-btn-light-bg);
+    --qui-btn-borderColor: var(--qui-btn-light-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-light-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-light-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-light-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-light-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-light-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-light-borderColor--disabled);
+}
+
+.btn-light-outline {
+    --qui-btn-color: var(--qui-btn-light-outline-color);
+    --qui-btn-bgColor: var(--qui-btn-light-outline-bg);
+    --qui-btn-borderColor: var(--qui-btn-light-outline-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-light-outline-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-light-outline-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-light-outline-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-light-outline-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-light-outline-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-light-outline-borderColor--disabled);
+}
+
+/**
+ * Button white
+ */
+.btn-white {
+    --qui-btn-color: var(--qui-btn-white-color);
+    --qui-btn-bgColor: var(--qui-btn-white-bg);
+    --qui-btn-borderColor: var(--qui-btn-white-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-white-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-white-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-white-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-white-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-white-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-white-borderColor--disabled);
+}
+
+.btn-white-outline {
+    --qui-btn-color: var(--qui-btn-white-outline-color);
+    --qui-btn-bgColor: var(--qui-btn-white-outline-bg);
+    --qui-btn-borderColor: var(--qui-btn-white-outline-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-white-outline-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-white-outline-bg--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-white-outline-borderColor--hover);
+    --qui-btn-color--disabled: var(--qui-btn-white-outline-color--disabled);
+    --qui-btn-bgColor--disabled: var(--qui-btn-white-outline-bg--disabled);
+    --qui-btn-borderColor--disabled: var(--qui-btn-white-outline-borderColor--disabled);
+}
+
+/**
+ * Button link
+ */
+.btn-link {
+    --qui-btn-color: var(--qui-btn-link-color);
+    --qui-btn-bgColor: transparent;
+    --qui-btn-borderColor: transparent;
+    --qui-btn-color--hover: var(--qui-btn-link-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-link-bg--hover);
+    --qui-btn-borderColor--hover: transparent;
+    --qui-btn-color--disabled: var(--qui-btn-white-color--disabled);
+    --qui-btn-bgColor--disabled: transparent;
+    --qui-btn-borderColor--disabled: transparent;
 }
 
 /***************/
 /* button link */
 /***************/
-input[type="submit"].btn-link,
-input[type="button"].btn-link,
-input[type="reset"].btn-link,
-button.qui-button.btn-link,
-button.btn-link,
-.btn-link {
-    background-color: transparent;
-    border-color: transparent;
-    color: var(--qui-btn-link-color);
-}
-
-input[type="submit"].btn-link:hover,
-input[type="submit"].btn-link:active,
-input[type="button"].btn-link:hover,
-input[type="button"].btn-link:active,
-input[type="reset"].btn-link:hover,
-input[type="reset"].btn-link:active,
-button.qui-button.btn-link:hover,
-button.qui-button.btn-link:active,
-.btn-link:hover,
-.btn-link:active {
-    background-color: var(--qui-btn-link-bg--hover);
-    border-color: transparent;
-    color: var(--qui-btn-link-color--hover);
-}
-
-/********************/
-/* button link dark */
-/********************/
-input[type="submit"].btn-link-dark,
-input[type="button"].btn-link-dark,
-input[type="reset"].btn-link-dark,
-button.qui-button.btn-link-dark,
-button.btn-link-dark,
 .btn-link-dark {
-    background-color: transparent;
-    border-color: transparent;
-    color: var(--qui-btn-linkDark-color);
+    --qui-btn-color: var(--qui-btn-link-dark-color);
+    --qui-btn-bgColor: transparent;
+    --qui-btn-borderColor: transparent;
+    --qui-btn-color--hover: var(--qui-btn-link-dark-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-link-dark-bg--hover);
+    --qui-btn-borderColor--hover: transparent;
+    --qui-btn-color--disabled: var(--qui-btn-link-dark-color--disabled);
+    --qui-btn-bgColor--disabled: transparent;
+    --qui-btn-borderColor--disabled: transparent;
 }
 
-input[type="submit"].btn-link-dark:hover,
-input[type="submit"].btn-link-dark:active,
-input[type="button"].btn-link-dark:hover,
-input[type="button"].btn-link-dark:active,
-input[type="reset"].btn-link-dark:hover,
-input[type="reset"].btn-link-dark:active,
-button.qui-button.btn-link-dark:hover,
-button.qui-button.btn-link-dark:active,
-.btn-link-dark:hover,
-.btn-link-dark:active {
-    background-color: var(--qui-btn-linkDark-bg--hover);
-    border-color: transparent;
-    color: var(--qui-btn-linkDark-color--hover);
-}
-
-/********************/
-/* button secondary */
-/********************/
-input[type="submit"].btn-secondary,
-input[type="button"].btn-secondary,
-input[type="reset"].btn-secondary,
-button.qui-button.btn-secondary,
-button.btn-secondary,
-.btn-secondary {
-    background-color: var(--qui-btn-secondary-bg);
-    border-color: var(--qui-btn-secondary-borderColor);
-    color: var(--qui-btn-secondary-color);
-}
-
-input[type="submit"].btn-secondary:hover,
-input[type="submit"].btn-secondary:active,
-input[type="button"].btn-secondary:hover,
-input[type="button"].btn-secondary:active,
-input[type="reset"].btn-secondary:hover,
-input[type="reset"].btn-secondary:active,
-button.qui-button.btn-secondary:hover,
-button.qui-button.btn-secondary:active,
-.btn-secondary:hover,
-.btn-secondary:active {
-    background: var(--qui-btn-secondary-bg--hover);
-    color: var(--qui-btn-secondary-color--hover);
-    border-color: var(--qui-btn-secondary-borderColor--hover);
-    outline: none;
-}
-
-/* outline */
-input[type="submit"].btn-secondary.btn-outline,
-input[type="button"].btn-secondary.btn-outline,
-input[type="reset"].btn-secondary.btn-outline,
-button.btn-secondary.qui-button.btn-outline,
-button.btn-secondary.btn-outline,
-.btn-secondary.btn-outline,
-input[type="submit"].btn-secondary.btn-outline:disabled:hover, /* outline disabled */
-input[type="submit"].btn-secondary.btn-outline:disabled:active,
-input[type="button"].btn-secondary.btn-outline:disabled:hover,
-input[type="button"].btn-secondary.btn-outline:disabled:active,
-input[type="reset"].btn-secondary.btn-outline:disabled:hover,
-input[type="reset"].btn-secondary.btn-outline:disabled:active,
-button.qui-button.btn-secondary.btn-outline:disabled:hover,
-button.qui-button.btn-secondary.btn-outline:disabled:active,
-button.btn-secondary.btn-outline:disabled:hover,
-button.btn-secondary.btn-outline:disabled:active,
-.btn-secondary.btn-outline.btn-disabled:hover,
-.btn-secondary.btn-outline.btn-disabled:active {
-    color: var(--qui-btn-secondary-bg--hover);
-}
-
-/******************/
-/* button success */
-/******************/
-input[type="submit"].btn-success,
-input[type="button"].btn-success,
-input[type="reset"].btn-success,
-button.qui-button.btn-success,
-button.btn-success,
-.btn-success {
-    background-color: var(--qui-btn-success-bg);
-    border-color: var(--qui-btn-success-borderColor);
-    color: var(--qui-btn-success-color);
-}
-
-input[type="submit"].btn-success:hover,
-input[type="submit"].btn-success:active,
-input[type="button"].btn-success:hover,
-input[type="button"].btn-success:active,
-input[type="reset"].btn-success:hover,
-input[type="reset"].btn-success:active,
-button.qui-button.btn-success:hover,
-button.qui-button.btn-success:active,
-.btn-success:hover,
-.btn-success:active {
-    background: var(--qui-btn-success-bg--hover);
-    color: var(--qui-btn-success-color--hover);
-    border-color: var(--qui-btn-success-borderColor--hover);
-}
-
-/* outline */
-input[type="submit"].btn-success.btn-outline,
-input[type="button"].btn-success.btn-outline,
-input[type="reset"].btn-success.btn-outline,
-button.btn-success.qui-button.btn-outline,
-button.btn-success.btn-outline,
-.btn-success.btn-outline,
-input[type="submit"].btn-success.btn-outline:disabled:hover, /* outline disabled */
-input[type="submit"].btn-success.btn-outline:disabled:active,
-input[type="button"].btn-success.btn-outline:disabled:hover,
-input[type="button"].btn-success.btn-outline:disabled:active,
-input[type="reset"].btn-success.btn-outline:disabled:hover,
-input[type="reset"].btn-success.btn-outline:disabled:active,
-button.qui-button.btn-success.btn-outline:disabled:hover,
-button.qui-button.btn-success.btn-outline:disabled:active,
-button.btn-success.btn-outline:disabled:hover,
-button.btn-success.btn-outline:disabled:active,
-.btn-success.btn-outline.btn-disabled:hover,
-.btn-success.btn-outline.btn-disabled:active {
-    color: var(--qui-btn-success-bg--hover);
-}
-
-/*****************/
-/* button danger */
-/*****************/
-input[type="submit"].btn-danger,
-input[type="button"].btn-danger,
-input[type="reset"].btn-danger,
-button.qui-button.btn-danger,
-button.btn-danger,
-.btn-danger {
-    background-color: var(--qui-btn-danger-bg);
-    border-color: var(--qui-btn-danger-borderColor);
-    color: var(--qui-btn-danger-color);
-}
-
-input[type="submit"].btn-danger:hover,
-input[type="submit"].btn-danger:active,
-input[type="button"].btn-danger:hover,
-input[type="button"].btn-danger:active,
-input[type="reset"].btn-danger:hover,
-input[type="reset"].btn-danger:active,
-button.qui-button.btn-danger:hover,
-button.qui-button.btn-danger:active,
-.btn-danger:hover,
-.btn-danger:active {
-    background: var(--qui-btn-danger-bg--hover);
-    color: var(--qui-btn-danger-color--hover);
-    border-color: var(--qui-btn-danger-borderColor--hover);
-    outline: none;
-}
-
-/* outline */
-input[type="submit"].btn-danger.btn-outline,
-input[type="button"].btn-danger.btn-outline,
-input[type="reset"].btn-danger.btn-outline,
-button.btn-danger.qui-button.btn-outline,
-button.btn-danger.btn-outline,
-.btn-danger.btn-outline,
-input[type="submit"].btn-danger.btn-outline:disabled:hover, /* outline disabled */
-input[type="submit"].btn-danger.btn-outline:disabled:active,
-input[type="button"].btn-danger.btn-outline:disabled:hover,
-input[type="button"].btn-danger.btn-outline:disabled:active,
-input[type="reset"].btn-danger.btn-outline:disabled:hover,
-input[type="reset"].btn-danger.btn-outline:disabled:active,
-button.qui-button.btn-danger.btn-outline:disabled:hover,
-button.qui-button.btn-danger.btn-outline:disabled:active,
-button.btn-danger.btn-outline:disabled:hover,
-button.btn-danger.btn-outline:disabled:active,
-.btn-danger.btn-outline.btn-disabled:hover,
-.btn-danger.btn-outline.btn-disabled:active {
-    color: var(--qui-btn-danger-bg--hover);
-}
-
-/******************/
-/* button warning */
-/******************/
-input[type="submit"].btn-warning,
-input[type="button"].btn-warning,
-input[type="reset"].btn-warning,
-button.qui-button.btn-warning,
-button.btn-warning,
-.btn-warning {
-    background-color: var(--qui-btn-warning-bg);
-    border-color: var(--qui-btn-warning-borderColor);
-    color: var(--qui-btn-warning-color);
-}
-
-input[type="submit"].btn-warning:hover,
-input[type="submit"].btn-warning:active,
-input[type="button"].btn-warning:hover,
-input[type="button"].btn-warning:active,
-input[type="reset"].btn-warning:hover,
-input[type="reset"].btn-warning:active,
-button.qui-button.btn-warning:hover,
-button.qui-button.btn-warning:active,
-.btn-warning:hover,
-.btn-warning:active {
-    background: var(--qui-btn-warning-bg--hover);
-    color: var(--qui-btn-warning-color--hover);
-    border-color: var(--qui-btn-warning-borderColor--hover);
-    outline: none;
-}
-
-/* outline */
-input[type="submit"].btn-warning.btn-outline,
-input[type="button"].btn-warning.btn-outline,
-input[type="reset"].btn-warning.btn-outline,
-button.btn-warning.qui-button.btn-outline,
-button.btn-warning.btn-outline,
-.btn-warning.btn-outline,
-input[type="submit"].btn-warning.btn-outline:disabled:hover, /* outline disabled */
-input[type="submit"].btn-warning.btn-outline:disabled:active,
-input[type="button"].btn-warning.btn-outline:disabled:hover,
-input[type="button"].btn-warning.btn-outline:disabled:active,
-input[type="reset"].btn-warning.btn-outline:disabled:hover,
-input[type="reset"].btn-warning.btn-outline:disabled:active,
-button.qui-button.btn-warning.btn-outline:disabled:hover,
-button.qui-button.btn-warning.btn-outline:disabled:active,
-button.btn-warning.btn-outline:disabled:hover,
-button.btn-warning.btn-outline:disabled:active,
-.btn-warning.btn-outline.btn-disabled:hover,
-.btn-warning.btn-outline.btn-disabled:active {
-    color: var(--qui-btn-warning-bg--hover);
-}
-
-/***************/
-/* button info */
-/***************/
-input[type="submit"].btn-info,
-input[type="button"].btn-info,
-input[type="reset"].btn-info,
-button.qui-button.btn-info,
-button.btn-info,
-.btn-info {
-    background-color: var(--qui-btn-info-bg);
-    border-color: var(--qui-btn-info-borderColor);
-    color: var(--qui-btn-info-color);
-}
-
-input[type="submit"].btn-info:hover,
-input[type="submit"].btn-info:active,
-input[type="button"].btn-info:hover,
-input[type="button"].btn-info:active,
-input[type="reset"].btn-info:hover,
-input[type="reset"].btn-info:active,
-button.qui-button.btn-info:hover,
-button.qui-button.btn-info:active,
-.btn-info:hover,
-.btn-info:active {
-    background: var(--qui-btn-info-bg--hover);
-    color: var(--qui-btn-info-color--hover);
-    border-color: var(--qui-btn-info-borderColor--hover);
-    outline: none;
-}
-
-/* outline */
-input[type="submit"].btn-info.btn-outline,
-input[type="button"].btn-info.btn-outline,
-input[type="reset"].btn-info.btn-outline,
-button.btn-info.qui-button.btn-outline,
-button.btn-info.btn-outline,
-.btn-info.btn-outline,
-input[type="submit"].btn-info.btn-outline:disabled:hover, /* outline disabled */
-input[type="submit"].btn-info.btn-outline:disabled:active,
-input[type="button"].btn-info.btn-outline:disabled:hover,
-input[type="button"].btn-info.btn-outline:disabled:active,
-input[type="reset"].btn-info.btn-outline:disabled:hover,
-input[type="reset"].btn-info.btn-outline:disabled:active,
-button.qui-button.btn-info.btn-outline:disabled:hover,
-button.qui-button.btn-info.btn-outline:disabled:active,
-button.btn-info.btn-outline:disabled:hover,
-button.btn-info.btn-outline:disabled:active,
-.btn-info.btn-outline.btn-disabled:hover,
-.btn-info.btn-outline.btn-disabled:active {
-    color: var(--qui-btn-info-bg--hover);
-}
-
-/***************/
-/* button dark */
-/***************/
-input[type="submit"].btn-dark,
-input[type="button"].btn-dark,
-input[type="reset"].btn-dark,
-button.qui-button.btn-dark,
-button.btn-dark,
-.btn-dark {
-    background-color: var(--qui-btn-dark-bg);
-    border-color: var(--qui-btn-dark-borderColor);
-    color: var(--qui-btn-dark-color);
-}
-
-input[type="submit"].btn-dark:hover,
-input[type="submit"].btn-dark:active,
-input[type="button"].btn-dark:hover,
-input[type="button"].btn-dark:active,
-input[type="reset"].btn-dark:hover,
-input[type="reset"].btn-dark:active,
-button.qui-button.btn-dark:hover,
-button.qui-button.btn-dark:active,
-.btn-dark:hover,
-.btn-dark:active {
-    background: var(--qui-btn-dark-bg--hover);
-    color: var(--qui-btn-dark-color--hover);
-    border-color: var(--qui-btn-dark-borderColor--hover);
-    outline: none;
-}
-
-/* outline */
-input[type="submit"].btn-dark.btn-outline,
-input[type="button"].btn-dark.btn-outline,
-input[type="reset"].btn-dark.btn-outline,
-button.btn-dark.qui-button.btn-outline,
-button.btn-dark.btn-outline,
-.btn-dark.btn-outline,
-input[type="submit"].btn-dark.btn-outline:disabled:hover, /* outline disabled */
-input[type="submit"].btn-dark.btn-outline:disabled:active,
-input[type="button"].btn-dark.btn-outline:disabled:hover,
-input[type="button"].btn-dark.btn-outline:disabled:active,
-input[type="reset"].btn-dark.btn-outline:disabled:hover,
-input[type="reset"].btn-dark.btn-outline:disabled:active,
-button.qui-button.btn-dark.btn-outline:disabled:hover,
-button.qui-button.btn-dark.btn-outline:disabled:active,
-button.btn-dark.btn-outline:disabled:hover,
-button.btn-dark.btn-outline:disabled:active,
-.btn-dark.btn-outline.btn-disabled:hover,
-.btn-dark.btn-outline.btn-disabled:active {
-    color: var(--qui-btn-dark-bg--hover);
-}
-
-/***************/
-/* button light */
-/***************/
-input[type="submit"].btn-light,
-input[type="button"].btn-light,
-input[type="reset"].btn-light,
-button.qui-button.btn-light,
-button.btn-light,
-.btn-light {
-    background-color: var(--qui-btn-light-bg);
-    border-color: var(--qui-btn-light-borderColor);
-    color: var(--qui-btn-light-color);
-}
-
-input[type="submit"].btn-light:hover,
-input[type="submit"].btn-light:active,
-input[type="button"].btn-light:hover,
-input[type="button"].btn-light:active,
-input[type="reset"].btn-light:hover,
-input[type="reset"].btn-light:active,
-button.qui-button.btn-light:hover,
-button.qui-button.btn-light:active,
-.btn-light:hover,
-.btn-light:active {
-    background: var(--qui-btn-light-bg--hover);
-    color: var(--qui-btn-light-color--hover);
-    border-color: var(--qui-btn-light-borderColor--hover);
-    outline: none;
-}
-
-/* outline */
-input[type="submit"].btn-light.btn-outline,
-input[type="button"].btn-light.btn-outline,
-input[type="reset"].btn-light.btn-outline,
-button.btn-light.qui-button.btn-outline,
-button.btn-light.btn-outline,
-.btn-light.btn-outline,
-input[type="submit"].btn-light.btn-outline:disabled:hover, /* outline disabled */
-input[type="submit"].btn-light.btn-outline:disabled:active,
-input[type="button"].btn-light.btn-outline:disabled:hover,
-input[type="button"].btn-light.btn-outline:disabled:active,
-input[type="reset"].btn-light.btn-outline:disabled:hover,
-input[type="reset"].btn-light.btn-outline:disabled:active,
-button.qui-button.btn-light.btn-outline:disabled:hover,
-button.qui-button.btn-light.btn-outline:disabled:active,
-button.btn-light.btn-outline:disabled:hover,
-button.btn-light.btn-outline:disabled:active,
-.btn-light.btn-outline.btn-disabled:hover,
-.btn-light.btn-outline.btn-disabled:active {
-    color: var(--qui-btn-light-bg--hover);
-}
-
-/****************/
-/* button white */
-/****************/
-input[type="submit"].btn-white,
-input[type="button"].btn-white,
-input[type="reset"].btn-white,
-button.qui-button.btn-white,
-button.btn-white,
-.btn-white {
-    background: var(--qui-btn-white-bg);
-    border-color: var(--qui-btn-white-borderColor);
-    color: var(--qui-btn-white-color);
-}
-
-input[type="submit"].btn-white:hover,
-input[type="submit"].btn-white:active,
-input[type="button"].btn-white:hover,
-input[type="button"].btn-white:active,
-input[type="reset"].btn-white:hover,
-input[type="reset"].btn-white:active,
-button.qui-button.btn-white:hover,
-button.qui-button.btn-white:active,
-.btn-white:hover,
-.btn-white:active {
-    background: var(--qui-btn-white-bg--hover);
-    color: var(--qui-btn-white-color--hover);
-    outline: none;
-}
-
-/* outline */
-input[type="submit"].btn-white.btn-outline,
-input[type="button"].btn-white.btn-outline,
-input[type="reset"].btn-white.btn-outline,
-button.btn-white.qui-button.btn-outline,
-button.btn-white.btn-outline,
-.btn-white.btn-outline,
-input[type="submit"].btn-white.btn-outline:disabled:hover, /* outline disabled */
-input[type="submit"].btn-white.btn-outline:disabled:active,
-input[type="button"].btn-white.btn-outline:disabled:hover,
-input[type="button"].btn-white.btn-outline:disabled:active,
-input[type="reset"].btn-white.btn-outline:disabled:hover,
-input[type="reset"].btn-white.btn-outline:disabled:active,
-button.qui-button.btn-white.btn-outline:disabled:hover,
-button.qui-button.btn-white.btn-outline:disabled:active,
-button.btn-white.btn-outline:disabled:hover,
-button.btn-white.btn-outline:disabled:active,
-.btn-white.btn-outline.btn-disabled:hover,
-.btn-white.btn-outline.btn-disabled:active {
-    color: #fafafa;
-}
-
-/* outline hover */
-input[type="submit"].btn-white.btn-outline:hover,
-input[type="submit"].btn-white.btn-outline:active,
-input[type="button"].btn-white.btn-outline:hover,
-input[type="button"].btn-white.btn-outline:active,
-input[type="reset"].btn-white.btn-outline:hover,
-input[type="reset"].btn-white.btn-outline:active,
-button.btn-white.btn-outline:not(:disabled):hover,
-button.btn-white.btn-outline:active,
-.btn-white.btn-outline:hover,
-.btn-white.btn-outline:active {
-    color: #393f46;
-}
-
-/**********************************/
-/* button outline standard design */
-/**********************************/
-input[type="submit"].btn-outline,
-input[type="button"].btn-outline,
-input[type="reset"].btn-outline,
-button.btn-outline,
-.btn-outline,
-.qui-button.btn-outline,
-a.qui-button.btn-outline,
-button.qui-button.btn-outline {
-    background-color: transparent;
-}
-
-input[type="submit"].btn-outline:hover,
-input[type="submit"].btn-outline:active,
-input[type="button"].btn-outline:hover,
-input[type="button"].btn-outline:active,
-input[type="reset"].btn-outline:hover,
-input[type="reset"].btn-outline:active,
-button.btn-outline:not(:disabled):hover,
-button.btn-outline:active,
-.btn-outline:hover,
-.btn-outline:active {
-    color: #fff;
-}
-
-/***********************************/
-/* button disabled standard design */
-/***********************************/
-input[type="submit"]:disabled,
-input[type="button"]:disabled,
-input[type="reset"]:disabled,
-button.qui-button:disabled,
-button:disabled,
-.btn[disabled],
-.btn:disabled,
-a.qui-button.btn-disabled,
-a.btn.btn-disabled,
-.btn-disabled {
-    opacity: 0.6;
-}
-
-[disabled]:hover,
-:disabled:hover,
-[disabled]:active,
-:disabled:active,
-[disabled]:hover > *,
-:disabled:hover > * {
+/**
+ * Button disabled
+ */
+[disabled],
+.disabled {
     cursor: not-allowed;
-}
-
-input[type="submit"].btn-outline:disabled:hover,
-input[type="submit"].btn-outline:disabled:active,
-input[type="button"].btn-outline:disabled:hover,
-input[type="button"].btn-outline:disabled:active,
-input[type="reset"].btn-outline:disabled:hover,
-input[type="reset"].btn-outline:disabled:active,
-button.qui-button.btn-outline:disabled:hover,
-button.qui-button.btn-outline:disabled:active,
-button.btn-outline:disabled:hover,
-button.btn-outline:disabled:active,
-.btn-outline.btn-disabled:hover,
-.btn-outline.btn-disabled:active {
-    opacity: 0.3;
+    --qui-btn-color: var(--qui-btn-color--disabled);
+    --qui-btn-bgColor: var(--qui-btn-bgColor--disabled);
+    --qui-btn-borderColor: var(--qui-btn-borderColor--disabled);
+    --qui-btn-color--hover: var(--qui-btn-color--disabled);
+    --qui-btn-bgColor--hover: var(--qui-btn-bgColor--disabled);
+    --qui-btn-borderColor--hover: var(--qui-btn-borderColor--disabled);
 }
 
 /**
  * Button sizes
  */
 .btn-sm {
+    --padding-block: 0.5em;
+    --padding-inline: 1em;
+
     font-size: .875em;
 }
 
 .btn-lg {
+    gap: 1em;
     font-size: 1.25em;
 }
 
