@@ -1,15 +1,13 @@
 .badge {
-    --_color: var(--qui-badge-color);
-    --_background-color: var(--qui-badge-bgColor);
-
+    border: var(--qui-badge-borderWidth) solid var(--qui-badge-borderColor);
     display: inline-flex;
     gap: 0.5em;
     padding: var(--qui-badge-padding-y) var(--qui-badge-padding-x);
     font-size: var(--qui-badge-fontSize);
     font-weight: var(--qui-badge-fontWeight);
     line-height: 1;
-    color: var(--_color);
-    background-color: var(--_background-color);
+    color: var(--qui-badge-color);
+    background-color: var(--qui-badge-bgColor);
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
