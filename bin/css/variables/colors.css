@@ -6,6 +6,7 @@
 :root {
     --qui-colors-body: var(--template-settings__body-color);
     --qui-colors-body-bgColor: var(--theme--template-settings__body-bgColor, #fff);
+    --qui-colors-heading: var(--theme--qui-colors-heading, var(--qui-colors-body));
     --qui-colors-muted: var(--theme--qui-colors-muted, #8a8e93);
     --qui-colors-link: var(--theme--qui-link-color, var(--qui-colors-primary));
     --qui-colors-link--hover: var(--theme--qui-link-color, var(--qui-colors-primary-700));

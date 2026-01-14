@@ -114,7 +114,7 @@
     --qui-btn-warning-color--hover: var(--theme--qui-btn-warning-color--hover, #000000);
     --qui-btn-warning-bg--hover: var(--theme--qui-btn-warning-bg--hover, color-mix(in srgb, var(--qui-btn-warning-bg), black 10%));
     --qui-btn-warning-borderColor--hover: var(--theme--qui-btn-warning-borderColor--hover, color-mix(in srgb, var(--qui-btn-warning-bg), black 10%));
-    --qui-btn-warning-color--disabled: var(--theme--qui-btn-warning-color--disabled, #ffffff);
+    --qui-btn-warning-color--disabled: var(--theme--qui-btn-warning-color--disabled, #333);
     --qui-btn-warning-bg--disabled: var(--theme--qui-btn-warning-bg--disabled, color-mix(in srgb, var(--qui-btn-warning-bg), white 40%));
     --qui-btn-warning-borderColor--disabled: var(--theme--qui-btn-warning-borderColor--disabled, color-mix(in srgb, var(--qui-btn-warning-bg), white 40%));
     /* outline */
