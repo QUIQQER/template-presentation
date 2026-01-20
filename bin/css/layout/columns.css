@@ -1,6 +1,26 @@
 /**
  * This file contains columns classes
  */
+
+/**
+ * Flexbox columns
+ */
+.flexbox-grid {
+    --min: 10ch;
+    --gap: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.flexbox-grid > * {
+    flex: 1 1 var(--min);
+}
+
+/**
+ * Grid columns
+ */
 .cols {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
