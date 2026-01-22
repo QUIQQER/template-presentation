@@ -319,17 +319,17 @@ a.qui-button,
     --qui-btn-borderColor--disabled: transparent;
 }
 
-/***************/
-/* button link */
-/***************/
-.btn-link-dark {
-    --qui-btn-color: var(--qui-btn-link-dark-color);
+/*
+ * button link - it takes the inherited color
+ */
+.btn-link-body {
+    --qui-btn-color: var(--qui-btn-link-body-color);
     --qui-btn-bgColor: transparent;
     --qui-btn-borderColor: transparent;
-    --qui-btn-color--hover: var(--qui-btn-link-dark-color--hover);
-    --qui-btn-bgColor--hover: var(--qui-btn-link-dark-bg--hover);
+    --qui-btn-color--hover: var(--qui-btn-link-body-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-link-body-bg--hover);
     --qui-btn-borderColor--hover: transparent;
-    --qui-btn-color--disabled: var(--qui-btn-link-dark-color--disabled);
+    --qui-btn-color--disabled: var(--qui-btn-link-body-color--disabled);
     --qui-btn-bgColor--disabled: transparent;
     --qui-btn-borderColor--disabled: transparent;
 }
