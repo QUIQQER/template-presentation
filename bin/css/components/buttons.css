@@ -3,6 +3,7 @@ input[type="button"],
 input[type="reset"],
 button.qui-button,
 button,
+.button,
 a.qui-button,
 .btn {
     --padding-block: 0.75em;
