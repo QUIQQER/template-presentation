@@ -45,6 +45,8 @@ class EventHandler
      */
     public static function onSmartyInit(Smarty $Smarty): void
     {
-        $Smarty->registerClass('QUI\TemplatePresentation\Utils', '\QUI\TemplatePresentation\Utils');
+        if (!isset($Smarty->registered_classes['QUI\TemplatePresentation\Utils'])) {
+            $Smarty->registerClass('QUI\TemplatePresentation\Utils', '\QUI\TemplatePresentation\Utils');
+        };
     }
 }
