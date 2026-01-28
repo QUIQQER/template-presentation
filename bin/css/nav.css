@@ -121,6 +121,7 @@
  */
 .quiqqer-menu-megaMenu,
 .quiqqer-menu-megaMenu__wrapperDesktop,
+.quiqqer-menu-megaMenu__wrapperMobile,
 .header-bar-logo {
     height: 100%;
 }
