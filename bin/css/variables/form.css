@@ -4,7 +4,7 @@
  * - To change warning color set variable --theme--qui-colors-warning
  */
 :root {
-    --qui-input-color: var(--theme--qui-input-color, currentColor);
+    --qui-input-color: var(--theme--qui-input-color, var(--qui-colors-body, currentColor));
     --qui-input-backgroundColor: var(--theme--qui-input-backgroundColor, var(--qui-colors-body-bgColor, transparent));
     --qui-input-borderWidth: var(--theme--qui-input-borderWidth, 1px);
     --qui-input-borderStyle: var(--theme--qui-input-borderStyle, solid);
@@ -12,7 +12,6 @@
     --qui-input-borderRadius: var(--theme--qui-input-borderRadius, 0.5rem);
     --qui-input-padding: var(--theme--qui-input-padding, 0.5rem 1rem);
     --qui-input-fontSize: var(--theme--qui-input-fontSize, 1rem);
-    /*--qui-input-placeholder-color: var(--theme--qui-input-placeholderColor, #999);*/
     --qui-input-placeholder-color: var(--theme--qui-input-placeholderColor, color-mix(in srgb, var(--qui-input-color), transparent 80%));
     --qui-input-transition: var(--theme--qui-input-transition, 0.2s ease all);
 
