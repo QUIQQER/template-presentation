@@ -1,0 +1,26 @@
+/**
+ * Set your own variables by using "--theme" prefix, for example:
+ * - To change success color set variable --theme--qui-colors-success
+ * - To change warning color set variable --theme--qui-colors-warning
+ */
+:root {
+    --qui-input-color: var(--theme--qui-input-color, currentColor);
+    --qui-input-backgroundColor: var(--theme--qui-input-backgroundColor, var(--qui-colors-body-bgColor, transparent));
+    --qui-input-borderWidth: var(--theme--qui-input-borderWidth, 1px);
+    --qui-input-borderStyle: var(--theme--qui-input-borderStyle, solid);
+    --qui-input-borderColor: var(--theme--qui-input-borderColor, #ddd);
+    --qui-input-borderRadius: var(--theme--qui-input-borderRadius, 0.5rem);
+    --qui-input-padding: var(--theme--qui-input-padding, 0.5rem 1rem);
+    --qui-input-fontSize: var(--theme--qui-input-fontSize, 1rem);
+    /*--qui-input-placeholder-color: var(--theme--qui-input-placeholderColor, #999);*/
+    --qui-input-placeholder-color: var(--theme--qui-input-placeholderColor, color-mix(in srgb, var(--qui-input-color), transparent 80%));
+    --qui-input-transition: var(--theme--qui-input-transition, 0.2s ease all);
+
+    /* hover */
+    --qui-input-backgroundColor--hover: var(--theme--qui-input-backgroundColor--hover, #fff);
+    --qui-input-borderColor--hover: var(--theme--qui-input-borderColor--hover, #aaa);
+
+    /* focus */
+    --qui-input-backgroundColor--focus: var(--theme--qui-input-backgroundColor--focus, #fff);
+    --qui-input-borderColor--focus: var(--theme--qui-input-borderColor--focus, var(--qui-colors-primary));
+}

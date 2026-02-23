@@ -28,3 +28,8 @@
 .btn-stack > .btn {
     width: 100%;
 }
+
+/* misc */
+.btn-full {
+    width: 100%;
+}

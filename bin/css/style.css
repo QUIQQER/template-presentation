@@ -36,8 +36,14 @@ body {
     background-color: var(--qui-colors-body-bgColor);
 }
 
-
 .qui-sitetypes-sitemap-block-category .control-background {
+    background-color: var(--qui-colors-primary);
+}
+
+/**
+ * Pace
+ */
+.pace .pace-progress {
     background-color: var(--qui-colors-primary);
 }
 
