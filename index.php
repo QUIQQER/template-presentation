@@ -125,6 +125,7 @@ switch ($Template->getLayoutType()) {
 
 $templateSettings['bodyClass'] = $bodyClass;
 $templateSettings['startPage'] = $startPage;
+$templateSettings['Site'] = $Site;
 
 /**
  * Own object container for template settings

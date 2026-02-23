@@ -209,7 +209,7 @@
             <!-- global areas -->
 
             <areas>
-                <area name="headerSuffix" inheritance="1" priority="1">
+                <area name="headerSuffix" inheritance="1" priority="10">
                     <title>
                         <locale group="quiqqer/template-presentation"
                                 var="area.headerSuffix.title"
@@ -222,7 +222,7 @@
                     </description>
                 </area>
 
-                <area name="footerPrefix" inheritance="1" priority="5">
+                <area name="footerPrefix" inheritance="1" priority="90">
                     <title>
                         <locale group="quiqqer/template-presentation"
                                 var="area.footerPrefix.title"
@@ -235,7 +235,7 @@
                     </description>
                 </area>
 
-                <area name="footer" inheritance="1" priority="6">
+                <area name="footer" inheritance="1" priority="100">
                     <title>
                         <locale group="quiqqer/template-presentation"
                                 var="area.footer.title"
@@ -253,7 +253,7 @@
             <layouts>
 
                 <layout layout="layout/startPage">
-                    <area name="header" inheritance="1" priority="0">
+                    <area name="header" inheritance="1" priority="5">
                         <title>
                             <locale group="quiqqer/template-presentation"
                                     var="area.header.title"
@@ -266,7 +266,7 @@
                         </description>
                     </area>
 
-                    <area name="prefixContentBricks" inheritance="1" priority="2">
+                    <area name="prefixContentBricks" inheritance="1" priority="20">
                         <title>
                             <locale group="quiqqer/template-presentation"
                                     var="area.sidebar.prefix.content.title"
@@ -279,7 +279,7 @@
                         </description>
                     </area>
 
-                    <area name="suffixContentBricks" inheritance="1" priority="4">
+                    <area name="suffixContentBricks" inheritance="1" priority="30">
                         <title>
                             <locale group="quiqqer/template-presentation"
                                     var="area.sidebar.suffix.content.title"
@@ -294,7 +294,7 @@
                 </layout>
 
                 <layout layout="layout/noSidebar">
-                    <area name="prefixContentBricks" inheritance="1" priority="2">
+                    <area name="prefixContentBricks" inheritance="1" priority="20">
                         <title>
                             <locale group="quiqqer/template-presentation"
                                     var="area.sidebar.prefix.content.title"
@@ -307,7 +307,7 @@
                         </description>
                     </area>
 
-                    <area name="suffixContentBricks" inheritance="1" priority="4">
+                    <area name="suffixContentBricks" inheritance="1" priority="30">
                         <title>
                             <locale group="quiqqer/template-presentation"
                                     var="area.sidebar.suffix.content.title"
@@ -322,7 +322,7 @@
                 </layout>
 
                 <layout layout="layout/noSidebarSmall">
-                    <area name="prefixContentBricks" inheritance="1" priority="2">
+                    <area name="prefixContentBricks" inheritance="1" priority="20">
                         <title>
                             <locale group="quiqqer/template-presentation"
                                     var="area.sidebar.prefix.content.title"
@@ -335,7 +335,7 @@
                         </description>
                     </area>
 
-                    <area name="suffixContentBricks" inheritance="1" priority="4">
+                    <area name="suffixContentBricks" inheritance="1" priority="30">
                         <title>
                             <locale group="quiqqer/template-presentation"
                                     var="area.sidebar.suffix.content.title"
@@ -350,20 +350,7 @@
                 </layout>
 
                 <layout layout="layout/leftSidebar">
-                    <area name="leftSidebar" inheritance="1" priority="3">
-                        <title>
-                            <locale group="quiqqer/template-presentation"
-                                    var="area.sidebar.left.title"
-                                    />
-                        </title>
-                        <description>
-                            <locale group="quiqqer/template-presentation"
-                                    var="area.sidebar.left.description"
-                                    />
-                        </description>
-                    </area>
-
-                    <area name="prefixContentBricks" inheritance="1" priority="2">
+                    <area name="prefixContentBricks" inheritance="1" priority="20">
                         <title>
                             <locale group="quiqqer/template-presentation"
                                     var="area.sidebar.prefix.content.title"
@@ -376,7 +363,7 @@
                         </description>
                     </area>
 
-                    <area name="suffixContentBricks" inheritance="1" priority="4">
+                    <area name="suffixContentBricks" inheritance="1" priority="30">
                         <title>
                             <locale group="quiqqer/template-presentation"
                                     var="area.sidebar.suffix.content.title"
@@ -386,25 +373,25 @@
                             <locale group="quiqqer/template-presentation"
                                     var="area.sidebar.suffix.content.description"
                                     />
+                        </description>
+                    </area>
+
+                    <area name="leftSidebar" inheritance="1" priority="40">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.left.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.left.description"
+                            />
                         </description>
                     </area>
                 </layout>
 
                 <layout layout="layout/rightSidebar">
-                    <area name="rightSidebar" inheritance="1" priority="3">
-                        <title>
-                            <locale group="quiqqer/template-presentation"
-                                    var="area.sidebar.right.title"
-                                    />
-                        </title>
-                        <description>
-                            <locale group="quiqqer/template-presentation"
-                                    var="area.sidebar.right.description"
-                                    />
-                        </description>
-                    </area>
-
-                    <area name="prefixContentBricks" inheritance="1" priority="2">
+                    <area name="prefixContentBricks" inheritance="1" priority="20">
                         <title>
                             <locale group="quiqqer/template-presentation"
                                     var="area.sidebar.prefix.content.title"
@@ -417,7 +404,7 @@
                         </description>
                     </area>
 
-                    <area name="suffixContentBricks" inheritance="1" priority="4">
+                    <area name="suffixContentBricks" inheritance="1" priority="30">
                         <title>
                             <locale group="quiqqer/template-presentation"
                                     var="area.sidebar.suffix.content.title"
@@ -427,6 +414,19 @@
                             <locale group="quiqqer/template-presentation"
                                     var="area.sidebar.suffix.content.description"
                                     />
+                        </description>
+                    </area>
+
+                    <area name="rightSidebar" inheritance="1" priority="40">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.right.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.right.description"
+                            />
                         </description>
                     </area>
                 </layout>

@@ -3,17 +3,16 @@
  */
 
 input, textarea, select {
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: 0;
+    color: var(--qui-input-color);
+    background-color: var(--qui-input-backgroundColor);
+    border: var(--qui-input-borderWidth) var(--qui-input-borderStyle) var(--qui-input-borderColor);
+    border-radius: var(--qui-input-borderRadius);
     box-shadow: none;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    line-height: 1.75em;
+    font-size: 1em;
+    line-height: inherit;
     outline: none;
     padding: 0.5em 1.25em;
 }
-
 
 input:focus {
     background: none;
@@ -26,7 +25,6 @@ textarea {
     -webkit-appearance: none;
 
     appearance: none;
-    font-family: 'Open Sans', sans-serif;
     min-height: 10em;
 }
 
@@ -34,12 +32,10 @@ textarea {
 select {
     -moz-appearance: none;
     -webkit-appearance: none;
-    background-color: #fff;
     background-image: url("/packages/quiqqer/template-presentation/bin/img/arrow-select.png");
     background-position: calc(100% - 20px) center;
     background-repeat: no-repeat;
     background-size: 20px auto;
-    color: inherit;
     padding-right: 60px;
 
     -moz-transition: all 0.2s ease;
@@ -55,31 +51,25 @@ input[type='radio'] {
     vertical-align: middle;
 }
 
-#page input[type='checkbox']:checked + label::before,
-#page input[type='radio']:checked + label::before,
-.pace .pace-progress {
-    background-color: var(--qui-colors-primary);
-}
-
 ::-webkit-input-placeholder {
-    color: rgba(0, 0, 0, 0.3);
-    /*color: #eee;*/
-    font-size: 1em;
+    color: var(--qui-input-placeholder-color);
+    font-size: inherit;
 }
 
 ::-moz-placeholder {
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 1em;
+    color: var(--qui-input-placeholder-color);
+    font-size: inherit;
 }
 
 :-ms-input-placeholder {
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 1em;
+    color: var(--qui-input-placeholder-color);
+    font-size: inherit;
 }
 
 textarea:focus::-moz-placeholder,
 input:focus::-moz-placeholder {
-    color: rgba(0, 0, 0, 0);
+    color: var(--qui-input-placeholder-color);
+    font-size: inherit;
 }
 
 legend,
@@ -101,18 +91,17 @@ fieldset {
 
 textarea,
 input {
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+    transition: var(--qui-input-transition);
 }
 
 textarea:hover,
-textarea:focus,
 input:hover,
+select:hover {
+    border-color: var(--qui-input-borderColor--hover);
+}
+
+textarea:focus,
 input:focus,
-select:hover,
 select:focus {
-    border-color: var(--qui-colors-primary);
+    border-color: var(--qui-input-borderColor--focus);
 }
