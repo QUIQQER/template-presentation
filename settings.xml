@@ -1329,6 +1329,74 @@
                         <attribute name="class">text-lead</attribute>
                     </attributes>
                 </style>
+                <!-- btn: primary -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="editor.element.btn.primary"/>
+                    <attributes>
+                        <attribute name="class">btn btn-primary</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="editor.element.btn.primary.outline"/>
+                    <attributes>
+                        <attribute name="class">btn btn-primary-outline</attribute>
+                    </attributes>
+                </style>
+                <!-- btn: secondary -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="editor.element.btn.secondary"/>
+                    <attributes>
+                        <attribute name="class">btn btn-secondary</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="editor.element.btn.secondary.outline"/>
+                    <attributes>
+                        <attribute name="class">btn btn-secondary-outline</attribute>
+                    </attributes>
+                </style>
+                <!-- btn: light -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="editor.element.btn.light"/>
+                    <attributes>
+                        <attribute name="class">btn btn-light</attribute>
+                    </attributes>
+                </style>
+                <!-- btn: dark -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="editor.element.btn.dark"/>
+                    <attributes>
+                        <attribute name="class">btn btn-dark</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="editor.element.btn.dark.outline"/>
+                    <attributes>
+                        <attribute name="class">btn btn-dark-outline</attribute>
+                    </attributes>
+                </style>
+                <!-- btn: white -->
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="editor.element.btn.white"/>
+                    <attributes>
+                        <attribute name="class">btn btn-white</attribute>
+                    </attributes>
+                </style>
+                <style element="a">
+                    <locale group="quiqqer/template-presentation"
+                            var="editor.element.btn.white.outline"/>
+                    <attributes>
+                        <attribute name="class">btn btn-white-outline</attribute>
+                    </attributes>
+                </style>
             </styles>
         </wysiwyg>
 

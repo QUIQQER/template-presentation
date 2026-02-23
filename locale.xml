@@ -1064,8 +1064,44 @@
 
         <!-- Editor -->
         <locale name="editor.element.textLead">
-            <de><![CDATA[Führender Text (lead)]]></de>
-            <en><![CDATA[Leading text]]></en>
+            <de><![CDATA[Template: Führender Text (lead)]]></de>
+            <en><![CDATA[Template: Leading text]]></en>
+        </locale>
+        <locale name="editor.element.btn.primary">
+            <de><![CDATA[Template Button: primär (brand)]]></de>
+            <en><![CDATA[Template button: primary (brand)]]></en>
+        </locale>
+        <locale name="editor.element.btn.primary.outline">
+            <de><![CDATA[Template Button: primär mit Ring (brand)]]></de>
+            <en><![CDATA[Template button: primary outline (brand)]]></en>
+        </locale>
+        <locale name="editor.element.btn.secondary">
+            <de><![CDATA[Template Button: sekundär]]></de>
+            <en><![CDATA[Template button: secondary]]></en>
+        </locale>
+        <locale name="editor.element.btn.secondary.outline">
+            <de><![CDATA[Template Button: secondary outline]]></de>
+            <en><![CDATA[Template button: secondary outline]]></en>
+        </locale>
+        <locale name="editor.element.btn.light">
+            <de><![CDATA[Template Button: hell]]></de>
+            <en><![CDATA[Template button: light]]></en>
+        </locale>
+        <locale name="editor.element.btn.dark">
+            <de><![CDATA[Template Button: dunkel]]></de>
+            <en><![CDATA[Template button: dark]]></en>
+        </locale>
+        <locale name="editor.element.btn.dark.outline">
+            <de><![CDATA[Template Button: dunkel mit Ring]]></de>
+            <en><![CDATA[Template button: dark outline]]></en>
+        </locale>
+        <locale name="editor.element.btn.white">
+            <de><![CDATA[Template Button: weiß]]></de>
+            <en><![CDATA[Template button: white]]></en>
+        </locale>
+        <locale name="editor.element.btn.white.outline">
+            <de><![CDATA[Template Button: weiß mit Ring]]></de>
+            <en><![CDATA[Template button: white outline]]></en>
         </locale>
 
 
