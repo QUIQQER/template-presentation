@@ -1318,6 +1318,7 @@
 
         <wysiwyg class="main-content">
             <css src="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic"/>
+            <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/project-settings.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/main.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/editor.css"/>
 
