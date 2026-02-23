@@ -14,16 +14,9 @@ input, textarea, select {
     padding: 0.5em 1.25em;
 }
 
-input:focus {
-    background: none;
-    box-shadow: none;
-    outline: none;
-}
-
 textarea {
     -moz-appearance: none;
     -webkit-appearance: none;
-
     appearance: none;
     min-height: 10em;
 }
@@ -97,11 +90,13 @@ input {
 textarea:hover,
 input:hover,
 select:hover {
+    background-color: var(--qui-input-backgroundColor--hover);
     border-color: var(--qui-input-borderColor--hover);
 }
 
 textarea:focus,
 input:focus,
 select:focus {
+    background-color: var(--qui-input-backgroundColor--focus);
     border-color: var(--qui-input-borderColor--focus);
 }
