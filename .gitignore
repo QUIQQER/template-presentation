@@ -6,3 +6,5 @@ phpstan.neon
 .phpunit.result.cache
 
 phpunit.xml
+
+bin/css/project-settings.css
