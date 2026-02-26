@@ -45,7 +45,7 @@ a.qui-button,
     line-height: 1.25;
     cursor: pointer;
     text-decoration: none;
-    font-family: var(--qui-font-family, inherit), sans-serif;
+    font-family: inherit;
 
     -webkit-box-shadow: none; /* qui-button reset */
     -moz-box-shadow: none; /* qui-button reset */
@@ -338,9 +338,10 @@ a.qui-button,
 /**
  * Button disabled
  */
-[disabled],
-.disabled {
-    cursor: not-allowed;
+:where(.btn, button, input[type='submit'], input[type='reset'], input[type='button'])[disabled],
+:where(.btn, button,input[type='submit'], input[type='reset'], input[type='button']).disabled {
+    cursor: default;
+
     --qui-btn-color: var(--qui-btn-color--disabled);
     --qui-btn-bgColor: var(--qui-btn-bgColor--disabled);
     --qui-btn-borderColor: var(--qui-btn-borderColor--disabled);
