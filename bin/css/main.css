@@ -20,6 +20,9 @@
 @import "layout/gap.css";
 @import "layout/columns.css";
 
+/* packages */
+@import "packages/quiqqer/contact.css";
+
 /* components */
 @import "components/badges.css";
 @import "components/buttons.css";
@@ -33,3 +36,4 @@
 @import "utility/spacing.css";
 @import "utility/helpers.css";
 @import "utility/text.css";
+@import "utility/typography.css";

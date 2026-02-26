@@ -6,8 +6,10 @@
  * Skeleton loader
  */
 .skeleton-loader {
-    --bg: var(--qui-colors-gray-50);
-    --shine-color: var(--qui-colors-gray-25);
+    --bg: rgb(0 0 0 / 5%);
+    --bg: light-dark(rgb(0 0 0 / 5%), rgb(255 255 255 / 5%));
+    --shine-color: rgb(255 255 255 / 40%);
+    --shine-color: light-dark(rgb(255 255 255 / 40%), rgb(255 255 255 / 5%));
     --anim-delay: 1s;
     --anim-duration: 1.5s;
 
@@ -21,9 +23,30 @@
     border-radius: inherit;
 }
 
-.skeleton-loading-effect--darker {
-    --bg-normal: var(--qui-colors-gray-100);
-    --bg-shine: var(--qui-colors-gray-50);
+.skeleton-loader-header,
+.skeleton-loader-text {
+    display: inline-block;
+    width: 100%;
+    height: var(--height);
+    border-radius: 0.75rem;
+}
+
+.skeleton-loader-header {
+    --height: calc(1.25rem * var(--qui-line-height));
+
+    margin-bottom: calc(var(--height) * 0.5);
+}
+
+.skeleton-loader-text {
+    --height: calc(1rem * var(--qui-line-height));
+}
+
+.skeleton-loader-text--sm {
+    --height: calc(0.75rem * var(--qui-line-height));
+}
+
+.skeleton-loader-text--lg {
+    --height: calc(1.25rem * var(--qui-line-height));
 }
 
 @keyframes qui-animation__skeleton-loader-shine {
