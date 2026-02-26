@@ -133,6 +133,13 @@
 
 /* mobile menu */
 .quiqqer-menu-megaMenu-mobile-openerBtn {
+    --qui-btn-color: var(--qui-megaMenu-link-color);
+    --qui-btn-bgColor: transparent;
+    --qui-btn-borderColor: transparent;
+    --qui-btn-color--hover: var(--qui-megaMenu-link-color);
+    --qui-btn-bgColor--hover: transparent;
+    --qui-btn-borderColor--hover: transparent;
+
     align-items: center;
 }
 

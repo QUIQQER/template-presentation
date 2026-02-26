@@ -1,0 +1,13 @@
+:root {
+    --qui-contact-ctaActionWindow-borderRadius: 2rem;
+    --template-presentation--quiqqer-contact-ctaActionWindow-padding: var(--theme--template-presentation--quiqqer-contact-ctaActionWindow-padding, 1rem);
+}
+
+.qui-window-popup--ctaActionWindow .quiqqer-contact-ctaAction {
+    padding: var(--template-presentation--quiqqer-contact-ctaActionWindow-padding);
+}
+
+.qui-contact-controls-ctaActionWindow .quiqqer-contact-ctaAction,
+.qui-contact-controls-ctaActionWindow__skeletonLoader .quiqqer-contact-ctaAction {
+    border-radius: 0;
+}
