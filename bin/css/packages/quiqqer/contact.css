@@ -1,13 +1,12 @@
 :root {
-    --qui-contact-ctaActionWindow-borderRadius: 2rem;
-    --template-presentation--quiqqer-contact-ctaActionWindow-padding: var(--theme--template-presentation--quiqqer-contact-ctaActionWindow-padding, 1rem);
+    --qui-contact-ctaAction-borderRadius: var(--theme--template-presentation--qui-contact-ctaActionWindow-borderRadius, 1.5rem);
+
+    /* window */
+    --qui-contact-ctaActionWindow-ctaControl-borderRadius: var(--theme--qui-contact-ctaActionWindow-ctaControl-borderRadius, 2rem);
+    --template-presentation--qui-contact-ctaActionWindow-padding: var(--theme--template-presentation--qui-contact-ctaActionWindow-padding, 1rem);
+    --qui-contact-ctaActionWindow-borderRadius: var(--theme--qui-contact-ctaActionWindow-borderRadius, 2rem);
 }
 
 .qui-window-popup--ctaActionWindow .quiqqer-contact-ctaAction {
-    padding: var(--template-presentation--quiqqer-contact-ctaActionWindow-padding);
-}
-
-.qui-contact-controls-ctaActionWindow .quiqqer-contact-ctaAction,
-.qui-contact-controls-ctaActionWindow__skeletonLoader .quiqqer-contact-ctaAction {
-    border-radius: 0;
+    padding: var(--template-presentation--qui-contact-ctaActionWindow-padding);
 }
