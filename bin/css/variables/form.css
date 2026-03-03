@@ -16,10 +16,12 @@
     --qui-input-transition: var(--theme--qui-input-transition, 0.2s ease all);
 
     /* hover */
+    --qui-input-color--hover: var(--theme--qui-input-color--hover, #fff);
     --qui-input-backgroundColor--hover: var(--theme--qui-input-backgroundColor--hover, #fff);
     --qui-input-borderColor--hover: var(--theme--qui-input-borderColor--hover, #aaa);
 
     /* focus */
+    --qui-input-color--focus: var(--theme--qui-input-color--focus, #fff);
     --qui-input-backgroundColor--focus: var(--theme--qui-input-backgroundColor--focus, #fff);
     --qui-input-borderColor--focus: var(--theme--qui-input-borderColor--focus, var(--qui-colors-primary));
 }
