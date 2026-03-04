@@ -4,12 +4,19 @@
  * - To change warning color set variable --theme--qui-colors-warning
  */
 :root {
-    --qui-colors-body: var(--template-settings__body-color);
-    --qui-colors-body-bgColor: var(--theme--template-settings__body-bgColor, #fff);
+    --qui-colors-text: var(--template-settings__body-color);
+    --qui-colors-background: var(--theme--template-settings__body-bgColor, #fff);
+    --qui-colors-surface: var(--theme--qui-colofrs-surface, #f6f6f7);
     --qui-colors-heading: var(--theme--qui-colors-heading, inherit);
-    --qui-colors-muted: var(--theme--qui-colors-muted, #8a8e93);
+    --qui-colors-text-muted: var(--theme--qui-colors-muted, #8a8e93);
     --qui-colors-link: var(--theme--qui-link-color, var(--qui-colors-primary));
     --qui-colors-link--hover: var(--theme--qui-link-color, var(--qui-colors-primary-700));
+
+    /*  Deprecated */
+    --qui-colors-body: var(--qui-colors-text);
+    --qui-colors-body-bgColor: var(--qui-colors-background);
+    --qui-colors-muted: var(--qui-colors-text-muted);
+    /* END Deprecated */
 
     /* primary */
     --qui-colors-primary: var(--theme--qui-colors-primary, var(--template-settings__color-primary));

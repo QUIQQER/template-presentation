@@ -6,6 +6,7 @@
 :root {
     --qui-scroll-padding: var(--theme--qui-scroll-padding, --template-settings__scroll-offset);
     --qui-body-spacing-top: var(--template-settings__body-spacing-top); /* it depends on nav bar height */
+    --qui-body-container-max-width: var(--theme--qui-body-container-max-width, 1200px);
 
     --qui-transition-duration: var(--theme--qui-transition-duration, 0.15s);
     --qui-transition-timing-function: var(--theme--qui-transition-timing-function, ease);
