@@ -230,5 +230,15 @@
     --qui-btn-link-body-color: var(--theme--qui-btn-link-body-color, hsl(from currentColor h s l));
     --qui-btn-link-body-color--hover: var(--theme--qui-btn-link-body-color, color-mix(in srgb, currentColor, white 10%));
     --qui-btn-link-body-bg--hover: var(--theme--qui-btn-link-body-bg--hover, hsl(from currentColor h s l / 10%));
-    --qui-btn-link-body-color--disabled: var(--theme--qui-btn-link-body-colo--disabled, var(--qui-colors-body));
+    --qui-btn-link-body-color--disabled: var(--theme--qui-btn-link-body-color--disabled, var(--qui-colors-body));
+
+    /* Button: icon & close */
+    --qui-btn-icon-size: var(--theme--qui-btn-icon-size, 2.75em);
+    --qui-btn-icon-radius: var(--theme--qui-btn-icon-radius, var(--qui-btn-borderRadius));
+    /* Button: close */
+    --qui-btn-close-color: var(--theme--qui-btn-close-color, color-mix(in srgb, currentColor, white 40%));
+    --qui-btn-close-color--hover: var(--theme--qui-btn-close-color, hsl(from currentColor h s l));
+    --qui-btn-close-bg--hover: var(--theme--qui-btn-close-bg--hover, transparent);
+    --qui-btn-close-color--disabled: var(--theme--qui-btn-close-color--disabled, color-mix(in srgb, currentColor, white 70%));
+    --qui-btn-close-radius: var(--theme--qui-btn-close-radius, var(--qui-radius-full));
 }

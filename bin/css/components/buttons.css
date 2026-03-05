@@ -366,12 +366,38 @@ a.qui-button,
 }
 
 /**
- * Button icon
+ * Button icon & close
  */
-.btn.btn-icon {
+.btn-icon,
+.btn-close {
+    --padding-block: 0;
+    --padding-inline: 0;
+
     aspect-ratio: 1;
+    border-radius: var(--qui-btn-icon-radius);
+    width: var(--qui-btn-icon-size);
 }
 
-.btn.btn-rounded {
-    border-radius: 10em;
+.btn-close {
+    --qui-btn-color: var(--qui-btn-close-color);
+    --qui-btn-bgColor: transparent;
+    --qui-btn-borderColor: transparent;
+    --qui-btn-color--hover: var(--qui-btn-close-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-close-bg--hover);
+    --qui-btn-borderColor--hover: transparent;
+    --qui-btn-color--disabled: var(--qui-btn-close-color--disabled);
+    --qui-btn-bgColor--disabled: transparent;
+    --qui-btn-borderColor--disabled: transparent;
+
+    border-radius: var(--qui-btn-close-radius);
+}
+
+.btn-icon svg,
+.btn-close svg {
+    width: 1em;
+    height: 1em;
+}
+
+.btn-rounded {
+    border-radius: var(--qui-radius-full);
 }
