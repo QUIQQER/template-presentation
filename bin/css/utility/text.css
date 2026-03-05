@@ -99,6 +99,6 @@
 }
 
 .link-muted {
-    --color: var(--qui-colors-muted);
+    --color: var(--qui-colors-text-muted);
     --color--hover: var(--qui-colors-dark-400);
 }
