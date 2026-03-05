@@ -6,7 +6,8 @@
 :root {
     --qui-colors-text: var(--template-settings__body-color);
     --qui-colors-background: var(--theme--template-settings__body-bgColor, #fff);
-    --qui-colors-surface: var(--theme--qui-colofrs-surface, #f6f6f7);
+    --qui-colors-surface: var(--theme--qui-colors-surface, #fff);
+    --qui-colors-modal: var(--theme--qui-colors-modal, #fff);
     --qui-colors-heading: var(--theme--qui-colors-heading, inherit);
     --qui-colors-text-muted: var(--theme--qui-colors-text-muted, #8a8e93);
     --qui-colors-link: var(--theme--qui-link-color, var(--qui-colors-primary));
