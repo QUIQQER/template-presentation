@@ -21,26 +21,28 @@
             </div>
         {/if}
 
-        <div role="main" class="main-content" style="{$mainContentSpacingTopCSSVar} {$mainContentSpacingBottomCSSVar}">
-            {if !$showHeader && ($showPageTitle || $showPageShort)}
-                <div class="content-header page-intro">
-                    {if $showPageTitle}
-                        <h1 itemprop="name" class="page-intro__title">
-                            {$Site->getAttribute('title')}
-                        </h1>
-                    {/if}
+        {if $Template->getBody()}
+            <div role="main" class="main-content" style="{$mainContentSpacingTopCSSVar} {$mainContentSpacingBottomCSSVar}">
+                {if !$showHeader && ($showPageTitle || $showPageShort)}
+                    <div class="content-header page-intro">
+                        {if $showPageTitle}
+                            <h1 itemprop="name" class="page-intro__title">
+                                {$Site->getAttribute('title')}
+                            </h1>
+                        {/if}
 
-                    {if $showPageShort}
-                        <div class="content-short page-intro__short lead" itemprop="description">
-                            {$Site->getAttribute('short')|nl2br}
-                        </div>
-                    {/if}
+                        {if $showPageShort}
+                            <div class="content-short page-intro__short lead" itemprop="description">
+                                {$Site->getAttribute('short')|nl2br}
+                            </div>
+                        {/if}
+                    </div>
+                {/if}
+
+                <div class="default-content">
+                    {$Template->getBody()}
                 </div>
             {/if}
-
-            <div class="default-content">
-                {$Template->getBody()}
-            </div>
         </div>
 
         {if !empty($suffixContentBricks)}
