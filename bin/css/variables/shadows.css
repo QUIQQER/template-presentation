@@ -1,0 +1,32 @@
+/**
+ * Badges css variables
+ *
+ * Set your own variables by using "--theme" prefix, for example:
+ * - To change success color set variable --theme--qui-colors-success
+ * - To change font size set variable --theme--qui-font-size
+ *
+ * Thanks to https://box-shadows.co/
+ */
+:root {
+    /* generic naming */
+    --qui-shadow-0: var(--theme--qui-shadow-0, none);
+    --qui-shadow-1: var(--theme--qui-shadow-1, 0px 1px 0px rgba(17,17,26,0.05), 0px 0px 8px rgba(17,17,26,0.1));
+    --qui-shadow-2: var(--theme--qui-shadow-2, 0px 0px 16px rgba(17,17,26,0.1));
+    --qui-shadow-3: var(--theme--qui-shadow-3, 0px 4px 16px rgba(17,17,26,0.05), 0px 8px 32px rgba(17,17,26,0.05));
+    --qui-shadow-4: var(--theme--qui-shadow-4, 0px 4px 16px rgba(17,17,26,0.1), 0px 8px 32px rgba(17,17,26,0.05));
+    --qui-shadow-5: var(--theme--qui-shadow-5, 0px 4px 16px rgba(17,17,26,0.1), 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px rgba(17,17,26,0.1));
+    --qui-shadow-6: var(--theme--qui-shadow-6, 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px rgba(17,17,26,0.1), 0px 24px 80px rgba(17,17,26,0.1));
+
+    --qui-shadow-sm: var(--theme--qui-shadow-sm, var(--qui-shadow-2));
+    --qui-shadow-md: var(--theme--qui-shadow-md, var(--qui-shadow-4));
+    --qui-shadow-lg: var(--theme--qui-shadow-lg, var(--qui-shadow-6));
+
+    /* semantic naming */
+    --qui-shadow-card: var(--theme--qui-shadow-card, var(--qui-shadow-3));
+    --qui-shadow-modal: var(--theme--qui-shadow-modal, var(--qui-shadow-5));
+    --qui-shadow-btn: var(--theme--qui-shadow-btn, var(--qui-shadow-0));
+    --qui-shadow-input: var(--theme--qui-shadow-input, var(--qui-shadow-0));
+    --qui-shadow-image: var(--theme--qui-shadow-image, var(--qui-shadow-0));
+
+    --qui-shadow-focus: var(--theme--qui-shadow-focus, 0 0 0 3px var(--qui-colors-focus-ring));
+}

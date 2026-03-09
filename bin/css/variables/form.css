@@ -9,7 +9,7 @@
     --qui-input-borderWidth: var(--theme--qui-input-borderWidth, 1px);
     --qui-input-borderStyle: var(--theme--qui-input-borderStyle, solid);
     --qui-input-borderColor: var(--theme--qui-input-borderColor, #ddd);
-    --qui-input-borderRadius: var(--theme--qui-input-borderRadius, 0.5rem);
+    --qui-input-borderRadius: var(--theme--qui-input-borderRadius, var(--qui-radius-input));
     --qui-input-padding: var(--theme--qui-input-padding, 0.5rem 1rem);
     --qui-input-fontSize: var(--theme--qui-input-fontSize, 1rem);
     --qui-input-placeholder-color: var(--theme--qui-input-placeholderColor, color-mix(in srgb, var(--qui-input-color), transparent 80%));
