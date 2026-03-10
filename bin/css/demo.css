@@ -79,7 +79,7 @@
 /* Brick: customer review */
 /**************************/
 .customerReviewsSlider-templateOne-review.default-content {
-    background-color: var(--demo-bg-light);
+    background-color: var(--qui-colors-surface-card);
 }
 
 /******************************/
