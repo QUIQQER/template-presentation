@@ -319,6 +319,10 @@ section.quiqqer-portfolio-list {
     margin-bottom: 3rem;
 }
 
+.control-footer {
+    margin-top: 3rem;
+}
+
 .content-short:not(:last-child),
 .control-content:not(:last-child),
 .control-body:not(:last-child) {
