@@ -649,10 +649,6 @@ input.quiqqer-search-searchinput-submit:last-of-type {
     order: 3;
 }
 
-div.qui-select {
-    border-width: 2px;
-}
-
 .qui-select.quiqqer-search-searchinput-searchfieldselect {
     cursor: pointer;
     flex-grow: 1;
