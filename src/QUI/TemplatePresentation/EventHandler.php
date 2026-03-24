@@ -17,6 +17,22 @@ use Smarty;
 class EventHandler
 {
     /**
+     * Remove obsolete generated assets from the package directory.
+     */
+    public static function onPackageSetup(QUI\Package\Package $Package): void
+    {
+        if ($Package->getName() !== 'quiqqer/template-presentation') {
+            return;
+        }
+
+        $legacyCssFile = $Package->getDir() . 'bin/css/project-settings.css';
+
+        if (is_file($legacyCssFile)) {
+            @unlink($legacyCssFile);
+        }
+    }
+
+    /**
      * Clear system cache on project save
      * Create CSS file with project settings
      *
@@ -70,8 +86,13 @@ class EventHandler
 
         $cssContent .= "}\n";
 
-        $packageDir = dirname(__DIR__, 3);
-        $cssFile = $packageDir . '/bin/css/project-settings.css';
+        $Package = QUI::getPackage('quiqqer/template-presentation');
+        $packageDir = $Package->getVarDir();
+        $cssDir = $packageDir . 'bin/css/';
+
+        QUI\Utils\System\File::mkdir($cssDir);
+
+        $cssFile = $cssDir . 'project-settings.css';
         @file_put_contents($cssFile, $cssContent);
     }
 
