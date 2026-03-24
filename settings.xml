@@ -121,6 +121,9 @@
                     <conf name="menuId">
                         <type><![CDATA[integer]]></type>
                     </conf>
+                    <conf name="menuIdLoggedIn">
+                        <type><![CDATA[integer]]></type>
+                    </conf>
                     <conf name="showFirstLevelIcons">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
@@ -862,6 +865,22 @@
                                 <description>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.independentMenu.menuId.desc"
+                                    />
+                                </description>
+                            </input>
+
+                            <input conf="templatePresentation.settings.menuIdLoggedIn"
+                                   type="text"
+                                   data-qui="package/quiqqer/menu/bin/Controls/Independent/Input">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.independentMenu.menuIdLoggedIn"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.independentMenu.menuIdLoggedIn.desc"
                                     />
                                 </description>
                             </input>

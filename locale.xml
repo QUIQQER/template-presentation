@@ -346,6 +346,14 @@
             <de><![CDATA[Die Option ermöglichst separates und unabhängiges Menü für eine einzelne Seite zu setzen.]]></de>
             <en><![CDATA[The option allows to set separate and independent menu for single page.]]></en>
         </locale>
+        <locale name="siteSettings.independentMenuIdLoggedIn">
+            <de><![CDATA[Eigenes Menü für eingeloggte Benutzer]]></de>
+            <en><![CDATA[Independent menu for logged-in users]]></en>
+        </locale>
+        <locale name="siteSettings.independentMenuIdLoggedIn.desc">
+            <de><![CDATA[Wenn ein Benutzer eingeloggt ist, wird dieses Menü für diese Seite statt des normalen Menüs verwendet.]]></de>
+            <en><![CDATA[If a user is logged in, this menu is used for this page instead of the default menu.]]></en>
+        </locale>
         <locale name="templatePresentation.siteSettings.nav.title">
             <de><![CDATA[Template Presentation: Navigationsleiste]]></de>
             <en><![CDATA[Template Presentation: Nav bar]]></en>
@@ -874,6 +882,14 @@
         <locale name="template.settings.independentMenu.menuId.desc">
             <de><![CDATA[Wenn ein eigenes Menü ausgewählt ist, wird dieses als Navigation angezeigt.]]></de>
             <en><![CDATA[If a custom (independent) menu is selected, this will be displayed as navigation.]]></en>
+        </locale>
+        <locale name="template.settings.independentMenu.menuIdLoggedIn">
+            <de><![CDATA[Menü für eingeloggte Benutzer auswählen]]></de>
+            <en><![CDATA[Select menu for logged-in users]]></en>
+        </locale>
+        <locale name="template.settings.independentMenu.menuIdLoggedIn.desc">
+            <de><![CDATA[Wenn ein Benutzer eingeloggt ist, wird dieses Menü statt des normalen eigenen Menüs angezeigt.]]></de>
+            <en><![CDATA[If a user is logged in, this menu is displayed instead of the default independent menu.]]></en>
         </locale>
         <locale name="template.settings.independentMenu.showFirstLevelIcons">
             <de><![CDATA[Icons in der erster Ebene anzeigen]]></de>

@@ -10,6 +10,7 @@
         <attribute>templatePresentation.header.textPos</attribute>
         <attribute>templatePresentation.pageCustomClass</attribute>
         <attribute>templatePresentation.independentMenuId</attribute>
+        <attribute>templatePresentation.independentMenuIdLoggedIn</attribute>
         <attribute>templatePresentation.nav.initialTransparent</attribute>
         <attribute>templatePresentation.nav.initialTransparent.logo</attribute>
         <attribute>templatePresentation.nav.initialTransparent.linkColor</attribute>
@@ -153,12 +154,23 @@
                     </description>
                 </input>
 
-                <!-- nav initial transparent -->
-                <text>
-                    <locale group="quiqqer/template-presentation"
-                            var="templatePresentation.nav.initialTransparent.desc"/>
-                </text>
+                <input conf="templatePresentation.independentMenuIdLoggedIn"
+                       type="text"
+                       data-qui="package/quiqqer/menu/bin/Controls/Independent/Input">
+                    <text>
+                        <locale group="quiqqer/template-presentation"
+                                var="siteSettings.independentMenuIdLoggedIn"
+                        />
+                    </text>
 
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="siteSettings.independentMenuIdLoggedIn.desc"
+                        />
+                    </description>
+                </input>
+
+                <!-- nav initial transparent -->
                 <select conf="templatePresentation.nav.initialTransparent">
                     <text>
                         <locale group="quiqqer/template-presentation"
@@ -179,6 +191,11 @@
                                 var="site.settings.nav.initialTransparent.disable"/>
                     </option>
                 </select>
+
+                <text>
+                    <locale group="quiqqer/template-presentation"
+                            var="templatePresentation.nav.initialTransparent.desc"/>
+                </text>
 
                 <input conf="templatePresentation.nav.initialTransparent.logo" class="media-image">
                     <text>

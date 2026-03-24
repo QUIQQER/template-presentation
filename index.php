@@ -26,6 +26,7 @@ $templateSettings = QUI\TemplatePresentation\Utils::getConfig([
  */
 QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
 QUI\Utils\Site::setRecursiveAttribute($Site, 'templatePresentation.independentMenuId');
+QUI\Utils\Site::setRecursiveAttribute($Site, 'templatePresentation.independentMenuIdLoggedIn');
 
 // Inhalts Verhalten
 if ($Site->getAttribute('templatePresentation.showTitle') || $Site->getAttribute('templatePresentation.showShort')) {
@@ -36,6 +37,8 @@ if ($Site->getAttribute('templatePresentation.showTitle') || $Site->getAttribute
  * Mega menu
  */
 $menuDropdownIcon = 'fa-solid fa-caret-down';
+$SessionUser = QUI::getUserBySession();
+$sessionUserIsAuth = QUI::getUsers()->isAuth($SessionUser);
 $params = [
     'showStart' => false,
     'subMenuIndicator' => $menuDropdownIcon
@@ -49,9 +52,23 @@ if (
     $params['showFirstLevelIcons'] = $Project->getConfig('templatePresentation.settings.showFirstLevelIcons');
 }
 
+if (
+    $sessionUserIsAuth
+    && $Project->getConfig('templatePresentation.settings.menuIdLoggedIn')
+) {
+    $params['menuId'] = $Project->getConfig('templatePresentation.settings.menuIdLoggedIn');
+}
+
 // Site own / independent menu
 if ($Site->getAttribute('templatePresentation.independentMenuId')) {
     $params['menuId'] = $Site->getAttribute('templatePresentation.independentMenuId');
+}
+
+if (
+    $sessionUserIsAuth
+    && $Site->getAttribute('templatePresentation.independentMenuIdLoggedIn')
+) {
+    $params['menuId'] = $Site->getAttribute('templatePresentation.independentMenuIdLoggedIn');
 }
 
 $MegaMenu = new QUI\Menu\MegaMenu($params);

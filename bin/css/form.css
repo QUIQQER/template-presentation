@@ -2,7 +2,7 @@
  * This file contains form styles
  */
 
-input, textarea, select {
+input, textarea, select, div.qui-select {
     color: var(--qui-input-color);
     background-color: var(--qui-input-backgroundColor);
     border: var(--qui-input-borderWidth) var(--qui-input-borderStyle) var(--qui-input-borderColor);
@@ -12,6 +12,27 @@ input, textarea, select {
     line-height: inherit;
     outline: none;
     padding: 0.5em 1.25em;
+}
+
+/* fix for qui-select */
+div.qui-select {
+    height: initial;
+    float: none;
+    display: flex;
+}
+
+div.qui-select .text {
+    float: none;
+    height: initial;
+    padding-left: 0;
+    flex: 1;
+    width: initial;
+    line-height: inherit;
+}
+
+div.qui-select .drop-icon {
+    float: none;
+    height: initial;
 }
 
 textarea {

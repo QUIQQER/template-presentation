@@ -319,6 +319,10 @@ section.quiqqer-portfolio-list {
     margin-bottom: 3rem;
 }
 
+.control-footer {
+    margin-top: 3rem;
+}
+
 .content-short:not(:last-child),
 .control-content:not(:last-child),
 .control-body:not(:last-child) {
@@ -643,10 +647,6 @@ input.quiqqer-search-searchinput-submit:last-of-type {
     flex-grow: 1;
     margin: 10px;
     order: 3;
-}
-
-div.qui-select {
-    border-width: 2px;
 }
 
 .qui-select.quiqqer-search-searchinput-searchfieldselect {
