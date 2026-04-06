@@ -1,5 +1,7 @@
 {assign var=Setting value=$Template->getAttribute('TemplateSetting')}
 {assign var=showSocialInMenu value=$Setting->getAttribute('showSocialInMenu')}
+{assign var=navStyle value=$Setting->getAttribute('navStyle')}
+{assign var=navTopBannerBricks value=$BricksManager->getBricksByArea('navTopBanner', $Site)}
 
 <!doctype html>
 <html itemscope itemtype="{$Site->getAttribute('meta.itemscope')}" lang="{$Project->getLang()}">
@@ -12,7 +14,7 @@
 
     <script>
         {if $navPos == 'fix'}var navIsFixed = true;{/if}
-        var social     = "{if $showSocialInMenu}treu{else}false{/if}";
+        var social     = "{if $showSocialInMenu}true{else}false{/if}";
         var socialHTML = '{{fetch template="template/menu/mobileSocial.html" Project=$Project Template=$Template Site=$Site}|json_encode nofilter}';
     </script>
 
@@ -36,6 +38,18 @@
 
 {* main navigation / menu *}
 {if $Template->getAttribute('template-header')}
+    {if !empty($navTopBannerBricks)}
+        <div class="tpl-navTopBanner tpl-navTopBanner--style-{$navStyle}" data-name="header-bar-topBanner">
+            <div class="tpl-navTopBanner__inner">
+                <div class="tpl-brickArea-navTopBanner">
+                    {foreach $navTopBannerBricks as $Brick}
+                        {$Brick->create()}
+                    {/foreach}
+                </div>
+            </div>
+        </div>
+    {/if}
+
     {fetch template="template/menu.html" Template=$Template}
 {/if}
 

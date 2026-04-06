@@ -39,6 +39,20 @@
     background-color: var(--_bg);
 }
 
+
+.tpl-navTopBanner__inner {
+
+}
+
+.tpl-brickArea-navTopBanner {
+    display: grid;
+    gap: 0.5rem 1rem;
+}
+
+.tpl-brickArea-navTopBanner > * {
+    min-width: 0;
+}
+
 .header-bar-inner {
     max-width: var(--qui-nav-maxWidth);
     margin-inline: auto;
@@ -362,3 +376,15 @@
     margin-top: 0.5rem;
     width: calc(100% - 1rem);
 }
+
+/*.tpl-navTopBanner--style-pill {*/
+/*    border-radius: 5rem;*/
+/*    margin-inline: auto;*/
+/*    margin-top: 0.5rem;*/
+/*    width: calc(100% - 1rem);*/
+/*    max-width: var(--qui-nav-maxWidth);*/
+/*}*/
+
+/*.tpl-navTopBanner--style-pill .tpl-navTopBanner__inner {*/
+/*    max-width: none;*/
+/*}*/

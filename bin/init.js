@@ -1,7 +1,8 @@
 whenQuiLoaded().then(() => {
     "use strict";
 
-    let scrollOffset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
+    const defaultScrollOffset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
+    let scrollOffset = defaultScrollOffset;
 
     /**
      * Handle click on a element with #target to perform scroll action
@@ -82,6 +83,24 @@ whenQuiLoaded().then(() => {
             console.error('LineNo: ' + linenumber);
         });
 
+        const Root = document.documentElement;
+        const HeaderBarTopBanner = document.querySelector('[data-name="header-bar-topBanner"]');
+        const HeaderBar = document.querySelector('.header-bar');
+
+        const setNavTopBannerHeight = function () {
+            let bannerHeight = 0;
+
+            if (HeaderBarTopBanner) {
+                bannerHeight = Math.ceil(HeaderBarTopBanner.offsetHeight);
+            }
+
+            Root.style.setProperty('--qui-nav-banner-height', bannerHeight + 'px');
+            scrollOffset = defaultScrollOffset + bannerHeight;
+        };
+
+        setNavTopBannerHeight();
+        window.addEventListener('resize', setNavTopBannerHeight);
+
         /**
          * toTop button
          */
@@ -128,6 +147,21 @@ whenQuiLoaded().then(() => {
             var headerBar     = document.getElement('.header-bar'),
                 navBackground = false;
 
+            const setHeaderBarOffset = function () {
+                if (!HeaderBar) {
+                    return;
+                }
+
+                const bannerHeight = HeaderBarTopBanner ? Math.ceil(HeaderBarTopBanner.offsetHeight) : 0;
+                const scrollTop = window.scrollY || window.pageYOffset || 0;
+                const topOffset = Math.max(0, bannerHeight - scrollTop);
+
+                HeaderBar.style.top = topOffset + 'px';
+            };
+
+            setHeaderBarOffset();
+            window.addEventListener('resize', setHeaderBarOffset);
+
             // background on load
             if (QUI.getScroll().y > breakPoint) {
                 headerBar.addClass('header-bar--scrolled');
@@ -135,6 +169,8 @@ whenQuiLoaded().then(() => {
             }
 
             QUI.addEvent('scroll', function () {
+                setHeaderBarOffset();
+
                 if (QUI.getScroll().y > breakPoint) {
                     if (!navBackground) {
                         headerBar.addClass('header-bar--scrolled');
