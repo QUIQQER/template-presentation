@@ -366,6 +366,13 @@ a.qui-button,
 }
 
 /**
+ * Button inner
+ */
+.btn__icon {
+    line-height: inherit;
+}
+
+/**
  * Button icon & close
  */
 .btn-icon,

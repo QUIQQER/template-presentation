@@ -164,6 +164,7 @@
     align-items: center;
     display: flex;
     gap: 1rem;
+    margin-left: 1rem;
 }
 
 .header-bar__social {
