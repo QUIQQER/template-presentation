@@ -4,6 +4,9 @@
 {assign var=searchData value=$Setting->getAttribute('searchData')}
 {assign var=showLangSelect value=$Setting->getAttribute('showLangSelect')}
 
+{assign var=BricksManager value=$Setting->getAttribute('BricksManager')}
+{assign var=navActionBricks value=$BricksManager->getBricksByArea('navAction', $Site)}
+
 <div class="header-bar__suffix hide-on-mobile">
     {if $showSocial && $socialData}
         <div class="header-bar__social">
@@ -20,6 +23,14 @@
     {if $showLangSelect && $Setting->getAttribute('LangSelectControl')}
         <div class="header-bar__langSwitch">
             {$Setting->getAttribute('LangSelectControl')->create()}
+        </div>
+    {/if}
+
+    {if !empty($navActionBricks)}
+        <div class="tpl-brickArea-navAction">
+            {foreach $navActionBricks as $Brick}
+                {$Brick->create()}
+            {/foreach}
         </div>
     {/if}
 </div>

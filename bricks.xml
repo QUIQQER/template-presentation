@@ -209,6 +209,19 @@
             <!-- global areas -->
 
             <areas>
+                <area name="navAction" inheritance="1" priority="4">
+                    <title>
+                        <locale group="quiqqer/template-presentation"
+                                var="area.navAction.title"
+                        />
+                    </title>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="area.navAction.description"
+                        />
+                    </description>
+                </area>
+
                 <area name="headerSuffix" inheritance="1" priority="10">
                     <title>
                         <locale group="quiqqer/template-presentation"

@@ -233,6 +233,15 @@
             <en><![CDATA[Brick area after the header]]></en>
         </locale>
 
+        <locale name="area.navAction.title">
+            <de><![CDATA[Navigations-Aktion]]></de>
+            <en><![CDATA[Navigation action]]></en>
+        </locale>
+        <locale name="area.navAction.description">
+            <de><![CDATA[Einfache Zone im Navigationsbereich, um z. B. einen CTA-Button, einen Login-Link oder einen Dashboard-Link zu platzieren.]]></de>
+            <en><![CDATA[Simple area in the navigation section to place e.g. a CTA button, a login link, or a dashboard link.]]></en>
+        </locale>
+
         <locale name="area.footerPrefix.title">
             <de><![CDATA[Oberhalb der Fußzeile (Footer Prefix)]]></de>
             <en><![CDATA[Footer Prefix]]></en>
