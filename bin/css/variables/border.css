@@ -27,9 +27,3 @@
     --qui-radius-pill: var(--qui-radius-full);
     --qui-radius-circle: 50%;
 }
-
-@media screen and (max-width: 767px) {
-    :root {
-        --qui-radius-modal: 0;
-    }
-}
