@@ -1,5 +1,7 @@
 {assign var=Setting value=$Template->getAttribute('TemplateSetting')}
 {assign var=showSocialInMenu value=$Setting->getAttribute('showSocialInMenu')}
+{assign var=navStyle value=$Setting->getAttribute('navStyle')}
+{assign var=topBannerBricks value=$BricksManager->getBricksByArea('topBanner', $Site)}
 
 <!doctype html>
 <html itemscope itemtype="{$Site->getAttribute('meta.itemscope')}" lang="{$Project->getLang()}">
@@ -11,9 +13,10 @@
     {$Template->getHeader()}
 
     <script>
-        {if $navPos == 'fix'}var navIsFixed = true;{/if}
-        var social     = "{if $showSocialInMenu}treu{else}false{/if}";
-        var socialHTML = '{{fetch template="template/menu/mobileSocial.html" Project=$Project Template=$Template Site=$Site}|json_encode nofilter}';
+        const HEADER_BAR_SCROLL_CLASS_OFFSET = 50;
+        {if $navPos == 'fix'}const NAV_IS_FIXED = true;{/if}
+        const SHOW_SOCIAL_IN_MENU = {if $showSocialInMenu}true{else}false{/if};
+        const SOCIAL_MENU_HTML = '{{fetch template="template/menu/mobileSocial.html" Project=$Project Template=$Template Site=$Site}|json_encode nofilter}';
     </script>
 
     {fetch template="template/head/cssVariables.html" Template=$Template}
@@ -26,7 +29,7 @@
 
     {template_event name="quiqqer::template::header::end" Template=$Template}
 </head>
-<body class="{$bodyClass} page-{$Site->getId()} {$typeClass} {$pageCustomClass} {if !$showHeader}header-hidden{/if} {if $showHeader}header-displayed{/if}" id="body-top">
+<body class="{$bodyClass} page-{$Site->getId()} {$typeClass} {$pageCustomClass} {if $showHeader || $headerArea}header-displayed{else}header-hidden{/if}" id="body-top">
 
 {template_event name="quiqqer::template::body::begin" Template=$Template}
 
@@ -36,6 +39,14 @@
 
 {* main navigation / menu *}
 {if $Template->getAttribute('template-header')}
+    {if !empty($topBannerBricks)}
+        <div class="tpl-brickArea-topBanner">
+            {foreach $topBannerBricks as $Brick}
+                {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="topBanner" Template=$Template}
+            {/foreach}
+        </div>
+    {/if}
+
     {fetch template="template/menu.html" Template=$Template}
 {/if}
 

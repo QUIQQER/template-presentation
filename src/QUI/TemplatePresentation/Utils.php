@@ -732,7 +732,7 @@ class Utils
             $navMobileBgColor = self::$Project->getConfig('templatePresentation.settings.mobileMenuBackground');
         }
 
-        $navPositionCSS = 'absolute';
+        $navPositionCSS = 'relative';
         $bodySpacingTop = $navHeight;
         $navAlignment = match (self::$Project->getConfig('templatePresentation.settings.navAlignment')) {
             'center' => 'center',
@@ -740,8 +740,8 @@ class Utils
             default => 'flex-start'
         };
 
-        if ($navPos == 'fix') {
-            $navPositionCSS = 'fixed';
+        if ($navPos === 'sticky' || $navPos == 'fix') {
+            $navPositionCSS = 'sticky';
         }
 
         /**

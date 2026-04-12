@@ -5,17 +5,55 @@
 {assign var=t value=$MegaMenu->appendHTML({fetch template="template/menu/suffix.html" Site=$Site Template=$Template})}
 
 {assign var=navStyle value=$Setting->getAttribute('navStyle')}
+{assign var=navPos value=$Setting->getAttribute('navPos')}
 {assign var=navInitialTransparentClass value=''}
 {if $Setting->getAttribute('navInitialTransparent')}
     {assign var=navInitialTransparentClass value='header-bar--initial-transparent'}
 {/if}
 
-<div class="header-bar {$navInitialTransparentClass} header-bar--style-{$navStyle}">
-    <div class="header-bar-container">
+<div class="header-bar {$navInitialTransparentClass} header-bar--style-{$navStyle} header-bar--position-{$navPos}" data-name="header-bar">
+    <div class="header-bar-container" data-name="header-bar-container">
         <div class="grid-container header-bar-inner">
             <div class="header-bar-inner-nav" id="navigation">
                 {$MegaMenu->create()}
             </div>
         </div>
     </div>
+    {if $navPos === 'fix' || $navPos === 'sticky'}
+    <script>
+        /**
+         * Set initial header bar state.
+         *
+         * Prevents the navigation bar from flashing on page load when the page is restored in a scrolled position.
+         */
+        (function () {
+            const headerBar = document.currentScript.parentElement;
+            const headerBarContainer = headerBar.querySelector('[data-name="header-bar-container"]');
+            const setInitialHeaderBarState = function () {
+                window.removeEventListener('pageshow', setInitialHeaderBarState);
+
+                const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > HEADER_BAR_SCROLL_CLASS_OFFSET) {
+                    headerBar.classList.add('header-bar--scrolled');
+                }
+
+                void headerBar.offsetHeight;
+                headerBar.style.transition = null;
+
+                if (headerBarContainer) {
+                    headerBarContainer.style.transition = null;
+                }
+            };
+
+            headerBar.style.transition = 'none';
+
+            if (headerBarContainer) {
+                headerBarContainer.style.transition = 'none';
+            }
+
+            window.addEventListener('pageshow', setInitialHeaderBarState);
+        })();
+    </script>
+    {/if}
 </div>
