@@ -51,10 +51,6 @@ body {
 /***************/
 /* Page layout */
 /***************/
-.body-container {
-    padding-top: var(--qui-body-spacing-top);
-}
-
 .noSidebar--narrowContent {
     margin-left: auto;
     margin-right: auto;
