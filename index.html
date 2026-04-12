@@ -11,9 +11,10 @@
     {$Template->getHeader()}
 
     <script>
-        {if $navPos == 'fix'}var navIsFixed = true;{/if}
-        var social     = "{if $showSocialInMenu}treu{else}false{/if}";
-        var socialHTML = '{{fetch template="template/menu/mobileSocial.html" Project=$Project Template=$Template Site=$Site}|json_encode nofilter}';
+        const HEADER_BAR_SCROLL_CLASS_OFFSET = 50;
+        {if $navPos == 'fix'}const NAV_IS_FIXED = true;{/if}
+        const SHOW_SOCIAL_IN_MENU = {if $showSocialInMenu}true{else}false{/if};
+        const SOCIAL_MENU_HTML = '{{fetch template="template/menu/mobileSocial.html" Project=$Project Template=$Template Site=$Site}|json_encode nofilter}';
     </script>
 
     {fetch template="template/head/cssVariables.html" Template=$Template}

@@ -123,41 +123,38 @@ whenQuiLoaded().then(() => {
          * show nav background after scroll
          * works only if nav is position fixed
          */
-        if (typeof navIsFixed !== 'undefined') {
-            const breakPoint  = 50;
-            var headerBar     = document.getElement('.header-bar'),
+        if (typeof NAV_IS_FIXED !== 'undefined') {
+            var headerBar     = document.getElement('[data-name="header-bar"]'),
                 navBackground = false;
 
-            // background on load
-            if (QUI.getScroll().y > breakPoint) {
-                headerBar.addClass('header-bar--scrolled');
-                navBackground = true;
+            if (!headerBar) {
+                return;
             }
 
             QUI.addEvent('scroll', function () {
-                if (QUI.getScroll().y > breakPoint) {
+                if (QUI.getScroll().y > HEADER_BAR_SCROLL_CLASS_OFFSET) {
                     if (!navBackground) {
                         headerBar.addClass('header-bar--scrolled');
                         navBackground = true;
                     }
                     return;
                 }
+
                 headerBar.removeClass('header-bar--scrolled');
                 navBackground = false;
-
             });
         }
 
         /**
          * social share buttons
          */
-        if (social) {
+        if (SHOW_SOCIAL_IN_MENU) {
             var SlideOutElm = document.getElement(
                 '[data-qui="package/quiqqer/menu/bin/SlideOut"]'
             );
 
             if (SlideOutElm) {
-                SlideOutElm.insertAdjacentHTML('beforeend', socialHTML);
+                SlideOutElm.insertAdjacentHTML('beforeend', SOCIAL_MENU_HTML);
             }
         }
     });
