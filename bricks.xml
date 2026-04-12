@@ -209,15 +209,15 @@
             <!-- global areas -->
  
              <areas>
-                 <area name="navTopBanner" inheritance="1" priority="3">
+                 <area name="topBanner" inheritance="1" priority="3">
                      <title>
                          <locale group="quiqqer/template-presentation"
-                                 var="area.navTopBanner.title"
+                                 var="area.topBanner.title"
                          />
                      </title>
                      <description>
                          <locale group="quiqqer/template-presentation"
-                                 var="area.navTopBanner.description"
+                                 var="area.topBanner.description"
                          />
                      </description>
                  </area>
