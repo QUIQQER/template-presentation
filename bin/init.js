@@ -1,7 +1,8 @@
 whenQuiLoaded().then(() => {
     "use strict";
 
-    let scrollOffset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
+    const defaultScrollOffset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
+    let scrollOffset = defaultScrollOffset;
 
     /**
      * Handle click on a element with #target to perform scroll action
@@ -81,6 +82,8 @@ whenQuiLoaded().then(() => {
             console.error(url);
             console.error('LineNo: ' + linenumber);
         });
+
+        const HeaderBar = document.querySelector('.header-bar');
 
         /**
          * toTop button

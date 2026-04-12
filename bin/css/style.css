@@ -239,6 +239,7 @@ section.quiqqer-portfolio-list {
  * Top and bottom spacing depend on place where the brick is used.
  * "Full width bricks" are using padding-top and padding-bottom.
  * This are the following brick areas:
+ *   - topBanner
  *   - header
  *   - headerSuffix
  *   - footerPrefix
@@ -263,6 +264,12 @@ section.quiqqer-portfolio-list {
 .tpl-brickArea-footerPrefix__entry .tpl-brick__inner {
     padding-top: var(--qui-tpl-spacing--top);
     padding-bottom: var(--qui-tpl-spacing--bottom);
+}
+
+/* 1. top banner has less spacing */
+.tpl-brickArea-topBanner__entry .tpl-brick__inner {
+    padding-top: calc(var(--qui-tpl-spacing--top) * 0.25); /* 1 */
+    padding-bottom: calc(var(--qui-tpl-spacing--bottom) * 0.25); /* 1 */
 }
 
 /* brick with background image */

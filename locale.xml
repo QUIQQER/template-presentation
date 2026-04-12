@@ -233,6 +233,15 @@
             <en><![CDATA[Brick area after the header]]></en>
         </locale>
 
+        <locale name="area.topBanner.title">
+            <de><![CDATA[Banner-Leiste oberhalb der Navigation]]></de>
+            <en><![CDATA[Banner bar above the navigation]]></en>
+        </locale>
+        <locale name="area.topBanner.description">
+            <de><![CDATA[Schmale Bausteinzone oberhalb des Menüs, z. B. für kurze Sales-, Black-Friday- oder Promo-Hinweise.]]></de>
+            <en><![CDATA[Slim brick area above the menu for short sales, Black Friday or promotional messages.]]></en>
+        </locale>
+
         <locale name="area.navAction.title">
             <de><![CDATA[Navigations-Aktion]]></de>
             <en><![CDATA[Navigation action]]></en>

@@ -1,5 +1,7 @@
 {assign var=Setting value=$Template->getAttribute('TemplateSetting')}
 {assign var=showSocialInMenu value=$Setting->getAttribute('showSocialInMenu')}
+{assign var=navStyle value=$Setting->getAttribute('navStyle')}
+{assign var=topBannerBricks value=$BricksManager->getBricksByArea('topBanner', $Site)}
 
 <!doctype html>
 <html itemscope itemtype="{$Site->getAttribute('meta.itemscope')}" lang="{$Project->getLang()}">
@@ -37,6 +39,14 @@
 
 {* main navigation / menu *}
 {if $Template->getAttribute('template-header')}
+    {if !empty($topBannerBricks)}
+        <div class="tpl-brickArea-topBanner">
+            {foreach $topBannerBricks as $Brick}
+                {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="topBanner" Template=$Template}
+            {/foreach}
+        </div>
+    {/if}
+
     {fetch template="template/menu.html" Template=$Template}
 {/if}
 

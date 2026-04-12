@@ -5,7 +5,12 @@
  */
 :root {
     --qui-scroll-padding: var(--theme--qui-scroll-padding, --template-settings__scroll-offset);
+<<<<<<< HEAD
     /*--qui-body-spacing-top: var(--template-settings__body-spacing-top); !* it depends on nav bar height *!*/
+=======
+    --qui-body-spacing-top: var(--template-settings__body-spacing-top); /* it depends on nav bar height */
+    --qui-nav-banner-height: 0px;
+>>>>>>> feat-top-banner-brick-area
     --qui-body-container-max-width: var(--theme--qui-body-container-max-width, 1200px);
 
     --qui-transition-duration: var(--theme--qui-transition-duration, 0.15s);

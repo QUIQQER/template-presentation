@@ -207,12 +207,25 @@
         <!-- defined areas in the template -->
         <templateAreas>
             <!-- global areas -->
+ 
+             <areas>
+                 <area name="topBanner" inheritance="1" priority="3">
+                     <title>
+                         <locale group="quiqqer/template-presentation"
+                                 var="area.topBanner.title"
+                         />
+                     </title>
+                     <description>
+                         <locale group="quiqqer/template-presentation"
+                                 var="area.topBanner.description"
+                         />
+                     </description>
+                 </area>
 
-            <areas>
-                <area name="navAction" inheritance="1" priority="4">
-                    <title>
-                        <locale group="quiqqer/template-presentation"
-                                var="area.navAction.title"
+                 <area name="navAction" inheritance="1" priority="4">
+                     <title>
+                         <locale group="quiqqer/template-presentation"
+                                 var="area.navAction.title"
                         />
                     </title>
                     <description>
