@@ -15,3 +15,13 @@ phpunit-php8.2:
 phpunit-php8.3:
   rules:
     - when: never
+
+# Remove the entire phpunit-php8.4 block, to allow PHPUnit to run on PHP 8.4 in your pipeline
+phpunit-php8.4:
+  rules:
+    - when: never
+
+# Remove the entire phpunit-php8.5 block, to allow PHPUnit to run on PHP 8.5 in your pipeline
+phpunit-php8.5:
+  rules:
+    - when: never
