@@ -373,39 +373,6 @@ section.quiqqer-portfolio-list {
     opacity: 1;
 }
 
-/*********************************************************************************/
-/* Nav style (in sidebar) navigation
-/*********************************************************************************/
-
-h2.quiqqer-navigation-title-style {
-    color: #5d5d5d;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    padding-left: 10px;
-}
-
-.quiqqer-navigation-level-1 > li {
-    border-bottom: 1px solid #ddd;
-}
-
-.quiqqer-sidebar-dropdown-navigation .quiqqer-navigation-level-1 a,
-.quiqqer-sidebar-dropdown-navigation a.quiqqer-navigation-firstpage {
-    color: #5d5d5d;
-    text-decoration: none;
-}
-
-.quiqqer-sidebar-dropdown-navigation .quiqqer-navigation-open,
-.quiqqer-sidebar-dropdown-navigation .quiqqer-navigation-close {
-    position: relative;
-}
-
-.quiqqer-fa-levels-icon:hover,
-.quiqqer-navigation-level-1 a:hover,
-a.quiqqer-navigation-home:hover,
-.quiqqer-navigation-entry:hover .quiqqer-fa-list-icon {
-    color: var(--qui-colors-primary);
-}
-
 /** responsive
  **************************************************/
 
