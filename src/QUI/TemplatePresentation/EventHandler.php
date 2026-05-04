@@ -47,6 +47,7 @@ class EventHandler
 
         $cssVariableMap = [
             'templatePresentation.settings.colorMain' => '--template-settings__color-primary',
+            'templatePresentation.settings.colorMainContrast' => '--template-settings__color-primary-contrast',
             'templatePresentation.settings.buttonFontColor' => '--template-settings__btn-text-color'
         ];
 
