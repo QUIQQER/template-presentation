@@ -212,6 +212,10 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#2D4D88</defaultvalue>
                     </conf>
+                    <conf name="colorMainContrast">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#ffffff</defaultvalue>
+                    </conf>
                     <conf name="buttonFontColor">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#ffffff</defaultvalue>
@@ -1126,6 +1130,20 @@
                                 </description>
                             </input>
 
+                            <input conf="templatePresentation.settings.colorMainContrast"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorMainContrast.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.colorMainContrast.description"
+                                    />
+                                </description>
+                            </input>
+
                             <input conf="templatePresentation.settings.buttonFontColor"
                                    type="color">
                                 <text>
@@ -1133,6 +1151,11 @@
                                             var="template.settings.buttonFontColor.text"
                                     />
                                 </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="template.settings.buttonFontColor.description"
+                                    />
+                                </description>
                             </input>
 
                             <text>

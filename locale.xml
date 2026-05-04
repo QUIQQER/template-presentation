@@ -963,9 +963,21 @@
             <de><![CDATA[Hauptfarbe]]></de>
             <en><![CDATA[Main color]]></en>
         </locale>
+        <locale name="template.settings.colorMainContrast.text">
+            <de><![CDATA[Kontrastfarbe zur Hauptfarbe]]></de>
+            <en><![CDATA[Contrast color for main color]]></en>
+        </locale>
+        <locale name="template.settings.colorMainContrast.description">
+            <de><![CDATA[Schriftfarbe für Elemente, die die Hauptfarbe als Hintergrund nutzen (z. B. Chips, FAQ-Header, Badges).]]></de>
+            <en><![CDATA[Font color for elements that use the main color as background (e.g. chips, FAQ headers, badges).]]></en>
+        </locale>
         <locale name="template.settings.buttonFontColor.text">
             <de><![CDATA[Schriftfarbe von Buttons]]></de>
             <en><![CDATA[Font color of buttons]]></en>
+        </locale>
+        <locale name="template.settings.buttonFontColor.description">
+            <de><![CDATA[Überschreibt die Kontrastfarbe nur für Buttons. Leer lassen, um die Kontrastfarbe zur Hauptfarbe zu verwenden.]]></de>
+            <en><![CDATA[Overrides the contrast color for buttons only. Leave empty to use the contrast color of the main color.]]></en>
         </locale>
         <locale name="template.settings.colorMain.description">
             <de><![CDATA[Farbeinstellung für Links, Linksefekte, anklickbaren Schaltflächen, usw.]]></de>

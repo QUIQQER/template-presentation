@@ -31,7 +31,7 @@
     --qui-colors-primary--dark: var(--theme--qui-colors-primary--dark, var(--qui-colors-primary-700));
     /* Foreground/text color to be used on top of --qui-colors-primary backgrounds
        (e.g. button labels, accordion headers). Manually set, not auto-calculated. */
-    --qui-colors-primary-contrast: var(--theme--qui-colors-primary-contrast, #fff);
+    --qui-colors-primary-contrast: var(--theme--qui-colors-primary-contrast, var(--template-settings__color-primary-contrast, #fff));
     --qui-colors-primary-25: color-mix(in srgb, var(--qui-colors-primary) 5%, white);
     --qui-colors-primary-50: color-mix(in srgb, var(--qui-colors-primary) 10%, white);
     --qui-colors-primary-100: color-mix(in srgb, var(--qui-colors-primary) 20%, white);

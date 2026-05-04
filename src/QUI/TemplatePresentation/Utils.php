@@ -593,6 +593,7 @@ class Utils
         $headingFontWeight = '700'; /* bold */
 
         $colorMain = '#2e4d87';
+        $colorMainContrast = '#ffffff';
         $btnTextColor = '#ffffff';
 
         // footer
@@ -621,6 +622,10 @@ class Utils
         /* primary / main colors */
         if (self::$Project->getConfig('templatePresentation.settings.colorMain')) {
             $colorMain = self::$Project->getConfig('templatePresentation.settings.colorMain');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.colorMainContrast')) {
+            $colorMainContrast = self::$Project->getConfig('templatePresentation.settings.colorMainContrast');
         }
 
         if (self::$Project->getConfig('templatePresentation.settings.buttonFontColor')) {
@@ -819,6 +824,7 @@ class Utils
 
             /* colors */
             'colorPrimary' => $colorMain,
+            'colorPrimaryContrast' => $colorMainContrast,
             'btnTextColor' => $btnTextColor,
 
             /* typography */
