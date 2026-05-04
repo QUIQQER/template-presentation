@@ -57,12 +57,22 @@
     color: var(--qui-colors-primary--dark);
 }
 
-.bg-primary-accent {
-    background-color: var(--qui-colors-primary--accent);
+.bg-primary-contrast {
+    background-color: var(--qui-colors-primary-contrast);
 }
 
+.text-primary-contrast {
+    color: var(--qui-colors-primary-contrast);
+}
+
+/* @deprecated use .bg-primary-contrast instead. Will be removed in the next major version. */
+.bg-primary-accent {
+    background-color: var(--qui-colors-primary-contrast);
+}
+
+/* @deprecated use .text-primary-contrast instead. Will be removed in the next major version. */
 .text-primary-accent {
-    color: var(--qui-colors-primary--accent);
+    color: var(--qui-colors-primary-contrast);
 }
 
 .bg-primary-25 {
