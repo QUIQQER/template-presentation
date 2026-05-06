@@ -2,7 +2,89 @@ whenQuiLoaded().then(() => {
     "use strict";
 
     const defaultScrollOffset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
+    const contentTableScrollEnabled = typeof CONTENT_TABLE_SCROLL !== 'undefined' && CONTENT_TABLE_SCROLL === 1;
+    const scrollableMaskTolerance = 1;
     let scrollOffset = defaultScrollOffset;
+
+    function wrapDefaultContentTables() {
+        if (!contentTableScrollEnabled) {
+            return;
+        }
+
+        document.querySelectorAll('.default-content table').forEach(table => {
+            if (
+                table.classList.contains('no-table-scroll') ||
+                table.getAttribute('data-qui-disable-table-scroll') === '1' ||
+                table.closest('.template-table-scroll')
+            ) {
+                return;
+            }
+
+            const wrapper = document.createElement('div');
+
+            wrapper.className = 'template-table-scroll';
+
+            table.parentNode.insertBefore(wrapper, table);
+            wrapper.appendChild(table);
+        });
+    }
+
+    function updateScrollableMask(wrapper) {
+        const hasOverflow = wrapper.scrollWidth > wrapper.clientWidth + scrollableMaskTolerance;
+        const isAtStart = wrapper.scrollLeft <= scrollableMaskTolerance;
+        const isAtEnd = wrapper.scrollLeft + wrapper.clientWidth >=
+            wrapper.scrollWidth - scrollableMaskTolerance;
+
+        wrapper.style.setProperty('--scrollable-mask-start', hasOverflow && !isAtStart ? 'var(--scrollable-mask-size)' : '0px');
+        wrapper.style.setProperty('--scrollable-mask-end', hasOverflow && !isAtEnd ? 'var(--scrollable-mask-size)' : '0px');
+    }
+
+    function setupScrollableMasks() {
+        if (!contentTableScrollEnabled) {
+            return;
+        }
+
+        const wrappers = document.querySelectorAll('.default-content .template-table-scroll');
+        const resizeObserver = 'ResizeObserver' in window ? new ResizeObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.target.classList.contains('template-table-scroll')) {
+                    updateScrollableMask(entry.target);
+                    return;
+                }
+
+                if (
+                    entry.target.parentElement &&
+                    entry.target.parentElement.classList.contains('template-table-scroll')
+                ) {
+                    updateScrollableMask(entry.target.parentElement);
+                }
+            });
+        }) : null;
+
+        wrappers.forEach(wrapper => {
+            updateScrollableMask(wrapper);
+
+            wrapper.addEventListener('scroll', function () {
+                updateScrollableMask(wrapper);
+            }, {
+                passive: true
+            });
+
+            if (resizeObserver) {
+                resizeObserver.observe(wrapper);
+
+                if (wrapper.firstElementChild) {
+                    resizeObserver.observe(wrapper.firstElementChild);
+                }
+            }
+        });
+
+        window.addEventListener('resize', function () {
+            wrappers.forEach(wrapper => {
+                updateScrollableMask(wrapper);
+            });
+        });
+    }
 
     /**
      * Handle click on a element with #target to perform scroll action
@@ -74,6 +156,9 @@ whenQuiLoaded().then(() => {
             }
         }
     })();
+
+    wrapDefaultContentTables();
+    setupScrollableMasks();
 
     // load QUI
     require(['qui/QUI', 'utils/Controls'], function (QUI, Controls) {

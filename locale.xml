@@ -606,6 +606,20 @@
             <de><![CDATA[Basis Schriftgröße für den Fließtext. Typischer Wert ist "16px".]]></de>
             <en><![CDATA[Base font size for flowing text. Typical value is "16px".]]></en>
         </locale>
+        <locale name="settings.typography.contentTablesScrollable.title">
+            <de><![CDATA[Tabellen im Inhalt scrollbar machen]]></de>
+            <en><![CDATA[Make tables in content scrollable]]></en>
+        </locale>
+        <locale name="settings.typography.contentTablesScrollable.desc">
+            <de><![CDATA[
+                <p>Wenn diese Option aktiv ist, werden Tabellen in redaktionellen Inhalten automatisch in einen horizontal scrollbaren Container gesetzt. So bleiben breite Tabellen auf kleinen Ansichten nutzbar, ohne andere Tabellen im Template zu beeinflussen.</p>
+                <p>Einzelne Tabellen kannst du von diesem Verhalten ausnehmen, indem du der Tabelle entweder die CSS-Klasse <code>no-table-overflow</code> oder das Attribut <code>data-qui-disable-table-overflow="1"</code> hinzufügst.</p>
+            ]]></de>
+            <en><![CDATA[
+                <p>If this option is enabled, tables in editorial content are automatically wrapped in a horizontally scrollable container. This keeps wide tables usable on small viewports without affecting other tables in the template.</p>
+                <p>You can exclude individual tables from this behavior by adding either the CSS class <code>no-table-overflow</code> or the attribute <code>data-qui-disable-table-overflow="1"</code> to the table.</p>
+            ]]></en>
+        </locale>
 
         <!-- header settings -->
         <locale name="templatePresentation.settings.showHeader.title">

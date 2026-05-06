@@ -247,6 +247,9 @@ class Utils
          * Include demo css
          */
         $includeDemoCss = $Project->getConfig('templatePresentation.settings.includeDemoStyling');
+        $contentTablesScrollable = $Project->getConfig(
+            'templatePresentation.settings.typography.contentTablesScrollable'
+        );
 
         $config += [
             'showHeader' => $showHeader,
@@ -265,6 +268,7 @@ class Utils
             'logoSize' => self::getLogoSize(),
             'useSlideOutMenu' => true, // for now is always true because quiqqer use currently only SlideOut nav
             'includeDemoCss' => $includeDemoCss,
+            'contentTablesScrollable' => $contentTablesScrollable,
             'mainContentSpacingTopCSSVar' => self::getSpacingVariable($mainContentSpacingTop, 'top'),
             'mainContentSpacingBottomCSSVar' => self::getSpacingVariable($mainContentSpacingBottom, 'bottom'),
             'socialData' => self::getSocialData(),

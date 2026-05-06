@@ -38,6 +38,10 @@
                         <type><![CDATA[number]]></type>
                         <defaultvalue>16</defaultvalue>
                     </conf>
+                    <conf name="typography.contentTablesScrollable">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
 
                     <!-- nav bar -->
                     <conf name="navBarHeight">
@@ -504,6 +508,21 @@
                                 <description>
                                     <locale group="quiqqer/template-presentation"
                                             var="settings.typography.text.fontSize.desc"
+                                    />
+                                </description>
+                            </input>
+
+                            <input conf="templatePresentation.settings.typography.contentTablesScrollable"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.typography.contentTablesScrollable.title"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.typography.contentTablesScrollable.desc"
                                     />
                                 </description>
                             </input>
