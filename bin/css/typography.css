@@ -190,6 +190,9 @@ table {
     border-collapse: collapse;
     margin-bottom: 1rem;
     max-width: 100%;
+}
+
+.table-full {
     width: 100%;
 }
 
@@ -200,7 +203,6 @@ table {
 
     overflow-x: auto;
     overflow-y: hidden;
-    width: 100%;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;

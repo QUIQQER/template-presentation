@@ -40,7 +40,7 @@
                     </conf>
                     <conf name="typography.contentTablesScrollable">
                         <type><![CDATA[bool]]></type>
-                        <defaultvalue>1</defaultvalue>
+                        <defaultvalue>0</defaultvalue>
                     </conf>
 
                     <!-- nav bar -->
