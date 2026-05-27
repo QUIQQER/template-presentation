@@ -1,7 +1,7 @@
 whenQuiLoaded().then(() => {
     "use strict";
 
-    const defaultScrollOffset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 80;
+    const defaultScrollOffset = window.SCROLL_OFFSET ? window.SCROLL_OFFSET : 0;
     const contentTableScrollEnabled = typeof CONTENT_TABLE_SCROLL !== 'undefined' && CONTENT_TABLE_SCROLL === 1;
     const scrollableMaskTolerance = 1;
     let scrollOffset = defaultScrollOffset;
