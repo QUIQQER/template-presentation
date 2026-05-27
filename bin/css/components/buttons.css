@@ -427,7 +427,9 @@ a.qui-button,
     position: fixed;
     bottom: var(--qui-btn-toTop-bottom);
     right: var(--qui-btn-toTop-right);
-    opacity: 0.5;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
     z-index: 10;
     transform: var(--qui-btn-toTop-transform--initial);
 
@@ -440,5 +442,8 @@ a.qui-button,
 }
 
 .toTop__show {
+    opacity: 0.5;
+    visibility: visible;
+    pointer-events: auto;
     transform: var(--qui-btn-toTop-transform--show);
 }
