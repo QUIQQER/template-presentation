@@ -190,7 +190,42 @@ table {
     border-collapse: collapse;
     margin-bottom: 1rem;
     max-width: 100%;
+}
+
+.table-full {
     width: 100%;
+}
+
+.template-table-scroll {
+    --scrollable-mask-size: 1.5rem;
+    --scrollable-mask-start: 0px;
+    --scrollable-mask-end: 0px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    transition-duration: 0.2s;
+    transition-property: --scrollable-mask-start, --scrollable-mask-end;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        #000 var(--scrollable-mask-start),
+        #000 calc(100% - var(--scrollable-mask-end)),
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        #000 var(--scrollable-mask-start),
+        #000 calc(100% - var(--scrollable-mask-end)),
+        transparent 100%
+    );
+}
+
+.template-table-scroll::-webkit-scrollbar {
+    display: none;
 }
 
 tr {

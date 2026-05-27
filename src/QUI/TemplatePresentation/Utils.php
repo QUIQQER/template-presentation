@@ -196,10 +196,32 @@ class Utils
         }
 
         /**
+         * Nav
+         */
+        $navStyle = match ($Project->getConfig('templatePresentation.settings.navStyle')) {
+            'default', 'none', 'defaultWithBigButtons', 'pill' => $Project->getConfig(
+                'templatePresentation.settings.navStyle'
+            ),
+            default => 'default'
+        };
+
+        $navHeight = (int)self::$Project->getConfig('templatePresentation.settings.navBarHeight');
+        $navPos = self::$Project->getConfig('templatePresentation.settings.navPos');
+
+        /**
+         * Scroll offset
+         */
+        $scrollOffset = 0;
+
+        if ($navPos == 'fix' && $navHeight > 0) {
+            $scrollOffset = $navHeight + 10;
+        }
+
+        /**
          * css settings
          */
         $headerArea = $params['headerArea'];
-        $cssVariables = self::getCssVariables($headerArea, $showHeader);
+        $cssVariables = self::getCssVariables($headerArea, $showHeader, $navHeight, $navPos, $scrollOffset);
 
         /**
          * Nav bar initial transparent
@@ -234,27 +256,21 @@ class Utils
         }
 
         /**
-         * Nav style
-         */
-        $navStyle = match ($Project->getConfig('templatePresentation.settings.navStyle')) {
-            'default', 'none', 'defaultWithBigButtons', 'pill' => $Project->getConfig(
-                'templatePresentation.settings.navStyle'
-            ),
-            default => 'default'
-        };
-
-        /**
          * Include demo css
          */
         $includeDemoCss = $Project->getConfig('templatePresentation.settings.includeDemoStyling');
+        $contentTablesScrollable = $Project->getConfig(
+            'templatePresentation.settings.typography.contentTablesScrollable'
+        );
 
         $config += [
             'showHeader' => $showHeader,
             'showBreadcrumb' => $showBreadcrumb,
             'cssVariables' => $cssVariables,
             'typeClass' => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
-            'navPos' => $Project->getConfig('templatePresentation.settings.navPos'),
+            'navPos' => $navPos,
             'navStyle' => $navStyle,
+            'scrollOffset' => $scrollOffset,
             'searchData' => self::getSearchData(),
             'navInitialTransparent' => $navInitialTransparent,
             'logoForTransparentNav' => $logoForTransparentNav,
@@ -265,6 +281,7 @@ class Utils
             'logoSize' => self::getLogoSize(),
             'useSlideOutMenu' => true, // for now is always true because quiqqer use currently only SlideOut nav
             'includeDemoCss' => $includeDemoCss,
+            'contentTablesScrollable' => $contentTablesScrollable,
             'mainContentSpacingTopCSSVar' => self::getSpacingVariable($mainContentSpacingTop, 'top'),
             'mainContentSpacingBottomCSSVar' => self::getSpacingVariable($mainContentSpacingBottom, 'bottom'),
             'socialData' => self::getSocialData(),
@@ -579,10 +596,18 @@ class Utils
      *
      * @param bool $headerArea Whether the header area is enabled (affects certain CSS variables).
      * @param bool $showHeader Whether the page header (hero) is enabled (affects certain CSS variables).
+     * @param int $navHeight Navigation height in pixels.
+     * @param string $navPos Navigation position setting, e.g. fix, sticky or scroll.
+     * @param int $scrollOffset Scroll offset in pixels for anchor navigation.
      * @return array Associative array of CSS variable names and their values.
      */
-    protected static function getCssVariables(bool $headerArea = false, bool $showHeader = false): array
-    {
+    protected static function getCssVariables(
+        bool $headerArea = false,
+        bool $showHeader = false,
+        int $navHeight = 0,
+        string $navPos = '',
+        int $scrollOffset = 0
+    ): array {
         /**
          * colors & typography
          */
@@ -667,8 +692,6 @@ class Utils
         $navInitialTransparentLinkBgColorHover = '';
         $navMobileTextColor = '#ffffff';
         $navMobileBgColor = '#252122';
-        $navHeight = (int)self::$Project->getConfig('templatePresentation.settings.navBarHeight');
-        $navPos = self::$Project->getConfig('templatePresentation.settings.navPos');
 
         if (self::$Project->getConfig('templatePresentation.settings.navBarBgColor')) {
             $navBgColor = self::$Project->getConfig('templatePresentation.settings.navBarBgColor');
@@ -804,14 +827,6 @@ class Utils
         };
 
         $pageHeaderImgPosition = self::$Project->getConfig('templatePresentation.settings.headerImagePosition');
-
-        /**
-         * Others
-         */
-        $scrollOffset = 0;
-        if ($navPos == 'fix' && $navHeight > 0) {
-            $scrollOffset = $navHeight + 10;
-        }
 
         if ($headerArea || $showHeader) {
             $bodySpacingTop = 0;
