@@ -408,3 +408,37 @@ a.qui-button,
 .btn-rounded {
     border-radius: var(--qui-radius-full);
 }
+
+/**
+ * Button: scroll to top
+ */
+.btn--toTop {
+    --qui-btn-color: var(--qui-btn-toTop-color);
+    --qui-btn-bgColor: var(--qui-btn-toTop-bgColor);
+    --qui-btn-borderColor: var(--qui-btn-toTop-borderColor);
+    --qui-btn-color--hover: var(--qui-btn-toTop-color--hover);
+    --qui-btn-bgColor--hover: var(--qui-btn-toTop-bgColor--hover);
+    --qui-btn-borderColor--hover: var(--qui-btn-toTop-borderColor--hover);
+
+    font-size: var(--qui-fs-lg);
+    padding: 0.5em;
+    min-width: 44px;
+    min-height: 44px;
+    position: fixed;
+    bottom: var(--qui-btn-toTop-bottom);
+    right: var(--qui-btn-toTop-right);
+    opacity: 0.5;
+    z-index: 10;
+    transform: var(--qui-btn-toTop-transform--initial);
+
+    display: grid;
+    place-items: center;
+}
+
+.btn--toTop:hover {
+    opacity: 1;
+}
+
+.toTop__show {
+    transform: var(--qui-btn-toTop-transform--show);
+}

@@ -173,13 +173,14 @@ whenQuiLoaded().then(() => {
         /**
          * toTop button
          */
-        if (document.getElements('[href=#top]')) {
-            var toTop         = document.getElements('[href=#top]'),
-                buttonVisible = false;
+        const ToTopBtn = document.querySelector('[data-name="toTop"]');
+
+        if (ToTopBtn) {
+            var buttonVisible = false;
 
             // show on load
             if (QUI.getScroll().y > 300) {
-                toTop.addClass('toTop__show');
+                ToTopBtn.addClass('toTop__show');
                 buttonVisible = true;
             }
 
@@ -187,7 +188,7 @@ whenQuiLoaded().then(() => {
             QUI.addEvent('scroll', function () {
                 if (QUI.getScroll().y > 300) {
                     if (!buttonVisible) {
-                        toTop.addClass('toTop__show');
+                        ToTopBtn.addClass('toTop__show');
                         buttonVisible = true;
                     }
                     return;
@@ -196,12 +197,12 @@ whenQuiLoaded().then(() => {
                 if (!buttonVisible) {
                     return;
                 }
-                toTop.removeClass('toTop__show');
+                ToTopBtn.removeClass('toTop__show');
                 buttonVisible = false;
             });
 
             // scroll to top
-            toTop.addEvent('click', function (event) {
+            ToTopBtn.addEvent('click', function (event) {
                 event.stop();
                 new Fx.Scroll(window).toTop();
             });

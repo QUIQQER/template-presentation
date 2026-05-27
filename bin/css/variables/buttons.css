@@ -241,4 +241,17 @@
     --qui-btn-close-bg--hover: var(--theme--qui-btn-close-bg--hover, transparent);
     --qui-btn-close-color--disabled: var(--theme--qui-btn-close-color--disabled, color-mix(in srgb, currentColor, white 70%));
     --qui-btn-close-radius: var(--theme--qui-btn-close-radius, var(--qui-radius-full));
+
+    /* Button: scroll to top */
+    --qui-btn-toTop-color: var(--theme--qui-btn-toTop-color, var(--qui-colors-light-contrast));
+    --qui-btn-toTop-bgColor: var(--theme--qui-btn-toTop-bgColor, var(--qui-colors-light));
+    --qui-btn-toTop-borderColor: var(--theme--qui-btn-toTop-borderColor, transparent);
+    --qui-btn-toTop-color--hover: var(--theme--qui-btn-toTop-color--hover, var(--qui-btn-toTop-color));
+    --qui-btn-toTop-bgColor--hover: var(--theme--qui-btn-toTop-bgColor--hover, var(--qui-btn-toTop-bgColor));
+    --qui-btn-toTop-borderColor--hover: var(--theme--qui-btn-toTop-borderColor--hover, var(--qui-btn-toTop-borderColor));
+    --qui-btn-toTop-offset: var(--theme--qui-btn-toTop-offset, 1rem);
+    --qui-btn-toTop-bottom: var(--theme--qui-btn-toTop-bottom, var(--qui-btn-toTop-offset));
+    --qui-btn-toTop-right: var(--theme--qui-btn-toTop-right, var(--qui-btn-toTop-offset));
+    --qui-btn-toTop-transform--initial: var(--theme--qui-btn-toTop-transform, scale(0));
+    --qui-btn-toTop-transform--show: var(--theme--qui-btn-toTop-transform--show, scale(1));
 }
