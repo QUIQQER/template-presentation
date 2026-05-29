@@ -644,6 +644,126 @@
             <de><![CDATA[Auf welchen Seiten soll eine Brotkrumennavigation angezeigt werden?]]></de>
             <en><![CDATA[On which pages should breadcrumb navigation be displayed?]]></en>
         </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.text">
+            <de><![CDATA[Titel anzeigen]]></de>
+            <en><![CDATA[Show title]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.description">
+            <de><![CDATA[Steuert, ob oberhalb der Brotkrumennavigation eine Überschrift angezeigt oder ausgeblendet wird. Ohne Auswahl greift das Default des Breadcrumb-Controls.]]></de>
+            <en><![CDATA[Controls whether a heading is shown above the breadcrumb navigation. If no option is selected, the breadcrumb control default is used.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.option.default">
+            <de><![CDATA[Standard verwenden]]></de>
+            <en><![CDATA[Use default]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.option.enable">
+            <de><![CDATA[Aktivieren]]></de>
+            <en><![CDATA[Enable]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.option.disable">
+            <de><![CDATA[Deaktivieren]]></de>
+            <en><![CDATA[Disable]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.titleText.text">
+            <de><![CDATA[Titeltext]]></de>
+            <en><![CDATA[Title text]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.titleText.description">
+            <de><![CDATA[Optionaler mehrsprachiger Text für die Überschrift der Brotkrumennavigation.]]></de>
+            <en><![CDATA[Optional multilingual text for the breadcrumb navigation heading.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.firstItemText.text">
+            <de><![CDATA[Text für ersten Eintrag]]></de>
+            <en><![CDATA[Text for first entry]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.firstItemText.description">
+            <de><![CDATA[Optionaler mehrsprachiger Ersatztext für den ersten sichtbaren Breadcrumb-Eintrag. URL und Ziel bleiben unverändert.]]></de>
+            <en><![CDATA[Optional multilingual replacement text for the first visible breadcrumb entry. URL and target remain unchanged.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.text">
+            <de><![CDATA[Schriftgröße]]></de>
+            <en><![CDATA[Font size]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.description">
+            <de><![CDATA[Wählt die Schriftgröße der Brotkrumennavigation.]]></de>
+            <en><![CDATA[Selects the font size of the breadcrumb navigation.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.xs">
+            <de><![CDATA[Extra klein]]></de>
+            <en><![CDATA[Extra small]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.s">
+            <de><![CDATA[Klein]]></de>
+            <en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.normal">
+            <de><![CDATA[Normal]]></de>
+            <en><![CDATA[Normal]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.lg">
+            <de><![CDATA[Groß]]></de>
+            <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.xl">
+            <de><![CDATA[Extra groß]]></de>
+            <en><![CDATA[Extra large]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.separator.text">
+            <de><![CDATA[Trennzeichen]]></de>
+            <en><![CDATA[Separator]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.separator.description">
+            <de><![CDATA[Wählt das Trennzeichen zwischen den Navigationselementen aus.]]></de>
+            <en><![CDATA[Selects the separator between navigation items.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.text">
+            <de><![CDATA[Stil des letzten Elements]]></de>
+            <en><![CDATA[Style of the last item]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.description">
+            <de><![CDATA[Legt fest, wie das letzte Element der Brotkrumennavigation hervorgehoben wird.]]></de>
+            <en><![CDATA[Determines how the last breadcrumb item is highlighted.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.text">
+            <de><![CDATA[Abstand oben und unten]]></de>
+            <en><![CDATA[Top and bottom spacing]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.description">
+            <de><![CDATA[Steuert den vertikalen Innenabstand der Brotkrumennavigation innerhalb des Template-Wrappers. Kann per Theme über <code>--theme--qui-tpl-breadcrumb-spacing</code> überschrieben werden.]]></de>
+            <en><![CDATA[Controls the vertical padding of the breadcrumb navigation inside the template wrapper. Can be overridden in the theme via <code>--theme--qui-tpl-breadcrumb-spacing</code>.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.option.disabled">
+            <de><![CDATA[Deaktiviert]]></de>
+            <en><![CDATA[Disabled]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.option.small">
+            <de><![CDATA[Klein]]></de>
+            <en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.option.normal">
+            <de><![CDATA[Normal]]></de>
+            <en><![CDATA[Normal]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.option.large">
+            <de><![CDATA[Groß]]></de>
+            <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.option.none">
+            <de><![CDATA[Kein besonderer Stil]]></de>
+            <en><![CDATA[No special style]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.option.primary">
+            <de><![CDATA[Primärfarbe]]></de>
+            <en><![CDATA[Primary color]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.option.bold">
+            <de><![CDATA[Fett]]></de>
+            <en><![CDATA[Bold]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.option.primaryBold">
+            <de><![CDATA[Primärfarbe + fett]]></de>
+            <en><![CDATA[Primary color + bold]]></en>
+        </locale>
         
 
         <!-- Header Größe-->

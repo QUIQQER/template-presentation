@@ -702,20 +702,9 @@ a.qui-control-list-entry-imagelink {
 /*********************************************************************************/
 
 .template-breadcrumb {
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-    color: #8a8a8a;
-    font-size: 10pt;
-    font-weight: normal;
-    letter-spacing: normal;
-}
-
-.quiqqer-breadcrumb a {
-    color: var(--qui-colors-text-muted);
-}
-
-.template-breadcrumb .quiqqer-breadcrumb ul li:last-child a span:last-child {
-    color: var(--qui-colors-primary);
+    padding-top: var(--qui-tpl-breadcrumb-spacing);
+    padding-bottom: var(--qui-tpl-breadcrumb-spacing);
+    border-bottom: var(--qui-border-width) var(--qui-border-style) var(--qui-tpl-breadcrumb-border-color);
 }
 
 /*********************************************************************************/

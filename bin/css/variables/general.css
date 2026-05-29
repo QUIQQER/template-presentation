@@ -45,6 +45,8 @@
 
     --qui-tpl-spacing--top: var(--theme--qui-tpl-spacing--top, var(--qui-row-spacing--base));
     --qui-tpl-spacing--bottom: var(--theme--qui-tpl-spacing--bottom, var(--qui-row-spacing--base));
+    --qui-tpl-breadcrumb-spacing: var(--theme--qui-tpl-breadcrumb-spacing, var(--template-settings__breadcrumb-spacing));
+    --qui-tpl-breadcrumb-border-color: var(--theme--qui-tpl-breadcrumb-border-color, #eee);
 
     /* header */
     --qui-page-header-padding-block: var(--theme--qui-page-header-padding-block, calc(var(--qui-nav-height) + 1rem));
@@ -83,4 +85,3 @@
         --qui-header-minHeight: var(--qui-header-minHeight--mobile);
     }
 }
-

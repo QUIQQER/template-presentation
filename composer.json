@@ -17,7 +17,7 @@
     },
     "require": {
         "php": "^8.1",
-        "quiqqer/core": "^2",
+        "quiqqer/core": "^2.18.2",
         "quiqqer/bricks": "^2",
         "quiqqer/fontawesome": "6.*",
         "quiqqer/sitetypes": "2.*",

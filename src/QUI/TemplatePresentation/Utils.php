@@ -262,10 +262,57 @@ class Utils
         $contentTablesScrollable = $Project->getConfig(
             'templatePresentation.settings.typography.contentTablesScrollable'
         );
+        $breadcrumbShowTitle = $Project->getConfig('templatePresentation.settings.breadcrumb.showTitle');
+        $breadcrumbTitleText = self::resolveLocalizedConfigText(
+            $Project->getConfig('templatePresentation.settings.breadcrumb.titleText'),
+            $Project->getLang()
+        );
+        $breadcrumbFirstItemText = self::resolveLocalizedConfigText(
+            $Project->getConfig(
+                'templatePresentation.settings.breadcrumb.firstItemText'
+            ),
+            $Project->getLang()
+        );
+        $breadcrumbFontSize = $Project->getConfig('templatePresentation.settings.breadcrumb.fontSize');
+        $breadcrumbSeparator = $Project->getConfig('templatePresentation.settings.breadcrumb.separator');
+        $breadcrumbLastItemStyle = $Project->getConfig('templatePresentation.settings.breadcrumb.lastItemStyle');
+        $breadcrumbSpacing = $Project->getConfig('templatePresentation.settings.breadcrumb.spacing');
+        $allowedSpacingValues = ['disabled', 'small', 'normal', 'large'];
+
+        if (!in_array($breadcrumbSpacing, $allowedSpacingValues, true)) {
+            $breadcrumbSpacing = 'normal';
+        }
+
+        $breadcrumb = [];
+
+        if (in_array($breadcrumbShowTitle, ['enable', 'disable'], true)) {
+            $breadcrumb['showTitle'] = $breadcrumbShowTitle;
+        }
+
+        if ($breadcrumbTitleText) {
+            $breadcrumb['titleText'] = $breadcrumbTitleText;
+        }
+
+        if ($breadcrumbFirstItemText) {
+            $breadcrumb['firstItemText'] = $breadcrumbFirstItemText;
+        }
+
+        if ($breadcrumbFontSize) {
+            $breadcrumb['fontSize'] = $breadcrumbFontSize;
+        }
+
+        if ($breadcrumbSeparator) {
+            $breadcrumb['separator'] = $breadcrumbSeparator;
+        }
+
+        if ($breadcrumbLastItemStyle) {
+            $breadcrumb['lastItemStyle'] = $breadcrumbLastItemStyle;
+        }
 
         $config += [
             'showHeader' => $showHeader,
             'showBreadcrumb' => $showBreadcrumb,
+            'breadcrumb' => $breadcrumb,
             'cssVariables' => $cssVariables,
             'typeClass' => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'navPos' => $navPos,
@@ -514,6 +561,38 @@ class Utils
         }
 
         return $result;
+    }
+
+    /**
+     * Resolve a multilingual config value for the current project language.
+     * If no text exists for the language, an empty string is returned so
+     * frontend defaults can take over.
+     */
+    protected static function resolveLocalizedConfigText(mixed $value, string $language): string
+    {
+        if (!is_string($value)) {
+            return '';
+        }
+
+        $value = trim($value);
+
+        if ($value === '') {
+            return '';
+        }
+
+        $decoded = json_decode($value, true);
+
+        if (!is_array($decoded)) {
+            return $value;
+        }
+
+        $localizedValue = $decoded[$language] ?? '';
+
+        if (!is_string($localizedValue)) {
+            return '';
+        }
+
+        return trim($localizedValue);
     }
 
     /**
@@ -832,10 +911,20 @@ class Utils
             $bodySpacingTop = 0;
         }
 
+        $breadcrumbSpacing = self::$Project->getConfig('templatePresentation.settings.breadcrumb.spacing');
+
+        $breadcrumbSpacing = match ($breadcrumbSpacing) {
+            'disabled' => '0',
+            'small' => '0.5rem',
+            'large' => '1.5rem',
+            default => '1rem'
+        };
+
         return [
             /* general */
             'scrollOffset' => $scrollOffset,
             'bodySpacingTop' => $bodySpacingTop,
+            'breadcrumbSpacing' => $breadcrumbSpacing,
 
             /* colors */
             'colorPrimary' => $colorMain,
