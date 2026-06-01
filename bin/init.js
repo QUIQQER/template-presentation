@@ -249,24 +249,37 @@ whenQuiLoaded().then(() => {
          */
         if (typeof NAV_IS_FIXED !== 'undefined') {
             const headerBar = document.querySelector('[data-name="header-bar"]');
-            let navBackground = false;
 
-            if (!headerBar) {
-                return;
-            }
+            if (headerBar) {
+                let navBackground = false;
+                let scrollTicking = false;
 
-            QUI.addEvent('scroll', function () {
-                if (QUI.getScroll().y > HEADER_BAR_SCROLL_CLASS_OFFSET) {
-                    if (!navBackground) {
-                        headerBar.classList.add('header-bar--scrolled');
-                        navBackground = true;
+                const updateHeaderBarScrollState = function () {
+                    const isScrolled = getCurrentScrollY() > HEADER_BAR_SCROLL_OFFSET;
+
+                    scrollTicking = false;
+
+                    if (isScrolled === navBackground) {
+                        return;
                     }
-                    return;
-                }
 
-                headerBar.classList.remove('header-bar--scrolled');
-                navBackground = false;
-            });
+                    headerBar.classList.toggle('header-bar--scrolled', isScrolled);
+                    navBackground = isScrolled;
+                };
+
+                updateHeaderBarScrollState();
+
+                window.addEventListener('scroll', function () {
+                    if (scrollTicking) {
+                        return;
+                    }
+
+                    scrollTicking = true;
+                    window.requestAnimationFrame(updateHeaderBarScrollState);
+                }, {
+                    passive: true
+                });
+            }
         }
 
         /**

@@ -207,6 +207,13 @@ class Utils
 
         $navHeight = (int)self::$Project->getConfig('templatePresentation.settings.navBarHeight');
         $navPos = self::$Project->getConfig('templatePresentation.settings.navPos');
+        $navBarScrollOffset = self::$Project->getConfig('templatePresentation.settings.navBarScrollOffset');
+
+        if ($navBarScrollOffset === null || $navBarScrollOffset === '') {
+            $navBarScrollOffset = 50;
+        }
+
+        $navBarScrollOffset = max(0, (int)$navBarScrollOffset);
 
         /**
          * Scroll offset
@@ -238,6 +245,12 @@ class Utils
                 'disable' => false,
                 default => $navInitialTransparent
             };
+
+            $siteNavBarScrollOffset = $Site->getAttribute('templatePresentation.nav.scrollOffset');
+
+            if ($siteNavBarScrollOffset !== null && $siteNavBarScrollOffset !== '') {
+                $navBarScrollOffset = max(0, (int)$siteNavBarScrollOffset);
+            }
 
             if (
                 $navInitialTransparent && $Project->getConfig(
@@ -317,6 +330,7 @@ class Utils
             'typeClass' => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'navPos' => $navPos,
             'navStyle' => $navStyle,
+            'navBarScrollOffset' => $navBarScrollOffset,
             'scrollOffset' => $scrollOffset,
             'searchData' => self::getSearchData(),
             'navInitialTransparent' => $navInitialTransparent,

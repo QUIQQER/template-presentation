@@ -14,7 +14,7 @@
     {$Template->getHeader()}
 
     <script>
-        const HEADER_BAR_SCROLL_CLASS_OFFSET = 50;
+        const HEADER_BAR_SCROLL_OFFSET = {$Setting->getAttribute('navBarScrollOffset')};
         window.SCROLL_OFFSET = {$Setting->getAttribute('scrollOffset')|default:0};
         const CONTENT_TABLE_SCROLL = 1;
         {if $navPos == 'fix'}const NAV_IS_FIXED = true;{/if}

@@ -82,6 +82,10 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
+                    <conf name="navBarScrollOffset">
+                        <type><![CDATA[integer]]></type>
+                        <defaultvalue>50</defaultvalue>
+                    </conf>
                     <conf name="navBarInitialTransparentLogo">
                         <type><![CDATA[string]]></type>
                     </conf>
@@ -817,6 +821,19 @@
                                 <description>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.navBarInitialTransparent.desc"
+                                    />
+                                </description>
+                            </input>
+
+                            <input conf="templatePresentation.settings.navBarScrollOffset" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarScrollOffset.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarScrollOffset.desc"
                                     />
                                 </description>
                             </input>

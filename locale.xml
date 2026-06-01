@@ -397,6 +397,14 @@
             <de><![CDATA[Wenn die Navigationsleiste fixiert ist (immer oben sichtbar) und die Option „Navigationsleiste ist initial transparent“ in den Projekteinstellungen aktiviert ist, können die Menüpunkte unter Umständen schwer lesbar sein. Mit den folgenden Optionen können die Farben für jede Seite individuell angepasst werden, sodass sie zum Hintergrundbild passen.]]></de>
             <en><![CDATA[If the navigation bar is fixed (always visible at the top) and the "Navigation bar is initially transparent" option is enabled in the project settings, the menu items may be difficult to read in some cases. With the options below, you can define the colors for each page individually to match the background image.]]></en>
         </locale>
+        <locale name="site.settings.nav.scrollOffset">
+            <de><![CDATA[Scroll-Offset für Navigationsleiste]]></de>
+            <en><![CDATA[Scroll offset for navigation bar]]></en>
+        </locale>
+        <locale name="site.settings.nav.scrollOffset.desc">
+            <de><![CDATA[Überschreibt den Scroll-Offset der Template-Einstellung für diese Seite. Leer lassen, um die Template-Einstellung zu übernehmen. Werte ab 0 sind erlaubt.]]></de>
+            <en><![CDATA[Overrides the template scroll offset for this page. Leave empty to use the template setting. Values starting at 0 are allowed.]]></en>
+        </locale>
         <locale name="site.settings.nav.initialTransparent.logo">
             <de><![CDATA[Logo für transparente Navigationsleiste]]></de>
             <en><![CDATA[Logo for transparent navigation bar]]></en>
@@ -970,6 +978,14 @@
         <locale name="templatePresentation.settings.navBarInitialTransparent.desc">
             <de><![CDATA[Wenn die Navigationsleiste fixiert ist (immer oben sichtbar), hat sie standardmäßig die eingestellte Hintergrundfarbe. Aktiviert man die Option, wird die Navigationsleiste initial transparent, wenn ein Header-Bild aktiviert ist oder ein Baustein in der Zone „Kopfbereich – Zusatzbausteinzone (Header)“ gesetzt ist. Sobald die Seite gescrollt wird, erhält sie die zuvor eingestellten Farben.]]></de>
             <en><![CDATA[When the navigation bar is fixed (always visible at the top), it has the configured background color by default. If you activate this option, the navigation bar will initially be transparent when a header image is enabled or a widget is placed in the "Header – Additional Widget Area". As soon as the page is scrolled, it will use the previously configured colors.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarScrollOffset.text">
+            <de><![CDATA[Scroll-Offset für Navigationsleiste]]></de>
+            <en><![CDATA[Scroll offset for navigation bar]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarScrollOffset.desc">
+            <de><![CDATA[Legt fest, ab welcher Scroll-Position die fixierte Navigationsleiste den Zustand „gescrollt“ erhält. Das ist besonders relevant, wenn die Option „Navigationsleiste ist initial transparent“ aktiv ist. Standardwert: 50 Pixel.]]></de>
+            <en><![CDATA[Defines the scroll position at which the fixed navigation bar switches to its scrolled state. This is especially relevant when the "Navigation bar is initially transparent" option is enabled. Default: 50 pixels.]]></en>
         </locale>
         <locale name="templatePresentation.settings.navBarInitialTransparentLogo.text">
             <de><![CDATA[Logo für transparente Navigationsleiste]]></de>
