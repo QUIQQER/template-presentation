@@ -248,8 +248,8 @@ whenQuiLoaded().then(() => {
          * works only if nav is position fixed
          */
         if (typeof NAV_IS_FIXED !== 'undefined') {
-            var headerBar     = document.getElement('[data-name="header-bar"]'),
-                navBackground = false;
+            const headerBar = document.querySelector('[data-name="header-bar"]');
+            let navBackground = false;
 
             if (!headerBar) {
                 return;
@@ -258,13 +258,13 @@ whenQuiLoaded().then(() => {
             QUI.addEvent('scroll', function () {
                 if (QUI.getScroll().y > HEADER_BAR_SCROLL_CLASS_OFFSET) {
                     if (!navBackground) {
-                        headerBar.addClass('header-bar--scrolled');
+                        headerBar.classList.add('header-bar--scrolled');
                         navBackground = true;
                     }
                     return;
                 }
 
-                headerBar.removeClass('header-bar--scrolled');
+                headerBar.classList.remove('header-bar--scrolled');
                 navBackground = false;
             });
         }
@@ -273,12 +273,12 @@ whenQuiLoaded().then(() => {
          * social share buttons
          */
         if (SHOW_SOCIAL_IN_MENU) {
-            var SlideOutElm = document.getElement(
+            const slideOutElm = document.querySelector(
                 '[data-qui="package/quiqqer/menu/bin/SlideOut"]'
             );
 
-            if (SlideOutElm) {
-                SlideOutElm.insertAdjacentHTML('beforeend', SOCIAL_MENU_HTML);
+            if (slideOutElm) {
+                slideOutElm.insertAdjacentHTML('beforeend', SOCIAL_MENU_HTML);
             }
         }
     });
@@ -286,44 +286,49 @@ whenQuiLoaded().then(() => {
     /**
      * show the search input after clicking on the button
      */
-    const SearchForm = document.getElement('[data-name="headerBarSearchForm"]');
-    const SearchInput = document.getElement('[data-name="headerBarSearchForm-input"]');
-    const ShowBtn = document.getElement('[data-name="headerBarSearchForm-showInputBtn"]');
-    if (SearchForm && SearchInput && ShowBtn) {
-        let open        = false;
+    const searchForm = document.querySelector('[data-name="headerBarSearchForm"]');
+    const searchInput = document.querySelector('[data-name="headerBarSearchForm-input"]');
+    const showBtn = document.querySelector('[data-name="headerBarSearchForm-showInputBtn"]');
 
-        const hideInput = function () {
-            SearchForm.setAttribute('data-show-input', '0');
+    if (searchForm && searchInput && showBtn) {
+        let open = false;
+
+        const hideInput = () => {
+            searchForm.setAttribute('data-show-input', '0');
             open = false;
             window.removeEventListener('click', hideInput);
         };
 
-        ShowBtn.addEvent('click', function (event) {
+        showBtn.addEventListener('click', event => {
             event.stopPropagation();
 
             if (!open) {
-                SearchForm.querySelector('input').addEvent('click', function (e) {
-                    e.stopPropagation();
-                });
+                const formInput = searchForm.querySelector('input');
 
-                SearchForm.setAttribute('data-show-input', '1');
+                if (formInput) {
+                    formInput.addEventListener('click', e => {
+                        e.stopPropagation();
+                    });
+                }
+
+                searchForm.setAttribute('data-show-input', '1');
                 window.addEventListener('click', hideInput);
 
-                (function () {
-                    SearchInput.focus();
-                }).delay(100);
+                window.setTimeout(() => {
+                    searchInput.focus();
+                }, 100);
 
                 open = true;
                 return;
             }
 
-            if (SearchInput.value.length === 0) {
-                SearchInput.focus();
+            if (searchInput.value.length === 0) {
+                searchInput.focus();
 
                 return;
             }
 
-            SearchForm.submit();
+            searchForm.submit();
         });
     }
 
