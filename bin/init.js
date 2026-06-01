@@ -274,7 +274,8 @@ whenQuiLoaded().then(() => {
          */
         if (SHOW_SOCIAL_IN_MENU) {
             const slideOutElm = document.querySelector(
-                '[data-qui="package/quiqqer/menu/bin/SlideOut"]'
+                '[data-slideOut="mobileMenu-SlideOut"], ' +
+                '[data-slideout="mobileMenu-SlideOut"]'
             );
 
             if (slideOutElm) {
