@@ -214,6 +214,10 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>normal</defaultvalue>
                     </conf>
+                    <conf name="breadcrumb.appearance">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>default</defaultvalue>
+                    </conf>
 
                     <!-- header height -->
                     <conf name="headerHeightValue">
@@ -1335,6 +1339,45 @@
                                 <option value="large">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.breadcrumb.spacing.option.large"
+                                    />
+                                </option>
+                            </select>
+
+                            <select conf="templatePresentation.settings.breadcrumb.appearance">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.description"
+                                    />
+                                </description>
+
+                                <option value="none">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.option.none"
+                                    />
+                                </option>
+                                <option value="default">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.option.default"
+                                    />
+                                </option>
+                                <option value="subtle-surface">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.option.subtleSurface"
+                                    />
+                                </option>
+                                <option value="pill-surface">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.option.pillSurface"
+                                    />
+                                </option>
+                                <option value="pill-border">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.option.pillBorder"
                                     />
                                 </option>
                             </select>

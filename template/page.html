@@ -23,10 +23,7 @@
         {/if}
     {/if}
 
-    {fetch template="template/page/breadcrumb.html"
-        showBreadcrumb=$showBreadcrumb
-        Breadcrumb=$Breadcrumb
-    }
+    {fetch template="template/page/breadcrumb.html" Template=$Template}
     {template_event name="quiqqer::template::body::afterBreadcrumb" Template=$Template}
 
     {*<!-- header suffix -->*}

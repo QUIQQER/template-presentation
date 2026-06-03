@@ -756,6 +756,34 @@
             <de><![CDATA[Groß]]></de>
             <en><![CDATA[Large]]></en>
         </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.text">
+            <de><![CDATA[Darstellung]]></de>
+            <en><![CDATA[Appearance]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.description">
+            <de><![CDATA[Legt fest, wie die Brotkrumennavigation im Template visuell gestaltet wird.]]></de>
+            <en><![CDATA[Defines how the breadcrumb navigation is visually styled in the template.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.none">
+            <de><![CDATA[Kein zusätzliches Styling]]></de>
+            <en><![CDATA[No additional styling]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.default">
+            <de><![CDATA[Standard mit unterem Rand]]></de>
+            <en><![CDATA[Default with bottom border]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.subtleSurface">
+            <de><![CDATA[Dezenter Hintergrund]]></de>
+            <en><![CDATA[Subtle background]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.pillSurface">
+            <de><![CDATA[Pill mit Hintergrundfläche]]></de>
+            <en><![CDATA[Pill with surface]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.pillBorder">
+            <de><![CDATA[Pill mit Rand]]></de>
+            <en><![CDATA[Pill with border]]></en>
+        </locale>
         <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.option.none">
             <de><![CDATA[Kein besonderer Stil]]></de>
             <en><![CDATA[No special style]]></en>

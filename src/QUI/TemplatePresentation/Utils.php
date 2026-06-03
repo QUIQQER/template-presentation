@@ -290,10 +290,22 @@ class Utils
         $breadcrumbSeparator = $Project->getConfig('templatePresentation.settings.breadcrumb.separator');
         $breadcrumbLastItemStyle = $Project->getConfig('templatePresentation.settings.breadcrumb.lastItemStyle');
         $breadcrumbSpacing = $Project->getConfig('templatePresentation.settings.breadcrumb.spacing');
+        $breadcrumbAppearance = $Project->getConfig('templatePresentation.settings.breadcrumb.appearance');
         $allowedSpacingValues = ['disabled', 'small', 'normal', 'large'];
+        $allowedBreadcrumbAppearances = [
+            'none',
+            'default',
+            'subtle-surface',
+            'pill-surface',
+            'pill-border'
+        ];
 
         if (!in_array($breadcrumbSpacing, $allowedSpacingValues, true)) {
             $breadcrumbSpacing = 'normal';
+        }
+
+        if (!in_array($breadcrumbAppearance, $allowedBreadcrumbAppearances, true)) {
+            $breadcrumbAppearance = 'default';
         }
 
         $breadcrumb = [];
@@ -340,6 +352,7 @@ class Utils
             'headerArea' => $headerArea,
             'showPageTitle' => $showPageTitle,
             'showPageShort' => $showPageShort,
+            'breadcrumbAppearance' => $breadcrumbAppearance,
             'pageCustomClass' => $pageCustomClass,
             'logoSize' => self::getLogoSize(),
             'useSlideOutMenu' => true, // for now is always true because quiqqer use currently only SlideOut nav
