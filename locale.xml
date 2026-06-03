@@ -737,8 +737,8 @@
             <en><![CDATA[Top and bottom spacing]]></en>
         </locale>
         <locale name="templatePresentation.settings.breadcrumb.spacing.description">
-            <de><![CDATA[Steuert den vertikalen Innenabstand der Brotkrumennavigation innerhalb des Template-Wrappers. Kann per Theme über <code>--theme--qui-tpl-breadcrumb-spacing</code> überschrieben werden.]]></de>
-            <en><![CDATA[Controls the vertical padding of the breadcrumb navigation inside the template wrapper. Can be overridden in the theme via <code>--theme--qui-tpl-breadcrumb-spacing</code>.]]></en>
+            <de><![CDATA[Steuert den vertikalen Innenabstand der Brotkrumennavigation und gibt den gewählten Wert direkt an das Breadcrumb-Control weiter. Kann per Theme über <code>--theme--qui-tpl-breadcrumb-spacing</code> überschrieben werden.]]></de>
+            <en><![CDATA[Controls the vertical padding of the breadcrumb navigation and passes the selected value directly to the breadcrumb control. Can be overridden in the theme via <code>--theme--qui-tpl-breadcrumb-spacing</code>.]]></en>
         </locale>
         <locale name="templatePresentation.settings.breadcrumb.spacing.option.disabled">
             <de><![CDATA[Deaktiviert]]></de>

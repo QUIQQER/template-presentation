@@ -702,8 +702,6 @@ a.qui-control-list-entry-imagelink {
 /*********************************************************************************/
 
 .template-breadcrumb {
-    padding-top: var(--qui-tpl-breadcrumb-spacing);
-    padding-bottom: var(--qui-tpl-breadcrumb-spacing);
     border-bottom: var(--qui-border-width) var(--qui-border-style) var(--qui-tpl-breadcrumb-border-color);
 }
 

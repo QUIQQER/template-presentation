@@ -322,6 +322,8 @@ class Utils
             $breadcrumb['lastItemStyle'] = $breadcrumbLastItemStyle;
         }
 
+        $breadcrumb['paddingBlock'] = 'var(--qui-tpl-breadcrumb-spacing)';
+
         $config += [
             'showHeader' => $showHeader,
             'showBreadcrumb' => $showBreadcrumb,
@@ -925,20 +927,13 @@ class Utils
             $bodySpacingTop = 0;
         }
 
-        $breadcrumbSpacing = self::$Project->getConfig('templatePresentation.settings.breadcrumb.spacing');
-
-        $breadcrumbSpacing = match ($breadcrumbSpacing) {
-            'disabled' => '0',
-            'small' => '0.5rem',
-            'large' => '1.5rem',
-            default => '1rem'
-        };
-
         return [
             /* general */
             'scrollOffset' => $scrollOffset,
             'bodySpacingTop' => $bodySpacingTop,
-            'breadcrumbSpacing' => $breadcrumbSpacing,
+            'breadcrumbSpacing' => self::getBreadcrumbSpacingCssValue(
+                self::$Project->getConfig('templatePresentation.settings.breadcrumb.spacing')
+            ),
 
             /* colors */
             'colorPrimary' => $colorMain,
@@ -983,5 +978,21 @@ class Utils
             'footerLinkColor' => $footerLinkColor,
             'footerLinkColorHover' => $footerLinkColorHover,
         ];
+    }
+
+    /**
+     * Map the template breadcrumb spacing preset to a breadcrumb control CSS value.
+     *
+     * @param string|null $spacing
+     * @return string
+     */
+    protected static function getBreadcrumbSpacingCssValue(null|string $spacing): string
+    {
+        return match ($spacing) {
+            'disabled' => '0',
+            'small' => '0.5rem',
+            'large' => '2rem',
+            default => '1rem'
+        };
     }
 }
