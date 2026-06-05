@@ -82,6 +82,10 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
                     </conf>
+                    <conf name="navBarScrollOffset">
+                        <type><![CDATA[integer]]></type>
+                        <defaultvalue>50</defaultvalue>
+                    </conf>
                     <conf name="navBarInitialTransparentLogo">
                         <type><![CDATA[string]]></type>
                     </conf>
@@ -184,6 +188,35 @@
                     <conf name="showBreadcrumbRightSidebar">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="breadcrumb.showTitle">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="breadcrumb.titleText">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="breadcrumb.firstItemText">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="breadcrumb.fontSize">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>s</defaultvalue>
+                    </conf>
+                    <conf name="breadcrumb.separator">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>angle-right</defaultvalue>
+                    </conf>
+                    <conf name="breadcrumb.lastItemStyle">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>primary</defaultvalue>
+                    </conf>
+                    <conf name="breadcrumb.spacing">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>normal</defaultvalue>
+                    </conf>
+                    <conf name="breadcrumb.appearance">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>default</defaultvalue>
                     </conf>
 
                     <!-- header height -->
@@ -796,6 +829,19 @@
                                 </description>
                             </input>
 
+                            <input conf="templatePresentation.settings.navBarScrollOffset" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarScrollOffset.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navBarScrollOffset.desc"
+                                    />
+                                </description>
+                            </input>
+
                             <input conf="templatePresentation.settings.navBarInitialTransparentLogo" class="media-image">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1115,6 +1161,226 @@
                                     />
                                 </text>
                             </input>
+
+                            <select conf="templatePresentation.settings.breadcrumb.showTitle">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.showTitle.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.showTitle.description"
+                                    />
+                                </description>
+
+                                <option value="">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.showTitle.option.default"
+                                    />
+                                </option>
+                                <option value="enable">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.showTitle.option.enable"
+                                    />
+                                </option>
+                                <option value="disable">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.showTitle.option.disable"
+                                    />
+                                </option>
+                            </select>
+
+                            <input conf="templatePresentation.settings.breadcrumb.titleText"
+                                   type="text"
+                                   data-qui="controls/lang/InputMultiLang">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.titleText.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.titleText.description"
+                                    />
+                                </description>
+                            </input>
+
+                            <input conf="templatePresentation.settings.breadcrumb.firstItemText"
+                                   type="text"
+                                   data-qui="controls/lang/InputMultiLang">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.firstItemText.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.firstItemText.description"
+                                    />
+                                </description>
+                            </input>
+
+                            <select conf="templatePresentation.settings.breadcrumb.fontSize">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.fontSize.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.fontSize.description"
+                                    />
+                                </description>
+
+                                <option value="xs">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.fontSize.option.xs"
+                                    />
+                                </option>
+                                <option value="s">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.fontSize.option.s"
+                                    />
+                                </option>
+                                <option value="normal">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.fontSize.option.normal"
+                                    />
+                                </option>
+                                <option value="lg">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.fontSize.option.lg"
+                                    />
+                                </option>
+                                <option value="xl">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.fontSize.option.xl"
+                                    />
+                                </option>
+                            </select>
+
+                            <input conf="templatePresentation.settings.breadcrumb.separator"
+                                   type="hidden"
+                                   data-qui="package/quiqqer/bricks/bin/Controls/backend/BreadcrumbSeparatorSelect">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.separator.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.separator.description"
+                                    />
+                                </description>
+                            </input>
+
+                            <select conf="templatePresentation.settings.breadcrumb.lastItemStyle">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.lastItemStyle.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.lastItemStyle.description"
+                                    />
+                                </description>
+
+                                <option value="none">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.lastItemStyle.option.none"
+                                    />
+                                </option>
+                                <option value="primary">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.lastItemStyle.option.primary"
+                                    />
+                                </option>
+                                <option value="bold">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.lastItemStyle.option.bold"
+                                    />
+                                </option>
+                                <option value="primary-bold">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.lastItemStyle.option.primaryBold"
+                                    />
+                                </option>
+                            </select>
+
+                            <select conf="templatePresentation.settings.breadcrumb.spacing">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.spacing.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.spacing.description"
+                                    />
+                                </description>
+
+                                <option value="disabled">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.spacing.option.disabled"
+                                    />
+                                </option>
+                                <option value="small">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.spacing.option.small"
+                                    />
+                                </option>
+                                <option value="normal">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.spacing.option.normal"
+                                    />
+                                </option>
+                                <option value="large">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.spacing.option.large"
+                                    />
+                                </option>
+                            </select>
+
+                            <select conf="templatePresentation.settings.breadcrumb.appearance">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.description"
+                                    />
+                                </description>
+
+                                <option value="none">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.option.none"
+                                    />
+                                </option>
+                                <option value="default">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.option.default"
+                                    />
+                                </option>
+                                <option value="subtle-surface">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.option.subtleSurface"
+                                    />
+                                </option>
+                                <option value="pill-surface">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.option.pillSurface"
+                                    />
+                                </option>
+                                <option value="pill-border">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.breadcrumb.appearance.option.pillBorder"
+                                    />
+                                </option>
+                            </select>
                         </settings>
 
                         <!-- Colors -->

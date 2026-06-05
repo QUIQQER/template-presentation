@@ -46,6 +46,15 @@
     --qui-tpl-spacing--top: var(--theme--qui-tpl-spacing--top, var(--qui-row-spacing--base));
     --qui-tpl-spacing--bottom: var(--theme--qui-tpl-spacing--bottom, var(--qui-row-spacing--base));
 
+    /* breadcrumb */
+    --qui-tpl-breadcrumb-spacing: var(--theme--qui-tpl-breadcrumb-spacing, var(--template-settings__breadcrumb-spacing));
+    --qui-tpl-breadcrumb-border-color: var(--theme--qui-tpl-breadcrumb-border-color, #eee);
+    --qui-tpl-breadcrumb-subtle-surface-background: var(--theme--qui-tpl-breadcrumb-subtle-surface-background, var(--qui-colors-surface-subtle, #f5f5f5));
+    --qui-tpl-breadcrumb-pill-surface-background: var(--theme--qui-tpl-breadcrumb-pill-surface-background, var(--qui-colors-surface-subtle, #f5f5f5));
+    --qui-tpl-breadcrumb-pill-margin-top: var(--theme--qui-tpl-breadcrumb-pill-margin-top, 1rem);
+    --qui-tpl-breadcrumb-pill-radius: var(--theme--qui-tpl-breadcrumb-pill-radius, var(--qui-radius-pill));
+    --qui-tpl-breadcrumb-pill-border: var(--theme--qui-tpl-breadcrumb-pill-border, var(--qui-border-width) var(--qui-border-style) var(--qui-border-color));
+
     /* header */
     --qui-page-header-padding-block: var(--theme--qui-page-header-padding-block, calc(var(--qui-nav-height) + 1rem));
     --qui-header-minHeight--desktop: var(--theme--qui-header-minHeight--desktop, var(--template-settings__page-header-minHeightDesktop, 300px));
@@ -83,4 +92,3 @@
         --qui-header-minHeight: var(--qui-header-minHeight--mobile);
     }
 }
-

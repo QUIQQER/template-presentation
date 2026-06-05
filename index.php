@@ -105,7 +105,28 @@ $templateSettings['LangSelectControl'] = $LangSelectControl;
 /**
  * Breadcrumb
  */
-$Breadcrumb = new QUI\Controls\Breadcrumb();
+$breadcrumbAttributes = $templateSettings['breadcrumb'];
+
+if (isset($breadcrumbAttributes['showTitle'])) {
+    $breadcrumbAttributes['showTitle'] = $breadcrumbAttributes['showTitle'] === 'enable';
+}
+
+if (isset($breadcrumbAttributes['titleText'])) {
+    $breadcrumbTitleText = json_decode($breadcrumbAttributes['titleText'], true);
+
+    if (json_last_error() === JSON_ERROR_NONE && is_array($breadcrumbTitleText)) {
+        $projectLang = $Project->getLang();
+        $breadcrumbAttributes['titleText'] = $breadcrumbTitleText[$projectLang] ?? '';
+
+        if ($breadcrumbAttributes['titleText'] === '') {
+            unset($breadcrumbAttributes['titleText']);
+        }
+    } elseif (!$breadcrumbAttributes['titleText']) {
+        unset($breadcrumbAttributes['titleText']);
+    }
+}
+
+$Breadcrumb = new QUI\Controls\Breadcrumb($breadcrumbAttributes);
 
 $templateSettings['BricksManager'] = $BricksManager;
 $templateSettings['Breadcrumb'] = $Breadcrumb;
