@@ -13,10 +13,6 @@ use function count;
 
 /**
  * Help Class for Template Presentation
- *
- * @return array
- * @author  www.pcsg.de (Michael Danielczok)
- * @package QUI\TemplatePresentation
  */
 class Utils
 {
@@ -405,7 +401,7 @@ class Utils
     /**
      * Get logo size as an array
      *
-     * @return array {width: int, height: int}
+     * @return array{width: int, height: int}
      */
     private static function getLogoSize(): array
     {
@@ -453,6 +449,11 @@ class Utils
 
         if ($setting === 'enable.useTemplateSetting') {
             $Project = QUI::getRewrite()->getProject();
+
+            if ($Project === null) {
+                return '';
+            }
+
             $bgColor = $Project->getConfig('templatePresentation.settings.bricks.bgColor');
         }
 
@@ -482,6 +483,11 @@ class Utils
 
         if ($setting === 'enable.useTemplateSetting') {
             $Project = QUI::getRewrite()->getProject();
+
+            if ($Project === null) {
+                return '';
+            }
+
             $color = $Project->getConfig('templatePresentation.settings.bricks.textColor');
         }
 
@@ -664,7 +670,7 @@ class Utils
             'active' => 1
         ]);
 
-        if (empty($searchSites)) {
+        if (!is_array($searchSites) || empty($searchSites)) {
             return [
                 'searchType' => '',
                 'searchUrl' => '',
@@ -673,7 +679,17 @@ class Utils
         }
 
         try {
-            $searchUrl = $searchSites[0]->getUrlRewritten();
+            $SearchSite = current($searchSites);
+
+            if (!$SearchSite instanceof QUI\Interfaces\Projects\Site) {
+                return [
+                    'searchType' => '',
+                    'searchUrl' => '',
+                    'searchDataQui' => '',
+                ];
+            }
+
+            $searchUrl = $SearchSite->getUrlRewritten();
         } catch (QUI\Exception $Exception) {
             QUI\System\Log::addNotice($Exception->getMessage());
             return [
@@ -707,7 +723,7 @@ class Utils
      * @param int $navHeight Navigation height in pixels.
      * @param string $navPos Navigation position setting, e.g. fix, sticky or scroll.
      * @param int $scrollOffset Scroll offset in pixels for anchor navigation.
-     * @return array Associative array of CSS variable names and their values.
+     * @return array<string, mixed> Associative array of CSS variable names and their values.
      */
     protected static function getCssVariables(
         bool $headerArea = false,
@@ -999,7 +1015,7 @@ class Utils
      * @param string|null $spacing
      * @return string
      */
-    protected static function getBreadcrumbSpacingCssValue(null|string $spacing): string
+    protected static function getBreadcrumbSpacingCssValue(null | string $spacing): string
     {
         return match ($spacing) {
             'disabled' => '0',

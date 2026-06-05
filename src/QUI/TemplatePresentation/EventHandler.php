@@ -11,8 +11,6 @@ use Smarty;
 
 /**
  * Event Class
- *
- * @author www.pcsg.de (Michael Danielczok)
  */
 class EventHandler
 {
@@ -37,8 +35,8 @@ class EventHandler
      * Create CSS file with project settings
      *
      * @param string $projectName
-     * @param array $config
-     * @param array $params
+     * @param array<string, mixed> $config
+     * @param array<string, mixed> $params
      * @return void
      */
     public static function onProjectConfigSave(string $projectName, array $config, array $params): void
