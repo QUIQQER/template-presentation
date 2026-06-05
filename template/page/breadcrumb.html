@@ -1,5 +1,10 @@
-{if $showBreadcrumb}
-<div class="template-breadcrumb">
+{assign var=Setting value=$Template->getAttribute('TemplateSetting')}
+{assign var=showBreadcrumb value=$Setting->getAttribute('showBreadcrumb')}
+{assign var=Breadcrumb value=$Setting->getAttribute('Breadcrumb')}
+{assign var=breadcrumbAppearance value=$Setting->getAttribute('breadcrumbAppearance')}
+
+{if $showBreadcrumb && $Breadcrumb}
+<div class="template-breadcrumb template-breadcrumb--appearance-{$breadcrumbAppearance|escape:'html'}">
     <div class="grid-container">
         {$Breadcrumb->create()}
     </div>

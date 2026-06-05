@@ -17,17 +17,21 @@
     --qui-colors-link--hover: var(--theme--qui-link-color--hover, var(--qui-colors-primary-700));
     --qui-colors-focus-ring: var(--theme--qui-colors-focus-ring, var(--qui-colors-primary-50));
 
-    /*  Deprecated */
+    /*  @deprecated */
     --qui-colors-body: var(--qui-colors-text);
     --qui-colors-body-bgColor: var(--qui-colors-background);
     --qui-colors-muted: var(--qui-colors-text-muted);
-    /* END Deprecated */
+    /* @deprecated use --qui-colors-primary-contrast instead. Will be removed in the next major version. */
+    --qui-colors-primary--accent: var(--theme--qui-colors-primary--accent, var(--qui-colors-primary-contrast));
+    /* END @deprecated */
 
     /* primary */
     --qui-colors-primary: var(--theme--qui-colors-primary, var(--template-settings__color-primary));
     --qui-colors-primary--light: var(--theme--qui-colors-primary--light, var(--qui-colors-primary-300));
     --qui-colors-primary--dark: var(--theme--qui-colors-primary--dark, var(--qui-colors-primary-700));
-    --qui-colors-primary--accent: var(--theme--qui-colors-primary--accent, #fff);
+    /* Foreground/text color to be used on top of --qui-colors-primary backgrounds
+       (e.g. button labels, accordion headers). Manually set, not auto-calculated. */
+    --qui-colors-primary-contrast: var(--theme--qui-colors-primary-contrast, var(--template-settings__color-primary-contrast, #fff));
     --qui-colors-primary-25: color-mix(in srgb, var(--qui-colors-primary) 5%, white);
     --qui-colors-primary-50: color-mix(in srgb, var(--qui-colors-primary) 10%, white);
     --qui-colors-primary-100: color-mix(in srgb, var(--qui-colors-primary) 20%, white);
@@ -43,6 +47,8 @@
 
     /* secondary */
     --qui-colors-secondary: var(--theme--qui-colors-secondary, #6c757d);
+    /* Foreground/text color to be used on top of --qui-colors-secondary backgrounds. */
+    --qui-colors-secondary-contrast: var(--theme--qui-colors-secondary-contrast, #ffffff);
     --qui-colors-secondary-25: color-mix(in srgb, var(--qui-colors-secondary) 5%, white);
     --qui-colors-secondary-50: color-mix(in srgb, var(--qui-colors-secondary) 10%, white);
     --qui-colors-secondary-100: color-mix(in srgb, var(--qui-colors-secondary) 20%, white);
@@ -58,6 +64,8 @@
 
     /* success */
     --qui-colors-success: var(--theme--qui-colors-success, #28a745);
+    /* Foreground/text color to be used on top of --qui-colors-success backgrounds. */
+    --qui-colors-success-contrast: var(--theme--qui-colors-success-contrast, #ffffff);
     --qui-colors-success-25: color-mix(in srgb, var(--qui-colors-success) 5%, white);
     --qui-colors-success-50: color-mix(in srgb, var(--qui-colors-success) 10%, white);
     --qui-colors-success-100: color-mix(in srgb, var(--qui-colors-success) 20%, white);
@@ -73,6 +81,8 @@
 
     /* danger */
     --qui-colors-danger: var(--theme--qui-colors-danger, #dc4139);
+    /* Foreground/text color to be used on top of --qui-colors-danger backgrounds. */
+    --qui-colors-danger-contrast: var(--theme--qui-colors-danger-contrast, #ffffff);
     --qui-colors-danger-25: color-mix(in srgb, var(--qui-colors-danger) 5%, white);
     --qui-colors-danger-50: color-mix(in srgb, var(--qui-colors-danger) 10%, white);
     --qui-colors-danger-100: color-mix(in srgb, var(--qui-colors-danger) 20%, white);
@@ -88,6 +98,8 @@
 
     /* warning */
     --qui-colors-warning: var(--theme--qui-colors-warning, #ffd147);
+    /* Foreground/text color to be used on top of --qui-colors-warning backgrounds. */
+    --qui-colors-warning-contrast: var(--theme--qui-colors-warning-contrast, #000000);
     --qui-colors-warning-25: color-mix(in srgb, var(--qui-colors-warning) 5%, white);
     --qui-colors-warning-50: color-mix(in srgb, var(--qui-colors-warning) 10%, white);
     --qui-colors-warning-100: color-mix(in srgb, var(--qui-colors-warning) 20%, white);
@@ -103,6 +115,8 @@
 
     /* info */
     --qui-colors-info: var(--theme--qui-colors-info, #4ca5ce);
+    /* Foreground/text color to be used on top of --qui-colors-info backgrounds. */
+    --qui-colors-info-contrast: var(--theme--qui-colors-info-contrast, #ffffff);
     --qui-colors-info-25: color-mix(in srgb, var(--qui-colors-info) 5%, white);
     --qui-colors-info-50: color-mix(in srgb, var(--qui-colors-info) 10%, white);
     --qui-colors-info-100: color-mix(in srgb, var(--qui-colors-info) 20%, white);
@@ -118,6 +132,8 @@
 
     /* gray */
     --qui-colors-gray: var(--theme--qui-colors-gray, #61656b);
+    /* Foreground/text color to be used on top of --qui-colors-gray backgrounds. */
+    --qui-colors-gray-contrast: var(--theme--qui-colors-gray-contrast, #ffffff);
     --qui-colors-gray-25: color-mix(in srgb, var(--qui-colors-gray) 5%, white);
     --qui-colors-gray-50: color-mix(in srgb, var(--qui-colors-gray) 10%, white);
     --qui-colors-gray-100: color-mix(in srgb, var(--qui-colors-gray) 20%, white);
@@ -133,6 +149,8 @@
 
     /* light */
     --qui-colors-light: var(--theme--qui-colors-light, #e5e5e5);
+    /* Foreground/text color to be used on top of --qui-colors-light backgrounds. */
+    --qui-colors-light-contrast: var(--theme--qui-colors-light-contrast, #000000);
     --qui-colors-light-25: color-mix(in srgb, var(--qui-colors-light) 5%, white);
     --qui-colors-light-50: color-mix(in srgb, var(--qui-colors-light) 10%, white);
     --qui-colors-light-100: color-mix(in srgb, var(--qui-colors-light) 20%, white);
@@ -148,6 +166,8 @@
 
     /* dark */
     --qui-colors-dark: var(--theme--qui-colors-dark, #2c3136);
+    /* Foreground/text color to be used on top of --qui-colors-dark backgrounds. */
+    --qui-colors-dark-contrast: var(--theme--qui-colors-dark-contrast, #ffffff);
     --qui-colors-dark-25: color-mix(in srgb, var(--qui-colors-dark) 5%, white);
     --qui-colors-dark-50: color-mix(in srgb, var(--qui-colors-dark) 10%, white);
     --qui-colors-dark-100: color-mix(in srgb, var(--qui-colors-dark) 20%, white);
@@ -163,7 +183,11 @@
 
     /* white */
     --qui-colors-white: var(--theme--qui-colors-white, #fff);
+    /* Foreground/text color to be used on top of --qui-colors-white backgrounds. */
+    --qui-colors-white-contrast: var(--theme--qui-colors-white-contrast, #111);
 
     /* black */
     --qui-colors-black: var(--theme--qui-colors-black, #000);
+    /* Foreground/text color to be used on top of --qui-colors-black backgrounds. */
+    --qui-colors-black-contrast: var(--theme--qui-colors-black-contrast, #ffffff);
 }

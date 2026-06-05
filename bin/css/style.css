@@ -346,66 +346,6 @@ section.quiqqer-portfolio-list {
     text-align: center;
 }
 
-/** icon toTop
- * ========================================================== */
-
-.toTop {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    font-size: 1.5em;
-    opacity: 0.3;
-    z-index: 10;
-    transform: scale(0);
-    border-radius: 10px;
-    min-width: 44px;
-    min-height: 44px;
-    display: grid;
-    place-items: center;
-    color: #fff;
-}
-
-.toTop__show {
-    transform: scale(1);
-}
-
-.toTop:hover {
-    opacity: 1;
-}
-
-/*********************************************************************************/
-/* Nav style (in sidebar) navigation
-/*********************************************************************************/
-
-h2.quiqqer-navigation-title-style {
-    color: #5d5d5d;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    padding-left: 10px;
-}
-
-.quiqqer-navigation-level-1 > li {
-    border-bottom: 1px solid #ddd;
-}
-
-.quiqqer-sidebar-dropdown-navigation .quiqqer-navigation-level-1 a,
-.quiqqer-sidebar-dropdown-navigation a.quiqqer-navigation-firstpage {
-    color: #5d5d5d;
-    text-decoration: none;
-}
-
-.quiqqer-sidebar-dropdown-navigation .quiqqer-navigation-open,
-.quiqqer-sidebar-dropdown-navigation .quiqqer-navigation-close {
-    position: relative;
-}
-
-.quiqqer-fa-levels-icon:hover,
-.quiqqer-navigation-level-1 a:hover,
-a.quiqqer-navigation-home:hover,
-.quiqqer-navigation-entry:hover .quiqqer-fa-list-icon {
-    color: var(--qui-colors-primary);
-}
-
 /** responsive
  **************************************************/
 
@@ -761,21 +701,31 @@ a.qui-control-list-entry-imagelink {
 /* breadcrumb
 /*********************************************************************************/
 
-.template-breadcrumb {
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-    color: #8a8a8a;
-    font-size: 10pt;
-    font-weight: normal;
-    letter-spacing: normal;
+.template-breadcrumb--appearance-default {
+    border-bottom: var(--qui-border-width) var(--qui-border-style) var(--qui-tpl-breadcrumb-border-color);
 }
 
-.quiqqer-breadcrumb a {
-    color: var(--qui-colors-text-muted);
+.template-breadcrumb--appearance-pill-surface .quiqqer-core-controls-breadcrumb-container,
+.template-breadcrumb--appearance-pill-border .quiqqer-core-controls-breadcrumb-container {
+    padding-inline: calc(1.75 * var(--_padding-y));
 }
 
-.template-breadcrumb .quiqqer-breadcrumb ul li:last-child a span:last-child {
-    color: var(--qui-colors-primary);
+.template-breadcrumb--appearance-subtle-surface {
+    background: var(--qui-tpl-breadcrumb-subtle-surface-background);
+}
+
+.template-breadcrumb--appearance-pill-surface .quiqqer-core-controls-breadcrumb-container,
+.template-breadcrumb--appearance-pill-border .quiqqer-core-controls-breadcrumb-container {
+    border-radius: var(--qui-tpl-breadcrumb-pill-radius);
+    margin-top: var(--qui-tpl-breadcrumb-pill-margin-top);
+}
+
+.template-breadcrumb--appearance-pill-surface .quiqqer-core-controls-breadcrumb-container {
+    background: var(--qui-tpl-breadcrumb-pill-surface-background);
+}
+
+.template-breadcrumb--appearance-pill-border .quiqqer-core-controls-breadcrumb-container {
+    border: var(--qui-tpl-breadcrumb-pill-border);
 }
 
 /*********************************************************************************/
@@ -826,4 +776,3 @@ a.qui-control-list-entry-imagelink {
 .qui-control-childrenlist-3er-entry-image span.quiqqer-icon {
     font-size: 130px;
 }
-

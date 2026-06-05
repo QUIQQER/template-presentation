@@ -7,6 +7,9 @@
 
 :root {
     /* generic naming */
+    --qui-border-width: var(--theme--qui-border-width, 1px);
+    --qui-border-style: var(--theme--qui-border-style, solid);
+
     --qui-radius-xs: var(--theme--qui-radius-xs, calc(var(--qui-radius-base) * 0.25));
     --qui-radius-sm: var(--theme--qui-radius-sm, calc(var(--qui-radius-base) * 0.5));
     --qui-radius-base: var(--theme--qui-radius-base, 0.5rem);
@@ -18,6 +21,8 @@
     --qui-radius-full: 9999px;
 
     /* semantic naming */
+    --qui-border-color: var(--theme--qui-border-color, #ddd);
+
     --qui-radius-btn: var(--theme--qui-radius-btn, var(--qui-radius-base));
     --qui-radius-input: var(--theme--qui-radius-input, var(--qui-radius-base));
     --qui-radius-card: var(--theme--qui-radius-card, var(--qui-radius-lg));

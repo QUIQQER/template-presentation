@@ -13,10 +13,6 @@ use function count;
 
 /**
  * Help Class for Template Presentation
- *
- * @return array
- * @author  www.pcsg.de (Michael Danielczok)
- * @package QUI\TemplatePresentation
  */
 class Utils
 {
@@ -165,7 +161,7 @@ class Utils
         $customClass = $Site->getAttribute('templatePresentation.pageCustomClass');
         $pageCustomClass = false;
 
-        if ($customClass && $customClass !== '') {
+        if ($customClass) {
             $pageCustomClass = 'templatePresentation__' . $customClass;
             $pageCustomClass .= ' ' . $customClass;
         }
@@ -196,10 +192,39 @@ class Utils
         }
 
         /**
+         * Nav
+         */
+        $navStyle = match ($Project->getConfig('templatePresentation.settings.navStyle')) {
+            'default', 'none', 'defaultWithBigButtons', 'pill' => $Project->getConfig(
+                'templatePresentation.settings.navStyle'
+            ),
+            default => 'default'
+        };
+
+        $navHeight = (int)self::$Project->getConfig('templatePresentation.settings.navBarHeight');
+        $navPos = self::$Project->getConfig('templatePresentation.settings.navPos');
+        $navBarScrollOffset = self::$Project->getConfig('templatePresentation.settings.navBarScrollOffset');
+
+        if ($navBarScrollOffset === null || $navBarScrollOffset === '') {
+            $navBarScrollOffset = 50;
+        }
+
+        $navBarScrollOffset = max(0, (int)$navBarScrollOffset);
+
+        /**
+         * Scroll offset
+         */
+        $scrollOffset = 0;
+
+        if ($navPos == 'fix' && $navHeight > 0) {
+            $scrollOffset = $navHeight + 10;
+        }
+
+        /**
          * css settings
          */
         $headerArea = $params['headerArea'];
-        $cssVariables = self::getCssVariables($headerArea, $showHeader);
+        $cssVariables = self::getCssVariables($headerArea, $showHeader, $navHeight, $navPos, $scrollOffset);
 
         /**
          * Nav bar initial transparent
@@ -216,6 +241,12 @@ class Utils
                 'disable' => false,
                 default => $navInitialTransparent
             };
+
+            $siteNavBarScrollOffset = $Site->getAttribute('templatePresentation.nav.scrollOffset');
+
+            if ($siteNavBarScrollOffset !== null && $siteNavBarScrollOffset !== '') {
+                $navBarScrollOffset = max(0, (int)$siteNavBarScrollOffset);
+            }
 
             if (
                 $navInitialTransparent && $Project->getConfig(
@@ -234,37 +265,95 @@ class Utils
         }
 
         /**
-         * Nav style
-         */
-        $navStyle = match ($Project->getConfig('templatePresentation.settings.navStyle')) {
-            'default', 'none', 'defaultWithBigButtons', 'pill' => $Project->getConfig(
-                'templatePresentation.settings.navStyle'
-            ),
-            default => 'default'
-        };
-
-        /**
          * Include demo css
          */
         $includeDemoCss = $Project->getConfig('templatePresentation.settings.includeDemoStyling');
+        $contentTablesScrollable = $Project->getConfig(
+            'templatePresentation.settings.typography.contentTablesScrollable'
+        );
+        $breadcrumbShowTitle = $Project->getConfig('templatePresentation.settings.breadcrumb.showTitle');
+        $breadcrumbTitleText = self::resolveLocalizedConfigText(
+            $Project->getConfig('templatePresentation.settings.breadcrumb.titleText'),
+            $Project->getLang()
+        );
+        $breadcrumbFirstItemText = self::resolveLocalizedConfigText(
+            $Project->getConfig(
+                'templatePresentation.settings.breadcrumb.firstItemText'
+            ),
+            $Project->getLang()
+        );
+        $breadcrumbFontSize = $Project->getConfig('templatePresentation.settings.breadcrumb.fontSize');
+        $breadcrumbSeparator = $Project->getConfig('templatePresentation.settings.breadcrumb.separator');
+        $breadcrumbLastItemStyle = $Project->getConfig('templatePresentation.settings.breadcrumb.lastItemStyle');
+        $breadcrumbSpacing = $Project->getConfig('templatePresentation.settings.breadcrumb.spacing');
+        $breadcrumbAppearance = $Project->getConfig('templatePresentation.settings.breadcrumb.appearance');
+        $allowedSpacingValues = ['disabled', 'small', 'normal', 'large'];
+        $allowedBreadcrumbAppearances = [
+            'none',
+            'default',
+            'subtle-surface',
+            'pill-surface',
+            'pill-border'
+        ];
+
+        if (!in_array($breadcrumbSpacing, $allowedSpacingValues, true)) {
+            $breadcrumbSpacing = 'normal';
+        }
+
+        if (!in_array($breadcrumbAppearance, $allowedBreadcrumbAppearances, true)) {
+            $breadcrumbAppearance = 'default';
+        }
+
+        $breadcrumb = [];
+
+        if (in_array($breadcrumbShowTitle, ['enable', 'disable'], true)) {
+            $breadcrumb['showTitle'] = $breadcrumbShowTitle;
+        }
+
+        if ($breadcrumbTitleText) {
+            $breadcrumb['titleText'] = $breadcrumbTitleText;
+        }
+
+        if ($breadcrumbFirstItemText) {
+            $breadcrumb['firstItemText'] = $breadcrumbFirstItemText;
+        }
+
+        if ($breadcrumbFontSize) {
+            $breadcrumb['fontSize'] = $breadcrumbFontSize;
+        }
+
+        if ($breadcrumbSeparator) {
+            $breadcrumb['separator'] = $breadcrumbSeparator;
+        }
+
+        if ($breadcrumbLastItemStyle) {
+            $breadcrumb['lastItemStyle'] = $breadcrumbLastItemStyle;
+        }
+
+        $breadcrumb['paddingBlock'] = 'var(--qui-tpl-breadcrumb-spacing)';
 
         $config += [
             'showHeader' => $showHeader,
             'showBreadcrumb' => $showBreadcrumb,
+            'breadcrumb' => $breadcrumb,
             'cssVariables' => $cssVariables,
             'typeClass' => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
-            'navPos' => $Project->getConfig('templatePresentation.settings.navPos'),
+            'navPos' => $navPos,
             'navStyle' => $navStyle,
+            'navBarScrollOffset' => $navBarScrollOffset,
+            'scrollOffset' => $scrollOffset,
             'searchData' => self::getSearchData(),
             'navInitialTransparent' => $navInitialTransparent,
             'logoForTransparentNav' => $logoForTransparentNav,
             'headerArea' => $headerArea,
             'showPageTitle' => $showPageTitle,
             'showPageShort' => $showPageShort,
+            'breadcrumbAppearance' => $breadcrumbAppearance,
             'pageCustomClass' => $pageCustomClass,
             'logoSize' => self::getLogoSize(),
             'useSlideOutMenu' => true, // for now is always true because quiqqer use currently only SlideOut nav
             'includeDemoCss' => $includeDemoCss,
+            'contentTablesScrollable' => $contentTablesScrollable,
             'mainContentSpacingTopCSSVar' => self::getSpacingVariable($mainContentSpacingTop, 'top'),
             'mainContentSpacingBottomCSSVar' => self::getSpacingVariable($mainContentSpacingBottom, 'bottom'),
             'socialData' => self::getSocialData(),
@@ -312,7 +401,7 @@ class Utils
     /**
      * Get logo size as an array
      *
-     * @return array {width: int, height: int}
+     * @return array{width: int, height: int}
      */
     private static function getLogoSize(): array
     {
@@ -360,6 +449,11 @@ class Utils
 
         if ($setting === 'enable.useTemplateSetting') {
             $Project = QUI::getRewrite()->getProject();
+
+            if ($Project === null) {
+                return '';
+            }
+
             $bgColor = $Project->getConfig('templatePresentation.settings.bricks.bgColor');
         }
 
@@ -389,6 +483,11 @@ class Utils
 
         if ($setting === 'enable.useTemplateSetting') {
             $Project = QUI::getRewrite()->getProject();
+
+            if ($Project === null) {
+                return '';
+            }
+
             $color = $Project->getConfig('templatePresentation.settings.bricks.textColor');
         }
 
@@ -500,6 +599,38 @@ class Utils
     }
 
     /**
+     * Resolve a multilingual config value for the current project language.
+     * If no text exists for the language, an empty string is returned so
+     * frontend defaults can take over.
+     */
+    protected static function resolveLocalizedConfigText(mixed $value, string $language): string
+    {
+        if (!is_string($value)) {
+            return '';
+        }
+
+        $value = trim($value);
+
+        if ($value === '') {
+            return '';
+        }
+
+        $decoded = json_decode($value, true);
+
+        if (!is_array($decoded)) {
+            return $value;
+        }
+
+        $localizedValue = $decoded[$language] ?? '';
+
+        if (!is_string($localizedValue)) {
+            return '';
+        }
+
+        return trim($localizedValue);
+    }
+
+    /**
      * Returns search data and settings for the template.
      *
      * @return array{
@@ -539,7 +670,7 @@ class Utils
             'active' => 1
         ]);
 
-        if (empty($searchSites)) {
+        if (!is_array($searchSites) || empty($searchSites)) {
             return [
                 'searchType' => '',
                 'searchUrl' => '',
@@ -548,7 +679,17 @@ class Utils
         }
 
         try {
-            $searchUrl = $searchSites[0]->getUrlRewritten();
+            $SearchSite = current($searchSites);
+
+            if (!$SearchSite instanceof QUI\Interfaces\Projects\Site) {
+                return [
+                    'searchType' => '',
+                    'searchUrl' => '',
+                    'searchDataQui' => '',
+                ];
+            }
+
+            $searchUrl = $SearchSite->getUrlRewritten();
         } catch (QUI\Exception $Exception) {
             QUI\System\Log::addNotice($Exception->getMessage());
             return [
@@ -579,10 +720,18 @@ class Utils
      *
      * @param bool $headerArea Whether the header area is enabled (affects certain CSS variables).
      * @param bool $showHeader Whether the page header (hero) is enabled (affects certain CSS variables).
-     * @return array Associative array of CSS variable names and their values.
+     * @param int $navHeight Navigation height in pixels.
+     * @param string $navPos Navigation position setting, e.g. fix, sticky or scroll.
+     * @param int $scrollOffset Scroll offset in pixels for anchor navigation.
+     * @return array<string, mixed> Associative array of CSS variable names and their values.
      */
-    protected static function getCssVariables(bool $headerArea = false, bool $showHeader = false): array
-    {
+    protected static function getCssVariables(
+        bool $headerArea = false,
+        bool $showHeader = false,
+        int $navHeight = 0,
+        string $navPos = '',
+        int $scrollOffset = 0
+    ): array {
         /**
          * colors & typography
          */
@@ -593,6 +742,7 @@ class Utils
         $headingFontWeight = '700'; /* bold */
 
         $colorMain = '#2e4d87';
+        $colorMainContrast = '#ffffff';
         $btnTextColor = '#ffffff';
 
         // footer
@@ -621,6 +771,10 @@ class Utils
         /* primary / main colors */
         if (self::$Project->getConfig('templatePresentation.settings.colorMain')) {
             $colorMain = self::$Project->getConfig('templatePresentation.settings.colorMain');
+        }
+
+        if (self::$Project->getConfig('templatePresentation.settings.colorMainContrast')) {
+            $colorMainContrast = self::$Project->getConfig('templatePresentation.settings.colorMainContrast');
         }
 
         if (self::$Project->getConfig('templatePresentation.settings.buttonFontColor')) {
@@ -662,8 +816,6 @@ class Utils
         $navInitialTransparentLinkBgColorHover = '';
         $navMobileTextColor = '#ffffff';
         $navMobileBgColor = '#252122';
-        $navHeight = (int)self::$Project->getConfig('templatePresentation.settings.navBarHeight');
-        $navPos = self::$Project->getConfig('templatePresentation.settings.navPos');
 
         if (self::$Project->getConfig('templatePresentation.settings.navBarBgColor')) {
             $navBgColor = self::$Project->getConfig('templatePresentation.settings.navBarBgColor');
@@ -800,14 +952,6 @@ class Utils
 
         $pageHeaderImgPosition = self::$Project->getConfig('templatePresentation.settings.headerImagePosition');
 
-        /**
-         * Others
-         */
-        $scrollOffset = 0;
-        if ($navPos == 'fix' && $navHeight > 0) {
-            $scrollOffset = $navHeight + 10;
-        }
-
         if ($headerArea || $showHeader) {
             $bodySpacingTop = 0;
         }
@@ -816,9 +960,13 @@ class Utils
             /* general */
             'scrollOffset' => $scrollOffset,
             'bodySpacingTop' => $bodySpacingTop,
+            'breadcrumbSpacing' => self::getBreadcrumbSpacingCssValue(
+                self::$Project->getConfig('templatePresentation.settings.breadcrumb.spacing')
+            ),
 
             /* colors */
             'colorPrimary' => $colorMain,
+            'colorPrimaryContrast' => $colorMainContrast,
             'btnTextColor' => $btnTextColor,
 
             /* typography */
@@ -859,5 +1007,21 @@ class Utils
             'footerLinkColor' => $footerLinkColor,
             'footerLinkColorHover' => $footerLinkColorHover,
         ];
+    }
+
+    /**
+     * Map the template breadcrumb spacing preset to a breadcrumb control CSS value.
+     *
+     * @param string|null $spacing
+     * @return string
+     */
+    protected static function getBreadcrumbSpacingCssValue(null | string $spacing): string
+    {
+        return match ($spacing) {
+            'disabled' => '0',
+            'small' => '0.5rem',
+            'large' => '2rem',
+            default => '1rem'
+        };
     }
 }

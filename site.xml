@@ -12,6 +12,7 @@
         <attribute>templatePresentation.independentMenuId</attribute>
         <attribute>templatePresentation.independentMenuIdLoggedIn</attribute>
         <attribute>templatePresentation.nav.initialTransparent</attribute>
+        <attribute>templatePresentation.nav.scrollOffset</attribute>
         <attribute>templatePresentation.nav.initialTransparent.logo</attribute>
         <attribute>templatePresentation.nav.initialTransparent.linkColor</attribute>
         <attribute>templatePresentation.nav.initialTransparent.linkColorHover</attribute>
@@ -196,6 +197,17 @@
                     <locale group="quiqqer/template-presentation"
                             var="templatePresentation.nav.initialTransparent.desc"/>
                 </text>
+
+                <input conf="templatePresentation.nav.scrollOffset" type="number">
+                    <text>
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.nav.scrollOffset"/>
+                    </text>
+                    <description>
+                        <locale group="quiqqer/template-presentation"
+                                var="site.settings.nav.scrollOffset.desc"/>
+                    </description>
+                </input>
 
                 <input conf="templatePresentation.nav.initialTransparent.logo" class="media-image">
                     <text>

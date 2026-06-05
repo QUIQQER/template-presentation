@@ -397,6 +397,14 @@
             <de><![CDATA[Wenn die Navigationsleiste fixiert ist (immer oben sichtbar) und die Option „Navigationsleiste ist initial transparent“ in den Projekteinstellungen aktiviert ist, können die Menüpunkte unter Umständen schwer lesbar sein. Mit den folgenden Optionen können die Farben für jede Seite individuell angepasst werden, sodass sie zum Hintergrundbild passen.]]></de>
             <en><![CDATA[If the navigation bar is fixed (always visible at the top) and the "Navigation bar is initially transparent" option is enabled in the project settings, the menu items may be difficult to read in some cases. With the options below, you can define the colors for each page individually to match the background image.]]></en>
         </locale>
+        <locale name="site.settings.nav.scrollOffset">
+            <de><![CDATA[Scroll-Offset für Navigationsleiste]]></de>
+            <en><![CDATA[Scroll offset for navigation bar]]></en>
+        </locale>
+        <locale name="site.settings.nav.scrollOffset.desc">
+            <de><![CDATA[Überschreibt den Scroll-Offset der Template-Einstellung für diese Seite. Leer lassen, um die Template-Einstellung zu übernehmen. Werte ab 0 sind erlaubt.]]></de>
+            <en><![CDATA[Overrides the template scroll offset for this page. Leave empty to use the template setting. Values starting at 0 are allowed.]]></en>
+        </locale>
         <locale name="site.settings.nav.initialTransparent.logo">
             <de><![CDATA[Logo für transparente Navigationsleiste]]></de>
             <en><![CDATA[Logo for transparent navigation bar]]></en>
@@ -606,6 +614,20 @@
             <de><![CDATA[Basis Schriftgröße für den Fließtext. Typischer Wert ist "16px".]]></de>
             <en><![CDATA[Base font size for flowing text. Typical value is "16px".]]></en>
         </locale>
+        <locale name="settings.typography.contentTablesScrollable.title">
+            <de><![CDATA[Tabellen im Inhalt scrollbar machen]]></de>
+            <en><![CDATA[Make tables in content scrollable]]></en>
+        </locale>
+        <locale name="settings.typography.contentTablesScrollable.desc">
+            <de><![CDATA[
+                <p>Wenn diese Option aktiv ist, werden Tabellen in redaktionellen Inhalten automatisch in einen horizontal scrollbaren Container gesetzt. So bleiben breite Tabellen auf kleinen Ansichten nutzbar, ohne andere Tabellen im Template zu beeinflussen.</p>
+                <p>Einzelne Tabellen kannst du von diesem Verhalten ausnehmen, indem du der Tabelle entweder die CSS-Klasse <code>no-table-scroll</code> oder das Attribut <code>data-qui-disable-table-scroll="1"</code> hinzufügst.</p>
+            ]]></de>
+            <en><![CDATA[
+                <p>If this option is enabled, tables in editorial content are automatically wrapped in a horizontally scrollable container. This keeps wide tables usable on small viewports without affecting other tables in the template.</p>
+                <p>You can exclude individual tables from this behavior by adding either the CSS class <code>no-table-scroll</code> or the attribute <code>data-qui-disable-table-scroll="1"</code> to the table.</p>
+            ]]></en>
+        </locale>
 
         <!-- header settings -->
         <locale name="templatePresentation.settings.showHeader.title">
@@ -629,6 +651,154 @@
         <locale name="showBreadcrumb.text">
             <de><![CDATA[Auf welchen Seiten soll eine Brotkrumennavigation angezeigt werden?]]></de>
             <en><![CDATA[On which pages should breadcrumb navigation be displayed?]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.text">
+            <de><![CDATA[Titel anzeigen]]></de>
+            <en><![CDATA[Show title]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.description">
+            <de><![CDATA[Steuert, ob oberhalb der Brotkrumennavigation eine Überschrift angezeigt oder ausgeblendet wird. Ohne Auswahl greift das Default des Breadcrumb-Controls.]]></de>
+            <en><![CDATA[Controls whether a heading is shown above the breadcrumb navigation. If no option is selected, the breadcrumb control default is used.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.option.default">
+            <de><![CDATA[Standard verwenden]]></de>
+            <en><![CDATA[Use default]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.option.enable">
+            <de><![CDATA[Aktivieren]]></de>
+            <en><![CDATA[Enable]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.option.disable">
+            <de><![CDATA[Deaktivieren]]></de>
+            <en><![CDATA[Disable]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.titleText.text">
+            <de><![CDATA[Titeltext]]></de>
+            <en><![CDATA[Title text]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.titleText.description">
+            <de><![CDATA[Optionaler mehrsprachiger Text für die Überschrift der Brotkrumennavigation.]]></de>
+            <en><![CDATA[Optional multilingual text for the breadcrumb navigation heading.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.firstItemText.text">
+            <de><![CDATA[Text für ersten Eintrag]]></de>
+            <en><![CDATA[Text for first entry]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.firstItemText.description">
+            <de><![CDATA[Optionaler mehrsprachiger Ersatztext für den ersten sichtbaren Breadcrumb-Eintrag. URL und Ziel bleiben unverändert.]]></de>
+            <en><![CDATA[Optional multilingual replacement text for the first visible breadcrumb entry. URL and target remain unchanged.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.text">
+            <de><![CDATA[Schriftgröße]]></de>
+            <en><![CDATA[Font size]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.description">
+            <de><![CDATA[Wählt die Schriftgröße der Brotkrumennavigation.]]></de>
+            <en><![CDATA[Selects the font size of the breadcrumb navigation.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.xs">
+            <de><![CDATA[Extra klein]]></de>
+            <en><![CDATA[Extra small]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.s">
+            <de><![CDATA[Klein]]></de>
+            <en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.normal">
+            <de><![CDATA[Normal]]></de>
+            <en><![CDATA[Normal]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.lg">
+            <de><![CDATA[Groß]]></de>
+            <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.xl">
+            <de><![CDATA[Extra groß]]></de>
+            <en><![CDATA[Extra large]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.separator.text">
+            <de><![CDATA[Trennzeichen]]></de>
+            <en><![CDATA[Separator]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.separator.description">
+            <de><![CDATA[Wählt das Trennzeichen zwischen den Navigationselementen aus.]]></de>
+            <en><![CDATA[Selects the separator between navigation items.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.text">
+            <de><![CDATA[Stil des letzten Elements]]></de>
+            <en><![CDATA[Style of the last item]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.description">
+            <de><![CDATA[Legt fest, wie das letzte Element der Brotkrumennavigation hervorgehoben wird.]]></de>
+            <en><![CDATA[Determines how the last breadcrumb item is highlighted.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.text">
+            <de><![CDATA[Abstand oben und unten]]></de>
+            <en><![CDATA[Top and bottom spacing]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.description">
+            <de><![CDATA[Steuert den vertikalen Innenabstand der Brotkrumennavigation und gibt den gewählten Wert direkt an das Breadcrumb-Control weiter. Kann per Theme über <code>--theme--qui-tpl-breadcrumb-spacing</code> überschrieben werden.]]></de>
+            <en><![CDATA[Controls the vertical padding of the breadcrumb navigation and passes the selected value directly to the breadcrumb control. Can be overridden in the theme via <code>--theme--qui-tpl-breadcrumb-spacing</code>.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.option.disabled">
+            <de><![CDATA[Deaktiviert]]></de>
+            <en><![CDATA[Disabled]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.option.small">
+            <de><![CDATA[Klein]]></de>
+            <en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.option.normal">
+            <de><![CDATA[Normal]]></de>
+            <en><![CDATA[Normal]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.option.large">
+            <de><![CDATA[Groß]]></de>
+            <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.text">
+            <de><![CDATA[Darstellung]]></de>
+            <en><![CDATA[Appearance]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.description">
+            <de><![CDATA[Legt fest, wie die Brotkrumennavigation im Template visuell gestaltet wird.]]></de>
+            <en><![CDATA[Defines how the breadcrumb navigation is visually styled in the template.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.none">
+            <de><![CDATA[Kein zusätzliches Styling]]></de>
+            <en><![CDATA[No additional styling]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.default">
+            <de><![CDATA[Standard mit unterem Rand]]></de>
+            <en><![CDATA[Default with bottom border]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.subtleSurface">
+            <de><![CDATA[Dezenter Hintergrund]]></de>
+            <en><![CDATA[Subtle background]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.pillSurface">
+            <de><![CDATA[Pill mit Hintergrundfläche]]></de>
+            <en><![CDATA[Pill with surface]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.pillBorder">
+            <de><![CDATA[Pill mit Rand]]></de>
+            <en><![CDATA[Pill with border]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.option.none">
+            <de><![CDATA[Kein besonderer Stil]]></de>
+            <en><![CDATA[No special style]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.option.primary">
+            <de><![CDATA[Primärfarbe]]></de>
+            <en><![CDATA[Primary color]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.option.bold">
+            <de><![CDATA[Fett]]></de>
+            <en><![CDATA[Bold]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.option.primaryBold">
+            <de><![CDATA[Primärfarbe + fett]]></de>
+            <en><![CDATA[Primary color + bold]]></en>
         </locale>
         
 
@@ -837,6 +1007,14 @@
             <de><![CDATA[Wenn die Navigationsleiste fixiert ist (immer oben sichtbar), hat sie standardmäßig die eingestellte Hintergrundfarbe. Aktiviert man die Option, wird die Navigationsleiste initial transparent, wenn ein Header-Bild aktiviert ist oder ein Baustein in der Zone „Kopfbereich – Zusatzbausteinzone (Header)“ gesetzt ist. Sobald die Seite gescrollt wird, erhält sie die zuvor eingestellten Farben.]]></de>
             <en><![CDATA[When the navigation bar is fixed (always visible at the top), it has the configured background color by default. If you activate this option, the navigation bar will initially be transparent when a header image is enabled or a widget is placed in the "Header – Additional Widget Area". As soon as the page is scrolled, it will use the previously configured colors.]]></en>
         </locale>
+        <locale name="templatePresentation.settings.navBarScrollOffset.text">
+            <de><![CDATA[Scroll-Offset für Navigationsleiste]]></de>
+            <en><![CDATA[Scroll offset for navigation bar]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarScrollOffset.desc">
+            <de><![CDATA[Legt fest, ab welcher Scroll-Position die fixierte Navigationsleiste den Zustand „gescrollt“ erhält. Das ist besonders relevant, wenn die Option „Navigationsleiste ist initial transparent“ aktiv ist. Standardwert: 50 Pixel.]]></de>
+            <en><![CDATA[Defines the scroll position at which the fixed navigation bar switches to its scrolled state. This is especially relevant when the "Navigation bar is initially transparent" option is enabled. Default: 50 pixels.]]></en>
+        </locale>
         <locale name="templatePresentation.settings.navBarInitialTransparentLogo.text">
             <de><![CDATA[Logo für transparente Navigationsleiste]]></de>
             <en><![CDATA[Logo for transparent navigation bar]]></en>
@@ -963,9 +1141,21 @@
             <de><![CDATA[Hauptfarbe]]></de>
             <en><![CDATA[Main color]]></en>
         </locale>
+        <locale name="template.settings.colorMainContrast.text">
+            <de><![CDATA[Kontrastfarbe zur Hauptfarbe]]></de>
+            <en><![CDATA[Contrast color for main color]]></en>
+        </locale>
+        <locale name="template.settings.colorMainContrast.description">
+            <de><![CDATA[Schriftfarbe für Elemente, die die Hauptfarbe als Hintergrund nutzen (z. B. Chips, FAQ-Header, Badges).]]></de>
+            <en><![CDATA[Font color for elements that use the main color as background (e.g. chips, FAQ headers, badges).]]></en>
+        </locale>
         <locale name="template.settings.buttonFontColor.text">
             <de><![CDATA[Schriftfarbe von Buttons]]></de>
             <en><![CDATA[Font color of buttons]]></en>
+        </locale>
+        <locale name="template.settings.buttonFontColor.description">
+            <de><![CDATA[Überschreibt die Kontrastfarbe nur für Buttons. Leer lassen, um die Kontrastfarbe zur Hauptfarbe zu verwenden.]]></de>
+            <en><![CDATA[Overrides the contrast color for buttons only. Leave empty to use the contrast color of the main color.]]></en>
         </locale>
         <locale name="template.settings.colorMain.description">
             <de><![CDATA[Farbeinstellung für Links, Linksefekte, anklickbaren Schaltflächen, usw.]]></de>
