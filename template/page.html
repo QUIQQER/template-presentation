@@ -36,9 +36,15 @@
     {/if}
 
     {template_event name="quiqqer::template::body::beforeMain" Template=$Template}
-    <div class="main-contentWrapper grid-container">
-        {$Template->getLayout()}
-    </div>
+    {if $Template->getLayoutType() == 'layout/fullWidth'}
+        <div class="main-contentWrapper main-contentWrapper--fullWidth">
+            {$Template->getLayout()}
+        </div>
+    {else}
+        <div class="main-contentWrapper grid-container">
+            {$Template->getLayout()}
+        </div>
+    {/if}
     {template_event name="quiqqer::template::body::afterMain" Template=$Template}
 
     {*<!-- footer prefix -->*}

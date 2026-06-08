@@ -9,6 +9,12 @@
     --qui-nav-banner-height: 0px;
     --qui-body-container-max-width: var(--theme--qui-body-container-max-width, 1200px);
 
+    /* page width system for .qui-content-grid (narrow / content / wide / full) */
+    --qui-page-padding: var(--theme--qui-page-padding, 20px);
+    --qui-page-narrowSize: var(--theme--qui-page-narrowSize, 720px);
+    --qui-page-contentSize: var(--theme--qui-page-contentSize, var(--qui-body-container-max-width, 1200px));
+    --qui-page-wideSize: var(--theme--qui-page-wideSize, calc(var(--qui-page-contentSize) + 100px));
+
     --qui-transition-duration: var(--theme--qui-transition-duration, 0.15s);
     --qui-transition-timing-function: var(--theme--qui-transition-timing-function, ease);
     --qui-transition-property: var(--theme--qui-transition-property, all);
