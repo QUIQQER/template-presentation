@@ -266,6 +266,16 @@
             </description>
         </layout>
 
+        <layout type="layout/fullWidth"
+                image="bin/layouts/noSidebar.png">
+            <title>
+                <locale group="quiqqer/template-presentation" var="admin.layout.fullWidth"/>
+            </title>
+            <description>
+                <locale group="quiqqer/template-presentation" var="admin.layout.fullWidth.desc"/>
+            </description>
+        </layout>
+
         <layout type="layout/noSidebarSmall"
                 image="bin/layouts/noSidebar.png">
             <title>

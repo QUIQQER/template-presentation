@@ -452,6 +452,14 @@
             <de><![CDATA[Keine Sidebar]]></de>
             <en><![CDATA[No sidebar]]></en>
         </locale>
+        <locale name="admin.layout.fullWidth">
+            <de><![CDATA[Volle Breite]]></de>
+            <en><![CDATA[Full width]]></en>
+        </locale>
+        <locale name="admin.layout.fullWidth.desc">
+            <de><![CDATA[Volle Breite ohne Container. Inhalt steuert seine Breite selbst über die Klassen qui-content-grid, qui-content-wide und qui-content-full.]]></de>
+            <en><![CDATA[Full width without container. Content controls its own width via the classes qui-content-grid, qui-content-wide and qui-content-full.]]></en>
+        </locale>
         <locale name="admin.layout.noSidebarSmall">
             <de><![CDATA[Keine Sidebar - schmaller Inhalt]]></de>
             <en><![CDATA[No sidebar - thin content]]></en>

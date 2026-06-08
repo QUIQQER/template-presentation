@@ -36,6 +36,7 @@
 
     /* heading */
     --qui-heading-fontWeight: var(--theme--qui-heading-fontWeight, var(--template-settings__heading-font-weight, 700));
+    --qui-heading-line-height: var(--theme--qui-heading-line-height, 1.3);
 
     /* heading: font size */
     --qui-fs-1: 2.75rem;

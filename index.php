@@ -148,6 +148,10 @@ switch ($Template->getLayoutType()) {
         $bodyClass = 'no-sidebar';
         break;
 
+    case 'layout/fullWidth':
+        $bodyClass = 'full-width';
+        break;
+
     case 'layout/noSidebarSmall':
         $bodyClass = 'no-sidebar-small';
         break;
