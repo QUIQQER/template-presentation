@@ -23,7 +23,7 @@
         "quiqqer/gallery": "2.*"
     },
     "suggest": {
-        "quiqqer/search": "The package provides an advanced search for QUIQQER.",
+        "quiqqer/search": "^2.1 - The package provides an advanced search for QUIQQER (>=2.1 required for the lazy-loaded Suggest control).",
         "quiqqer/faq": "The FAQ site type provides an easy way to create a FAQ for your users."
     },
     "autoload": {

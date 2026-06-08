@@ -656,7 +656,7 @@ class Utils
         /* check if quiqqer search package is installed */
         if (QUI::getPackageManager()->isInstalled('quiqqer/search')) {
             $siteTypes[] = 'quiqqer/search:types/search';
-            $searchDataQui = 'package/quiqqer/search/bin/controls/Suggest';
+            $searchDataQui = 'package/quiqqer/search/bin/controls/SuggestLazy';
         }
 
         $searchSites = self::$Project->getSites([
