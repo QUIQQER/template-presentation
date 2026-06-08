@@ -1,0 +1,59 @@
+/**
+ * Content grid with breakout tiers (content / wide / full).
+ *
+ * A container with .qui-content-grid lays its direct children out in a
+ * centered content column by default. Children can go narrower or wider:
+ *
+ *   .qui-content-narrow -> narrow         (--qui-page-narrowSize, reading width)
+ *   (no class)          -> content width  (--qui-page-contentSize, e.g. 1200px)
+ *   .qui-content-wide   -> wider          (--qui-page-wideSize, content + 100px)
+ *   .qui-content-full   -> full bleed     (edge to edge)
+ *
+ * Tiers only affect DIRECT children of .qui-content-grid.
+ *
+ * Modifier .qui-content-grid--narrow makes the default column the reading
+ * width (e.g. for articles). wide stays relative (narrow + 100px), so an
+ * image breaks out slightly past the text:
+ *
+ *   (no class)          -> narrow reading width (e.g. 720px)
+ *   .qui-content-wide   -> narrow + 100px (e.g. 820px)
+ *   .qui-content-full   -> full bleed
+ */
+.qui-content-grid {
+    display: grid;
+    grid-template-columns:
+        [full-start]    minmax(var(--qui-page-padding), 1fr)
+        [wide-start]    minmax(0, calc((var(--qui-page-wideSize) - var(--qui-page-contentSize)) / 2))
+        [content-start] min(var(--qui-page-contentSize), 100% - 2 * var(--qui-page-padding))
+        [content-end]   minmax(0, calc((var(--qui-page-wideSize) - var(--qui-page-contentSize)) / 2))
+        [wide-end]      minmax(var(--qui-page-padding), 1fr)
+        [full-end];
+}
+
+.qui-content-grid--narrow {
+    --qui-page-contentSize: var(--qui-page-narrowSize);
+    /* wideSize must be re-declared here: var() inside a custom property is
+       resolved where the property is declared (:root), so the inherited
+       wideSize would still derive from the root contentSize (1200 -> 1300).
+       Re-declaring it lets var(--qui-page-contentSize) resolve to the local
+       narrow value (720 -> 820). */
+    --qui-page-wideSize: calc(var(--qui-page-contentSize) + 100px);
+}
+
+.qui-content-grid > * {
+    grid-column: content-start / content-end;
+}
+
+.qui-content-grid > .qui-content-narrow {
+    grid-column: content-start / content-end;
+    max-width: var(--qui-page-narrowSize);
+    margin-inline: auto;
+}
+
+.qui-content-grid > .qui-content-wide {
+    grid-column: wide-start / wide-end;
+}
+
+.qui-content-grid > .qui-content-full {
+    grid-column: full-start / full-end;
+}
