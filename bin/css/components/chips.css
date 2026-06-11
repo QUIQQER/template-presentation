@@ -1,0 +1,13 @@
+/**
+ * Chips
+ *
+ * Chips share almost all styling with badges: the base block and all
+ * colour/sizing modifiers (.chip-primary, .chip-neutral, .chip-sm, ...)
+ * are defined in badges.css via grouped selectors and use the same
+ * --qui-badge-* variables. The only difference is the pill shape below.
+ *
+ * Typical usage for category tags: class="chip chip-neutral"
+ */
+.chip {
+    --qui-badge-borderRadius: var(--qui-radius-pill);
+}

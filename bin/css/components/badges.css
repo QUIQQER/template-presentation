@@ -1,6 +1,8 @@
-.badge {
-    border: var(--qui-badge-borderWidth) solid var(--qui-badge-borderColor);
+/* base styles and color modifiers are shared with chips (see chips.css) */
+.badge,
+.chip {
     display: inline-flex;
+    align-items: center;
     gap: 0.5em;
     padding: var(--qui-badge-padding-y) var(--qui-badge-padding-x);
     font-size: var(--qui-badge-fontSize);
@@ -16,84 +18,107 @@
 }
 
 /* colors */
-.badge-primary {
+.badge-primary,
+.chip-primary {
     --qui-badge-bgColor: var(--qui-badge-primary-bgColor);
     --qui-badge-color: var(--qui-badge-primary-color);
 }
 
-.badge-primary-light {
+.badge-primary-light,
+.chip-primary-light {
     --qui-badge-bgColor: var(--qui-badge-primary-light-bgColor);
     --qui-badge-color: var(--qui-badge-primary-light-color);
 }
 
-.badge-secondary {
+.badge-secondary,
+.chip-secondary {
     --qui-badge-bgColor: var(--qui-badge-secondary-bgColor);
     --qui-badge-color: var(--qui-badge-secondary-color);
 }
 
-.badge-secondary-light {
+.badge-secondary-light,
+.chip-secondary-light {
     --qui-badge-bgColor: var(--qui-badge-secondary-light-bgColor);
     --qui-badge-color: var(--qui-badge-secondary-light-color);
 }
 
-.badge-success {
+.badge-success,
+.chip-success {
     --qui-badge-bgColor: var(--qui-badge-success-bgColor);
     --qui-badge-color: var(--qui-badge-success-color);
 }
 
-.badge-success-light {
+.badge-success-light,
+.chip-success-light {
     --qui-badge-bgColor: var(--qui-badge-success-light-bgColor);
     --qui-badge-color: var(--qui-badge-success-light-color);
 }
 
-.badge-danger {
+.badge-danger,
+.chip-danger {
     --qui-badge-bgColor: var(--qui-badge-danger-bgColor);
     --qui-badge-color: var(--qui-badge-danger-color);
 }
 
-.badge-danger-light {
+.badge-danger-light,
+.chip-danger-light {
     --qui-badge-bgColor: var(--qui-badge-danger-light-bgColor);
     --qui-badge-color: var(--qui-badge-danger-light-color);
 }
 
-.badge-warning {
+.badge-warning,
+.chip-warning {
     --qui-badge-bgColor: var(--qui-badge-warning-bgColor);
     --qui-badge-color: var(--qui-badge-warning-color);
 }
 
-.badge-warning-light {
+.badge-warning-light,
+.chip-warning-light {
     --qui-badge-bgColor: var(--qui-badge-warning-light-bgColor);
     --qui-badge-color: var(--qui-badge-warning-light-color);
 }
 
-.badge-info {
+.badge-info,
+.chip-info {
     --qui-badge-bgColor: var(--qui-badge-info-bgColor);
     --qui-badge-color: var(--qui-badge-info-color);
 }
 
-.badge-info-light {
+.badge-info-light,
+.chip-info-light {
     --qui-badge-bgColor: var(--qui-badge-info-light-bgColor);
     --qui-badge-color: var(--qui-badge-info-light-color);
 }
 
-.badge-light {
+.badge-light,
+.chip-light {
     --qui-badge-bgColor: var(--qui-badge-light-bgColor);
     --qui-badge-color: var(--qui-badge-light-color);
 }
 
-.badge-dark {
+.badge-dark,
+.chip-dark {
     --qui-badge-bgColor: var(--qui-badge-dark-bgColor);
     --qui-badge-color: var(--qui-badge-dark-color);
 }
 
-.badge-dark-light {
+.badge-dark-light,
+.chip-dark-light {
     --qui-badge-bgColor: var(--qui-badge-dark-light-bgColor);
     --qui-badge-color: var(--qui-badge-dark-light-color);
 }
 
-.badge-white {
+.badge-white,
+.chip-white {
     --qui-badge-bgColor: var(--qui-badge-white-bgColor);
     --qui-badge-color: var(--qui-badge-white-color);
+}
+
+/* neutral: adapts to light/dark context via inherited text color */
+.badge-neutral,
+.chip-neutral {
+    --qui-badge-bgColor: var(--qui-badge-neutral-bgColor);
+    --qui-badge-color: var(--qui-badge-neutral-color);
 }
 
 /* rounded */
@@ -102,10 +127,12 @@
 }
 
 /* sizing */
-.badge-sm {
+.badge-sm,
+.chip-sm {
     --qui-badge-fontSize: var(--qui-badge-fontSize--sm);
 }
 
-.badge-lg {
+.badge-lg,
+.chip-lg {
     --qui-badge-fontSize: var(--qui-badge-fontSize--lg);
 }
