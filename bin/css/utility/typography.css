@@ -14,7 +14,7 @@
 }
 
 /* text style */
-.small, .text-small {
+.small, .text-small, .fs-sm {
     font-size: var(--qui-fs-sm);
 }
 
@@ -38,10 +38,30 @@
     line-height: var(--qui-heading-line-height);
 }
 
+.lh-xs {
+    line-height: var(--qui-line-height-xs);
+}
+
+.lh-sm {
+    line-height: var(--qui-line-height-sm);
+}
+
+.lh-base {
+    line-height: var(--qui-line-height);
+}
+
+.lh-md {
+    line-height: var(--qui-line-height-md);
+}
+
+.lh-lg {
+    line-height: var(--qui-line-height-lg);
+}
+
 .text-lead,
 .lead {
     font-size: var(--qui-text-lead);
-    line-height: 1.5;
+    line-height: var(--qui-line-height-sm);
 }
 
 .color-heading {
@@ -50,11 +70,11 @@
 
 /**
  * Headings
+ * Keep in sync with the h1-h6 block in ../typography.css
  */
 .h1, .h2, .h3, .h4, .h5, .h6 {
     color: var(--qui-colors-heading);
     font-weight: var(--qui-heading-fontWeight);
-    letter-spacing: 1px;
     line-height: var(--qui-heading-line-height);
     margin-bottom: 0.5em;
 }
@@ -103,10 +123,6 @@
     font-size: var(--qui-fs-xs);
 }
 
-.fs-sm {
-    font-size: var(--qui-fs-sm);
-}
-
 .fs-body {
     font-size: var(--qui-fs-body);
 }
@@ -141,6 +157,10 @@
 
 .fs-6xl {
     font-size: var(--qui-fs-6xl);
+}
+
+.display-1, .display-2, .display-3, .display-4 {
+    line-height: var(--qui-heading-line-height);
 }
 
 .display-1 {

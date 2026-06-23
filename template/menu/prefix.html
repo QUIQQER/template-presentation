@@ -4,10 +4,11 @@
 {assign var=logoSize value=$Setting->getAttribute('logoSize')}
 
 {assign var=LogoForTransparentNav value=$Setting->getAttribute('LogoForTransparentNav')}
+{assign var=logoTitle value=$Setting->getAttribute('logoTitle')}
 
 {if $Logo}
 <div class="header-bar-logo" style=" {if $logoSize.width}--logo-width: {$logoSize.width}px;{/if} {if $logoSize.height}--logo-height: {$logoSize.height}px;{/if}">
-    <a href="{$Project->get(1)->getUrlRewritten()}" class="header-bar-logo__link">
+    <a href="{$Project->get(1)->getUrlRewritten()}" class="header-bar-logo__link"{if $logoTitle} title="{$logoTitle|escape}"{/if}>
         {if $LogoForTransparentNav}
             {image image=$Logo class="header-bar-logo__img" data-show-for="solid-nav" height=$logoSize.height width=$logoSize.width}
             {image image=$LogoForTransparentNav class="header-bar-logo__img" data-show-for="transparent-nav" height=$logoSize.height width=$logoSize.width}

@@ -133,3 +133,133 @@
         text-align: center;
     }
 }
+
+/**
+ * In-flow "back to top" bar, rendered at the end of the footer. The <a> is
+ * always the full clickable area; everything inside is purely visual. The look
+ * is chosen via the .toTopBar--<style> modifier, set from the footer setting
+ * "toTopStyle" (see settings.xml / Utils.php). The floating counterpart button
+ * .btn--toTop is styled in components/buttons.css.
+ */
+
+/* the surrounding strip carries the footer surface; the button itself stays
+   transparent so each variant's own styling is not overpainted */
+.footer-toTopBar-container {
+    background-color: var(--qui-footer-toTopBar-bgColor);
+    color: var(--qui-footer-toTopBar-color);
+}
+
+.toTopBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: var(--qui-footer-toTopBar-padding);
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+    transition: var(--qui-btn-transition);
+}
+
+.toTopBar__inner {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--qui-btn-gap);
+}
+
+/* toTopBar--default */
+.toTopBar--default:hover {
+    background-color: var(--qui-footer-toTopBar-bgColor--hover);
+    color: var(--qui-footer-toTopBar-color--hover);
+}
+/* outline: inner span styled via the .btn .btn-primary-outline component;
+   focus lives on the <a>, so mirror the hover state on keyboard focus */
+.toTopBar--outline:focus-visible .btn-primary-outline {
+    color: var(--qui-btn-primary-outline-color--hover);
+    background-color: var(--qui-btn-primary-outline-bg--hover);
+    border-color: var(--qui-btn-primary-outline-borderColor--hover);
+}
+
+/* outline-light: like outline, using the .btn .btn-light-outline component */
+.toTopBar--outline-light:focus-visible .btn-light-outline {
+    color: var(--qui-btn-light-outline-color--hover);
+    background-color: var(--qui-btn-light-outline-bg--hover);
+    border-color: var(--qui-btn-light-outline-borderColor--hover);
+}
+
+/* badge: chevron in a soft circle above uppercase text, in the primary color */
+.toTopBar--badge {
+    padding-block: calc(2 * var(--qui-footer-toTopBar-padding));
+}
+
+.toTopBar--badge .toTopBar__inner {
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.toTopBar--badge .toTopBar__icon {
+    display: grid;
+    place-items: center;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: var(--qui-radius-full);
+    background-color: color-mix(in srgb, var(--qui-colors-primary), transparent 85%);
+    color: var(--qui-colors-primary);
+}
+
+.toTopBar--badge .toTopBar__text {
+    color: var(--qui-colors-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* dashed: dashed lines + a filled primary icon circle; the text stays neutral */
+.toTopBar--dashed {
+    padding-block: calc(2 * var(--qui-footer-toTopBar-padding));
+}
+
+.toTopBar--dashed .toTopBar__inner {
+    display: flex;
+    width: 100%;
+    max-width: 60rem;
+}
+
+.toTopBar--dashed .toTopBar__inner::before,
+.toTopBar--dashed .toTopBar__inner::after {
+    content: "";
+    flex: 1;
+    border-top: 2px dashed hsl(from var(--qui-colors-primary) h s l / 5 0%);
+    mask-image: linear-gradient(to var(--mask-direction), black, transparent);
+}
+
+.toTopBar--dashed .toTopBar__inner::before {
+    --mask-direction: left;
+}
+.toTopBar--dashed .toTopBar__inner::after {
+    --mask-direction: right;
+}
+
+.toTopBar--dashed .toTopBar__icon {
+    display: grid;
+    place-items: center;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: var(--qui-radius-full);
+    background-color: var(--qui-colors-primary);
+    color: var(--qui-btn-primary-color);
+}
+
+/* stacked: chevron above uppercase text, in the inherited (current) color */
+.toTopBar--stacked {
+    padding-block: calc(2 * var(--qui-footer-toTopBar-padding));
+}
+
+.toTopBar--stacked .toTopBar__inner {
+    flex-direction: column;
+    gap: 0.35em;
+}
+
+.toTopBar--stacked .toTopBar__text {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}

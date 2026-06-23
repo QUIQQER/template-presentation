@@ -347,6 +347,34 @@
                     </area>
                 </layout>
 
+                <layout layout="layout/fullWidth">
+                    <area name="prefixContentBricks" inheritance="1" priority="20">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="suffixContentBricks" inheritance="1" priority="30">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.description"
+                            />
+                        </description>
+                    </area>
+                </layout>
+
                 <layout layout="layout/noSidebarSmall">
                     <area name="prefixContentBricks" inheritance="1" priority="20">
                         <title>

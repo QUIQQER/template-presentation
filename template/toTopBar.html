@@ -1,0 +1,28 @@
+{assign var=Setting value=$Template->getAttribute('TemplateSetting')}
+
+{if $Setting->getAttribute('showToTopBar')}
+    {assign var=toTopStyle value=$Setting->getAttribute('toTopBarStyle')}
+
+    {assign var=toTopIcon value="fa-arrow-up"}
+    {if $toTopStyle == 'badge' || $toTopStyle == 'stacked'}
+        {assign var=toTopIcon value="fa-chevron-up"}
+    {/if}
+
+    {assign var=toTopInnerClass value="toTopBar__inner"}
+    {if $toTopStyle == 'outline'}
+        {assign var=toTopInnerClass value="toTopBar__inner btn btn-primary-outline"}
+    {elseif $toTopStyle == 'outline-light'}
+        {assign var=toTopInnerClass value="toTopBar__inner btn btn-light-outline"}
+    {/if}
+
+    <div class="footer-toTopBar-container">
+        <a href="#top" class="toTopBar toTopBar--{$toTopStyle|escape:'html'}" data-name="toTopBar">
+            <span class="{$toTopInnerClass}">
+                <i class="toTopBar__icon fa {$toTopIcon}" aria-hidden="true"></i>
+                <span class="toTopBar__text">
+                    {locale group='quiqqer/template-presentation' var='frontend.button.toTopBar'}
+                </span>
+            </span>
+        </a>
+    </div>
+{/if}

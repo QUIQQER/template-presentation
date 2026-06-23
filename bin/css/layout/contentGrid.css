@@ -48,6 +48,7 @@
     grid-column: content-start / content-end;
     max-width: var(--qui-page-narrowSize);
     margin-inline: auto;
+    width: 100%;
 }
 
 .qui-content-grid > .qui-content-wide {

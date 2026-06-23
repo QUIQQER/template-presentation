@@ -6,17 +6,16 @@
  * - To change font size set variable --theme--qui-font-size
  */
 :root {
-    --qui-badge-padding-y: var(--theme--qui-badge-padding-y, 0.4em);
-    --qui-badge-padding-x: var(--theme--qui-badge-padding-x, 0.75em);
+    --qui-badge-padding-y: var(--theme--qui-badge-padding-y, 0.5em);
+    --qui-badge-padding-x: var(--theme--qui-badge-padding-x, 0.8em);
     --qui-badge-fontSize: var(--qui-badge-fontSize--base);
     --qui-badge-fontSize--base: var(--theme--qui-badge-fontSize--base, 0.85em);
     --qui-badge-fontSize--sm: var(--theme--qui-badge-fontSize--sm, 0.7em);
     --qui-badge-fontSize--lg: var(--theme--qui-badge-fontSize--lg, 1em);
     --qui-badge-fontWeight: var(--theme--qui-badge-fontWeight, normal);
-    --qui-badge-color: inherit;
-    --qui-badge-bgColor: transparent;
-    --qui-badge-borderWidth: var(--theme--qui-badge-borderWidth, 1px);
-    --qui-badge-borderColor: var(--theme--qui-badge-borderColor, color-mix(in srgb, var(--qui-badge-bgColor), black 4%));
+    /* default look is the neutral variant; override per element or modifier */
+    --qui-badge-color: var(--qui-badge-neutral-color);
+    --qui-badge-bgColor: var(--qui-badge-neutral-bgColor);
     --qui-badge-borderRadius: var(--theme--qui-badge-borderRadius, var(--qui-radius-badge, 0.75rem));
 
     --qui-badge-primary-bgColor: var(--theme--qui-badge-primary-bgColor, var(--qui-colors-primary));
@@ -59,4 +58,9 @@
 
     --qui-badge-white-bgColor: var(--theme--qui-badge-white-bgColor, #fff);
     --qui-badge-white-color: var(--theme--qui-badge-white-color, #111);
+
+    /* neutral: greyscale tint derived from the inherited text color, so it
+       adapts to light/dark contexts without a colour cast */
+    --qui-badge-neutral-bgColor: var(--theme--qui-badge-neutral-bgColor, hsl(from currentColor 0 0% l / 8%));
+    --qui-badge-neutral-color: var(--theme--qui-badge-neutral-color, hsl(from currentColor h s l));
 }
