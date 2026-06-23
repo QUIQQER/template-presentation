@@ -271,6 +271,10 @@ class Utils
         $contentTablesScrollable = $Project->getConfig(
             'templatePresentation.settings.typography.contentTablesScrollable'
         );
+        $logoTitle = self::resolveLocalizedConfigText(
+            $Project->getConfig('templatePresentation.settings.logoTitle'),
+            $Project->getLang()
+        );
         $breadcrumbShowTitle = $Project->getConfig('templatePresentation.settings.breadcrumb.showTitle');
         $breadcrumbTitleText = self::resolveLocalizedConfigText(
             $Project->getConfig('templatePresentation.settings.breadcrumb.titleText'),
@@ -363,6 +367,7 @@ class Utils
             'showToTopBar' => $showToTopBar,
             'pageCustomClass' => $pageCustomClass,
             'logoSize' => self::getLogoSize(),
+            'logoTitle' => $logoTitle,
             'useSlideOutMenu' => true, // for now is always true because quiqqer use currently only SlideOut nav
             'includeDemoCss' => $includeDemoCss,
             'contentTablesScrollable' => $contentTablesScrollable,

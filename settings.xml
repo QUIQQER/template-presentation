@@ -121,6 +121,9 @@
                     <conf name="logoWidth">
                         <type><![CDATA[integer]]></type>
                     </conf>
+                    <conf name="logoTitle">
+                        <type><![CDATA[string]]></type>
+                    </conf>
 
                     <!-- nav / menu: independent -->
                     <conf name="enableIndependentMenu">
@@ -597,6 +600,20 @@
                                 <description>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.logoWidth.desc"
+                                    />
+                                </description>
+                            </input>
+                            <input conf="templatePresentation.settings.logoTitle"
+                                   type="text"
+                                   data-qui="controls/lang/InputMultiLang">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.logoTitle.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.logoTitle.desc"
                                     />
                                 </description>
                             </input>

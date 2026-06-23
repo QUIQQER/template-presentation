@@ -883,6 +883,15 @@
             <en><![CDATA[In most cases, you don't need to set the logo width. The template automatically calculates the width based on the specified height. In rare cases, QUIQQER may not be able to perform the calculation (e.g. if the logo is an .svg image). <strong>If the logo is a <code>.svg</strong> image, the width must be entered.</strong>]]></en>
         </locale>
 
+        <locale name="templatePresentation.settings.logoTitle.text">
+            <de><![CDATA[Hover-Titel]]></de>
+            <en><![CDATA[Hover title]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.logoTitle.desc">
+            <de><![CDATA[Optionaler Text, der als Tooltip erscheint, wenn man mit der Maus über das Logo fährt (HTML-<code>title</code>-Attribut des Logo-Links).]]></de>
+            <en><![CDATA[Optional text shown as a tooltip when hovering over the logo (HTML <code>title</code> attribute of the logo link).]]></en>
+        </locale>
+
         <!-- Bricks -->
         <locale name="settings.bricks.bricks.title">
             <de><![CDATA[Bausteine (Widgets)]]></de>
