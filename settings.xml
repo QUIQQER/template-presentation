@@ -271,6 +271,16 @@
                         <type><![CDATA[string]]></type>
                     </conf>
 
+                    <!-- footer -->
+                    <conf name="footer.showToTop">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>1</defaultvalue>
+                    </conf>
+                    <conf name="footer.toTopStyle">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>default</defaultvalue>
+                    </conf>
+
                     <!-- social -->
                     <conf name="social.show.nav">
                         <type><![CDATA[bool]]></type>
@@ -1378,6 +1388,74 @@
                                 <option value="pill-border">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.breadcrumb.appearance.option.pillBorder"
+                                    />
+                                </option>
+                            </select>
+                        </settings>
+
+                        <!-- Footer -->
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.footer">
+                            <title>
+                                <locale group="quiqqer/template-presentation"
+                                        var="templatePresentation.settings.footer.title"
+                                />
+                            </title>
+
+                            <input conf="templatePresentation.settings.footer.showToTop"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.footer.showToTop.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.footer.showToTop.description"
+                                    />
+                                </description>
+                            </input>
+
+                            <select conf="templatePresentation.settings.footer.toTopStyle">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.footer.toTopStyle.text"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.footer.toTopStyle.description"
+                                    />
+                                </description>
+
+                                <option value="default">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.footer.toTopStyle.option.default"
+                                    />
+                                </option>
+                                <option value="outline">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.footer.toTopStyle.option.outline"
+                                    />
+                                </option>
+                                <option value="outline-light">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.footer.toTopStyle.option.outlineLight"
+                                    />
+                                </option>
+                                <option value="badge">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.footer.toTopStyle.option.badge"
+                                    />
+                                </option>
+                                <option value="dashed">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.footer.toTopStyle.option.dashed"
+                                    />
+                                </option>
+                                <option value="stacked">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.footer.toTopStyle.option.stacked"
                                     />
                                 </option>
                             </select>

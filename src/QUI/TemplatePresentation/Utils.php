@@ -304,6 +304,16 @@ class Utils
             $breadcrumbAppearance = 'default';
         }
 
+        $toTopBarStyle = $Project->getConfig('templatePresentation.settings.footer.toTopStyle');
+        $allowedToTopBarStyles = ['default', 'outline', 'outline-light', 'badge', 'dashed', 'stacked'];
+
+        if (!in_array($toTopBarStyle, $allowedToTopBarStyles, true)) {
+            $toTopBarStyle = 'default';
+        }
+
+        // active by default: only an explicitly saved "0" disables the bar
+        $showToTopBar = $Project->getConfig('templatePresentation.settings.footer.showToTop') !== '0';
+
         $breadcrumb = [];
 
         if (in_array($breadcrumbShowTitle, ['enable', 'disable'], true)) {
@@ -349,6 +359,8 @@ class Utils
             'showPageTitle' => $showPageTitle,
             'showPageShort' => $showPageShort,
             'breadcrumbAppearance' => $breadcrumbAppearance,
+            'toTopBarStyle' => $toTopBarStyle,
+            'showToTopBar' => $showToTopBar,
             'pageCustomClass' => $pageCustomClass,
             'logoSize' => self::getLogoSize(),
             'useSlideOutMenu' => true, // for now is always true because quiqqer use currently only SlideOut nav
