@@ -43,7 +43,7 @@
 {/if}
 
 {if !empty($suffixContentBricks)}
-    <div class="tpl-brickArea-contentPrefix">
+    <div class="tpl-brickArea-contentSuffix">
         {foreach from=$suffixContentBricks item=Brick}
             {* 1. *}
             {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="contentSuffix" Template=$Template fullWidth=true}
