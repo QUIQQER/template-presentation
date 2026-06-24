@@ -10,8 +10,8 @@
     },
     "require": {
         "php": "^8.1",
-        "quiqqer/core": "^2.18.2",
-        "quiqqer/bricks": "^2.26",
+        "quiqqer/core": "^2.21",
+        "quiqqer/bricks": "^2.28",
         "quiqqer/fontawesome": "6.*",
         "quiqqer/sitetypes": "2.*",
         "quiqqer/menu": "3.*",
