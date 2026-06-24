@@ -17,3 +17,13 @@ phpunit-php8.2:
 phpunit-php8.3:
   rules:
     - when: never
+
+# Disable PHPUnit on PHP 8.4: no QUIQQER 1 testing image (quiqqer/testing:1-php8.4)
+phpunit-php8.4:
+  rules:
+    - when: never
+
+# Disable PHPUnit on PHP 8.5: no QUIQQER 1 testing image (quiqqer/testing:1-php8.5)
+phpunit-php8.5:
+  rules:
+    - when: never
