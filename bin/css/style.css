@@ -420,6 +420,7 @@ section.quiqqer-portfolio-list {
 
 .qui-form > fieldset {
     border: none;
+    padding: 0;
 }
 
 .qui-form legend {

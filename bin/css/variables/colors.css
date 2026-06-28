@@ -14,10 +14,7 @@
     --qui-colors-modal-actions: var(--theme--qui-colors-modal-action, var(--qui-colors-modal));
     --qui-colors-heading: var(--theme--qui-colors-heading, inherit);
     --qui-colors-text-muted: var(--theme--qui-colors-text-muted, #8a8e93);
-    --qui-colors-text-soft: var(
---theme--qui-colors-text-soft,
-        color-mix(in srgb, var(--qui-colors-text-muted) 70%, var(--qui-colors-background))
-    );
+    --qui-colors-text-soft: var(--theme--qui-colors-text-soft, color-mix(in srgb, var(--qui-colors-text-muted) 70%, var(--qui-colors-background)));
     --qui-colors-link: var(--theme--qui-link-color, var(--qui-colors-primary));
     --qui-colors-link--hover: var(--theme--qui-link-color--hover, var(--qui-colors-primary-700));
     --qui-colors-focus-ring: var(--theme--qui-colors-focus-ring, var(--qui-colors-primary-50));
