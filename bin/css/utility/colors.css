@@ -4,7 +4,7 @@
 
 /* general */
 .bg-body {
-    background-color: var(--qui-colors-body);
+    background-color: var(--qui-colors-background);
 }
 
 .text-body {
@@ -13,6 +13,10 @@
 
 .text-muted {
     color: var(--qui-colors-text-muted);
+}
+
+.text-soft {
+    color: var(--qui-colors-text-soft);
 }
 
 /* black & white */
