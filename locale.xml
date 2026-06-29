@@ -883,6 +883,15 @@
             <en><![CDATA[In most cases, you don't need to set the logo width. The template automatically calculates the width based on the specified height. In rare cases, QUIQQER may not be able to perform the calculation (e.g. if the logo is an .svg image). <strong>If the logo is a <code>.svg</strong> image, the width must be entered.</strong>]]></en>
         </locale>
 
+        <locale name="templatePresentation.settings.logoTitle.text">
+            <de><![CDATA[Hover-Titel]]></de>
+            <en><![CDATA[Hover title]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.logoTitle.desc">
+            <de><![CDATA[Optionaler Text, der als Tooltip erscheint, wenn man mit der Maus über das Logo fährt (HTML-<code>title</code>-Attribut des Logo-Links).]]></de>
+            <en><![CDATA[Optional text shown as a tooltip when hovering over the logo (HTML <code>title</code> attribute of the logo link).]]></en>
+        </locale>
+
         <!-- Bricks -->
         <locale name="settings.bricks.bricks.title">
             <de><![CDATA[Bausteine (Widgets)]]></de>
@@ -1369,6 +1378,54 @@
         <locale name="frontend.button.toTop">
             <de><![CDATA[Nach oben scrollen]]></de>
             <en><![CDATA[Scroll to top]]></en>
+        </locale>
+        <locale name="frontend.button.toTopBar">
+            <de><![CDATA[Zurück zum Seitenanfang]]></de>
+            <en><![CDATA[Back to top]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.title">
+            <de><![CDATA[Footer]]></de>
+            <en><![CDATA[Footer]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.showToTop.text">
+            <de><![CDATA["Zurück zum Seitenanfang" anzeigen]]></de>
+            <en><![CDATA[Show "back to top" bar]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.showToTop.description">
+            <de><![CDATA[Blendet die Leiste „Zurück zum Seitenanfang" am Ende des Footers ein oder aus.]]></de>
+            <en><![CDATA[Shows or hides the "back to top" bar at the end of the footer.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.text">
+            <de><![CDATA[Stil „Zurück zum Seitenanfang"]]></de>
+            <en><![CDATA["Back to top" style]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.description">
+            <de><![CDATA[Legt fest, wie die Leiste „Zurück zum Seitenanfang" unterhalb des Footers gestaltet wird. Die gesamte Fläche bleibt klickbar.]]></de>
+            <en><![CDATA[Defines how the "back to top" bar below the footer is styled. The whole area stays clickable.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.option.default">
+            <de><![CDATA[Standard (Icon + Text)]]></de>
+            <en><![CDATA[Default (icon + text)]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.option.outline">
+            <de><![CDATA[Umrandeter Button]]></de>
+            <en><![CDATA[Outlined button]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.option.outlineLight">
+            <de><![CDATA[Umrandeter Button (hell)]]></de>
+            <en><![CDATA[Outlined button (light)]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.option.badge">
+            <de><![CDATA[Icon-Kreis über Text]]></de>
+            <en><![CDATA[Circle icon above text]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.option.dashed">
+            <de><![CDATA[Gestrichelte Linien]]></de>
+            <en><![CDATA[Dashed lines]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.option.stacked">
+            <de><![CDATA[Icon über Text]]></de>
+            <en><![CDATA[Icon above text]]></en>
         </locale>
     </groups>
 </locales>

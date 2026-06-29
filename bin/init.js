@@ -5,7 +5,6 @@ whenQuiLoaded().then(() => {
     const contentTableScrollEnabled = typeof CONTENT_TABLE_SCROLL !== 'undefined' && CONTENT_TABLE_SCROLL === 1;
     const scrollableMaskTolerance = 1;
     const toTopShowOffset = 300;
-    const toTopHideOffsetFromPageEnd = 160;
     let scrollOffset = defaultScrollOffset;
     const reducedMotionMediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -192,6 +191,16 @@ whenQuiLoaded().then(() => {
      * toTop button
      */
     const toTopBtn = document.querySelector('[data-name="toTop"]');
+    const toTopBar = document.querySelector('[data-name="toTopBar"]');
+
+    const scrollToTop = function (event) {
+        event.preventDefault();
+        scrollToPosition(0);
+    };
+
+    if (toTopBar) {
+        toTopBar.addEventListener('click', scrollToTop);
+    }
 
     if (toTopBtn) {
         let buttonVisible = false;
@@ -211,8 +220,13 @@ whenQuiLoaded().then(() => {
         const updateToTopVisibility = function () {
             const scrollY = getCurrentScrollY();
             const viewportBottom = scrollY + window.innerHeight;
-            const pageEnd = document.documentElement.scrollHeight - toTopHideOffsetFromPageEnd;
-            const visible = scrollY > toTopShowOffset && viewportBottom < pageEnd;
+            // Hide the floating button as soon as the in-flow toTopBar scrolls
+            // into view, so the two controls never overlap and there is never a
+            // gap where neither is reachable.
+            const barTop = toTopBar
+                ? toTopBar.getBoundingClientRect().top + scrollY
+                : document.documentElement.scrollHeight;
+            const visible = scrollY > toTopShowOffset && viewportBottom < barTop;
 
             if (visible === buttonVisible) {
                 return;
@@ -229,10 +243,7 @@ whenQuiLoaded().then(() => {
             passive: true
         });
 
-        toTopBtn.addEventListener('click', function (event) {
-            event.preventDefault();
-            scrollToPosition(0);
-        });
+        toTopBtn.addEventListener('click', scrollToTop);
     }
 
     // load QUI

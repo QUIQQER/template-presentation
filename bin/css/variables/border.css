@@ -13,11 +13,11 @@
     --qui-radius-xs: var(--theme--qui-radius-xs, calc(var(--qui-radius-base) * 0.25));
     --qui-radius-sm: var(--theme--qui-radius-sm, calc(var(--qui-radius-base) * 0.5));
     --qui-radius-base: var(--theme--qui-radius-base, 0.5rem);
-    --qui-radius-md: var(--theme-radius--md, calc(var(--qui-radius-base) * 1.5));
-    --qui-radius-lg: var(--theme-radius--lg, calc(var(--qui-radius-base) * 2));
-    --qui-radius-xl: var(--theme-radius--xl, calc(var(--qui-radius-base) * 3));
-    --qui-radius-2xl: var(--theme-radius--2xl, calc(var(--qui-radius-base) * 4));
-    --qui-radius-3xl: var(--theme-radius--3xl, calc(var(--qui-radius-base) * 5));
+    --qui-radius-md: var(--theme--qui-radius-md, calc(var(--qui-radius-base) * 1.5));
+    --qui-radius-lg: var(--theme--qui-radius-lg, calc(var(--qui-radius-base) * 2));
+    --qui-radius-xl: var(--theme--qui-radius-xl, calc(var(--qui-radius-base) * 3));
+    --qui-radius-2xl: var(--theme--qui-radius-2xl, calc(var(--qui-radius-base) * 4));
+    --qui-radius-3xl: var(--theme--qui-radius-3xl, calc(var(--qui-radius-base) * 5));
     --qui-radius-full: 9999px;
 
     /* semantic naming */

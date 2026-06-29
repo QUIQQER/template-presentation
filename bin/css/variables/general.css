@@ -80,6 +80,13 @@
 
     --qui-footer-copyrigth-border-top-color: var(--theme--qui-footer-copyrigth-border-top-color, color-mix(in srgb, var(--qui-footer-bg) 90%, black 10%));
 
+    /* footer: back to top bar */
+    --qui-footer-toTopBar-bgColor: var(--theme--qui-footer-toTopBar-bgColor, rgba(0,0,0,0.05));
+    --qui-footer-toTopBar-color: var(--theme--qui-footer-toTopBar-color, hsl(from currentColor h s l / 75%));
+    --qui-footer-toTopBar-bgColor--hover: var(--theme--qui-footer-toTopBar-bgColor--hover, rgba(0,0,0,0.08));
+    --qui-footer-toTopBar-color--hover: var(--theme--qui-footer-toTopBar-color--hover, var(--qui-footer-font-color));
+    --qui-footer-toTopBar-padding: var(--theme--qui-footer-toTopBar-padding, 1em);
+
     /* background */
     --qui-bg-primary: #ddd; /* todo  */
     --qui-bg-secondary: #f5f5f5; /* todo */

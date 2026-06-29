@@ -79,7 +79,8 @@
                                 var="brick.settings.bgImage.desc"/>
                     </description>
                 </setting>
-                <setting name="enableBrickBgColor" type="select">
+                <setting name="enableBrickBgColor" type="select"
+                         data-qui="package/quiqqer/core/bin/QUI/controls/settings/Dependency">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.enableBgColor"/>
 
@@ -96,7 +97,9 @@
                                 var="brick.settings.enableSelect.enable.useTemplateSetting"/>
                     </option>
                 </setting>
-                <setting name="brickBgColor" type="color">
+                <setting name="brickBgColor" type="color"
+                         data-dependency="enableBrickBgColor"
+                         data-dependency-options="enable.useBrickSetting">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.bgColor"/>
                     <description>
@@ -104,7 +107,8 @@
                                 var="brick.settings.bgColor.desc"/>
                     </description>
                 </setting>
-                <setting name="enableBrickTextColor" type="select">
+                <setting name="enableBrickTextColor" type="select"
+                         data-qui="package/quiqqer/core/bin/QUI/controls/settings/Dependency">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.enableTextColor"/>
 
@@ -121,7 +125,9 @@
                                 var="brick.settings.enableSelect.enable.useTemplateSetting"/>
                     </option>
                 </setting>
-                <setting name="brickTextColor" type="color">
+                <setting name="brickTextColor" type="color"
+                         data-dependency="enableBrickTextColor"
+                         data-dependency-options="enable.useBrickSetting">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.textColor"/>
                     <description>
@@ -131,12 +137,12 @@
                 </setting>
                 <!-- BRICK SETTINGS: separator top -->
                 <setting name="brickSeparatorTop.enable" type="checkbox"
-                         data-qui="package/quiqqer/template-presentation/bin/Controls/backend/SettingDependency"
+                         data-qui="package/quiqqer/core/bin/QUI/controls/settings/Dependency"
                 >
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorTop.enable"/>
                 </setting>
-                <setting name="brickSeparatorTop.image" class="media-image" data-dependency="templatePresentation-brickSeparatorTop.enable">
+                <setting name="brickSeparatorTop.image" class="media-image" data-dependency="brickSeparatorTop.enable">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorTop.image"/>
                     <description>
@@ -144,7 +150,7 @@
                                 var="brick.settings.separatorTop.image.desc"/>
                     </description>
                 </setting>
-                <setting name="brickSeparatorTop.width" type="text" data-dependency="templatePresentation-brickSeparatorTop.enable">
+                <setting name="brickSeparatorTop.width" type="text" data-dependency="brickSeparatorTop.enable">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorTop.width"/>
                     <description>
@@ -152,7 +158,7 @@
                                 var="brick.settings.separatorTop.width.desc"/>
                     </description>
                 </setting>
-                <setting name="brickSeparatorTop.height" type="text" data-dependency="templatePresentation-brickSeparatorTop.enable">
+                <setting name="brickSeparatorTop.height" type="text" data-dependency="brickSeparatorTop.enable">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorTop.height"/>
                     <description>
@@ -162,12 +168,12 @@
                 </setting>
                 <!-- BRICK SETTINGS: separator bottom -->
                 <setting name="brickSeparatorBottom.enable" type="checkbox"
-                         data-qui="package/quiqqer/template-presentation/bin/Controls/backend/SettingDependency"
+                         data-qui="package/quiqqer/core/bin/QUI/controls/settings/Dependency"
                 >
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorBottom.enable"/>
                 </setting>
-                <setting name="brickSeparatorBottom.image" class="media-image" data-dependency="templatePresentation-brickSeparatorBottom.enable">
+                <setting name="brickSeparatorBottom.image" class="media-image" data-dependency="brickSeparatorBottom.enable">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorBottom.image"/>
                     <description>
@@ -175,7 +181,7 @@
                                 var="brick.settings.separatorBottom.image.desc"/>
                     </description>
                 </setting>
-                <setting name="brickSeparatorBottom.width" type="text" data-dependency="templatePresentation-brickSeparatorBottom.enable">
+                <setting name="brickSeparatorBottom.width" type="text" data-dependency="brickSeparatorBottom.enable">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorBottom.width"/>
                     <description>
@@ -183,7 +189,7 @@
                                 var="brick.settings.separatorBottom.width.desc"/>
                     </description>
                 </setting>
-                <setting name="brickSeparatorBottom.height" type="text" data-dependency="templatePresentation-brickSeparatorBottom.enable">
+                <setting name="brickSeparatorBottom.height" type="text" data-dependency="brickSeparatorBottom.enable">
                     <locale group="quiqqer/template-presentation"
                             var="brick.settings.separatorBottom.height"/>
                     <description>
@@ -343,6 +349,34 @@
                             <locale group="quiqqer/template-presentation"
                                     var="area.sidebar.suffix.content.description"
                                     />
+                        </description>
+                    </area>
+                </layout>
+
+                <layout layout="layout/fullWidth">
+                    <area name="prefixContentBricks" inheritance="1" priority="20">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.prefix.content.description"
+                            />
+                        </description>
+                    </area>
+
+                    <area name="suffixContentBricks" inheritance="1" priority="30">
+                        <title>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.title"
+                            />
+                        </title>
+                        <description>
+                            <locale group="quiqqer/template-presentation"
+                                    var="area.sidebar.suffix.content.description"
+                            />
                         </description>
                     </area>
                 </layout>

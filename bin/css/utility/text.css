@@ -102,3 +102,8 @@
     --color: var(--qui-colors-text-muted);
     --color--hover: var(--qui-colors-dark-400);
 }
+
+.link-soft {
+    --color: var(--qui-colors-text-soft);
+    --color--hover: var(--qui-colors-text-muted);
+}

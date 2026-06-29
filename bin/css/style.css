@@ -420,6 +420,7 @@ section.quiqqer-portfolio-list {
 
 .qui-form > fieldset {
     border: none;
+    padding: 0;
 }
 
 .qui-form legend {
@@ -437,11 +438,6 @@ section.quiqqer-portfolio-list {
 .qui-formfield label {
     display: block;
     margin-bottom: 0;
-}
-
-.qui-form input[type="submit"] {
-    /*width: 100%;*/
-    font-weight: bold;
 }
 
 /*********************************************************************************/
