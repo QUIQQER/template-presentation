@@ -637,6 +637,86 @@
             ]]></en>
         </locale>
 
+        <!-- overline -->
+        <locale name="settings.overline.style.title">
+            <de><![CDATA[Overline Stil]]></de>
+            <en><![CDATA[Overline style]]></en>
+        </locale>
+        <locale name="settings.overline.style.desc">
+            <de><![CDATA[
+                <p>Eine Overline ist ein kleines Label in Versalien, das über einer Überschrift steht. Diese Einstellung legt das Standard-Aussehen für Elemente mit der CSS-Klasse <code>overline</code> fest.</p>
+                <p>Einzelne Overlines können vom Standard abweichen, indem zusätzlich eine Varianten-Klasse gesetzt wird, z.B. <code>overline overline--dot</code>. Mit der Klasse <code>overline-center</code> wird die Overline zentriert.</p>
+                <p>Nummerierte Overlines zählen automatisch seitenweit hoch. Mit der Klasse <code>overline-reset</code> (auf einem umschließenden Container oder auf der ersten Overline einer Gruppe) beginnt die Zählung neu bei 01. Werden mehrere Gruppen gebildet, sollte jede Gruppe ein eigenes <code>overline-reset</code> erhalten.</p>
+                <p>Die Textfarbe wird über die Einstellung "Overline Textfarbe" festgelegt und kann pro Overline mit den Klassen <code>overline-primary</code> bzw. <code>overline-neutral</code> übersteuert werden. Icons (z.B. Font Awesome) innerhalb der Overline passen sich automatisch an; dekorative Icons sollten <code>aria-hidden="true"</code> erhalten.</p>
+            ]]></de>
+            <en><![CDATA[
+                <p>An overline is a small uppercase label displayed above a heading. This setting defines the default appearance for elements with the CSS class <code>overline</code>.</p>
+                <p>Individual overlines can deviate from the default by adding a variant class, e.g. <code>overline overline--dot</code>. The class <code>overline-center</code> centers the overline.</p>
+                <p>Numbered overlines count up automatically across the page. The class <code>overline-reset</code> (on a surrounding container or on the first overline of a group) restarts the counting at 01. When building multiple groups, give every group its own <code>overline-reset</code>.</p>
+                <p>The text color is defined by the "Overline text color" setting and can be overridden per overline with the classes <code>overline-primary</code> and <code>overline-neutral</code>. Icons (e.g. Font Awesome) inside the overline adapt automatically; decorative icons should get <code>aria-hidden="true"</code>.</p>
+            ]]></en>
+        </locale>
+        <locale name="settings.overline.style.line">
+            <de><![CDATA[Linie]]></de>
+            <en><![CDATA[Line]]></en>
+        </locale>
+        <locale name="settings.overline.style.dot">
+            <de><![CDATA[Farbiger Punkt]]></de>
+            <en><![CDATA[Colored dot]]></en>
+        </locale>
+        <locale name="settings.overline.style.bar">
+            <de><![CDATA[Vertikaler Balken]]></de>
+            <en><![CDATA[Vertical bar]]></en>
+        </locale>
+        <locale name="settings.overline.style.number">
+            <de><![CDATA[Nummer (zählt automatisch hoch)]]></de>
+            <en><![CDATA[Number (counts up automatically)]]></en>
+        </locale>
+        <locale name="settings.overline.style.lineNumber">
+            <de><![CDATA[Linie + Nummer (zählt automatisch hoch)]]></de>
+            <en><![CDATA[Line + number (counts up automatically)]]></en>
+        </locale>
+        <locale name="settings.overline.style.badge">
+            <de><![CDATA[Badge (Kapsel mit Hintergrund)]]></de>
+            <en><![CDATA[Badge (pill with background)]]></en>
+        </locale>
+        <locale name="settings.overline.style.badgeDot">
+            <de><![CDATA[Badge mit Punkt]]></de>
+            <en><![CDATA[Badge with dot]]></en>
+        </locale>
+        <locale name="settings.overline.style.badgeGhost">
+            <de><![CDATA[Badge Ghost (dezenter Rahmen, transparent)]]></de>
+            <en><![CDATA[Badge ghost (subtle border, transparent)]]></en>
+        </locale>
+        <locale name="settings.overline.style.underline">
+            <de><![CDATA[Unterstrich]]></de>
+            <en><![CDATA[Underline]]></en>
+        </locale>
+        <locale name="settings.overline.style.slash">
+            <de><![CDATA[Schrägstriche (//)]]></de>
+            <en><![CDATA[Slashes (//)]]></en>
+        </locale>
+        <locale name="settings.overline.style.plain">
+            <de><![CDATA[Nur Text (ohne Symbol)]]></de>
+            <en><![CDATA[Text only (no symbol)]]></en>
+        </locale>
+        <locale name="settings.overline.textColor.title">
+            <de><![CDATA[Overline Textfarbe]]></de>
+            <en><![CDATA[Overline text color]]></en>
+        </locale>
+        <locale name="settings.overline.textColor.desc">
+            <de><![CDATA[Legt die Standard-Textfarbe der Overlines fest. "Neutral" erbt die Textfarbe vom umgebenden Kontext (empfohlen; die Akzentfarbe bleibt dem Symbol vorbehalten). Pro Overline übersteuerbar mit den Klassen <code>overline-primary</code> bzw. <code>overline-neutral</code>.]]></de>
+            <en><![CDATA[Defines the default text color of overlines. "Neutral" inherits the text color from the surrounding context (recommended; the accent color stays reserved for the symbol). Can be overridden per overline with the classes <code>overline-primary</code> and <code>overline-neutral</code>.]]></en>
+        </locale>
+        <locale name="settings.overline.textColor.neutral">
+            <de><![CDATA[Neutral (erbt vom Kontext)]]></de>
+            <en><![CDATA[Neutral (inherits from context)]]></en>
+        </locale>
+        <locale name="settings.overline.textColor.primary">
+            <de><![CDATA[Primärfarbe]]></de>
+            <en><![CDATA[Primary color]]></en>
+        </locale>
+
         <!-- header settings -->
         <locale name="templatePresentation.settings.showHeader.title">
             <de><![CDATA[Header Einstellungen]]></de>

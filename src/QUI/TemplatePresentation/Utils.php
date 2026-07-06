@@ -201,6 +201,28 @@ class Utils
             default => 'default'
         };
 
+        /**
+         * Overline (default style, rendered as data-tpl-overline on <body>)
+         */
+        $overlineStyle = $Project->getConfig('templatePresentation.settings.overline.style');
+        $allowedOverlineStyles = [
+            'line',
+            'dot',
+            'bar',
+            'number',
+            'line-number',
+            'badge',
+            'badge-dot',
+            'badge-ghost',
+            'underline',
+            'slash',
+            'plain'
+        ];
+
+        if (!in_array($overlineStyle, $allowedOverlineStyles, true)) {
+            $overlineStyle = 'line';
+        }
+
         $navHeight = (int)self::$Project->getConfig('templatePresentation.settings.navBarHeight');
         $navPos = self::$Project->getConfig('templatePresentation.settings.navPos');
         $navBarScrollOffset = self::$Project->getConfig('templatePresentation.settings.navBarScrollOffset');
@@ -354,6 +376,7 @@ class Utils
             'typeClass' => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'navPos' => $navPos,
             'navStyle' => $navStyle,
+            'overlineStyle' => $overlineStyle,
             'navBarScrollOffset' => $navBarScrollOffset,
             'scrollOffset' => $scrollOffset,
             'searchData' => self::getSearchData(),
@@ -820,6 +843,12 @@ class Utils
             );
         }
 
+        $overlineColor = 'inherit';
+
+        if (self::$Project->getConfig('templatePresentation.settings.overline.textColor') === 'primary') {
+            $overlineColor = 'var(--qui-colors-primary)';
+        }
+
         /**
          * Nav
          */
@@ -992,6 +1021,7 @@ class Utils
             'headingColor' => $headingColor,
             'bodyFontWeight' => $bodyFontWeight,
             'headingFontWeight' => $headingFontWeight,
+            'overlineColor' => $overlineColor,
 
             /* nav */
             'navPosition' => $navPositionCSS,

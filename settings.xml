@@ -42,6 +42,14 @@
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
+                    <conf name="overline.style">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>line</defaultvalue>
+                    </conf>
+                    <conf name="overline.textColor">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>neutral</defaultvalue>
+                    </conf>
 
                     <!-- nav bar -->
                     <conf name="navBarHeight">
@@ -572,6 +580,101 @@
                                     />
                                 </description>
                             </input>
+
+                            <select conf="templatePresentation.settings.overline.style">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.title"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.desc"
+                                    />
+                                </description>
+
+                                <option value="line">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.line"
+                                    />
+                                </option>
+                                <option value="dot">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.dot"
+                                    />
+                                </option>
+                                <option value="bar">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.bar"
+                                    />
+                                </option>
+                                <option value="number">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.number"
+                                    />
+                                </option>
+                                <option value="line-number">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.lineNumber"
+                                    />
+                                </option>
+                                <option value="badge">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.badge"
+                                    />
+                                </option>
+                                <option value="badge-dot">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.badgeDot"
+                                    />
+                                </option>
+                                <option value="badge-ghost">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.badgeGhost"
+                                    />
+                                </option>
+                                <option value="underline">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.underline"
+                                    />
+                                </option>
+                                <option value="slash">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.slash"
+                                    />
+                                </option>
+                                <option value="plain">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.plain"
+                                    />
+                                </option>
+                            </select>
+
+                            <select conf="templatePresentation.settings.overline.textColor">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.textColor.title"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.textColor.desc"
+                                    />
+                                </description>
+
+                                <option value="neutral">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.textColor.neutral"
+                                    />
+                                </option>
+                                <option value="primary">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.textColor.primary"
+                                    />
+                                </option>
+                            </select>
 
                         </settings>
 
