@@ -1,0 +1,27 @@
+/**
+ * Overline css variables
+ *
+ * Set your own variables by using "--theme" prefix, for example:
+ * - To change the accent color set variable --theme--qui-overline-accentColor
+ * - To change the letter spacing set variable --theme--qui-overline-letterSpacing
+ */
+:root {
+    --qui-overline-fontSize: var(--theme--qui-overline-fontSize, var(--qui-fs-sm));
+    --qui-overline-fontWeight: var(--theme--qui-overline-fontWeight, 500);
+    --qui-overline-letterSpacing: var(--theme--qui-overline-letterSpacing, 0.12em);
+    /* text color: template setting (neutral = inherits from the context) */
+    --qui-overline-color: var(--theme--qui-overline-color, var(--template-settings__overline-color, inherit));
+    /* the accent is used sparingly: for the symbol, line or number only */
+    --qui-overline-accentColor: var(--theme--qui-overline-accentColor, var(--qui-colors-primary));
+    /* gap between the symbol (line, dot, number, ...) and the text */
+    --qui-overline-gap: var(--theme--qui-overline-gap, 0.75em);
+    /* spacing between the overline and the following heading */
+    --qui-overline-headingGap: var(--theme--qui-overline-headingGap, 0.75em);
+
+    /* badge variants: more compact than the regular badge/chip component */
+    --qui-overline-badge-padding: var(--theme--qui-overline-badge-padding, 0.4em 0.9em);
+    /* ghost badge: greyscale tint derived from the inherited text color,
+       so it adapts to light/dark contexts (same trick as .badge-neutral) */
+    --qui-overline-badge-ghost-bgColor: var(--theme--qui-overline-badge-ghost-bgColor, color-mix(in srgb, currentColor 4%, transparent));
+    --qui-overline-badge-ghost-borderColor: var(--theme--qui-overline-badge-ghost-borderColor, color-mix(in srgb, currentColor 10%, transparent));
+}

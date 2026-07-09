@@ -1,0 +1,212 @@
+/**
+ * Overline (eyebrow)
+ *
+ * Small uppercase label displayed above a heading.
+ *
+ * The default style is a template setting (rendered as data-tpl-overline
+ * attribute on <body>). A plain class="overline" gets that configured style;
+ * an explicit style variant (class="overline overline--dot") always wins.
+ *
+ * Each style variant is therefore defined once, for two selectors:
+ * - the explicit modifier class (.overline--<style>)
+ * - a bare .overline when <style> is the configured default
+ *
+ * Naming:
+ * - .overline--<name> (double dash): style variant, replaces the default style
+ * - .overline-<name> (single dash): additional modifier (e.g. .overline-center);
+ *   single dash keeps the :not([class*="overline--"]) default guard working
+ *
+ * Typical usage: <p class="overline">Services</p> followed by a heading.
+ * Do not use a heading element for the overline itself.
+ */
+.overline {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--qui-overline-gap);
+    margin-bottom: var(--qui-overline-headingGap);
+    color: var(--qui-overline-color);
+    font-size: var(--qui-overline-fontSize);
+    font-weight: var(--qui-overline-fontWeight);
+    letter-spacing: var(--qui-overline-letterSpacing);
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+/* the heading spacing is handled by the overline itself */
+.overline + :is(h1, h2, h3, h4, h5, h6) {
+    margin-top: 0;
+}
+
+/* icons (e.g. font awesome) inside the overline; the flex gap handles the
+   spacing, no matter whether the icon sits before or after the text */
+.overline :is(.fa, [class^="fa-"], [class*=" fa-"]) {
+    font-size: 1em;
+    line-height: 1;
+}
+
+/* center the overline (parent text-align: center also works) */
+.overline-center {
+    display: flex;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+/* text color modifiers: override the configured default per overline */
+.overline-primary {
+    --qui-overline-color: var(--qui-colors-primary);
+}
+
+.overline-neutral {
+    --qui-overline-color: inherit;
+}
+
+/*
+ * start a new counting group for number overlines; place it on a wrapper
+ * or on the first overline of the group. The reset also affects following
+ * siblings, so when building groups, give every group its own reset.
+ */
+.overline-reset {
+    counter-reset: tpl-overline;
+}
+
+/**
+ * Style variant: line
+ * a short horizontal line before the text
+ */
+:is(.overline--line,
+    [data-tpl-overline="line"] .overline:not([class*="overline--"]))::before {
+    content: "";
+    flex: none;
+    width: 2.5em;
+    height: 1px;
+    background-color: var(--qui-overline-accentColor);
+}
+
+/**
+ * Style variant: dot
+ * a small colored dot as accent (shared with the badge-dot variant)
+ */
+:is(.overline--dot,
+    .overline--badge-dot,
+    [data-tpl-overline="dot"] .overline:not([class*="overline--"]),
+    [data-tpl-overline="badge-dot"] .overline:not([class*="overline--"]))::before {
+    content: "";
+    flex: none;
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 50%;
+    background-color: var(--qui-overline-accentColor);
+}
+
+/**
+ * Style variant: bar
+ * a vertical bar before the text
+ */
+:is(.overline--bar,
+    [data-tpl-overline="bar"] .overline:not([class*="overline--"]))::before {
+    content: "";
+    flex: none;
+    width: 3px;
+    height: 1.1em;
+    border-radius: 2px;
+    background-color: var(--qui-overline-accentColor);
+}
+
+/**
+ * Style variant: number
+ * an automatically counting number ("01 /", "02 /", ...);
+ * all number overlines within the page share one counter
+ */
+body {
+    counter-reset: tpl-overline;
+}
+
+:is(.overline--number,
+    [data-tpl-overline="number"] .overline:not([class*="overline--"]))::before {
+    counter-increment: tpl-overline;
+    content: counter(tpl-overline, decimal-leading-zero) " /";
+    /* hide the decorative number from assistive technology where supported */
+    content: counter(tpl-overline, decimal-leading-zero) " /" / "";
+    color: var(--qui-overline-accentColor);
+}
+
+/**
+ * Style variant: line-number
+ * a short line, followed by an automatically counting number ("—— 01 — Text");
+ * shares the page-wide counter with the number variant
+ */
+:is(.overline--line-number,
+    [data-tpl-overline="line-number"] .overline:not([class*="overline--"]))::after {
+    content: "";
+    flex: none;
+    /* the line renders before the number: pull the ::after to the front */
+    order: -1;
+    width: 2.5em;
+    height: 1px;
+    background-color: var(--qui-overline-accentColor);
+}
+
+:is(.overline--line-number,
+    [data-tpl-overline="line-number"] .overline:not([class*="overline--"]))::before {
+    counter-increment: tpl-overline;
+    content: counter(tpl-overline, decimal-leading-zero) " \2014";
+    /* hide the decorative number from assistive technology where supported */
+    content: counter(tpl-overline, decimal-leading-zero) " \2014" / "";
+    color: var(--qui-overline-accentColor);
+}
+
+/**
+ * Style variant: badge (family: badge, badge-dot, badge-ghost)
+ * a compact pill; filled variants use the badge/chip design tokens
+ */
+:is(.overline--badge,
+    .overline--badge-dot,
+    .overline--badge-ghost,
+    [data-tpl-overline="badge"] .overline:not([class*="overline--"]),
+    [data-tpl-overline="badge-dot"] .overline:not([class*="overline--"]),
+    [data-tpl-overline="badge-ghost"] .overline:not([class*="overline--"])) {
+    padding: var(--qui-overline-badge-padding);
+    border-radius: var(--qui-radius-pill);
+    background-color: var(--qui-badge-primary-light-bgColor);
+    color: var(--qui-badge-primary-light-color);
+}
+
+/**
+ * Style variant: badge-ghost
+ * a light/outline pill: subtle border, nearly transparent background,
+ * text keeps the inherited color (overrides the filled badge look above)
+ */
+:is(.overline--badge-ghost,
+    [data-tpl-overline="badge-ghost"] .overline:not([class*="overline--"])) {
+    background-color: var(--qui-overline-badge-ghost-bgColor);
+    border: 1px solid var(--qui-overline-badge-ghost-borderColor);
+    color: var(--qui-overline-color);
+}
+
+/**
+ * Style variant: underline
+ * an accent line below the overline text only
+ */
+:is(.overline--underline,
+    [data-tpl-overline="underline"] .overline:not([class*="overline--"])) {
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid var(--qui-overline-accentColor);
+}
+
+/**
+ * Style variant: slash
+ * a double slash before the text
+ */
+:is(.overline--slash,
+    [data-tpl-overline="slash"] .overline:not([class*="overline--"]))::before {
+    content: "//";
+    /* hide the decorative slashes from assistive technology where supported */
+    content: "//" / "";
+    color: var(--qui-overline-accentColor);
+    font-weight: 700;
+}
+
+/**
+ * Style variant: plain
+ * text only, no symbol — needs no own rules
+ */
