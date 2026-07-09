@@ -19,6 +19,10 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>hide</defaultvalue>
                     </conf>
+                    <conf name="dropdownLangNavPosition">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>nav</defaultvalue>
+                    </conf>
 
                     <conf name="includeDemoStyling">
                         <type><![CDATA[bool]]></type>
@@ -402,6 +406,31 @@
                                 <option value="flagAndText">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.dropdownLangNav.flagAndText"
+                                    />
+                                </option>
+                            </select>
+
+                            <!-- Language switch position (nav / footer / both) -->
+                            <select conf="templatePresentation.settings.dropdownLangNavPosition">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNavPosition.title"
+                                    />
+                                </text>
+
+                                <option value="nav">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNavPosition.nav"
+                                    />
+                                </option>
+                                <option value="footer">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNavPosition.footer"
+                                    />
+                                </option>
+                                <option value="navAndFooter">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.dropdownLangNavPosition.navAndFooter"
                                     />
                                 </option>
                             </select>

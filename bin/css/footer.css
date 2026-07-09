@@ -34,10 +34,23 @@
 .page-footer__barInner {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+    width: 100%;
 }
 
-.page-footer__copyright,
-.page-footer__social {
+/**
+ * The unsemantic grid-container adds :before/:after clearfix elements. Since
+ * the bar is a flex container with a gap, they would create unwanted gaps at
+ * the left and right edges, so hide them.
+ * todo michael.danielczok - remove once unsemantic is dropped
+ */
+.page-footer__barInner:before,
+.page-footer__barInner:after {
+    display: none;
+}
+
+.page-footer__copyright {
     flex-grow: 1;
 }
 
@@ -69,6 +82,20 @@
     content: '';
     position: absolute;
     inset: -0.375rem;
+}
+
+/* footer language switch (flat link list, colors inherit from footer links) */
+.page-footer__langSwitch {
+    display: flex;
+    align-items: center;
+}
+
+.page-footer__langSwitch .quiqqer-bricks-languageswitch-flag-entry {
+    text-decoration: none;
+}
+
+.page-footer__langSwitch .quiqqer-bricks-languageswitch-flag-entry.active {
+    font-weight: 700;
 }
 
 /* links styling for footer */

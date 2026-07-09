@@ -191,6 +191,11 @@ class Utils
                 break;
         }
 
+        $langSelectPosition = match ($Project->getConfig('templatePresentation.settings.dropdownLangNavPosition')) {
+            'footer', 'navAndFooter' => $Project->getConfig('templatePresentation.settings.dropdownLangNavPosition'),
+            default => 'nav'
+        };
+
         /**
          * Nav
          */
@@ -401,6 +406,8 @@ class Utils
             'showSocialInFooter' => $Project->getConfig('templatePresentation.settings.social.show.footer'),
 
             'showLangSelect' => $showLangSelect,
+            'showLangSelectNav' => $showLangSelect && $langSelectPosition !== 'footer',
+            'showLangSelectFooter' => $showLangSelect && $langSelectPosition !== 'nav',
             'showFlag' => $showFlag,
             'showText' => $showText,
         ];

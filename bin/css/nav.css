@@ -291,7 +291,7 @@
 /*******************/
 /* Language switch */
 /*******************/
-.quiqqer-control-languageswitch-dropdown-arrow {
+:where(.header-bar__langSwitch) .quiqqer-control-languageswitch-dropdown-arrow {
     color: var(--qui-nav-link-color);
 }
 

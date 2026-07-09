@@ -546,6 +546,24 @@
                 <en><![CDATA[Flag and text]]></en>
             </locale>
 
+        <!-- Language switch position -->
+        <locale name="templatePresentation.settings.dropdownLangNavPosition.title">
+            <de><![CDATA[Sprache wechseln - Position]]></de>
+            <en><![CDATA[Change language widget - position]]></en>
+        </locale>
+            <locale name="templatePresentation.settings.dropdownLangNavPosition.nav">
+                <de><![CDATA[Hauptnavigation]]></de>
+                <en><![CDATA[Main navigation]]></en>
+            </locale>
+            <locale name="templatePresentation.settings.dropdownLangNavPosition.footer">
+                <de><![CDATA[Footer]]></de>
+                <en><![CDATA[Footer]]></en>
+            </locale>
+            <locale name="templatePresentation.settings.dropdownLangNavPosition.navAndFooter">
+                <de><![CDATA[Hauptnavigation und Footer]]></de>
+                <en><![CDATA[Main navigation and footer]]></en>
+            </locale>
+
         <locale name="settings.includeDemoStyling.text">
             <de><![CDATA[Demo Design aktivieren]]></de>
             <en><![CDATA[Active demo design]]></en>
@@ -1381,6 +1399,10 @@
         <locale name="frontend.menuMobile.social.title">
             <de><![CDATA[Social Media]]></de>
             <en><![CDATA[Social]]></en>
+        </locale>
+        <locale name="frontend.footer.langSwitch.title">
+            <de><![CDATA[Sprache wechseln]]></de>
+            <en><![CDATA[Change language]]></en>
         </locale>
 
         <!-- Editor -->

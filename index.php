@@ -91,7 +91,7 @@ if ($templateSettings['logoForTransparentNav']) {
  */
 $LangSelectControl = null;
 
-if ($templateSettings['showLangSelect']) {
+if ($templateSettings['showLangSelectNav']) {
     $LangSelectControl = new QUI\Bricks\Controls\LanguageSwitches\DropDown([
         'Site' => $Site,
         'buttonShowFlag' => $templateSettings['showFlag'],
@@ -101,6 +101,20 @@ if ($templateSettings['showLangSelect']) {
 }
 
 $templateSettings['LangSelectControl'] = $LangSelectControl;
+
+// footer variant: flat link list instead of a dropdown (a dropdown at the
+// bottom of the page would open past the viewport edge)
+$LangSelectFooterControl = null;
+
+if ($templateSettings['showLangSelectFooter']) {
+    $LangSelectFooterControl = new QUI\Bricks\Controls\LanguageSwitches\Flags([
+        'Site' => $Site,
+        'showFlags' => $templateSettings['showFlag'],
+        'showText' => (bool)$templateSettings['showText']
+    ]);
+}
+
+$templateSettings['LangSelectFooterControl'] = $LangSelectFooterControl;
 
 /**
  * Breadcrumb
