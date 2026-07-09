@@ -372,7 +372,7 @@
  * nav style: pill
  */
 .header-bar--style-pill {
-    overflow: auto;
+    display: flow-root;
 }
 
 .header-bar--style-pill .header-bar-container {
