@@ -291,7 +291,7 @@
 /*******************/
 /* Language switch */
 /*******************/
-.quiqqer-control-languageswitch-dropdown-arrow {
+:where(.header-bar__langSwitch) .quiqqer-control-languageswitch-dropdown-arrow {
     color: var(--qui-nav-link-color);
 }
 
@@ -372,7 +372,7 @@
  * nav style: pill
  */
 .header-bar--style-pill {
-    overflow: auto;
+    display: flow-root;
 }
 
 .header-bar--style-pill .header-bar-container {
