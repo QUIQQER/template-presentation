@@ -79,7 +79,11 @@ $independentMenuIdLoggedIn = $resolveIndependentMenuId(
     $Project->getConfig('templatePresentation.settings.menuIdLoggedIn')
 );
 
-if ($sessionUserIsAuth && $independentMenuIdLoggedIn) {
+if (
+    $Project->getConfig('templatePresentation.settings.enableIndependentMenu')
+    && $sessionUserIsAuth
+    && $independentMenuIdLoggedIn
+) {
     $params['menuId'] = $independentMenuIdLoggedIn;
 }
 
