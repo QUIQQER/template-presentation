@@ -21,5 +21,9 @@ class SkillProvider implements SkillProviderInterface
         $repository->addFromMarkdownFile(
             $root . '/skills/developer/quiqqer_template_presentation_frontend_conventions.md'
         );
+
+        $repository->addFromMarkdownFile(
+            $root . '/skills/content/quiqqer_template_presentation_css_classes.md'
+        );
     }
 }
