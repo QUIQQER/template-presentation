@@ -14,7 +14,7 @@
         "quiqqer/bricks": "^2.28",
         "quiqqer/fontawesome": "6.*",
         "quiqqer/sitetypes": "2.*",
-        "quiqqer/menu": "3.*",
+        "quiqqer/menu": "^3.9",
         "quiqqer/unsemantic": "2.*",
         "quiqqer/utils": "2.*",
         "quiqqer/pace": "2.*",
