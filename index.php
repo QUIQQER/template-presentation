@@ -44,19 +44,47 @@ $params = [
     'subMenuIndicator' => $menuDropdownIcon
 ];
 
+// menu settings may be multilingual: JSON {lang: menuId}; a language without
+// its own menu falls back to the default language. A plain menu id (old
+// format) applies to all languages.
+$resolveIndependentMenuId = static function ($value) use ($Project) {
+    $languages = json_decode((string)$value, true);
+
+    if (!is_array($languages)) {
+        return $value;
+    }
+
+    $menuId = $languages[$Project->getLang()] ?? '';
+
+    if (empty($menuId)) {
+        $menuId = $languages[$Project->getAttribute('default_lang')] ?? '';
+    }
+
+    return $menuId;
+};
+
+$independentMenuId = $resolveIndependentMenuId(
+    $Project->getConfig('templatePresentation.settings.menuId')
+);
+
 if (
     $Project->getConfig('templatePresentation.settings.enableIndependentMenu')
-    && $Project->getConfig('templatePresentation.settings.menuId')
+    && $independentMenuId
 ) {
-    $params['menuId'] = $Project->getConfig('templatePresentation.settings.menuId');
+    $params['menuId'] = $independentMenuId;
     $params['showFirstLevelIcons'] = $Project->getConfig('templatePresentation.settings.showFirstLevelIcons');
 }
 
+$independentMenuIdLoggedIn = $resolveIndependentMenuId(
+    $Project->getConfig('templatePresentation.settings.menuIdLoggedIn')
+);
+
 if (
-    $sessionUserIsAuth
-    && $Project->getConfig('templatePresentation.settings.menuIdLoggedIn')
+    $Project->getConfig('templatePresentation.settings.enableIndependentMenu')
+    && $sessionUserIsAuth
+    && $independentMenuIdLoggedIn
 ) {
-    $params['menuId'] = $Project->getConfig('templatePresentation.settings.menuIdLoggedIn');
+    $params['menuId'] = $independentMenuIdLoggedIn;
 }
 
 // Site own / independent menu
