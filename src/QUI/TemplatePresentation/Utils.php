@@ -124,7 +124,7 @@ class Utils
         $customClass = $Site->getAttribute('templatePresentation.pageCustomClass');
         $pageCustomClass = false;
 
-        if ($customClass && $customClass !== '') {
+        if ($customClass) {
             $pageCustomClass = 'templatePresentation__' . $customClass;
             $pageCustomClass .= ' ' . $customClass;
         }
