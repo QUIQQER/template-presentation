@@ -118,4 +118,53 @@ class EventHandler
             $Smarty->registerClass('QUI\TemplatePresentation\Utils', '\QUI\TemplatePresentation\Utils');
         };
     }
+
+    /**
+     * Event: quiqqer/menu is building the mobile slide-out menu.
+     *
+     * Inject the bricks of the "navAction" area into the mobile menu, since
+     * the desktop header suffix (which normally renders them) is hidden on
+     * mobile. quiqqer/menu itself has no knowledge of this template area.
+     *
+     * @param QUI\Control $Menu - the mobile menu control (SlideOut/SlideOutAdvanced)
+     * @param QUI\Interfaces\Projects\Site $Site
+     * @return void
+     */
+    public static function onQuiqqerMenuMobileMenuCreate(
+        QUI\Control $Menu,
+        QUI\Interfaces\Projects\Site $Site
+    ): void {
+        if (
+            !$Menu instanceof QUI\Menu\SlideOut
+            && !$Menu instanceof QUI\Menu\SlideOutAdvanced
+        ) {
+            return;
+        }
+
+        $BricksManager = QUI\Bricks\Manager::init();
+
+        if (!$BricksManager) {
+            return;
+        }
+
+        try {
+            $bricks = $BricksManager->getBricksByArea('navAction', $Site);
+        } catch (QUI\Exception) {
+            return;
+        }
+
+        if (empty($bricks)) {
+            return;
+        }
+
+        $html = '<div class="tpl-brickArea-navAction tpl-brickArea-navAction--mobile">';
+
+        foreach ($bricks as $Brick) {
+            $html .= $Brick->create();
+        }
+
+        $html .= '</div>';
+
+        $Menu->appendHTML($html);
+    }
 }
