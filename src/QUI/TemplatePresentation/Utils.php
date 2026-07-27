@@ -243,7 +243,7 @@ class Utils
          */
         $scrollOffset = 0;
 
-        if ($navPos == 'fix' && $navHeight > 0) {
+        if (($navPos === 'fix' || $navPos === 'autoHide') && $navHeight > 0) {
             $scrollOffset = $navHeight + 10;
         }
 
@@ -768,7 +768,7 @@ class Utils
      * @param bool $headerArea Whether the header area is enabled (affects certain CSS variables).
      * @param bool $showHeader Whether the page header (hero) is enabled (affects certain CSS variables).
      * @param int $navHeight Navigation height in pixels.
-     * @param string $navPos Navigation position setting, e.g. fix, sticky or scroll.
+     * @param string $navPos Navigation position setting, e.g. fix, autoHide, sticky or scroll.
      * @param int $scrollOffset Scroll offset in pixels for anchor navigation.
      * @return array<string, mixed> Associative array of CSS variable names and their values.
      */
@@ -945,7 +945,7 @@ class Utils
             default => 'flex-start'
         };
 
-        if ($navPos === 'sticky' || $navPos == 'fix') {
+        if ($navPos === 'sticky' || $navPos === 'fix' || $navPos === 'autoHide') {
             $navPositionCSS = 'sticky';
         }
 

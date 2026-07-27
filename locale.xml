@@ -1037,12 +1037,16 @@
             <en><![CDATA[Menu position]]></en>
         </locale>
         <locale name="templatePresentation.settings.navPos.description">
-            <de><![CDATA[Wählen Sie, ob die Navigation immer sichtbar (oben fixiert) sein soll.]]></de>
-            <en><![CDATA[Should the navigation always be visible at the top of the page (fixed)?]]></en>
+            <de><![CDATA[Legt fest, wie sich die Navigation beim Scrollen verhält. Bei „Fixiert – blendet beim Scrollen aus" wird das Menü beim Scrollen nach unten ausgeblendet und beim Scrollen nach oben wieder eingeblendet; am Seitenanfang ist es immer sichtbar.]]></de>
+            <en><![CDATA[Defines how the navigation behaves while scrolling. With "Fixed - hides while scrolling" the menu is hidden when scrolling down and shown again when scrolling up; at the top of the page it is always visible.]]></en>
         </locale>
         <locale name="templatePresentation.settings.navPos.fix">
             <de><![CDATA[Fixiert - das Menü ist immer oben sichtbar, auch wenn die Seite gescrollt wird.]]></de>
             <en><![CDATA[Fixed - page menu is always visible at the top, even when the page is scrolled down.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navPos.autoHide">
+            <de><![CDATA[Fixiert - blendet beim Scrollen aus]]></de>
+            <en><![CDATA[Fixed - hides while scrolling]]></en>
         </locale>
         <locale name="templatePresentation.settings.navPos.scroll">
             <de><![CDATA[Scrollbar - das Menü ist nicht mehr zu sehen, wenn die Seite gescrollt wird.]]></de>

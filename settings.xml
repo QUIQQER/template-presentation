@@ -873,6 +873,11 @@
                                             var="templatePresentation.settings.navPos.fix"
                                     />
                                 </option>
+                                <option value="autoHide">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navPos.autoHide"
+                                    />
+                                </option>
                                 <option value="scroll">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.navPos.scroll"

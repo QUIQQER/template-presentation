@@ -47,6 +47,18 @@ The canonical token prefix is `--qui-`. The most used families:
 - Buttons: `--qui-btn-<variant>-<property>` hooks per variant and state, for example
   `--qui-btn-primary-bg--hover`, plus shared hooks such as `--qui-btn-borderRadius`.
 
+## Navigation Auto-Hide
+
+The nav supports several position modes (setting "Menüposition"); `autoHide` is the only one with a
+scripted transform. It slides the header bar off-screen on scroll down (via an inline `transform` on
+`.header-bar`, set in `bin/init.js`) and reveals it on scroll up. Do not set your own `transform` on
+`.header-bar` in this mode, it fights the script.
+
+If a child template gives the nav a `box-shadow` or `outline`, it can peek at the top edge while the
+nav is hidden. Set `--theme--qui-nav-autoHide-buffer` to roughly the shadow's vertical reach
+(offset-y + blur + spread); the nav is then moved that much further off-screen. Default `0`, any CSS
+length. Only affects `autoHide`.
+
 ## Markup Class Inventory
 
 The utility and component class inventory (buttons, badges, chips, overlines, spacing, typography, …)
