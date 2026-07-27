@@ -207,6 +207,19 @@ body {
 }
 
 /**
+ * Style variant: hash
+ * a "#" sign before the text
+ */
+:is(.overline--hash,
+    [data-tpl-overline="hash"] .overline:not([class*="overline--"]))::before {
+    content: "#";
+    /* hide the decorative hash from assistive technology where supported */
+    content: "#" / "";
+    color: var(--qui-overline-accentColor);
+    font-weight: 700;
+}
+
+/**
  * Style variant: plain
  * text only, no symbol — needs no own rules
  */

@@ -674,6 +674,11 @@
                                             var="settings.overline.style.slash"
                                     />
                                 </option>
+                                <option value="hash">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.hash"
+                                    />
+                                </option>
                                 <option value="plain">
                                     <locale group="quiqqer/template-presentation"
                                             var="settings.overline.style.plain"

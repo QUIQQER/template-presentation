@@ -714,6 +714,10 @@
             <de><![CDATA[Schrägstriche (//)]]></de>
             <en><![CDATA[Slashes (//)]]></en>
         </locale>
+        <locale name="settings.overline.style.hash">
+            <de><![CDATA[Raute (#)]]></de>
+            <en><![CDATA[Hash (#)]]></en>
+        </locale>
         <locale name="settings.overline.style.plain">
             <de><![CDATA[Nur Text (ohne Symbol)]]></de>
             <en><![CDATA[Text only (no symbol)]]></en>

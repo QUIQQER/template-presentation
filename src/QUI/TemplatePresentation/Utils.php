@@ -221,6 +221,7 @@ class Utils
             'badge-ghost',
             'underline',
             'slash',
+            'hash',
             'plain'
         ];
 
