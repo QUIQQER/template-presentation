@@ -679,6 +679,11 @@
                                             var="settings.overline.style.hash"
                                     />
                                 </option>
+                                <option value="hash-fa">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.hashFa"
+                                    />
+                                </option>
                                 <option value="plain">
                                     <locale group="quiqqer/template-presentation"
                                             var="settings.overline.style.plain"

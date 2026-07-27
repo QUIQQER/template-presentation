@@ -222,6 +222,7 @@ class Utils
             'underline',
             'slash',
             'hash',
+            'hash-fa',
             'plain'
         ];
 
