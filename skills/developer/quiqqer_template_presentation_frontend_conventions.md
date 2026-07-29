@@ -42,10 +42,53 @@ The canonical token prefix is `--qui-`. The most used families:
 - Font sizes: `--qui-fs-xs` to `--qui-fs-6xl` for text, `--qui-fs-1` to `--qui-fs-6` for heading levels,
   `--qui-fs-body`.
 - Borders: `--qui-border-color`, `--qui-border-width`, `--qui-border-style`.
-- Spacing: `--qui-spacer` (with `--desktop`/`--mobile`) and the row spacing scale
-  `--qui-row-spacing--extraSmall` to `--qui-row-spacing--extraLarge` (`--base` is the default).
+- Spacing: three families, see the dedicated "Spacing" section below — `--qui-spacing-*` (element-internal),
+  `--qui-layout-gap-*` (between blocks), and the template-internal `--qui-row-spacing-*` (section rhythm).
 - Buttons: `--qui-btn-<variant>-<property>` hooks per variant and state, for example
   `--qui-btn-primary-bg--hover`, plus shared hooks such as `--qui-btn-borderRadius`.
+
+## Spacing
+
+Never write raw spacing (`margin`/`padding`/`gap` with a bare `1rem`/`2rem`). Use a spacing token so a page
+built from independent controls keeps one rhythm. Definitions live in `bin/css/variables/spacing.css`.
+There are three families.
+
+### `--qui-spacing-*` — inside an element
+
+Padding and gaps between a control's own parts. Six steps on a 4/8px grid (at the 16px desktop base). When
+in doubt, use the unsuffixed default. Pick by intent, not by feel:
+
+| Token | ~Desktop | Intent |
+|---|---|---|
+| `--qui-spacing-xs` | 4px | tight / inline gaps (icon + text, chips) |
+| `--qui-spacing-sm` | 8px | compact padding |
+| `--qui-spacing` | 16px | standard padding / gap — the default, reach for this first |
+| `--qui-spacing-lg` | 24px | comfortable padding (cards) |
+| `--qui-spacing-xl` | 32px | generous |
+| `--qui-spacing-2xl` | 48px | strong internal separation |
+
+The scale derives from `--qui-spacer`, which shrinks on mobile, so the whole scale scales down with it.
+
+### `--qui-layout-gap-*` — between larger blocks
+
+The gap between big blocks such as the columns of a split layout. Three steps: `-sm`, the unsuffixed
+default, and `-lg`. Container-relative (`clamp()` with `cqi` plus a rem anchor): the gap adapts to the
+width of the surrounding container, not the viewport. For that, an ancestor needs
+`container-type: inline-size` — the template sets it on its layout regions; a control whose own internal
+layout reflows with available width sets it on its own wrapper. Without a container it falls back to the
+viewport (no breakage, just not adaptive).
+
+### `--qui-row-spacing-*` — between sections
+
+Vertical rhythm between bricks/sections, driven by brick settings. Template-internal; a control does not
+use these for its own spacing.
+
+### Fallback for portability
+
+A control (for example a brick type) may run in a template without these tokens. Keep an inline fallback
+equal to the token's value: `padding: var(--qui-spacing-lg, 1.5rem)` or
+`gap: var(--qui-layout-gap-lg, clamp(1.5rem, 0.5rem + 5cqi, 5rem))`. The fallback must match, so behaviour
+is identical with and without the template.
 
 ## Navigation Auto-Hide
 
@@ -68,7 +111,7 @@ hooks (for example `--qui-btn-*`); do not rewrite component CSS.
 
 The complete and always current definitions live in the template sources (for code access):
 
-- `bin/css/variables/` — token definitions (colors, typography, buttons, border, shadows, forms, …)
+- `bin/css/variables/` — token definitions (colors, typography, spacing, buttons, border, shadows, forms, …)
 - `bin/css/utility/` — utility classes
 - `bin/css/components/` — component classes (buttons, badges, chips, overline, messages)
 

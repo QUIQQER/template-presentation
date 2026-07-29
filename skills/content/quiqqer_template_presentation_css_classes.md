@@ -21,9 +21,10 @@ its project-specific additions.
 - Text: `.text-left`, `.text-center`, `.text-right`, `.text-width-xs`–`.text-width-xl` (limits the reading
   width), `.color-heading`.
 - Links: `.link` plus color variants such as `.link-primary`, `.link-muted`, `.link-soft`.
-- Spacing: margin and padding scales 0–5 as `.m-*`, `.mt-*`, `.mb-*`, `.ml-*`, `.mr-*`, `.p-*`, `.pt-*`,
-  `.pb-*`, `.pl-*`, `.pr-*`, plus `auto` variants for margins (for example `.mt-0`, `.mb-3`, `.ml-auto`).
-  Solve spacing with these classes before writing CSS.
+- Spacing: the supported utilities are the auto margins `.mx-auto`, `.mt-auto`, `.mb-auto`, `.ml-auto`,
+  `.mr-auto` (centering and flex spacers). The numeric `.m-*` / `.p-*` scale (and its axis variants) is
+  deprecated — do not add new usages. For real spacing, use the spacing tokens in component CSS
+  (`--qui-spacing-*`; see the developer skill `quiqqer_template_presentation_frontend_conventions`).
 - Backgrounds: `.bg-<palette>` with tint steps 25–950, for example `.bg-primary-50`. Palette names:
   `primary`, `secondary`, `success`, `warning`, `danger`, `info`, `dark`, `light`, `gray`, `white`.
 - Misc: `.list-unstyled`.
@@ -38,8 +39,8 @@ its project-specific additions.
   `.badge-sm`, `.badge-lg`, `.badge-neutral`.
 - Chips: `.chip`.
 - Overlines: `.overline` with `.overline-center`, `.overline-primary`, `.overline-neutral`,
-  `.overline-reset`; the visual style is controlled by the template setting.
-  When an overline sits directly above a heading, give the heading `.mt-0`.
+  `.overline-reset`; the visual style is controlled by the template setting. The overline already zeroes
+  the following heading's top margin, so no spacing class is needed on the heading.
 
 ## Usage Rules
 
