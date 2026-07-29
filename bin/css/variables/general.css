@@ -23,7 +23,7 @@
     /* spacing for margin, padding, etc */
     --qui-spacer--desktop: var(--theme--qui-spacer--desktop, 1rem);
     --qui-spacer--mobile: var(--theme--qui-spacer--mobile, 0.75rem);
-    --qui-spacer: var(--theme--qui-spacer--desktop);
+    --qui-spacer: var(--qui-spacer--desktop);
     --qui-spacing-xs: calc(var(--qui-spacer) * 0.25);
     --qui-spacing-sm: calc(var(--qui-spacer) * 0.75);
     --qui-spacing: var(--qui-spacer); /* default */
