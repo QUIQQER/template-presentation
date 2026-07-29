@@ -1,25 +1,25 @@
 /**
- * This file contains spacing utility classes
+ * Spacing utility classes.
+ *
+ * DEPRECATED: all classes in this file are kept only for backward
+ * compatibility and may be removed in a future major version. Do not add new
+ * usages.
+ *
+ * In component/module CSS, solve spacing with the spacing tokens
+ * (variables/spacing.css), e.g. `padding: var(--qui-spacing);`, or plain CSS
+ * properties such as `margin-inline: auto`. In editorial brick/page markup,
+ * use an inline style for a one-off, or the brick's custom CSS when it needs
+ * theming or responsive behaviour.
  */
 
-/* Auto margin utilities (centering / flex spacers) */
+/* Auto margin utilities (centering / flex spacers) — deprecated, see file header */
 .mx-auto { margin-inline: auto; }
 .mt-auto { margin-top: auto; }
 .mb-auto { margin-bottom: auto; }
 .ml-auto { margin-left: auto; }
 .mr-auto { margin-right: auto; }
 
-/**
- * DEPRECATED: numeric spacing scale (.m-*, .p-* and axis variants).
- *
- * These hard-coded rem-based utilities are no longer maintained and will be
- * removed in a future major version. In practice they are barely used and
- * they duplicate the spacing token system (variables/spacing.css).
- *
- * Do not add new usages. For spacing, solve it in component CSS using the
- * spacing variables (e.g. `padding: var(--qui-spacing);`) instead of these
- * classes. Only the auto-margin utilities above remain supported.
- */
+/* DEPRECATED numeric spacing scale (.m-*, .p-* and axis variants) — see file header. */
 
 .m-0 { margin: 0 }
 .m-1 { margin: 0.25rem }

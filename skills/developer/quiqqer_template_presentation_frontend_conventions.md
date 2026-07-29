@@ -53,6 +53,11 @@ Never write raw spacing (`margin`/`padding`/`gap` with a bare `1rem`/`2rem`). Us
 built from independent controls keeps one rhythm. Definitions live in `bin/css/variables/spacing.css`.
 There are three families.
 
+Solve spacing in the component's own CSS with these tokens (or plain CSS properties such as
+`margin-inline: auto` for centering) — not via spacing utility classes. Those classes are an editorial
+fallback for markup that has no CSS, are deprecated for spacing, and must not be used as a module building
+block.
+
 ### `--qui-spacing-*` — inside an element
 
 Padding and gaps between a control's own parts. Six steps on a 4/8px grid (at the 16px desktop base). When

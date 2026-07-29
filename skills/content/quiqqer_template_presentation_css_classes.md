@@ -21,10 +21,11 @@ its project-specific additions.
 - Text: `.text-left`, `.text-center`, `.text-right`, `.text-width-xs`–`.text-width-xl` (limits the reading
   width), `.color-heading`.
 - Links: `.link` plus color variants such as `.link-primary`, `.link-muted`, `.link-soft`.
-- Spacing: the supported utilities are the auto margins `.mx-auto`, `.mt-auto`, `.mb-auto`, `.ml-auto`,
-  `.mr-auto` (centering and flex spacers). The numeric `.m-*` / `.p-*` scale (and its axis variants) is
-  deprecated — do not add new usages. For real spacing, use the spacing tokens in component CSS
-  (`--qui-spacing-*`; see the developer skill `quiqqer_template_presentation_frontend_conventions`).
+- Spacing: do not use utility classes for spacing or centering. For a one-off static adjustment use an
+  inline `style` (for example `style="margin-inline:auto"`); for anything responsive or reused, add the
+  brick's custom CSS, where it can be themed and use media/container queries. The numeric `.m-*`/`.p-*`
+  scale and the auto-margin classes (`.mx-auto`, `.ml-auto`, …) still exist only for backward
+  compatibility — do not add new usages of either.
 - Backgrounds: `.bg-<palette>` with tint steps 25–950, for example `.bg-primary-50`. Palette names:
   `primary`, `secondary`, `success`, `warning`, `danger`, `info`, `dark`, `light`, `gray`, `white`.
 - Misc: `.list-unstyled`.
