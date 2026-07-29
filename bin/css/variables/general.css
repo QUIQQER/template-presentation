@@ -20,38 +20,6 @@
     --qui-transition-property: var(--theme--qui-transition-property, all);
     --qui-transition: var(--theme--qui-transition, var(--qui-transition-duration) var(--qui-transition-timing-function) var(--qui-transition-property));
 
-    /* spacing for margin, padding, etc */
-    --qui-spacer--desktop: var(--theme--qui-spacer--desktop, 1rem);
-    --qui-spacer--mobile: var(--theme--qui-spacer--mobile, 0.75rem);
-    --qui-spacer: var(--qui-spacer--desktop);
-    --qui-spacing-xs: calc(var(--qui-spacer) * 0.25);
-    --qui-spacing-sm: calc(var(--qui-spacer) * 0.75);
-    --qui-spacing: var(--qui-spacer); /* default */
-    --qui-spacing-md: calc(var(--qui-spacer) * 1.25);
-    --qui-spacing-lg: calc(var(--qui-spacer) * 1.75);
-    --qui-spacing-xl: calc(var(--qui-spacer) * 2);
-    --qui-spacing-2xl: calc(var(--qui-spacer) * 2.5);
-    --qui-spacing-3xl: calc(var(--qui-spacer) * 3.5);
-    --qui-spacing-4xl: calc(var(--qui-spacer) * 4.5);
-    --qui-spacing-5xl: calc(var(--qui-spacer) * 5.5);
-    --qui-spacing-6xl: calc(var(--qui-spacer) * 6);
-
-    /* the suffix naming bases on brick settings */
-    /* for verticalSpacingTop and verticalSpacingBottom */
-    --qui-row-spacer--desktop: var(--theme--qui-row-spacer--desktop, 3rem);
-    --qui-row-spacer--mobile: var(--theme--qui-row-spacer--mobile, 2rem);
-    --qui-row-spacer: var(--qui-row-spacer--desktop);
-    --qui-row-spacing--disabled: 0;
-    --qui-row-spacing--extraSmall: calc(var(--qui-row-spacer) * 0.25);
-    --qui-row-spacing--small: calc(var(--qui-row-spacer) * 0.5);
-    --qui-row-spacing--base: var(--qui-row-spacer);
-    --qui-row-spacing--medium: calc(var(--qui-row-spacer) * 2);
-    --qui-row-spacing--large: calc(var(--qui-row-spacer) * 3);
-    --qui-row-spacing--extraLarge: calc(var(--qui-row-spacer) * 5);
-
-    --qui-tpl-spacing--top: var(--theme--qui-tpl-spacing--top, var(--qui-row-spacing--base));
-    --qui-tpl-spacing--bottom: var(--theme--qui-tpl-spacing--bottom, var(--qui-row-spacing--base));
-
     /* breadcrumb */
     --qui-tpl-breadcrumb-spacing: var(--theme--qui-tpl-breadcrumb-spacing, var(--template-settings__breadcrumb-spacing));
     --qui-tpl-breadcrumb-border-color: var(--theme--qui-tpl-breadcrumb-border-color, #eee);
@@ -100,8 +68,6 @@
 
 @media screen and (max-width: 767px) {
     :root {
-        --qui-spacer: var(--qui-spacer--mobile);
-        --qui-row-spacer: var(--qui-row-spacer--mobile);
         --qui-header-minHeight: var(--qui-header-minHeight--mobile);
     }
 }
