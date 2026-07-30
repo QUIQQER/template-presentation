@@ -1,0 +1,55 @@
+/**
+ * Spacing variables
+ *
+ * Set your own values by using the "--theme" prefix, for example
+ * --theme--qui-spacer--desktop or --theme--qui-layout-gap.
+ */
+:root {
+    /* spacing for margin, padding, etc */
+    --qui-spacer--desktop: var(--theme--qui-spacer--desktop, 1rem);
+    --qui-spacer--mobile: var(--theme--qui-spacer--mobile, 0.75rem);
+    --qui-spacer: var(--qui-spacer--desktop);
+    /* scale on a 4/8px grid at the 16px desktop base */
+    --qui-spacing-xs: calc(var(--qui-spacer) * 0.25); /* 4px */
+    --qui-spacing-sm: calc(var(--qui-spacer) * 0.5); /* 8px */
+    --qui-spacing: var(--qui-spacer); /* 16px - default */
+    --qui-spacing-lg: calc(var(--qui-spacer) * 1.5); /* 24px */
+    --qui-spacing-xl: calc(var(--qui-spacer) * 2); /* 32px */
+    --qui-spacing-2xl: calc(var(--qui-spacer) * 3); /* 48px */
+
+    /* the suffix naming bases on brick settings */
+    /* for verticalSpacingTop and verticalSpacingBottom */
+    --qui-row-spacer--desktop: var(--theme--qui-row-spacer--desktop, 3rem);
+    --qui-row-spacer--mobile: var(--theme--qui-row-spacer--mobile, 2rem);
+    --qui-row-spacer: var(--qui-row-spacer--desktop);
+    --qui-row-spacing--disabled: 0;
+    --qui-row-spacing--extraSmall: calc(var(--qui-row-spacer) * 0.25);
+    --qui-row-spacing--small: calc(var(--qui-row-spacer) * 0.5);
+    --qui-row-spacing--base: var(--qui-row-spacer);
+    --qui-row-spacing--medium: calc(var(--qui-row-spacer) * 2);
+    --qui-row-spacing--large: calc(var(--qui-row-spacer) * 3);
+    --qui-row-spacing--extraLarge: calc(var(--qui-row-spacer) * 5);
+
+    --qui-tpl-spacing--top: var(--theme--qui-tpl-spacing--top, var(--qui-row-spacing--base));
+    --qui-tpl-spacing--bottom: var(--theme--qui-tpl-spacing--bottom, var(--qui-row-spacing--base));
+
+    /*
+     * Layout gap: spacing between larger blocks (e.g. columns inside a brick).
+     * Container-relative (cqi) with a rem anchor, so the gap adapts to the
+     * width of the surrounding container instead of the viewport, while still
+     * scaling with the user's font size / zoom.
+     *
+     * Requires an ancestor with `container-type: inline-size` to resolve the
+     * cqi part against a container; without one it falls back to the viewport.
+     */
+    --qui-layout-gap-sm: var(--theme--qui-layout-gap-sm, clamp(0.75rem, 0.5rem + 1.5cqi, 1.5rem));
+    --qui-layout-gap: var(--theme--qui-layout-gap, clamp(1rem, 0.5rem + 3cqi, 3rem)); /* default */
+    --qui-layout-gap-lg: var(--theme--qui-layout-gap-lg, clamp(1.5rem, 0.5rem + 5cqi, 5rem));
+}
+
+@media screen and (max-width: 767px) {
+    :root {
+        --qui-spacer: var(--qui-spacer--mobile);
+        --qui-row-spacer: var(--qui-row-spacer--mobile);
+    }
+}

@@ -53,12 +53,26 @@
     height: 100%;
 }
 
-.header-displayed .header-bar--position-fix {
+.header-displayed .header-bar--position-fix,
+.header-displayed .header-bar--position-autoHide {
     margin-bottom: calc(-1 * var(--qui-nav-height));
 }
 
-.header-displayed .header-bar--position-fix.header-bar--style-pill {
+.header-displayed .header-bar--position-fix.header-bar--style-pill,
+.header-displayed .header-bar--position-autoHide.header-bar--style-pill {
     margin-bottom: calc(-1 * (var(--qui-nav-height) + var(--qui-nav-style--pill-topMargin)));
+}
+
+/**
+ * Auto-hide (position: autoHide) moves the bar off-screen via an inline
+ * transform set in bin/init.js. The reveal animation uses the .header-bar
+ * transition above; this media query disables it for reduced-motion users.
+ */
+@media (prefers-reduced-motion: reduce) {
+    .header-bar,
+    .header-bar .header-bar-container {
+        transition: none;
+    }
 }
 
 .header-bar--initial-transparent {
