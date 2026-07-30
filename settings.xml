@@ -674,6 +674,16 @@
                                             var="settings.overline.style.slash"
                                     />
                                 </option>
+                                <option value="hash">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.hash"
+                                    />
+                                </option>
+                                <option value="hash-fa">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="settings.overline.style.hashFa"
+                                    />
+                                </option>
                                 <option value="plain">
                                     <locale group="quiqqer/template-presentation"
                                             var="settings.overline.style.plain"
@@ -871,6 +881,11 @@
                                 <option value="fix">
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.navPos.fix"
+                                    />
+                                </option>
+                                <option value="autoHide">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="templatePresentation.settings.navPos.autoHide"
                                     />
                                 </option>
                                 <option value="scroll">

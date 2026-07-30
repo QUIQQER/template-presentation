@@ -207,6 +207,36 @@ body {
 }
 
 /**
+ * Style variant: hash
+ * a "#" sign before the text
+ */
+:is(.overline--hash,
+    [data-tpl-overline="hash"] .overline:not([class*="overline--"]))::before {
+    content: "#";
+    /* hide the decorative hash from assistive technology where supported */
+    content: "#" / "";
+    color: var(--qui-overline-accentColor);
+    font-weight: 700;
+}
+
+/**
+ * Style variant: hash-fa
+ * a Font Awesome hash (#) icon before the text.
+ * The fa-hashtag glyph lives at codepoint "\23" (the "#" character), so the
+ * content stays "#"; the Font Awesome family and weight 900 (required for the
+ * FA6 Free solid style) render it as the icon instead of the plain character.
+ */
+:is(.overline--hash-fa,
+    [data-tpl-overline="hash-fa"] .overline:not([class*="overline--"]))::before {
+    content: "#";
+    /* hide the decorative hash from assistive technology where supported */
+    content: "#" / "";
+    color: var(--qui-overline-accentColor);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+/**
  * Style variant: plain
  * text only, no symbol — needs no own rules
  */

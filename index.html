@@ -1,6 +1,7 @@
 {assign var=Setting value=$Template->getAttribute('TemplateSetting')}
 {assign var=showSocialInMenu value=$Setting->getAttribute('showSocialInMenu')}
 {assign var=navStyle value=$Setting->getAttribute('navStyle')}
+{assign var=navPos value=$Setting->getAttribute('navPos')}
 {assign var=topBannerBricks value=$BricksManager->getBricksByArea('topBanner', $Site)}
 {capture assign=socialMenuHtml}{fetch template="template/menu/mobileSocial.html" Project=$Project Template=$Template Site=$Site}{/capture}
 
@@ -18,6 +19,7 @@
         window.SCROLL_OFFSET = {$Setting->getAttribute('scrollOffset')|default:0};
         const CONTENT_TABLE_SCROLL = 1;
         {if $navPos == 'fix'}const NAV_IS_FIXED = true;{/if}
+        {if $navPos == 'autoHide'}const NAV_AUTO_HIDE = true;{/if}
         const SHOW_SOCIAL_IN_MENU = {if $showSocialInMenu}true{else}false{/if};
         const SOCIAL_MENU_HTML = {$socialMenuHtml|json_encode nofilter};
     </script>

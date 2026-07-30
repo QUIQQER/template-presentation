@@ -294,6 +294,113 @@ whenQuiLoaded().then(() => {
         }
 
         /**
+         * auto-hide nav: follows the scroll off-screen on the way down (like a
+         * normally positioned menu) and snaps back in on a deliberate scroll up.
+         * The solid background is only applied once the nav has left the visible
+         * area, so an initially transparent nav never flashes its background.
+         * Only active in the autoHide position mode; plain fixed nav is untouched.
+         */
+        if (typeof NAV_AUTO_HIDE !== 'undefined') {
+            const headerBar = document.querySelector('[data-name="header-bar"]');
+
+            if (headerBar && headerBar.parentNode) {
+                let lastScrollY = getCurrentScrollY();
+                let downPivotY = lastScrollY;
+                let hiddenPx = 0;
+                let autoHideTicking = false;
+
+                const navShouldStayVisible = function () {
+                    return headerBar.contains(document.activeElement) ||
+                        headerBar.querySelector('[aria-expanded="true"]') !== null;
+                };
+
+                /**
+                 * A zero-size sentinel at the nav's natural top position gives the
+                 * distance scrolled past the point where the nav gets pinned. As
+                 * the sentinel is not sticky, -getBoundingClientRect().top equals
+                 * that distance regardless of a topBanner height, unlike the sticky
+                 * nav's own offsetTop/rect which stay at the top once pinned.
+                 */
+                const sentinel = document.createElement('div');
+                sentinel.setAttribute('aria-hidden', 'true');
+                sentinel.style.height = '0';
+                sentinel.style.width = '0';
+                sentinel.style.visibility = 'hidden';
+                headerBar.parentNode.insertBefore(sentinel, headerBar);
+
+                // extra distance so a downward box-shadow / outline added by a
+                // theme also leaves the viewport when the nav is hidden. Resolved
+                // from the themeable --qui-nav-autoHide-buffer (0 by default).
+                let hideBuffer = 0;
+                const measureHideBuffer = function () {
+                    const probe = document.createElement('div');
+                    probe.style.cssText = 'position:absolute;visibility:hidden;' +
+                        'height:var(--qui-nav-autoHide-buffer, 0px);';
+                    headerBar.appendChild(probe);
+                    hideBuffer = probe.offsetHeight;
+                    probe.remove();
+                };
+
+                measureHideBuffer();
+                window.addEventListener('resize', measureHideBuffer, {
+                    passive: true
+                });
+
+                // translateZ(0) keeps the Chrome anti-jump fix (see .header-bar css)
+                const applyTransform = function (px, animate) {
+                    headerBar.style.transition = animate ? '' : 'none';
+                    headerBar.style.transform = 'translateY(-' + px + 'px) translateZ(0)';
+                    hiddenPx = px;
+                };
+
+                const updateAutoHideState = function () {
+                    autoHideTicking = false;
+
+                    const currentScrollY = getCurrentScrollY();
+                    const navHeight = headerBar.offsetHeight;
+                    const scrolledPastPin = -sentinel.getBoundingClientRect().top;
+                    const delta = currentScrollY - lastScrollY;
+
+                    lastScrollY = currentScrollY;
+
+                    // solid background only once the nav sits its own height below
+                    // the pin, i.e. while it is out of the visible area
+                    headerBar.classList.toggle('header-bar--scrolled', scrolledPastPin > navHeight);
+
+                    if (scrolledPastPin <= 0 || navShouldStayVisible()) {
+                        // at the very top or a menu/focus is active: fully visible
+                        downPivotY = currentScrollY;
+                        applyTransform(0, hiddenPx !== 0);
+
+                        return;
+                    }
+
+                    if (delta > 0) {
+                        // scrolling down: follow the scroll off-screen 1:1, no anim
+                        downPivotY = currentScrollY;
+                        applyTransform(Math.min(hiddenPx + delta, navHeight + hideBuffer), false);
+                    } else if (delta < 0 && downPivotY - currentScrollY > navHeight / 2) {
+                        // deliberate scroll up past half the nav height: snap back in
+                        applyTransform(0, true);
+                    }
+                };
+
+                updateAutoHideState();
+
+                window.addEventListener('scroll', function () {
+                    if (autoHideTicking) {
+                        return;
+                    }
+
+                    autoHideTicking = true;
+                    window.requestAnimationFrame(updateAutoHideState);
+                }, {
+                    passive: true
+                });
+            }
+        }
+
+        /**
          * social share buttons
          */
         if (SHOW_SOCIAL_IN_MENU) {

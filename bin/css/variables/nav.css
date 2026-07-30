@@ -21,6 +21,15 @@
     --qui-nav-style--pill-topMargin: var(--theme--qui-nav-style--pill-topMargin, 0.5rem);
     --qui-nav-style--pill-radius: var(--theme--qui-nav-style--pill-radius, 5rem);
 
+    /**
+     * autoHide only: extra distance the nav is moved off-screen on top of its
+     * own height, so a custom box-shadow / outline does not peek at the top edge
+     * while the nav is hidden. Set it (via --theme--qui-nav-autoHide-buffer) to
+     * roughly the shadow's vertical reach (offset-y + blur + spread) when a
+     * child template adds a nav shadow. Any CSS length; 0 by default.
+     */
+    --qui-nav-autoHide-buffer: var(--theme--qui-nav-autoHide-buffer, 0px);
+
     /* mobile: slideout menu */
     --qui-nav-mobile-bg: var(--theme--qui-nav-mobile-bg, var(--template-settings__nav-mobile-bgColor, #252122));
     --qui-nav-mobile-font-color: var(--theme--qui-nav-mobile-font-color, var(--template-settings__nav-mobile-text-color, #ffffff));
