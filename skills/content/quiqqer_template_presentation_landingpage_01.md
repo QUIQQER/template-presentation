@@ -53,6 +53,39 @@ throughout the page.
 Keep these assignments in this order. Preserve unrelated assignments only when the task explicitly requires the new
 landing page to coexist with them; otherwise clarify the intended replacement before writing the complete Area.
 
+## Required Visual Baseline
+
+Use this baseline whenever an accepted reference page or screenshot does not deliberately override it. Treat these
+settings as the recipe's default visual construction, not as optional inspiration. Adapt colors and typography to the
+target project, but do not fall back to unstyled transparent sections merely because the content is complete.
+
+Choose three harmonious light surface colors from the project's design palette or approved visual direction. Use
+them consistently as surface A, B and C across benefits and process steps. Verify readable contrast; do not copy
+literal colors from another project.
+
+- **Hero:** Keep `brickFullWidth: false`, `contentMaxWidth: 900` and a minimum height around
+  `clamp(30rem, 65vh, 42rem)`. Use a contained, generously rounded surface with hidden overflow and a calm gradient
+  or equivalent layered background derived from the project palette. Use scoped custom CSS for the rounded gradient
+  treatment when Wallpaper settings alone cannot express it.
+- **Benefits:** Set `areaBackgroundEnabled: true`, use `gridGapPreset: normal`,
+  `tileMinHeightPreset: standard` and `contentPaddingPreset: normal`. Enable a visible background on every card and
+  distribute surfaces A, B and C across them.
+- **Process:** Use `gridGapPreset: extraLarge` and one full-width row per step. Enable the matching A, B or C surface
+  on each complete row and its text tile, use `contentPaddingPreset: large`, vertically center the content and keep
+  the alternating `5/7` and `7/5` desktop proportions. Images should fill their panel with `cover`; use `contain`
+  only when a mockup needs breathing room inside the same deliberate colored panel.
+- **Solution insight:** Set `areaBackgroundEnabled: true`, `gridGapPreset: normal` and
+  `tileMinHeightPreset: large`. Keep media and content tiles visibly grouped as one mosaic instead of letting them
+  float independently on the page background.
+- **Customer proof:** Use a full-width band with an explicit light surface from the selected palette. Choose one or
+  two rows from the available testimonial count, but give the band enough density to read as a purposeful section.
+- **FAQ and final CTA:** Keep the compact accordion width and generous vertical spacing. End with a strong contained
+  CTA surface that has accessible contrast and a clear visual boundary.
+
+Keep all generated images in one coherent art direction: matching palette, rendering style, perspective, lighting
+and proportions. Avoid mixing unrelated photo and illustration styles, avoid text rendered inside generated images
+and avoid large uncontrolled white margins around otherwise small subjects.
+
 ## 1. Hero
 
 Use one overline, one `h1`, one concise lead, one primary CTA and at most one subordinate secondary CTA. State the
@@ -220,5 +253,7 @@ Reference profile:
 - The page has no invented factual claims or proof that could be mistaken for real. Any dummy testimonials are
   unmistakably labelled as test content.
 - Every media section uses approved existing or generated media, or a deliberately media-free layout.
+- The required visual baseline or the accepted external reference is visibly reflected in surfaces, cards, media
+  treatment, section separation and vertical rhythm.
 - Desktop and mobile output preserve heading hierarchy, reading order, contrast and keyboard usability.
 - Every created brick and affected Area has been reloaded and compared with the intended recipe.

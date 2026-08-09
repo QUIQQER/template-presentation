@@ -75,13 +75,18 @@ design reference merely because it belongs to the same project or is the intende
 Modify an existing page only when the user explicitly identifies or confirms it as the target. Otherwise create a
 new inactive page. Never overwrite an existing page merely because it was inspected as a visual reference.
 
+Keep an inactive draft's existing SEO, robots, sitemap and search-index settings unchanged unless the user explicitly
+asks to change them. In particular, do not set `noindex,nofollow` merely because a newly created page is inactive;
+the activation state already controls whether the draft is publicly available.
+
 ## Decide Media And Customer Proof
 
 Ask explicitly whether suitable images, screenshots and logos already exist or whether new images should be created.
 When existing media should be used, inspect the target project's media rather than copying foreign media IDs. When
 generation is requested and an image-generation capability is available, create suitable assets for the approved
-visual direction. If neither existing nor generated media should be used, choose layouts that work without media;
-do not leave empty image tiles or large blank sections.
+visual direction. Define one art direction for all generated assets on the page, including palette, rendering style,
+perspective, lighting and image proportions. If neither existing nor generated media should be used, choose layouts
+that work without media; do not leave empty image tiles or large blank sections.
 
 Before deciding the customer-proof section, search the target system for existing brick instances based on
 `\QUI\Bricks\Controls\Slider\CustomerReviewsFlow` or another verified customer-review control. Inspect relevant
@@ -170,6 +175,24 @@ promise.
 10. Do not create empty required sections. Resolve missing content through a question, an approved fallback or an
     intentional omission before writing the affected Area.
 
+## Perform A Visual Quality Gate
+
+Treat the rendered result as part of the implementation, not as optional polish.
+
+1. Render the completed page in desktop and mobile view through an available preview or authenticated browser.
+2. Compare it with the accepted reference page or screenshot. When no external reference was selected, compare it
+   with the recipe's required visual baseline.
+3. Check that every major section has a deliberate surface, card, media treatment or other visual anchor. Look for
+   excessive empty space, text floating without structure, inconsistent image styles, weak section separation,
+   uneven container widths and unbalanced vertical rhythm.
+4. Correct control and MultiLayout settings first. Add scoped custom CSS only for visual requirements that the
+   verified settings and template design system cannot express.
+5. Render again after corrections. Do not call the page visually finished based only on correct Brick order and
+   settings data.
+
+If no rendered preview can be inspected, report the visual check as unavailable and do not claim that the page is
+visually complete.
+
 ## Verify And Report
 
 - Reload every created or changed brick including attributes and full settings.
@@ -178,7 +201,7 @@ promise.
 - Confirm the selected design direction and whether its reference was an existing page, a screenshot or an
   independent campaign design.
 - Confirm whether media was reused, generated or intentionally omitted and identify dummy customer proof clearly.
-- Inspect the rendered desktop and mobile result when browser access is available.
+- Record the result of the desktop and mobile visual quality gate or its explicit unavailability.
 - Check heading order, one page `h1`, CTA targets, keyboard access, contrast and meaningful alternative text.
 - Report the page, recipe, created/reused bricks, Area order, shell decisions, remaining content gaps and unavailable
   checks.
