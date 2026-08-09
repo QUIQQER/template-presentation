@@ -27,6 +27,7 @@
     --qui-radius-input: var(--theme--qui-radius-input, var(--qui-radius-base));
     --qui-radius-card: var(--theme--qui-radius-card, var(--qui-radius-lg));
     --qui-radius-modal: var(--theme--qui-radius-modal, var(--qui-radius-lg));
+    --qui-radius-section: var(--theme--qui-radius-section, var(--qui-radius-2xl));
     --qui-radius-badge: var(--theme--qui-radius-badge, var(--qui-radius-sm));
     --qui-radius-image: var(--theme--qui-radius-image, var(--qui-radius-base));
     --qui-radius-pill: var(--qui-radius-full);
