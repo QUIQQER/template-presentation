@@ -729,15 +729,6 @@ class Utils
 
         try {
             $SearchSite = current($searchSites);
-
-            if (!$SearchSite instanceof QUI\Interfaces\Projects\Site) {
-                return [
-                    'searchType' => '',
-                    'searchUrl' => '',
-                    'searchDataQui' => '',
-                ];
-            }
-
             $searchUrl = $SearchSite->getUrlRewritten();
         } catch (QUI\Exception $Exception) {
             QUI\System\Log::addNotice($Exception->getMessage());
