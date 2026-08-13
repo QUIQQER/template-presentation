@@ -587,8 +587,8 @@
             <en><![CDATA[This setting allows you to define the font weight of headings (h1, h2, etc). Typical value is "700 - Bold". Please note that the selected font weight must be supported by the chosen font.]]></en>
         </locale>
         <locale name="settings.typography.text.fontWeight.title">
-            <de><![CDATA[Überschriften Schriftstärke (font-weight)]]></de>
-            <en><![CDATA[Heading font weight]]></en>
+            <de><![CDATA[Schriftstärke Fließtext (font-weight)]]></de>
+            <en><![CDATA[Body text font weight]]></en>
         </locale>
         <locale name="settings.typography.text.fontWeight.desc">
             <de><![CDATA[Mit dieser Einstellung kannst du die Schriftstärke (font-weight) der Schrift festlegen. Typischer Wert ist "400 - Normal (Regular)". Bitte beachte, dass die gewählte Schriftstärke von der verwendeten Schriftart unterstützt werden muss.]]></de>
