@@ -8,6 +8,22 @@
             <locale group="quiqqer/template-presentation" var="package.description"/>
         </description>
 
+        <capabilities schemaVersion="1">
+            <capability id="presentation.marketing-website">
+                <title>Marketing website presentation</title>
+                <description>
+                    Presents responsive marketing and product websites with configurable design tokens, navigation, language and social links, page headers, layouts and brick areas.
+                </description>
+            </capability>
+
+            <capability id="content.guided-landing-page-creation">
+                <title>Guided landing page creation</title>
+                <description>
+                    Guides structured landing page creation with template-native layouts, bricks, design classes, responsive rules and visual quality checks.
+                </description>
+            </capability>
+        </capabilities>
+
         <image src="URL_OPT_DIR/quiqqer/template-presentation/bin/img/Logo.png"/>
 
         <preview>
