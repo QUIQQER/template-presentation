@@ -1,0 +1,1104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<locales>
+    <groups name="quiqqer/template-presentation" datatype="php,js">
+        <!-- template bricks -->
+        <locale name="brick.settings.enableSelect.disable">
+            <en><![CDATA[Disable]]></en>
+        </locale>
+        <locale name="brick.settings.enableSelect.enable.useBrickSetting">
+            <en><![CDATA[Enable: use brick setting]]></en>
+        </locale>
+        <locale name="brick.settings.enableSelect.enable.useTemplateSetting">
+            <en><![CDATA[Enable: use template setting]]></en>
+        </locale>
+        <locale name="promosliderBackground">
+            <en><![CDATA[Set the background color (only by full width)]]></en>
+        </locale>
+        <locale name="showBrickTitle">
+            <en><![CDATA[Brick title]]></en>
+        </locale>
+        <locale name="brick.settings.enableBgImage.fullWidth">
+            <en><![CDATA[Template Presentation: Full width]]></en>
+        </locale>
+        <locale name="settings.verticalSpacingTop">
+            <en><![CDATA[Top spacing<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="settings.verticalSpacingBottom">
+            <en><![CDATA[Bottom spacing<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="settings.verticalSpacing.disabled">
+            <en><![CDATA[Disabled]]></en>
+        </locale>
+        <locale name="settings.verticalSpacing.small">
+            <en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="settings.verticalSpacing.base">
+            <en><![CDATA[Normal (default)]]></en>
+        </locale>
+        <locale name="settings.verticalSpacing.medium">
+            <en><![CDATA[Medium]]></en>
+        </locale>
+        <locale name="settings.verticalSpacing.large">
+            <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="settings.verticalSpacing.extraLarge">
+            <en><![CDATA[Extra large]]></en>
+        </locale>
+        <locale name="brick.settings.enableBgImage">
+            <en><![CDATA[Enable brick background image<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.bgImage">
+            <en><![CDATA[Brick background<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.bgImage.desc">
+            <en><![CDATA[Please note: some bricks have their own settings for setting the background image. Under certain circumstances, it may be better to use the built-in brick setting.]]></en>
+        </locale>
+        <locale name="brick.settings.enableBgColor">
+            <en><![CDATA[Enable brick background color<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.bgColor">
+            <en><![CDATA[Brick background color<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.bgColor.desc">
+            <en><![CDATA[Please note: some bricks have their own settings for setting the background color. Under certain circumstances, it may be better to use the built-in brick setting.]]></en>
+        </locale>
+        <locale name="brick.settings.enableTextColor">
+            <en><![CDATA[Enable brick text color<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.textColor">
+            <en><![CDATA[Brick text color<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.textColor.desc">
+            <en><![CDATA[This setting is only necessary if a contrasting color to the background image or background color is needed to ensure the readability of the text.]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.enable">
+            <en><![CDATA[Enable brick top separator<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.image">
+            <en><![CDATA[Top separator<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.image.desc">
+            <en><![CDATA[Select a suitable image that can serve as a separator between the current and the previous block. Example generators: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> and <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.width">
+            <en><![CDATA[Separator width<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.width.desc">
+            <en><![CDATA[If no value is entered, the width of the image is used. Please enter a value with unit. Examples: 100%, 100vw, 500px, 40rem, etc.]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.height">
+            <en><![CDATA[Separator height<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorTop.height.desc">
+            <en><![CDATA[If no value is entered, the height of the image is used. Please enter a value with unit. Examples: 100%, 100vw, 500px, 40rem, etc.]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.enable">
+            <en><![CDATA[Enable brick bottom separator<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.image">
+            <en><![CDATA[Brick bottom separator<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.image.desc">
+            <en><![CDATA[Select a suitable image that can be used as a separator between the current and the next brick. Example generators: <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> and <a href="https://getwaves.io/" target="_blank">getwaves.io</a>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.width">
+            <en><![CDATA[Bottom separator width<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.width.desc">
+            <en><![CDATA[If no value is entered, the width of the image is used. Please enter a value with unit. Examples: 100%, 100vw, 500px, 40rem, etc.]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.height">
+            <en><![CDATA[Separator height<br><small>Template Presentation</small>]]></en>
+        </locale>
+        <locale name="brick.settings.separatorBottom.height.desc">
+            <en><![CDATA[If no value is entered, the height of the image is used. Please enter a value with unit. Examples: 100%, 100vw, 500px, 40rem, etc.]]></en>
+        </locale>
+        <!-- areas -->
+        <locale name="area.footer.title">
+            <en><![CDATA[Footer brick area]]></en>
+        </locale>
+        <locale name="area.footer.description">
+            <en><![CDATA[Brick area of the footer]]></en>
+        </locale>
+        <locale name="area.startpageContent.title">
+            <en><![CDATA[Content area (Landingpage)]]></en>
+        </locale>
+        <locale name="area.startpageContent.description">
+            <en><![CDATA[Brick area of a landingpage layout]]></en>
+        </locale>
+        <locale name="area.sidebar.left.title">
+            <en><![CDATA[Left brick area]]></en>
+        </locale>
+        <locale name="area.sidebar.left.description">
+            <en><![CDATA[Brick area to the left of the content]]></en>
+        </locale>
+        <locale name="area.sidebar.right.title">
+            <en><![CDATA[Right brick area]]></en>
+        </locale>
+        <locale name="area.sidebar.right.description">
+            <en><![CDATA[Brick area to the right of the content]]></en>
+        </locale>
+        <locale name="area.sidebar.prefix.content.title">
+            <en><![CDATA[Prefix area]]></en>
+        </locale>
+        <locale name="area.sidebar.prefix.content.description">
+            <en><![CDATA[Brick area before the content]]></en>
+        </locale>
+        <locale name="area.sidebar.suffix.content.title">
+            <en><![CDATA[Suffix area]]></en>
+        </locale>
+        <locale name="area.sidebar.suffix.content.description">
+            <en><![CDATA[Brick  area after the content]]></en>
+        </locale>
+        <locale name="area.header.title">
+            <en><![CDATA[Header – Additional widget area]]></en>
+        </locale>
+        <locale name="area.header.description">
+            <en><![CDATA[This zone functions similarly to the header suffix zone. The only difference is that the menu floats above the module.]]></en>
+        </locale>
+        <locale name="area.headerSuffix.title">
+            <en><![CDATA[Header suffix]]></en>
+        </locale>
+        <locale name="area.headerSuffix.description">
+            <en><![CDATA[Brick area after the header]]></en>
+        </locale>
+        <locale name="area.topBanner.title">
+            <en><![CDATA[Banner bar above the navigation]]></en>
+        </locale>
+        <locale name="area.topBanner.description">
+            <en><![CDATA[Slim brick area above the menu for short sales, Black Friday or promotional messages.]]></en>
+        </locale>
+        <locale name="area.navAction.title">
+            <en><![CDATA[Navigation action]]></en>
+        </locale>
+        <locale name="area.navAction.description">
+            <en><![CDATA[Simple area in the navigation section to place e.g. a CTA button, a login link, or a dashboard link.]]></en>
+        </locale>
+        <locale name="area.footerPrefix.title">
+            <en><![CDATA[Footer Prefix]]></en>
+        </locale>
+        <locale name="area.footerPrefix.description">
+            <en><![CDATA[Brick area before the footer]]></en>
+        </locale>
+        <!-- template site settings -->
+        <locale name="templatePresentation.siteSettings">
+            <en><![CDATA[Template Presentation: general settings]]></en>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showEmotion">
+            <en><![CDATA[Show header picture]]></en>
+        </locale>
+        <!-- header site settings-->
+        <locale name="templatePresentation.siteSettings.showHeader">
+            <en><![CDATA[Header]]></en>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showHeader.default">
+            <en><![CDATA[Default template setting]]></en>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showHeader.show">
+            <en><![CDATA[Show]]></en>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showHeader.hide">
+            <en><![CDATA[Hide]]></en>
+        </locale>
+        <!-- Title & short -->
+        <locale name="templatePresentation.siteSettings.showTitle">
+            <en><![CDATA[Show title]]></en>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showTitle.default">
+            <en><![CDATA[Default template setting]]></en>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showTitle.show">
+            <en><![CDATA[Show]]></en>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showTitle.hide">
+            <en><![CDATA[Hide]]></en>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showShort">
+            <en><![CDATA[Show short descriptions]]></en>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showShort.default">
+            <en><![CDATA[Default template setting]]></en>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showShort.show">
+            <en><![CDATA[Show]]></en>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showShort.hide">
+            <en><![CDATA[Hide]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.enable">
+            <en><![CDATA[Adjust header text color]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.enable.useTemplateSetting">
+            <en><![CDATA[Yes, use color set in template setting for header]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.enable.useSiteSetting">
+            <en><![CDATA[Yes, Yes, use your own color on this page]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.enable.useDefaultColor">
+            <en><![CDATA[No, use default template color]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.color">
+            <en><![CDATA[Show short descriptions]]></en>
+        </locale>
+        <locale name="site.settings.header.textColor.color.desc">
+            <en><![CDATA[This option only has an effect if <i>"Yes, use your own color on this page"</i> was selected above.]]></en>
+        </locale>
+        <locale name="siteSettings.pageCustomClass">
+            <en><![CDATA[CSS class]]></en>
+        </locale>
+        <locale name="siteSettings.pageCustomClass.desc" html="true">
+            <en><![CDATA[<strong>For developers:</strong> you can give a page a separate CSS class. This is set on the <i>&lt;body&gt;</i> tag. This way you can address the page not only by ID. It is helpful if e.g. Live and Dev environment exist (or local installation), which are not exactly the same.]]></en>
+        </locale>
+        <locale name="siteSettings.independentMenuId">
+            <en><![CDATA[Independent]]></en>
+        </locale>
+        <locale name="siteSettings.independentMenuId.desc">
+            <en><![CDATA[The option allows to set separate and independent menu for single page.]]></en>
+        </locale>
+        <locale name="siteSettings.independentMenuIdLoggedIn">
+            <en><![CDATA[Independent menu for logged-in users]]></en>
+        </locale>
+        <locale name="siteSettings.independentMenuIdLoggedIn.desc">
+            <en><![CDATA[If a user is logged in, this menu is used for this page instead of the default menu.]]></en>
+        </locale>
+        <locale name="templatePresentation.siteSettings.nav.title">
+            <en><![CDATA[Template Presentation: Nav bar]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent">
+            <en><![CDATA[Navigation bar is initially transparent]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent.default">
+            <en><![CDATA[Default template setting]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent.enable">
+            <en><![CDATA[Enable]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent.disable">
+            <en><![CDATA[Disable]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent.desc">
+            <en><![CDATA[If the navigation bar is fixed (always visible at the top) and the "Navigation bar is initially transparent" option is enabled in the project settings, the menu items may be difficult to read in some cases. With the options below, you can define the colors for each page individually to match the background image.]]></en>
+        </locale>
+        <locale name="site.settings.nav.scrollOffset">
+            <en><![CDATA[Scroll offset for navigation bar]]></en>
+        </locale>
+        <locale name="site.settings.nav.scrollOffset.desc">
+            <en><![CDATA[Overrides the template scroll offset for this page. Leave empty to use the template setting. Values starting at 0 are allowed.]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent.logo">
+            <en><![CDATA[Logo for transparent navigation bar]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent.logo.desc">
+            <en><![CDATA[The project logo may be difficult to recognize when the navigation bar is transparent. With this setting, you can specify an alternative logo to be used specifically for the transparent navigation bar.]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent.linkColor">
+            <en><![CDATA[Link color (navigation bar is transparent)]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent.linkColorHover">
+            <en><![CDATA[Link color on hover(navigation bar is transparent)]]></en>
+        </locale>
+        <locale name="site.settings.nav.initialTransparent.linkBgColorHover">
+            <en><![CDATA[Link color on hover(navigation bar is transparent)]]></en>
+        </locale>
+        <locale name="package.title">
+            <en><![CDATA[Product Presentation]]></en>
+        </locale>
+        <locale name="package.description">
+            <en><![CDATA[Business and marketing Template.]]></en>
+        </locale>
+        <locale name="admin.layout.leftSidebar">
+            <en><![CDATA[Left sidebar]]></en>
+        </locale>
+        <locale name="admin.layout.startpage">
+            <en><![CDATA[Landingpage]]></en>
+        </locale>
+        <locale name="admin.layout.rightSidebar">
+            <en><![CDATA[Right sidebar]]></en>
+        </locale>
+        <locale name="admin.layout.noSidebar">
+            <en><![CDATA[No sidebar]]></en>
+        </locale>
+        <locale name="admin.layout.fullWidth">
+            <en><![CDATA[Full width]]></en>
+        </locale>
+        <locale name="admin.layout.fullWidth.desc">
+            <en><![CDATA[Full width without container. Content controls its own width via the classes qui-content-grid, qui-content-wide and qui-content-full.]]></en>
+        </locale>
+        <locale name="admin.layout.noSidebarSmall">
+            <en><![CDATA[No sidebar - thin content]]></en>
+        </locale>
+        <locale name="admin.layout.leftSidebar.description">
+            <en><![CDATA[Default layout with the sidebar on the left]]></en>
+        </locale>
+        <locale name="bricks.Startpage3Box.title">
+            <en><![CDATA[Three-column block on the home page]]></en>
+        </locale>
+        <locale name="admin.layout.startpage.description">
+            <en><![CDATA[Default home page layout]]></en>
+        </locale>
+        <locale name="continue.reading">
+            <en><![CDATA[Continue Reading]]></en>
+        </locale>
+        <locale name="copyright.text" html="true">
+            <en><![CDATA[&copy; [year] - built with <a href="https://www.quiqqer.com">QUIQQER - Template Presentation</a>]]></en>
+        </locale>
+        <locale name="copyright.link" html="true">
+            <en><![CDATA[Home]]></en>
+        </locale>
+        <locale name="nav.button.close" html="true">
+            <en><![CDATA[Close menu]]></en>
+        </locale>
+        <!-- settings -->
+        <locale name="templatePresentation.settings.menu.title">
+            <en><![CDATA[Template settings: Product Presentation]]></en>
+        </locale>
+        <!-- general settings -->
+        <locale name="templatePresentation.settings.general.title">
+            <en><![CDATA[General settings]]></en>
+        </locale>
+        <locale name="templatePresentation.showTitle.text">
+            <en><![CDATA[Show site title]]></en>
+        </locale>
+        <locale name="templatePresentation.showShort.text">
+            <en><![CDATA[Show site short description]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.bgColorSwitcher.display">
+            <en><![CDATA[On]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.bgColorSwitcher.hide">
+            <en><![CDATA[Off]]></en>
+        </locale>
+        <!-- Dropdown Language Switch in top nav -->
+        <locale name="templatePresentation.settings.dropdownLangNav.title">
+            <en><![CDATA[Change language widget]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.dropdownLangNav.hide">
+            <en><![CDATA[Disabled]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.dropdownLangNav.flag">
+            <en><![CDATA[Flag]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.dropdownLangNav.text">
+            <en><![CDATA[Text]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.dropdownLangNav.flagAndText">
+            <en><![CDATA[Flag and text]]></en>
+        </locale>
+        <!-- Language switch position -->
+        <locale name="templatePresentation.settings.dropdownLangNavPosition.title">
+            <en><![CDATA[Change language widget - position]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.dropdownLangNavPosition.nav">
+            <en><![CDATA[Main navigation]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.dropdownLangNavPosition.footer">
+            <en><![CDATA[Footer]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.dropdownLangNavPosition.navAndFooter">
+            <en><![CDATA[Main navigation and footer]]></en>
+        </locale>
+        <locale name="settings.includeDemoStyling.text">
+            <en><![CDATA[Active demo design]]></en>
+        </locale>
+        <locale name="settings.includeDemoStyling.desc">
+            <en><![CDATA[If the option is active, additional CSS rules and, if necessary, images are included. This setting is usually useful when the project has been created with demo data, for example, during the QUIQQER installation.]]></en>
+        </locale>
+        <locale name="settings.typography.title">
+            <en><![CDATA[Typography]]></en>
+        </locale>
+        <locale name="settings.typography.heading.fontWeight.title">
+            <en><![CDATA[Heading font weight]]></en>
+        </locale>
+        <locale name="settings.typography.heading.fontWeight.desc">
+            <en><![CDATA[This setting allows you to define the font weight of headings (h1, h2, etc). Typical value is "700 - Bold". Please note that the selected font weight must be supported by the chosen font.]]></en>
+        </locale>
+        <locale name="settings.typography.text.fontWeight.title">
+            <en><![CDATA[Body text font weight]]></en>
+        </locale>
+        <locale name="settings.typography.text.fontWeight.desc">
+            <en><![CDATA[This setting allows you to define the font weight. Typical value is "400 - Normal (Regular)". Please note that the selected font weight must be supported by the chosen font.]]></en>
+        </locale>
+        <!-- font weight -->
+        <locale name="settings.typography.100">
+            <en><![CDATA[100 - Thin]]></en>
+        </locale>
+        <locale name="settings.typography.200">
+            <en><![CDATA[200 - Extra Light]]></en>
+        </locale>
+        <locale name="settings.typography.300">
+            <en><![CDATA[300 - Light]]></en>
+        </locale>
+        <locale name="settings.typography.400">
+            <en><![CDATA[400 - Normal (Regular)]]></en>
+        </locale>
+        <locale name="settings.typography.500">
+            <en><![CDATA[500 - Medium]]></en>
+        </locale>
+        <locale name="settings.typography.600">
+            <en><![CDATA[600 - Semi Bold]]></en>
+        </locale>
+        <locale name="settings.typography.700">
+            <en><![CDATA[700 - Bold]]></en>
+        </locale>
+        <locale name="settings.typography.800">
+            <en><![CDATA[800 - Extra Bold]]></en>
+        </locale>
+        <locale name="settings.typography.900">
+            <en><![CDATA[900 - Black]]></en>
+        </locale>
+        <locale name="settings.typography.text.fontSize.title">
+            <en><![CDATA[Font size (in pixel)]]></en>
+        </locale>
+        <locale name="settings.typography.text.fontSize.desc">
+            <en><![CDATA[Base font size for flowing text. Typical value is "16px".]]></en>
+        </locale>
+        <locale name="settings.typography.contentTablesScrollable.title">
+            <en><![CDATA[Make tables in content scrollable]]></en>
+        </locale>
+        <locale name="settings.typography.contentTablesScrollable.desc">
+            <en><![CDATA[
+                <p>If this option is enabled, tables in editorial content are automatically wrapped in a horizontally scrollable container. This keeps wide tables usable on small viewports without affecting other tables in the template.</p>
+                <p>You can exclude individual tables from this behavior by adding either the CSS class <code>no-table-scroll</code> or the attribute <code>data-qui-disable-table-scroll="1"</code> to the table.</p>
+            ]]></en>
+        </locale>
+        <!-- overline -->
+        <locale name="settings.overline.style.title">
+            <en><![CDATA[Overline style]]></en>
+        </locale>
+        <locale name="settings.overline.style.desc">
+            <en><![CDATA[
+                <p>An overline is a small uppercase label displayed above a heading. This setting defines the default appearance for elements with the CSS class <code>overline</code>.</p>
+                <p>Individual overlines can deviate from the default by adding a variant class, e.g. <code>overline overline--dot</code>. The class <code>overline-center</code> centers the overline.</p>
+                <p>Numbered overlines count up automatically across the page. The class <code>overline-reset</code> (on a surrounding container or on the first overline of a group) restarts the counting at 01. When building multiple groups, give every group its own <code>overline-reset</code>.</p>
+                <p>The text color is defined by the "Overline text color" setting and can be overridden per overline with the classes <code>overline-primary</code> and <code>overline-neutral</code>. Icons (e.g. Font Awesome) inside the overline adapt automatically; decorative icons should get <code>aria-hidden="true"</code>.</p>
+            ]]></en>
+        </locale>
+        <locale name="settings.overline.style.line">
+            <en><![CDATA[Line]]></en>
+        </locale>
+        <locale name="settings.overline.style.dot">
+            <en><![CDATA[Colored dot]]></en>
+        </locale>
+        <locale name="settings.overline.style.bar">
+            <en><![CDATA[Vertical bar]]></en>
+        </locale>
+        <locale name="settings.overline.style.number">
+            <en><![CDATA[Number (counts up automatically)]]></en>
+        </locale>
+        <locale name="settings.overline.style.lineNumber">
+            <en><![CDATA[Line + number (counts up automatically)]]></en>
+        </locale>
+        <locale name="settings.overline.style.badge">
+            <en><![CDATA[Badge (pill with background)]]></en>
+        </locale>
+        <locale name="settings.overline.style.badgeDot">
+            <en><![CDATA[Badge with dot]]></en>
+        </locale>
+        <locale name="settings.overline.style.badgeGhost">
+            <en><![CDATA[Badge ghost (subtle border, transparent)]]></en>
+        </locale>
+        <locale name="settings.overline.style.underline">
+            <en><![CDATA[Underline]]></en>
+        </locale>
+        <locale name="settings.overline.style.slash">
+            <en><![CDATA[Slashes (//)]]></en>
+        </locale>
+        <locale name="settings.overline.style.hash">
+            <en><![CDATA[Hash (#)]]></en>
+        </locale>
+        <locale name="settings.overline.style.hashFa">
+            <en><![CDATA[Hash (# as Font Awesome icon)]]></en>
+        </locale>
+        <locale name="settings.overline.style.plain">
+            <en><![CDATA[Text only (no symbol)]]></en>
+        </locale>
+        <locale name="settings.overline.textColor.title">
+            <en><![CDATA[Overline text color]]></en>
+        </locale>
+        <locale name="settings.overline.textColor.desc">
+            <en><![CDATA[Defines the default text color of overlines. "Neutral" inherits the text color from the surrounding context (recommended; the accent color stays reserved for the symbol). Can be overridden per overline with the classes <code>overline-primary</code> and <code>overline-neutral</code>.]]></en>
+        </locale>
+        <locale name="settings.overline.textColor.neutral">
+            <en><![CDATA[Neutral (inherits from context)]]></en>
+        </locale>
+        <locale name="settings.overline.textColor.primary">
+            <en><![CDATA[Primary color]]></en>
+        </locale>
+        <!-- header settings -->
+        <locale name="templatePresentation.settings.showHeader.title">
+            <en><![CDATA[Header settings]]></en>
+        </locale>
+        <!-- show header? -->
+        <locale name="showHeader.desc">
+            <en><![CDATA[On witch site layouts should be the header displayed?]]></en>
+        </locale>
+        <!-- breadcrumb settings -->
+        <locale name="templatePresentation.breadcrumb.settings.title">
+            <en><![CDATA[Breadcrumb settings]]></en>
+        </locale>
+        <!-- show breadcrumb? -->
+        <locale name="showBreadcrumb.text">
+            <en><![CDATA[On which pages should breadcrumb navigation be displayed?]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.text">
+            <en><![CDATA[Show title]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.description">
+            <en><![CDATA[Controls whether a heading is shown above the breadcrumb navigation. If no option is selected, the breadcrumb control default is used.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.option.default">
+            <en><![CDATA[Use default]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.option.enable">
+            <en><![CDATA[Enable]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.showTitle.option.disable">
+            <en><![CDATA[Disable]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.titleText.text">
+            <en><![CDATA[Title text]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.titleText.description">
+            <en><![CDATA[Optional multilingual text for the breadcrumb navigation heading.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.firstItemText.text">
+            <en><![CDATA[Text for first entry]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.firstItemText.description">
+            <en><![CDATA[Optional multilingual replacement text for the first visible breadcrumb entry. URL and target remain unchanged.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.text">
+            <en><![CDATA[Font size]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.description">
+            <en><![CDATA[Selects the font size of the breadcrumb navigation.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.xs">
+            <en><![CDATA[Extra small]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.s">
+            <en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.normal">
+            <en><![CDATA[Normal]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.lg">
+            <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.fontSize.option.xl">
+            <en><![CDATA[Extra large]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.separator.text">
+            <en><![CDATA[Separator]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.separator.description">
+            <en><![CDATA[Selects the separator between navigation items.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.text">
+            <en><![CDATA[Style of the last item]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.description">
+            <en><![CDATA[Determines how the last breadcrumb item is highlighted.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.text">
+            <en><![CDATA[Top and bottom spacing]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.description">
+            <en><![CDATA[Controls the vertical padding of the breadcrumb navigation and passes the selected value directly to the breadcrumb control. Can be overridden in the theme via <code>--theme--qui-tpl-breadcrumb-spacing</code>.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.option.disabled">
+            <en><![CDATA[Disabled]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.option.small">
+            <en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.option.normal">
+            <en><![CDATA[Normal]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.spacing.option.large">
+            <en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.text">
+            <en><![CDATA[Appearance]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.description">
+            <en><![CDATA[Defines how the breadcrumb navigation is visually styled in the template.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.none">
+            <en><![CDATA[No additional styling]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.default">
+            <en><![CDATA[Default with bottom border]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.subtleSurface">
+            <en><![CDATA[Subtle background]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.pillSurface">
+            <en><![CDATA[Pill with surface]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.appearance.option.pillBorder">
+            <en><![CDATA[Pill with border]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.option.none">
+            <en><![CDATA[No special style]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.option.primary">
+            <en><![CDATA[Primary color]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.option.bold">
+            <en><![CDATA[Bold]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.breadcrumb.lastItemStyle.option.primaryBold">
+            <en><![CDATA[Primary color + bold]]></en>
+        </locale>
+        <!-- Header Größe-->
+        <locale name="templatePresentation.settings.headerHeightValue.text">
+            <en><![CDATA[Height (in pixel) - desktop]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.headerHeightValueMobile.text">
+            <en><![CDATA[Height (in pixel) - mobile]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.headerHeightValueMobile.desc">
+            <en><![CDATA[If no value is set, the desktop height will be used. Please note that the value is a minimum height that can also be influenced by several factors, e.g. padding-top and padding-bottom or the length of the text in the header (if the setting is enabled).]]></en>
+        </locale>
+        <!-- Position des Bildes im Header-->
+        <locale name="templatePresentation.settings.headerImagePosition.text">
+            <en><![CDATA[Choose position of the image:]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.headerImagePosition.top">
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.headerImagePosition.center">
+            <en><![CDATA[Middle]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.headerImagePosition.bottom">
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.header.textColor">
+            <en><![CDATA[Header text color]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.header.textPos">
+            <en><![CDATA[Text alignment]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.header.textPos.flex-start">
+            <en><![CDATA[Left]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.header.textPos.center">
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.header.textPos.flex-end">
+            <en><![CDATA[Right]]></en>
+        </locale>
+        <!-- Logo settings -->
+        <locale name="templatePresentation.settings.logoHeight.title">
+            <en><![CDATA[Logo settings]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.logoHeight.text">
+            <en><![CDATA[Logo height]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.logoWidth.text">
+            <en><![CDATA[Logo width (optional)]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.logoWidth.desc">
+            <en><![CDATA[In most cases, you don't need to set the logo width. The template automatically calculates the width based on the specified height. In rare cases, QUIQQER may not be able to perform the calculation (e.g. if the logo is an .svg image). <strong>If the logo is a <code>.svg</strong> image, the width must be entered.</strong>]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.logoTitle.text">
+            <en><![CDATA[Hover title]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.logoTitle.desc">
+            <en><![CDATA[Optional text shown as a tooltip when hovering over the logo (HTML <code>title</code> attribute of the logo link).]]></en>
+        </locale>
+        <!-- Bricks -->
+        <locale name="settings.bricks.bricks.title">
+            <en><![CDATA[Bricks (widgets)]]></en>
+        </locale>
+        <locale name="settings.bricks.bgColor.text">
+            <en><![CDATA[Bricks background color]]></en>
+        </locale>
+        <locale name="settings.bricks.bgColor.desc">
+            <en><![CDATA[Default background color for bricks. If you activate a background color in the brick setting, you can either choose your own or use the color predefined with this setting.]]></en>
+        </locale>
+        <locale name="settings.bricks.textColor.text">
+            <en><![CDATA[Bricks text color]]></en>
+        </locale>
+        <locale name="settings.bricks.textColor.desc">
+            <en><![CDATA[Default text color for bricks. If you activate a text color in the brick setting, you can either choose your own or use the color predefined with this setting.]]></en>
+        </locale>
+        <!-- Navbar settings -->
+        <locale name="templatePresentation.settings.navBar.title">
+            <en><![CDATA[Nav bar settings]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBar.Height.text">
+            <en><![CDATA[Nav bar Height (in pixel)]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.nav.maxWidth">
+            <en><![CDATA[Nav bar width]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.nav.maxWidth.desc">
+            <en><![CDATA[Any valid CSS value is allowed, e.g. 100%, 100vw, 500px, 40rem, etc. Default value: 1200px.]]></en>
+        </locale>
+        <!-- nav attachment -->
+        <locale name="templatePresentation.settings.navPos.text">
+            <en><![CDATA[Menu position]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navPos.description">
+            <en><![CDATA[Defines how the navigation behaves while scrolling. With "Fixed - hides while scrolling" the menu is hidden when scrolling down and shown again when scrolling up; at the top of the page it is always visible.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navPos.fix">
+            <en><![CDATA[Fixed - page menu is always visible at the top, even when the page is scrolled down.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navPos.autoHide">
+            <en><![CDATA[Fixed - hides while scrolling]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navPos.scroll">
+            <en><![CDATA[Scroll - page menu is no longer visible when the page is scrolled down.]]></en>
+        </locale>
+        <!-- nav style -->
+        <locale name="templatePresentation.settings.navStyle.text">
+            <en><![CDATA[Menu style]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navStyle.description">
+            <en><![CDATA[This option allows you to customize the menu design. Selecting “No Design” means that no template-specific adjustments will be applied to the menu. Only the default design of the menu module will be used. This option is useful when using a child template and you want to style the menu individually with your own CSS.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navStyle.none">
+            <en><![CDATA[No style]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navStyle.default">
+            <en><![CDATA[Template default design]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navStyle.defaultWithBigButtons">
+            <en><![CDATA[Template default design with big buttons]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navStyle.pill">
+            <en><![CDATA[Pill shaped navigation]]></en>
+        </locale>
+        <!-- nav alignment -->
+        <locale name="templatePresentation.settings.navAlignment.text">
+            <en><![CDATA[Nav alignment]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navAlignment.description">
+            <en><![CDATA[Defined the vertical alignment of navigation entries.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navAlignment.left">
+            <en><![CDATA[Left]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navAlignment.center">
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navAlignment.right">
+            <en><![CDATA[Right]]></en>
+        </locale>
+        <!-- Navbar colors -->
+        <locale name="templatePresentation.settings.navBarBgColor.text">
+            <en><![CDATA[Nav background color]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarLinkColor.text">
+            <en><![CDATA[Link color]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarLinkColorHover.text">
+            <en><![CDATA[Link color on hover]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarLinkBgColorHover.text">
+            <en><![CDATA[Link background color on hover]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarInitialTransparent.text">
+            <en><![CDATA[Navigation bar is initially transparent]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarInitialTransparent.desc">
+            <en><![CDATA[When the navigation bar is fixed (always visible at the top), it has the configured background color by default. If you activate this option, the navigation bar will initially be transparent when a header image is enabled or a widget is placed in the "Header – Additional Widget Area". As soon as the page is scrolled, it will use the previously configured colors.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarScrollOffset.text">
+            <en><![CDATA[Scroll offset for navigation bar]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarScrollOffset.desc">
+            <en><![CDATA[Defines the scroll position at which the fixed navigation bar switches to its scrolled state. This is especially relevant when the "Navigation bar is initially transparent" option is enabled. Default: 50 pixels.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarInitialTransparentLogo.text">
+            <en><![CDATA[Logo for transparent navigation bar]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarInitialTransparentLogo.desc">
+            <en><![CDATA[The project logo may be difficult to recognize when the navigation bar is transparent. With this setting, you can specify an alternative logo to be used specifically for the transparent navigation bar.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarInitialTransparentLinkColor.text">
+            <en><![CDATA[Link color (navigation bar is transparent)]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarInitialTransparentLinkColorHover.text">
+            <en><![CDATA[Link color on hover(navigation bar is transparent)]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.navBarInitialTransparentLinkBgColorHover.text">
+            <en><![CDATA[Link background color on hover(navigation bar is transparent)]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.mobileFontColor">
+            <en><![CDATA[Mobile Nav font color]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.mobileMenuBackground">
+            <en><![CDATA[Mobile nav background color]]></en>
+        </locale>
+        <!-- Search -->
+        <locale name="templatePresentation.settings.search.title">
+            <en><![CDATA[Search button]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.searchShow.text">
+            <en><![CDATA[Show search button in nav bar]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.searchLink.text">
+            <en><![CDATA[Search page]]></en>
+        </locale>
+        <!-- nav / menu: independent -->
+        <locale name="templatePresentation.settings.independentMenu.title">
+            <en><![CDATA[Independent menu]]></en>
+        </locale>
+        <locale name="template.settings.independentMenu.enableIndependentMenu">
+            <en><![CDATA[Enable independent menu]]></en>
+        </locale>
+        <locale name="template.settings.independentMenu.menuId">
+            <en><![CDATA[Select menu]]></en>
+        </locale>
+        <locale name="template.settings.independentMenu.menuId.desc">
+            <en><![CDATA[If a custom (independent) menu is selected, this will be displayed as navigation. The menu can be set per language; languages without their own selection use the menu of the default language.]]></en>
+        </locale>
+        <locale name="template.settings.independentMenu.menuIdLoggedIn">
+            <en><![CDATA[Select menu for logged-in users]]></en>
+        </locale>
+        <locale name="template.settings.independentMenu.menuIdLoggedIn.desc">
+            <en><![CDATA[If a user is logged in, this menu is displayed instead of the default independent menu. The menu can be set per language; languages without their own selection use the menu of the default language.]]></en>
+        </locale>
+        <locale name="template.settings.independentMenu.showFirstLevelIcons">
+            <en><![CDATA[Show icons in the first level]]></en>
+        </locale>
+        <!-- Colors -->
+        <locale name="templatePresentation.settings.color.title">
+            <en><![CDATA[Color management]]></en>
+        </locale>
+        <locale name="template.settings.mobileMenuBackground">
+            <en><![CDATA[Mobile nav background color]]></en>
+        </locale>
+        <locale name="template.settings.mobileMenuBackground.desc">
+            <en><![CDATA[This setting works only for mobile.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footerColor.text">
+            <en><![CDATA[Footer]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.contentColor.text">
+            <en><![CDATA[Content]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterBackground.text" html="true">
+            <en><![CDATA[Footer background color]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterFont.text">
+            <en><![CDATA[Footer font color]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterLink.text">
+            <en><![CDATA[Footer: link color]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterLinkHover.text">
+            <en><![CDATA[Footer: Link color on hover]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterLinkHover.desc">
+            <en><![CDATA[Link color when mouse hovers over it]]></en>
+        </locale>
+        <locale name="template.settings.colorMain.text">
+            <en><![CDATA[Main color]]></en>
+        </locale>
+        <locale name="template.settings.colorMainContrast.text">
+            <en><![CDATA[Contrast color for main color]]></en>
+        </locale>
+        <locale name="template.settings.colorMainContrast.description">
+            <en><![CDATA[Font color for elements that use the main color as background (e.g. chips, FAQ headers, badges).]]></en>
+        </locale>
+        <locale name="template.settings.buttonFontColor.text">
+            <en><![CDATA[Font color of buttons]]></en>
+        </locale>
+        <locale name="template.settings.buttonFontColor.description">
+            <en><![CDATA[Overrides the contrast color for buttons only. Leave empty to use the contrast color of the main color.]]></en>
+        </locale>
+        <locale name="template.settings.colorMain.description">
+            <en><![CDATA[Set the color of links, buttons, etc.]]></en>
+        </locale>
+        <locale name="template.settings.colorMainContentBackground.text">
+            <en><![CDATA[Background color of the page content]]></en>
+        </locale>
+        <locale name="template.settings.colorMainContentFont.text">
+            <en><![CDATA[Font color of the content]]></en>
+        </locale>
+        <locale name="brick.control.setting.order">
+            <en><![CDATA[Sort]]></en>
+        </locale>
+        <!-- social icons -->
+        <locale name="social.settings.title">
+            <en><![CDATA[Social icons]]></en>
+        </locale>
+        <locale name="social.show.nav">
+            <en><![CDATA[Show in nav]]></en>
+        </locale>
+        <locale name="social.show.footer">
+            <en><![CDATA[Show in footer]]></en>
+        </locale>
+        <locale name="social.linksNote">
+            <en><![CDATA[Please enter links including the protocol (<strong>https://</strong>). Only social media profiles with a saved link will be displayed.]]></en>
+        </locale>
+        <locale name="social.facebook">
+            <en><![CDATA[Facebook]]></en>
+        </locale>
+        <locale name="social.x">
+            <en><![CDATA[X (formerly Twitter)]]></en>
+        </locale>
+        <locale name="social.instagram">
+            <en><![CDATA[Instagram]]></en>
+        </locale>
+        <locale name="social.linkedin">
+            <en><![CDATA[LinkedIn]]></en>
+        </locale>
+        <locale name="social.pinterest">
+            <en><![CDATA[Pinterest]]></en>
+        </locale>
+        <locale name="social.youtube">
+            <en><![CDATA[YouTube]]></en>
+        </locale>
+        <locale name="social.tiktok">
+            <en><![CDATA[TikTok]]></en>
+        </locale>
+        <locale name="social.whatsapp">
+            <en><![CDATA[WhatsApp]]></en>
+        </locale>
+        <locale name="social.telegram">
+            <en><![CDATA[Telegram]]></en>
+        </locale>
+        <locale name="social.github">
+            <en><![CDATA[GitHub]]></en>
+        </locale>
+        <locale name="social.gitlab">
+            <en><![CDATA[GitLab]]></en>
+        </locale>
+        <locale name="frontend.social.facebook">
+            <en><![CDATA[Visit us on Facebook]]></en>
+        </locale>
+        <locale name="frontend.social.instagram">
+            <en><![CDATA[Visit us on Instagram]]></en>
+        </locale>
+        <locale name="frontend.social.x">
+            <en><![CDATA[Visit us on X (formerly Twitter)]]></en>
+        </locale>
+        <locale name="frontend.social.linkedin">
+            <en><![CDATA[Visit us on LinkedIn]]></en>
+        </locale>
+        <locale name="frontend.social.pinterest">
+            <en><![CDATA[Visit us on Pinterest]]></en>
+        </locale>
+        <locale name="frontend.social.youtube">
+            <en><![CDATA[Visit us on YouTube]]></en>
+        </locale>
+        <locale name="frontend.social.tiktok">
+            <en><![CDATA[Visit us on TikTok]]></en>
+        </locale>
+        <locale name="frontend.social.whatsapp">
+            <en><![CDATA[Message us on WhatsApp]]></en>
+        </locale>
+        <locale name="frontend.social.telegram">
+            <en><![CDATA[Message us on Telegram]]></en>
+        </locale>
+        <locale name="frontend.social.github">
+            <en><![CDATA[Find us on GitHub]]></en>
+        </locale>
+        <locale name="frontend.social.gitlab">
+            <en><![CDATA[Find us on GitLab]]></en>
+        </locale>
+        <locale name="frontend.menuMobile.social.title">
+            <en><![CDATA[Social]]></en>
+        </locale>
+        <locale name="frontend.footer.langSwitch.title">
+            <en><![CDATA[Change language]]></en>
+        </locale>
+        <!-- Editor -->
+        <locale name="editor.element.textLead">
+            <en><![CDATA[Template: Leading text]]></en>
+        </locale>
+        <locale name="editor.element.btn.primary">
+            <en><![CDATA[Template button: primary (brand)]]></en>
+        </locale>
+        <locale name="editor.element.btn.primary.outline">
+            <en><![CDATA[Template button: primary outline (brand)]]></en>
+        </locale>
+        <locale name="editor.element.btn.secondary">
+            <en><![CDATA[Template button: secondary]]></en>
+        </locale>
+        <locale name="editor.element.btn.secondary.outline">
+            <en><![CDATA[Template button: secondary outline]]></en>
+        </locale>
+        <locale name="editor.element.btn.light">
+            <en><![CDATA[Template button: light]]></en>
+        </locale>
+        <locale name="editor.element.btn.dark">
+            <en><![CDATA[Template button: dark]]></en>
+        </locale>
+        <locale name="editor.element.btn.dark.outline">
+            <en><![CDATA[Template button: dark outline]]></en>
+        </locale>
+        <locale name="editor.element.btn.white">
+            <en><![CDATA[Template button: white]]></en>
+        </locale>
+        <locale name="editor.element.btn.white.outline">
+            <en><![CDATA[Template button: white outline]]></en>
+        </locale>
+        <!-- search setting -->
+        <locale name="navbar.search.text">
+            <en><![CDATA[Search]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.search.text">
+            <en><![CDATA[Search]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.search.input">
+            <en><![CDATA[Input field]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.search.inputAndIcon">
+            <en><![CDATA[Search Icon]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.search.hide">
+            <en><![CDATA[Disabled]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.search.desc">
+            <en><![CDATA[Note: The search will only be displayed in the navigation if there is a page with the page type "Standard search" or "Advanced search".]]></en>
+        </locale>
+    </groups>
+    <groups name="quiqqer/template-presentation" datatype="php">
+        <locale name="frontend.button.toTop">
+            <en><![CDATA[Scroll to top]]></en>
+        </locale>
+        <locale name="frontend.button.toTopBar">
+            <en><![CDATA[Back to top]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.title">
+            <en><![CDATA[Footer]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.showToTop.text">
+            <en><![CDATA[Show "back to top" bar]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.showToTop.description">
+            <en><![CDATA[Shows or hides the "back to top" bar at the end of the footer.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.text">
+            <en><![CDATA["Back to top" style]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.description">
+            <en><![CDATA[Defines how the "back to top" bar below the footer is styled. The whole area stays clickable.]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.option.default">
+            <en><![CDATA[Default (icon + text)]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.option.outline">
+            <en><![CDATA[Outlined button]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.option.outlineLight">
+            <en><![CDATA[Outlined button (light)]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.option.badge">
+            <en><![CDATA[Circle icon above text]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.option.dashed">
+            <en><![CDATA[Dashed lines]]></en>
+        </locale>
+        <locale name="templatePresentation.settings.footer.toTopStyle.option.stacked">
+            <en><![CDATA[Icon above text]]></en>
+        </locale>
+    </groups>
+</locales>
