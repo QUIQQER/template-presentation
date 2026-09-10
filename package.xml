@@ -8,6 +8,15 @@
             <locale group="quiqqer/template-presentation" var="package.description"/>
         </description>
 
+        <capabilities schemaVersion="1">
+            <capability id="presentation.marketing-website">
+                <title>Marketing website presentation</title>
+                <description>
+                    Presents responsive marketing and product websites with configurable design tokens, navigation, language and social links, page headers, layouts and brick areas.
+                </description>
+            </capability>
+        </capabilities>
+
         <image src="URL_OPT_DIR/quiqqer/template-presentation/bin/img/Logo.png"/>
 
         <preview>
