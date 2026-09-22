@@ -43,6 +43,27 @@ whenQuiLoaded().then(() => {
         scrollToPosition(top);
     }
 
+    function focusScrollTarget(target) {
+        if (typeof target.focus !== 'function') {
+            return;
+        }
+
+        target.focus({preventScroll: true});
+
+        if (document.activeElement === target || target.hasAttribute('tabindex')) {
+            return;
+        }
+
+        // Headings and sections need a temporary tabindex for anchor navigation.
+        target.setAttribute('tabindex', '-1');
+        target.addEventListener('blur', function () {
+            if (target.getAttribute('tabindex') === '-1') {
+                target.removeAttribute('tabindex');
+            }
+        }, {once: true});
+        target.focus({preventScroll: true});
+    }
+
     function getScrollTargetByHref(href) {
         if (!href || href === '#') {
             return null;
@@ -152,6 +173,7 @@ whenQuiLoaded().then(() => {
             return;
         }
 
+        focusScrollTarget(target);
         scrollToElement(target, getTargetOffset(target));
     }
 
