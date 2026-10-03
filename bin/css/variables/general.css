@@ -20,6 +20,10 @@
     --qui-transition-property: var(--theme--qui-transition-property, all);
     --qui-transition: var(--theme--qui-transition, var(--qui-transition-duration) var(--qui-transition-timing-function) var(--qui-transition-property));
 
+    /* loader */
+    --quiqqer-loader-background: var(--theme--quiqqer-loader-background, rgba(255, 255, 255, 0.7));
+    --quiqqer-loader-color: var(--theme--quiqqer-loader-color, var(--qui-colors-text));
+
     /* breadcrumb */
     --qui-tpl-breadcrumb-spacing: var(--theme--qui-tpl-breadcrumb-spacing, var(--template-settings__breadcrumb-spacing));
     --qui-tpl-breadcrumb-border-color: var(--theme--qui-tpl-breadcrumb-border-color, #eee);
@@ -64,6 +68,12 @@
     --qui-screen-md: 1100px;
     --qui-screen-sm: 767px;
     --qui-screen-xs: 440px;
+}
+
+@supports (background: color-mix(in srgb, white 70%, transparent)) {
+    :root {
+        --quiqqer-loader-background: var(--theme--quiqqer-loader-background, color-mix(in srgb, var(--qui-colors-background) 70%, transparent));
+    }
 }
 
 @media screen and (max-width: 767px) {
