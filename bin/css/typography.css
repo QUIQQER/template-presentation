@@ -224,6 +224,12 @@ table {
     );
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .template-table-scroll {
+        transition: none;
+    }
+}
+
 .template-table-scroll::-webkit-scrollbar {
     display: none;
 }

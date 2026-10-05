@@ -81,3 +81,9 @@
         --qui-header-minHeight: var(--qui-header-minHeight--mobile);
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --qui-transition: none;
+    }
+}
