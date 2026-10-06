@@ -97,6 +97,20 @@
     color: transparent;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .skeleton-loader,
+    .qui-skeleton,
+    .qui-skeleton-form {
+        --shine-color: transparent;
+    }
+
+    .skeleton-loader,
+    .qui-skeleton,
+    .qui-skeleton-form :is(label, input, button, select, textarea) {
+        animation: none;
+    }
+}
+
 @keyframes qui-skeleton-shine {
     to {
         background-position-x: -100%;

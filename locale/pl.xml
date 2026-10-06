@@ -734,7 +734,7 @@
             <pl><![CDATA[Położenie menu]]></pl>
         </locale>
         <locale name="templatePresentation.settings.navPos.description">
-            <pl><![CDATA[Określa zachowanie nawigacji podczas przewijania. Opcja „Stałe — ukrywane przy przewijaniu” ukrywa menu podczas przewijania w dół i pokazuje je ponownie przy przewijaniu w górę. Na początku strony menu jest zawsze widoczne.]]></pl>
+            <pl><![CDATA[Określa zachowanie nawigacji podczas przewijania. Opcja „Stałe — ukrywane przy przewijaniu” ukrywa menu podczas przewijania w dół i pokazuje je ponownie przy przewijaniu w górę. Na początku strony menu jest zawsze widoczne. Uwaga: gdy włączone jest ustawienie systemowe ograniczające ruch, w tym trybie menu pozostaje stale widoczne u góry.]]></pl>
         </locale>
         <locale name="templatePresentation.settings.navPos.fix">
             <pl><![CDATA[Stałe — menu jest zawsze widoczne u góry, również po przewinięciu strony w dół.]]></pl>

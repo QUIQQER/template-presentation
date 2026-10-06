@@ -25,3 +25,9 @@
     --qui-input-backgroundColor--focus: var(--theme--qui-input-backgroundColor--focus, #fff);
     --qui-input-borderColor--focus: var(--theme--qui-input-borderColor--focus, var(--qui-colors-primary));
 }
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --qui-input-transition: none;
+    }
+}
