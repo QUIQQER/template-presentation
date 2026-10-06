@@ -734,7 +734,7 @@
             <fr><![CDATA[Position du menu]]></fr>
         </locale>
         <locale name="templatePresentation.settings.navPos.description">
-            <fr><![CDATA[Définit le comportement de la navigation pendant le défilement. Avec « Fixe : se masque au défilement », le menu se masque en descendant et réapparaît en remontant ; en haut de la page, il reste toujours visible.]]></fr>
+            <fr><![CDATA[Définit le comportement de la navigation pendant le défilement. Avec « Fixe : se masque au défilement », le menu se masque en descendant et réapparaît en remontant ; en haut de la page, il reste toujours visible. Remarque : lorsque le réglage système « Réduire les animations » est activé, le menu reste toujours visible en haut dans ce mode.]]></fr>
         </locale>
         <locale name="templatePresentation.settings.navPos.fix">
             <fr><![CDATA[Fixe : le menu reste visible en haut, même lorsque vous faites défiler la page vers le bas.]]></fr>

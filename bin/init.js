@@ -385,6 +385,16 @@ whenQuiLoaded().then(() => {
 
                     lastScrollY = currentScrollY;
 
+                    if (prefersReducedMotion()) {
+                        // Keep the pinned nav visible without scroll-driven movement.
+                        downPivotY = currentScrollY;
+                        headerBar.classList.toggle(
+                            'header-bar--scrolled', scrolledPastPin > HEADER_BAR_SCROLL_OFFSET
+                        );
+                        applyTransform(0, false);
+                        return;
+                    }
+
                     // solid background only once the nav sits its own height below
                     // the pin, i.e. while it is out of the visible area
                     headerBar.classList.toggle('header-bar--scrolled', scrolledPastPin > navHeight);
@@ -408,6 +418,13 @@ whenQuiLoaded().then(() => {
                 };
 
                 updateAutoHideState();
+
+                reducedMotionMediaQuery.addEventListener('change', function () {
+                    // Reset scroll history in both directions, including pending frames.
+                    lastScrollY = getCurrentScrollY();
+                    downPivotY = lastScrollY;
+                    updateAutoHideState();
+                });
 
                 window.addEventListener('scroll', function () {
                     if (autoHideTicking) {

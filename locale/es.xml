@@ -734,7 +734,7 @@
             <es><![CDATA[Posición del menú]]></es>
         </locale>
         <locale name="templatePresentation.settings.navPos.description">
-            <es><![CDATA[Define el comportamiento de la navegación al desplazar la página. Con «Fijo: se oculta al desplazarse», el menú se oculta al bajar y vuelve a aparecer al subir; al principio de la página siempre está visible.]]></es>
+            <es><![CDATA[Define el comportamiento de la navegación al desplazar la página. Con «Fijo: se oculta al desplazarse», el menú se oculta al bajar y vuelve a aparecer al subir; al principio de la página siempre está visible. Nota: Si está activada la opción del sistema «Reducir movimiento», en este modo el menú permanece siempre visible en la parte superior.]]></es>
         </locale>
         <locale name="templatePresentation.settings.navPos.fix">
             <es><![CDATA[Fijo: el menú permanece visible arriba incluso al bajar por la página.]]></es>

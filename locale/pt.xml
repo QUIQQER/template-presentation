@@ -734,7 +734,7 @@
             <pt><![CDATA[Posição do menu]]></pt>
         </locale>
         <locale name="templatePresentation.settings.navPos.description">
-            <pt><![CDATA[Define o comportamento da navegação ao deslocar a página. Com «Fixo: oculta-se ao deslocar», o menu oculta-se ao descer e reaparece ao subir; no topo da página está sempre visível.]]></pt>
+            <pt><![CDATA[Define o comportamento da navegação ao deslocar a página. Com «Fixo: oculta-se ao deslocar», o menu oculta-se ao descer e reaparece ao subir; no topo da página está sempre visível. Nota: quando a definição do sistema «Reduzir movimento» está ativada, neste modo o menu permanece sempre visível no topo.]]></pt>
         </locale>
         <locale name="templatePresentation.settings.navPos.fix">
             <pt><![CDATA[Fixo: o menu mantém-se visível no topo, mesmo ao deslocar a página para baixo.]]></pt>
