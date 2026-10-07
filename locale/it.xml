@@ -734,7 +734,7 @@
             <it><![CDATA[Posizione del menu]]></it>
         </locale>
         <locale name="templatePresentation.settings.navPos.description">
-            <it><![CDATA[Definisce il comportamento della navigazione durante lo scorrimento. Con «Fisso: si nasconde durante lo scorrimento», il menu scompare scorrendo verso il basso e riappare scorrendo verso l'alto; all'inizio della pagina è sempre visibile.]]></it>
+            <it><![CDATA[Definisce il comportamento della navigazione durante lo scorrimento. Con «Fisso: si nasconde durante lo scorrimento», il menu scompare scorrendo verso il basso e riappare scorrendo verso l'alto; all'inizio della pagina è sempre visibile. Nota: quando è attiva l’impostazione di sistema «Riduci movimento», in questa modalità il menu rimane sempre visibile in alto.]]></it>
         </locale>
         <locale name="templatePresentation.settings.navPos.fix">
             <it><![CDATA[Fisso: il menu resta visibile in alto anche scorrendo la pagina verso il basso.]]></it>

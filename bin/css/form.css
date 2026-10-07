@@ -59,6 +59,12 @@ select {
     transition: all 0.2s ease;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    select {
+        transition: none;
+    }
+}
+
 input[type='checkbox'],
 input[type='radio'] {
     margin-right: 10px;

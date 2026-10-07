@@ -202,6 +202,13 @@ span.quiqqer-bricks-promoslider-wallpaper-dot-active:after {
     transform: scale(0);
 }
 
+@media (prefers-reduced-motion: reduce) {
+    span.quiqqer-bricks-promoslider-wallpaper-dot:before,
+    span.quiqqer-bricks-promoslider-wallpaper-dot:after {
+        transition: none;
+    }
+}
+
 .quiqqer-porfolio-reference-windowShort span.quiqqer-bricks-promoslider-wallpaper-dot {
     height: 12px;
     width: 12px;

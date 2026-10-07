@@ -255,3 +255,9 @@
     --qui-btn-toTop-transform--initial: var(--theme--qui-btn-toTop-transform, scale(0));
     --qui-btn-toTop-transform--show: var(--theme--qui-btn-toTop-transform--show, scale(1));
 }
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --qui-btn-transition: none;
+    }
+}

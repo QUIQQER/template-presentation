@@ -742,7 +742,7 @@
             <en><![CDATA[Menu position]]></en>
         </locale>
         <locale name="templatePresentation.settings.navPos.description">
-            <en><![CDATA[Defines how the navigation behaves while scrolling. With "Fixed - hides while scrolling" the menu is hidden when scrolling down and shown again when scrolling up; at the top of the page it is always visible.]]></en>
+            <en><![CDATA[Defines how the navigation behaves while scrolling. With "Fixed - hides while scrolling" the menu is hidden when scrolling down and shown again when scrolling up; at the top of the page it is always visible. Note: When the system setting "Reduce motion" is enabled, the menu in this mode remains visible at the top.]]></en>
         </locale>
         <locale name="templatePresentation.settings.navPos.fix">
             <en><![CDATA[Fixed - page menu is always visible at the top, even when the page is scrolled down.]]></en>
