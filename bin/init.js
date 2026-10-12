@@ -189,7 +189,16 @@ whenQuiLoaded().then(() => {
             return;
         }
 
-        const anchor = event.currentTarget;
+        const anchor = event.target.closest?.('a[href*="#"]');
+
+        if (
+            !anchor ||
+            anchor.getAttribute('data-qui-disableTemplateScroll') === '1' ||
+            anchor.matches('[data-name="toTop"], [data-name="toTopBar"]')
+        ) {
+            return;
+        }
+
         const browsingTarget = anchor.getAttribute('target') ||
             document.querySelector('base[target]')?.getAttribute('target');
 
@@ -203,21 +212,19 @@ whenQuiLoaded().then(() => {
             return;
         }
 
+        const url = new URL(anchor.getAttribute('href'), document.baseURI);
+
+        if (url.hash !== window.location.hash) {
+            window.history.pushState(null, '', url.href);
+        }
+
         event.preventDefault();
         focusScrollTarget(target);
         scrollToElement(target, getTargetOffset(target));
     }
 
-    // find all scroll links
-    document.querySelectorAll('a[href*="#"]').forEach(anchor => {
-        if (
-            anchor.getAttribute('data-qui-disableTemplateScroll') === '1' ||
-            anchor.matches('[data-name="toTop"]')
-        ) {
-            return;
-        }
-        anchor.addEventListener('click', handleScrollClick);
-    });
+    // Delegation also handles links inserted after initialization.
+    document.addEventListener('click', handleScrollClick);
 
     // scroll to anchor, not jump
     (function () {
