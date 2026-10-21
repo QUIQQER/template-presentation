@@ -69,13 +69,28 @@ whenQuiLoaded().then(() => {
             return null;
         }
 
-        if (href === '#top') {
-            return document.documentElement;
+        try {
+            const url = new URL(href, document.baseURI);
+
+            if (
+                url.origin !== window.location.origin ||
+                url.pathname !== window.location.pathname ||
+                url.search !== window.location.search ||
+                !url.hash
+            ) {
+                return null;
+            }
+
+            if (url.hash === '#top') {
+                return document.documentElement;
+            }
+
+            const targetId = decodeURIComponent(url.hash.substring(1));
+
+            return document.getElementById(targetId);
+        } catch (error) {
+            return null;
         }
-
-        const targetId = decodeURIComponent(href.substring(1));
-
-        return document.getElementById(targetId);
     }
 
     function wrapDefaultContentTables() {
@@ -163,30 +178,53 @@ whenQuiLoaded().then(() => {
      * @param event
      */
     function handleScrollClick(event) {
-        event.preventDefault();
+        if (
+            event.defaultPrevented ||
+            event.button !== 0 ||
+            event.ctrlKey ||
+            event.metaKey ||
+            event.shiftKey ||
+            event.altKey
+        ) {
+            return;
+        }
 
-        const href = event.currentTarget.getAttribute('href');
+        const anchor = event.target.closest?.('a[href*="#"]');
 
-        const target = getScrollTargetByHref(href);
+        if (
+            !anchor ||
+            anchor.getAttribute('data-qui-disableTemplateScroll') === '1' ||
+            anchor.matches('[data-name="toTop"], [data-name="toTopBar"]')
+        ) {
+            return;
+        }
+
+        const browsingTarget = anchor.getAttribute('target') ||
+            document.querySelector('base[target]')?.getAttribute('target');
+
+        if (anchor.hasAttribute('download') || (browsingTarget && browsingTarget.toLowerCase() !== '_self')) {
+            return;
+        }
+
+        const target = getScrollTargetByHref(anchor.getAttribute('href'));
 
         if (!target) {
             return;
         }
 
+        const url = new URL(anchor.getAttribute('href'), document.baseURI);
+
+        if (url.hash !== window.location.hash) {
+            window.history.pushState(null, '', url.href);
+        }
+
+        event.preventDefault();
         focusScrollTarget(target);
         scrollToElement(target, getTargetOffset(target));
     }
 
-    // find all scroll links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        if (
-            anchor.getAttribute('data-qui-disableTemplateScroll') === '1' ||
-            anchor.matches('[data-name="toTop"]')
-        ) {
-            return;
-        }
-        anchor.addEventListener('click', handleScrollClick);
-    });
+    // Delegation also handles links inserted after initialization.
+    document.addEventListener('click', handleScrollClick);
 
     // scroll to anchor, not jump
     (function () {

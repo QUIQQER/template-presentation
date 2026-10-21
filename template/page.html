@@ -2,9 +2,15 @@
 {assign var=headerBricks value=$BricksManager->getBricksByArea('header', $Site)}
 {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
 {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+{assign var=layoutType value=$Template->getLayoutType()}
+{assign var=hasSidebarLayout value=($layoutType == 'layout/leftSidebar' || $layoutType == 'layout/rightSidebar')}
 
 <div class="body-container">
     {template_event name="quiqqer::template::body::pageBegin" Template=$Template}
+
+    {if !$hasSidebarLayout}
+    <main>
+    {/if}
 
     {if $Template->getAttribute('template-header')}
         {fetch template="template/page/header.html" showPageTitle=$showPageTitle showPageShort=$showPageShort Site=$Site Template=$Template}
@@ -36,7 +42,7 @@
     {/if}
 
     {template_event name="quiqqer::template::body::beforeMain" Template=$Template}
-    {if $Template->getLayoutType() == 'layout/fullWidth'}
+    {if $layoutType == 'layout/fullWidth'}
         <div class="main-contentWrapper main-contentWrapper--fullWidth">
             {$Template->getLayout()}
         </div>
@@ -54,6 +60,10 @@
                 {fetch template="template/bricks/brick.html" Brick=$Brick brickArea="footerPrefix" Template=$Template}
             {/foreach}
         </div>
+    {/if}
+
+    {if !$hasSidebarLayout}
+    </main>
     {/if}
 
     {template_event name="quiqqer::template::body::beforeFooter" Template=$Template}

@@ -343,7 +343,7 @@ section.quiqqer-portfolio-list {
     margin-bottom: var(--qui-row-spacing--small);
 }
 
-.main-content:where([role="main"]) {
+.main-content {
     margin-top: var(--qui-tpl-spacing--top);
     margin-bottom: var(--qui-tpl-spacing--bottom);
 }
