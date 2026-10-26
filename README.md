@@ -62,6 +62,11 @@ PCSG QL-1.0, CC BY-NC-SA 4.0
 Developer
 ---------
 
+**Template events**  
+Extend the HTML head, page content, header and footer through template events.
+See the [Template Events wiki page](https://dev.quiqqer.com/quiqqer/template-presentation/-/wikis/Template-Events)
+for all available hooks, their positions and conditions, and an `events.xml` / PHP example.
+
 **Smooth scroll to an element**  
 Smooth scroll by clicking on every `<a>` element with `href="#target"` attribute. 
 You can disable it by setting `data-qui` attribute.
