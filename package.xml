@@ -37,6 +37,7 @@
         </copyright>
 
         <provider>
+            <colorPalettes src="\QUI\TemplatePresentation\Palette"/>
             <mcpSkill src="\QUI\TemplatePresentation\MCP\SkillProvider"/>
         </provider>
     </package>

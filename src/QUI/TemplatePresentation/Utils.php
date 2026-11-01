@@ -8,6 +8,7 @@ namespace QUI\TemplatePresentation;
 
 use QUI;
 use QUI\Exception;
+use QUI\Projects\Colors;
 
 use function count;
 
@@ -497,11 +498,7 @@ class Utils
         $bgColor = $Brick->getSetting('brickBgColor');
 
         if ($setting === 'enable.useTemplateSetting') {
-            $Project = QUI::getRewrite()->getProject();
-
-            if ($Project === null) {
-                return '';
-            }
+            $Project = self::getBrickProject($Brick);
 
             $bgColor = $Project->getConfig('templatePresentation.settings.bricks.bgColor');
         }
@@ -510,7 +507,8 @@ class Utils
             return '';
         }
 
-        return '--qui-tpl-brick-backgroundColor: ' . $bgColor . ';';
+        $bgColor = Colors::toCss($bgColor);
+        return $bgColor === '' ? '' : '--qui-tpl-brick-backgroundColor: ' . $bgColor . ';';
     }
 
     /**
@@ -531,11 +529,7 @@ class Utils
         $color = $Brick->getSetting('brickTextColor');
 
         if ($setting === 'enable.useTemplateSetting') {
-            $Project = QUI::getRewrite()->getProject();
-
-            if ($Project === null) {
-                return '';
-            }
+            $Project = self::getBrickProject($Brick);
 
             $color = $Project->getConfig('templatePresentation.settings.bricks.textColor');
         }
@@ -544,7 +538,19 @@ class Utils
             return '';
         }
 
-        return '--qui-tpl-brick-textColor: ' . $color . ';';
+        $color = Colors::toCss($color);
+        return $color === '' ? '' : '--qui-tpl-brick-textColor: ' . $color . ';';
+    }
+
+    private static function getBrickProject(QUI\Bricks\Brick $Brick): QUI\Projects\Project
+    {
+        $Site = $Brick->getAttribute('Site');
+
+        if ($Site instanceof QUI\Interfaces\Projects\Site) {
+            return $Site->getProject();
+        }
+
+        return QUI::getProjectManager()->getProject((string)$Brick->getAttribute('project'));
     }
 
     // endregion
@@ -781,7 +787,7 @@ class Utils
         $headingColor = '';
         $headingFontWeight = '700'; /* bold */
 
-        $colorMain = '#2e4d87';
+        $colorMain = Palette::getDefaultPrimaryColor();
         $colorMainContrast = '#ffffff';
         $btnTextColor = '#ffffff';
 
@@ -1002,7 +1008,7 @@ class Utils
             $bodySpacingTop = 0;
         }
 
-        return [
+        $variables = [
             /* general */
             'scrollOffset' => $scrollOffset,
             'bodySpacingTop' => $bodySpacingTop,
@@ -1054,6 +1060,25 @@ class Utils
             'footerLinkColor' => $footerLinkColor,
             'footerLinkColorHover' => $footerLinkColorHover,
         ];
+
+        $colorKeys = [
+            'colorPrimary', 'colorPrimaryContrast', 'btnTextColor', 'bodyColor', 'headingColor',
+            'navBgColor', 'navBgColorScrolled', 'navLinkColor', 'navLinkColorHover', 'navLinkBgColorHover',
+            'navInitialTransparentLinkColor', 'navInitialTransparentLinkColorHover',
+            'navInitialTransparentLinkBgColorHover', 'navSubMenuBgColor', 'navMobileBgColor', 'navMobileTextColor',
+            'pageHeaderHeadingColor', 'pageHeaderTextColor', 'footerBgColor', 'footerTextColor',
+            'footerLinkColor', 'footerLinkColorHover'
+        ];
+
+        foreach ($colorKeys as $key) {
+            $variables[$key] = Colors::toCss($variables[$key]);
+
+            if ($key === 'colorPrimary' && $variables[$key] === '') {
+                $variables[$key] = Palette::getDefaultPrimaryColor();
+            }
+        }
+
+        return $variables;
     }
 
     /**

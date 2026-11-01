@@ -7,6 +7,7 @@
 namespace QUI\TemplatePresentation;
 
 use QUI;
+use QUI\Projects\Colors;
 use Smarty;
 
 /**
@@ -31,8 +32,7 @@ class EventHandler
     }
 
     /**
-     * Clear system cache on project save
-     * Create CSS file with project settings
+     * Clear system cache on project save.
      *
      * @param string $projectName
      * @param array<string, mixed> $config
@@ -42,57 +42,41 @@ class EventHandler
     public static function onProjectConfigSave(string $projectName, array $config, array $params): void
     {
         QUI\Cache\Manager::clear('quiqqer/templatePresentation');
+    }
 
-        $cssVariableMap = [
-            'templatePresentation.settings.colorMain' => '--template-settings__color-primary',
-            'templatePresentation.settings.colorMainContrast' => '--template-settings__color-primary-contrast',
-            'templatePresentation.settings.buttonFontColor' => '--template-settings__btn-text-color'
-        ];
+    /** @param array<string, mixed> $settings */
+    public static function onEditorGetSettings(QUI\Projects\Project $Project, array &$settings): void
+    {
+        $template = $Project->getTemplate();
 
-        $cssVariables = [];
-
-        foreach ($cssVariableMap as $configKey => $cssVariable) {
-            $value = '';
-
-            if (isset($config[$configKey])) {
-                $value = (string) $config[$configKey];
-            } elseif (isset($params[$configKey])) {
-                $value = (string) $params[$configKey];
-            }
-
-            $value = trim($value);
-
-            if ($value === '') {
-                continue;
-            }
-
-            if (!preg_match('/\A[#a-zA-Z0-9(),.%\s+-]+\z/', $value)) {
-                continue;
-            }
-
-            $cssVariables[$cssVariable] = $value;
-        }
-
-        if (empty($cssVariables)) {
+        if (
+            !$template || ($template !== 'quiqqer/template-presentation'
+                && QUI::getPackage($template)->getTemplateParent()?->getName() !== 'quiqqer/template-presentation')
+        ) {
             return;
         }
 
-        $cssContent = ":root {\n";
+        $css = ':root {';
 
-        foreach ($cssVariables as $cssVariable => $value) {
-            $cssContent .= "    {$cssVariable}: {$value};\n";
+        foreach (
+            [
+            'colorMain' => '--template-settings__color-primary',
+            'colorMainContrast' => '--template-settings__color-primary-contrast',
+            'buttonFontColor' => '--template-settings__btn-text-color'
+            ] as $key => $variable
+        ) {
+            $value = Colors::toCss($Project->getConfig('templatePresentation.settings.' . $key));
+
+            if ($key === 'colorMain' && $value === '') {
+                $value = Palette::getDefaultPrimaryColor();
+            }
+
+            if ($value !== '') {
+                $css .= $variable . ':' . $value . ';';
+            }
         }
 
-        $cssContent .= "}\n";
-
-        $Package = QUI::getPackage('quiqqer/template-presentation');
-        $packageDir = $Package->getVarDir();
-        $cssDir = $packageDir . 'bin/css/';
-
-        QUI\Utils\System\File::mkdir($cssDir);
-
-        $cssFile = $cssDir . 'project-settings.css';
-        @file_put_contents($cssFile, $cssContent);
+        $settings['cssFiles'][] = 'data:text/css;base64,' . base64_encode($css . '}');
     }
 
     /**

@@ -3,6 +3,11 @@ body {
     padding: 10px;
 }
 
+body.main-content {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .content-message-information, .content-message-attention, .content-message-error, .content-message-success {
     margin: 1em 0 !important;
 }

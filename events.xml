@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/events.xsd">
 <events>
+    <event on="onEditorGetSettings" fire="\QUI\TemplatePresentation\EventHandler::onEditorGetSettings"/>
     <event on="onPackageSetup" fire="\QUI\TemplatePresentation\EventHandler::onPackageSetup"/>
     <event on="onProjectConfigSave" fire="\QUI\TemplatePresentation\EventHandler::onProjectConfigSave"/>
     <event on="onSiteSave" fire="\QUI\TemplatePresentation\EventHandler::onSiteSave"/>
@@ -7,3 +10,4 @@
     <event on="onQuiqqerMenuMobileMenuCreate"
            fire="\QUI\TemplatePresentation\EventHandler::onQuiqqerMenuMobileMenuCreate"/>
 </events>
+</quiqqer>

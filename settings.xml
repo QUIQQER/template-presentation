@@ -771,7 +771,10 @@
                                 />
                             </title>
 
-                            <input conf="templatePresentation.settings.bricks.bgColor" type="color" value="#f5f5f5">
+                            <input conf="templatePresentation.settings.bricks.bgColor" type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1" value="#f5f5f5">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="settings.bricks.bgColor.text"
@@ -783,7 +786,10 @@
                                     />
                                 </description>
                             </input>
-                            <input conf="templatePresentation.settings.bricks.textColor" type="color" value="transparent">
+                            <input conf="templatePresentation.settings.bricks.textColor" type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1" value="transparent">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="settings.bricks.textColor.text"
@@ -959,7 +965,10 @@
 
                             <!-- nav bar / menu colors -->
                             <input conf="templatePresentation.settings.navBarBgColor"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.navBarBgColor.text"
@@ -967,7 +976,10 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.navBarLinkColor"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.navBarLinkColor.text"
@@ -975,7 +987,10 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.navBarLinkColorHover"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.navBarLinkColorHover.text"
@@ -983,7 +998,10 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.navBarLinkBgColorHover"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.navBarLinkBgColorHover.text"
@@ -1030,7 +1048,10 @@
                                 </description>
                             </input>
                             <input conf="templatePresentation.settings.navBarInitialTransparentLinkColor"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.navBarInitialTransparentLinkColor.text"
@@ -1038,7 +1059,10 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.navBarInitialTransparentLinkColorHover"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.navBarInitialTransparentLinkColorHover.text"
@@ -1046,7 +1070,10 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.navBarInitialTransparentLinkBgColorHover"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.navBarInitialTransparentLinkBgColorHover.text"
@@ -1057,7 +1084,10 @@
 
                             <!-- mobile menu (mega menu) -->
                             <input conf="templatePresentation.settings.mobileFontColor"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.mobileFontColor"
@@ -1065,7 +1095,10 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.mobileMenuBackground"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.mobileMenuBackground"
@@ -1247,7 +1280,10 @@
                                 </option>
                             </select>
 
-                            <input conf="templatePresentation.settings.header.textColor" type="color">
+                            <input conf="templatePresentation.settings.header.textColor" type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="templatePresentation.settings.header.textColor"
@@ -1636,7 +1672,10 @@
                             </title>
 
                             <input conf="templatePresentation.settings.colorMainContentFont"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorMainContentFont.text"
@@ -1645,7 +1684,10 @@
                             </input>
 
                             <input conf="templatePresentation.settings.colorMain"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorMain.text"
@@ -1659,7 +1701,10 @@
                             </input>
 
                             <input conf="templatePresentation.settings.colorMainContrast"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorMainContrast.text"
@@ -1673,7 +1718,10 @@
                             </input>
 
                             <input conf="templatePresentation.settings.buttonFontColor"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.buttonFontColor.text"
@@ -1692,7 +1740,10 @@
                                 />
                             </text>
                             <input conf="templatePresentation.settings.colorFooterBackground"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorFooterBackground.text"
@@ -1700,7 +1751,10 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.colorFooterFont"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorFooterFont.text"
@@ -1709,7 +1763,10 @@
                             </input>
 
                             <input conf="templatePresentation.settings.colorFooterLink"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorFooterLink.text"
@@ -1718,7 +1775,10 @@
                             </input>
 
                             <input conf="templatePresentation.settings.colorFooterLinkHover"
-                                   type="color">
+                                   type="hidden"
+                                   data-qui="qui/controls/elements/ColorField"
+                                   data-qui-options-references="1"
+                                   data-qui-options-dark="1">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
                                             var="template.settings.colorFooterLinkHover.text"
@@ -1888,7 +1948,6 @@
 
         <wysiwyg class="main-content">
             <css src="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic"/>
-            <css src="URL_DIR/var/package/quiqqer/template-presentation/bin/css/project-settings.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/main.css"/>
             <css src="URL_OPT_DIR/quiqqer/template-presentation/bin/css/editor.css"/>
 
