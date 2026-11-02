@@ -108,7 +108,9 @@
                                 var="site.settings.header.textColor.enable.useDefaultColor"/>
                     </option>
                 </select>
-                <input conf="templatePresentation.header.textColor.color" type="color">
+                <input conf="templatePresentation.header.textColor.color" type="color"
+                       data-qui-options-references="1"
+                       data-qui-options-dark="1">
                     <text>
                         <locale group="quiqqer/template-presentation"
                                 var="site.settings.header.textColor.color"/>
@@ -220,19 +222,25 @@
                     </description>
                 </input>
 
-                <input conf="templatePresentation.nav.initialTransparent.linkColor" type="color">
+                <input conf="templatePresentation.nav.initialTransparent.linkColor" type="color"
+                       data-qui-options-references="1"
+                       data-qui-options-dark="1">
                     <text>
                         <locale group="quiqqer/template-presentation"
                                 var="site.settings.nav.initialTransparent.linkColor"/>
                     </text>
                 </input>
-                <input conf="templatePresentation.nav.initialTransparent.linkColorHover" type="color">
+                <input conf="templatePresentation.nav.initialTransparent.linkColorHover" type="color"
+                       data-qui-options-references="1"
+                       data-qui-options-dark="1">
                     <text>
                         <locale group="quiqqer/template-presentation"
                                 var="site.settings.nav.initialTransparent.linkColorHover"/>
                     </text>
                 </input>
-                <input conf="templatePresentation.nav.initialTransparent.linkBgColorHover" type="color">
+                <input conf="templatePresentation.nav.initialTransparent.linkBgColorHover" type="color"
+                       data-qui-options-references="1"
+                       data-qui-options-dark="1">
                     <text>
                         <locale group="quiqqer/template-presentation"
                                 var="site.settings.nav.initialTransparent.linkBgColorHover"/>

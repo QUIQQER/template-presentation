@@ -771,8 +771,7 @@
                                 />
                             </title>
 
-                            <input conf="templatePresentation.settings.bricks.bgColor" type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                            <input conf="templatePresentation.settings.bricks.bgColor" type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1" value="#f5f5f5">
                                 <text>
@@ -786,8 +785,7 @@
                                     />
                                 </description>
                             </input>
-                            <input conf="templatePresentation.settings.bricks.textColor" type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                            <input conf="templatePresentation.settings.bricks.textColor" type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1" value="transparent">
                                 <text>
@@ -965,8 +963,7 @@
 
                             <!-- nav bar / menu colors -->
                             <input conf="templatePresentation.settings.navBarBgColor"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -976,8 +973,7 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.navBarLinkColor"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -987,8 +983,7 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.navBarLinkColorHover"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -998,8 +993,7 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.navBarLinkBgColorHover"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1048,8 +1042,7 @@
                                 </description>
                             </input>
                             <input conf="templatePresentation.settings.navBarInitialTransparentLinkColor"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1059,8 +1052,7 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.navBarInitialTransparentLinkColorHover"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1070,8 +1062,7 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.navBarInitialTransparentLinkBgColorHover"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1084,8 +1075,7 @@
 
                             <!-- mobile menu (mega menu) -->
                             <input conf="templatePresentation.settings.mobileFontColor"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1095,8 +1085,7 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.mobileMenuBackground"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1280,8 +1269,7 @@
                                 </option>
                             </select>
 
-                            <input conf="templatePresentation.settings.header.textColor" type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                            <input conf="templatePresentation.settings.header.textColor" type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1672,8 +1660,7 @@
                             </title>
 
                             <input conf="templatePresentation.settings.colorMainContentFont"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1684,8 +1671,7 @@
                             </input>
 
                             <input conf="templatePresentation.settings.colorMain"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1701,8 +1687,7 @@
                             </input>
 
                             <input conf="templatePresentation.settings.colorMainContrast"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1718,8 +1703,7 @@
                             </input>
 
                             <input conf="templatePresentation.settings.buttonFontColor"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1740,8 +1724,7 @@
                                 />
                             </text>
                             <input conf="templatePresentation.settings.colorFooterBackground"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1751,8 +1734,7 @@
                                 </text>
                             </input>
                             <input conf="templatePresentation.settings.colorFooterFont"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1763,8 +1745,7 @@
                             </input>
 
                             <input conf="templatePresentation.settings.colorFooterLink"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>
@@ -1775,8 +1756,7 @@
                             </input>
 
                             <input conf="templatePresentation.settings.colorFooterLinkHover"
-                                   type="hidden"
-                                   data-qui="qui/controls/elements/ColorField"
+                                   type="color"
                                    data-qui-options-references="1"
                                    data-qui-options-dark="1">
                                 <text>

@@ -97,7 +97,7 @@
                                 var="brick.settings.enableSelect.enable.useTemplateSetting"/>
                     </option>
                 </setting>
-                <setting name="brickBgColor" type="hidden" data-qui="qui/controls/elements/ColorField"
+                <setting name="brickBgColor" type="color"
                          data-qui-options-references="1"
                          data-qui-options-dark="1"
                          data-dependency="enableBrickBgColor"
@@ -127,7 +127,7 @@
                                 var="brick.settings.enableSelect.enable.useTemplateSetting"/>
                     </option>
                 </setting>
-                <setting name="brickTextColor" type="hidden" data-qui="qui/controls/elements/ColorField"
+                <setting name="brickTextColor" type="color"
                          data-qui-options-references="1"
                          data-qui-options-dark="1"
                          data-dependency="enableBrickTextColor"
