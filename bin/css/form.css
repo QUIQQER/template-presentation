@@ -117,6 +117,7 @@ input {
 textarea:hover,
 input:hover,
 select:hover {
+    color: var(--qui-input-color--hover);
     background-color: var(--qui-input-backgroundColor--hover);
     border-color: var(--qui-input-borderColor--hover);
 }
@@ -124,6 +125,32 @@ select:hover {
 textarea:focus,
 input:focus,
 select:focus {
+    color: var(--qui-input-color--focus);
     background-color: var(--qui-input-backgroundColor--focus);
     border-color: var(--qui-input-borderColor--focus);
+}
+
+/* Native arrows follow color-scheme, unlike the legacy black image. */
+:root[data-presentation-mode="dark"] select {
+    appearance: auto;
+    background-image: none;
+    padding-right: 1.25em;
+}
+
+:where(input, textarea, select):focus-visible {
+    outline: 2px solid var(--qui-input-borderColor--focus);
+    outline-offset: 2px;
+}
+
+:where(input, textarea, select):disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root[data-presentation-mode="system"] select {
+        appearance: auto;
+        background-image: none;
+        padding-right: 1.25em;
+    }
 }

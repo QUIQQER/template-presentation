@@ -781,7 +781,7 @@ class Utils
         /**
          * colors & typography
          */
-        $bodyColor = '#3b3b3a';
+        $bodyColor = '{"type":"color","light":"#3b3b3a","dark":"#e5e7eb"}';
         $bodyFontSize = '16px';
         $bodyFontWeight = '400'; /* normal */
         $headingColor = '';
@@ -792,7 +792,7 @@ class Utils
         $btnTextColor = '#ffffff';
 
         // footer
-        $footerBgColor = '#414141';
+        $footerBgColor = '{"type":"color","light":"#eeeeee","dark":"#1c2128"}';
         $footerTextColor = '';
         $footerLinkColor = '';
         $footerLinkColorHover = '';
@@ -858,7 +858,7 @@ class Utils
         /**
          * Nav
          */
-        $navBgColor = '#2d4d88';
+        $navBgColor = '{"type":"color","light":"#2d4d88","dark":"#1c2128"}';
         $navBgColorScrolled = $navBgColor;
         $navLinkColor = '#ffffff';
         $navLinkColorHover = $navLinkColor;
@@ -867,7 +867,7 @@ class Utils
         $navInitialTransparentLinkColorHover = $navLinkColorHover;
         $navInitialTransparentLinkBgColorHover = '';
         $navMobileTextColor = '#ffffff';
-        $navMobileBgColor = '#252122';
+        $navMobileBgColor = '{"type":"color","light":"#252122","dark":"#1c2128"}';
 
         if (self::$Project->getConfig('templatePresentation.settings.navBarBgColor')) {
             $navBgColor = self::$Project->getConfig('templatePresentation.settings.navBarBgColor');
@@ -1040,7 +1040,7 @@ class Utils
             'navInitialTransparentLinkColor' => $navInitialTransparentLinkColor,
             'navInitialTransparentLinkColorHover' => $navInitialTransparentLinkColorHover,
             'navInitialTransparentLinkBgColorHover' => $navInitialTransparentLinkBgColorHover,
-            'navSubMenuBgColor' => '#fafafa', /* todo as setting */
+            'navSubMenuBgColor' => '{"type":"color","light":"#fafafa","dark":"#1c2128"}',
             'navHeight' => $navHeight,
             'navMaxWidth' => self::$Project->getConfig('templatePresentation.settings.navMaxWidth'),
             'navMobileBgColor' => $navMobileBgColor,

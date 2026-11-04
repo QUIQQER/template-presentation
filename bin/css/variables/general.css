@@ -26,7 +26,7 @@
 
     /* breadcrumb */
     --qui-tpl-breadcrumb-spacing: var(--theme--qui-tpl-breadcrumb-spacing, var(--template-settings__breadcrumb-spacing));
-    --qui-tpl-breadcrumb-border-color: var(--theme--qui-tpl-breadcrumb-border-color, #eee);
+    --qui-tpl-breadcrumb-border-color: var(--theme--qui-tpl-breadcrumb-border-color, light-dark(#eee, #515c6a));
     --qui-tpl-breadcrumb-subtle-surface-background: var(--theme--qui-tpl-breadcrumb-subtle-surface-background, var(--qui-colors-surface-subtle, #f5f5f5));
     --qui-tpl-breadcrumb-pill-surface-background: var(--theme--qui-tpl-breadcrumb-pill-surface-background, var(--qui-colors-surface-subtle, #f5f5f5));
     --qui-tpl-breadcrumb-pill-margin-top: var(--theme--qui-tpl-breadcrumb-pill-margin-top, 1rem);
@@ -45,8 +45,8 @@
     --qui-header-img-position: var(--theme--qui-header-img-position, var(--template-settings__page-header-img-position, center));
 
     /* footer */
-    --qui-footer-bg: var(--template-settings__footer-bgColor);
-    --qui-footer-font-color: var(--template-settings__footer-text-color, inherit);
+    --qui-footer-bg: var(--theme--qui-footer-bg, var(--template-settings__footer-bgColor, var(--qui-colors-surface-subtle)));
+    --qui-footer-font-color: var(--theme--qui-footer-font-color, var(--template-settings__footer-text-color, inherit));
     --qui-footer-link-color: var(--template-settings__footer-link-color, var(--qui-colors-link));
     --qui-footer-link-color--hover: var(--template-settings__footer-link-color--hover, var(--qui-colors-link--hover));
 
@@ -60,8 +60,8 @@
     --qui-footer-toTopBar-padding: var(--theme--qui-footer-toTopBar-padding, 1em);
 
     /* background */
-    --qui-bg-primary: #ddd; /* todo  */
-    --qui-bg-secondary: #f5f5f5; /* todo */
+    --qui-bg-primary: light-dark(#ddd, #252c35); /* todo  */
+    --qui-bg-secondary: var(--qui-colors-surface-subtle); /* todo */
 
     /* screen sizes */
     --qui-screen-lg: 1400px;

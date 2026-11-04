@@ -447,3 +447,8 @@ a.qui-button,
     pointer-events: auto;
     transform: var(--qui-btn-toTop-transform--show);
 }
+
+.btn:focus-visible {
+    outline: 2px solid var(--qui-colors-focus-ring);
+    outline-offset: 3px;
+}

@@ -1,6 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <locales>
     <groups name="quiqqer/template-presentation" datatype="php,js">
+        <locale name="colorMode.title">
+            <pt><![CDATA[Aparência padrão]]></pt>
+        </locale>
+        <locale name="colorMode.system">
+            <pt><![CDATA[Sistema]]></pt>
+        </locale>
+        <locale name="colorMode.light">
+            <pt><![CDATA[Claro]]></pt>
+        </locale>
+        <locale name="colorMode.dark">
+            <pt><![CDATA[Escuro]]></pt>
+        </locale>
+        <locale name="colorMode.allowVisitor">
+            <pt><![CDATA[Permitir que os visitantes alterem a aparência]]></pt>
+        </locale>
+        <locale name="colorMode.description">
+            <pt><![CDATA[Define a aparência padrão do site. «Sistema» segue automaticamente a configuração clara ou escura do dispositivo. «Claro» e «Escuro» utilizam uma aparência fixa, independentemente da configuração do dispositivo.]]></pt>
+        </locale>
+        <locale name="colorMode.allowVisitor.description">
+            <pt><![CDATA[Quando a escolha dos visitantes está desativada, apenas a aparência padrão se aplica. O seletor é disponibilizado separadamente.]]></pt>
+        </locale>
         <!-- template bricks -->
         <locale name="brick.settings.enableSelect.disable">
             <pt><![CDATA[Desativar]]></pt>

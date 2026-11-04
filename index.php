@@ -207,6 +207,7 @@ switch ($Template->getLayoutType()) {
         break;
 }
 
+$templateSettings['colorMode'] = QUI\TemplatePresentation\ColorMode::getSettings($Project);
 $templateSettings['bodyClass'] = $bodyClass;
 $templateSettings['startPage'] = $startPage;
 $templateSettings['Site'] = $Site;

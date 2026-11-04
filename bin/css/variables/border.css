@@ -21,7 +21,7 @@
     --qui-radius-full: 9999px;
 
     /* semantic naming */
-    --qui-border-color: var(--theme--qui-border-color, #ddd);
+    --qui-border-color: var(--theme--qui-border-color, light-dark(#ddd, #515c6a));
 
     --qui-radius-btn: var(--theme--qui-radius-btn, var(--qui-radius-base));
     --qui-radius-input: var(--theme--qui-radius-input, var(--qui-radius-base));

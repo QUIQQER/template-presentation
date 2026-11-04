@@ -4,9 +4,9 @@
 
 /* basic styling */
 .q-message {
-    --q-message-bg: var(--qui-colors-gray-50);
+    --q-message-bg: light-dark(var(--qui-colors-gray-50), var(--qui-colors-surface-subtle));
     --q-message-color: var(--qui-colors-body);
-    --q-message-border: var(--qui-colors-gray-100);
+    --q-message-border: light-dark(var(--qui-colors-gray-100), var(--qui-border-color));
     --q-message-border-width: var(--theme--q-message-border-width, 1px);
     --q-message-border-radius: var(--theme--q-message-border-radius, 0.5rem);
 
@@ -38,7 +38,7 @@
 /* Warning message */
 .q-message-warning {
     --q-message-bg: var(--qui-colors-warning-200);
-    --q-message-color: var(--qui-colors-body);
+    --q-message-color: light-dark(var(--qui-colors-body), var(--qui-colors-warning-contrast));
     --q-message-border: var(--qui-colors-warning-300);
 }
 
@@ -69,7 +69,7 @@
 /* Warning message */
 .q-message-warning--solid {
     --q-message-bg: var(--qui-colors-warning-500);
-    --q-message-color: var(--qui-colors-body);
+    --q-message-color: var(--qui-colors-warning-contrast);
     --q-message-border: var(--qui-colors-warning-600);
 }
 

@@ -1,6 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <locales>
     <groups name="quiqqer/template-presentation" datatype="php,js">
+        <locale name="colorMode.title">
+            <de><![CDATA[Standarddarstellung]]></de>
+        </locale>
+        <locale name="colorMode.system">
+            <de><![CDATA[System]]></de>
+        </locale>
+        <locale name="colorMode.light">
+            <de><![CDATA[Hell]]></de>
+        </locale>
+        <locale name="colorMode.dark">
+            <de><![CDATA[Dunkel]]></de>
+        </locale>
+        <locale name="colorMode.allowVisitor">
+            <de><![CDATA[Besucher dürfen Darstellung wechseln]]></de>
+        </locale>
+        <locale name="colorMode.description">
+            <de><![CDATA[Legt die Standarddarstellung der Website fest. „System“ folgt automatisch der Hell-/Dunkel-Einstellung des Geräts. „Hell“ und „Dunkel“ verwenden eine feste Darstellung unabhängig von der Geräteeinstellung.]]></de>
+        </locale>
+        <locale name="colorMode.allowVisitor.description">
+            <de><![CDATA[Bei deaktivierter Besucherwahl gilt ausschließlich die Standarddarstellung. Das Bedienelement wird separat bereitgestellt.]]></de>
+        </locale>
         <!-- template bricks -->
         <locale name="brick.settings.enableSelect.disable">
             <de><![CDATA[Deaktivieren]]></de>

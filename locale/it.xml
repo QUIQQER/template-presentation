@@ -1,6 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <locales>
     <groups name="quiqqer/template-presentation" datatype="php,js">
+        <locale name="colorMode.title">
+            <it><![CDATA[Aspetto predefinito]]></it>
+        </locale>
+        <locale name="colorMode.system">
+            <it><![CDATA[Sistema]]></it>
+        </locale>
+        <locale name="colorMode.light">
+            <it><![CDATA[Chiaro]]></it>
+        </locale>
+        <locale name="colorMode.dark">
+            <it><![CDATA[Scuro]]></it>
+        </locale>
+        <locale name="colorMode.allowVisitor">
+            <it><![CDATA[I visitatori possono cambiare l’aspetto]]></it>
+        </locale>
+        <locale name="colorMode.description">
+            <it><![CDATA[Definisce l’aspetto predefinito del sito web. «Sistema» segue automaticamente l’impostazione chiara o scura del dispositivo. «Chiaro» e «Scuro» utilizzano un aspetto fisso, indipendentemente dall’impostazione del dispositivo.]]></it>
+        </locale>
+        <locale name="colorMode.allowVisitor.description">
+            <it><![CDATA[Quando la scelta dei visitatori è disattivata, si applica solo l’aspetto predefinito. Il selettore è fornito separatamente.]]></it>
+        </locale>
         <!-- template bricks -->
         <locale name="brick.settings.enableSelect.disable">
             <it><![CDATA[Disattiva]]></it>

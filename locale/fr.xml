@@ -1,6 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <locales>
     <groups name="quiqqer/template-presentation" datatype="php,js">
+        <locale name="colorMode.title">
+            <fr><![CDATA[Apparence par défaut]]></fr>
+        </locale>
+        <locale name="colorMode.system">
+            <fr><![CDATA[Système]]></fr>
+        </locale>
+        <locale name="colorMode.light">
+            <fr><![CDATA[Clair]]></fr>
+        </locale>
+        <locale name="colorMode.dark">
+            <fr><![CDATA[Sombre]]></fr>
+        </locale>
+        <locale name="colorMode.allowVisitor">
+            <fr><![CDATA[Autoriser les visiteurs à changer l’apparence]]></fr>
+        </locale>
+        <locale name="colorMode.description">
+            <fr><![CDATA[Définit l’apparence par défaut du site web. « Système » suit automatiquement le réglage clair/sombre de l’appareil. « Clair » et « Sombre » utilisent une apparence fixe, indépendamment du réglage de l’appareil.]]></fr>
+        </locale>
+        <locale name="colorMode.allowVisitor.description">
+            <fr><![CDATA[Lorsque le choix des visiteurs est désactivé, seule l’apparence par défaut s’applique. Le sélecteur est fourni séparément.]]></fr>
+        </locale>
         <!-- template bricks -->
         <locale name="brick.settings.enableSelect.disable">
             <fr><![CDATA[Désactiver]]></fr>

@@ -6,6 +6,15 @@
             <config>
                 <section name="templatePresentation.settings">
 
+                    <conf name="colorMode">
+                        <type>string</type>
+                        <defaultvalue>system</defaultvalue>
+                    </conf>
+                    <conf name="colorModeAllowVisitor">
+                        <type>bool</type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+
                     <!-- general settings -->
                     <conf name="showTitle">
                         <type><![CDATA[bool]]></type>
@@ -78,7 +87,7 @@
                     </conf>
                     <conf name="navBarBgColor">
                         <type><![CDATA[string]]></type>
-                        <defaultvalue>#2d4d88</defaultvalue>
+                        <defaultvalue>{"type":"color","light":"#2d4d88","dark":"#1c2128"}</defaultvalue>
                     </conf>
                     <conf name="navBarLinkColor">
                         <type><![CDATA[string]]></type>
@@ -117,7 +126,7 @@
                     </conf>
                     <conf name="mobileMenuBackground">
                         <type><![CDATA[string]]></type>
-                        <defaultvalue>#252122</defaultvalue>
+                        <defaultvalue>{"type":"color","light":"#252122","dark":"#1c2128"}</defaultvalue>
                     </conf>
 
                     <conf name="search">
@@ -156,7 +165,7 @@
                     <!-- bricks -->
                     <conf name="bricks.bgColor">
                         <type><![CDATA[string]]></type>
-                        <defaultvalue>#f5f5f5</defaultvalue>
+                        <defaultvalue>{"type":"color","light":"#f5f5f5","dark":"#252c35"}</defaultvalue>
                     </conf>
                     <conf name="bricks.textColor">
                         <type><![CDATA[string]]></type>
@@ -259,7 +268,7 @@
                     <!-- colors -->
                     <conf name="colorMainContentFont">
                         <type><![CDATA[string]]></type>
-                        <defaultvalue>#3b3b3a</defaultvalue>
+                        <defaultvalue>{"type":"color","light":"#3b3b3a","dark":"#e5e7eb"}</defaultvalue>
                     </conf>
                     <conf name="colorMain">
                         <type><![CDATA[string]]></type>
@@ -275,7 +284,7 @@
                     </conf>
                     <conf name="colorFooterBackground">
                         <type><![CDATA[string]]></type>
-                        <defaultvalue>#eeeeee</defaultvalue>
+                        <defaultvalue>{"type":"color","light":"#eeeeee","dark":"#1c2128"}</defaultvalue>
                     </conf>
                     <conf name="colorFooterFont">
                         <type><![CDATA[string]]></type>
@@ -363,6 +372,18 @@
                             </title>
 
                             <!-- show title -->
+                            <select conf="templatePresentation.settings.colorMode">
+                                <text><locale group="quiqqer/template-presentation" var="colorMode.title"/></text>
+                                <description><locale group="quiqqer/template-presentation" var="colorMode.description"/></description>
+                                <option value="system" selected="selected"><locale group="quiqqer/template-presentation" var="colorMode.system"/></option>
+                                <option value="light"><locale group="quiqqer/template-presentation" var="colorMode.light"/></option>
+                                <option value="dark"><locale group="quiqqer/template-presentation" var="colorMode.dark"/></option>
+                            </select>
+                            <input conf="templatePresentation.settings.colorModeAllowVisitor" type="checkbox">
+                                <text><locale group="quiqqer/template-presentation" var="colorMode.allowVisitor"/></text>
+                                <description><locale group="quiqqer/template-presentation" var="colorMode.allowVisitor.description"/></description>
+                            </input>
+
                             <input conf="templatePresentation.settings.showTitle" type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-presentation"

@@ -8,22 +8,22 @@
     --qui-input-backgroundColor: var(--theme--qui-input-backgroundColor, var(--qui-colors-body-bgColor, transparent));
     --qui-input-borderWidth: var(--theme--qui-input-borderWidth, 1px);
     --qui-input-borderStyle: var(--theme--qui-input-borderStyle, solid);
-    --qui-input-borderColor: var(--theme--qui-input-borderColor, #ddd);
+    --qui-input-borderColor: var(--theme--qui-input-borderColor, var(--qui-border-color));
     --qui-input-borderRadius: var(--theme--qui-input-borderRadius, var(--qui-radius-input));
     --qui-input-padding: var(--theme--qui-input-padding, 0.5rem 1rem);
     --qui-input-fontSize: var(--theme--qui-input-fontSize, 1rem);
-    --qui-input-placeholder-color: var(--theme--qui-input-placeholderColor, color-mix(in srgb, var(--qui-input-color), transparent 80%));
+    --qui-input-placeholder-color: var(--theme--qui-input-placeholderColor, light-dark(color-mix(in srgb, var(--qui-input-color), transparent 80%), #aeb7c2));
     --qui-input-transition: var(--theme--qui-input-transition, 0.2s ease all);
 
     /* hover */
-    --qui-input-color--hover: var(--theme--qui-input-color--hover, #fff);
-    --qui-input-backgroundColor--hover: var(--theme--qui-input-backgroundColor--hover, #fff);
-    --qui-input-borderColor--hover: var(--theme--qui-input-borderColor--hover, #aaa);
+    --qui-input-color--hover: var(--theme--qui-input-color--hover, var(--qui-input-color));
+    --qui-input-backgroundColor--hover: var(--theme--qui-input-backgroundColor--hover, var(--qui-input-backgroundColor));
+    --qui-input-borderColor--hover: var(--theme--qui-input-borderColor--hover, light-dark(#aaa, #aeb7c2));
 
     /* focus */
-    --qui-input-color--focus: var(--theme--qui-input-color--focus, #fff);
-    --qui-input-backgroundColor--focus: var(--theme--qui-input-backgroundColor--focus, #fff);
-    --qui-input-borderColor--focus: var(--theme--qui-input-borderColor--focus, var(--qui-colors-primary));
+    --qui-input-color--focus: var(--theme--qui-input-color--focus, var(--qui-input-color));
+    --qui-input-backgroundColor--focus: var(--theme--qui-input-backgroundColor--focus, var(--qui-input-backgroundColor));
+    --qui-input-borderColor--focus: var(--theme--qui-input-borderColor--focus, light-dark(var(--qui-colors-primary), #a9c8ff));
 }
 
 @media (prefers-reduced-motion: reduce) {

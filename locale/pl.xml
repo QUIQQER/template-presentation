@@ -1,6 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <locales>
     <groups name="quiqqer/template-presentation" datatype="php,js">
+        <locale name="colorMode.title">
+            <pl><![CDATA[Domyślny wygląd]]></pl>
+        </locale>
+        <locale name="colorMode.system">
+            <pl><![CDATA[System]]></pl>
+        </locale>
+        <locale name="colorMode.light">
+            <pl><![CDATA[Jasny]]></pl>
+        </locale>
+        <locale name="colorMode.dark">
+            <pl><![CDATA[Ciemny]]></pl>
+        </locale>
+        <locale name="colorMode.allowVisitor">
+            <pl><![CDATA[Odwiedzający mogą zmieniać wygląd]]></pl>
+        </locale>
+        <locale name="colorMode.description">
+            <pl><![CDATA[Określa domyślny wygląd witryny. „System” automatycznie dostosowuje wygląd do ustawienia jasnego lub ciemnego motywu urządzenia. „Jasny” i „Ciemny” stosują stały wygląd niezależnie od ustawień urządzenia.]]></pl>
+        </locale>
+        <locale name="colorMode.allowVisitor.description">
+            <pl><![CDATA[Gdy wybór wyglądu przez odwiedzających jest wyłączony, obowiązuje wyłącznie domyślny wygląd. Przełącznik jest udostępniany osobno.]]></pl>
+        </locale>
         <!-- template bricks -->
         <locale name="brick.settings.enableSelect.disable">
             <pl><![CDATA[Wyłącz]]></pl>

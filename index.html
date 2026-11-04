@@ -1,3 +1,4 @@
+{assign var=colorMode value=$Template->getAttribute('TemplateSetting')->getAttribute('colorMode')}
 {assign var=Setting value=$Template->getAttribute('TemplateSetting')}
 {assign var=showSocialInMenu value=$Setting->getAttribute('showSocialInMenu')}
 {assign var=navStyle value=$Setting->getAttribute('navStyle')}
@@ -6,9 +7,11 @@
 {capture assign=socialMenuHtml}{fetch template="template/menu/mobileSocial.html" Project=$Project Template=$Template Site=$Site}{/capture}
 
 <!doctype html>
-<html itemscope itemtype="{$Site->getAttribute('meta.itemscope')}" lang="{$Project->getLang()}">
+<html data-presentation-mode="{$colorMode.defaultMode|escape:'html'}" data-presentation-allow-visitor="{if $colorMode.allowVisitor}1{else}0{/if}" itemscope itemtype="{$Site->getAttribute('meta.itemscope')}" lang="{$Project->getLang()}">
 <head>
     {template_event name="quiqqer::template::header::begin" Template=$Template}
+    <meta name="color-scheme" content="{$colorMode.colorScheme|escape:'html'}"/>
+    <style data-no-cache="1">:root { color-scheme: {$colorMode.colorScheme}; }</style>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=5"/>
 
     {pace}

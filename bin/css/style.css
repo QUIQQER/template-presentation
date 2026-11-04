@@ -238,8 +238,8 @@ section.quiqqer-portfolio-list {
 /* Template bricks */
 /*******************/
 .tpl-brick {
-    color: var(--qui-tpl-brick-textColor);
-    background-color: var(--qui-tpl-brick-backgroundColor);
+    color: var(--qui-tpl-brick-textColor, inherit);
+    background-color: var(--qui-tpl-brick-backgroundColor, transparent);
 }
 
 /*
@@ -372,7 +372,7 @@ section.quiqqer-portfolio-list {
 .quiqqer-sheets-desktop a,
 .quiqqer-sheets-desktop span {
     border-radius: 3px;
-    color: #5d5d5d;
+    color: light-dark(#5d5d5d, var(--qui-colors-text));
     float: none;
     margin-right: 2px !important;
     padding: 0 15px;
@@ -385,10 +385,10 @@ section.quiqqer-portfolio-list {
 }
 
 .quiqqer-sheets-desktop .quiqqer-sheets-desktop-current {
-    background: #D9D6D7;
-    border: 1px solid #D9D6D7;
+    background: light-dark(#D9D6D7, var(--qui-colors-surface-subtle));
+    border: 1px solid light-dark(#D9D6D7, var(--qui-border-color));
     border-radius: 3px;
-    color: #333;
+    color: light-dark(#333, var(--qui-colors-text));
 }
 
 .quiqqer-sheets-desktop-disabled {
@@ -742,7 +742,7 @@ a.qui-control-list-entry-imagelink {
 .quiqqer-bricks-children-infinite a,
 .quiqqer-bricks-children-infinite a:hover,
 .quiqqer-bricks-children-infinite a:active {
-    color: #333;
+    color: light-dark(#333, var(--qui-colors-text));
     font-weight: normal;
 }
 

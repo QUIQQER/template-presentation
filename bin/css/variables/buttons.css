@@ -26,9 +26,9 @@
     --qui-btn-primary-bg--disabled: var(--theme--qui-btn-primary-bg--disabled, color-mix(in srgb, var(--qui-btn-primary-bg), white 50%));
     --qui-btn-primary-borderColor--disabled: var(--theme--qui-btn-primary-borderColor--disabled, color-mix(in srgb, var(--qui-btn-primary-bg), white 50%));
     /* outline */
-    --qui-btn-primary-outline-color: var(--theme--qui-btn-primary-outline-color, var(--qui-colors-primary));
+    --qui-btn-primary-outline-color: var(--theme--qui-btn-primary-outline-color, light-dark(var(--qui-colors-primary), var(--qui-colors-primary-300)));
     --qui-btn-primary-outline-bg: var(--theme--qui-btn-primary-outline-bg, transparent);
-    --qui-btn-primary-outline-borderColor: var(--theme--qui-btn-primary-outline-borderColor, var(--qui-colors-primary));
+    --qui-btn-primary-outline-borderColor: var(--theme--qui-btn-primary-outline-borderColor, light-dark(var(--qui-colors-primary), var(--qui-colors-primary-300)));
     --qui-btn-primary-outline-color--hover: var(--theme--qui-btn-primary-outline-color--hover, var(--template-settings__btn-text-color, var(--qui-colors-primary-contrast)));
     --qui-btn-primary-outline-bg--hover: var(--theme--qui-btn-primary-outline-bg--hover, var(--qui-colors-primary));
     --qui-btn-primary-outline-borderColor--hover: var(--theme--qui-btn-primary-outline-borderColor--hover, var(--qui-colors-primary));
@@ -49,9 +49,9 @@
     --qui-btn-secondary-bg--disabled: var(--theme--qui-btn-secondary-bg--disabled, color-mix(in srgb, var(--qui-btn-secondary-bg), white 40%));
     --qui-btn-secondary-borderColor--disabled: var(--theme--qui-btn-secondary-borderColor--disabled, color-mix(in srgb, var(--qui-btn-secondary-bg), white 40%));
     /* outline */
-    --qui-btn-secondary-outline-color: var(--theme--qui-btn-secondary-outline-color, var(--qui-colors-secondary));
+    --qui-btn-secondary-outline-color: var(--theme--qui-btn-secondary-outline-color, light-dark(var(--qui-colors-secondary), var(--qui-colors-secondary-300)));
     --qui-btn-secondary-outline-bg: var(--theme--qui-btn-secondary-outline-bg, transparent);
-    --qui-btn-secondary-outline-borderColor: var(--theme--qui-btn-secondary-outline-borderColor, var(--qui-colors-secondary));
+    --qui-btn-secondary-outline-borderColor: var(--theme--qui-btn-secondary-outline-borderColor, light-dark(var(--qui-colors-secondary), var(--qui-colors-secondary-300)));
     --qui-btn-secondary-outline-color--hover: var(--theme--qui-btn-secondary-outline-color--hover, var(--qui-colors-secondary-contrast));
     --qui-btn-secondary-outline-bg--hover: var(--theme--qui-btn-secondary-outline-bg--hover, var(--qui-colors-secondary));
     --qui-btn-secondary-outline-borderColor--hover: var(--theme--qui-btn-secondary-outline-borderColor--hover, var(--qui-colors-secondary));
@@ -72,9 +72,9 @@
     --qui-btn-success-bg--disabled: var(--theme--qui-btn-success-bg--disabled, color-mix(in srgb, var(--qui-btn-success-bg), white 40%));
     --qui-btn-success-borderColor--disabled: var(--theme--qui-btn-success-borderColor--disabled, color-mix(in srgb, var(--qui-btn-success-bg), white 40%));
     /* outline */
-    --qui-btn-success-outline-color: var(--theme--qui-btn-success-outline-color, var(--qui-colors-success));
+    --qui-btn-success-outline-color: var(--theme--qui-btn-success-outline-color, light-dark(var(--qui-colors-success), var(--qui-colors-success-300)));
     --qui-btn-success-outline-bg: var(--theme--qui-btn-success-outline-bg, transparent);
-    --qui-btn-success-outline-borderColor: var(--theme--qui-btn-success-outline-borderColor, var(--qui-colors-success));
+    --qui-btn-success-outline-borderColor: var(--theme--qui-btn-success-outline-borderColor, light-dark(var(--qui-colors-success), var(--qui-colors-success-300)));
     --qui-btn-success-outline-color--hover: var(--theme--qui-btn-success-outline-color--hover, var(--qui-colors-success-contrast));
     --qui-btn-success-outline-bg--hover: var(--theme--qui-btn-success-outline-bg--hover, var(--qui-colors-success));
     --qui-btn-success-outline-borderColor--hover: var(--theme--qui-btn-success-outline-borderColor--hover, var(--qui-colors-success));
@@ -95,9 +95,9 @@
     --qui-btn-danger-bg--disabled: var(--theme--qui-btn-danger-bg--disabled, color-mix(in srgb, var(--qui-btn-danger-bg), white 40%));
     --qui-btn-danger-borderColor--disabled: var(--theme--qui-btn-danger-borderColor--disabled, color-mix(in srgb, var(--qui-btn-danger-bg), white 40%));
     /* outline */
-    --qui-btn-danger-outline-color: var(--theme--qui-btn-danger-outline-color, var(--qui-colors-danger));
+    --qui-btn-danger-outline-color: var(--theme--qui-btn-danger-outline-color, light-dark(var(--qui-colors-danger), var(--qui-colors-danger-300)));
     --qui-btn-danger-outline-bg: var(--theme--qui-btn-danger-outline-bg, transparent);
-    --qui-btn-danger-outline-borderColor: var(--theme--qui-btn-danger-outline-borderColor, var(--qui-colors-danger));
+    --qui-btn-danger-outline-borderColor: var(--theme--qui-btn-danger-outline-borderColor, light-dark(var(--qui-colors-danger), var(--qui-colors-danger-300)));
     --qui-btn-danger-outline-color--hover: var(--theme--qui-btn-danger-outline-color--hover, var(--qui-colors-danger-contrast));
     --qui-btn-danger-outline-bg--hover: var(--theme--qui-btn-danger-outline-bg--hover, var(--qui-colors-danger));
     --qui-btn-danger-outline-borderColor--hover: var(--theme--qui-btn-danger-outline-borderColor--hover, var(--qui-colors-danger));
@@ -141,9 +141,9 @@
     --qui-btn-info-bg--disabled: var(--theme--qui-btn-info-bg--disabled, color-mix(in srgb, var(--qui-btn-info-bg), white 40%));
     --qui-btn-info-borderColor--disabled: var(--theme--qui-btn-info-borderColor--disabled, color-mix(in srgb, var(--qui-btn-info-bg), white 40%));
     /* outline */
-    --qui-btn-info-outline-color: var(--theme--qui-btn-info-outline-color, var(--qui-colors-info));
+    --qui-btn-info-outline-color: var(--theme--qui-btn-info-outline-color, light-dark(var(--qui-colors-info), var(--qui-colors-info-300)));
     --qui-btn-info-outline-bg: var(--theme--qui-btn-info-outline-bg, transparent);
-    --qui-btn-info-outline-borderColor: var(--theme--qui-btn-info-outline-borderColor, var(--qui-colors-info));
+    --qui-btn-info-outline-borderColor: var(--theme--qui-btn-info-outline-borderColor, light-dark(var(--qui-colors-info), var(--qui-colors-info-300)));
     --qui-btn-info-outline-color--hover: var(--theme--qui-btn-info-outline-color--hover, var(--qui-colors-info-contrast));
     --qui-btn-info-outline-bg--hover: var(--theme--qui-btn-info-outline-bg--hover, var(--qui-colors-info));
     --qui-btn-info-outline-borderColor--hover: var(--theme--qui-btn-info-outline-borderColor--hover, var(--qui-colors-info));
@@ -164,9 +164,9 @@
     --qui-btn-dark-bg--disabled: var(--theme--qui-btn-dark-bg--disabled, color-mix(in srgb, var(--qui-btn-dark-bg), white 40%));
     --qui-btn-dark-borderColor--disabled: var(--theme--qui-btn-dark-borderColor--disabled, color-mix(in srgb, var(--qui-btn-dark-bg), white 40%));
     /* outline */
-    --qui-btn-dark-outline-color: var(--theme--qui-btn-dark-outline-color, var(--qui-colors-dark));
+    --qui-btn-dark-outline-color: var(--theme--qui-btn-dark-outline-color, light-dark(var(--qui-colors-dark), var(--qui-colors-dark-300)));
     --qui-btn-dark-outline-bg: var(--theme--qui-btn-dark-outline-bg, transparent);
-    --qui-btn-dark-outline-borderColor: var(--theme--qui-btn-dark-outline-borderColor, var(--qui-colors-dark));
+    --qui-btn-dark-outline-borderColor: var(--theme--qui-btn-dark-outline-borderColor, light-dark(var(--qui-colors-dark), var(--qui-colors-dark-300)));
     --qui-btn-dark-outline-color--hover: var(--theme--qui-btn-dark-outline-color--hover, var(--qui-colors-dark-contrast));
     --qui-btn-dark-outline-bg--hover: var(--theme--qui-btn-dark-outline-bg--hover, var(--qui-colors-dark));
     --qui-btn-dark-outline-borderColor--hover: var(--theme--qui-btn-dark-outline-borderColor--hover, var(--qui-colors-dark));
@@ -187,7 +187,7 @@
     --qui-btn-light-bg--disabled: var(--theme--qui-btn-light-bg--disabled, color-mix(in srgb, var(--qui-btn-light-bg), white 40%));
     --qui-btn-light-borderColor--disabled: var(--theme--qui-btn-light-borderColor--disabled, color-mix(in srgb, var(--qui-btn-light-bg), white 40%));
     /* outline */
-    --qui-btn-light-outline-color: var(--theme--qui-btn-light-outline-color, var(--qui-colors-light-contrast));
+    --qui-btn-light-outline-color: var(--theme--qui-btn-light-outline-color, light-dark(var(--qui-colors-light-contrast), var(--qui-colors-light)));
     --qui-btn-light-outline-bg: var(--theme--qui-btn-light-outline-bg, transparent);
     --qui-btn-light-outline-borderColor: var(--theme--qui-btn-light-outline-borderColor, var(--qui-colors-light-800));
     --qui-btn-light-outline-color--hover: var(--theme--qui-btn-light-outline-color--hover, var(--qui-colors-light-contrast));
@@ -221,8 +221,8 @@
     --qui-btn-white-outline-borderColor--disabled: var(--theme--qui-btn-white-outline-borderColor--disabled, color-mix(in srgb, var(--qui-colors-white), black 10%));
 
     /* Button: link */
-    --qui-btn-link-color: var(--theme--qui-btn-link-color, var(--qui-colors-primary));
-    --qui-btn-link-color--hover: var(--theme--qui-btn-link-color--hover, color-mix(in srgb, var(--qui-colors-primary), white 20%));
+    --qui-btn-link-color: var(--theme--qui-btn-link-color, light-dark(var(--qui-colors-primary), var(--qui-colors-primary-300)));
+    --qui-btn-link-color--hover: var(--theme--qui-btn-link-color--hover, color-mix(in srgb, var(--qui-btn-link-color), white 20%));
     --qui-btn-link-bg--hover: var(--theme--qui-btn-link-bg--hover, rgba(0,0,0,0.075));
     --qui-btn-link-color--disabled: var(--theme--qui-btn-link-color--disabled, color-mix(in srgb, var(--qui-colors-primary), white 40%));
 

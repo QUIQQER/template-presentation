@@ -44,3 +44,11 @@
     --qui-nav-search-input-bgColor--hover: var(--theme--qui-nav-search-input-bgColor--hover, rgba(0,0,0,0.15));
     --qui-nav-search-input-borderColor--hover: var(--theme--qui-nav-search-input-borderColor--hover, transparent);
 }
+
+/* Preserve existing public Menu hooks even when project CSS loads first. */
+:where(:root) {
+    /* Presentation supplies mode-aware defaults to the shared MegaMenu. */
+    --qui-megaMenu-submenu-bgColor: var(--theme--qui-megaMenu-submenu-bgColor, light-dark(#fff, var(--qui-colors-surface)));
+    --qui-megaMenu-submenu-link-color--hover: var(--theme--qui-megaMenu-submenu-link-color--hover, light-dark(var(--qui-colors-gray-950), var(--qui-colors-text)));
+    --qui-megaMenu-submenu-link-bgColor--hover: var(--theme--qui-megaMenu-submenu-link-bgColor--hover, light-dark(var(--qui-colors-gray-25), var(--qui-colors-surface-subtle)));
+}

@@ -1,6 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <locales>
     <groups name="quiqqer/template-presentation" datatype="php,js">
+        <locale name="colorMode.title">
+            <en><![CDATA[Default appearance]]></en>
+        </locale>
+        <locale name="colorMode.system">
+            <en><![CDATA[System]]></en>
+        </locale>
+        <locale name="colorMode.light">
+            <en><![CDATA[Light]]></en>
+        </locale>
+        <locale name="colorMode.dark">
+            <en><![CDATA[Dark]]></en>
+        </locale>
+        <locale name="colorMode.allowVisitor">
+            <en><![CDATA[Allow visitors to change appearance]]></en>
+        </locale>
+        <locale name="colorMode.description">
+            <en><![CDATA[Sets the default appearance of the website. “System” automatically follows the device’s light/dark setting. “Light” and “Dark” use a fixed appearance regardless of the device setting.]]></en>
+        </locale>
+        <locale name="colorMode.allowVisitor.description">
+            <en><![CDATA[When disabled, only the default appearance applies. The switch control is provided separately.]]></en>
+        </locale>
         <!-- template bricks -->
         <locale name="brick.settings.enableSelect.disable">
             <en><![CDATA[Disable]]></en>
