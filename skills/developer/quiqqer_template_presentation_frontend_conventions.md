@@ -14,6 +14,10 @@ Child templates usually only override token values (often through a project-spec
 own utilities. The inventory below stays valid for them; load the child template's own skill for its
 additions.
 
+Load `quiqqer_frontend_css_variables` for CSS decisions: it owns the general selector and cascade rules,
+styling ownership, value selection, centralized fallbacks, and the setting-backed three-layer contract.
+This skill adds Presentation's concrete tokens and components, not a separate CSS architecture.
+
 ## Design System First
 
 - Prefer existing semantic HTML elements before introducing wrapper-heavy custom markup.
@@ -22,8 +26,10 @@ additions.
 - Use semantic headings (`h1`–`h6`) instead of recreating heading styles manually, and let text inherit
   its default color where possible.
 - If an existing component already solves the UI pattern, reuse it instead of rebuilding it locally.
-- Add custom CSS only for gaps that the design system does not cover, and write it against the tokens
-  below instead of hardcoded sizes and colors.
+- Add custom CSS only for gaps that the design system does not cover. Prefer tokens established for
+  the intended use; a variable's existence alone does not make it a recommended convention. Functional
+  layout values need not become tokens or variables. Follow Core's value-selection rules rather than
+  wrapping every number in a new variable.
 
 ## Design Tokens (CSS Variables)
 
@@ -42,58 +48,43 @@ The canonical token prefix is `--qui-`. The most used families:
 - Font sizes: `--qui-fs-xs` to `--qui-fs-6xl` for text, `--qui-fs-1` to `--qui-fs-6` for heading levels,
   `--qui-fs-body`.
 - Borders: `--qui-border-color`, `--qui-border-width`, `--qui-border-style`.
-- Spacing: three families, see the dedicated "Spacing" section below — `--qui-spacing-*` (element-internal),
-  `--qui-layout-gap-*` (between blocks), and the template-internal `--qui-row-spacing-*` (section rhythm).
 - Buttons: `--qui-btn-<variant>-<property>` hooks per variant and state, for example
   `--qui-btn-primary-bg--hover`, plus shared hooks such as `--qui-btn-borderRadius`.
 
 ## Spacing
 
-Never write raw spacing (`margin`/`padding`/`gap` with a bare `1rem`/`2rem`). Use a spacing token so a page
-built from independent controls keeps one rhythm. Definitions live in `bin/css/variables/spacing.css`.
-There are three families.
+Inspect the relevant template and component conventions before choosing distances. This skill does
+not prescribe a spacing token family or scale. When no established token fits the intended use,
+purposeful component-owned values such as `1.5rem` are allowed; do not create variables merely to
+replace numbers. Existing token usage does not need to be migrated as part of unrelated work.
 
-Solve spacing in the component's own CSS with these tokens (or plain CSS properties such as
-`margin-inline: auto` for centering) — not via spacing utility classes. Those classes are an editorial
+Solve component spacing in the component's own CSS, not via spacing utility classes. Those classes are an editorial
 fallback for markup that has no CSS, are deprecated for spacing, and must not be used as a module building
 block.
 
-### `--qui-spacing-*` — inside an element
+## Fallbacks For Portability
 
-Padding and gaps between a control's own parts. Six steps on a 4/8px grid (at the 16px desktop base). When
-in doubt, use the unsuffixed default. Pick by intent, not by feel:
+When a token is available in all supported contexts and no separate configuration is needed, use it
+directly, for example `font-size: var(--qui-fs-sm)`. No private alias or public hook is required.
 
-| Token | ~Desktop | Intent |
-|---|---|---|
-| `--qui-spacing-xs` | 4px | tight / inline gaps (icon + text, chips) |
-| `--qui-spacing-sm` | 8px | compact padding |
-| `--qui-spacing` | 16px | standard padding / gap — the default, reach for this first |
-| `--qui-spacing-lg` | 24px | comfortable padding (cards) |
-| `--qui-spacing-xl` | 32px | generous |
-| `--qui-spacing-2xl` | 48px | strong internal separation |
+A reusable control may run without Presentation. For a justified component-owned property, define a
+suitable fallback once on the control root and consume the private alias, following the Core skill:
 
-The scale derives from `--qui-spacer`, which shrinks on mobile, so the whole scale scales down with it.
+```css
+.vendor-package-control {
+    --_infoFontSize: var(--qui-fs-sm, 0.875rem);
+}
 
-### `--qui-layout-gap-*` — between larger blocks
+.vendor-package-control__info {
+    font-size: var(--_infoFontSize);
+}
+```
 
-The gap between big blocks such as the columns of a split layout. Three steps: `-sm`, the unsuffixed
-default, and `-lg`. Container-relative (`clamp()` with `cqi` plus a rem anchor): the gap adapts to the
-width of the surrounding container, not the viewport. For that, an ancestor needs
-`container-type: inline-size` — the template sets it on its layout regions; a control whose own internal
-layout reflows with available width sets it on its own wrapper. Without a container it falls back to the
-viewport (no breakage, just not adaptive).
-
-### `--qui-row-spacing-*` — between sections
-
-Vertical rhythm between bricks/sections, driven by brick settings. Template-internal; a control does not
-use these for its own spacing.
-
-### Fallback for portability
-
-A control (for example a brick type) may run in a template without these tokens. Keep an inline fallback
-equal to the token's value: `padding: var(--qui-spacing-lg, 1.5rem)` or
-`gap: var(--qui-layout-gap-lg, clamp(1.5rem, 0.5rem + 5cqi, 5rem))`. The fallback must match, so behaviour
-is identical with and without the template.
+Choose a fallback appropriate to the component's supported contexts, using the canonical token
+definition as a reference. A fixed value can match a baseline but does not reproduce the token's
+responsive scale or theme overrides. Do not promise identical behavior across templates or introduce
+arbitrary color fallbacks. Setting-backed values still require the full three-layer contract, and
+responsive defaults must retain its theme/config priority.
 
 ## Navigation Auto-Hide
 
@@ -125,6 +116,6 @@ The complete and always current definitions live in the template sources (for co
 - Keep frontend changes small and local.
 - Do not introduce a parallel design language inside the template.
 - Preserve existing DOM structure, classes, and behavior unless the task requires a change.
-- For brick work, follow `quiqqer_bricks_create_and_edit_blocks` (visual references, custom CSS scoping,
-  internal links). For configurable control CSS, follow the three-layer pattern from
-  `quiqqer_frontend_css_variables`.
+- For brick instances and editorial content, follow `quiqqer_bricks_create_and_edit_blocks` (visual
+  references, custom CSS scoping, internal links). For brick type development, follow
+  `quiqqer_bricks_develop_brick_types`; for CSS decisions, follow `quiqqer_frontend_css_variables`.
