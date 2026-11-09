@@ -5,6 +5,7 @@
 
 {assign var=LogoForTransparentNav value=$Setting->getAttribute('LogoForTransparentNav')}
 {assign var=logoTitle value=$Setting->getAttribute('logoTitle')}
+{assign var=colorMode value=$Setting->getAttribute('colorMode')}
 
 {if $Logo}
 <div class="header-bar-logo" style=" {if $logoSize.width}--logo-width: {$logoSize.width}px;{/if} {if $logoSize.height}--logo-height: {$logoSize.height}px;{/if}">
@@ -16,5 +17,11 @@
             {image image=$Logo class="header-bar-logo__img" height=$logoSize.height width=$logoSize.width}
         {/if}
     </a>
+</div>
+{/if}
+{* rendered in both MegaMenu wrappers; nav.css shows it only in the mobile one, next to the menu button *}
+{if $colorMode.menuSwitch === 'both' || $colorMode.menuSwitch === 'mobile'}
+<div class="header-bar__colorMode header-bar__colorMode--mobile">
+    {fetch template="template/colorModeSwitch.html" view=$colorMode.menuView mode=$colorMode.defaultMode}
 </div>
 {/if}

@@ -1,0 +1,100 @@
+{*
+    Visitor color mode switch. Every instance controls the same mode.
+
+    Parameters:
+    - view: "compact" (icon button, cycles System -> Light -> Dark),
+            "icons" (three icon buttons in a pill),
+            "choice" (three buttons with icon and label) or
+            "dropdown" (icon button opening a menu with icon, label and check mark)
+    - mode: operator default (system, light or dark)
+
+    A stored visitor choice is applied early in index.html; bin/init.js handles
+    clicks, the dropdown menu and keeps all instances in sync.
+*}
+{assign var=modes value=['system', 'light', 'dark']}
+{if $view === 'icons'}
+    {assign var=icons value=['system' => 'monitor', 'light' => 'sun', 'dark' => 'moon-star']}
+{elseif $view === 'dropdown'}
+    {assign var=icons value=['system' => 'sun-moon', 'light' => 'sun', 'dark' => 'moon-star']}
+{else}
+    {assign var=icons value=['system' => 'sun-moon', 'light' => 'sun', 'dark' => 'moon']}
+{/if}
+{capture assign=groupLabel}{locale group="quiqqer/template-presentation" var="colorModeSwitch.label"}{/capture}
+{if $view === 'choice' || $view === 'icons'}
+<div class="tpl-colorModeSwitch tpl-colorModeSwitch--{$view}"
+     role="group"
+     aria-label="{$groupLabel}"
+     data-name="tpl-colorModeSwitch"
+     data-view="{$view}">
+    {foreach $modes as $optionMode}
+    {capture assign=optionLabel}{locale group="quiqqer/template-presentation" var="colorMode.`$optionMode`"}{/capture}
+    <button type="button"
+            class="tpl-colorModeSwitch__option"
+            data-name="option"
+            data-mode="{$optionMode}"
+            {if $view === 'icons'}aria-label="{$optionLabel}" title="{$optionLabel}"{/if}
+            aria-pressed="{if $optionMode === $mode}true{else}false{/if}">
+        {fetch template="template/colorModeSwitch/icon.html" icon=$icons[$optionMode] mode=$optionMode}
+        {if $view === 'choice'}
+        <span class="tpl-colorModeSwitch__text">{$optionLabel}</span>
+        {/if}
+    </button>
+    {/foreach}
+</div>
+{elseif $view === 'dropdown'}
+{* bin/init.js connects toggle and menu (ids, anchor names) and positions the menu *}
+{capture assign=toggleLabel}{locale group="quiqqer/template-presentation" var="colorModeSwitch.current.`$mode`"}{/capture}
+<div class="tpl-colorModeSwitch tpl-colorModeSwitch--dropdown"
+     data-name="tpl-colorModeSwitch"
+     data-view="dropdown">
+    <button type="button"
+            class="tpl-colorModeSwitch__toggle"
+            data-name="toggle"
+            data-label-system="{locale group="quiqqer/template-presentation" var="colorModeSwitch.current.system"}"
+            data-label-light="{locale group="quiqqer/template-presentation" var="colorModeSwitch.current.light"}"
+            data-label-dark="{locale group="quiqqer/template-presentation" var="colorModeSwitch.current.dark"}"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-label="{$toggleLabel}"
+            title="{$toggleLabel}">
+        {foreach $modes as $iconMode}
+            {fetch template="template/colorModeSwitch/icon.html" icon=$icons[$iconMode] mode=$iconMode}
+        {/foreach}
+        {fetch template="template/colorModeSwitch/icon.html" icon="chevron-down" mode=""}
+    </button>
+    <div class="tpl-colorModeSwitch__menu"
+         popover
+         role="menu"
+         aria-label="{$groupLabel}"
+         data-name="menu">
+        {foreach $modes as $optionMode}
+        <button type="button"
+                class="tpl-colorModeSwitch__menuItem"
+                role="menuitemradio"
+                tabindex="-1"
+                data-name="option"
+                data-mode="{$optionMode}"
+                aria-checked="{if $optionMode === $mode}true{else}false{/if}">
+            {fetch template="template/colorModeSwitch/icon.html" icon=$icons[$optionMode] mode=$optionMode}
+            <span class="tpl-colorModeSwitch__text">{locale group="quiqqer/template-presentation" var="colorMode.`$optionMode`"}</span>
+            {fetch template="template/colorModeSwitch/icon.html" icon="check" mode=""}
+        </button>
+        {/foreach}
+    </div>
+</div>
+{else}
+{capture assign=compactLabel}{locale group="quiqqer/template-presentation" var="colorModeSwitch.compact.`$mode`"}{/capture}
+<button type="button"
+        class="tpl-colorModeSwitch tpl-colorModeSwitch--compact"
+        data-name="tpl-colorModeSwitch"
+        data-view="compact"
+        data-label-system="{locale group="quiqqer/template-presentation" var="colorModeSwitch.compact.system"}"
+        data-label-light="{locale group="quiqqer/template-presentation" var="colorModeSwitch.compact.light"}"
+        data-label-dark="{locale group="quiqqer/template-presentation" var="colorModeSwitch.compact.dark"}"
+        aria-label="{$compactLabel}"
+        title="{$compactLabel}">
+    {foreach $modes as $iconMode}
+        {fetch template="template/colorModeSwitch/icon.html" icon=$icons[$iconMode] mode=$iconMode}
+    {/foreach}
+</button>
+{/if}

@@ -20,7 +20,67 @@
             <pt><![CDATA[Define a aparência padrão do site. «Sistema» segue automaticamente a configuração clara ou escura do dispositivo. «Claro» e «Escuro» utilizam uma aparência fixa, independentemente da configuração do dispositivo.]]></pt>
         </locale>
         <locale name="colorMode.allowVisitor.description">
-            <pt><![CDATA[Quando a escolha dos visitantes está desativada, apenas a aparência padrão se aplica. O seletor é disponibilizado separadamente.]]></pt>
+            <pt><![CDATA[Quando a escolha dos visitantes está desativada, apenas a aparência padrão se aplica. As configurações do menu e do rodapé definem onde o seletor aparece.]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.menu">
+            <pt><![CDATA[Seletor de aparência no menu]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.menu.description">
+            <pt><![CDATA[Só se aplica quando os visitantes podem alterar a aparência. No telemóvel, o seletor fica na barra de navegação ao lado do botão do menu.]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.menu.both">
+            <pt><![CDATA[Computador e telemóvel]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.menu.desktop">
+            <pt><![CDATA[Apenas computador]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.menu.mobile">
+            <pt><![CDATA[Apenas telemóvel]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.menu.off">
+            <pt><![CDATA[Desativado]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.footer">
+            <pt><![CDATA[Seletor de aparência no rodapé]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.footer.description">
+            <pt><![CDATA[Mostra o seletor no fim da barra do rodapé, independentemente da configuração do menu. Só se aplica quando os visitantes podem alterar a aparência.]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.view.icons">
+            <pt><![CDATA[Barra de ícones]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.menuView">
+            <pt><![CDATA[Vista do seletor no menu]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.menuView.description">
+            <pt><![CDATA[O botão de ícone muda para a aparência seguinte ao clicar. O menu suspenso abre uma lista com Sistema, Claro e Escuro.]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.view.compact">
+            <pt><![CDATA[Botão de ícone]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.view.dropdown">
+            <pt><![CDATA[Menu suspenso]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.current.system">
+            <pt><![CDATA[Aparência: Sistema]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.current.light">
+            <pt><![CDATA[Aparência: Claro]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.current.dark">
+            <pt><![CDATA[Aparência: Escuro]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.label">
+            <pt><![CDATA[Aparência]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.compact.system">
+            <pt><![CDATA[Aparência: Sistema. Mudar para Claro]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.compact.light">
+            <pt><![CDATA[Aparência: Claro. Mudar para Escuro]]></pt>
+        </locale>
+        <locale name="colorModeSwitch.compact.dark">
+            <pt><![CDATA[Aparência: Escuro. Mudar para Sistema]]></pt>
         </locale>
         <!-- template bricks -->
         <locale name="brick.settings.enableSelect.disable">

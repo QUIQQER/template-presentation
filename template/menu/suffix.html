@@ -3,6 +3,7 @@
 {assign var=showSocial value=$Setting->getAttribute('showSocialInMenu')}
 {assign var=searchData value=$Setting->getAttribute('searchData')}
 {assign var=showLangSelect value=$Setting->getAttribute('showLangSelectNav')}
+{assign var=colorMode value=$Setting->getAttribute('colorMode')}
 
 {assign var=BricksManager value=$Setting->getAttribute('BricksManager')}
 {assign var=navActionBricks value=$BricksManager->getBricksByArea('navAction', $Site)}
@@ -23,6 +24,12 @@
     {if $showLangSelect && $Setting->getAttribute('LangSelectControl')}
         <div class="header-bar__langSwitch">
             {$Setting->getAttribute('LangSelectControl')->create()}
+        </div>
+    {/if}
+
+    {if $colorMode.menuSwitch === 'both' || $colorMode.menuSwitch === 'desktop'}
+        <div class="header-bar__colorMode header-bar__colorMode--desktop">
+            {fetch template="template/colorModeSwitch.html" view=$colorMode.menuView mode=$colorMode.defaultMode}
         </div>
     {/if}
 

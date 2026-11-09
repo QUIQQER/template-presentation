@@ -20,7 +20,67 @@
             <es><![CDATA[Define la apariencia predeterminada del sitio web. «Sistema» sigue automáticamente la configuración clara u oscura del dispositivo. «Claro» y «Oscuro» utilizan una apariencia fija, independientemente de la configuración del dispositivo.]]></es>
         </locale>
         <locale name="colorMode.allowVisitor.description">
-            <es><![CDATA[Cuando la elección de los visitantes está desactivada, solo se aplica la apariencia predeterminada. El selector se proporciona por separado.]]></es>
+            <es><![CDATA[Cuando la elección de los visitantes está desactivada, solo se aplica la apariencia predeterminada. Los ajustes del menú y del pie de página definen dónde aparece el selector.]]></es>
+        </locale>
+        <locale name="colorModeSwitch.menu">
+            <es><![CDATA[Selector de apariencia en el menú]]></es>
+        </locale>
+        <locale name="colorModeSwitch.menu.description">
+            <es><![CDATA[Solo se aplica si los visitantes pueden cambiar la apariencia. En móviles, el selector se encuentra en la barra de navegación junto al botón del menú.]]></es>
+        </locale>
+        <locale name="colorModeSwitch.menu.both">
+            <es><![CDATA[Escritorio y móvil]]></es>
+        </locale>
+        <locale name="colorModeSwitch.menu.desktop">
+            <es><![CDATA[Solo escritorio]]></es>
+        </locale>
+        <locale name="colorModeSwitch.menu.mobile">
+            <es><![CDATA[Solo móvil]]></es>
+        </locale>
+        <locale name="colorModeSwitch.menu.off">
+            <es><![CDATA[Desactivado]]></es>
+        </locale>
+        <locale name="colorModeSwitch.footer">
+            <es><![CDATA[Selector de apariencia en el pie de página]]></es>
+        </locale>
+        <locale name="colorModeSwitch.footer.description">
+            <es><![CDATA[Muestra el selector al final de la barra del pie de página, independientemente del ajuste del menú. Solo se aplica si los visitantes pueden cambiar la apariencia.]]></es>
+        </locale>
+        <locale name="colorModeSwitch.view.icons">
+            <es><![CDATA[Barra de iconos]]></es>
+        </locale>
+        <locale name="colorModeSwitch.menuView">
+            <es><![CDATA[Vista del selector en el menú]]></es>
+        </locale>
+        <locale name="colorModeSwitch.menuView.description">
+            <es><![CDATA[El botón de icono cambia a la siguiente apariencia al hacer clic. El desplegable abre una lista con Sistema, Claro y Oscuro.]]></es>
+        </locale>
+        <locale name="colorModeSwitch.view.compact">
+            <es><![CDATA[Botón de icono]]></es>
+        </locale>
+        <locale name="colorModeSwitch.view.dropdown">
+            <es><![CDATA[Desplegable]]></es>
+        </locale>
+        <locale name="colorModeSwitch.current.system">
+            <es><![CDATA[Apariencia: Sistema]]></es>
+        </locale>
+        <locale name="colorModeSwitch.current.light">
+            <es><![CDATA[Apariencia: Claro]]></es>
+        </locale>
+        <locale name="colorModeSwitch.current.dark">
+            <es><![CDATA[Apariencia: Oscuro]]></es>
+        </locale>
+        <locale name="colorModeSwitch.label">
+            <es><![CDATA[Apariencia]]></es>
+        </locale>
+        <locale name="colorModeSwitch.compact.system">
+            <es><![CDATA[Apariencia: Sistema. Cambiar a Claro]]></es>
+        </locale>
+        <locale name="colorModeSwitch.compact.light">
+            <es><![CDATA[Apariencia: Claro. Cambiar a Oscuro]]></es>
+        </locale>
+        <locale name="colorModeSwitch.compact.dark">
+            <es><![CDATA[Apariencia: Oscuro. Cambiar a Sistema]]></es>
         </locale>
         <!-- template bricks -->
         <locale name="brick.settings.enableSelect.disable">

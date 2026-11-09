@@ -14,6 +14,18 @@
                         <type>bool</type>
                         <defaultvalue>0</defaultvalue>
                     </conf>
+                    <conf name="colorModeSwitchMenu">
+                        <type>string</type>
+                        <defaultvalue>both</defaultvalue>
+                    </conf>
+                    <conf name="colorModeSwitchMenuView">
+                        <type>string</type>
+                        <defaultvalue>compact</defaultvalue>
+                    </conf>
+                    <conf name="colorModeSwitchFooter">
+                        <type>string</type>
+                        <defaultvalue>icons</defaultvalue>
+                    </conf>
 
                     <!-- general settings -->
                     <conf name="showTitle">
@@ -383,6 +395,28 @@
                                 <text><locale group="quiqqer/template-presentation" var="colorMode.allowVisitor"/></text>
                                 <description><locale group="quiqqer/template-presentation" var="colorMode.allowVisitor.description"/></description>
                             </input>
+                            <select conf="templatePresentation.settings.colorModeSwitchMenu">
+                                <text><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu"/></text>
+                                <description><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.description"/></description>
+                                <option value="both" selected="selected"><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.both"/></option>
+                                <option value="desktop"><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.desktop"/></option>
+                                <option value="mobile"><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.mobile"/></option>
+                                <option value="off"><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.off"/></option>
+                            </select>
+                            <select conf="templatePresentation.settings.colorModeSwitchMenuView">
+                                <text><locale group="quiqqer/template-presentation" var="colorModeSwitch.menuView"/></text>
+                                <description><locale group="quiqqer/template-presentation" var="colorModeSwitch.menuView.description"/></description>
+                                <option value="compact" selected="selected"><locale group="quiqqer/template-presentation" var="colorModeSwitch.view.compact"/></option>
+                                <option value="dropdown"><locale group="quiqqer/template-presentation" var="colorModeSwitch.view.dropdown"/></option>
+                            </select>
+                            <select conf="templatePresentation.settings.colorModeSwitchFooter">
+                                <text><locale group="quiqqer/template-presentation" var="colorModeSwitch.footer"/></text>
+                                <description><locale group="quiqqer/template-presentation" var="colorModeSwitch.footer.description"/></description>
+                                <option value="icons" selected="selected"><locale group="quiqqer/template-presentation" var="colorModeSwitch.view.icons"/></option>
+                                <option value="compact"><locale group="quiqqer/template-presentation" var="colorModeSwitch.view.compact"/></option>
+                                <option value="dropdown"><locale group="quiqqer/template-presentation" var="colorModeSwitch.view.dropdown"/></option>
+                                <option value="off"><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.off"/></option>
+                            </select>
 
                             <input conf="templatePresentation.settings.showTitle" type="checkbox">
                                 <text>

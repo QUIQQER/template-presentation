@@ -98,6 +98,12 @@
     font-weight: 700;
 }
 
+/* footer color mode switch (colors inherit from the footer text) */
+.page-footer__colorMode {
+    display: flex;
+    align-items: center;
+}
+
 /* links styling for footer */
 
 /*.page-footer a {*/

@@ -20,7 +20,67 @@
             <en><![CDATA[Sets the default appearance of the website. “System” automatically follows the device’s light/dark setting. “Light” and “Dark” use a fixed appearance regardless of the device setting.]]></en>
         </locale>
         <locale name="colorMode.allowVisitor.description">
-            <en><![CDATA[When disabled, only the default appearance applies. The switch control is provided separately.]]></en>
+            <en><![CDATA[When disabled, only the default appearance applies. The menu and footer settings define where the switch appears.]]></en>
+        </locale>
+        <locale name="colorModeSwitch.menu">
+            <en><![CDATA[Appearance switch in the menu]]></en>
+        </locale>
+        <locale name="colorModeSwitch.menu.description">
+            <en><![CDATA[Only applies when visitors may change the appearance. On mobile, the switch sits in the navigation bar next to the menu button.]]></en>
+        </locale>
+        <locale name="colorModeSwitch.menu.both">
+            <en><![CDATA[Desktop and mobile]]></en>
+        </locale>
+        <locale name="colorModeSwitch.menu.desktop">
+            <en><![CDATA[Desktop only]]></en>
+        </locale>
+        <locale name="colorModeSwitch.menu.mobile">
+            <en><![CDATA[Mobile only]]></en>
+        </locale>
+        <locale name="colorModeSwitch.menu.off">
+            <en><![CDATA[Off]]></en>
+        </locale>
+        <locale name="colorModeSwitch.footer">
+            <en><![CDATA[Appearance switch in the footer]]></en>
+        </locale>
+        <locale name="colorModeSwitch.footer.description">
+            <en><![CDATA[Shows the switch at the end of the footer bar, independent of the menu setting. Only applies when visitors may change the appearance.]]></en>
+        </locale>
+        <locale name="colorModeSwitch.view.icons">
+            <en><![CDATA[Icon bar]]></en>
+        </locale>
+        <locale name="colorModeSwitch.menuView">
+            <en><![CDATA[Switch view in the menu]]></en>
+        </locale>
+        <locale name="colorModeSwitch.menuView.description">
+            <en><![CDATA[The icon button switches to the next appearance on click. The dropdown opens a list with System, Light and Dark.]]></en>
+        </locale>
+        <locale name="colorModeSwitch.view.compact">
+            <en><![CDATA[Icon button]]></en>
+        </locale>
+        <locale name="colorModeSwitch.view.dropdown">
+            <en><![CDATA[Dropdown]]></en>
+        </locale>
+        <locale name="colorModeSwitch.current.system">
+            <en><![CDATA[Appearance: System]]></en>
+        </locale>
+        <locale name="colorModeSwitch.current.light">
+            <en><![CDATA[Appearance: Light]]></en>
+        </locale>
+        <locale name="colorModeSwitch.current.dark">
+            <en><![CDATA[Appearance: Dark]]></en>
+        </locale>
+        <locale name="colorModeSwitch.label">
+            <en><![CDATA[Appearance]]></en>
+        </locale>
+        <locale name="colorModeSwitch.compact.system">
+            <en><![CDATA[Appearance: System. Switch to Light]]></en>
+        </locale>
+        <locale name="colorModeSwitch.compact.light">
+            <en><![CDATA[Appearance: Light. Switch to Dark]]></en>
+        </locale>
+        <locale name="colorModeSwitch.compact.dark">
+            <en><![CDATA[Appearance: Dark. Switch to System]]></en>
         </locale>
         <!-- template bricks -->
         <locale name="brick.settings.enableSelect.disable">

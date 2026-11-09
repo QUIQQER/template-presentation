@@ -20,7 +20,67 @@
             <pl><![CDATA[Określa domyślny wygląd witryny. „System” automatycznie dostosowuje wygląd do ustawienia jasnego lub ciemnego motywu urządzenia. „Jasny” i „Ciemny” stosują stały wygląd niezależnie od ustawień urządzenia.]]></pl>
         </locale>
         <locale name="colorMode.allowVisitor.description">
-            <pl><![CDATA[Gdy wybór wyglądu przez odwiedzających jest wyłączony, obowiązuje wyłącznie domyślny wygląd. Przełącznik jest udostępniany osobno.]]></pl>
+            <pl><![CDATA[Gdy wybór wyglądu przez odwiedzających jest wyłączony, obowiązuje wyłącznie domyślny wygląd. Ustawienia menu i stopki określają, gdzie pojawia się przełącznik.]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.menu">
+            <pl><![CDATA[Przełącznik wyglądu w menu]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.menu.description">
+            <pl><![CDATA[Obowiązuje tylko wtedy, gdy odwiedzający mogą zmieniać wygląd. Na urządzeniach mobilnych przełącznik znajduje się na pasku nawigacji obok przycisku menu.]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.menu.both">
+            <pl><![CDATA[Komputer i urządzenia mobilne]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.menu.desktop">
+            <pl><![CDATA[Tylko komputer]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.menu.mobile">
+            <pl><![CDATA[Tylko urządzenia mobilne]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.menu.off">
+            <pl><![CDATA[Wyłączony]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.footer">
+            <pl><![CDATA[Przełącznik wyglądu w stopce]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.footer.description">
+            <pl><![CDATA[Pokazuje przełącznik na końcu paska stopki, niezależnie od ustawienia menu. Obowiązuje tylko wtedy, gdy odwiedzający mogą zmieniać wygląd.]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.view.icons">
+            <pl><![CDATA[Pasek ikon]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.menuView">
+            <pl><![CDATA[Widok przełącznika w menu]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.menuView.description">
+            <pl><![CDATA[Przycisk z ikoną po kliknięciu przełącza na następny wygląd. Lista rozwijana otwiera listę z opcjami System, Jasny i Ciemny.]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.view.compact">
+            <pl><![CDATA[Przycisk z ikoną]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.view.dropdown">
+            <pl><![CDATA[Lista rozwijana]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.current.system">
+            <pl><![CDATA[Wygląd: System]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.current.light">
+            <pl><![CDATA[Wygląd: Jasny]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.current.dark">
+            <pl><![CDATA[Wygląd: Ciemny]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.label">
+            <pl><![CDATA[Wygląd]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.compact.system">
+            <pl><![CDATA[Wygląd: System. Przełącz na Jasny]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.compact.light">
+            <pl><![CDATA[Wygląd: Jasny. Przełącz na Ciemny]]></pl>
+        </locale>
+        <locale name="colorModeSwitch.compact.dark">
+            <pl><![CDATA[Wygląd: Ciemny. Przełącz na System]]></pl>
         </locale>
         <!-- template bricks -->
         <locale name="brick.settings.enableSelect.disable">

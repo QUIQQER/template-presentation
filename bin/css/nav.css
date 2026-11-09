@@ -246,6 +246,41 @@
     background-color: var(--qui-nav-link-bgColor--hover);
 }
 
+/*********************/
+/* Color mode switch */
+/*********************/
+/**
+ * prefix.html and suffix.html are rendered in the desktop and the mobile
+ * wrapper of the MegaMenu, so each instance is hidden in the other wrapper.
+ */
+.quiqqer-menu-megaMenu__wrapperDesktop .header-bar__colorMode--mobile,
+.quiqqer-menu-megaMenu__wrapperMobile .header-bar__colorMode--desktop {
+    display: none;
+}
+
+.header-bar__colorMode {
+    display: flex;
+    align-items: center;
+}
+
+.header-bar__colorMode :is(.tpl-colorModeSwitch--compact, .tpl-colorModeSwitch__toggle) {
+    color: var(--qui-nav-link-color);
+}
+
+.header-bar__colorMode :is(.tpl-colorModeSwitch--compact, .tpl-colorModeSwitch__toggle):hover {
+    color: var(--qui-nav-link-color--hover);
+    background-color: var(--qui-nav-link-bgColor--hover);
+}
+
+/* mobile: switch next to the menu button, which keeps the free space before it */
+.header-bar__colorMode--mobile {
+    margin-left: auto;
+}
+
+.quiqqer-menu-megaMenu__wrapperMobile:has(> .header-bar__colorMode--mobile) .quiqqer-menu-megaMenu-mobile-openerBtn {
+    margin-left: 0.25rem;
+}
+
 /*****************/
 /* Header search */
 /*****************/

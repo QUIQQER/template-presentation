@@ -20,7 +20,67 @@
             <it><![CDATA[Definisce l’aspetto predefinito del sito web. «Sistema» segue automaticamente l’impostazione chiara o scura del dispositivo. «Chiaro» e «Scuro» utilizzano un aspetto fisso, indipendentemente dall’impostazione del dispositivo.]]></it>
         </locale>
         <locale name="colorMode.allowVisitor.description">
-            <it><![CDATA[Quando la scelta dei visitatori è disattivata, si applica solo l’aspetto predefinito. Il selettore è fornito separatamente.]]></it>
+            <it><![CDATA[Quando la scelta dei visitatori è disattivata, si applica solo l’aspetto predefinito. Le impostazioni del menu e del footer stabiliscono dove appare il selettore.]]></it>
+        </locale>
+        <locale name="colorModeSwitch.menu">
+            <it><![CDATA[Selettore dell’aspetto nel menu]]></it>
+        </locale>
+        <locale name="colorModeSwitch.menu.description">
+            <it><![CDATA[Vale solo se i visitatori possono cambiare l’aspetto. Su mobile il selettore si trova nella barra di navigazione accanto al pulsante del menu.]]></it>
+        </locale>
+        <locale name="colorModeSwitch.menu.both">
+            <it><![CDATA[Desktop e mobile]]></it>
+        </locale>
+        <locale name="colorModeSwitch.menu.desktop">
+            <it><![CDATA[Solo desktop]]></it>
+        </locale>
+        <locale name="colorModeSwitch.menu.mobile">
+            <it><![CDATA[Solo mobile]]></it>
+        </locale>
+        <locale name="colorModeSwitch.menu.off">
+            <it><![CDATA[Disattivato]]></it>
+        </locale>
+        <locale name="colorModeSwitch.footer">
+            <it><![CDATA[Selettore dell’aspetto nel footer]]></it>
+        </locale>
+        <locale name="colorModeSwitch.footer.description">
+            <it><![CDATA[Mostra il selettore alla fine della barra del footer, indipendentemente dall’impostazione del menu. Vale solo se i visitatori possono cambiare l’aspetto.]]></it>
+        </locale>
+        <locale name="colorModeSwitch.view.icons">
+            <it><![CDATA[Barra di icone]]></it>
+        </locale>
+        <locale name="colorModeSwitch.menuView">
+            <it><![CDATA[Vista del selettore nel menu]]></it>
+        </locale>
+        <locale name="colorModeSwitch.menuView.description">
+            <it><![CDATA[Il pulsante icona passa all’aspetto successivo con un clic. Il menu a tendina apre un elenco con Sistema, Chiaro e Scuro.]]></it>
+        </locale>
+        <locale name="colorModeSwitch.view.compact">
+            <it><![CDATA[Pulsante icona]]></it>
+        </locale>
+        <locale name="colorModeSwitch.view.dropdown">
+            <it><![CDATA[Menu a tendina]]></it>
+        </locale>
+        <locale name="colorModeSwitch.current.system">
+            <it><![CDATA[Aspetto: Sistema]]></it>
+        </locale>
+        <locale name="colorModeSwitch.current.light">
+            <it><![CDATA[Aspetto: Chiaro]]></it>
+        </locale>
+        <locale name="colorModeSwitch.current.dark">
+            <it><![CDATA[Aspetto: Scuro]]></it>
+        </locale>
+        <locale name="colorModeSwitch.label">
+            <it><![CDATA[Aspetto]]></it>
+        </locale>
+        <locale name="colorModeSwitch.compact.system">
+            <it><![CDATA[Aspetto: Sistema. Passa a Chiaro]]></it>
+        </locale>
+        <locale name="colorModeSwitch.compact.light">
+            <it><![CDATA[Aspetto: Chiaro. Passa a Scuro]]></it>
+        </locale>
+        <locale name="colorModeSwitch.compact.dark">
+            <it><![CDATA[Aspetto: Scuro. Passa a Sistema]]></it>
         </locale>
         <!-- template bricks -->
         <locale name="brick.settings.enableSelect.disable">

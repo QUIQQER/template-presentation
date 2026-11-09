@@ -1,3 +1,273 @@
+/**
+ * Visitor color mode switch (template/colorModeSwitch.html).
+ *
+ * index.html applies a stored choice before rendering. This handler changes
+ * the mode, stores it per project and keeps every switch instance in sync.
+ * It runs without waiting for QUI so the switches react immediately.
+ */
+(function () {
+    "use strict";
+
+    const root = document.documentElement;
+    const storageKey = root.getAttribute('data-presentation-mode-storage');
+
+    if (root.getAttribute('data-presentation-allow-visitor') !== '1' || !storageKey) {
+        return;
+    }
+
+    const modes = ['system', 'light', 'dark'];
+    const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+
+    /**
+     * @todo ANCHOR-POSITIONING-FALLBACK (review 2027-11): positions the dropdown
+     *       menu when CSS anchor positioning is missing (see the @supports block in
+     *       bin/css/components/colorModeSwitch.css). Check
+     *       https://caniuse.com/css-anchor-positioning; once position-area and
+     *       position-try-fallbacks are supported everywhere, remove
+     *       supportsAnchorPositioning, menuGap, viewportPadding, positionMenu and
+     *       their use in initDropdown (onViewportChange and its listeners).
+     */
+    const supportsAnchorPositioning = CSS.supports('position-area: block-end');
+    const menuGap = 6; // px, matches margin-block of the anchored menu
+    const viewportPadding = 8; // px, minimum distance to the viewport edge
+
+    function positionMenu(Toggle, Menu) {
+        const anchor = Toggle.getBoundingClientRect();
+        const width = Menu.offsetWidth;
+        const height = Menu.offsetHeight;
+        let top = anchor.bottom + menuGap;
+
+        if (top + height > window.innerHeight - viewportPadding && anchor.top - menuGap - height >= viewportPadding) {
+            top = anchor.top - menuGap - height;
+        }
+
+        const maxLeft = window.innerWidth - width - viewportPadding;
+        const left = Math.max(viewportPadding, Math.min(anchor.right - width, maxLeft));
+
+        Menu.style.top = top + 'px';
+        Menu.style.left = left + 'px';
+    }
+
+    function getMode() {
+        const mode = root.getAttribute('data-presentation-mode');
+
+        return modes.includes(mode) ? mode : 'system';
+    }
+
+    function setLabel(Element, mode) {
+        const label = Element.getAttribute('data-label-' + mode);
+
+        Element.setAttribute('aria-label', label);
+        Element.setAttribute('title', label);
+    }
+
+    function syncSwitches(mode) {
+        document.querySelectorAll('[data-name="tpl-colorModeSwitch"]').forEach((Switch) => {
+            const view = Switch.getAttribute('data-view');
+
+            if (view === 'compact') {
+                setLabel(Switch, mode);
+                return;
+            }
+
+            if (view === 'dropdown') {
+                setLabel(Switch.querySelector('[data-name="toggle"]'), mode);
+            }
+
+            const stateAttribute = view === 'dropdown' ? 'aria-checked' : 'aria-pressed';
+
+            Switch.querySelectorAll('[data-name="option"]').forEach((Option) => {
+                Option.setAttribute(stateAttribute, Option.getAttribute('data-mode') === mode ? 'true' : 'false');
+            });
+        });
+    }
+
+    function applyMode(mode) {
+        const colorScheme = mode === 'system' ? 'light dark' : mode;
+
+        root.setAttribute('data-presentation-mode', mode);
+        root.style.colorScheme = colorScheme;
+
+        if (colorSchemeMeta) {
+            colorSchemeMeta.setAttribute('content', colorScheme);
+        }
+
+        syncSwitches(mode);
+    }
+
+    function setMode(mode) {
+        applyMode(mode);
+
+        try {
+            localStorage.setItem(storageKey, mode);
+        } catch (e) {
+            // storage unavailable: the choice applies to the current page only
+        }
+    }
+
+    /**
+     * Dropdown: the toggle opens the menu as a popover (top layer, light dismiss,
+     * Escape and focus return by the browser). Keyboard handling follows the
+     * WAI-ARIA menu button pattern.
+     */
+    function initDropdown(Switch, index) {
+        const Toggle = Switch.querySelector('[data-name="toggle"]');
+        const Menu = Switch.querySelector('[data-name="menu"]');
+
+        if (!Toggle || !Menu || typeof Menu.showPopover !== 'function') {
+            return;
+        }
+
+        const items = Array.from(Menu.querySelectorAll('[data-name="option"]'));
+        const anchorName = '--tpl-colorModeSwitch-' + index;
+        let focusOnOpen = 'checked';
+
+        Menu.id = 'tpl-colorModeSwitch-menu-' + index;
+        Toggle.setAttribute('aria-controls', Menu.id);
+        Toggle.popoverTargetElement = Menu;
+        Toggle.style.setProperty('anchor-name', anchorName);
+        Menu.style.setProperty('position-anchor', anchorName);
+
+        // without preventScroll the browser may scroll the page to the sticky navigation
+        function focusItem(item) {
+            if (item) {
+                item.focus({preventScroll: true});
+            }
+        }
+
+        // the auto-hide navigation stays visible while aria-expanded is true
+        function onViewportChange() {
+            positionMenu(Toggle, Menu);
+        }
+
+        /**
+         * Return focus to the toggle before the menu hides. The browser only restores
+         * focus that existed before opening, and Safari does not focus buttons on
+         * click. beforetoggle fires synchronously, so Tab moves on from the toggle.
+         */
+        Menu.addEventListener('beforetoggle', (event) => {
+            if (event.newState === 'closed' && Menu.contains(document.activeElement)) {
+                Toggle.focus();
+            }
+        });
+
+        Menu.addEventListener('toggle', (event) => {
+            const isOpen = event.newState === 'open';
+
+            Toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+            if (!isOpen) {
+                window.removeEventListener('scroll', onViewportChange);
+                window.removeEventListener('resize', onViewportChange);
+                focusOnOpen = 'checked';
+                return;
+            }
+
+            if (!supportsAnchorPositioning) {
+                positionMenu(Toggle, Menu);
+                window.addEventListener('scroll', onViewportChange, {passive: true});
+                window.addEventListener('resize', onViewportChange, {passive: true});
+            }
+
+            if (focusOnOpen === 'first') {
+                focusItem(items[0]);
+            } else if (focusOnOpen === 'last') {
+                focusItem(items[items.length - 1]);
+            } else {
+                focusItem(items.find((item) => item.getAttribute('aria-checked') === 'true') || items[0]);
+            }
+        });
+
+        Toggle.addEventListener('keydown', (event) => {
+            if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') {
+                return;
+            }
+
+            event.preventDefault();
+            focusOnOpen = event.key === 'ArrowDown' ? 'first' : 'last';
+
+            if (Menu.matches(':popover-open')) {
+                focusItem(focusOnOpen === 'first' ? items[0] : items[items.length - 1]);
+                return;
+            }
+
+            Menu.showPopover();
+        });
+
+        Menu.addEventListener('keydown', (event) => {
+            const current = items.indexOf(document.activeElement);
+            const targets = {
+                ArrowDown: items[(current + 1) % items.length],
+                ArrowUp: items[(current - 1 + items.length) % items.length],
+                Home: items[0],
+                End: items[items.length - 1]
+            };
+
+            if (event.key === 'Tab') {
+                // closing returns focus to the toggle, Tab then moves on from there
+                Menu.hidePopover();
+                return;
+            }
+
+            if (targets[event.key]) {
+                event.preventDefault();
+                focusItem(targets[event.key]);
+            }
+        });
+    }
+
+    document.addEventListener('click', (event) => {
+        const Switch = event.target.closest('[data-name="tpl-colorModeSwitch"]');
+
+        if (!Switch) {
+            return;
+        }
+
+        if (Switch.getAttribute('data-view') === 'compact') {
+            setMode(modes[(modes.indexOf(getMode()) + 1) % modes.length]);
+            return;
+        }
+
+        const mode = event.target.closest('[data-name="option"]')?.getAttribute('data-mode');
+
+        if (!modes.includes(mode)) {
+            return;
+        }
+
+        setMode(mode);
+        Switch.querySelector('[data-name="menu"]')?.hidePopover?.();
+    });
+
+    // choice changed in another tab of the same project
+    window.addEventListener('storage', (event) => {
+        if (event.key === storageKey && modes.includes(event.newValue)) {
+            applyMode(event.newValue);
+        }
+    });
+
+    // page restored from the back/forward cache after a change on another page
+    window.addEventListener('pageshow', (event) => {
+        if (!event.persisted) {
+            return;
+        }
+
+        try {
+            const mode = localStorage.getItem(storageKey);
+
+            if (modes.includes(mode)) {
+                applyMode(mode);
+            }
+        } catch (e) {
+            // storage unavailable: keep the current mode
+        }
+    });
+
+    document.querySelectorAll('[data-name="tpl-colorModeSwitch"][data-view="dropdown"]').forEach(initDropdown);
+
+    // labels and selected states were rendered for the operator default
+    syncSwitches(getMode());
+})();
+
 whenQuiLoaded().then(() => {
     "use strict";
 

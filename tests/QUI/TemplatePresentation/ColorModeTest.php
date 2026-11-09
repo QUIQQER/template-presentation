@@ -10,15 +10,37 @@ use QUI\TemplatePresentation\ColorMode;
 
 final class ColorModeTest extends TestCase
 {
-    public function testMissingAndInvalidSettingsUseSystem(): void
+    /** @param array<string, mixed> $config keyed by setting name without prefix */
+    private function createProject(array $config, string $name = 'demo'): Project
     {
-        foreach ([false, '', 'invalid', ['dark']] as $mode) {
-            $Project = $this->createMock(Project::class);
-            $Project->method('getConfig')->willReturn($mode);
+        $Project = $this->createMock(Project::class);
+        $Project->method('getName')->willReturn($name);
+        $Project->method('getConfig')->willReturnCallback(
+            static fn (string $key): mixed => $config[substr($key, strlen('templatePresentation.settings.'))] ?? false
+        );
+
+        return $Project;
+    }
+
+    public function testMissingAndInvalidSettingsUseSystemWithoutVisitorSwitch(): void
+    {
+        foreach ([false, '', 'invalid', ['dark']] as $value) {
+            $Project = $this->createProject([
+                'colorMode' => $value,
+                'colorModeAllowVisitor' => $value,
+                'colorModeSwitchMenu' => $value,
+                'colorModeSwitchMenuView' => $value,
+                'colorModeSwitchFooter' => $value
+            ]);
+
             self::assertSame([
                 'defaultMode' => 'system',
                 'allowVisitor' => false,
-                'colorScheme' => 'light dark'
+                'colorScheme' => 'light dark',
+                'menuSwitch' => 'off',
+                'menuView' => 'compact',
+                'footerSwitch' => 'off',
+                'storageKey' => 'quiqqer-template-presentation:colorMode:demo'
             ], ColorMode::getSettings($Project));
         }
     }
@@ -27,20 +49,66 @@ final class ColorModeTest extends TestCase
     {
         foreach (['light', 'dark', 'system'] as $mode) {
             foreach ([true, 1, '1', false, 0, '0', 'false'] as $allowed) {
-                $Project = $this->createMock(Project::class);
-                $Project->method('getConfig')->willReturnCallback(
-                    static fn (string $key): mixed => str_ends_with($key, 'colorMode') ? $mode : $allowed
-                );
-                self::assertSame([
-                    'defaultMode' => $mode,
-                    'allowVisitor' => in_array($allowed, [true, 1, '1'], true),
-                    'colorScheme' => $mode === 'system' ? 'light dark' : $mode
-                ], ColorMode::getSettings($Project));
+                $settings = ColorMode::getSettings($this->createProject([
+                    'colorMode' => $mode,
+                    'colorModeAllowVisitor' => $allowed
+                ]));
+
+                self::assertSame($mode, $settings['defaultMode']);
+                self::assertSame(in_array($allowed, [true, 1, '1'], true), $settings['allowVisitor']);
+                self::assertSame($mode === 'system' ? 'light dark' : $mode, $settings['colorScheme']);
             }
         }
     }
 
-    public function testSettingsEditorDefaultsToSystemWhenProjectDataHasNoMode(): void
+    public function testSwitchPlacementsRequireVisitorPermission(): void
+    {
+        foreach ([true, false] as $allowed) {
+            foreach (['both', 'desktop', 'mobile', 'off', 'invalid', false] as $menu) {
+                foreach (['icons', 'compact', 'dropdown', 'off', 'choice', false] as $footer) {
+                    $settings = ColorMode::getSettings($this->createProject([
+                        'colorModeAllowVisitor' => $allowed,
+                        'colorModeSwitchMenu' => $menu,
+                        'colorModeSwitchFooter' => $footer
+                    ]));
+
+                    $expectedMenu = 'off';
+                    $expectedFooter = 'off';
+
+                    if ($allowed) {
+                        $expectedMenu = in_array($menu, ['both', 'desktop', 'mobile', 'off'], true) ? $menu : 'both';
+                        $expectedFooter = in_array($footer, ['icons', 'compact', 'dropdown', 'off'], true) ? $footer : 'icons';
+                    }
+
+                    self::assertSame($expectedMenu, $settings['menuSwitch']);
+                    self::assertSame($expectedFooter, $settings['footerSwitch']);
+                }
+            }
+        }
+    }
+
+    public function testMenuViewFallsBackToCompact(): void
+    {
+        foreach (['compact' => 'compact', 'dropdown' => 'dropdown', 'icons' => 'compact', '' => 'compact'] as $view => $expected) {
+            $settings = ColorMode::getSettings($this->createProject([
+                'colorModeAllowVisitor' => true,
+                'colorModeSwitchMenuView' => $view
+            ]));
+
+            self::assertSame($expected, $settings['menuView']);
+        }
+    }
+
+    public function testStorageKeyIsPerProjectAndLanguageIndependent(): void
+    {
+        $first = ColorMode::getSettings($this->createProject([], 'first'))['storageKey'];
+        $second = ColorMode::getSettings($this->createProject([], 'second'))['storageKey'];
+
+        self::assertNotSame($first, $second);
+        self::assertStringEndsWith(':first', $first);
+    }
+
+    public function testSettingsEditorDefaults(): void
     {
         $Dom = new \DOMDocument();
         $Dom->load(dirname(__DIR__, 3) . '/settings.xml');
@@ -51,6 +119,15 @@ final class ColorModeTest extends TestCase
         self::assertSame('system', $Path->evaluate(
             'string(//select[@conf="templatePresentation.settings.colorMode"]/option[1]/@value)'
         ));
+        self::assertSame('both', $Path->evaluate(
+            'string(//select[@conf="templatePresentation.settings.colorModeSwitchMenu"]/option[@selected="selected"]/@value)'
+        ));
+        self::assertSame('both', $Path->evaluate('string(//conf[@name="colorModeSwitchMenu"]/defaultvalue)'));
+        self::assertSame('icons', $Path->evaluate(
+            'string(//select[@conf="templatePresentation.settings.colorModeSwitchFooter"]/option[@selected="selected"]/@value)'
+        ));
+        self::assertSame('icons', $Path->evaluate('string(//conf[@name="colorModeSwitchFooter"]/defaultvalue)'));
+        self::assertSame('compact', $Path->evaluate('string(//conf[@name="colorModeSwitchMenuView"]/defaultvalue)'));
     }
 
     public function testDocumentDeclaresNativeColorSchemeBeforeStylesheets(): void
@@ -61,5 +138,17 @@ final class ColorModeTest extends TestCase
         self::assertStringContainsString($style, $html);
         self::assertStringContainsString('<meta name="color-scheme"', $html);
         self::assertLessThan(strpos($html, '{$Template->getHeader()}'), strpos($html, $style));
+    }
+
+    public function testStoredVisitorChoiceIsAppliedBeforeStylesheetsAndExcludedFromCacheBundling(): void
+    {
+        $html = file_get_contents(dirname(__DIR__, 3) . '/index.html');
+        self::assertIsString($html);
+
+        // quiqqer/cache moves inline scripts without data-no-cache into the bundle at the page end
+        $script = strpos($html, '<script data-no-cache="1">');
+        self::assertIsInt($script);
+        self::assertLessThan(strpos($html, '{$Template->getHeader()}'), $script);
+        self::assertStringContainsString('data-presentation-mode-storage', $html);
     }
 }

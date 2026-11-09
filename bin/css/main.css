@@ -33,6 +33,7 @@
 @import "components/overline.css";
 @import "components/buttons.css";
 @import "components/messages.css";
+@import "components/colorModeSwitch.css";
 
 
 /* utilities */

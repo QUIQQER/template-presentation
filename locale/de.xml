@@ -20,7 +20,67 @@
             <de><![CDATA[Legt die Standarddarstellung der Website fest. „System“ folgt automatisch der Hell-/Dunkel-Einstellung des Geräts. „Hell“ und „Dunkel“ verwenden eine feste Darstellung unabhängig von der Geräteeinstellung.]]></de>
         </locale>
         <locale name="colorMode.allowVisitor.description">
-            <de><![CDATA[Bei deaktivierter Besucherwahl gilt ausschließlich die Standarddarstellung. Das Bedienelement wird separat bereitgestellt.]]></de>
+            <de><![CDATA[Bei deaktivierter Besucherwahl gilt ausschließlich die Standarddarstellung. Wo der Umschalter erscheint, legen die Einstellungen für Menü und Footer fest.]]></de>
+        </locale>
+        <locale name="colorModeSwitch.menu">
+            <de><![CDATA[Darstellungsumschalter im Menü]]></de>
+        </locale>
+        <locale name="colorModeSwitch.menu.description">
+            <de><![CDATA[Gilt nur, wenn Besucher die Darstellung wechseln dürfen. Mobil sitzt der Umschalter in der Navigationsleiste neben dem Menü-Button.]]></de>
+        </locale>
+        <locale name="colorModeSwitch.menu.both">
+            <de><![CDATA[Desktop und Mobil]]></de>
+        </locale>
+        <locale name="colorModeSwitch.menu.desktop">
+            <de><![CDATA[Nur Desktop]]></de>
+        </locale>
+        <locale name="colorModeSwitch.menu.mobile">
+            <de><![CDATA[Nur Mobil]]></de>
+        </locale>
+        <locale name="colorModeSwitch.menu.off">
+            <de><![CDATA[Aus]]></de>
+        </locale>
+        <locale name="colorModeSwitch.footer">
+            <de><![CDATA[Darstellungsumschalter im Footer]]></de>
+        </locale>
+        <locale name="colorModeSwitch.footer.description">
+            <de><![CDATA[Zeigt den Umschalter am Ende der Footerleiste, unabhängig von der Anzeige im Menü. Gilt nur, wenn Besucher die Darstellung wechseln dürfen.]]></de>
+        </locale>
+        <locale name="colorModeSwitch.view.icons">
+            <de><![CDATA[Icon-Leiste]]></de>
+        </locale>
+        <locale name="colorModeSwitch.menuView">
+            <de><![CDATA[Ansicht des Umschalters im Menü]]></de>
+        </locale>
+        <locale name="colorModeSwitch.menuView.description">
+            <de><![CDATA[Der Icon-Button wechselt per Klick zur nächsten Darstellung. Das Dropdown öffnet eine Liste mit System, Hell und Dunkel.]]></de>
+        </locale>
+        <locale name="colorModeSwitch.view.compact">
+            <de><![CDATA[Icon-Button]]></de>
+        </locale>
+        <locale name="colorModeSwitch.view.dropdown">
+            <de><![CDATA[Dropdown]]></de>
+        </locale>
+        <locale name="colorModeSwitch.current.system">
+            <de><![CDATA[Darstellung: System]]></de>
+        </locale>
+        <locale name="colorModeSwitch.current.light">
+            <de><![CDATA[Darstellung: Hell]]></de>
+        </locale>
+        <locale name="colorModeSwitch.current.dark">
+            <de><![CDATA[Darstellung: Dunkel]]></de>
+        </locale>
+        <locale name="colorModeSwitch.label">
+            <de><![CDATA[Darstellung]]></de>
+        </locale>
+        <locale name="colorModeSwitch.compact.system">
+            <de><![CDATA[Darstellung: System. Wechseln zu Hell]]></de>
+        </locale>
+        <locale name="colorModeSwitch.compact.light">
+            <de><![CDATA[Darstellung: Hell. Wechseln zu Dunkel]]></de>
+        </locale>
+        <locale name="colorModeSwitch.compact.dark">
+            <de><![CDATA[Darstellung: Dunkel. Wechseln zu System]]></de>
         </locale>
         <!-- template bricks -->
         <locale name="brick.settings.enableSelect.disable">

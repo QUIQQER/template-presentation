@@ -20,7 +20,67 @@
             <fr><![CDATA[Définit l’apparence par défaut du site web. « Système » suit automatiquement le réglage clair/sombre de l’appareil. « Clair » et « Sombre » utilisent une apparence fixe, indépendamment du réglage de l’appareil.]]></fr>
         </locale>
         <locale name="colorMode.allowVisitor.description">
-            <fr><![CDATA[Lorsque le choix des visiteurs est désactivé, seule l’apparence par défaut s’applique. Le sélecteur est fourni séparément.]]></fr>
+            <fr><![CDATA[Lorsque le choix des visiteurs est désactivé, seule l’apparence par défaut s’applique. Les paramètres du menu et du pied de page définissent où le sélecteur apparaît.]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.menu">
+            <fr><![CDATA[Sélecteur d’apparence dans le menu]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.menu.description">
+            <fr><![CDATA[S’applique uniquement si les visiteurs peuvent changer l’apparence. Sur mobile, le sélecteur se trouve dans la barre de navigation à côté du bouton du menu.]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.menu.both">
+            <fr><![CDATA[Ordinateur et mobile]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.menu.desktop">
+            <fr><![CDATA[Ordinateur uniquement]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.menu.mobile">
+            <fr><![CDATA[Mobile uniquement]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.menu.off">
+            <fr><![CDATA[Désactivé]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.footer">
+            <fr><![CDATA[Sélecteur d’apparence dans le pied de page]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.footer.description">
+            <fr><![CDATA[Affiche le sélecteur à la fin de la barre du pied de page, indépendamment du paramètre du menu. S’applique uniquement si les visiteurs peuvent changer l’apparence.]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.view.icons">
+            <fr><![CDATA[Barre d’icônes]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.menuView">
+            <fr><![CDATA[Affichage du sélecteur dans le menu]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.menuView.description">
+            <fr><![CDATA[Le bouton icône passe à l’apparence suivante au clic. Le menu déroulant ouvre une liste avec Système, Clair et Sombre.]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.view.compact">
+            <fr><![CDATA[Bouton icône]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.view.dropdown">
+            <fr><![CDATA[Menu déroulant]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.current.system">
+            <fr><![CDATA[Apparence : Système]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.current.light">
+            <fr><![CDATA[Apparence : Clair]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.current.dark">
+            <fr><![CDATA[Apparence : Sombre]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.label">
+            <fr><![CDATA[Apparence]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.compact.system">
+            <fr><![CDATA[Apparence : Système. Passer à Clair]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.compact.light">
+            <fr><![CDATA[Apparence : Clair. Passer à Sombre]]></fr>
+        </locale>
+        <locale name="colorModeSwitch.compact.dark">
+            <fr><![CDATA[Apparence : Sombre. Passer à Système]]></fr>
         </locale>
         <!-- template bricks -->
         <locale name="brick.settings.enableSelect.disable">
