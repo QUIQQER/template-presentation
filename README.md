@@ -29,9 +29,9 @@ Features
     - GitLab
 - Color management with project palette references and light/dark color pairs
 - Light, dark and system appearance; system follows the device setting
-- Optional appearance switch for visitors
-    - Navigation: icon button or dropdown, separately for desktop and mobile
-    - Footer: icon bar, icon button or dropdown
+- Optional appearance switch for visitors (off by default)
+    - Footer: dropdown by default, alternatively icon bar or icon button
+    - Navigation: off by default, icon button or dropdown for desktop and/or mobile
     - The choice is remembered per project and applies to all languages
 - Header settings
 - Each site can define if header, title and short description should be displayed (override the global setting)

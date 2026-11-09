@@ -16,7 +16,7 @@
                     </conf>
                     <conf name="colorModeSwitchMenu">
                         <type>string</type>
-                        <defaultvalue>both</defaultvalue>
+                        <defaultvalue>off</defaultvalue>
                     </conf>
                     <conf name="colorModeSwitchMenuView">
                         <type>string</type>
@@ -24,7 +24,7 @@
                     </conf>
                     <conf name="colorModeSwitchFooter">
                         <type>string</type>
-                        <defaultvalue>icons</defaultvalue>
+                        <defaultvalue>dropdown</defaultvalue>
                     </conf>
 
                     <!-- general settings -->
@@ -398,10 +398,10 @@
                             <select conf="templatePresentation.settings.colorModeSwitchMenu">
                                 <text><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu"/></text>
                                 <description><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.description"/></description>
-                                <option value="both" selected="selected"><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.both"/></option>
+                                <option value="both"><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.both"/></option>
                                 <option value="desktop"><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.desktop"/></option>
                                 <option value="mobile"><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.mobile"/></option>
-                                <option value="off"><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.off"/></option>
+                                <option value="off" selected="selected"><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.off"/></option>
                             </select>
                             <select conf="templatePresentation.settings.colorModeSwitchMenuView">
                                 <text><locale group="quiqqer/template-presentation" var="colorModeSwitch.menuView"/></text>
@@ -412,9 +412,9 @@
                             <select conf="templatePresentation.settings.colorModeSwitchFooter">
                                 <text><locale group="quiqqer/template-presentation" var="colorModeSwitch.footer"/></text>
                                 <description><locale group="quiqqer/template-presentation" var="colorModeSwitch.footer.description"/></description>
-                                <option value="icons" selected="selected"><locale group="quiqqer/template-presentation" var="colorModeSwitch.view.icons"/></option>
+                                <option value="icons"><locale group="quiqqer/template-presentation" var="colorModeSwitch.view.icons"/></option>
                                 <option value="compact"><locale group="quiqqer/template-presentation" var="colorModeSwitch.view.compact"/></option>
-                                <option value="dropdown"><locale group="quiqqer/template-presentation" var="colorModeSwitch.view.dropdown"/></option>
+                                <option value="dropdown" selected="selected"><locale group="quiqqer/template-presentation" var="colorModeSwitch.view.dropdown"/></option>
                                 <option value="off"><locale group="quiqqer/template-presentation" var="colorModeSwitch.menu.off"/></option>
                             </select>
 

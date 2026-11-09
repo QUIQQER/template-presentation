@@ -49,11 +49,11 @@ final class ColorMode
         }
 
         if (!in_array($menuSwitch, self::MENU_SWITCH_PLACEMENTS, true)) {
-            $menuSwitch = 'both';
+            $menuSwitch = 'off';
         }
 
         if (!in_array($footerSwitch, self::FOOTER_SWITCH_VIEWS, true)) {
-            $footerSwitch = 'icons';
+            $footerSwitch = 'dropdown';
         }
 
         $menuView = $Project->getConfig(self::PREFIX . 'colorModeSwitchMenuView');

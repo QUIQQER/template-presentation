@@ -76,8 +76,8 @@ final class ColorModeTest extends TestCase
                     $expectedFooter = 'off';
 
                     if ($allowed) {
-                        $expectedMenu = in_array($menu, ['both', 'desktop', 'mobile', 'off'], true) ? $menu : 'both';
-                        $expectedFooter = in_array($footer, ['icons', 'compact', 'dropdown', 'off'], true) ? $footer : 'icons';
+                        $expectedMenu = in_array($menu, ['both', 'desktop', 'mobile', 'off'], true) ? $menu : 'off';
+                        $expectedFooter = in_array($footer, ['icons', 'compact', 'dropdown', 'off'], true) ? $footer : 'dropdown';
                     }
 
                     self::assertSame($expectedMenu, $settings['menuSwitch']);
@@ -119,14 +119,14 @@ final class ColorModeTest extends TestCase
         self::assertSame('system', $Path->evaluate(
             'string(//select[@conf="templatePresentation.settings.colorMode"]/option[1]/@value)'
         ));
-        self::assertSame('both', $Path->evaluate(
+        self::assertSame('off', $Path->evaluate(
             'string(//select[@conf="templatePresentation.settings.colorModeSwitchMenu"]/option[@selected="selected"]/@value)'
         ));
-        self::assertSame('both', $Path->evaluate('string(//conf[@name="colorModeSwitchMenu"]/defaultvalue)'));
-        self::assertSame('icons', $Path->evaluate(
+        self::assertSame('off', $Path->evaluate('string(//conf[@name="colorModeSwitchMenu"]/defaultvalue)'));
+        self::assertSame('dropdown', $Path->evaluate(
             'string(//select[@conf="templatePresentation.settings.colorModeSwitchFooter"]/option[@selected="selected"]/@value)'
         ));
-        self::assertSame('icons', $Path->evaluate('string(//conf[@name="colorModeSwitchFooter"]/defaultvalue)'));
+        self::assertSame('dropdown', $Path->evaluate('string(//conf[@name="colorModeSwitchFooter"]/defaultvalue)'));
         self::assertSame('compact', $Path->evaluate('string(//conf[@name="colorModeSwitchMenuView"]/defaultvalue)'));
     }
 
