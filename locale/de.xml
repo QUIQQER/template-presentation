@@ -1,4 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/locale.xsd">
 <locales>
     <groups name="quiqqer/template-presentation" datatype="php,js">
         <locale name="colorMode.title">
@@ -1182,5 +1184,60 @@
         <locale name="templatePresentation.settings.footer.toTopStyle.option.stacked">
             <de><![CDATA[Icon über Text]]></de>
         </locale>
+        <locale name="footer.backgroundImageEnabled">
+            <de><![CDATA[Hintergrundbild verwenden]]></de>
+        </locale>
+        <locale name="footer.backgroundImage">
+            <de><![CDATA[Hintergrundbild]]></de>
+        </locale>
+        <locale name="footer.backgroundImage.description">
+            <de><![CDATA[Optionales Bild aus der Medienverwaltung. Die vorhandene Footer-Hintergrundfarbe liegt darüber: Eine deckende Farbe verdeckt das Bild. Für ein sichtbares Bild die Transparenz unter Farben → Footer-Hintergrund anpassen.]]></de>
+        </locale>
+        <locale name="footer.backgroundImageFit">
+            <de><![CDATA[Bilddarstellung]]></de>
+        </locale>
+        <locale name="footer.backgroundImageFit.description">
+            <de><![CDATA[Legt fest, wie das Bild die Footerfläche ausfüllt. Erweiterte CSS-Anpassung: --quiqqer-template-presentation-footer-image-fit auf .page-footer.]]></de>
+        </locale>
+        <locale name="footer.backgroundImageFit.cover">
+            <de><![CDATA[Fläche ausfüllen (cover)]]></de>
+        </locale>
+        <locale name="footer.backgroundImageFit.contain">
+            <de><![CDATA[Vollständig einpassen (contain)]]></de>
+        </locale>
+        <locale name="footer.backgroundImagePosition">
+            <de><![CDATA[Bildposition]]></de>
+        </locale>
+        <locale name="footer.backgroundImagePosition.description">
+            <de><![CDATA[Position des Bildes innerhalb der Footerfläche. Eigene Prozentwerte über --quiqqer-template-presentation-footer-image-position auf .page-footer setzen.]]></de>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftTop">
+            <de><![CDATA[Links oben]]></de>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerTop">
+            <de><![CDATA[Mitte oben]]></de>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightTop">
+            <de><![CDATA[Rechts oben]]></de>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftCenter">
+            <de><![CDATA[Links mittig]]></de>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerCenter">
+            <de><![CDATA[Mitte]]></de>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightCenter">
+            <de><![CDATA[Rechts mittig]]></de>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftBottom">
+            <de><![CDATA[Links unten]]></de>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerBottom">
+            <de><![CDATA[Mitte unten]]></de>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightBottom">
+            <de><![CDATA[Rechts unten]]></de>
+        </locale>
     </groups>
 </locales>
+</quiqqer>

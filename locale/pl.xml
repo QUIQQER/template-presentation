@@ -1,4 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/locale.xsd">
 <locales>
     <groups name="quiqqer/template-presentation" datatype="php,js">
         <locale name="colorMode.title">
@@ -1173,5 +1175,60 @@
         <locale name="templatePresentation.settings.footer.toTopStyle.option.stacked">
             <pl><![CDATA[Ikona nad tekstem]]></pl>
         </locale>
+        <locale name="footer.backgroundImageEnabled">
+            <pl><![CDATA[Użyj obrazu tła]]></pl>
+        </locale>
+        <locale name="footer.backgroundImage">
+            <pl><![CDATA[Obraz tła]]></pl>
+        </locale>
+        <locale name="footer.backgroundImage.description">
+            <pl><![CDATA[Opcjonalny obraz z biblioteki mediów. Istniejący kolor tła stopki jest nakładany na obraz: nieprzezroczysty kolor go zasłania. Aby wyświetlić obraz, dostosuj przezroczystość w Kolory → Tło stopki.]]></pl>
+        </locale>
+        <locale name="footer.backgroundImageFit">
+            <pl><![CDATA[Dopasowanie obrazu]]></pl>
+        </locale>
+        <locale name="footer.backgroundImageFit.description">
+            <pl><![CDATA[Określa sposób wypełnienia stopki obrazem. Własne ustawienia CSS: --quiqqer-template-presentation-footer-image-fit dla .page-footer.]]></pl>
+        </locale>
+        <locale name="footer.backgroundImageFit.cover">
+            <pl><![CDATA[Wypełnij obszar (cover)]]></pl>
+        </locale>
+        <locale name="footer.backgroundImageFit.contain">
+            <pl><![CDATA[Pokaż cały obraz (contain)]]></pl>
+        </locale>
+        <locale name="footer.backgroundImagePosition">
+            <pl><![CDATA[Położenie obrazu]]></pl>
+        </locale>
+        <locale name="footer.backgroundImagePosition.description">
+            <pl><![CDATA[Położenie w stopce. Własne wartości procentowe można ustawić przez --quiqqer-template-presentation-footer-image-position dla .page-footer.]]></pl>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftTop">
+            <pl><![CDATA[Góra po lewej]]></pl>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerTop">
+            <pl><![CDATA[Góra na środku]]></pl>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightTop">
+            <pl><![CDATA[Góra po prawej]]></pl>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftCenter">
+            <pl><![CDATA[Środek po lewej]]></pl>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerCenter">
+            <pl><![CDATA[Środek]]></pl>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightCenter">
+            <pl><![CDATA[Środek po prawej]]></pl>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftBottom">
+            <pl><![CDATA[Dół po lewej]]></pl>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerBottom">
+            <pl><![CDATA[Dół na środku]]></pl>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightBottom">
+            <pl><![CDATA[Dół po prawej]]></pl>
+        </locale>
     </groups>
 </locales>
+</quiqqer>

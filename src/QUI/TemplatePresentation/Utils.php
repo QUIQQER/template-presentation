@@ -396,6 +396,7 @@ class Utils
             'breadcrumbAppearance' => $breadcrumbAppearance,
             'toTopBarStyle' => $toTopBarStyle,
             'showToTopBar' => $showToTopBar,
+            'footerBackground' => self::getFooterBackground(),
             'pageCustomClass' => $pageCustomClass,
             'logoSize' => self::getLogoSize(),
             'logoTitle' => $logoTitle,
@@ -422,6 +423,29 @@ class Utils
         );
 
         return $config;
+    }
+
+    /**
+     * @return array{image: string, fit: string, position: string}
+     */
+    private static function getFooterBackground(): array
+    {
+        $prefix = 'templatePresentation.settings.footer.';
+        $enabled = in_array(self::$Project->getConfig($prefix . 'backgroundImageEnabled'), [true, 1, '1'], true);
+        $image = self::$Project->getConfig($prefix . 'backgroundImage');
+        $fit = self::$Project->getConfig($prefix . 'backgroundImageFit');
+        $position = self::$Project->getConfig($prefix . 'backgroundImagePosition');
+        $positions = [
+            'left top', 'center top', 'right top',
+            'left center', 'center center', 'right center',
+            'left bottom', 'center bottom', 'right bottom'
+        ];
+
+        return [
+            'image' => $enabled && is_string($image) ? trim($image) : '',
+            'fit' => in_array($fit, ['cover', 'contain'], true) ? $fit : 'cover',
+            'position' => in_array($position, $positions, true) ? $position : 'center center'
+        ];
     }
 
     /**

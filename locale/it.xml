@@ -1,4 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/locale.xsd">
 <locales>
     <groups name="quiqqer/template-presentation" datatype="php,js">
         <locale name="colorMode.title">
@@ -1173,5 +1175,60 @@
         <locale name="templatePresentation.settings.footer.toTopStyle.option.stacked">
             <it><![CDATA[Icona sopra il testo]]></it>
         </locale>
+        <locale name="footer.backgroundImageEnabled">
+            <it><![CDATA[Usa immagine di sfondo]]></it>
+        </locale>
+        <locale name="footer.backgroundImage">
+            <it><![CDATA[Immagine di sfondo]]></it>
+        </locale>
+        <locale name="footer.backgroundImage.description">
+            <it><![CDATA[Immagine facoltativa dalla libreria multimediale. Il colore di sfondo esistente del piè di pagina viene applicato sopra: un colore opaco nasconde l’immagine. Per mostrarla, regolare la trasparenza in Colori → Sfondo del piè di pagina.]]></it>
+        </locale>
+        <locale name="footer.backgroundImageFit">
+            <it><![CDATA[Adattamento immagine]]></it>
+        </locale>
+        <locale name="footer.backgroundImageFit.description">
+            <it><![CDATA[Definisce come l’immagine riempie il piè di pagina. Personalizzazione CSS: --quiqqer-template-presentation-footer-image-fit su .page-footer.]]></it>
+        </locale>
+        <locale name="footer.backgroundImageFit.cover">
+            <it><![CDATA[Riempi l’area (cover)]]></it>
+        </locale>
+        <locale name="footer.backgroundImageFit.contain">
+            <it><![CDATA[Mostra tutta l’immagine (contain)]]></it>
+        </locale>
+        <locale name="footer.backgroundImagePosition">
+            <it><![CDATA[Posizione dell’immagine]]></it>
+        </locale>
+        <locale name="footer.backgroundImagePosition.description">
+            <it><![CDATA[Posizione nel piè di pagina. Impostare percentuali personalizzate con --quiqqer-template-presentation-footer-image-position su .page-footer.]]></it>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftTop">
+            <it><![CDATA[In alto a sinistra]]></it>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerTop">
+            <it><![CDATA[In alto al centro]]></it>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightTop">
+            <it><![CDATA[In alto a destra]]></it>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftCenter">
+            <it><![CDATA[Al centro a sinistra]]></it>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerCenter">
+            <it><![CDATA[Al centro]]></it>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightCenter">
+            <it><![CDATA[Al centro a destra]]></it>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftBottom">
+            <it><![CDATA[In basso a sinistra]]></it>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerBottom">
+            <it><![CDATA[In basso al centro]]></it>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightBottom">
+            <it><![CDATA[In basso a destra]]></it>
+        </locale>
     </groups>
 </locales>
+</quiqqer>

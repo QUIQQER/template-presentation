@@ -1,5 +1,13 @@
 {template_event name="quiqqer::template::body::footer::before" Template=$Template}
-<footer class="page-footer clear-fix {if empty($footer)}no-footer-bricks{/if}">
+{assign var=footerBackground value=$Template->getAttribute('TemplateSetting')->getAttribute('footerBackground')}
+<footer class="page-footer clear-fix {if empty($footer)}no-footer-bricks{/if}"
+        style="--_q-controlConf-footer-image-fit: {$footerBackground.fit|escape:'html'}; --_q-controlConf-footer-image-position: {$footerBackground.position|escape:'html'};">
+    <div class="page-footer__background" aria-hidden="true">
+        {if !empty($footerBackground.image)}
+            {image src=$footerBackground.image class="page-footer__imageBg" alt="" loading="lazy"}
+        {/if}
+    </div>
+
     {template_event name="quiqqer::template::body::footer::start" Template=$Template}
 
     {fetch template="template/footer/bricks.html" Site=$Site Template=$Template}

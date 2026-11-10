@@ -3,12 +3,46 @@
  */
 
 .page-footer {
-    background-color: var(--qui-footer-bg);
+    --_footer-image-fit: var(--quiqqer-template-presentation-footer-image-fit, var(--_q-controlConf-footer-image-fit, cover));
+    --_footer-image-position: var(--quiqqer-template-presentation-footer-image-position, var(--_q-controlConf-footer-image-position, center center));
+    background-color: transparent;
     clear: both;
     color: var(--qui-footer-font-color);
     font-size: var(--qui-fs-sm);
     padding-top: var(--qui-tpl-spacing--top);
+    position: relative;
+    isolation: isolate;
     width: 100%;
+}
+
+.page-footer__background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.page-footer__background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--qui-footer-bg);
+}
+
+.page-footer__background > picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.page-footer__imageBg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: var(--_footer-image-fit);
+    object-position: var(--_footer-image-position);
 }
 
 .page-footer-brick {

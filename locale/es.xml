@@ -1,4 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/locale.xsd">
 <locales>
     <groups name="quiqqer/template-presentation" datatype="php,js">
         <locale name="colorMode.title">
@@ -1173,5 +1175,60 @@
         <locale name="templatePresentation.settings.footer.toTopStyle.option.stacked">
             <es><![CDATA[Icono encima del texto]]></es>
         </locale>
+        <locale name="footer.backgroundImageEnabled">
+            <es><![CDATA[Usar imagen de fondo]]></es>
+        </locale>
+        <locale name="footer.backgroundImage">
+            <es><![CDATA[Imagen de fondo]]></es>
+        </locale>
+        <locale name="footer.backgroundImage.description">
+            <es><![CDATA[Imagen opcional de la biblioteca multimedia. El color de fondo existente del pie se coloca encima: un color opaco oculta la imagen. Para mostrarla, ajuste la transparencia en Colores → Fondo del pie.]]></es>
+        </locale>
+        <locale name="footer.backgroundImageFit">
+            <es><![CDATA[Ajuste de imagen]]></es>
+        </locale>
+        <locale name="footer.backgroundImageFit.description">
+            <es><![CDATA[Controla cómo la imagen ocupa el pie. Personalización CSS: --quiqqer-template-presentation-footer-image-fit en .page-footer.]]></es>
+        </locale>
+        <locale name="footer.backgroundImageFit.cover">
+            <es><![CDATA[Rellenar el área (cover)]]></es>
+        </locale>
+        <locale name="footer.backgroundImageFit.contain">
+            <es><![CDATA[Mostrar la imagen completa (contain)]]></es>
+        </locale>
+        <locale name="footer.backgroundImagePosition">
+            <es><![CDATA[Posición de la imagen]]></es>
+        </locale>
+        <locale name="footer.backgroundImagePosition.description">
+            <es><![CDATA[Posición dentro del pie. Defina porcentajes personalizados con --quiqqer-template-presentation-footer-image-position en .page-footer.]]></es>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftTop">
+            <es><![CDATA[Arriba a la izquierda]]></es>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerTop">
+            <es><![CDATA[Arriba en el centro]]></es>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightTop">
+            <es><![CDATA[Arriba a la derecha]]></es>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftCenter">
+            <es><![CDATA[Centro a la izquierda]]></es>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerCenter">
+            <es><![CDATA[Centro]]></es>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightCenter">
+            <es><![CDATA[Centro a la derecha]]></es>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftBottom">
+            <es><![CDATA[Abajo a la izquierda]]></es>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerBottom">
+            <es><![CDATA[Abajo en el centro]]></es>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightBottom">
+            <es><![CDATA[Abajo a la derecha]]></es>
+        </locale>
     </groups>
 </locales>
+</quiqqer>

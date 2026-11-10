@@ -1,4 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/locale.xsd">
 <locales>
     <groups name="quiqqer/template-presentation" datatype="php,js">
         <locale name="colorMode.title">
@@ -1181,5 +1183,60 @@
         <locale name="templatePresentation.settings.footer.toTopStyle.option.stacked">
             <en><![CDATA[Icon above text]]></en>
         </locale>
+        <locale name="footer.backgroundImageEnabled">
+            <en><![CDATA[Use background image]]></en>
+        </locale>
+        <locale name="footer.backgroundImage">
+            <en><![CDATA[Background image]]></en>
+        </locale>
+        <locale name="footer.backgroundImage.description">
+            <en><![CDATA[Optional image from the media library. The existing footer background color is placed above it: an opaque color hides the image. To show the image, adjust transparency under Colors → Footer background.]]></en>
+        </locale>
+        <locale name="footer.backgroundImageFit">
+            <en><![CDATA[Image fit]]></en>
+        </locale>
+        <locale name="footer.backgroundImageFit.description">
+            <en><![CDATA[Controls how the image fills the footer area. Advanced CSS override: --quiqqer-template-presentation-footer-image-fit on .page-footer.]]></en>
+        </locale>
+        <locale name="footer.backgroundImageFit.cover">
+            <en><![CDATA[Fill area (cover)]]></en>
+        </locale>
+        <locale name="footer.backgroundImageFit.contain">
+            <en><![CDATA[Fit entire image (contain)]]></en>
+        </locale>
+        <locale name="footer.backgroundImagePosition">
+            <en><![CDATA[Image position]]></en>
+        </locale>
+        <locale name="footer.backgroundImagePosition.description">
+            <en><![CDATA[Position within the footer area. Set custom percentages using --quiqqer-template-presentation-footer-image-position on .page-footer.]]></en>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftTop">
+            <en><![CDATA[Top left]]></en>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerTop">
+            <en><![CDATA[Top center]]></en>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightTop">
+            <en><![CDATA[Top right]]></en>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftCenter">
+            <en><![CDATA[Center left]]></en>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerCenter">
+            <en><![CDATA[Center]]></en>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightCenter">
+            <en><![CDATA[Center right]]></en>
+        </locale>
+        <locale name="footer.backgroundImagePosition.leftBottom">
+            <en><![CDATA[Bottom left]]></en>
+        </locale>
+        <locale name="footer.backgroundImagePosition.centerBottom">
+            <en><![CDATA[Bottom center]]></en>
+        </locale>
+        <locale name="footer.backgroundImagePosition.rightBottom">
+            <en><![CDATA[Bottom right]]></en>
+        </locale>
     </groups>
 </locales>
+</quiqqer>

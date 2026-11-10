@@ -309,6 +309,22 @@
                     </conf>
 
                     <!-- footer -->
+                    <conf name="footer.backgroundImageEnabled">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="footer.backgroundImage">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue></defaultvalue>
+                    </conf>
+                    <conf name="footer.backgroundImageFit">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>cover</defaultvalue>
+                    </conf>
+                    <conf name="footer.backgroundImagePosition">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>center center</defaultvalue>
+                    </conf>
                     <conf name="footer.showToTop">
                         <type><![CDATA[bool]]></type>
                         <defaultvalue>1</defaultvalue>
@@ -1226,11 +1242,11 @@
                                 />
                             </title>
 
-                            <text>
+                            <description>
                                 <locale group="quiqqer/template-presentation"
                                         var="showHeader.desc"
                                 />
-                            </text>
+                            </description>
 
                             <!-- start page -->
                             <input conf="templatePresentation.settings.showHeaderStartPage"
@@ -1371,10 +1387,10 @@
                             </title>
 
                             <!-- no breadcrumb? -->
-                            <text>
+                            <description>
                                 <locale group="quiqqer/template-presentation"
                                         var="showBreadcrumb.text"/>
-                            </text>
+                            </description>
                             <input conf="templatePresentation.settings.showBreadcrumbStartPage"
                                    type="checkbox">
                                 <text>
@@ -1646,6 +1662,115 @@
                                 />
                             </title>
 
+                            <input conf="templatePresentation.settings.footer.backgroundImageEnabled" type="checkbox"
+                                   data-qui="package/quiqqer/core/bin/QUI/controls/settings/Dependency">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImageEnabled"
+                                    />
+                                </text>
+                            </input>
+
+                            <input conf="templatePresentation.settings.footer.backgroundImage" class="media-image"
+                                   data-dependency="templatePresentation.settings.footer.backgroundImageEnabled"
+                                   data-dependency-options="1">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImage"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImage.description"
+                                    />
+                                </description>
+                            </input>
+
+                            <select conf="templatePresentation.settings.footer.backgroundImageFit"
+                                    data-dependency="templatePresentation.settings.footer.backgroundImageEnabled"
+                                    data-dependency-options="1">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImageFit"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImageFit.description"
+                                    />
+                                </description>
+                                <option value="cover" selected="selected">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImageFit.cover"
+                                    />
+                                </option>
+                                <option value="contain">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImageFit.contain"
+                                    />
+                                </option>
+                            </select>
+
+                            <select conf="templatePresentation.settings.footer.backgroundImagePosition"
+                                    data-dependency="templatePresentation.settings.footer.backgroundImageEnabled"
+                                    data-dependency-options="1">
+                                <text>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImagePosition"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImagePosition.description"
+                                    />
+                                </description>
+                                <option value="left top">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImagePosition.leftTop"
+                                    />
+                                </option>
+                                <option value="center top">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImagePosition.centerTop"
+                                    />
+                                </option>
+                                <option value="right top">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImagePosition.rightTop"
+                                    />
+                                </option>
+                                <option value="left center">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImagePosition.leftCenter"
+                                    />
+                                </option>
+                                <option value="center center" selected="selected">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImagePosition.centerCenter"
+                                    />
+                                </option>
+                                <option value="right center">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImagePosition.rightCenter"
+                                    />
+                                </option>
+                                <option value="left bottom">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImagePosition.leftBottom"
+                                    />
+                                </option>
+                                <option value="center bottom">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImagePosition.centerBottom"
+                                    />
+                                </option>
+                                <option value="right bottom">
+                                    <locale group="quiqqer/template-presentation"
+                                            var="footer.backgroundImagePosition.rightBottom"
+                                    />
+                                </option>
+                            </select>
+
                             <input conf="templatePresentation.settings.footer.showToTop"
                                    type="checkbox">
                                 <text>
@@ -1773,11 +1898,11 @@
                                 </description>
                             </input>
 
-                            <text>
+                            <description>
                                 <locale group="quiqqer/template-presentation"
                                         var="templatePresentation.settings.footerColor.text"
                                 />
-                            </text>
+                            </description>
                             <input conf="templatePresentation.settings.colorFooterBackground"
                                    type="color"
                                    data-qui-options-references="1"
@@ -1857,11 +1982,11 @@
                                 </text>
                             </input>
 
-                            <text>
+                            <description>
                                 <locale group="quiqqer/template-presentation"
                                         var="social.linksNote"
                                 />
-                            </text>
+                            </description>
 
                             <!-- facebook -->
                             <input conf="templatePresentation.settings.social.facebook"
