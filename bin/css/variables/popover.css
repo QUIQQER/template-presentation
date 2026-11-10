@@ -1,0 +1,21 @@
+/**
+ * Popover defaults resolve on each surface so local button, color and theme
+ * overrides are respected. Public --qui-popover-* hooks take precedence over
+ * --theme--qui-popover-* hooks; --_popover-* variables are internal.
+ */
+.qui-popover {
+    --_popover-bgColor: var(--qui-popover-bgColor, var(--theme--qui-popover-bgColor, var(--qui-colors-surface)));
+    --_popover-color: var(--qui-popover-color, var(--theme--qui-popover-color, var(--qui-colors-text)));
+    --_popover-borderColor: var(--qui-popover-borderColor, var(--theme--qui-popover-borderColor, var(--qui-border-color)));
+    --_popover-borderWidth: var(--qui-popover-borderWidth, var(--theme--qui-popover-borderWidth, var(--qui-border-width)));
+    --_popover-borderStyle: var(--qui-popover-borderStyle, var(--theme--qui-popover-borderStyle, var(--qui-border-style)));
+    --_popover-borderRadius: var(--qui-popover-borderRadius, var(--theme--qui-popover-borderRadius, var(--qui-radius-md)));
+    --_popover-shadow: var(--qui-popover-shadow, var(--theme--qui-popover-shadow, var(--qui-shadow-md)));
+    --_popover-padding: var(--qui-popover-padding, var(--theme--qui-popover-padding, 0.5rem));
+    --_popover-gap: var(--qui-popover-gap, var(--theme--qui-popover-gap, 0.25rem));
+    --_popover-item-borderRadius: var(--qui-popover-item-borderRadius, var(--theme--qui-popover-item-borderRadius, var(--qui-btn-borderRadius)));
+    --_popover-item-padding: var(--qui-popover-item-padding, var(--theme--qui-popover-item-padding, 0.625rem 0.875rem));
+    --_popover-item-gap: var(--qui-popover-item-gap, var(--theme--qui-popover-item-gap, 0.75rem));
+    --_popover-item-bgColor--hover: var(--qui-popover-item-bgColor--hover, var(--theme--qui-popover-item-bgColor--hover, var(--qui-colors-surface-subtle)));
+    --_popover-item-fontWeight--selected: var(--qui-popover-item-fontWeight--selected, var(--theme--qui-popover-item-fontWeight--selected, 600));
+}

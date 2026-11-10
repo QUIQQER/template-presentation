@@ -39,6 +39,12 @@ its project-specific additions.
 - Badges: `.badge` with the same palette (`.badge-primary`, …), `-light` variants, `.badge-pill`,
   `.badge-sm`, `.badge-lg`, `.badge-neutral`.
 - Chips: `.chip`.
+- Popovers: `.qui-popover` for the surface, `.qui-popover--menu` for menu layout,
+  `.qui-popover__item` for button/link entries, `.qui-popover__icon` for decorative icons and
+  `.qui-popover__indicator` for a selection mark. Checked menu entries use `aria-checked="true"`.
+  These classes provide appearance only; the integrating control supplies opening, positioning,
+  keyboard handling and appropriate ARIA roles. Override `--qui-popover-*` properties to customize
+  an instance; the developer conventions document lists all properties and theme hooks.
 - Overlines: `.overline` with `.overline-center`, `.overline-primary`, `.overline-neutral`,
   `.overline-reset`; the visual style is controlled by the template setting. The overline already zeroes
   the following heading's top margin, so no spacing class is needed on the heading.

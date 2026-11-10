@@ -62,22 +62,22 @@
         {/foreach}
         {fetch template="template/colorModeSwitch/icon.html" icon="chevron-down" mode=""}
     </button>
-    <div class="tpl-colorModeSwitch__menu"
+    <div class="tpl-colorModeSwitch__menu qui-popover qui-popover--menu"
          popover
          role="menu"
          aria-label="{$groupLabel}"
          data-name="menu">
         {foreach $modes as $optionMode}
         <button type="button"
-                class="tpl-colorModeSwitch__menuItem"
+                class="tpl-colorModeSwitch__menuItem qui-popover__item"
                 role="menuitemradio"
                 tabindex="-1"
                 data-name="option"
                 data-mode="{$optionMode}"
                 aria-checked="{if $optionMode === $mode}true{else}false{/if}">
-            {fetch template="template/colorModeSwitch/icon.html" icon=$icons[$optionMode] mode=$optionMode}
+            {fetch template="template/colorModeSwitch/icon.html" icon=$icons[$optionMode] mode=$optionMode iconClass="qui-popover__icon"}
             <span class="tpl-colorModeSwitch__text">{locale group="quiqqer/template-presentation" var="colorMode.`$optionMode`"}</span>
-            {fetch template="template/colorModeSwitch/icon.html" icon="check" mode=""}
+            {fetch template="template/colorModeSwitch/icon.html" icon="check" mode="" iconClass="qui-popover__icon qui-popover__indicator"}
         </button>
         {/foreach}
     </div>

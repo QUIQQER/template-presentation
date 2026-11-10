@@ -159,20 +159,7 @@
     /* reset the centered UA popover box */
     inset: auto;
     margin: 0;
-    min-width: 10rem;
-    padding: 0.375rem;
-    color: var(--qui-colors-text);
-    font-size: var(--qui-fs-body);
-    background-color: var(--qui-colors-surface);
-    border: var(--qui-border-width) var(--qui-border-style) var(--qui-border-color);
-    border-radius: var(--qui-radius-md);
-    box-shadow: var(--qui-shadow-md);
-}
-
-.tpl-colorModeSwitch__menu:popover-open {
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
+    min-width: 11rem;
 }
 
 /**
@@ -191,49 +178,4 @@
         position-area: block-end span-inline-start;
         position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
     }
-}
-
-.tpl-colorModeSwitch__menuItem {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    width: 100%;
-    padding: 0.5rem 0.75rem;
-    color: inherit;
-    font: inherit;
-    text-align: start;
-    white-space: nowrap;
-    background: none;
-    border: none;
-    border-radius: var(--qui-radius-sm);
-    cursor: pointer;
-}
-
-.tpl-colorModeSwitch__menuItem:is(:hover, :focus-visible) {
-    background-color: var(--qui-colors-surface-subtle);
-}
-
-.tpl-colorModeSwitch__menuItem:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: -2px;
-}
-
-/* selected: primary background and check mark, not color alone */
-.tpl-colorModeSwitch__menuItem[aria-checked="true"] {
-    color: var(--qui-colors-primary-contrast);
-    background-color: var(--qui-colors-primary);
-}
-
-.tpl-colorModeSwitch__menuItem .tpl-colorModeSwitch__icon {
-    width: 1.125em;
-    height: 1.125em;
-}
-
-.tpl-colorModeSwitch__menuItem .tpl-colorModeSwitch__icon--check {
-    margin-inline-start: auto;
-    visibility: hidden;
-}
-
-.tpl-colorModeSwitch__menuItem[aria-checked="true"] .tpl-colorModeSwitch__icon--check {
-    visibility: visible;
 }

@@ -8,8 +8,9 @@
     Parameters:
     - icon: one of the icon names above
     - mode: color mode the icon stands for (system, light or dark), empty for UI icons
+    - iconClass: optional additional CSS classes
 *}
-<svg class="tpl-colorModeSwitch__icon{if !$mode} tpl-colorModeSwitch__icon--{$icon}{/if}"
+<svg class="tpl-colorModeSwitch__icon{if !$mode} tpl-colorModeSwitch__icon--{$icon}{/if}{if !empty($iconClass)} {$iconClass|escape:'html'}{/if}"
      {if $mode}data-mode="{$mode}"{/if}
      xmlns="http://www.w3.org/2000/svg"
      width="24"

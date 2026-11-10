@@ -51,6 +51,46 @@ The canonical token prefix is `--qui-`. The most used families:
 - Buttons: `--qui-btn-<variant>-<property>` hooks per variant and state, for example
   `--qui-btn-primary-bg--hover`, plus shared hooks such as `--qui-btn-borderRadius`.
 
+## Popovers
+
+Use `.qui-popover` for a floating surface and add `.qui-popover--menu` for a menu layout.
+The appearance is independent of Presentation controls; positioning, opening, keyboard handling,
+focus management and ARIA roles remain the caller's responsibility. Native `[popover]` menus stay
+hidden until opened. Non-native surfaces need their own visibility handling.
+
+The defaults in `bin/css/variables/popover.css` resolve on each `.qui-popover`, rather than on `:root`,
+so local colors and button radii are respected. Override public `--qui-popover-*` properties on a
+surface or an ancestor, or use the corresponding `--theme--qui-popover-*` hooks for theme defaults.
+Public properties take precedence; `--_popover-*` aliases are internal and must not be overridden.
+
+Available suffixes:
+
+- Surface: `bgColor`, `color`, `borderColor`, `borderWidth`, `borderStyle`, `borderRadius`, `shadow`,
+  `padding`, `gap` (spacing between menu entries).
+- Entries: `item-borderRadius`, `item-padding`, `item-gap`, `item-bgColor--hover`,
+  `item-fontWeight--selected`.
+
+Surface defaults use the semantic surface/text colors, general border tokens, `--qui-radius-md`
+and `--qui-shadow-md`. Entry radii follow `--qui-btn-borderRadius`. Selection uses a check mark and
+font weight 600 by default, independently of the primary color. Hover/focus backgrounds use the
+semantic subtle surface color, which follows light/dark mode.
+
+For example, a project can customize one popover without changing other instances:
+
+```css
+.project-actions {
+    --qui-popover-borderRadius: var(--qui-radius-lg);
+    --qui-popover-shadow: var(--qui-shadow-sm);
+    --qui-popover-item-padding: 0.75rem 1rem;
+}
+```
+
+Use native buttons or links with `.qui-popover__item`, decorative icons with `.qui-popover__icon`,
+and an optional `.qui-popover__indicator` for a selection mark. The indicator reserves its space
+and becomes visible for an item with `aria-checked="true"`. Use that state only with appropriate
+semantics, such as `role="menuitemradio"`; ordinary action items need neither it nor an indicator.
+Selection has no persistent background; hover/focus adds a background, and keyboard focus an outline.
+
 ## Spacing
 
 Inspect the relevant template and component conventions before choosing distances. This skill does

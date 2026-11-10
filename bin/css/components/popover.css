@@ -1,0 +1,71 @@
+/**
+ * Popover appearance only. The caller owns positioning, opening, keyboard
+ * interaction and appropriate semantics (a popover is not always a menu).
+ */
+.qui-popover {
+    box-sizing: border-box;
+    padding: var(--_popover-padding);
+    color: var(--_popover-color);
+    font-size: var(--qui-fs-body);
+    background-color: var(--_popover-bgColor);
+    border: var(--_popover-borderWidth) var(--_popover-borderStyle) var(--_popover-borderColor);
+    border-radius: var(--_popover-borderRadius);
+    box-shadow: var(--_popover-shadow);
+}
+
+.qui-popover--menu {
+    flex-direction: column;
+    gap: var(--_popover-gap);
+}
+
+/* Keep native popovers hidden until the browser opens them. */
+.qui-popover--menu:not([popover]),
+.qui-popover--menu:popover-open {
+    display: flex;
+}
+
+.qui-popover__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--_popover-item-gap);
+    width: 100%;
+    padding: var(--_popover-item-padding);
+    color: inherit;
+    font: inherit;
+    text-align: start;
+    text-decoration: none;
+    white-space: nowrap;
+    background: none;
+    border: none;
+    border-radius: var(--_popover-item-borderRadius);
+    cursor: pointer;
+}
+
+.qui-popover__item:is(:hover, :focus-visible) {
+    background-color: var(--_popover-item-bgColor--hover);
+}
+
+.qui-popover__item:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: -2px;
+}
+
+.qui-popover__item[aria-checked="true"] {
+    font-weight: var(--_popover-item-fontWeight--selected);
+}
+
+.qui-popover__item .qui-popover__icon {
+    flex-shrink: 0;
+    width: 1.125em;
+    height: 1.125em;
+}
+
+.qui-popover__indicator {
+    margin-inline-start: auto;
+    visibility: hidden;
+}
+
+.qui-popover__item[aria-checked="true"] .qui-popover__indicator {
+    visibility: visible;
+}
