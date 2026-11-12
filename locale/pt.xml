@@ -2,7 +2,7 @@
 <quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/locale.xsd">
 <locales>
-    <groups name="quiqqer/template-presentation" datatype="php,js">
+    <groups name="quiqqer/template-presentation" datatype="php">
         <locale name="colorMode.title">
             <pt><![CDATA[Aparência padrão]]></pt>
         </locale>
@@ -84,191 +84,9 @@
         <locale name="colorModeSwitch.compact.dark">
             <pt><![CDATA[Aparência: Escuro. Mudar para Sistema]]></pt>
         </locale>
-        <!-- template bricks -->
-        <locale name="brick.settings.enableSelect.disable">
-            <pt><![CDATA[Desativar]]></pt>
-        </locale>
-        <locale name="brick.settings.enableSelect.enable.useBrickSetting">
-            <pt><![CDATA[Ativar: utilizar a configuração do bloco]]></pt>
-        </locale>
-        <locale name="brick.settings.enableSelect.enable.useTemplateSetting">
-            <pt><![CDATA[Ativar: utilizar a configuração do modelo]]></pt>
-        </locale>
-        <locale name="promosliderBackground">
-            <pt><![CDATA[Cor de fundo (apenas com largura total)]]></pt>
-        </locale>
-        <locale name="showBrickTitle">
-            <pt><![CDATA[Título do bloco]]></pt>
-        </locale>
-        <locale name="brick.settings.enableBgImage.fullWidth">
-            <pt><![CDATA[Template Presentation: largura total]]></pt>
-        </locale>
-        <locale name="settings.verticalSpacingTop">
-            <pt><![CDATA[Espaçamento superior<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="settings.verticalSpacingBottom">
-            <pt><![CDATA[Espaçamento inferior<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="settings.verticalSpacing.disabled">
-            <pt><![CDATA[Desativado]]></pt>
-        </locale>
-        <locale name="settings.verticalSpacing.small">
-            <pt><![CDATA[Pequeno]]></pt>
-        </locale>
-        <locale name="settings.verticalSpacing.base">
-            <pt><![CDATA[Normal (predefinido)]]></pt>
-        </locale>
-        <locale name="settings.verticalSpacing.medium">
-            <pt><![CDATA[Médio]]></pt>
-        </locale>
-        <locale name="settings.verticalSpacing.large">
-            <pt><![CDATA[Grande]]></pt>
-        </locale>
-        <locale name="settings.verticalSpacing.extraLarge">
-            <pt><![CDATA[Muito grande]]></pt>
-        </locale>
-        <locale name="brick.settings.enableBgImage">
-            <pt><![CDATA[Ativar a imagem de fundo do bloco<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.bgImage">
-            <pt><![CDATA[Imagem de fundo do bloco<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.bgImage.desc">
-            <pt><![CDATA[Alguns blocos têm uma configuração própria para a imagem de fundo. Consoante o caso, poderá ser preferível utilizar essa configuração.]]></pt>
-        </locale>
-        <locale name="brick.settings.enableBgColor">
-            <pt><![CDATA[Ativar a cor de fundo do bloco<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.bgColor">
-            <pt><![CDATA[Cor de fundo do bloco<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.bgColor.desc">
-            <pt><![CDATA[Alguns blocos têm uma configuração própria para a cor de fundo. Consoante o caso, poderá ser preferível utilizar essa configuração.]]></pt>
-        </locale>
-        <locale name="brick.settings.enableTextColor">
-            <pt><![CDATA[Ativar a cor do texto do bloco<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.textColor">
-            <pt><![CDATA[Cor do texto do bloco<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.textColor.desc">
-            <pt><![CDATA[Esta opção só é necessária se o texto precisar de uma cor que contraste com a imagem ou a cor de fundo para garantir a legibilidade.]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorTop.enable">
-            <pt><![CDATA[Ativar o separador superior do bloco<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorTop.image">
-            <pt><![CDATA[Separador superior<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorTop.image.desc">
-            <pt><![CDATA[Selecione uma imagem adequada para separar este bloco do anterior. Pode criá-la, por exemplo, em <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> ou <a href="https://getwaves.io/" target="_blank">getwaves.io</a>.]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorTop.width">
-            <pt><![CDATA[Largura do separador<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorTop.width.desc">
-            <pt><![CDATA[Se deixar vazio, será utilizada a largura da imagem. Introduza um valor com a respetiva unidade, por exemplo: 100%, 100vw, 500px ou 40rem.]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorTop.height">
-            <pt><![CDATA[Altura do separador<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorTop.height.desc">
-            <pt><![CDATA[Se deixar vazio, será utilizada a altura da imagem. Introduza um valor com a respetiva unidade, por exemplo: 100%, 100vw, 500px ou 40rem.]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorBottom.enable">
-            <pt><![CDATA[Ativar o separador inferior do bloco<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorBottom.image">
-            <pt><![CDATA[Separador inferior do bloco<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorBottom.image.desc">
-            <pt><![CDATA[Selecione uma imagem adequada para separar este bloco do seguinte. Pode criá-la, por exemplo, em <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> ou <a href="https://getwaves.io/" target="_blank">getwaves.io</a>.]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorBottom.width">
-            <pt><![CDATA[Largura do separador inferior<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorBottom.width.desc">
-            <pt><![CDATA[Se deixar vazio, será utilizada a largura da imagem. Introduza um valor com a respetiva unidade, por exemplo: 100%, 100vw, 500px ou 40rem.]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorBottom.height">
-            <pt><![CDATA[Altura do separador<br><small>Template Presentation</small>]]></pt>
-        </locale>
-        <locale name="brick.settings.separatorBottom.height.desc">
-            <pt><![CDATA[Se deixar vazio, será utilizada a altura da imagem. Introduza um valor com a respetiva unidade, por exemplo: 100%, 100vw, 500px ou 40rem.]]></pt>
-        </locale>
-        <!-- areas -->
-        <locale name="area.footer.title">
-            <pt><![CDATA[Área de blocos do rodapé]]></pt>
-        </locale>
-        <locale name="area.footer.description">
-            <pt><![CDATA[Área para blocos no rodapé]]></pt>
-        </locale>
-        <locale name="area.startpageContent.title">
-            <pt><![CDATA[Área de conteúdo (página de destino)]]></pt>
-        </locale>
-        <locale name="area.startpageContent.description">
-            <pt><![CDATA[Área de blocos do esquema da página de destino]]></pt>
-        </locale>
-        <locale name="area.sidebar.left.title">
-            <pt><![CDATA[Área de blocos à esquerda]]></pt>
-        </locale>
-        <locale name="area.sidebar.left.description">
-            <pt><![CDATA[Área de blocos à esquerda do conteúdo]]></pt>
-        </locale>
-        <locale name="area.sidebar.right.title">
-            <pt><![CDATA[Área de blocos à direita]]></pt>
-        </locale>
-        <locale name="area.sidebar.right.description">
-            <pt><![CDATA[Área de blocos à direita do conteúdo]]></pt>
-        </locale>
-        <locale name="area.sidebar.prefix.content.title">
-            <pt><![CDATA[Acima do conteúdo]]></pt>
-        </locale>
-        <locale name="area.sidebar.prefix.content.description">
-            <pt><![CDATA[Área de blocos antes do conteúdo]]></pt>
-        </locale>
-        <locale name="area.sidebar.suffix.content.title">
-            <pt><![CDATA[Abaixo do conteúdo]]></pt>
-        </locale>
-        <locale name="area.sidebar.suffix.content.description">
-            <pt><![CDATA[Área de blocos após o conteúdo]]></pt>
-        </locale>
-        <locale name="area.header.title">
-            <pt><![CDATA[Cabeçalho: área adicional de blocos]]></pt>
-        </locale>
-        <locale name="area.header.description">
-            <pt><![CDATA[Esta área funciona de forma semelhante à área abaixo do cabeçalho. A única diferença é que o menu fica sobreposto ao bloco.]]></pt>
-        </locale>
-        <locale name="area.headerSuffix.title">
-            <pt><![CDATA[Abaixo do cabeçalho]]></pt>
-        </locale>
-        <locale name="area.headerSuffix.description">
-            <pt><![CDATA[Área de blocos após o cabeçalho]]></pt>
-        </locale>
-        <locale name="area.topBanner.title">
-            <pt><![CDATA[Barra de avisos acima da navegação]]></pt>
-        </locale>
-        <locale name="area.topBanner.description">
-            <pt><![CDATA[Área estreita de blocos acima do menu para mensagens breves sobre saldos, Black Friday ou promoções.]]></pt>
-        </locale>
-        <locale name="area.navAction.title">
-            <pt><![CDATA[Ação de navegação]]></pt>
-        </locale>
-        <locale name="area.navAction.description">
-            <pt><![CDATA[Área simples na navegação para colocar, por exemplo, um botão de chamada à ação, uma ligação de início de sessão ou uma ligação ao painel de controlo.]]></pt>
-        </locale>
-        <locale name="area.footerPrefix.title">
-            <pt><![CDATA[Acima do rodapé]]></pt>
-        </locale>
-        <locale name="area.footerPrefix.description">
-            <pt><![CDATA[Área de blocos antes do rodapé]]></pt>
-        </locale>
         <!-- template site settings -->
         <locale name="templatePresentation.siteSettings">
             <pt><![CDATA[Template Presentation: definições gerais]]></pt>
-        </locale>
-        <locale name="templatePresentation.siteSettings.showEmotion">
-            <pt><![CDATA[Mostrar imagem do cabeçalho]]></pt>
         </locale>
         <!-- header site settings-->
         <locale name="templatePresentation.siteSettings.showHeader">
@@ -383,12 +201,6 @@
         <locale name="site.settings.nav.initialTransparent.linkBgColorHover">
             <pt><![CDATA[Cor de fundo das ligações ao passar o rato (barra transparente)]]></pt>
         </locale>
-        <locale name="package.title">
-            <pt><![CDATA[Product Presentation]]></pt>
-        </locale>
-        <locale name="package.description">
-            <pt><![CDATA[Modelo para empresas e marketing, ideal para apresentar produtos, aplicações ou programas.]]></pt>
-        </locale>
         <locale name="admin.layout.leftSidebar">
             <pt><![CDATA[Barra lateral esquerda]]></pt>
         </locale>
@@ -413,23 +225,11 @@
         <locale name="admin.layout.leftSidebar.description">
             <pt><![CDATA[Barra lateral à esquerda por predefinição]]></pt>
         </locale>
-        <locale name="bricks.Startpage3Box.title">
-            <pt><![CDATA[Bloco de três colunas na página inicial]]></pt>
-        </locale>
         <locale name="admin.layout.startpage.description">
             <pt><![CDATA[Esquema predefinido da página inicial]]></pt>
         </locale>
-        <locale name="continue.reading">
-            <pt><![CDATA[Continuar a ler]]></pt>
-        </locale>
         <locale name="copyright.text" html="true">
             <pt><![CDATA[&copy; [year] - criado com <a href="https://www.quiqqer.com">QUIQQER - Template Presentation</a>]]></pt>
-        </locale>
-        <locale name="copyright.link" html="true">
-            <pt><![CDATA[Início]]></pt>
-        </locale>
-        <locale name="nav.button.close" html="true">
-            <pt><![CDATA[Fechar menu]]></pt>
         </locale>
         <!-- settings -->
         <locale name="templatePresentation.settings.menu.title">
@@ -444,12 +244,6 @@
         </locale>
         <locale name="templatePresentation.showShort.text">
             <pt><![CDATA[Mostrar descrição breve da página]]></pt>
-        </locale>
-        <locale name="templatePresentation.settings.bgColorSwitcher.display">
-            <pt><![CDATA[Ativado]]></pt>
-        </locale>
-        <locale name="templatePresentation.settings.bgColorSwitcher.hide">
-            <pt><![CDATA[Desativado]]></pt>
         </locale>
         <!-- Dropdown Language Switch in top nav -->
         <locale name="templatePresentation.settings.dropdownLangNav.title">
@@ -910,15 +704,6 @@
             <pt><![CDATA[Cor de fundo do menu móvel]]></pt>
         </locale>
         <!-- Search -->
-        <locale name="templatePresentation.settings.search.title">
-            <pt><![CDATA[Botão de pesquisa]]></pt>
-        </locale>
-        <locale name="templatePresentation.settings.searchShow.text">
-            <pt><![CDATA[Mostrar o botão de pesquisa na navegação]]></pt>
-        </locale>
-        <locale name="templatePresentation.settings.searchLink.text">
-            <pt><![CDATA[Página de pesquisa]]></pt>
-        </locale>
         <!-- nav / menu: independent -->
         <locale name="templatePresentation.settings.independentMenu.title">
             <pt><![CDATA[Menu independente]]></pt>
@@ -945,17 +730,11 @@
         <locale name="templatePresentation.settings.color.title">
             <pt><![CDATA[Gestão de cores]]></pt>
         </locale>
-        <locale name="template.settings.mobileMenuBackground">
-            <pt><![CDATA[Cor de fundo do menu móvel]]></pt>
-        </locale>
         <locale name="template.settings.mobileMenuBackground.desc">
             <pt><![CDATA[Esta opção só se aplica à vista móvel e permite distinguir os diferentes níveis através de cores.]]></pt>
         </locale>
         <locale name="templatePresentation.settings.footerColor.text">
             <pt><![CDATA[Rodapé]]></pt>
-        </locale>
-        <locale name="templatePresentation.settings.contentColor.text">
-            <pt><![CDATA[Conteúdo]]></pt>
         </locale>
         <locale name="template.settings.colorFooterBackground.text" html="true">
             <pt><![CDATA[Cor de fundo do rodapé]]></pt>
@@ -990,14 +769,8 @@
         <locale name="template.settings.colorMain.description">
             <pt><![CDATA[Define a cor das ligações, dos seus efeitos, dos botões e de outros elementos interativos.]]></pt>
         </locale>
-        <locale name="template.settings.colorMainContentBackground.text">
-            <pt><![CDATA[Cor de fundo do conteúdo da página]]></pt>
-        </locale>
         <locale name="template.settings.colorMainContentFont.text">
             <pt><![CDATA[Cor do texto do conteúdo]]></pt>
-        </locale>
-        <locale name="brick.control.setting.order">
-            <pt><![CDATA[Ordenação]]></pt>
         </locale>
         <!-- social icons -->
         <locale name="social.settings.title">
@@ -1135,6 +908,235 @@
             <pt><![CDATA[A pesquisa só será apresentada na navegação se existir uma página do tipo «Pesquisa padrão» ou «Pesquisa avançada».]]></pt>
         </locale>
     </groups>
+    <groups name="quiqqer/template-presentation" datatype="php,js">
+        <!-- template bricks -->
+        <locale name="brick.settings.enableSelect.disable" context="administration">
+            <pt><![CDATA[Desativar]]></pt>
+        </locale>
+        <locale name="brick.settings.enableSelect.enable.useBrickSetting" context="administration">
+            <pt><![CDATA[Ativar: utilizar a configuração do bloco]]></pt>
+        </locale>
+        <locale name="brick.settings.enableSelect.enable.useTemplateSetting" context="administration">
+            <pt><![CDATA[Ativar: utilizar a configuração do modelo]]></pt>
+        </locale>
+        <locale name="promosliderBackground" context="administration">
+            <pt><![CDATA[Cor de fundo (apenas com largura total)]]></pt>
+        </locale>
+        <locale name="showBrickTitle">
+            <pt><![CDATA[Título do bloco]]></pt>
+        </locale>
+        <locale name="brick.settings.enableBgImage.fullWidth" context="administration">
+            <pt><![CDATA[Template Presentation: largura total]]></pt>
+        </locale>
+        <locale name="settings.verticalSpacingTop" context="administration">
+            <pt><![CDATA[Espaçamento superior<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="settings.verticalSpacingBottom" context="administration">
+            <pt><![CDATA[Espaçamento inferior<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="settings.verticalSpacing.disabled" context="administration">
+            <pt><![CDATA[Desativado]]></pt>
+        </locale>
+        <locale name="settings.verticalSpacing.small" context="administration">
+            <pt><![CDATA[Pequeno]]></pt>
+        </locale>
+        <locale name="settings.verticalSpacing.base" context="administration">
+            <pt><![CDATA[Normal (predefinido)]]></pt>
+        </locale>
+        <locale name="settings.verticalSpacing.medium" context="administration">
+            <pt><![CDATA[Médio]]></pt>
+        </locale>
+        <locale name="settings.verticalSpacing.large" context="administration">
+            <pt><![CDATA[Grande]]></pt>
+        </locale>
+        <locale name="settings.verticalSpacing.extraLarge" context="administration">
+            <pt><![CDATA[Muito grande]]></pt>
+        </locale>
+        <locale name="brick.settings.enableBgImage">
+            <pt><![CDATA[Ativar a imagem de fundo do bloco<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.bgImage" context="administration">
+            <pt><![CDATA[Imagem de fundo do bloco<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.bgImage.desc" context="administration">
+            <pt><![CDATA[Alguns blocos têm uma configuração própria para a imagem de fundo. Consoante o caso, poderá ser preferível utilizar essa configuração.]]></pt>
+        </locale>
+        <locale name="brick.settings.enableBgColor" context="administration">
+            <pt><![CDATA[Ativar a cor de fundo do bloco<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.bgColor" context="administration">
+            <pt><![CDATA[Cor de fundo do bloco<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.bgColor.desc" context="administration">
+            <pt><![CDATA[Alguns blocos têm uma configuração própria para a cor de fundo. Consoante o caso, poderá ser preferível utilizar essa configuração.]]></pt>
+        </locale>
+        <locale name="brick.settings.enableTextColor" context="administration">
+            <pt><![CDATA[Ativar a cor do texto do bloco<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.textColor" context="administration">
+            <pt><![CDATA[Cor do texto do bloco<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.textColor.desc" context="administration">
+            <pt><![CDATA[Esta opção só é necessária se o texto precisar de uma cor que contraste com a imagem ou a cor de fundo para garantir a legibilidade.]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorTop.enable" context="administration">
+            <pt><![CDATA[Ativar o separador superior do bloco<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorTop.image" context="administration">
+            <pt><![CDATA[Separador superior<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorTop.image.desc" context="administration">
+            <pt><![CDATA[Selecione uma imagem adequada para separar este bloco do anterior. Pode criá-la, por exemplo, em <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> ou <a href="https://getwaves.io/" target="_blank">getwaves.io</a>.]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorTop.width" context="administration">
+            <pt><![CDATA[Largura do separador<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorTop.width.desc" context="administration">
+            <pt><![CDATA[Se deixar vazio, será utilizada a largura da imagem. Introduza um valor com a respetiva unidade, por exemplo: 100%, 100vw, 500px ou 40rem.]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorTop.height" context="administration">
+            <pt><![CDATA[Altura do separador<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorTop.height.desc" context="administration">
+            <pt><![CDATA[Se deixar vazio, será utilizada a altura da imagem. Introduza um valor com a respetiva unidade, por exemplo: 100%, 100vw, 500px ou 40rem.]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorBottom.enable" context="administration">
+            <pt><![CDATA[Ativar o separador inferior do bloco<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorBottom.image" context="administration">
+            <pt><![CDATA[Separador inferior do bloco<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorBottom.image.desc" context="administration">
+            <pt><![CDATA[Selecione uma imagem adequada para separar este bloco do seguinte. Pode criá-la, por exemplo, em <a href="https://www.shapedivider.app/" target="_blank">www.shapedivider.app</a> ou <a href="https://getwaves.io/" target="_blank">getwaves.io</a>.]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorBottom.width" context="administration">
+            <pt><![CDATA[Largura do separador inferior<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorBottom.width.desc" context="administration">
+            <pt><![CDATA[Se deixar vazio, será utilizada a largura da imagem. Introduza um valor com a respetiva unidade, por exemplo: 100%, 100vw, 500px ou 40rem.]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorBottom.height" context="administration">
+            <pt><![CDATA[Altura do separador<br><small>Template Presentation</small>]]></pt>
+        </locale>
+        <locale name="brick.settings.separatorBottom.height.desc" context="administration">
+            <pt><![CDATA[Se deixar vazio, será utilizada a altura da imagem. Introduza um valor com a respetiva unidade, por exemplo: 100%, 100vw, 500px ou 40rem.]]></pt>
+        </locale>
+        <!-- areas -->
+        <locale name="area.footer.title" context="administration">
+            <pt><![CDATA[Área de blocos do rodapé]]></pt>
+        </locale>
+        <locale name="area.footer.description" context="administration">
+            <pt><![CDATA[Área para blocos no rodapé]]></pt>
+        </locale>
+        <locale name="area.startpageContent.title">
+            <pt><![CDATA[Área de conteúdo (página de destino)]]></pt>
+        </locale>
+        <locale name="area.startpageContent.description">
+            <pt><![CDATA[Área de blocos do esquema da página de destino]]></pt>
+        </locale>
+        <locale name="area.sidebar.left.title" context="administration">
+            <pt><![CDATA[Área de blocos à esquerda]]></pt>
+        </locale>
+        <locale name="area.sidebar.left.description" context="administration">
+            <pt><![CDATA[Área de blocos à esquerda do conteúdo]]></pt>
+        </locale>
+        <locale name="area.sidebar.right.title" context="administration">
+            <pt><![CDATA[Área de blocos à direita]]></pt>
+        </locale>
+        <locale name="area.sidebar.right.description" context="administration">
+            <pt><![CDATA[Área de blocos à direita do conteúdo]]></pt>
+        </locale>
+        <locale name="area.sidebar.prefix.content.title" context="administration">
+            <pt><![CDATA[Acima do conteúdo]]></pt>
+        </locale>
+        <locale name="area.sidebar.prefix.content.description" context="administration">
+            <pt><![CDATA[Área de blocos antes do conteúdo]]></pt>
+        </locale>
+        <locale name="area.sidebar.suffix.content.title" context="administration">
+            <pt><![CDATA[Abaixo do conteúdo]]></pt>
+        </locale>
+        <locale name="area.sidebar.suffix.content.description" context="administration">
+            <pt><![CDATA[Área de blocos após o conteúdo]]></pt>
+        </locale>
+        <locale name="area.header.title" context="administration">
+            <pt><![CDATA[Cabeçalho: área adicional de blocos]]></pt>
+        </locale>
+        <locale name="area.header.description" context="administration">
+            <pt><![CDATA[Esta área funciona de forma semelhante à área abaixo do cabeçalho. A única diferença é que o menu fica sobreposto ao bloco.]]></pt>
+        </locale>
+        <locale name="area.headerSuffix.title" context="administration">
+            <pt><![CDATA[Abaixo do cabeçalho]]></pt>
+        </locale>
+        <locale name="area.headerSuffix.description" context="administration">
+            <pt><![CDATA[Área de blocos após o cabeçalho]]></pt>
+        </locale>
+        <locale name="area.topBanner.title" context="administration">
+            <pt><![CDATA[Barra de avisos acima da navegação]]></pt>
+        </locale>
+        <locale name="area.topBanner.description" context="administration">
+            <pt><![CDATA[Área estreita de blocos acima do menu para mensagens breves sobre saldos, Black Friday ou promoções.]]></pt>
+        </locale>
+        <locale name="area.navAction.title" context="administration">
+            <pt><![CDATA[Ação de navegação]]></pt>
+        </locale>
+        <locale name="area.navAction.description" context="administration">
+            <pt><![CDATA[Área simples na navegação para colocar, por exemplo, um botão de chamada à ação, uma ligação de início de sessão ou uma ligação ao painel de controlo.]]></pt>
+        </locale>
+        <locale name="area.footerPrefix.title" context="administration">
+            <pt><![CDATA[Acima do rodapé]]></pt>
+        </locale>
+        <locale name="area.footerPrefix.description" context="administration">
+            <pt><![CDATA[Área de blocos antes do rodapé]]></pt>
+        </locale>
+        <locale name="templatePresentation.siteSettings.showEmotion">
+            <pt><![CDATA[Mostrar imagem do cabeçalho]]></pt>
+        </locale>
+        <locale name="package.title" context="administration">
+            <pt><![CDATA[Product Presentation]]></pt>
+        </locale>
+        <locale name="package.description" context="administration">
+            <pt><![CDATA[Modelo para empresas e marketing, ideal para apresentar produtos, aplicações ou programas.]]></pt>
+        </locale>
+        <locale name="bricks.Startpage3Box.title">
+            <pt><![CDATA[Bloco de três colunas na página inicial]]></pt>
+        </locale>
+        <locale name="continue.reading">
+            <pt><![CDATA[Continuar a ler]]></pt>
+        </locale>
+        <locale name="copyright.link" html="true">
+            <pt><![CDATA[Início]]></pt>
+        </locale>
+        <locale name="nav.button.close" html="true">
+            <pt><![CDATA[Fechar menu]]></pt>
+        </locale>
+        <locale name="templatePresentation.settings.bgColorSwitcher.display">
+            <pt><![CDATA[Ativado]]></pt>
+        </locale>
+        <locale name="templatePresentation.settings.bgColorSwitcher.hide">
+            <pt><![CDATA[Desativado]]></pt>
+        </locale>
+        <locale name="templatePresentation.settings.search.title">
+            <pt><![CDATA[Botão de pesquisa]]></pt>
+        </locale>
+        <locale name="templatePresentation.settings.searchShow.text">
+            <pt><![CDATA[Mostrar o botão de pesquisa na navegação]]></pt>
+        </locale>
+        <locale name="templatePresentation.settings.searchLink.text">
+            <pt><![CDATA[Página de pesquisa]]></pt>
+        </locale>
+        <locale name="template.settings.mobileMenuBackground">
+            <pt><![CDATA[Cor de fundo do menu móvel]]></pt>
+        </locale>
+        <locale name="templatePresentation.settings.contentColor.text">
+            <pt><![CDATA[Conteúdo]]></pt>
+        </locale>
+        <locale name="template.settings.colorMainContentBackground.text">
+            <pt><![CDATA[Cor de fundo do conteúdo da página]]></pt>
+        </locale>
+        <locale name="brick.control.setting.order">
+            <pt><![CDATA[Ordenação]]></pt>
+        </locale>
+    </groups>
     <groups name="quiqqer/template-presentation" datatype="php">
         <locale name="frontend.button.toTop">
             <pt><![CDATA[Deslocar para o topo]]></pt>
@@ -1228,6 +1230,33 @@
         </locale>
         <locale name="footer.backgroundImagePosition.rightBottom">
             <pt><![CDATA[Inferior direita]]></pt>
+        </locale>
+        <locale name="logo.standard.description">
+            <pt><![CDATA[Na navegação com fundo, é utilizado o logótipo padrão das definições gerais do projeto, tanto sem cabeçalho como após o deslocamento da página. As dimensões e o título da ligação aplicam-se a todas as variantes do logótipo da navegação.]]></pt>
+        </locale>
+        <locale name="logo.dark">
+            <pt><![CDATA[Logótipo diferente no modo escuro (opcional)]]></pt>
+        </locale>
+        <locale name="logo.dark.description">
+            <pt><![CDATA[Apenas necessário se a navegação precisar de um logótipo diferente no modo escuro, por exemplo, devido a outra cor de fundo. Deixe em branco se o mesmo logótipo for adequado para ambos os modos, sobretudo se a cor do menu não mudar. Sem uma variante válida, o logótipo padrão permanece visível. Na navegação transparente, tem prioridade o logótipo específico definido para ela.]]></pt>
+        </locale>
+        <locale name="navigation.transparent">
+            <pt><![CDATA[Navegação transparente sobre o cabeçalho]]></pt>
+        </locale>
+        <locale name="navigation.mobile">
+            <pt><![CDATA[Navegação – Menu móvel]]></pt>
+        </locale>
+        <locale name="logo.mobile.description">
+            <pt><![CDATA[Os logótipos largos são reduzidos proporcionalmente em ecrãs pequenos para deixar espaço para o seletor de aparência e o botão do menu. As cores definidas aqui aplicam-se ao menu móvel aberto.]]></pt>
+        </locale>
+        <locale name="admin.layout.leftSidebar.desc">
+            <pt><![CDATA[Barra lateral à esquerda por predefinição]]></pt>
+        </locale>
+        <locale name="admin.layout.startpage.desc">
+            <pt><![CDATA[Esquema predefinido da página inicial]]></pt>
+        </locale>
+        <locale name="templatePresentation.nav.initialTransparent.desc">
+            <pt><![CDATA[Se a barra de navegação for fixa (sempre visível no topo) e a opção «Barra de navegação inicialmente transparente» estiver ativa nas definições do projeto, os itens do menu podem ser difíceis de ler. As opções abaixo permitem ajustar as cores de cada página à respetiva imagem de fundo.]]></pt>
         </locale>
     </groups>
 </locales>
