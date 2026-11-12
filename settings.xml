@@ -147,6 +147,9 @@
                     </conf>
 
                     <!-- Logo -->
+                    <conf name="logoDark">
+                        <type><![CDATA[string]]></type>
+                    </conf>
                     <conf name="logoHeight">
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>60</defaultvalue>
@@ -798,6 +801,18 @@
                                 />
                             </title>
 
+                            <description>
+                                <locale group="quiqqer/template-presentation" var="logo.standard.description"/>
+                            </description>
+                            <input conf="templatePresentation.settings.logoDark" class="media-image">
+                                <text>
+                                    <locale group="quiqqer/template-presentation" var="logo.dark"/>
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-presentation" var="logo.dark.description"/>
+                                </description>
+                            </input>
+
                             <input conf="templatePresentation.settings.logoHeight" type="number">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1074,6 +1089,12 @@
                                 </text>
                             </input>
 
+                        </settings>
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.navigation.transparent">
+                            <title>
+                                <locale group="quiqqer/template-presentation" var="navigation.transparent"/>
+                            </title>
                             <input conf="templatePresentation.settings.navBarInitialTransparent" type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-presentation"
@@ -1144,6 +1165,15 @@
                             </input>
 
 
+                        </settings>
+                        <settings title="templatePresentation.settings"
+                                  name="templatePresentation.settings.navigation.mobile">
+                            <title>
+                                <locale group="quiqqer/template-presentation" var="navigation.mobile"/>
+                            </title>
+                            <description>
+                                <locale group="quiqqer/template-presentation" var="logo.mobile.description"/>
+                            </description>
                             <!-- mobile menu (mega menu) -->
                             <input conf="templatePresentation.settings.mobileFontColor"
                                    type="color"

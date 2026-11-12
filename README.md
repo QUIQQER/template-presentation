@@ -29,6 +29,8 @@ Features
     - GitLab
 - Color management with project palette references and light/dark color pairs
 - Light, dark and system appearance; system follows the device setting
+- Optional navigation logos for dark mode and transparent navigation, with fallback to the standard logo.
+- Navigation logos preserve their proportions and adapt to narrow screens.
 - Optional appearance switch for visitors (off by default)
     - Footer: dropdown by default, alternatively icon bar or icon button
     - Navigation: off by default, icon button or dropdown for desktop and/or mobile

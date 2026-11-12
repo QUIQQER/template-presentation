@@ -366,13 +366,13 @@
             <en><![CDATA[Scroll offset for navigation bar]]></en>
         </locale>
         <locale name="site.settings.nav.scrollOffset.desc">
-            <en><![CDATA[Overrides the template scroll offset for this page. Leave empty to use the template setting. Values starting at 0 are allowed.]]></en>
+            <en><![CDATA[Overrides the project scroll threshold on this page. Empty: project setting; 0 is allowed. Applies to fixed navigation and auto-hide with reduced motion; otherwise auto-hide uses the navigation height.]]></en>
         </locale>
         <locale name="site.settings.nav.initialTransparent.logo">
-            <en><![CDATA[Logo for transparent navigation bar]]></en>
+            <en><![CDATA[Alternative logo for transparent navigation (optional)]]></en>
         </locale>
         <locale name="site.settings.nav.initialTransparent.logo.desc">
-            <en><![CDATA[The project logo may be difficult to recognize when the navigation bar is transparent. With this setting, you can specify an alternative logo to be used specifically for the transparent navigation bar.]]></en>
+            <en><![CDATA[Only for transparent navigation on this page, for example over a header image. A valid image overrides the transparent-navigation logo in the template settings. Empty or invalid: template special logo, otherwise the normal navigation logo selection. Once navigation shows its background, the normal selection applies again.]]></en>
         </locale>
         <locale name="site.settings.nav.initialTransparent.linkColor">
             <en><![CDATA[Link color (navigation bar is transparent)]]></en>
@@ -774,7 +774,7 @@
         </locale>
         <!-- Logo settings -->
         <locale name="templatePresentation.settings.logoHeight.title">
-            <en><![CDATA[Logo settings]]></en>
+            <en><![CDATA[Navigation with background – logo]]></en>
         </locale>
         <locale name="templatePresentation.settings.logoHeight.text">
             <en><![CDATA[Logo height]]></en>
@@ -783,7 +783,7 @@
             <en><![CDATA[Logo width (optional)]]></en>
         </locale>
         <locale name="templatePresentation.settings.logoWidth.desc">
-            <en><![CDATA[In most cases, you don't need to set the logo width. The template automatically calculates the width based on the specified height. In rare cases, QUIQQER may not be able to perform the calculation (e.g. if the logo is an .svg image). <strong>If the logo is a <code>.svg</strong> image, the width must be entered.</strong>]]></en>
+            <en><![CDATA[Optional maximum display width of all logo variants in pixels. If empty, width follows the logo height and each image’s aspect ratio. SVGs need a valid aspect ratio (for example a viewBox). Narrow screens may shrink the logo further.]]></en>
         </locale>
         <locale name="templatePresentation.settings.logoTitle.text">
             <en><![CDATA[Hover title]]></en>
@@ -888,19 +888,19 @@
             <en><![CDATA[Navigation bar is initially transparent]]></en>
         </locale>
         <locale name="templatePresentation.settings.navBarInitialTransparent.desc">
-            <en><![CDATA[When the navigation bar is fixed (always visible at the top), it has the configured background color by default. If you activate this option, the navigation bar will initially be transparent when a header image is enabled or a widget is placed in the "Header – Additional Widget Area". As soon as the page is scrolled, it will use the previously configured colors.]]></en>
+            <en><![CDATA[Starts transparent when a page header or header-area brick is present. Fixed navigation gets its normal background after the scroll threshold; auto-hide normally after the navigation height. Scrolling navigation stays transparent in this state. Page settings can override this default.]]></en>
         </locale>
         <locale name="templatePresentation.settings.navBarScrollOffset.text">
             <en><![CDATA[Scroll offset for navigation bar]]></en>
         </locale>
         <locale name="templatePresentation.settings.navBarScrollOffset.desc">
-            <en><![CDATA[Defines the scroll position at which the fixed navigation bar switches to its scrolled state. This is especially relevant when the "Navigation bar is initially transparent" option is enabled. Default: 50 pixels.]]></en>
+            <en><![CDATA[Scroll threshold in pixels for fixed navigation (default: 50). Auto-hide normally uses the navigation height; with reduced motion it uses this threshold. Scrolling navigation does not change state based on this setting.]]></en>
         </locale>
         <locale name="templatePresentation.settings.navBarInitialTransparentLogo.text">
-            <en><![CDATA[Logo for transparent navigation bar]]></en>
+            <en><![CDATA[Alternative logo for transparent navigation (optional)]]></en>
         </locale>
         <locale name="templatePresentation.settings.navBarInitialTransparentLogo.desc">
-            <en><![CDATA[The project logo may be difficult to recognize when the navigation bar is transparent. With this setting, you can specify an alternative logo to be used specifically for the transparent navigation bar.]]></en>
+            <en><![CDATA[Only needed if the normal navigation logo is difficult to read over the header image. This logo applies independently of light/dark mode while navigation is transparent. When the normal navigation background returns, the selection under “Navigation with background – logo” applies again. Leave empty to use that selection for transparent navigation too. A valid page-specific special logo takes precedence.]]></en>
         </locale>
         <locale name="templatePresentation.settings.navBarInitialTransparentLinkColor.text">
             <en><![CDATA[Link color (navigation bar is transparent)]]></en>
@@ -1236,6 +1236,24 @@
         </locale>
         <locale name="footer.backgroundImagePosition.rightBottom">
             <en><![CDATA[Bottom right]]></en>
+        </locale>
+        <locale name="logo.standard.description" context="administration" datatype="php">
+            <en><![CDATA[Navigation with a background uses the standard logo from the general project settings, both without a header and after scrolling. Size settings and the link title apply to all navigation logo variants.]]></en>
+        </locale>
+        <locale name="logo.dark" context="administration" datatype="php">
+            <en><![CDATA[Alternative logo in dark mode (optional)]]></en>
+        </locale>
+        <locale name="logo.dark.description" context="administration" datatype="php">
+            <en><![CDATA[Only needed if navigation requires a different logo in dark mode, for example because its background color changes. Leave empty if the same logo suits both modes, especially when the menu color stays the same. Without a valid variant, the standard logo remains visible. A special transparent-navigation logo takes precedence while navigation is transparent.]]></en>
+        </locale>
+        <locale name="navigation.transparent" context="administration" datatype="php">
+            <en><![CDATA[Transparent navigation over the header]]></en>
+        </locale>
+        <locale name="navigation.mobile" context="administration" datatype="php">
+            <en><![CDATA[Navigation – mobile menu]]></en>
+        </locale>
+        <locale name="logo.mobile.description" context="administration" datatype="php">
+            <en><![CDATA[Wide logos shrink proportionally on small screens to leave room for the appearance switch and menu button. These colors apply to the open mobile menu.]]></en>
         </locale>
     </groups>
 </locales>

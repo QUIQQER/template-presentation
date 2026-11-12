@@ -101,18 +101,13 @@ if (
 
 $MegaMenu = new QUI\Menu\MegaMenu($params);
 
-/**
- * Logo for transparent nav
- */
-if ($templateSettings['logoForTransparentNav']) {
-    try {
-        $templateSettings['LogoForTransparentNav'] = QUI\Projects\Media\Utils::getImageByUrl(
-            $templateSettings['logoForTransparentNav']
-        );
-    } catch (Exception $e) {
-        QUI\System\Log::addError($e->getMessage());
-    }
-}
+$templateSettings['navigationLogos'] = QUI\TemplatePresentation\NavigationLogo::getImages(
+    $Project,
+    $Site,
+    (bool)$templateSettings['navInitialTransparent']
+);
+$templateSettings['LogoForTransparentNav'] = $templateSettings['navigationLogos']['transparent'];
+$templateSettings['logoMaxWidth'] = max(0, (int)$Project->getConfig('templatePresentation.settings.logoWidth'));
 
 /**
  * Language select

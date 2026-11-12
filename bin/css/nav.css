@@ -97,6 +97,11 @@
 /* Logo */
 /********/
 .header-bar-logo {
+    --_logo-height: var(--quiqqer-template-presentation-logo-height, var(--_q-controlConf-logo-height, var(--logo-height, auto)));
+    --_logo-width: var(--quiqqer-template-presentation-logo-width, var(--_q-controlConf-logo-width, none));
+    min-width: 0;
+    flex-shrink: 1;
+    max-width: var(--_logo-width);
     margin-right: 1rem;
     padding-block: 10px;
 }
@@ -106,6 +111,7 @@
     display: flex;
     height: 100%;
     max-height: 100%;
+    min-width: 0;
 }
 
 .header-bar-logo__link:hover {
@@ -113,21 +119,67 @@
     box-shadow: none;
 }
 
-.header-bar-logo__link > picture {
+.header-bar-logo__link > picture,
+.header-bar-logo__variant > picture {
     height: 100%;
     align-items: center;
     display: flex;
 }
 
-/**
- * 1. width and height are set in html file template/menu/prefix.html
- * 2. height is not used as css property
- */
+/* Each image keeps its own proportions, including SVGs and narrow mobile headers. */
 .header-bar-logo__img {
     display: block;
-    width: auto; /* 2 */
-    height: var(--logo-height, auto); /* 1 */
+    width: auto;
+    height: var(--_logo-height);
+    max-width: 100%;
+    object-fit: contain;
+    object-position: left center;
     max-height: 100%;
+}
+
+.header-bar-logo__variant {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    max-width: 100%;
+    height: 100%;
+}
+
+.header-bar-logo__variant[data-logo-variant="dark"],
+.header-bar-logo__variant[data-logo-variant="transparent"] {
+    display: none;
+}
+
+:root[data-presentation-mode="dark"] .header-bar-logo__link:has([data-logo-variant="dark"]) [data-logo-variant="standard"] {
+    display: none;
+}
+
+:root[data-presentation-mode="dark"] .header-bar-logo__variant[data-logo-variant="dark"] {
+    display: flex;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root[data-presentation-mode="system"] .header-bar-logo__link:has([data-logo-variant="dark"]) [data-logo-variant="standard"] {
+        display: none;
+    }
+
+    :root[data-presentation-mode="system"] .header-bar-logo__variant[data-logo-variant="dark"] {
+        display: flex;
+    }
+}
+
+/* Transparency takes precedence over both explicit and system appearance. */
+:root .header-bar--initial-transparent:not(.header-bar--scrolled) .header-bar-logo__link:has([data-logo-variant="transparent"]) .header-bar-logo__variant {
+    display: none;
+}
+
+:root .header-bar--initial-transparent:not(.header-bar--scrolled) .header-bar-logo__link .header-bar-logo__variant[data-logo-variant="transparent"] {
+    display: flex;
+}
+
+.quiqqer-menu-megaMenu__wrapperMobile > .header-bar__colorMode,
+.quiqqer-menu-megaMenu__wrapperMobile > .quiqqer-menu-megaMenu-mobile-openerBtn {
+    flex-shrink: 0;
 }
 
 /* switch logos (for solid and transparent nav) */

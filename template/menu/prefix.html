@@ -1,21 +1,21 @@
 {assign var=Setting value=$Template->getAttribute('TemplateSetting')}
 {assign var=Project value=$Site->getProject()}
-{assign var=Logo value=$Project->getMedia()->getLogoImage()}
+{assign var=logos value=$Setting->getAttribute('navigationLogos')}
 {assign var=logoSize value=$Setting->getAttribute('logoSize')}
-
-{assign var=LogoForTransparentNav value=$Setting->getAttribute('LogoForTransparentNav')}
+{assign var=logoMaxWidth value=$Setting->getAttribute('logoMaxWidth')}
 {assign var=logoTitle value=$Setting->getAttribute('logoTitle')}
 {assign var=colorMode value=$Setting->getAttribute('colorMode')}
 
-{if $Logo}
-<div class="header-bar-logo" style=" {if $logoSize.width}--logo-width: {$logoSize.width}px;{/if} {if $logoSize.height}--logo-height: {$logoSize.height}px;{/if}">
-    <a href="{$Project->get(1)->getUrlRewritten()}" class="header-bar-logo__link"{if $logoTitle} title="{$logoTitle|escape}"{/if}>
-        {if $LogoForTransparentNav}
-            {image image=$Logo class="header-bar-logo__img" data-show-for="solid-nav" height=$logoSize.height width=$logoSize.width}
-            {image image=$LogoForTransparentNav class="header-bar-logo__img" data-show-for="transparent-nav" height=$logoSize.height width=$logoSize.width}
-        {else}
-            {image image=$Logo class="header-bar-logo__img" height=$logoSize.height width=$logoSize.width}
-        {/if}
+{if $logos.standard || $logos.dark || $logos.transparent}
+<div class="header-bar-logo" style="{if $logoMaxWidth}--_q-controlConf-logo-width: {$logoMaxWidth}px;{/if}{if $logoSize.height}--_q-controlConf-logo-height: {$logoSize.height}px;{/if}">
+    <a href="{$Project->get(1)->getUrlRewritten()|escape:'html'}" class="header-bar-logo__link" aria-label="{$Project->get(1)->getAttribute('title')|escape:'html'}"{if $logoTitle} title="{$logoTitle|escape:'html'}"{/if}>
+        {foreach $logos as $variant => $Logo}
+            {if $Logo}
+                <span class="header-bar-logo__variant" data-logo-variant="{$variant|escape:'html'}">
+                    {image image=$Logo class="header-bar-logo__img" height=$logoSize.height}
+                </span>
+            {/if}
+        {/foreach}
     </a>
 </div>
 {/if}
